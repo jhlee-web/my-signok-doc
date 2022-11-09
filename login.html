@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <script src="/js/loadHTML.js"></script>
+        <script>
+            loadHTML("/include/head.html");
+        </script>
+        <title>로그인</title>
+    </head>
+
+    <body>
+        <main class="main main--background">
+            <!-- // 상단헤더 -->
+            <div class="container flex--column gap--xl">
+                <h1 class="">
+                    <a>
+                        <img src="" alt="로고">
+                    </a>
+                </h1>
+
+                <form class="form">
+                    <div class="input-box form__input-box">
+                        <label for="login-mail">이메일</label>
+                        <input type="text"
+                        class="input"
+                        id="login-mail"
+                        placeholder="이메일주소를 입력해주세요.">
+                        <img class="icon" src="/icon/remove-solid.svg"></img>
+                    </div>
+                    <div class="input-box form__input-box--small">
+                        <label for="login-password">비밀번호</label>
+                        <input type="password"
+                        class="input"
+                        id="login-password"
+                        placeholder="비밀번호를 입력해주세요.">
+                        <img class="icon" src="/icon/eye-show-line.svg"></img>
+                    </div>
+                    <div class="flex--row flex-justify--between form__input-box">
+                        <!-- 체크박스 -->
+                        <div class="control-form form__control-form">
+                            <input type="checkbox"
+                                id="keep-mail"
+                                class="checkbox">
+                            <label for="keep-mail"
+                            class="body--small">
+                                이메일 기억하기
+                            </label>
+                        </div>
+
+                        <!-- 비밀번호 바로가기 -->
+                        <a class="button button--text button--small
+                        body--small form__shortcut">비밀번호를 잊어버리셨나요?</a>
+                    </div>
+                    
+                    
+                    <button type="button"
+                    class="button button--primary button--regular form__button"
+                    id="login-submit">로그인</button>
+                    <a class="button button--text button--small
+                    body--small grid--center form__button"
+                    href="./signup/signup.html">싸인오케이가 처음이신가요?</a>
+                </form>
+
+                <div class="flex--column gap--large">
+                    <p class="body--small font--third">다른 계정으로 로그인하기</p>
+                    <div class="flex--row flex-justify--between">
+                        <a class="button button--outline button--small
+                        flex-align--center body--small">
+                            구글
+                            <img class="icon" src="/icon/pop-out-line.svg">
+                        </a>
+                        <a class="button button--outline button--small
+                        flex-align--center body--small">
+                            네이버
+                            <img class="icon" src="/icon/pop-out-line.svg">
+                        </a>
+                        <a class="button button--outline button--small
+                        flex-align--center body--small">
+                            카카오
+                            <img class="icon" src="/icon/pop-out-line.svg">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+           <!-- // container -->
+        </main>
+       
+        
+        <script>
+
+            /** input 입력시 값 지우기 버튼 생성 */
+            function checkInputLength(){
+                this.value.length > 0 ?
+                    $(this).next('.icon').show():
+                    $(this).next('.icon').hide()
+            }
+
+            $('.input').on('keyup',checkInputLength)
+
+
+            /** remove 아이콘 클릭시 input 값 초기화
+             * 아이콘에 'eye'가 있을 경우 비밀번호 토글
+             * 아이콘에 'eye'가 없을 경우 input 초기화
+             */
+            function handlingInputValue(){
+
+                if($(this).attr('src').indexOf('eye') > -1){
+                    const inputType = $(this).prev('.input')
+
+                    if(inputType.attr('type') == 'password'){
+                        inputType.attr('type','text');
+                        $(this).attr('src',"./icon/eye-hide-line.svg")
+                    }
+
+                    else{
+                        inputType.attr('type','password');
+                        $(this).attr('src',"./icon/eye-show-line.svg")
+                    }
+                }
+                
+                else{
+                    $(this).prev('.input').val('')
+                    $(this).hide()
+                }
+                
+            }
+
+            $('.icon').on('click',handlingInputValue)
+
+        </script>
+    </body>
+    
+</html>

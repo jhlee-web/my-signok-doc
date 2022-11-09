@@ -5,7 +5,7 @@
         <script>
             loadHTML("./include/head.html");
         </script>
-        <title>Document</title>
+        <title>대시보드</title>
     </head>
 
     <body>
@@ -15,51 +15,55 @@
         <main class="main">
             <!-- 상단 헤더 -->
             <div class="document-header">
-                <p class="font-large weight-medium">Document Location</p>
-                <div class="document-header__right">
-                    <!-- 검색상자 -->
-                    <div class="search-form">
-                        <div class="select-box select-box--large">
-                            <select class="select-box__select">
-                                <option selected>전체페이지</option>
-                                <option>현재페이지</option>
-                            </select>
-                            <img class="select-box__icon icon" src="./icon/angle-line.svg" alt="화살표">
+                <div class="container">
+                    <p class="body--large font--medium">Document Location</p>
+                    <div class="document-header__right">
+                        <!-- 검색상자 -->
+                        <div class="search-form">
+                            <div class="select-box select-box--large">
+                                <select class="select-box__select">
+                                    <option selected>전체페이지</option>
+                                    <option>현재페이지</option>
+                                </select>
+                                <img class="select-box__icon icon" src="./icon/angle-line.svg" alt="화살표">
+                            </div>
+                            
+                            <form class="search-form__form">
+                                <input type="text"
+                                    class="input input--large search-form__input"
+                                    placeholder="검색어를 입력해주세요">
+                                <button type="button"
+                                    class="button button--outline button--regular
+                                            icon-button search-form__button">
+                                    <img class="icon icon--large" src="./icon/search-line.svg" alt="검색">
+                                </button>
+                            </form>
                         </div>
-                        
-                        <form class="search-form__form">
-                            <input type="text"
-                                class="input input--large search-form__input"
-                                placeholder="검색어를 입력해주세요">
+                        <!-- // 검색상자 -->
+    
+                        <!-- 튜토+헬프 -->
+                        <div class="group-button">
                             <button type="button"
-                                class="button button--outline button--icon search-form__button">
-                                <img class="icon icon--large" src="./icon/search-line.svg" alt="검색">
+                                class="group-button__base group-button__base--left group-button--large
+                                is-active"
+                                id="tutorial">
+                                <img class="icon icon--large" src="./icon/book-line.svg" alt="튜토리얼">
                             </button>
-                        </form>
+                            <button type="button"
+                                class="group-button__base group-button--large group-button__base--right">
+                                <img class="icon icon--large" src="./icon/help-line.svg" alt="도움말">
+                            </button>
+                        </div>
+                        <!-- // 튜토+헬프 -->
                     </div>
-                    <!-- // 검색상자 -->
-
-                    <!-- 튜토+헬프 -->
-                    <div class="group-button">
-                        <button type="button"
-                            class="group-button__base group-button__base--left group-button--large is-active"
-                            id="tutorial">
-                            <img class="icon icon--large" src="./icon/book-line.svg" alt="튜토리얼">
-                        </button>
-                        <button type="button"
-                            class="group-button__base group-button--large group-button__base--right">
-                            <img class="icon icon--large" src="./icon/help-line.svg" alt="도움말">
-                        </button>
-                    </div>
-                    <!-- // 튜토+헬프 -->
                 </div>
             </div>
             <!-- // 상단헤더 -->
+            <div class="container">
+                test
+            </div>
         </main>
         <script>
-            $('.select-box__select').on('click',function(){
-                $('.select-box__icon').rotate('90deg')
-            })
         </script>
     </body>
     

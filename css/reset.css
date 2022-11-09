@@ -51,9 +51,11 @@ button{
 	background-color: unset;
 	border: none;
 }
+
 select::-ms-expand { 
 	display: none;
 }
+
 select {
   -o-appearance: none;
   -webkit-appearance: none;
@@ -61,6 +63,12 @@ select {
   appearance: none;
 }
 
-*{
-	box-sizing: border-box;
+input[type="checkbox"] {
+	-webkit-appearance: none;
+	appearance: none;
+	margin: 0;
+}
+
+a{
+	text-decoration: none;
 }

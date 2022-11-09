@@ -1,12 +1,15 @@
 <nav data-fold="false" class="nav">
-    <h1 class="nav-logo">
-        <a>
-            <img alt="로고">
-        </a>
-    </h1>
-    <button class="button button--icon ">
-        <img class="icon nav-item__icon" src="../icon/menu-line.svg"></img>
-    </button>
+    <div class="container">
+        <h1 class="nav-logo">
+            <a>
+                <img alt="로고">
+            </a>
+        </h1>
+        <button class="button button--regular icon-button"
+            id="nav-fold-button">
+            <img class="icon nav-item__icon" src="../icon/menu-line.svg"></img>
+        </button>
+    </div>
     <button type="button"
         class="button button--primary button--regular">
         계약 시작하기
@@ -14,90 +17,124 @@
     <ul class="nav-list">
         <li class="nav-item is-active">
             <img class="icon nav-item__icon" src="../icon/home-line.svg"></img>
-            <span class="font-small">홈</span>
+            <span class="body--small">홈</span>
         </li>
         <li class="nav-item">
             <img class="icon nav-item__icon" src="../icon/document-line.svg"></img>
-            <span class="font-small">문서</span>
+            <span class="body--small">문서</span>
 
         </li>
         <li class="nav-item">
             <img class="icon nav-item__icon" src="../icon/form-line.svg"></img>
-            <span class="font-small">템플릿</span>
+            <span class="body--small">템플릿</span>
 
         </li>
         <li class="nav-item">
             <img class="icon nav-item__icon" src="../icon/archive-line.svg"></img>
-            <span class="font-small">외부문서</span>
+            <span class="body--small">외부문서</span>
 
         </li>
         <li class="nav-item">
             <img class="icon nav-item__icon" src="../icon/home-line.svg"></img>
-            <span class="font-small">대량발송</span>
+            <span class="body--small">대량발송</span>
 
         </li>
         <li class="nav-item">
             <img class="icon nav-item__icon" src="../icon/link-line.svg"></img>
-            <span class="font-small">링크서명</span>
+            <span class="body--small">링크서명</span>
 
         </li>
         <li class="nav-item">
             <img class="icon nav-item__icon" src="../icon/briefcase-line.svg"></img>
-            <span class="font-small">공문발송</span>
+            <span class="body--small">공문발송</span>
 
         </li>
         <li class="nav-item">
             <img class="icon nav-item__icon" src="../icon/edit-line.svg"></img>
-            <span class="font-small">문서편집</span>
+            <span class="body--small">문서편집</span>
 
         </li>
         <li class="nav-item">
             <img class="icon nav-item__icon" src="../icon/digital-signature-line.svg"></img>
-            <span class="font-small">사인/도장</span>
+            <span class="body--small">사인/도장</span>
 
         </li>
         <li class="nav-item">
             <img class="icon nav-item__icon" src="../icon/text-line.svg"></img>
-            <span class="font-small">문서작성</span>
+            <span class="body--small">문서작성</span>
 
         </li>
         <li class="nav-item">
             <img class="icon nav-item__icon" src="../icon/search-line.svg"></img>
-            <span class="font-small">서식검색</span>
+            <span class="body--small">서식검색</span>
 
         </li>
         <li class="nav-item">
             <img class="icon nav-item__icon" src="../icon/trash-line.svg"></img>
-            <span class="font-small">휴지통</span>
+            <span class="body--small">휴지통</span>
 
         </li>
         <li class="nav-item">
             <img class="icon nav-item__icon" src="../icon/calendar-line.svg"></img>
-            <span class="font-small">캘린더</span>
+            <span class="body--small">캘린더</span>
 
         </li>
         <li class="nav-item">
             <img class="icon nav-item__icon" src="../icon/settings-line.svg"></img>
-            <span class="font-small">설정</span>
+            <span class="body--small">설정</span>
 
         </li>
         <li class="nav-item">
             <img class="icon nav-item__icon" src="../icon/code-line.svg"></img>
-            <span class="font-small">API 연동</span>
+            <span class="body--small">API 연동</span>
 
         </li>
         <li class="nav-item">
             <img class="icon nav-item__icon" src="../icon/bubble-exclamation-line.svg"></img>
-            <span class="font-small">고객센터</span>
+            <span class="body--small">고객센터</span>
 
         </li>
         <li class="nav-item">
             <img class="icon nav-item__icon" src="../icon/sign-out-line.svg"></img>
-            <span class="font-small">로그아웃</span>
+            <span class="body--small">로그아웃</span>
         </li>
         <li class="nav-item">
             <img class="icon nav-item__icon" src="../icon/home-line.svg"></img>
-            <span class="font-small">다크모드</span>
+            <span class="body--small">다크모드</span>
         </li>
     </ul>
 </nav>
+<script>
+
+    $(function(){
+        setNavAttr()
+    })
+
+    function setNavAttr(){
+        const viewportWidth = $(window).width()
+        viewportWidth < 480 ? $('.nav').attr('data-fold',true) : $('.nav').attr('data-fold',false)
+    }
+
+    // nav fold event
+    $('#nav-fold-button').on('click',manageNavContainer)
+
+    function manageNavContainer(){
+        let foldedNav = $('.nav').attr('data-fold')
+        console.log(foldedNav)
+
+        if(foldedNav=='false'){
+            $('.nav').attr('data-fold',true)
+            $('.main').css({
+                'padding-left':'3rem'
+            })
+            
+        }
+        else{
+            $('.nav').attr('data-fold',false)
+            $('.main').css({
+                'padding-left':'12rem'
+            })
+        }
+
+    }
+</script>

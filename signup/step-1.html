@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <script src="/js/loadHTML.js"></script>
+        <script>
+            loadHTML("/include/head.html");
+        </script>
+        <title>회원가입</title>
+    </head>
+
+    <body>
+        <main class="main main--background">
+            <!-- // 상단헤더 -->
+            <div class="container">
+                <h1 class="">
+                    <a>
+                        <img src="" alt="로고">
+                    </a>
+                </h1>
+                <div class="box box--left">
+                    <ul class="bar">
+                        <li class="bar__item is-active"></li>
+                        <li class="bar__item"></li>
+                        <li class="bar__item"></li>
+                    </ul>
+
+                    <div class="box__title--left">
+                        <p class="body--large font--medium">싸인오케이</p>
+                        <p class="body--large font--medium">서비스 약관을 확인해주세요.</p>
+                    </div>
+                    
+                    <div class="box__content">
+                        <div class="control-form flex-justify--between">
+                            <label for="checkbox-all" class="font--medium control-form__label"> 약관 전체 동의 </label>
+                            <input type="checkbox" class="checkbox"
+                            id="checkbox-all">
+                        </div>
+                        <div class="control-form flex-justify--between">
+                            <label for="" class="control-form__label body--small">
+                                <span class="font--medium">필수</span>
+                                만 14세 이상입니다
+                                <img class="icon" src="/icon/angle-line.svg">
+                            </label>
+                            <input type="checkbox" class="checkbox">
+                        </div>
+                    </div>
+                </div>
+                <!-- // box -->
+                <div class="box__button-wrap">
+                    <a href="./step-1.html" class="button button--text button--small">이전</a>
+                    <a href="" class="button button--primary  button--small">다음</a>
+                </div>
+                
+            </div>
+           <!-- // container -->
+        </main>
+       
+        
+        <script>
+
+            /** input 입력시 값 지우기 버튼 생성 */
+            function checkInputLength(){
+                this.value.length > 0 ?
+                    $(this).next('.icon').show():
+                    $(this).next('.icon').hide()
+            }
+
+            $('.input').on('keyup',checkInputLength)
+
+
+            /** remove 아이콘 클릭시 input 값 초기화
+             * 아이콘에 'eye'가 있을 경우 비밀번호 토글
+             * 아이콘에 'eye'가 없을 경우 input 초기화
+             */
+            function handlingInputValue(){
+
+                if($(this).attr('src').indexOf('eye') > -1){
+                    const inputType = $(this).prev('.input')
+
+                    if(inputType.attr('type') == 'password'){
+                        inputType.attr('type','text');
+                        $(this).attr('src',"/icon/eye-hide-line.svg")
+                    }
+
+                    else{
+                        inputType.attr('type','password');
+                        $(this).attr('src',"/icon/eye-show-line.svg")
+                    }
+                }
+                
+                else{
+                    $(this).prev('.input').val('')
+                    $(this).hide()
+                }
+                
+            }
+
+            $('.icon').on('click',handlingInputValue)
+
+        </script>
+    </body>
+    
+</html>
