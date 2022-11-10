@@ -12,32 +12,43 @@
         <main class="main main--background">
             <!-- // 상단헤더 -->
             <div class="container flex--column gap--xl">
-                <h1 class="">
-                    <a>
-                        <img src="" alt="로고">
-                    </a>
-                </h1>
+                <div class="title-box flex-align--center">
+                    <h1 class="">
+                        <a>
+                            <img src="" alt="로고">
+                        </a>
+                    </h1>
+                </div>
 
                 <form class="form">
-                    <div class="input-box form__input-box">
-                        <label for="login-mail">이메일</label>
-                        <input type="text"
-                        class="input"
-                        id="login-mail"
-                        placeholder="이메일주소를 입력해주세요.">
-                        <img class="icon" src="/icon/remove-solid.svg"></img>
+                    <div class="input-area">
+                            <label for="login-mail">이메일</label>
+                        <div class="input-box">
+                            <input type="text"
+                            class="input"
+                            id="login-mail"
+                            placeholder="이메일주소를 입력해주세요.">
+                            <img class="icon" src="/icon/remove-solid.svg"></img>
+                        </div>
                     </div>
-                    <div class="input-box form__input-box--small">
+                    <p class="input-area__helper"></p>
+
+                    <div class="input-area">
                         <label for="login-password">비밀번호</label>
-                        <input type="password"
-                        class="input"
-                        id="login-password"
-                        placeholder="비밀번호를 입력해주세요.">
-                        <img class="icon" src="/icon/eye-show-line.svg"></img>
+                        <div class="input-box">
+                            <input type="password"
+                            class="input"
+                            id="login-password"
+                            placeholder="비밀번호를 입력해주세요.">
+                            <img class="icon" src="/icon/eye-show-line.svg"></img>
+                        </div>
+                        <p class="input-area__helper"></p>
+
                     </div>
-                    <div class="flex--row flex-justify--between form__input-box">
+                    
+                    <div class="flex--row flex-justify--between">
                         <!-- 체크박스 -->
-                        <div class="control-form form__control-form">
+                        <div class="control-form">
                             <input type="checkbox"
                                 id="keep-mail"
                                 class="checkbox">
@@ -49,7 +60,7 @@
 
                         <!-- 비밀번호 바로가기 -->
                         <a class="button button--text button--small
-                        body--small form__shortcut">비밀번호를 잊어버리셨나요?</a>
+                        body--small">비밀번호 찾기</a>
                     </div>
                     
                     
@@ -62,22 +73,22 @@
                 </form>
 
                 <div class="flex--column gap--large">
-                    <p class="body--small font--third">다른 계정으로 로그인하기</p>
-                    <div class="flex--row flex-justify--between">
+                    <p class="body--small font-color--third">다른 계정으로 로그인하기</p>
+                    <div class="flex--row is-change flex-justify--between">
                         <a class="button button--outline button--small
                         flex-align--center body--small">
-                            구글
                             <img class="icon" src="/icon/pop-out-line.svg">
+                            <span>구글</span>
                         </a>
                         <a class="button button--outline button--small
                         flex-align--center body--small">
-                            네이버
                             <img class="icon" src="/icon/pop-out-line.svg">
+                            <span>네이버</span>
                         </a>
                         <a class="button button--outline button--small
                         flex-align--center body--small">
-                            카카오
                             <img class="icon" src="/icon/pop-out-line.svg">
+                            <span>카카오</span>
                         </a>
                     </div>
                 </div>

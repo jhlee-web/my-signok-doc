@@ -59,45 +59,57 @@ html[data-theme='dark']{
 }
 
 *{
+    margin: 0;
+    padding: 0;
+	box-sizing: border-box;
+
     font-family: 'Pretendard';
     font-size: calc(14px + 0.1vw);
     line-height: 1.5em;
-
-	box-sizing: border-box;
 }
 
 html,body{
-    color: var(--text-color);
+
+    
+
+    color: var(--text-color-500);
     background-color: var(--background-color);
 }
-
 
 /* font-size */
 .body--large{
     font-size: 1.333rem;
+    line-height: 1.5em;
 }
 .body--small{
     font-size: 0.875rem;
+    line-height: 1.5em;
 }
 
 
 /* font-weight */
-.font--medium{
+.font-weight--medium{
     font-weight: 500;
 }
-.font--semibold{
+.font-weight--semibold{
     font-weight: 600;   
 }
-.font--bold{
+.font-weight--bold{
     font-weight: 700;   
 }
 
 /* font-color */
-.font--third{
+.font-color--third{
     color: var(--text-color-400);
 }
-.font--second{
+.font-color--second{
     color: var(--text-color-600);
+}
+
+
+/* font-align */
+.font-align--center{
+    text-align: center;
 }
 
 /* headline */
@@ -184,17 +196,27 @@ html,body{
 .flex--column{
     flex-direction: column;
 }
-.gap--large{
-    gap: 2rem;
-}
-.gap--xl{
-    gap: 4rem;
+
+@media all and (max-width:480px){
+    .flex--row.is-change{
+        flex-direction: column;
+    }
+    .flex--column.is-change{
+        flex-direction: row;
+    }
 }
 .flex-align--center{
     align-items: center;
 }
+.flex-align--end{
+    align-items: flex-end;
+}
+
 .flex-justify--between{
     justify-content: space-between;
+}
+.flex-justify--end{
+    justify-content: flex-end;
 }
 
 
@@ -203,6 +225,15 @@ html,body{
     display: grid;
     place-items: center;
 }
+
+/* gap */
+.gap--large{
+    gap: 2rem;
+}
+.gap--xl{
+    gap: 4rem;
+}
+
 
 
 /* select */
@@ -241,8 +272,15 @@ html,body{
 
 
 /* input */
+.input-area{
+    margin-bottom: 2rem;
+}
 .input-box{
     position: relative;
+}
+.input-box__label{
+    display: inline-block;
+    margin-bottom: .25rem;
 }
 .input{
     width: 100%;
@@ -250,12 +288,12 @@ html,body{
     border-radius: 0.5rem;
     border: 1px solid var(--theme-color-400);
     height: 2.5rem;
-
 }
 .input-box .icon{
     position: absolute;
     right: 1em;
     top: 50%;
+    transform: translateY(-50%);
     filter: var(--filter-text-400);
 
     cursor: pointer;
@@ -269,6 +307,20 @@ html,body{
 .input--large{
     height: 3rem;
 }
+
+.input-area.is-error *:not(label){
+    color: var(--primary-color-500);
+}
+.input-area.is-error .input{
+    border: 1px solid var(--primary-color-500);
+}
+
+.input-area__helper{
+    margin-top: .5rem;
+    font-size: 0.875rem;
+    color:var(--text-color-600)
+}
+
 
 
 /* checkbox box */
@@ -382,6 +434,7 @@ html,body{
 }
 
 
+
 /* only icon button */
 .icon-button{
     display: grid;
@@ -464,4 +517,9 @@ html,body{
 }
 #tutorial.is-active .icon{
     filter: var(--filter-focus);
+}
+
+
+.is-hide{
+    display: none;
 }

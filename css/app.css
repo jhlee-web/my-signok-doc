@@ -4,6 +4,17 @@
 @import url('./reset.css');
 @import url("./font/web/static/pretendard.css");
 
+/* title-box */
+.title-box{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.title-box__title{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
 
 /* box */
 .box{
@@ -12,7 +23,7 @@
     align-content: center;
 
     padding-bottom: 4rem;
-    gap:2rem;
+    gap:4rem;
     border-bottom: 1px solid var(--theme-color-400);
 }
 
@@ -40,6 +51,7 @@
     align-items: center;
 }
 
+/* bar */
 .bar{
     display: flex;
     flex-direction: row;
