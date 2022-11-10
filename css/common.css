@@ -69,9 +69,7 @@ html[data-theme='dark']{
 }
 
 html,body{
-
-    
-
+    height:100%;
     color: var(--text-color-500);
     background-color: var(--background-color);
 }
@@ -520,6 +518,7 @@ html,body{
 }
 
 
+/* state */
 .is-hide{
     display: none;
 }
