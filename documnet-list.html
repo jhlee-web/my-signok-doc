@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <script src="./js/loadHTML.js"></script>
+        <script>
+            loadHTML("./include/head.html");
+        </script>
+        <title>문서목록</title>
+    </head>
+
+    <body>
+        <div id="tutorial-wrap">
+            <div class="tutorial__area">
+                <div class="tutorial__box">
+                    <p>
+                        선택한 계약서의 전체 이력 조회 및 문서의 변경사항을 한눈에 확인할 수 있는 창입니다.
+                    </p>
+                    <div class="flex--row flex-justify--between">
+                        <button type="button" class="button button--primary button--small">다음</button>
+                    </div>
+                </div>
+                <div class="tutorial__box">
+                    <p>
+                        완료된 계약서와 문서 이력내용을 모두 다운로드 하실 수 있습니다. 
+                    </p>
+                    <div class="flex--row flex-justify--between">
+                        <button type="button" class="button button--outline button--small">이전</button>
+                        <button type="button" class="button button--primary button--small">다음</button>
+                    </div>
+                </div>
+                <div class="tutorial__box">
+                    <p>
+                        완료된 계약서 및 이력정보를 다운로드 시 TSA도 포함됩니다.
+                    </p>
+                    <div class="flex--row flex-justify--between">
+                        <button type="button" class="button button--outline button--small">이전</button>
+                        <button type="button" class="button button--primary button--small">종료</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            loadHTML("./include/nav.html");
+        </script>
+        
+        <main class="main">
+            <!-- 상단 헤더 -->
+            <div class="document-header">
+                <div class="container">
+                    <p class="body--large font-weight--medium">문서목록</p>
+                    <div class="document-header__right">
+                        <!-- 검색상자 -->
+                        <div class="search-form">
+                            <form class="search-form__form">
+                                <input type="text"
+                                    class="input input--large search-form__input"
+                                    placeholder="검색어를 입력해주세요">
+                                <button type="button"
+                                    class="button button--outline button--regular
+                                            icon-button search-form__button">
+                                    <img class="icon icon--large" src="./icon/search-line.svg" alt="검색">
+                                </button>
+                            </form>
+                        </div>
+                        <!-- // 검색상자 -->
+    
+                        <!-- 튜토+헬프 -->
+                        <div class="group-button">
+                            <button type="button"
+                                class="group-button__base group-button__base--left group-button--large
+                                is-active"
+                                id="tutorial">
+                                <img class="icon icon--large" src="./icon/book-line.svg" alt="튜토리얼">
+                            </button>
+                            <button type="button"
+                                class="group-button__base group-button--large group-button__base--right">
+                                <img class="icon icon--large" src="./icon/help-line.svg" alt="도움말">
+                            </button>
+                        </div>
+                        <!-- // 튜토+헬프 -->
+                    </div>
+                </div>
+            </div>
+            <!-- // 상단헤더 -->
+            <div class="container">
+                <button type="button" class="button button--regular button--outline">
+                    폴더선택
+                </button>
+                <div class="flex--row flex-justify--between flex-align--center">
+                    <ul class="tab flex--row">
+                        <li class="tab__item is-active">전체</li>
+                        <li class="tab__item">완료</li>
+                        <li class="tab__item">진행중</li>
+                        <li class="tab__item">만료</li>
+                    </ul>
+                    <button type="button" class="button button--regular">엑셀로 내려받기</button>
+                </div>
+                <div class="content-wrap">
+                    <ul class="table">
+                        <ul class="table__tr">
+                            <li class="table__thead">상태</li>
+                            <li class="table__thead">문서이름</li>
+                            <li class="table__thead">알람</li>
+                            <li class="table__thead">위치</li>
+                            <li class="table__thead">마지막 활동시간</li>
+                            <li class="table__thead">추가메뉴</li>
+                        </ul>
+                        <ul class="table__tbody">
+                            
+                        </ul>
+                </div>
+            </div>
+        </main>
+        <script>
+            makeTable()
+            function makeTable(){
+                for (let i = 0; i < 10; i++){
+                    html = ''
+                    html += `
+                    <ul class="table__tr">
+                        <li class="table__td state active">
+                            <img src="">
+                            진행중
+                        </li>
+                        <li class="table__td font-weight--medium">해촉증명서
+                            <ul>
+                                <li class="table__td--small">홍길동</li>
+                            </ul>
+                        </li>
+                        <li class="table__td">
+                            <label class="toggle">
+                                <input type="checkbox" class="toggle__checkbox">
+                                <span class="toggle__slider"></span>
+                            </label>
+                        </li>
+                        <li class="table__td">기본 폴더</li>
+                        <li class="table__td">2022-10-11 오후 02:14</li>
+                        <li class="table__td">
+                            <button type="button">더보기</button>
+                        </li>
+                    </ul>
+                    `
+                    $('.table__tbody').append(html)
+                }
+            }
+
+            $('#tutorial-wrap').hide()
+            $('#tutorial').on('click',playTutorial)
+
+            function playTutorial(){
+                $('#tutorial-wrap').show()
+                $('body').css('overflow','hidden')
+
+                const target = $('.table__tbody .table__tr')[0]
+                const clientRect = window.pageYOffset + target.getBoundingClientRect().top;
+                const elementHeight = $('.tutorial__box').innerHeight() * 0.25
+                const absoluteTop = clientRect -  elementHeight
+
+                $('.tutorial__area').css({
+                    'top':absoluteTop,
+                })
+
+                $('.tutorial__point-box').css({
+                    'width':target.offsetWidth,
+                    'height':target.offsetHeight,
+                    'top':clientRect
+                })
+
+                let targetIndex = 0;
+
+                $('.tutorial__box').hide()
+                $('.tutorial__box').eq(targetIndex).show()
+
+                // 정리해야해요...
+                $('.tutorial__box .button--primary').on('click',function(){
+                    $('.tutorial__box').eq(targetIndex).hide()
+
+                    if(targetIndex < $('.tutorial__box').length - 1){
+                        targetIndex = targetIndex + 1
+                        $('.tutorial__box').eq(targetIndex).show()
+                    }
+                    else{
+                        $('#tutorial-wrap').hide()
+                        $('body').css('overflow','unset')
+
+                        targetIndex = 0;
+                        return false;
+                    }
+                })
+
+                $('.tutorial__box .button--outline').on('click',function(){
+                    $('.tutorial__box').eq(targetIndex).hide()
+
+                    if(targetIndex > 0){
+                        targetIndex = targetIndex - 1
+                        $('.tutorial__box').eq(targetIndex).show()
+                    }
+                    else{
+                        return false;
+                    }
+
+                })
+
+                makeTutorialDark()
+            }
+
+
+            function makeTutorialDark(){
+                const target = $('.table__tbody .table__tr')[0]
+                const direction = ['top','bottom','left','right']
+
+                for(let i = 0; i < 4; i ++){
+                    html = ''
+                    html += `
+                        <div class = "tutorial__point-box tutorial__point-box--dark"
+                        data-direction = ${direction[i]}>
+                        </div>
+                    `
+                    $('#tutorial-wrap').append(html)
+                }
+
+                $('.tutorial__point-box--dark[data-direction="top"]').css({
+                    'height':window.pageYOffset + target.getBoundingClientRect().top,
+                    'top':0
+                })
+                $('.tutorial__point-box--dark[data-direction="bottom"]').css({
+                    'top':target.getBoundingClientRect().bottom
+                })
+
+                $('.tutorial__point-box--dark[data-direction="left"]').css({
+                    'width':window.pageXOffset + target.getBoundingClientRect().left,
+                    'left':0
+                })
+
+                $('.tutorial__point-box--dark[data-direction="right"]').css({
+                    'width':window.pageXOffset - target.offsetWidth,
+                    'left': target.getBoundingClientRect().right,
+                })
+
+            }
+
+            // 튜토리얼 스킵 버튼 만들기
+            
+        </script>
+    </body>
+    
+</html>

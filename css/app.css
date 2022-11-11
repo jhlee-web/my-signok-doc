@@ -1,7 +1,6 @@
 @import url('./reset.css');
 @import url('./common.css');
 @import url('./layout.css');
-@import url('./reset.css');
 @import url("./font/web/static/pretendard.css");
 
 /* title-box */
@@ -79,9 +78,48 @@
     gap: .5em;
 }
 
-
 .control-form__label .icon[src*="angle"]{
     transform: rotate(90deg);
     width: 1rem;
     height: 1rem;
+}
+
+
+/* table (ul + li) */
+
+.table{
+    display: flex;
+    flex-direction: column;
+}
+.table__tbody{
+    display: flex;
+    flex-direction: column;
+}
+.table__tr{
+    display:flex;
+    flex-direction: row;
+    border-bottom: 1px solid var(--theme-color-400);
+}
+
+.table__td, .table__thead{
+    width: 100%;
+}
+.table__thead{
+    display: flex;
+    flex-direction: row;
+    
+    color: var(--text-color-400);
+}
+
+.table__td,.table__thead{
+    padding: 0.75rem 1rem;
+}
+
+.table__td--small{
+    color: var(--text-color-600);
+    font-size: 0.875rem;
+}
+
+.state.active{
+    color: var(--success-color-500);
 }
