@@ -545,7 +545,6 @@ html,body{
   
   .toggle__checkbox {
     border-radius: 1.25em;
-
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -564,6 +563,7 @@ html,body{
     height: 1.5rem;
     width: 1.5rem;
     top:50%;
+    left: 5%;
     transform: translateY(-50%);
     background-color: white;
     -webkit-transition: .4s;
@@ -576,10 +576,8 @@ html,body{
     background-color: var(--focus-color-500)
   }
   .toggle__checkbox:checked + .toggle__slider::before {
-    -webkit-transform: translateX(26px)  translateY(-50%);
-    -ms-transform: translateX(26px)  translateY(-50%);
-    transform: translateX(26px)  translateY(-50%);
-  }
+        transform: translateX(135%) translateY(-50%);
+    }
 
 
 /* tutorial */

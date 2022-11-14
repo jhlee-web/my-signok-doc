@@ -122,13 +122,31 @@
     font-size: 0.875rem;
 }
 
+.table__tbody .table__tr .button--outline{
+    position: relative;
+}
+
 .table__modal{
-    border-radius: 1rem;
+    border-radius: .5rem;
     background: var(--background-color);
     color: var(--text-color-800);
 
-    overflow: hidden;
     position: absolute;
+    right: 0;
+    top: 100%;
+    min-width: 8rem;
+
+    border: 1px solid var(--theme-color-400);
+
+    z-index: 1;
+}
+
+.table__modal li{
+    padding: .5em .1em;
+}  
+
+.table__modal li:hover{
+    background:var(--theme-color-100);
 }
 
 .state.active{
