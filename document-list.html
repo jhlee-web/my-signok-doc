@@ -124,7 +124,7 @@
                         </li>
                         <li class="table__td font-weight--medium">해촉증명서
                             <ul>
-                                <li class="table__td--small">홍길동</li>
+                                <li class="table__td--remark">홍길동</li>
                             </ul>
                         </li>
                         <li class="table__td">
@@ -133,10 +133,12 @@
                                 <span class="toggle__slider"></span>
                             </label>
                         </li>
-                        <li class="table__td">기본 폴더</li>
-                        <li class="table__td">2022-10-11 오후 02:14</li>
+                        <li class="table__td table__td--remark">기본 폴더</li>
+                        <li class="table__td table__td--remark">2022-10-11 오후 02:14</li>
                         <li class="table__td">
-                            <button type="button">더보기</button>
+                            <button type="button" class="button button--outline button--small">
+                                더보기
+                            </button>
                         </li>
                     </ul>
                     `
@@ -183,6 +185,7 @@
                         $('#tutorial-wrap').hide()
                         $('body').css('overflow','unset')
 
+                        $('.tutorial__point-box').remove()
                         targetIndex = 0;
                         return false;
                     }
@@ -228,7 +231,7 @@
                 })
 
                 $('.tutorial__point-box--dark[data-direction="left"]').css({
-                    'width':window.pageXOffset + target.getBoundingClientRect().left,
+                    'width':window.pageXOffset - target.getBoundingClientRect().left,
                     'left':0
                 })
 

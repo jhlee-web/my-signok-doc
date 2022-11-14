@@ -90,6 +90,8 @@
 .table{
     display: flex;
     flex-direction: column;
+
+    color: var(--text-color-800);
 }
 .table__tbody{
     display: flex;
@@ -115,7 +117,7 @@
     padding: 0.75rem 1rem;
 }
 
-.table__td--small{
+.table__td--remark{
     color: var(--text-color-600);
     font-size: 0.875rem;
 }
