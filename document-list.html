@@ -59,7 +59,8 @@
 
                     <!-- 상단 -->
                     <div class="flex--row">
-                        <button type="button" class="button button--regular button--outline">
+                        <button type="button" class="button button--regular button--outline"
+                        id="change-folder">
                             폴더선택
                         </button>
     
@@ -205,15 +206,117 @@
 
             $('#checkbox-all').on('click',manageAllCheck)
 
-            function manageMoreEvent(){
+
+            /**
+             * 폴더 변경: no-filter. api data 전송g하고 makeTable() 실행
+             * 
+            */
+
+            // 폴더변경 클릭
+            $('#change-folder').on('click',makeFolderModal)
+            function makeFolderModal(){
+
+            html = '';
+                html += `
+                <div class="modal">
+                    <div class="modal__header">
+                        <p class="modal__title">
+                            <img src="/icon/exclamation-triangle-line.svg" alt="닫기" class="icon icon--large icon--warning">
+                            폴더 선택
+                        </p>
+                        <button type="button" class="icon-button">
+                            <img src="/icon/close-line.svg" alt="닫기" class="icon modal__close-button">
+                        </button>
+                    </div>
+                    <div class="modal__content">
+                        <div class="modal__search-form">
+                            <input type="text" class="input input--large"
+                            placeholder="검색어를 입력해주세요">
+                            <img class="icon icon" src="./icon/search-line.svg" alt="검색">
+                        </div>
+                        <ul class="modal__list">
+                            <li class="felx--row flex-align--center is-active"> 
+                                <img class="icon " src="./icon/folder-open-solid.svg" alt="현재폴더">
+                                전체 폴더 보기
+                            </li>
+                            <li class="felx--row flex-align--center"> 
+                                <img class="icon " src="./icon/folder-line.svg" alt="현재폴더">
+                                기본 폴더
+                            </li>
+                            <li class="felx--row flex-align--center"> 
+                                <img class="icon " src="./icon/folder-line.svg" alt="현재폴더">
+                                기존 사용 서식
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="modal__button-wrap">
+                        <button type="button" class="button--primary button--large"
+                        id="create-new-folder">새 폴더 추가하기</button>
+                    </div>
+                </div>
+                `
+                $('.main').append(html)
+            }
+
+            $(document).on('click','#create-new-folder',createNewFolder)
+            function createNewFolder(){
+                html = '';
+                html += `
+                    <div class="flex--row">
+                        <input type="text" class="input">
+                        <button type="button" id="cancel-new-folder">취소</button>
+                        <button type="button" id="submit-new-folder">완료</button>
+                    </div>
+                `
+                $('.modal__list').append(html)
+
+                $('#cancel-new-folder').on('click',function(){
+                    $(this).parents('.flex--row').remove()
+                })
+                $('#submit-new-folder').on('click',function(){
+                    if($(this).siblings('.input').val().length < 1){
+                        alert('폴더명을 입력해주세요')
+                    }
+                    else{
+                        $(this).parents('.flex--row').remove()
+                        $('.modal__list').append(`
+                            <li class="felx--row flex-align--center"> 
+                                <img class="icon " src="./icon/folder-line.svg" alt="현재폴더">
+                                ${$(this).siblings('.input').val()}
+                            </li>
+                        `)
+                    }
+                })
+            }
+
+            
+            
+            function changeFolder(){
+                $.ajax({
+                    url: "/json/dummy.json",
+                    type: "GET", 
+                    data:{},
+                    dataType: "json"
+                })
+                .done(function(res) {
+                    makeTable(res)
+                })
+                .fail(function(xhr, status, errorThrown) {
+                })
+                .always(function(xhr, status) {
+                });
+            }
+
+            // 더보기 버튼 클릭
+            function makeMoreEvent(){
                 const documentId =$(this).attr('data-id')
                 html = '';
                 html += `
                 <ul class="table__modal">
-                    <li id="document_name_change">문서이름변경</li>
-                    <li id="document_download">다운로드</li>
-                    <li id="document_move">폴더이동</li>
-                    <li id="document_delete">삭제</li>
+                    <li id="document-name-change">문서이름변경</li>
+                    <li id="document-download">다운로드</li>
+                    <li id="document-move">폴더이동</li>
+                    <li id="document-delete">삭제</li>
                 </ul>
                 `
                 $('.table__modal').length < 1 ? $(this).append(html):$('.table__modal').remove()
@@ -224,7 +327,7 @@
                 $('#document_delete').on('click',alertDelete)
             }
 
-            $(document).on('click','.table__tbody .table__tr .button--outline',manageMoreEvent)
+            $(document).on('click','.table__tbody .table__tr .button--outline',makeMoreEvent)
 
             // 삭제 이벤트
             function alertDelete(){
