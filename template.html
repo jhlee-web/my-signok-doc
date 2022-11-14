@@ -85,74 +85,72 @@
                 </div>
             </div>
             <!-- // 상단헤더 -->
-            <div class="container flex--row">
-                <!-- 메인 컨텐츠 -->
-                <div id="main-content">
-                    <!-- 상단 -->
+            <div class="container">
+                <div class="flex--row flex-justify--between">
                     <button type="button" class="button button--regular button--outline">
                         폴더선택
                     </button>
-                    <div class="flex--row flex-justify--between flex-align--center">
-                        <ul class="tab flex--row">
-                            <li class="tab__item is-active">전체</li>
-                            <li class="tab__item">완료</li>
-                            <li class="tab__item">진행중</li>
-                            <li class="tab__item">만료</li>
-                        </ul>
-                        <button type="button" class="button button--regular">엑셀로 내려받기</button>
+                    <div id="count_load_table" class="select-box select-box--large">
+                        <select class="select-box__select">
+                            <option value="10" selected>10개씩 보기</option>
+                            <option value="30">30개씩 보기</option>
+                            <option value="50">50개씩 보기</option>
+    
+                        </select>
+                        <img class="select-box__icon icon" src="./icon/angle-line.svg" alt="화살표">
                     </div>
-                    <!-- 컨텐츠 테이블 (for문 생성) -->
+                </div>
+                <div class="content-wrap">
                     <ul class="table">
                         <ul class="table__tr">
-                            <li class="table__thead">상태</li>
-                            <li class="table__thead">문서이름</li>
-                            <li class="table__thead">알람</li>
+                            <div class="table__thead">
+                                <input type="checkbox" class="checkbox"
+                                id="">
+                            </div>
+                            <li class="table__thead">템플릿이름</li>
                             <li class="table__thead">위치</li>
-                            <li class="table__thead">마지막 활동시간</li>
+                            <li class="table__thead">등록일</li>
+                            <li class="table__thead">최근 작성시간</li>
                             <li class="table__thead">추가메뉴</li>
                         </ul>
-                    <ul class="table__tbody">
-                </div>
-
-               <!-- 사이드 컨텐츠 (이벤트 때 생성) -->
-                <div id="aside-content" class="container">
-                    <h5>문서 이력</h5>
-                    <ul>
-                        <li>
-                            <p>hong12</p>
-                            <p>(hong1234@naver.com)</p>
-                            <p>서명 2022-12-12 16:50</p>
-                        </li>
-                    </ul>
-                    <button type="button">전체 진행정보 보기</button>
-                    <button type="button">계약서 내용 확인하기</button>
+                        <ul class="table__tbody">
+                            
+                        </ul>
                 </div>
             </div>
         </main>
         <script>
-            makeTable()
+
+
+            $(function(){
+                makeTable()
+            })
+
+            $('#count_load_table').on('change',makeTable)
+
             function makeTable(){
-                for (let i = 0; i < 10; i++){
+                const count = Number($('#count_load_table option:selected').val())
+
+                if($('.table__tbody .table__tr').length > 0) {
+                    $('.table__tbody .table__tr').remove()
+                }
+                for (let i = 0; i < count; i++){
+                    let date = new Date(new Date(2012,0,1).getTime() + Math.random() * (new Date(2012,0,1).getTime() - new Date().getTime()));
                     html = ''
                     html += `
-                    <ul class="table__tr" data-id="${i}">
+                    <ul class="table__tr">
                         <li class="table__td state active">
-                            <img src="">
-                            진행중
+                            <input type="checkbox" class="checkbox"
+                            id="">
                         </li>
-                        <li class="table__td font-weight--medium">해촉증명서
+                        <li class="table__td font-weight--medium">해촉증명서 ${i}
                             <ul>
                                 <li class="table__td--remark">홍길동</li>
                             </ul>
                         </li>
-                        <li class="table__td">
-                            <label class="toggle">
-                                <input type="checkbox" class="toggle__checkbox">
-                                <span class="toggle__slider"></span>
-                            </label>
-                        </li>
                         <li class="table__td table__td--remark">기본 폴더</li>
-                        <li class="table__td table__td--remark">2022-10-11 오후 02:14</li>
+                        <li class="table__td table__td--remark">${date}</li>
+                        <li class="table__td table__td--remark">${date}</li>
                         <li class="table__td">
                             <button type="button" class="button button--outline button--small">
                                 더보기
@@ -165,28 +163,6 @@
             }
 
             $('#tutorial-wrap').hide()
-
-            $(document).on('click','.table__tbody .table__tr',runMoreEvent)
-
-            function run(){
-                console.log('here')
-            }
-
-            function runMoreEvent(){
-                const documentId =$(this).attr('data-id')
-                html = '';
-                html += `
-                <div class="table__modal">
-                    <ul class="container">
-                        <li>문서이름변경</li>
-                        <li>다운로드</li>
-                        <li>폴더이동</li>
-                        <li>삭제</li>
-                    </ul>
-                </div>
-                `
-                $(this).append(html)
-            }
         </script>
         <script src="./js/tutorial.js"></script>
     </body>

@@ -122,6 +122,15 @@
     font-size: 0.875rem;
 }
 
+.table__modal{
+    border-radius: 1rem;
+    background: var(--background-color);
+    color: var(--text-color-800);
+
+    overflow: hidden;
+    position: absolute;
+}
+
 .state.active{
     color: var(--success-color-500);
 }

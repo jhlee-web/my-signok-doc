@@ -138,7 +138,26 @@
 /* container */
 .container{
     padding: 2rem;
+    border: 1px solid black;
 }
+.container.flex--row{
+    padding: 0;
+    gap: 0;
+}
+
+#main-content{
+    width: 100%;
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#aside-content{
+    max-width: 15rem;
+}
+
 
 /* document header */
 .document-header{
