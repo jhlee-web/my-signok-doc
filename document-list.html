@@ -48,50 +48,32 @@
         
         <main class="main">
             <!-- 상단 헤더 -->
-            <div class="document-header">
-                <div class="container">
-                    <p class="body--large font-weight--medium">문서목록</p>
-                    <div class="document-header__right">
-                        <!-- 검색상자 -->
-                        <div class="search-form">
-                            <form class="search-form__form">
-                                <input type="text"
-                                    class="input input--large search-form__input"
-                                    placeholder="검색어를 입력해주세요">
-                                <button type="button"
-                                    class="button button--outline button--regular
-                                            icon-button search-form__button">
-                                    <img class="icon icon--large" src="./icon/search-line.svg" alt="검색">
-                                </button>
-                            </form>
-                        </div>
-                        <!-- // 검색상자 -->
-    
-                        <!-- 튜토+헬프 -->
-                        <div class="group-button">
-                            <button type="button"
-                                class="group-button__base group-button__base--left group-button--large
-                                is-active"
-                                id="tutorial">
-                                <img class="icon icon--large" src="./icon/book-line.svg" alt="튜토리얼">
-                            </button>
-                            <button type="button"
-                                class="group-button__base group-button--large group-button__base--right">
-                                <img class="icon icon--large" src="./icon/help-line.svg" alt="도움말">
-                            </button>
-                        </div>
-                        <!-- // 튜토+헬프 -->
-                    </div>
-                </div>
-            </div>
+            <script>
+                loadHTML("./include/sub_header.html");
+            </script>
+            
             <!-- // 상단헤더 -->
             <div class="container flex--row">
                 <!-- 메인 컨텐츠 -->
                 <div id="main-content">
+
                     <!-- 상단 -->
-                    <button type="button" class="button button--regular button--outline">
-                        폴더선택
-                    </button>
+                    <div class="flex--row">
+                        <button type="button" class="button button--regular button--outline">
+                            폴더선택
+                        </button>
+    
+                        <div id="count_load_table" class="select-box select-box--large">
+                            <select class="select-box__select">
+                                <option value="10" selected>10개씩 보기</option>
+                                <option value="30">30개씩 보기</option>
+                                <option value="50">50개씩 보기</option>
+                            </select>
+                            <img class="select-box__icon icon" src="./icon/angle-line.svg" alt="화살표">
+                        </div>
+                    </div>
+                   
+                    <!-- 상단 2 -->
                     <div class="flex--row flex-justify--between flex-align--center">
                         <ul class="tab flex--row">
                             <li class="tab__item is-active">전체</li>
@@ -101,9 +83,15 @@
                         </ul>
                         <button type="button" class="button button--regular">엑셀로 내려받기</button>
                     </div>
+
+                    
                     <!-- 컨텐츠 테이블 (for문 생성) -->
                     <ul class="table">
                         <ul class="table__tr">
+                            <li class="table__thead">
+                                <input type="checkbox" class="checkbox"
+                                id="checkbox-all">
+                            </li>
                             <li class="table__thead">상태</li>
                             <li class="table__thead">문서이름</li>
                             <li class="table__thead">알람</li>
@@ -130,17 +118,33 @@
             </div>
         </main>
         <script>
-            makeTable()
+             $(function(){
+                makeTable()
+            })
+
+            $('#count_load_table').on('change',makeTable)
+
             function makeTable(){
-                for (let i = 0; i < 10; i++){
+                const count = Number($('#count_load_table option:selected').val())
+                if($('.table__tbody .table__tr').length > 0) {
+                    $('.table__tbody .table__tr').remove()
+                }
+                for (let i = 0; i < count; i++){
+
+                    let date = new Date(new Date(2012,0,1).getTime() + Math.random() * (new Date(2012,0,1).getTime() - new Date().getTime()));
+
                     html = ''
                     html += `
                     <ul class="table__tr" data-id="${i}">
                         <li class="table__td state active">
+                            <input type="checkbox" class="checkbox"
+                            id="">
+                        </li>
+                        <li class="table__td state active">
                             <img src="">
                             진행중
                         </li>
-                        <li class="table__td font-weight--medium">해촉증명서
+                        <li class="table__td font-weight--medium">해촉증명서 ${i}
                             <ul>
                                 <li class="table__td--remark">홍길동</li>
                             </ul>
@@ -152,7 +156,7 @@
                             </label>
                         </li>
                         <li class="table__td table__td--remark">기본 폴더</li>
-                        <li class="table__td table__td--remark">2022-10-11 오후 02:14</li>
+                        <li class="table__td table__td--remark">${date}</li>
                         <li class="table__td">
                             <button type="button" class="button button--outline button--small">
                                 더보기
@@ -166,27 +170,34 @@
 
             $('#tutorial-wrap').hide()
 
-            $(document).on('click','.table__tbody .table__tr',runMoreEvent)
 
-            function run(){
-                console.log('here')
+            // 전체 동의
+            function manageAllCheck(){
+                $(this).prop('checked')==true ?
+                $('.checkbox').prop('checked',true) :
+                $('.checkbox').prop('checked',false)
             }
 
-            function runMoreEvent(){
+            $('#checkbox-all').on('click',manageAllCheck)
+
+            function manageMoreEvent(){
                 const documentId =$(this).attr('data-id')
                 html = '';
                 html += `
-                <div class="table__modal">
-                    <ul class="container">
-                        <li>문서이름변경</li>
-                        <li>다운로드</li>
-                        <li>폴더이동</li>
-                        <li>삭제</li>
-                    </ul>
-                </div>
+                <ul class="table__modal">
+                    <li>문서이름변경</li>
+                    <li>다운로드</li>
+                    <li>폴더이동</li>
+                    <li>삭제</li>
+                </ul>
                 `
-                $(this).append(html)
+                $('.table__modal').length < 1 ?
+                $(this).append(html):
+                $('.table__modal').remove()
             }
+
+            $(document).on('click','.table__tbody .table__tr .button--outline',manageMoreEvent)
+
         </script>
         <script src="./js/tutorial.js"></script>
     </body>
