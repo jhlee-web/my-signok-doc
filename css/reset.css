@@ -50,6 +50,7 @@ table {
 button{
 	background-color: unset;
 	border: none;
+    cursor: pointer;
 }
 
 select::-ms-expand { 

@@ -1,15 +1,13 @@
 <nav data-fold="false" class="nav">
-    <div class="container">
-        <h1 class="nav-logo">
-            <a>
-                <img alt="로고">
-            </a>
-        </h1>
-        <button class="button button--regular icon-button"
-            id="nav-fold-button">
-            <img class="icon nav-item__icon" src="../icon/menu-line.svg"></img>
-        </button>
-    </div>
+    <h1 class="nav-logo">
+        <a>
+            <img alt="로고">
+        </a>
+    </h1>
+    <button class="button button--regular icon-button"
+        id="nav-fold-button">
+        <img class="icon nav-item__icon" src="../icon/menu-line.svg"></img>
+    </button>
     <button type="button"
         class="button button--primary button--regular">
         계약 시작하기
@@ -119,8 +117,8 @@
         </li>
         <li data-nav="toggle-theme">
             <a href="javascript:void(0)" class="nav-item" id="toggle-theme">
-                <img class="icon nav-item__icon" src="../icon/home-line.svg"></img>
-                <span class="body--small">다크모드</span>
+                <img class="icon nav-item__icon" src="../icon/sun-line.svg"></img>
+                <span class="body--small">라이트모드</span>
             </a>
         </li>
     </ul>
@@ -158,47 +156,52 @@
         }
     }
 
+    
+
+    // Theme Setting
+    let loadedTheme =localStorage.getItem('data-theme')
+    let currentTheme={
+        'data-theme':'light',
+        'icon':'sun',
+        'content':'라이트모드'
+    }
 
     $(function(){
-        setTheme()
+        setTheme(loadedTheme)
         setNavActive()
     })
-    function setTheme(){
-        let loadedTheme =localStorage.getItem('data-theme')
-        switch(loadedTheme){
-            case undefined || null:
-                console.log('ehere')
-                $('html').attr('data-theme','light')
+
+    function setTheme(setTheme){
+        switch(setTheme){
+            case undefined || null || 'light':
+                currentTheme['data-theme'] = 'light';
+                currentTheme['icon'] = 'sun'
+                currentTheme['content'] = '라이트모드'
                 break;
-            case 'light':
-                $('html').attr('data-theme','light')
-                break;
+
             case 'dark':
-                $('html').attr('data-theme','dark')
+                currentTheme['data-theme'] = 'dark';
+                currentTheme['icon'] = 'moon'
+                currentTheme['content'] = '다크모드'
                 break;
         }
+
+        $('#toggle-theme span').text(currentTheme['content'])
+        $('#toggle-theme').find('img').attr('src',`../icon/${currentTheme['icon']}-line.svg`)
+        localStorage.setItem('data-theme',setTheme);
+
+        $('html').attr('data-theme',currentTheme['data-theme'])
     }
 
     function toggleTheme(){
         loadedTheme =  localStorage.getItem('data-theme');
-        switch(loadedTheme){
-            case undefined || null:
-                currentTheme = 'dark';
-                break;
-            case 'light':
-                currentTheme = 'dark';
-                break;
-            case 'dark':
-                currentTheme = 'light';
-                break;
-        }
-
-        localStorage.setItem('data-theme',currentTheme)
-        $('html').attr('data-theme',currentTheme)
+        setTheme(loadedTheme == "dark" ? "light" : "dark");
     }
 
     $('#toggle-theme').on('click',toggleTheme)
 
+
+    // Nav Setting
     function setNavActive(){
         const url = $(location).attr('href')
         const currentFileName = url.split('/').pop().replace('.html','')

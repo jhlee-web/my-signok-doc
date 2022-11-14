@@ -86,7 +86,6 @@
 
 
 /* table (ul + li) */
-
 .table{
     display: flex;
     flex-direction: column;
@@ -104,13 +103,14 @@
 }
 
 .table__td, .table__thead{
-    width: 100%;
+    width: auto;
 }
 .table__thead{
     display: flex;
     flex-direction: row;
     
     color: var(--text-color-400);
+    font-size: 0.875rem;
 }
 
 .table__td,.table__thead{
@@ -137,6 +137,7 @@
     min-width: 8rem;
 
     border: 1px solid var(--theme-color-400);
+    box-shadow: var(--box-shadow--3);
 
     z-index: 1;
 }

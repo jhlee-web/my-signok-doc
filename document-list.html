@@ -119,34 +119,59 @@
         </main>
         <script>
              $(function(){
-                makeTable()
+                loadData()
             })
 
-            $('#count_load_table').on('change',makeTable)
+            $('#count_load_table').on('change',loadData)
 
-            function makeTable(){
+            function loadData(){
+                $.ajax({
+                    url: "/json/dummy.json",
+                    type: "GET", 
+                    dataType: "json"
+                })
+                .done(function(res) {
+                    makeTable(res)
+                })
+                .fail(function(xhr, status, errorThrown) {
+                })
+                .always(function(xhr, status) {
+                });
+            }
+
+            function makeTable(data){
                 const count = Number($('#count_load_table option:selected').val())
                 if($('.table__tbody .table__tr').length > 0) {
                     $('.table__tbody .table__tr').remove()
                 }
                 for (let i = 0; i < count; i++){
+                    let friends = [];
+                    for(let a = 0; a < data[i].friends.length; a++){
+                        friends.push(data[i].friends[a].name)
+                    }
 
-                    let date = new Date(new Date(2012,0,1).getTime() + Math.random() * (new Date(2012,0,1).getTime() - new Date().getTime()));
+                    if(data[i].isActive == false){
+                        state = '만료'
+                    }
+                    else{
+                        state = '진행중'
+                    }
 
                     html = ''
                     html += `
-                    <ul class="table__tr" data-id="${i}">
+                    <ul class="table__tr" data-id="${data[i]._id}">
                         <li class="table__td state active">
                             <input type="checkbox" class="checkbox"
                             id="">
                         </li>
                         <li class="table__td state active">
                             <img src="">
-                            진행중
+                            ${state}
                         </li>
-                        <li class="table__td font-weight--medium">해촉증명서 ${i}
+                        <li class="table__td font-weight--medium">
+                            <span class="document-title">${data[i].guid}</span>
                             <ul>
-                                <li class="table__td--remark">홍길동</li>
+                                <li class="table__td--remark">${friends}</li>
                             </ul>
                         </li>
                         <li class="table__td">
@@ -156,10 +181,10 @@
                             </label>
                         </li>
                         <li class="table__td table__td--remark">기본 폴더</li>
-                        <li class="table__td table__td--remark">${date}</li>
+                        <li class="table__td table__td--remark">${data[i].registered}</li>
                         <li class="table__td">
-                            <button type="button" class="button button--outline button--small">
-                                더보기
+                            <button type="button" class="button button--outline icon-button button--small">
+                                <img class="icon" src="/icon/ellipsis-horizontal-line.svg">
                             </button>
                         </li>
                     </ul>
@@ -185,21 +210,54 @@
                 html = '';
                 html += `
                 <ul class="table__modal">
-                    <li>문서이름변경</li>
-                    <li>다운로드</li>
-                    <li>폴더이동</li>
-                    <li>삭제</li>
+                    <li id="document_name_change">문서이름변경</li>
+                    <li id="document_download">다운로드</li>
+                    <li id="document_move">폴더이동</li>
+                    <li id="document_delete">삭제</li>
                 </ul>
                 `
-                $('.table__modal').length < 1 ?
-                $(this).append(html):
-                $('.table__modal').remove()
+                $('.table__modal').length < 1 ? $(this).append(html):$('.table__modal').remove()
+
+                $('#document_name_change').on('click',alertDelete)
+                $('#document_download').on('click',alertDelete)
+                $('#document_move').on('click',alertDelete)
+                $('#document_delete').on('click',alertDelete)
             }
 
             $(document).on('click','.table__tbody .table__tr .button--outline',manageMoreEvent)
 
+            // 삭제 이벤트
+            function alertDelete(){
+                const documentTitle = $(this).parents('.table__tr').find('.document-title').text()
+                html = '';
+                html += `
+                <div class="modal">
+                    <div class="modal__header">
+                        <p class="modal__title">
+                            <img src="/icon/exclamation-triangle-line.svg" alt="닫기" class="icon icon--large icon--warning">
+                            휴지통으로 보내기
+                        </p>
+                        <button type="button" class="icon-button">
+                            <img src="/icon/close-line.svg" alt="닫기" class="icon modal__close-button">
+                        </button>
+                    </div>
+                    <div class="modal__content">
+                        <span class="font-weight--medium">${documentTitle}</span>
+                        를 휴지통으로 보낼까요?
+                    </div>
+                    <div class="modal__button-wrap">
+                        <button type="button" class="button--primary button--large">확인</button>
+                    </div>
+                </div>
+                `
+                $('.main').append(html)
+            }
+
+            
+
         </script>
         <script src="./js/tutorial.js"></script>
+        <script src="./js/common.js"></script>
     </body>
     
 </html>
