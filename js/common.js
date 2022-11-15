@@ -7,3 +7,9 @@ $('.tab__item').on('click',function(){
     $('.tab__item').removeClass('is-active')
     $(this).addClass('is-active')
 })
+
+
+
+function getUrl(){
+    return param = new URLSearchParams(location.search).get('page')
+}

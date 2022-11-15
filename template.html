@@ -57,7 +57,7 @@
                     <button type="button" class="button button--regular button--outline">
                         폴더선택
                     </button>
-                    <div id="count_load_table" class="select-box select-box--large">
+                    <div id="count-load-table" class="select-box select-box--large">
                         <select class="select-box__select">
                             <option value="10" selected>10개씩 보기</option>
                             <option value="30">30개씩 보기</option>
@@ -90,10 +90,10 @@
                 makeTable()
             })
 
-            $('#count_load_table').on('change',makeTable)
+            $('#count-load-table').on('change',makeTable)
 
             function makeTable(){
-                const count = Number($('#count_load_table option:selected').val())
+                const count = Number($('#count-load-table option:selected').val())
 
                 if($('.table__tbody .table__tr').length > 0) {
                     $('.table__tbody .table__tr').remove()

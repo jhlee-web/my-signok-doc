@@ -1,18 +1,21 @@
 <nav data-fold="false" class="nav">
-    <h1 class="nav-logo">
-        <a>
-            <img alt="로고">
-        </a>
-    </h1>
-    <button class="button button--regular icon-button"
-        id="nav-fold-button">
-        <img class="icon nav-item__icon" src="../icon/menu-line.svg"></img>
-    </button>
+    <div class="nav__top">
+        <h1 class="nav-logo">
+            <a>
+                <img alt="로고">
+            </a>
+        </h1>
+        <button class="button button--regular icon-button"
+            id="nav-fold-button">
+            <img class="icon nav-item__icon" src="../icon/menu-line.svg"></img>
+        </button>
+    </div>
+    
     <button type="button"
         class="button button--primary button--regular">
         계약 시작하기
     </button>
-    <ul class="nav-list">
+    <ul class="nav__list">
         <li data-nav="dashboard">
             <a href="../index.html" class="nav-item">
                 <img class="icon nav-item__icon" src="../icon/home-line.svg"></img>
@@ -139,7 +142,6 @@
 
     function manageNavContainer(){
         let foldedNav = $('.nav').attr('data-fold')
-        console.log(foldedNav)
 
         if(foldedNav=='false'){
             $('.nav').attr('data-fold',true)
@@ -204,7 +206,7 @@
     // Nav Setting
     function setNavActive(){
         const url = $(location).attr('href')
-        const currentFileName = url.split('/').pop().replace('.html','')
+        const currentFileName = url.split('/').pop().split('.')[0]
 
         if(currentFileName == 'index'){
             $(`.nav li[data-nav=dashboard] a`).addClass('is-active')

@@ -58,13 +58,13 @@
                 <div id="main-content">
 
                     <!-- 상단 -->
-                    <div class="flex--row">
+                    <div class="flex--row is-change">
                         <button type="button" class="button button--regular button--outline"
                         id="change-folder">
                             폴더선택
                         </button>
     
-                        <div id="count_load_table" class="select-box select-box--large">
+                        <div id="count-load-table" class="select-box select-box--large">
                             <select class="select-box__select">
                                 <option value="10" selected>10개씩 보기</option>
                                 <option value="30">30개씩 보기</option>
@@ -89,23 +89,23 @@
                             </button>
                         </div>
                         <div id="selected-top-box" class="table-top__box is-hide">
-                            <div class="talbe-top__tab tab">
-                                <p class="tab__item font-weight--medium">
+                            <div class="table-top__tab tab">
+                                <p class="font-weight--medium">
                                     선택한 문서
                                     <span id="selected-count" class="">(1)</span>
                                 </p>
-                                <button type="button" class="button button--text tab__item"
+                                <button type="button" class="button button--text"
                                 id="document-move">
                                     <img src="/icon/folder-line.svg" class="icon">
                                     폴더 이동하기
                                 </button>
-                                <button type="button" class="button button--text tab__item"
+                                <button type="button" class="button button--text"
                                 id="document-delete">
                                     <img src="/icon/trash-line.svg" class="icon">
                                     휴지통으로 보내기
                                 </button>
                             </div>
-                            <button type="button" class="button button--text tab__item"
+                            <button type="button" class="button button--text"
                             id="cancel-selected">
                                 <img src="/icon/close-line.svg" class="icon">
                                 선택 취소
@@ -116,53 +116,53 @@
                     
                     <!-- 컨텐츠 테이블 (for문 생성) -->
                     <ul class="table">
-                        <ul class="table__tr">
-                            <li class="table__thead">
+                        <ul class="table__thead">
+                            <li class="table__td width-10">
                                 <input type="checkbox" class="checkbox"
                                 id="checkbox-all">
                             </li>
-                            <li class="table__thead">상태</li>
-                            <li class="table__thead">문서이름</li>
-                            <li class="table__thead">알람</li>
-                            <li class="table__thead">위치</li>
-                            <li class="table__thead">마지막 활동시간</li>
-                            <li class="table__thead">추가메뉴</li>
+                            <li class="table__td width-20">상태</li>
+                            <li class="table__td width-100">문서이름</li>
+                            <li class="table__td width-20">알람</li>
+                            <li class="table__td width-20">위치</li>
+                            <li class="table__td width-25">마지막 활동시간</li>
+                            <li class="table__td width-10">추가메뉴</li>
                         </ul>
                     <ul class="table__tbody">
                 </div>
 
                <!-- 사이드 컨텐츠 (이벤트 때 생성) -->
-                <div id="aside-content" class="container is-hide">
-                    <h5>문서 이력</h5>
-                    <ul>
-                        <li>
-                            <p>hong12</p>
-                            <p>(hong1234@naver.com)</p>
-                            <p>서명 2022-12-12 16:50</p>
-                        </li>
-                    </ul>
-                    <button type="button">전체 진행정보 보기</button>
-                    <button type="button">계약서 내용 확인하기</button>
-                </div>
+                
             </div>
         </main>
         <script>
-             $(function(){
-                loadData()
-            })
+            let breakpoint = 10
             
+             $(function(){
+                loadData(breakpoint)
+                getUrl()
+            })
+
             // 갯수 바뀔 때마다 테이블 새로 불러오기
-            $('#count_load_table').on('change',loadData)
+            $('#count-load-table').on('change',function(){
+                breakpoint = $('#count-load-table option:selected').val()
+                loadData(breakpoint)
+            })
 
             // 데이터 로드
-            function loadData(){
+            function loadData(breakpoint){
                 $.ajax({
                     url: "/json/dummy.json",
                     type: "GET", 
+                    data:{},
                     dataType: "json"
                 })
                 .done(function(res) {
-                    makeTable(res)
+                    let total = res.length;
+                    let paginationLength = Math.ceil(Number(total) / Number(breakpoint));
+
+                    makePagination(paginationLength);
+                    makeTable(res,breakpoint)
                 })
                 .fail(function(xhr, status, errorThrown) {
                 })
@@ -170,60 +170,115 @@
                 });
             }
             
+            
+            // 쿼리에서 현재 페이지 위치 추출
+
+            function makePagination(paginationLength){
+                $('.main').append(`
+                    <ul class="pagination">
+                        <li class="pagination__item pagination__icon">이전</li>
+                        <ul id="pagination-index-wrap" class="pagination"></ul>
+                        <li class="pagination__item pagination__icon">다음</li>
+                    </ul>
+                `)
+
+                let minPage = 1;                    // 시작페이지
+                let maxPage = paginationLength;     // 최대페이지 (단, 10개 미만일 경우 total값)
+                let perPage = 10;                   // 뷰에 보이는 페이지 개수
+                let currentPage = param;            // 현재 페이지 (url 추출)
+
+                if(paginationLength > 10){
+                    if(paginationLength % 10 > 0) {
+                        minPage = Math.floor(paginationLength / 10) * 10
+                        maxPage = minPage + 9
+                    }
+                    else{
+                        maxPage = paginationLength / 10 * 10
+                        minPage = maxPage - 9
+                    }
+                }
+
+                for(let i = minPage; i <= maxPage; i++ ){
+                    html = ''
+
+                    if( i == currentPage){
+                        html += `<li class="pagination__item is-active" data-page_num=${i}>${i}</li>`
+                    }
+                    else{
+                        html += `
+                            <li class="pagination__item" data-page_num=${i}>${i}</li>
+                        `
+                    }
+                    $('#pagination-index-wrap').append(html)
+                }
+            }
+
 
             // 테이블 만들기
-            function makeTable(data){
-                const count = Number($('#count_load_table option:selected').val())
+            function makeTable(data,breakpoint){
 
                 // 이미 테이블이 생성된 경우 테이블 삭제 후 재생성
                 if($('.table__tbody .table__tr').length > 0) {
                     $('.table__tbody .table__tr').remove()
                 }
 
-                for (let i = 0; i < count; i++){
+                for (let i = 0; i < breakpoint; i++){
+
+                    if(i > data.length) break;
+
                     let friends = [];
                     for(let a = 0; a < data[i].friends.length; a++){
                         friends.push(data[i].friends[a].name)
                     }
 
                     if(data[i].isActive == false){
-                        state = '만료'
+                        state = `
+                        <li class="table__td width-20 state success">
+                            <img src="/icon/hourglass-line.svg" class="icon">
+                            진행중
+                        </li>`
                     }
                     else{
-                        state = '진행중'
+                        state = `
+                        <li class="table__td width-20 state ban">
+                            <img src="/icon/ban-line.svg" class="icon">
+                            만료
+                        </li>`
                     }
 
                     html = ''
                     html += `
-                    <ul class="table__tr" data-id="${data[i]._id}">
-                        <li class="table__td state active">
-                            <input type="checkbox" class="checkbox"
-                            id="">
-                        </li>
-                        <li class="table__td state active">
-                            <img src="">
+                    <li class="table__tr" data-id="${data[i]._id}">
+                        <ul class="flex--row is-change width-100">
+                            <li class="table__td width-10">
+                                <input type="checkbox" class="checkbox"
+                                id="">
+                            </li>
                             ${state}
+                            <li class="table__td width-100  font-weight--medium">
+                                <p class="table__td--title">${data[i].guid}</p>
+                                <ul>
+                                    <li class="table__td--remark">${friends}</li>
+                                </ul>
+                            </li>
+                            <li class="table__td width-20">
+                                <label class="toggle--small toggle">
+                                    <input type="checkbox" class="toggle__checkbox">
+                                    <span class="toggle__slider"></span>
+                                </label>
+                            </li>
+                            <li class="table__td width-20 table__td--remark">기본폴더</li>
+                            <li class="table__td width-25 table__td--remark">${data[i].registered}</li>
                         </li>
-                        <li class="table__td font-weight--medium">
-                            <span class="document-title">${data[i].guid}</span>
-                            <ul>
-                                <li class="table__td--remark">${friends}</li>
-                            </ul>
-                        </li>
-                        <li class="table__td">
-                            <label class="toggle">
-                                <input type="checkbox" class="toggle__checkbox">
-                                <span class="toggle__slider"></span>
-                            </label>
-                        </li>
-                        <li class="table__td table__td--remark">기본 폴더</li>
-                        <li class="table__td table__td--remark">${data[i].registered}</li>
-                        <li class="table__td">
-                            <button type="button" class="button button--outline icon-button button--small">
-                                <img class="icon" src="/icon/ellipsis-horizontal-line.svg">
-                            </button>
-                        </li>
-                    </ul>
+                        </ul>
+                        <ul class="table__tr--right">
+                            <li class="table__td width-10">
+                                <button type="button" class="button button--outline icon-button button--small">
+                                    <img class="icon" src="/icon/ellipsis-horizontal-line.svg">
+                                </button>
+                            </li>
+                        </ul>
+                    </li>
                     `
                     $('.table__tbody').append(html)
                 }
@@ -427,7 +482,25 @@
                 $('.main').append(html)
             }
 
-            
+            $(document).on('click','.table__tr',function(){
+                if($('#aside-content').length > 0) $('#aside-content').remove();
+
+                html = '';
+                html += `
+                <div id="aside-content" class="container">
+                    <h5>문서 이력</h5>
+                    <ul>
+                        <li>
+                            <p>hong12</p>
+                            <p>(hong1234@naver.com)</p>
+                            <p>서명 2022-12-12 16:50</p>
+                        </li>
+                    </ul>
+                    <button type="button">전체 진행정보 보기</button>
+                    <button type="button">계약서 내용 확인하기</button>
+                </div>`
+                $('.main .container.flex--row').append(html)
+            })
 
         </script>
         <script src="./js/tutorial.js"></script>

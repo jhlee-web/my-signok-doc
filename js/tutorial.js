@@ -117,7 +117,6 @@ function makeTutorialDark(){
 
     $('.tutorial__point-box--dark[data-direction="top"]').css({
         'height':window.pageYOffset + target.getBoundingClientRect().top,
-        'top':0
     })
     $('.tutorial__point-box--dark[data-direction="bottom"]').css({
         'top':target.getBoundingClientRect().bottom
@@ -125,12 +124,11 @@ function makeTutorialDark(){
 
     $('.tutorial__point-box--dark[data-direction="left"]').css({
         'width':window.pageXOffset + target.getBoundingClientRect().left,
-        'left':0
     })
 
     $('.tutorial__point-box--dark[data-direction="right"]').css({
-        'width':window.pageXOffset - target.offsetWidth,
-        'left': target.getBoundingClientRect().right,
+        'width':$(window).width() - target.getBoundingClientRect().right,
+        'left':target.getBoundingClientRect().right
     })
 
 }
