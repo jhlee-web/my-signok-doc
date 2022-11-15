@@ -48,42 +48,9 @@
         
         <main class="main">
             <!-- 상단 헤더 -->
-            <div class="document-header">
-                <div class="container">
-                    <p class="body--large font-weight--medium">문서목록</p>
-                    <div class="document-header__right">
-                        <!-- 검색상자 -->
-                        <div class="search-form">
-                            <form class="search-form__form">
-                                <input type="text"
-                                    class="input input--large search-form__input"
-                                    placeholder="검색어를 입력해주세요">
-                                <button type="button"
-                                    class="button button--outline button--regular
-                                            icon-button search-form__button">
-                                    <img class="icon icon--large" src="./icon/search-line.svg" alt="검색">
-                                </button>
-                            </form>
-                        </div>
-                        <!-- // 검색상자 -->
-    
-                        <!-- 튜토+헬프 -->
-                        <div class="group-button">
-                            <button type="button"
-                                class="group-button__base group-button__base--left group-button--large
-                                is-active"
-                                id="tutorial">
-                                <img class="icon icon--large" src="./icon/book-line.svg" alt="튜토리얼">
-                            </button>
-                            <button type="button"
-                                class="group-button__base group-button--large group-button__base--right">
-                                <img class="icon icon--large" src="./icon/help-line.svg" alt="도움말">
-                            </button>
-                        </div>
-                        <!-- // 튜토+헬프 -->
-                    </div>
-                </div>
-            </div>
+            <script>
+                loadHTML("./include/sub_header.html");
+            </script>
             <!-- // 상단헤더 -->
             <div class="container">
                 <div class="flex--row flex-justify--between">

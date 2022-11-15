@@ -75,14 +75,42 @@
                     </div>
                    
                     <!-- 상단 2 -->
-                    <div class="flex--row flex-justify--between flex-align--center">
-                        <ul class="tab flex--row">
-                            <li class="tab__item is-active">전체</li>
-                            <li class="tab__item">완료</li>
-                            <li class="tab__item">진행중</li>
-                            <li class="tab__item">만료</li>
-                        </ul>
-                        <button type="button" class="button button--regular">엑셀로 내려받기</button>
+                    <div class="table-top">
+                        <div id="default-top-box" class="table-top__box">
+                            <ul class="table-top__tab tab">
+                                <li class="tab__item is-active">전체</li>
+                                <li class="tab__item">완료</li>
+                                <li class="tab__item">진행중</li>
+                                <li class="tab__item">만료</li>
+                            </ul>
+                            <button type="button" class="button button--regular">
+                                <img src="/icon/file_type_excel2.svg" class="icon">
+                                엑셀로 내려받기
+                            </button>
+                        </div>
+                        <div id="selected-top-box" class="table-top__box is-hide">
+                            <div class="talbe-top__tab tab">
+                                <p class="tab__item font-weight--medium">
+                                    선택한 문서
+                                    <span id="selected-count" class="">(1)</span>
+                                </p>
+                                <button type="button" class="button button--text tab__item"
+                                id="document-move">
+                                    <img src="/icon/folder-line.svg" class="icon">
+                                    폴더 이동하기
+                                </button>
+                                <button type="button" class="button button--text tab__item"
+                                id="document-delete">
+                                    <img src="/icon/trash-line.svg" class="icon">
+                                    휴지통으로 보내기
+                                </button>
+                            </div>
+                            <button type="button" class="button button--text tab__item"
+                            id="cancel-selected">
+                                <img src="/icon/close-line.svg" class="icon">
+                                선택 취소
+                            </button>
+                        </div>
                     </div>
 
                     
@@ -104,7 +132,7 @@
                 </div>
 
                <!-- 사이드 컨텐츠 (이벤트 때 생성) -->
-                <div id="aside-content" class="container">
+                <div id="aside-content" class="container is-hide">
                     <h5>문서 이력</h5>
                     <ul>
                         <li>
@@ -122,9 +150,11 @@
              $(function(){
                 loadData()
             })
-
+            
+            // 갯수 바뀔 때마다 테이블 새로 불러오기
             $('#count_load_table').on('change',loadData)
 
+            // 데이터 로드
             function loadData(){
                 $.ajax({
                     url: "/json/dummy.json",
@@ -139,12 +169,17 @@
                 .always(function(xhr, status) {
                 });
             }
+            
 
+            // 테이블 만들기
             function makeTable(data){
                 const count = Number($('#count_load_table option:selected').val())
+
+                // 이미 테이블이 생성된 경우 테이블 삭제 후 재생성
                 if($('.table__tbody .table__tr').length > 0) {
                     $('.table__tbody .table__tr').remove()
                 }
+
                 for (let i = 0; i < count; i++){
                     let friends = [];
                     for(let a = 0; a < data[i].friends.length; a++){
@@ -194,29 +229,56 @@
                 }
             }
 
+            // 튜토리얼 기본 숨기기
             $('#tutorial-wrap').hide()
 
 
             // 전체 동의
+            $('#checkbox-all').on('click',manageAllCheck)
+
             function manageAllCheck(){
                 $(this).prop('checked')==true ?
                 $('.checkbox').prop('checked',true) :
                 $('.checkbox').prop('checked',false)
             }
 
-            $('#checkbox-all').on('click',manageAllCheck)
+            // 체크박스 이벤트
+            $(document).on('click','.checkbox',function(){
+                let count = $('.checkbox').filter(':checked').length;
+                checkEvent(count)
+            })
+
+            function checkEvent(count){
+                if(count && count > 0){
+                    $('.table-top').addClass('is-active')
+                    $('#default-top-box').addClass('is-hide')
+                    $('#selected-top-box').removeClass('is-hide')
+
+                    $('#selected-count').text(`(${count})`)
+
+                    $('#document-delete').on('click',function(){
+                        title = '선택한 문서'
+                        makeDeleteModal(title)
+                    })
+                }
+                else{
+                    $('.checkbox').prop('checked',false)
+                    $('.table-top').removeClass('is-active')
+                    $('#default-top-box').removeClass('is-hide')
+                    $('#selected-top-box').addClass('is-hide')
+                }
+            }
+
+            $('#cancel-selected').on('click',function(){
+                checkEvent(null)
+            })
 
 
-            /**
-             * 폴더 변경: no-filter. api data 전송g하고 makeTable() 실행
-             * 
-            */
+            // 폴더변경 클릭 이벤트
+            $('#change-folder, #document-move, #document-move-this').on('click',makeFolderModal)
 
-            // 폴더변경 클릭
-            $('#change-folder').on('click',makeFolderModal)
             function makeFolderModal(){
-
-            html = '';
+                html = '';
                 html += `
                 <div class="modal">
                     <div class="modal__header">
@@ -235,17 +297,21 @@
                             <img class="icon icon" src="./icon/search-line.svg" alt="검색">
                         </div>
                         <ul class="modal__list">
-                            <li class="felx--row flex-align--center is-active"> 
+                            <li class="list-item is-active"> 
                                 <img class="icon " src="./icon/folder-open-solid.svg" alt="현재폴더">
                                 전체 폴더 보기
                             </li>
-                            <li class="felx--row flex-align--center"> 
+                            <li class="list-item "> 
                                 <img class="icon " src="./icon/folder-line.svg" alt="현재폴더">
                                 기본 폴더
                             </li>
-                            <li class="felx--row flex-align--center"> 
+                            <li class="list-item"> 
                                 <img class="icon " src="./icon/folder-line.svg" alt="현재폴더">
                                 기존 사용 서식
+                                <div class="flex--row align-item-center">
+                                    <button type="button">삭제</button>
+                                    <button type="button">완료</button>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -258,6 +324,7 @@
                 $('.main').append(html)
             }
 
+            // 새 폴더 만들기
             $(document).on('click','#create-new-folder',createNewFolder)
             function createNewFolder(){
                 html = '';
@@ -290,7 +357,7 @@
             }
 
             
-            
+            // 폴더 변경하기
             function changeFolder(){
                 $.ajax({
                     url: "/json/dummy.json",
@@ -307,31 +374,35 @@
                 });
             }
 
+
             // 더보기 버튼 클릭
             function makeMoreEvent(){
                 const documentId =$(this).attr('data-id')
                 html = '';
                 html += `
                 <ul class="table__modal">
-                    <li id="document-name-change">문서이름변경</li>
-                    <li id="document-download">다운로드</li>
-                    <li id="document-move">폴더이동</li>
-                    <li id="document-delete">삭제</li>
+                    <li id="document-name-change-this">문서이름변경</li>
+                    <li id="document-download-this">다운로드</li>
+                    <li id="document-move-this">폴더이동</li>
+                    <li id="document-delete-this">삭제</li>
                 </ul>
                 `
                 $('.table__modal').length < 1 ? $(this).append(html):$('.table__modal').remove()
 
-                $('#document_name_change').on('click',alertDelete)
-                $('#document_download').on('click',alertDelete)
-                $('#document_move').on('click',alertDelete)
-                $('#document_delete').on('click',alertDelete)
+                $('#document-name-change-this').on('click',makeDeleteModal)
+                $('#document-download-this').on('click',makeDeleteModal)
+                $('#document-move-this').on('click',makeFolderModal)
+                $('#document-delete-this').on('click',function(){
+                    const documentTitle = $(this).parents('.table__tr').find('.document-title').text()
+                    makeDeleteModal(documentTitle)
+                })
             }
 
             $(document).on('click','.table__tbody .table__tr .button--outline',makeMoreEvent)
 
             // 삭제 이벤트
-            function alertDelete(){
-                const documentTitle = $(this).parents('.table__tr').find('.document-title').text()
+            function makeDeleteModal(string){
+                console.log('here')
                 html = '';
                 html += `
                 <div class="modal">
@@ -345,7 +416,7 @@
                         </button>
                     </div>
                     <div class="modal__content">
-                        <span class="font-weight--medium">${documentTitle}</span>
+                        <span class="font-weight--medium">${string}</span>
                         를 휴지통으로 보낼까요?
                     </div>
                     <div class="modal__button-wrap">

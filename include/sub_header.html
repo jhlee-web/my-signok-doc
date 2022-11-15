@@ -1,6 +1,6 @@
 <div class="document-header">
     <div class="container">
-        <p id="document_title" class="body--large font-weight--medium">문서목록</p>
+        <p id="documnet-title" class="body--large font-weight--medium"></p>
         <div class="document-header__right">
             <!-- 검색상자 -->
             <div class="search-form">
@@ -20,8 +20,7 @@
             <!-- 튜토+헬프 -->
             <div class="group-button">
                 <button type="button"
-                    class="group-button__base group-button__base--left group-button--large
-                    is-active"
+                    class="group-button__base group-button__base--left group-button--large"
                     id="tutorial">
                     <img class="icon icon--large" src="./icon/book-line.svg" alt="튜토리얼">
                 </button>
@@ -39,7 +38,7 @@
 
     function changeTitle(){
         let currentTitle = $('.is-active span').text()
-        $('#document_title').text(currentTitle)
+        $('#documnet-title').text(currentTitle)
     }
     
 
