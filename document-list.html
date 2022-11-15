@@ -482,25 +482,30 @@
                 $('.main').append(html)
             }
 
-            $(document).on('click','.table__tr',function(){
+            $(document).on('click','.table__tr',makeAsideContent)
+            function makeAsideContent(){
                 if($('#aside-content').length > 0) $('#aside-content').remove();
+                else{
+                    html = '';
+                    html += `
+                    <div id="aside-content" class="container">
+                        <h5>문서 이력</h5>
+                        <ul>
+                            <li>
+                                <p>hong12</p>
+                                <p>(hong1234@naver.com)</p>
+                                <p>서명 2022-12-12 16:50</p>
+                            </li>
+                        </ul>
+                        <button type="button">전체 진행정보 보기</button>
+                        <button type="button">계약서 내용 확인하기</button>
+                    </div>`
+                    $('.main .container.flex--row').append(html)
+                }
+            }
 
-                html = '';
-                html += `
-                <div id="aside-content" class="container">
-                    <h5>문서 이력</h5>
-                    <ul>
-                        <li>
-                            <p>hong12</p>
-                            <p>(hong1234@naver.com)</p>
-                            <p>서명 2022-12-12 16:50</p>
-                        </li>
-                    </ul>
-                    <button type="button">전체 진행정보 보기</button>
-                    <button type="button">계약서 내용 확인하기</button>
-                </div>`
-                $('.main .container.flex--row').append(html)
-            })
+            
+
 
         </script>
         <script src="./js/tutorial.js"></script>

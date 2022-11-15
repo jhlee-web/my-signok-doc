@@ -438,3 +438,29 @@
         padding: 2rem 1rem;
     }
 }
+
+#aside-content{
+    transform: translateX(100%);
+    animation: run 2s ease-in-out .1s forwards;
+}
+@keyframes run{
+    from{
+        width:0%;
+        transform: translateX(100%);
+    }
+    to{
+        width: 100%;
+        transform: translateX(0%);
+    }
+}
+
+@media all and (max-width:480px){
+    #aside-content{
+        position: absolute;
+        right: 0;;
+        top: 10rem;
+        min-height: calc(100vh - 10rem);
+        height: 100%;
+        background: var(--background-color);
+    }
+}
