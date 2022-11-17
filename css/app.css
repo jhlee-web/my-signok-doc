@@ -395,11 +395,19 @@
     filter: var(--filter-text-400);
 }
 
-.modal__list li{
+.modal__list{
+    display: flex;
+    flex-direction: column;
+    gap:.5rem
+}
+.modal__list .list-item{
     padding: .5rem 1.25rem;
 }
-.modal__list li .icon{
+.modal__list .list-item .icon{
     filter: var(--filter-text-400);
+}
+.modal__list .list-item[data-id="*"]{
+    font-weight: bold;
 }
 
 .modal__list li.is-active{
@@ -425,7 +433,6 @@
 
 @media all and (max-width:480px){
     .modal{
-
         position: fixed;
         width:calc(100vw - 2rem);
         min-width: unset;
@@ -440,18 +447,17 @@
 }
 
 #aside-content{
-    transform: translateX(100%);
-    animation: run 2s ease-in-out .1s forwards;
+    width: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .4s ease-in-out ;
+
 }
-@keyframes run{
-    from{
-        width:0%;
-        transform: translateX(100%);
-    }
-    to{
-        width: 100%;
-        transform: translateX(0%);
-    }
+#aside-content.is-active{
+    width: 20rem;
+    transform: scaleX(1);
+    transform-origin: right;
+    transition: transform .4s ease-in-out ;
 }
 
 @media all and (max-width:480px){
