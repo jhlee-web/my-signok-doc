@@ -525,6 +525,8 @@ option{
     border-radius: 0 .5rem .5rem 0 ;
 }
 
+
+
 #tutorial.is-active{
     border-color: var(--focus-color-500);
 }

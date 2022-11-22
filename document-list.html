@@ -133,15 +133,13 @@
                 </div>
 
                <!-- 사이드 컨텐츠 (이벤트 때 생성) -->
-                <div id="aside-content" class="container">
-                    <!-- <h5>문서 이력</h5>
-                    <ul>
-                        <li>
-                            <p>hong12</p>
-                            <p>(hong1234@naver.com)</p>
-                            <p>서명 2022-12-12 16:50</p>
-                        </li>
-                    </ul>
+                <div id="aside-content">
+                    <div class="container">
+                        <h5>문서 이력</h5>
+                        <ul id="aside__history-summary">
+                        </ul>
+                    </div>
+                    
                     <button type="button">전체 진행정보 보기</button>
                     <button type="button">계약서 내용 확인하기</button> -->
                 </div>
@@ -237,6 +235,7 @@
                 for (let i = 0; i < breakpoint; i++){
 
                     if(i > data.length) break;
+                    if(i == 0 ) {testClass = 'is-active'} else{testClass = null}
 
                     let friends = [];
                     for(let a = 0; a < data[i].friends.length; a++){
@@ -260,7 +259,7 @@
 
                     html = ''
                     html += `
-                    <li class="table__tr" data-id="${data[i]._id}">
+                    <li class="table__tr ${testClass}" data-id="${data[i].index}">
                         <ul class="flex--row is-change width-100">
                             <li class="table__td width-10">
                                 <input type="checkbox" class="checkbox"
@@ -372,7 +371,7 @@
                                 <img class="icon " src="./icon/folder-line.svg" alt="현재폴더">
                                 기본 폴더
                             </li>
-                            <li class="list-item" data-id="${i}"> 
+                            <li class="list-item" data-id="${0}"> 
                                 <img class="icon " src="./icon/folder-line.svg" alt="현재폴더">
                                 기존 사용 서식
                                 <div class="flex--row align-item-center">
@@ -469,7 +468,6 @@
 
             // 삭제 이벤트
             function makeDeleteModal(string){
-                console.log('here')
                 html = '';
                 html += `
                 <div class="modal">
@@ -495,29 +493,67 @@
             }
 
             $(document).on('click','.table__tr',makeAsideContent)
+
             function makeAsideContent(e){
                 // 버튼을 클릭한 경우 취소
-                if(e.target.closest('button')) return false;
-                else if($('#aside-content').hasClass('is-active')) $('#aside-content').removeClass('is-active');
+                if(e.target.closest('.toggle')) return ;
+                if(e.target.closest('button')||e.target.closest('.table__modal')) return false;
+                else if ($('#aside-content .container').length > 0){
+                    $('#aside-content').toggleClass('is-active')
+                }
                 else{
-                    console.log('here')
                     html = '';
                     html += `
-                        <h5>문서 이력</h5>
-                        <ul>
-                            <li>
-                                <p>hong12</p>
-                                <p>(hong1234@naver.com)</p>
-                                <p>서명 2022-12-12 16:50</p>
-                            </li>
-                        </ul>
-                        <button type="button">전체 진행정보 보기</button>
-                        <button type="button">계약서 내용 확인하기</button>
+                        <div class="container">
+                            <h5 class="h5 font-weight--semibold">문서 이력</h5>
+                            <ul>
+                                <li>
+                                    <p>hong12</p>
+                                    <p>(hong1234@naver.com)</p>
+                                    <p>서명 2022-12-12 16:50</p>
+                                </li>
+                            </ul>
+                            <button type="button" class="button button--regular button--primary">전체 진행정보 보기</button>
+                            <button type="button" class="button button--regular button--outline">계약서 확인하기</button>
+                        </div>
                     `
-                    $('#aside-content').addClass('is-active')
-                                        .append(html)
+                    $('#aside-content').append(html).addClass('is-active')
                 }
+
+                let userId = $(this).attr('data-id')
+                loadAsideData(userId)
             }
+
+            function loadAsideData(userId){
+                $.ajax({
+                    url: "/json/dummy.json",
+                    type: "GET", 
+                    data:{},
+                    dataType: "json"
+                })
+                .done(function(res) {
+                    const result = res.find(item => item.index == userId)
+                    
+                    let title = '문서이력'
+                    let html = ''
+
+                    for(let i = 0; i < 2; i++){
+                        html += `
+                        <li class="aside__list-item">
+                            <p>${result.friends[i].name}</p>
+                            <p>${result.email}</p>
+                            <p class="body--small">${result.registered}</p>
+                        </li>
+                            `
+                        $('#aside__history-summary').append(html)
+                    }
+                })
+                .fail(function(xhr, status, errorThrown) {
+                })
+                .always(function(xhr, status) {
+                });
+            }
+
 
             
 
