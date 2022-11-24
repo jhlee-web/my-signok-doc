@@ -79,3 +79,7 @@ a{
 input,select{
 	background: none;
 }
+
+pre{
+	white-space:inherit;
+}

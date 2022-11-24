@@ -1,14 +1,11 @@
 $(document).on('click','.modal__close-button', function(){
-    $(this).parents('.modal').remove();
+    $(this).parents('.modal-container').remove();
 })
 
 $('.tab__item').on('click',function(){
-    console.log('lcicked')
     $('.tab__item').removeClass('is-active')
     $(this).addClass('is-active')
 })
-
-
 
 function getUrl(){
     return param = new URLSearchParams(location.search).get('page')

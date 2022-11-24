@@ -1,7 +1,7 @@
-@import url('./reset.css');
-@import url('./common.css');
-@import url('./layout.css');
-@import url("./font/web/static/pretendard.css");
+@import url('/statics/css/reset.css');
+@import url('/statics/css/common.css');
+@import url('/statics/css/layout.css');
+@import url("/statics/css/font/web/static/pretendard.css");
 
 /* title-box */
 .title-box{
@@ -69,13 +69,20 @@
 
 /* table (ul + li) */
 .table{
-    display: flex;
+    display: table;
     flex-direction: column;
 
     color: var(--text-color-800);
 }
+.table__thead{
+    display: table-header-group;
+    flex-direction: row;
+    
+    color: var(--text-color-400);
+    font-size: 0.875rem;
+}
 .table__tbody{
-    display: flex;
+    display: table-column-group;
     flex-direction: column;
 }
 .table__tr{
@@ -118,13 +125,7 @@
 .table__td.width-25{
     width: 9rem;
 }
-.table__thead{
-    display: flex;
-    flex-direction: row;
-    
-    color: var(--text-color-400);
-    font-size: 0.875rem;
-}
+
 
 
 
@@ -191,7 +192,7 @@
 }
 
 
-@media all and (max-width:480px){
+@media all and (max-width:768px){
     .table-top__box{
         flex-direction: column-reverse;
     }
@@ -446,7 +447,7 @@
     height: 100%;
 }
 
-@media all and (max-width:480px){
+@media all and (max-width:768px){
     .modal{
         position: fixed;
         width:calc(100vw - 2rem);
@@ -477,7 +478,7 @@
     transition: width .4s ease-in-out ;
 }
 
-@media all and (max-width:480px){
+@media all and (max-width:768px){
     #aside-content{
         position: absolute;
         right: 0;;

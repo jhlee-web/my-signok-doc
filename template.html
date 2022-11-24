@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ko">
     <head>
-        <script src="./js/loadHTML.js"></script>
+        <script src="/statics/js/loadHTML.js"></script>
         <script>
-            loadHTML("./include/head.html");
+            loadHTML("/statics/include/head.html");
         </script>
         <title>문서목록</title>
     </head>
@@ -43,18 +43,18 @@
         <!-- / tutorial -->
 
         <script>
-            loadHTML("./include/nav.html");
+            loadHTML("/statics/include/nav.html");
         </script>
         
         <main class="main">
             <!-- 상단 헤더 -->
             <script>
-                loadHTML("./include/sub_header.html");
+                loadHTML("/statics/include/sub_header.html");
             </script>
             <!-- // 상단헤더 -->
             <div class="container">
                 <div class="flex--row flex-justify--between">
-                    <button type="button" class="button button--regular button--outline">
+                    <button type="button" class="button button--medium button--outline">
                         폴더선택
                     </button>
                     <div id="count-load-table" class="select-box select-box--large">
@@ -64,7 +64,7 @@
                             <option value="50">50개씩 보기</option>
     
                         </select>
-                        <img class="select-box__icon icon" src="./icon/angle-line.svg" alt="화살표">
+                        <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
                     </div>
                 </div>
                 <div class="content-wrap">
@@ -128,7 +128,7 @@
 
             $('#tutorial-wrap').hide()
         </script>
-        <script src="./js/tutorial.js"></script>
+        <script src="/statics/js/tutorial.js"></script>
     </body>
     
 </html>

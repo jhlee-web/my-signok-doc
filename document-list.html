@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ko">
     <head>
-        <script src="./js/loadHTML.js"></script>
+        <script src="/statics/js/loadHTML.js"></script>
         <script>
-            loadHTML("./include/head.html");
+            loadHTML("/statics/include/head.html");
         </script>
         <title>문서목록</title>
     </head>
@@ -43,13 +43,13 @@
         <!-- / tutorial -->
 
         <script>
-            loadHTML("./include/nav.html");
+            loadHTML("/statics/include/nav.html");
         </script>
         
         <main class="main">
             <!-- 상단 헤더 -->
             <script>
-                loadHTML("./include/sub_header.html");
+                loadHTML("/statics/include/sub_header.html");
             </script>
             
             <!-- // 상단헤더 -->
@@ -59,9 +59,9 @@
 
                     <!-- 상단 -->
                     <div class="flex--row is-change">
-                        <button type="button" class="button button--regular button--outline"
+                        <button type="button" class="button button--medium button--outline"
                         id="change-folder">
-                            <img src="/icon/folder-line.svg" alt="닫기" class="icon icon--large icon--warning">
+                            <img src="/statics/icon/folder-line.svg" alt="닫기" class="icon icon--large icon--warning">
                             폴더선택
                         </button>
     
@@ -71,7 +71,7 @@
                                 <option value="30">30개씩 보기</option>
                                 <option value="50">50개씩 보기</option>
                             </select>
-                            <img class="select-box__icon icon" src="./icon/angle-line.svg" alt="화살표">
+                            <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
                         </div>
                     </div>
                    
@@ -84,8 +84,8 @@
                                 <li class="tab__item">진행중</li>
                                 <li class="tab__item">만료</li>
                             </ul>
-                            <button type="button" class="button button--regular">
-                                <img src="/icon/file_type_excel2.svg" class="icon">
+                            <button type="button" class="button button--medium">
+                                <img src="/statics/icon/file_type_excel2.svg" class="icon">
                                 엑셀로 내려받기
                             </button>
                         </div>
@@ -97,18 +97,18 @@
                                 </p>
                                 <button type="button" class="button button--text"
                                 id="document-move">
-                                    <img src="/icon/folder-line.svg" class="icon">
+                                    <img src="/statics/icon/folder-line.svg" class="icon">
                                     폴더 이동하기
                                 </button>
                                 <button type="button" class="button button--text"
                                 id="document-delete">
-                                    <img src="/icon/trash-line.svg" class="icon">
+                                    <img src="/statics/icon/trash-line.svg" class="icon">
                                     휴지통으로 보내기
                                 </button>
                             </div>
                             <button type="button" class="button button--text"
                             id="cancel-selected">
-                                <img src="/icon/close-line.svg" class="icon">
+                                <img src="/statics/icon/close-line.svg" class="icon">
                                 선택 취소
                             </button>
                         </div>
@@ -245,14 +245,14 @@
                     if(data[i].isActive == false){
                         state = `
                         <li class="table__td width-20 state success">
-                            <img src="/icon/hourglass-line.svg" class="icon">
+                            <img src="/statics/icon/hourglass-line.svg" class="icon">
                             진행중
                         </li>`
                     }
                     else{
                         state = `
                         <li class="table__td width-20 state ban">
-                            <img src="/icon/ban-line.svg" class="icon">
+                            <img src="/statics/icon/ban-line.svg" class="icon">
                             만료
                         </li>`
                     }
@@ -285,7 +285,7 @@
                         <ul class="table__tr--right">
                             <li class="table__td width-10">
                                 <button type="button" class="button button--outline icon-button button--small">
-                                    <img class="icon" src="/icon/ellipsis-horizontal-line.svg">
+                                    <img class="icon" src="/statics/icon/ellipsis-horizontal-line.svg">
                                 </button>
                             </li>
                         </ul>
@@ -349,30 +349,30 @@
                 <div class="modal">
                     <div class="modal__header">
                         <p class="modal__title">
-                            <img src="/icon/exclamation-triangle-line.svg" alt="닫기" class="icon icon--large icon--warning">
+                            <img src="/statics/icon/exclamation-triangle-line.svg" alt="닫기" class="icon icon--large icon--warning">
                             폴더 선택
                         </p>
                         <button type="button" class="icon-button">
-                            <img src="/icon/close-line.svg" alt="닫기" class="icon modal__close-button">
+                            <img src="/statics/icon/close-line.svg" alt="닫기" class="icon modal__close-button">
                         </button>
                     </div>
                     <div class="modal__content">
                         <div class="modal__search-form">
                             <input type="text" class="input input--large"
                             placeholder="검색어를 입력해주세요">
-                            <img class="icon icon" src="./icon/search-line.svg" alt="검색">
+                            <img class="icon icon" src="/statics/icon/search-line.svg" alt="검색">
                         </div>
                         <ul class="modal__list">
                             <li class="list-item is-active"> 
-                                <img class="icon " src="./icon/folder-open-solid.svg" alt="현재폴더">
+                                <img class="icon " src="/statics/icon/folder-open-solid.svg" alt="현재폴더">
                                 전체 폴더 보기
                             </li>
                             <li class="list-item "> 
-                                <img class="icon " src="./icon/folder-line.svg" alt="현재폴더">
+                                <img class="icon " src="/statics/icon/folder-line.svg" alt="현재폴더">
                                 기본 폴더
                             </li>
                             <li class="list-item" data-id="${0}"> 
-                                <img class="icon " src="./icon/folder-line.svg" alt="현재폴더">
+                                <img class="icon " src="/statics/icon/folder-line.svg" alt="현재폴더">
                                 기존 사용 서식
                                 <div class="flex--row align-item-center">
                                     <button type="button">삭제</button>
@@ -414,7 +414,7 @@
                         $(this).parents('.flex--row').remove()
                         $('.modal__list').append(`
                             <li class="felx--row flex-align--center"> 
-                                <img class="icon " src="./icon/folder-line.svg" alt="현재폴더">
+                                <img class="icon " src="/statics/icon/folder-line.svg" alt="현재폴더">
                                 ${$(this).siblings('.input').val()}
                             </li>
                         `)
@@ -473,11 +473,11 @@
                 <div class="modal">
                     <div class="modal__header">
                         <p class="modal__title">
-                            <img src="/icon/exclamation-triangle-line.svg" alt="닫기" class="icon icon--large icon--warning">
+                            <img src="/statics/icon/exclamation-triangle-line.svg" alt="닫기" class="icon icon--large icon--warning">
                             휴지통으로 보내기
                         </p>
                         <button type="button" class="icon-button">
-                            <img src="/icon/close-line.svg" alt="닫기" class="icon modal__close-button">
+                            <img src="/statics/icon/close-line.svg" alt="닫기" class="icon modal__close-button">
                         </button>
                     </div>
                     <div class="modal__content">
@@ -513,8 +513,8 @@
                                     <p>서명 2022-12-12 16:50</p>
                                 </li>
                             </ul>
-                            <button type="button" class="button button--regular button--primary">전체 진행정보 보기</button>
-                            <button type="button" class="button button--regular button--outline">계약서 확인하기</button>
+                            <button type="button" class="button button--medium button--primary">전체 진행정보 보기</button>
+                            <button type="button" class="button button--medium button--outline">계약서 확인하기</button>
                         </div>
                     `
                     $('#aside-content').append(html).addClass('is-active')
@@ -559,8 +559,8 @@
 
 
         </script>
-        <script src="./js/tutorial.js"></script>
-        <script src="./js/common.js"></script>
+        <script src="/statics/js/tutorial.js"></script>
+        <script src="/statics/js/common.js"></script>
     </body>
     
 </html>

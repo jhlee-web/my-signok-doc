@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ko">
     <head>
-        <script src="/js/loadHTML.js"></script>
+        <script src="/statics/js/loadHTML.js"></script>
         <script>
-            loadHTML("/include/head.html");
+            loadHTML("/statics/include/head.html");
         </script>
         <title>회원가입</title>
     </head>
@@ -63,8 +63,8 @@
                 </div>
                 <!-- //area -->
                 <div class="flex--row flex-justify--between flex-align--center">
-                    <a href="./step-1.html" class="button button--text button--small">이전</a>
-                    <a href="./step-3.html" class="button button--primary button--small">다음</a>
+                    <a href="/step-1.html" class="button button--text button--small">이전</a>
+                    <a href="/step-3.html" class="button button--primary button--small">다음</a>
                 </div>
                 
             </div>
@@ -163,7 +163,7 @@
                     return false;
                 }
                 else{
-                    location.href='./step-3.html'
+                    location.href='/step-3.html'
                 }
             }
 

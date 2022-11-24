@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ko">
     <head>
-        <script src="/js/loadHTML.js"></script>
+        <script src="/statics/js/loadHTML.js"></script>
         <script>
-            loadHTML("/include/head.html");
+            loadHTML("/statics/include/head.html");
         </script>
         <title>로그인</title>
     </head>
@@ -28,7 +28,7 @@
                             class="input"
                             id="login-mail"
                             placeholder="이메일주소를 입력해주세요.">
-                            <img class="icon" src="/icon/remove-solid.svg"></img>
+                            <img class="icon" src="/statics/icon/remove-solid.svg"></img>
                         </div>
                     </div>
                     <p class="input-area__helper"></p>
@@ -40,7 +40,7 @@
                             class="input"
                             id="login-password"
                             placeholder="비밀번호를 입력해주세요.">
-                            <img class="icon" src="/icon/eye-show-line.svg"></img>
+                            <img class="icon" src="/statics/icon/eye-show-line.svg"></img>
                         </div>
                         <p class="input-area__helper"></p>
 
@@ -65,11 +65,11 @@
                     
                     
                     <button type="button"
-                    class="button button--primary button--regular form__button"
+                    class="button button--primary button--medium form__button"
                     id="login-submit">로그인</button>
                     <a class="button button--text button--small
                     body--small grid--center form__button"
-                    href="./signup/signup.html">싸인오케이가 처음이신가요?</a>
+                    href="/signup/signup.html">싸인오케이가 처음이신가요?</a>
                 </form>
 
                 <div class="flex--column gap--large">
@@ -77,17 +77,17 @@
                     <div class="flex--row is-change flex-justify--between">
                         <a class="button button--outline button--small
                         flex-align--center body--small">
-                            <img class="icon" src="/icon/pop-out-line.svg">
+                            <img class="icon" src="/statics/icon/pop-out-line.svg">
                             <span>구글</span>
                         </a>
                         <a class="button button--outline button--small
                         flex-align--center body--small">
-                            <img class="icon" src="/icon/pop-out-line.svg">
+                            <img class="icon" src="/statics/icon/pop-out-line.svg">
                             <span>네이버</span>
                         </a>
                         <a class="button button--outline button--small
                         flex-align--center body--small">
-                            <img class="icon" src="/icon/pop-out-line.svg">
+                            <img class="icon" src="/statics/icon/pop-out-line.svg">
                             <span>카카오</span>
                         </a>
                     </div>
@@ -96,9 +96,8 @@
             </div>
            <!-- // container -->
         </main>
-       
-        
         <script>
+            $('html').attr('data-theme','light')
 
             /** input 입력시 값 지우기 버튼 생성 */
             function checkInputLength(){
@@ -121,12 +120,12 @@
 
                     if(inputType.attr('type') == 'password'){
                         inputType.attr('type','text');
-                        $(this).attr('src',"./icon/eye-hide-line.svg")
+                        $(this).attr('src',"/statics/icon/eye-hide-line.svg")
                     }
 
                     else{
                         inputType.attr('type','password');
-                        $(this).attr('src',"./icon/eye-show-line.svg")
+                        $(this).attr('src',"/statics/icon/eye-show-line.svg")
                     }
                 }
                 
