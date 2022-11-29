@@ -116,20 +116,33 @@
 
                     
                     <!-- 컨텐츠 테이블 (for문 생성) -->
-                    <ul class="table">
-                        <ul class="table__thead">
-                            <li class="table__td width-10">
-                                <input type="checkbox" class="checkbox"
-                                id="checkbox-all">
-                            </li>
-                            <li class="table__td width-20">상태</li>
-                            <li class="table__td width-100">문서이름</li>
-                            <li class="table__td width-20">알람</li>
-                            <li class="table__td width-20">위치</li>
-                            <li class="table__td width-25">마지막 활동시간</li>
-                            <li class="table__td width-10">추가메뉴</li>
-                        </ul>
-                    <ul class="table__tbody">
+                    <div class="table">
+                        <div class="table__colgroup">
+                            <div class="table__col width"></div>
+                            <div class="table__col"></div>
+                            <div class="table__col"></div>
+                            <div class="table__col"></div>
+                            <div class="table__col"></div>
+                            <div class="table__col"></div>
+                            <div class="table__col"></div>
+                        </div>
+                            <div class="table__thead">
+                                <ul class="table__tr">
+                                    <li class="table__td width-10">
+                                        <input type="checkbox" class="checkbox"
+                                        id="checkbox-all">
+                                    </li>
+                                    <li class="table__td width-20">상태</li>
+                                    <li class="table__td width-100">문서이름</li>
+                                    <li class="table__td width-20">알람</li>
+                                    <li class="table__td width-20">위치</li>
+                                    <li class="table__td width-25">마지막 활동시간</li>
+                                    <li class="table__td width-10">추가메뉴</li>
+                                </ul>
+                            </div>
+                            <div class="table__tbody"></div>
+                        </div>
+                    </div>
                 </div>
 
                <!-- 사이드 컨텐츠 (이벤트 때 생성) -->
@@ -244,52 +257,46 @@
 
                     if(data[i].isActive == false){
                         state = `
-                        <li class="table__td width-20 state success">
+                        <p class="table__td width-20 state success">
                             <img src="/statics/icon/hourglass-line.svg" class="icon">
                             진행중
-                        </li>`
+                        </p>`
                     }
                     else{
                         state = `
-                        <li class="table__td width-20 state ban">
+                        <p class="table__td width-20 state ban">
                             <img src="/statics/icon/ban-line.svg" class="icon">
                             만료
-                        </li>`
+                        </p>`
                     }
 
                     html = ''
                     html += `
-                    <li class="table__tr ${testClass}" data-id="${data[i].index}">
-                        <ul class="flex--row is-change width-100">
-                            <li class="table__td width-10">
-                                <input type="checkbox" class="checkbox"
-                                id="">
-                            </li>
-                            ${state}
-                            <li class="table__td width-100  font-weight--medium">
-                                <p class="table__td--title">${data[i].guid}</p>
-                                <ul>
-                                    <li class="table__td--remark">${friends}</li>
-                                </ul>
-                            </li>
-                            <li class="table__td width-20">
-                                <label class="toggle--small toggle">
-                                    <input type="checkbox" class="toggle__checkbox">
-                                    <span class="toggle__slider"></span>
-                                </label>
-                            </li>
-                            <li class="table__td width-20 table__td--remark">기본폴더</li>
-                            <li class="table__td width-25 table__td--remark">${data[i].registered}</li>
-                        </li>
-                        </ul>
-                        <ul class="table__tr--right">
-                            <li class="table__td width-10">
-                                <button type="button" class="button button--outline icon-button button--small">
-                                    <img class="icon" src="/statics/icon/ellipsis-horizontal-line.svg">
-                                </button>
-                            </li>
-                        </ul>
-                    </li>
+                    <div class="table__tr ${testClass}" data-id="${data[i].index}">
+                        <div class="table__td width-10">
+                            <input type="checkbox" class="checkbox"
+                            id="">
+                        </div>
+                        ${state}
+                        <div class="table__td width-100  font-weight--medium">
+                            <p class="table__td--title">${data[i].guid}</p>
+                            <p class="table__td--remark">${friends}</p>
+                        </div>
+                        <div class="table__td width-20">
+                            <label class="toggle--small toggle">
+                                <input type="checkbox" class="toggle__checkbox">
+                                <span class="toggle__slider"></span>
+                            </label>
+                        </div>
+                        <p class="table__td width-20 table__td--remark">기본폴더</p>
+                        <p class="table__td width-25 table__td--remark">${data[i].registered}</p>
+                        <div class="table__td width-10">
+                            <button type="button" class="button button--outline icon-button button--small">
+                                <img class="icon" src="/statics/icon/ellipsis-horizontal-line.svg">
+                            </button>
+                        </div>
+                    </div>
+
                     `
                     $('.table__tbody').append(html)
                 }
