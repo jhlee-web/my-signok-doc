@@ -56,7 +56,6 @@
             <div class="container flex--row">
                 <!-- 메인 컨텐츠 -->
                 <div id="main-content">
-
                     <!-- 상단 -->
                     <div class="flex--row is-change">
                         <button type="button" class="button button--medium button--outline"
@@ -74,7 +73,6 @@
                             <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
                         </div>
                     </div>
-                   
                     <!-- 상단 2 -->
                     <div class="table-top">
                         <div id="default-top-box" class="table-top__box">
@@ -113,8 +111,6 @@
                             </button>
                         </div>
                     </div>
-
-                    
                     <!-- 컨텐츠 테이블 (for문 생성) -->
                     <div class="table">
                         <div class="table__colgroup">
@@ -143,8 +139,6 @@
                             <div class="table__tbody"></div>
                         </div>
                     </div>
-                </div>
-
                <!-- 사이드 컨텐츠 (이벤트 때 생성) -->
                 <div id="aside-content">
                     <div class="container">
@@ -531,6 +525,7 @@
                 loadAsideData(userId)
             }
 
+            // 문서이력
             function loadAsideData(userId){
                 $.ajax({
                     url: "/json/dummy.json",
@@ -544,16 +539,21 @@
                     let title = '문서이력'
                     let html = ''
 
+                    if($('.aside__list-item').length > 0){
+                        $('.aside__list-item').remove()
+                    }
+
+                    console.log(result)
                     for(let i = 0; i < 2; i++){
                         html += `
                         <li class="aside__list-item">
                             <p>${result.friends[i].name}</p>
                             <p>${result.email}</p>
-                            <p class="body--small">${result.registered}</p>
+                            <p class="body--small">${result.registered.substr(0,10)}</p>
                         </li>
                             `
-                        $('#aside__history-summary').append(html)
                     }
+                    $('#aside__history-summary').append(html)
                 })
                 .fail(function(xhr, status, errorThrown) {
                 })
