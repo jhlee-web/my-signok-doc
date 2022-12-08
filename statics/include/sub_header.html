@@ -1,23 +1,28 @@
-<div class="document-header">
+<div class="doc-header">
     <div class="container">
-        <p id="documnet-title" class="body--large font-weight--medium"></p>
-        <div class="document-header__right">
+        <p id="doc-header__title" class="body--large font-weight--medium"></p>
+        <div class="doc-header__right">
+
+
+            <!-- 20221208 수정 - 이지현 -->
+
             <!-- 검색상자 -->
-            <div class="search-form">
+            <!-- <div class="search-form">
                 <form class="search-form__form">
                     <input type="text"
                         class="input input--large search-form__input"
                         placeholder="검색어를 입력해주세요">
                     <button type="button"
-                        class="button button--outline button--medium
+                        class="button button--outline is-medium
                                 icon-button search-form__button">
                         <img class="icon icon--large" src="/statics/icon/search-line.svg" alt="검색">
                     </button>
                 </form>
-            </div>
+            </div> -->
             <!-- // 검색상자 -->
 
-            <!-- 튜토+헬프 -->
+            
+            <!-- 튜토+헬프
             <div class="group-button">
                 <button type="button"
                     class="group-button__base group-button__base--left group-button--large"
@@ -28,9 +33,22 @@
                     class="group-button__base group-button--large group-button__base--right">
                     <img class="icon icon--large" src="/statics/icon/help-line.svg" alt="도움말">
                 </button>
+            </div>-->
+
+            <!-- 20221208 추가 - 이지현 -->
+            <div class="doc-header__button-wrap">
+                <button type="button"
+                    class="icon-button is-medium"
+                    id="tutorial">
+                    <img class="icon icon--large" src="/statics/icon/book-line.svg" alt="튜토리얼">
+                </button>
+                <button type="button"
+                    class="icon-button is-medium">
+                    <img class="icon icon--large" src="/statics/icon/help-line.svg" alt="도움말">
+                </button>
             </div>
-            <!-- // 튜토+헬프 -->
-        </div>
+            <p>안녕하세요, <span id="user_id">홍길동</span>님</p>
+        </div> 
     </div>
 </div>
 <script>
@@ -38,7 +56,7 @@
 
     function changeTitle(){
         let currentTitle = $('.is-active span').text()
-        $('#documnet-title').text(currentTitle)
+        $('#doc-header__title').text(currentTitle)
     }
     
 

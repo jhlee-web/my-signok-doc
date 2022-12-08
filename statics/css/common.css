@@ -258,6 +258,7 @@ option{
 /* select */
 .select-box{
     position: relative;
+    font-size: 0.875rem;
 }
 
 .select-box__select{
@@ -284,8 +285,16 @@ option{
     transition: .35s;
 }
 
-.select-box--large{
-    width: 12rem;
+.select-box.is-small{
+    min-width: 12rem;
+    height: 2rem;
+}
+.select-box.is-medium{
+    min-width: 12rem;
+    height: 2.5rem;
+}
+.select-box.is-large{
+    min-width: 12rem;
     height: 3rem;
 }
 
@@ -460,7 +469,7 @@ option{
     padding: 0 1.5rem;
 
 }
-.button--medium{
+.is-medium{
     height: 2.5rem;
     line-height: 2.5rem;
     padding: 0 1.25rem;
@@ -482,31 +491,34 @@ option{
     padding: 0;
 }
 
-.icon-button.button--xl{
+.icon-button.is-xl{
     width: 3.5rem;
 }
-.icon-button.button--xl .icon{
+.icon-button.is-xl .icon{
     width: 2rem;
 }
 
-.icon-button.button--large{
+.icon-button.is-large{
     width: 3rem;
+    height: 3rem;
 }
-.icon-button.button--large .icon{
+.icon-button.is-large .icon{
     width: 1.5rem;
 }
 
-.icon-button.button--medium{
+.icon-button.is-medium{
     width: 2.5rem;
+    height: 2.5rem;
 }
-.icon-button.button--medium .icon{
+.icon-button.is-medium .icon{
     width: 1.25rem;
 }
 
-.icon-button.button--small{
+.icon-button.is-small{
     width: 2rem;
+    height: 2rem;
 }
-.icon-button.button--small .icon{
+.icon-button.is-small .icon{
     width: 1rem;
 }
 
@@ -771,3 +783,4 @@ option{
         max-height: calc(100vh - 2rem - 5rem - 4rem);
     }
 }
+

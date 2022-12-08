@@ -1,5 +1,5 @@
 $(document).on('click','.modal__close-button', function(){
-    $(this).parents('.modal-container').remove();
+    $(this).parents('.modal').remove();
 })
 
 $('.tab__item').on('click',function(){

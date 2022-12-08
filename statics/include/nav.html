@@ -1,135 +1,172 @@
 <nav data-fold="false" class="nav">
     <div class="nav__top">
-        <h1 class="nav-logo">
+        <button class="button is-medium icon-button"
+            id="nav-fold-button">
+            <img class="icon nav-item__icon" src="/statics/icon/menu-line.svg"></img>
+        </button>
+        <h1 class="nav__logo is-unfold">
             <a>
                 <img alt="로고">
             </a>
         </h1>
-        <button class="button button--medium icon-button"
-            id="nav-fold-button">
-            <img class="icon nav-item__icon" src="/statics/icon/menu-line.svg"></img>
-        </button>
     </div>
-    
-    <button type="button"
-        class="button button--primary button--medium">
-        계약 시작하기
-    </button>
+    <div class="nav__middle is-unfold">
+        <button type="button"
+            class="button button--primary is-medium">
+            계약 시작하기
+        </button>
+        <p class="flex--row flex-justify--between">계약 시장 가능<span>0</span></p>
+    </div>
     <ul class="nav__list">
         <li data-nav="dashboard">
-            <a href="/index.html" class="nav-item">
+            <a href="/index.html" class="nav-item is-border">
                 <img class="icon nav-item__icon" src="/statics/icon/home-line.svg"></img>
-                <span class="body--small">홈</span>
+                <span class="nav__name is-unfold">홈</span>
             </a>
         </li>
+
+        <li class="nav__category is-unfold">
+            <p class="">계약관리</p>
+        </li>
+
         <li data-nav="contract-list">
             <a href="javascript:void(0)" class="nav-item">
                 <img class="icon nav-item__icon" src="/statics/icon/document-line.svg"></img>
-                <span class="body--small">내 계약 현황</span>
+                <span class="nav__name is-unfold">내 계약 현황</span>
             </a>
         </li>
         <li data-nav="document-list">
             <a href="/document-list.html" class="nav-item">
                 <img class="icon nav-item__icon" src="/statics/icon/document-line.svg"></img>
-                <span class="body--small">통합문서함</span>
+                <span class="nav__name is-unfold">통합문서함</span>
             </a>
         </li>
         <li data-nav="template">
             <a href="/template.html" class="nav-item">
                 <img class="icon nav-item__icon" src="/statics/icon/form-line.svg"></img>
-                <span class="body--small">템플릿</span>
+                <span class="nav__name is-unfold">템플릿 관리</span>
             </a>
         </li>
-        <!-- <li data-nav="other-document">
+        <li data-nav="create-document">
             <a href="javascript:void(0)" class="nav-item">
+                <img class="icon nav-item__icon" src="/statics/icon/text-line.svg"></img>
+                <span class="nav__name is-unfold">서식관리</span>
+            </a>
+        </li>
+        <li data-nav="other-document">
+            <a href="javascript:void(0)" class="nav-item is-border">
                 <img class="icon nav-item__icon" src="/statics/icon/archive-line.svg"></img>
-                <span class="body--small">외부문서</span>
+                <span class="nav__name is-unfold">외부계약서</span>
+            </a>
+        </li>
+
+        <li class="nav__category is-unfold">
+            <p class="">서명 및 발송</p>
+        </li>
+        
+        <li data-nav="signature">
+            <a href="javascript:void(0)" class="nav-item">
+                <img class="icon nav-item__icon" src="/statics/icon/digital-signature-line.svg"></img>
+                <span class="nav__name is-unfold">사인/도장</span>
             </a>
         </li>
         <li data-nav="burk-submit">
             <a href="javascript:void(0)" class="nav-item">
                 <img class="icon nav-item__icon" src="/statics/icon/home-line.svg"></img>
-                <span class="body--small">대량발송</span>
+                <span class="nav__name is-unfold">대량발송</span>
             </a>
         </li>
         <li data-nav="link-sign">
             <a href="javascript:void(0)" class="nav-item">
                 <img class="icon nav-item__icon" src="/statics/icon/link-line.svg"></img>
-                <span class="body--small">링크서명</span>
+                <span class="nav__name is-unfold">링크서명</span>
             </a>
         </li>
         <li data-nav="office-submit">
-            <a href="javascript:void(0)" class="nav-item">
+            <a href="javascript:void(0)" class="nav-item is-border">
                 <img class="icon nav-item__icon" src="/statics/icon/briefcase-line.svg"></img>
-                <span class="body--small">공문발송</span>
+                <span class="nav__name is-unfold">공문발송</span>
             </a>
         </li>
-        <li data-nav="edit-document">
+
+        <li data-nav="trash">
             <a href="javascript:void(0)" class="nav-item">
-                <img class="icon nav-item__icon" src="/statics/icon/edit-line.svg"></img>
-                <span class="body--small">문서편집</span>
-            </a>
-        </li> -->
-        <li data-nav="create-document">
-            <a href="javascript:void(0)" class="nav-item">
-                <img class="icon nav-item__icon" src="/statics/icon/text-line.svg"></img>
-                <span class="body--small">서식작성</span>
-            </a>
-        </li>
-        <li data-nav="search-template">
-            <a href="javascript:void(0)" class="nav-item">
-                <img class="icon nav-item__icon" src="/statics/icon/search-line.svg"></img>
-                <span class="body--small">서식검색</span>
-            </a>
-        </li>
-        <li data-nav="signature">
-            <a href="javascript:void(0)" class="nav-item">
-                <img class="icon nav-item__icon" src="/statics/icon/digital-signature-line.svg"></img>
-                <span class="body--small">사인/도장</span>
+                <img class="icon nav-item__icon" src="/statics/icon/trash-line.svg"></img>
+                <span class="nav__name is-unfold">조직관리</span>
             </a>
         </li>
         <li data-nav="trash">
             <a href="javascript:void(0)" class="nav-item">
                 <img class="icon nav-item__icon" src="/statics/icon/trash-line.svg"></img>
-                <span class="body--small">휴지통</span>
+                <span class="nav__name is-unfold">휴지통</span>
             </a>
         </li>
-        <!-- <li data-anv="calendar">
-            <a href="javascript:void(0)" class="nav-item">
+        <li data-anv="calendar">
+            <a href="javascript:void(0)" class="nav-item is-border">
                 <img class="icon nav-item__icon" src="/statics/icon/calendar-line.svg"></img>
-                <span class="body--small">캘린더</span>
+                <span class="nav__name is-unfold">캘린더</span>
             </a>
-        </li> -->
+        </li>
+
+        <li class="nav__category is-unfold">
+            <p class="">설정</p>
+        </li>
+
+        <li data-nav="create-document">
+            <a href="javascript:void(0)" class="nav-item">
+                <img class="icon nav-item__icon" src="/statics/icon/text-line.svg"></img>
+                <span class="nav__name is-unfold">회원정보</span>
+            </a>
+        </li>
         <li data-nav="setting">
             <a href="javascript:void(0)" class="nav-item">
                 <img class="icon nav-item__icon" src="/statics/icon/settings-line.svg"></img>
-                <span class="body--small">설정</span>
+                <span class="nav__name is-unfold">메뉴설정</span>
             </a>
         </li>
-        <!-- <li data-nav="api">
+        <li data-nav="api">
             <a href="javascript:void(0) " class="nav-item">
                 <img class="icon nav-item__icon" src="/statics/icon/code-line.svg"></img>
-                <span class="body--small">API 연동</span>
-            </a>
-        </li> -->
-        <li data-nav="support">
-            <a href="javascript:void(0)" class="nav-item">
-                <img class="icon nav-item__icon" src="/statics/icon/bubble-exclamation-line.svg"></img>
-                <span class="body--small">고객센터</span>
+                <span class="nav__name is-unfold">API 연동</span>
             </a>
         </li>
-        <li data-nav="logout">
+        
+        
+
+        <!-- <li data-nav="other-document">
+            <a href="javascript:void(0)" class="nav-item">
+                <img class="icon nav-item__icon" src="/statics/icon/archive-line.svg"></img>
+                <span class="nav__name is-unfold">외부문서</span>
+            </a>
+        </li>
+        
+        
+        <li data-nav="edit-document">
+            <a href="javascript:void(0)" class="nav-item">
+                <img class="icon nav-item__icon" src="/statics/icon/edit-line.svg"></img>
+                <span class="nav__name is-unfold">문서편집</span>
+            </a>
+        </li> -->
+        
+        
+        <!-- <li data-nav="support">
+            <a href="javascript:void(0)" class="nav-item">
+                <img class="icon nav-item__icon" src="/statics/icon/bubble-exclamation-line.svg"></img>
+                <span class="nav__name is-unfold">고객센터</span>
+            </a>
+        </li> -->
+        <!-- <li data-nav="logout">
             <a href="javascript:void(0)" class="nav-item">
                 <img class="icon nav-item__icon" src="/statics/icon/sign-out-line.svg"></img>
-                <span class="body--small">로그아웃</span>
+                <span class="nav__name is-unfold">로그아웃</span>
             </a>
         </li>
         <li data-nav="toggle-theme">
             <a href="javascript:void(0)" class="nav-item" id="toggle-theme">
                 <img class="icon nav-item__icon" src="/statics/icon/sun-line.svg"></img>
-                <span class="body--small">라이트모드</span>
+                <span class="nav__name is-unfold">라이트모드</span>
             </a>
-        </li>
+        </li> -->
     </ul>
 </nav>
 <script>
@@ -148,15 +185,9 @@
 
         if(navState=='false'){
             $('.nav').attr('data-fold',false)
-            $('.main').css({
-                'padding-left':'12rem'
-            })
         }
         else{
             $('.nav').attr('data-fold',true)
-            $('.main').css({
-                'padding-left':'3rem'
-            })
         }
     }
 
@@ -170,15 +201,9 @@
 
         if(navState=='false'){
             $('.nav').attr('data-fold',true)
-            $('.main').css({
-                'padding-left':'3rem'
-            })
         }
         else{
             $('.nav').attr('data-fold',false)
-            $('.main').css({
-                'padding-left':'12rem'
-            })
         }
 
         localStorage.setItem('data-fold',currentNavState)

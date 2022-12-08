@@ -41,87 +41,87 @@
             </div>
         </div>
         <!-- / tutorial -->
-
-        <script>
-            loadHTML("/statics/include/nav.html");
-        </script>
-        
-        <main class="main">
-            <!-- 상단 헤더 -->
+        <div class="wrapper">
             <script>
-                loadHTML("/statics/include/sub_header.html");
+                loadHTML("/statics/include/nav.html");
             </script>
             
-            <!-- // 상단헤더 -->
-            <div class="container flex--row">
-                <!-- 메인 컨텐츠 -->
-                <div id="main-content">
-                    <!-- 상단 -->
-                    <div class="flex--row is-change">
-                        <button type="button" class="button button--medium button--outline"
-                        id="change-folder">
-                            <img src="/statics/icon/folder-line.svg" alt="닫기" class="icon icon--large icon--warning">
-                            폴더선택
-                        </button>
-    
-                        <div id="count-load-table" class="select-box select-box--large">
-                            <select class="select-box__select">
-                                <option value="10" selected>10개씩 보기</option>
-                                <option value="30">30개씩 보기</option>
-                                <option value="50">50개씩 보기</option>
-                            </select>
-                            <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
-                        </div>
-                    </div>
-                    <!-- 상단 2 -->
-                    <div class="table-top">
-                        <div id="default-top-box" class="table-top__box">
-                            <ul class="table-top__tab tab">
-                                <li class="tab__item is-active">전체</li>
-                                <li class="tab__item">완료</li>
-                                <li class="tab__item">진행중</li>
-                                <li class="tab__item">만료</li>
-                            </ul>
-                            <button type="button" class="button button--medium">
-                                <img src="/statics/icon/file_type_excel2.svg" class="icon">
-                                엑셀로 내려받기
+            <main class="main">
+                <!-- 상단 헤더 -->
+                <script>
+                    loadHTML("/statics/include/sub_header.html");
+                </script>
+                
+                <!-- // 상단헤더 -->
+                <div class="container flex--row">
+                    <!-- 메인 컨텐츠 -->
+                    <div id="main-content">
+                        <!-- 상단 -->
+                        <div class="flex--row is-change">
+                            <button type="button" class="button is-medium button--outline"
+                            id="change-folder">
+                                <img src="/statics/icon/folder-line.svg" alt="닫기" class="icon icon--large icon--warning">
+                                폴더선택
                             </button>
+                            <div id="" class="select-box is-medium">
+                                <select class="select-box__select">
+                                    <option value="10" selected>전체</option>
+                                    <option value="30">항목1</option>
+                                    <option value="50">항목2</option>
+                                </select>
+                                <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
+                            </div>
+                            <intput type="text"></intput>
                         </div>
-                        <div id="selected-top-box" class="table-top__box is-hide">
-                            <div class="table-top__tab tab">
-                                <p class="font-weight--medium">
-                                    선택한 문서
-                                    <span id="selected-count" class="">(1)</span>
-                                </p>
-                                <button type="button" class="button button--text"
-                                id="document-move">
-                                    <img src="/statics/icon/folder-line.svg" class="icon">
-                                    폴더 이동하기
-                                </button>
-                                <button type="button" class="button button--text"
-                                id="document-delete">
-                                    <img src="/statics/icon/trash-line.svg" class="icon">
-                                    휴지통으로 보내기
+                        <!-- 상단 2 -->
+                        <div class="table-top">
+                            <div id="default-top-box" class="table-top__box">
+                                <ul class="table-top__tab tab">
+                                    <li class="tab__item is-active">전체</li>
+                                    <li class="tab__item">완료</li>
+                                    <li class="tab__item">진행중</li>
+                                    <li class="tab__item">만료</li>
+                                </ul>
+                                <button type="button" class="button is-medium">
+                                    <img src="/statics/icon/file_type_excel2.svg" class="icon">
+                                    엑셀로 내려받기
                                 </button>
                             </div>
-                            <button type="button" class="button button--text"
-                            id="cancel-selected">
-                                <img src="/statics/icon/close-line.svg" class="icon">
-                                선택 취소
-                            </button>
+                            <div id="selected-top-box" class="table-top__box is-hide">
+                                <div class="table-top__tab tab">
+                                    <p class="font-weight--medium">
+                                        선택한 문서
+                                        <span id="selected-count" class="">(1)</span>
+                                    </p>
+                                    <button type="button" class="button button--text"
+                                    id="document-move">
+                                        <img src="/statics/icon/folder-line.svg" class="icon">
+                                        폴더 이동하기
+                                    </button>
+                                    <button type="button" class="button button--text"
+                                    id="document-delete">
+                                        <img src="/statics/icon/trash-line.svg" class="icon">
+                                        휴지통으로 보내기
+                                    </button>
+                                </div>
+                                <button type="button" class="button button--text"
+                                id="cancel-selected">
+                                    <img src="/statics/icon/close-line.svg" class="icon">
+                                    선택 취소
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                    <!-- 컨텐츠 테이블 (for문 생성) -->
-                    <div class="table">
-                        <div class="table__colgroup">
-                            <div class="table__col width"></div>
-                            <div class="table__col"></div>
-                            <div class="table__col"></div>
-                            <div class="table__col"></div>
-                            <div class="table__col"></div>
-                            <div class="table__col"></div>
-                            <div class="table__col"></div>
-                        </div>
+                        <!-- 컨텐츠 테이블 (for문 생성) -->
+                        <div class="table">
+                            <div class="table__colgroup">
+                                <div class="table__col" style="width:2%"></div>
+                                <div class="table__col" style="width:8%"></div>
+                                <div class="table__col" style="width:auto"></div>
+                                <div class="table__col" style="width:8%"></div>
+                                <div class="table__col" style="width:8%"></div>
+                                <div class="table__col" style="width:12%"></div>
+                                <div class="table__col" style="width:8%"></div>
+                            </div>
                             <div class="table__thead">
                                 <ul class="table__tr">
                                     <li class="table__td width-10">
@@ -138,20 +138,38 @@
                             </div>
                             <div class="table__tbody"></div>
                         </div>
+                        <div class="table__paging">
+                            <ul class="pagination">
+                                <li class="pagination__item pagination__icon">이전</li>
+                                <ul id="pagination-index-wrap" class="pagination"></ul>
+                                <li class="pagination__item pagination__icon">다음</li>
+                            </ul>
+                            <div id="count-load-table" class="select-box is-medium">
+                                <select class="select-box__select">
+                                    <option value="10" selected>10개씩 보기</option>
+                                    <option value="30">30개씩 보기</option>
+                                    <option value="50">50개씩 보기</option>
+                                </select>
+                                <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
+                            </div>
+                        </div>
                     </div>
-               <!-- 사이드 컨텐츠 (이벤트 때 생성) -->
-                <div id="aside-content">
-                    <div class="container">
-                        <h5>문서 이력</h5>
-                        <ul id="aside__history-summary">
-                        </ul>
+                   <!-- 사이드 컨텐츠 (이벤트 때 생성) -->
+                    <div id="aside-content">
+                        <div class="container">
+                            <h5>문서 이력</h5>
+                            <ul id="aside__history-summary">
+                            </ul>
+                        </div>
+                        
+                        <button type="button">전체 진행정보 보기</button>
+                        <button type="button">계약서 내용 확인하기</button> -->
                     </div>
-                    
-                    <button type="button">전체 진행정보 보기</button>
-                    <button type="button">계약서 내용 확인하기</button> -->
                 </div>
-            </div>
-        </main>
+            </main>
+        </div>
+
+        
         <script>
             let breakpoint = 10
             
@@ -189,15 +207,7 @@
             
             
             // 쿼리에서 현재 페이지 위치 추출
-
             function makePagination(paginationLength){
-                $('.main').append(`
-                    <ul class="pagination">
-                        <li class="pagination__item pagination__icon">이전</li>
-                        <ul id="pagination-index-wrap" class="pagination"></ul>
-                        <li class="pagination__item pagination__icon">다음</li>
-                    </ul>
-                `)
 
                 let minPage = 1;                    // 시작페이지
                 let maxPage = paginationLength;     // 최대페이지 (단, 10개 미만일 경우 total값)
@@ -285,7 +295,7 @@
                         <p class="table__td width-20 table__td--remark">기본폴더</p>
                         <p class="table__td width-25 table__td--remark">${data[i].registered}</p>
                         <div class="table__td width-10">
-                            <button type="button" class="button button--outline icon-button button--small">
+                            <button type="button" class="button button--outline icon-button is-small">
                                 <img class="icon" src="/statics/icon/ellipsis-horizontal-line.svg">
                             </button>
                         </div>
@@ -460,7 +470,7 @@
                 $('#document-download-this').on('click',makeDeleteModal)
                 $('#document-move-this').on('click',makeFolderModal)
                 $('#document-delete-this').on('click',function(){
-                    const documentTitle = $(this).parents('.table__tr').find('.document-title').text()
+                    const documentTitle = $(this).parents('.table__tr').find('.doc-header__title').text()
                     makeDeleteModal(documentTitle)
                 })
             }
@@ -514,8 +524,8 @@
                                     <p>서명 2022-12-12 16:50</p>
                                 </li>
                             </ul>
-                            <button type="button" class="button button--medium button--primary">전체 진행정보 보기</button>
-                            <button type="button" class="button button--medium button--outline">계약서 확인하기</button>
+                            <button type="button" class="button is-medium button--primary">전체 진행정보 보기</button>
+                            <button type="button" class="button is-medium button--outline">계약서 확인하기</button>
                         </div>
                     `
                     $('#aside-content').append(html).addClass('is-active')

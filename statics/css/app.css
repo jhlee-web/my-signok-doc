@@ -70,7 +70,7 @@
 /* table (ul + li) */
 .table{
     display: table;
-    flex-direction: column;
+    table-layout: fixed;
 
     color: var(--text-color-800);
 }
@@ -80,7 +80,15 @@
 .table__col{
     display: table-column;
 }
-
+.table__paging{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.table__paging .select-box{
+    position: absolute;
+    right: 2rem;
+}
 
 
 .table__thead{
@@ -443,7 +451,7 @@
 
 .modal__button-wrap{
     display: inline-flex;
-    height: 4rem;
+    height: 3.5rem;
 }
 .modal__button-wrap button{
     width: 100%;
