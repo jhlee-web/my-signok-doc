@@ -96,7 +96,7 @@
     flex-direction: row;
     
     color: var(--text-color-400);
-    font-size: 0.875rem;
+    font-size: var(--text-small);
 }
 .table__tbody{
     display: table-row-group;
@@ -158,7 +158,7 @@
 
 .is-remark{
     color: var(--text-color-600);
-    font-size: 0.875rem;
+    font-size: var(--text-small);
 }
 
 .list-modal{
@@ -415,7 +415,7 @@
 
 .modal__title{
     font-weight: 500;
-    font-size: 1.333rem;
+    font-size: var(--text-large);
 
     display: flex;
     flex-direction: row;
@@ -573,4 +573,10 @@
 
 .button-wrap .button{
     width: 100%;
+}
+
+.icon-with-text{
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
 }
