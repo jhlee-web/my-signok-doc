@@ -15,7 +15,7 @@
                 <div class="title-box flex-align--center">
                     <h1 class="">
                         <a>
-                            <img src="" alt="로고">
+                            <img src="/statics/img/logo.png" alt="로고">
                         </a>
                     </h1>
                 </div>
@@ -53,40 +53,38 @@
                                 id="keep-mail"
                                 class="checkbox">
                             <label for="keep-mail"
-                            class="body--small">
+                            class="">
                                 이메일 기억하기
                             </label>
                         </div>
 
                         <!-- 비밀번호 바로가기 -->
-                        <a class="button button--text button--small
-                        body--small">비밀번호 찾기</a>
+                        <a class="button button--text is-small">비밀번호 찾기</a>
                     </div>
                     
+                    <div class="form__button-wrap">
+                        <button type="button"
+                        class="button button--primary is-medium"
+                        id="login-submit">로그인</button>
+
+                        <a class="button button--text is-small"
+                        href="/signup/signup.html">싸인오케이가 처음이신가요?</a>
+                    </div>
                     
-                    <button type="button"
-                    class="button button--primary is-medium form__button"
-                    id="login-submit">로그인</button>
-                    <a class="button button--text button--small
-                    body--small grid--center form__button"
-                    href="/signup/signup.html">싸인오케이가 처음이신가요?</a>
                 </form>
 
-                <div class="flex--column gap--large">
+                <div class="flex--column">
                     <p class="body--small font-color--third">다른 계정으로 로그인하기</p>
-                    <div class="flex--row is-change flex-justify--between">
-                        <a class="button button--outline button--small
-                        flex-align--center body--small">
+                    <div class="button-wrap">
+                        <a class="button is-small">
                             <img class="icon" src="/statics/icon/pop-out-line.svg">
                             <span>구글</span>
                         </a>
-                        <a class="button button--outline button--small
-                        flex-align--center body--small">
+                        <a class="button is-small">
                             <img class="icon" src="/statics/icon/pop-out-line.svg">
                             <span>네이버</span>
                         </a>
-                        <a class="button button--outline button--small
-                        flex-align--center body--small">
+                        <a class="button is-small">
                             <img class="icon" src="/statics/icon/pop-out-line.svg">
                             <span>카카오</span>
                         </a>
@@ -98,6 +96,7 @@
         </main>
         <script>
             $('html').attr('data-theme','light')
+            console.log($('html').attr('data-theme'))
 
             /** input 입력시 값 지우기 버튼 생성 */
             function checkInputLength(){

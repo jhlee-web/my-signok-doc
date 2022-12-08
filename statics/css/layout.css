@@ -188,7 +188,7 @@
     min-height: 100vh;
     margin: 0 auto;
 
-    padding: 8rem 2rem;
+    padding: 5rem 2rem;
 }
 
 /* container */
@@ -201,7 +201,7 @@
     gap: 0;
 }
 
-#main-content{
+.main-content{
     width: 100%;
     padding: 2rem;
 
@@ -210,7 +210,8 @@
     gap: 2rem;
 }
 
-#aside-content{
+
+.aside-content{
     max-width: 15rem;
 }
 
@@ -218,7 +219,7 @@
     .container{
         padding: 1rem;
     }
-    #main-content{
+    .main-content{
         padding: 1rem;
         gap: 1rem;
     }
@@ -331,9 +332,6 @@
 }
 
 .form__input-box{
-    margin-bottom: 2rem;
-}
-.form__input-box--small{
     margin-bottom: 1rem;
 }
 .form__input-box:last-of-type{
@@ -353,4 +351,18 @@
     margin-bottom: 0;
 }
 
+.form__button-wrap{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
 
+
+
+/* grid */
+.full-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+}

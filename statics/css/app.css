@@ -104,6 +104,8 @@
 .table__tr{
     display:table-row;
     border-bottom: 1px solid var(--theme-color-400);
+    position: relative;
+
 }
 .talbe__tr *{
     display:table-cell
@@ -115,6 +117,12 @@
 
 .table__tr [class*='flex--']{
     gap: 0;
+}
+
+.table__td:last-child{
+    position: absolute;
+    display: grid;
+    place-items: center;
 }
 
 .table__tbody .table__tr:hover{
@@ -197,18 +205,13 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    min-height: 2rem;
 
     justify-content: space-between;
 }
 
 .table-top__tab .tab__item{
     margin-right: 1.75rem;
-}
-.table__tr{
-    position: relative;
-}
-.table__td:last-child{
-    position: absolute;
 }
 
 @media all and (max-width:768px){
@@ -514,16 +517,16 @@
     align-items: center;
 }
 
-#aside-content{
+.aside-content{
     width: 0;
     transform: scaleX(0);
     transform-origin: right;
     transition: width .4s ease-in-out ;
 }
-#aside-content .container{
+.aside-content .container{
     min-height: 100vh;
 }
-#aside-content.is-active{
+.aside-content.is-active{
     width: 20rem;
     transform: scaleX(1);
     transform-origin: right;
@@ -531,7 +534,7 @@
 }
 
 @media all and (max-width:768px){
-    #aside-content{
+    .aside-content{
         position: absolute;
         right: 0;;
         top: 10rem;
@@ -561,4 +564,13 @@
         max-width: unset;
         height: 2.5rem;
     }
+}
+
+.button-wrap{
+    display: inline-flex;
+    gap: 1rem;
+}
+
+.button-wrap .button{
+    width: 100%;
 }

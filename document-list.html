@@ -17,7 +17,7 @@
                         선택한 계약서의 전체 이력 조회 및 문서의 변경사항을 한눈에 확인할 수 있는 창입니다.
                     </p>
                     <div class="flex--row flex-justify--between">
-                        <button type="button" class="button button--primary button--small">다음</button>
+                        <button type="button" class="button button--primary is-small">다음</button>
                     </div>
                 </div>
                 <div class="tutorial__box">
@@ -25,8 +25,8 @@
                         완료된 계약서와 문서 이력내용을 모두 다운로드 하실 수 있습니다. 
                     </p>
                     <div class="flex--row flex-justify--between">
-                        <button type="button" class="button button--outline button--small">이전</button>
-                        <button type="button" class="button button--primary button--small">다음</button>
+                        <button type="button" class="button button--outline is-small">이전</button>
+                        <button type="button" class="button button--primary is-small">다음</button>
                     </div>
                 </div>
                 <div class="tutorial__box">
@@ -34,8 +34,8 @@
                         완료된 계약서 및 이력정보를 다운로드 시 TSA도 포함됩니다.
                     </p>
                     <div class="flex--row flex-justify--between">
-                        <button type="button" class="button button--outline button--small">이전</button>
-                        <button type="button" class="button button--primary button--small">종료</button>
+                        <button type="button" class="button button--outline is-small">이전</button>
+                        <button type="button" class="button button--primary is-small">종료</button>
                     </div>
                 </div>
             </div>
@@ -125,7 +125,7 @@
                                 <div class="table__col" style="width:8%"></div>
                                 <div class="table__col" style="width:8%"></div>
                                 <div class="table__col" style="width:12%"></div>
-                                <div class="table__col" style="width:5%"></div>
+                                <div class="table__col" style="width:8%"></div>
                             </div>
                             <div class="table__thead">
                                 <ul class="table__tr">
@@ -160,7 +160,7 @@
                         </div>
                     </div>
                    <!-- 사이드 컨텐츠 (이벤트 때 생성) -->
-                    <div id="aside-content">
+                    <div class="aside-content">
                         <div class="container">
                             <h5>문서 이력</h5>
                             <ul id="aside__history-summary">
@@ -257,7 +257,7 @@
                 for (let i = 0; i < breakpoint; i++){
 
                     if(i > data.length) break;
-                    if(i == 0 ) {testClass = 'is-active'} else{testClass = null}
+                    testClass = null
 
                     let friends = [];
                     for(let a = 0; a < data[i].friends.length; a++){
@@ -306,9 +306,7 @@
                                 <img class="icon" src="/statics/icon/ellipsis-horizontal-line.svg">
                             </button>
                         </div>
-                    </div>
-
-                    `
+                    </div>`
                     $('.table__tbody').append(html)
                 }
             }
@@ -356,7 +354,6 @@
             $('#cancel-selected').on('click',function(){
                 checkEvent(null)
             })
-
 
             // 폴더변경 클릭 이벤트
             $('#change-folder, #document-move, #document-move-this').on('click',makeFolderModal)
@@ -439,7 +436,6 @@
                     }
                 })
             }
-
             
             // 폴더 변경하기
             function changeFolder(){
@@ -521,9 +517,18 @@
             function makeAsideContent(e){
                 // 버튼을 클릭한 경우 취소
                 if(e.target.closest('.toggle')) return ;
+
+                if($(this).parent('.table__thead').length > 0){
+                    if(e.target.className !== 'checkbox'){
+                        return false;
+                    }
+                    else{
+                        return
+                    }
+                }
                 if(e.target.closest('button')||e.target.closest('.list-modal')) return false;
-                else if ($('#aside-content .container').length > 0){
-                    $('#aside-content').toggleClass('is-active')
+                else if ($('.aside-content .container').length > 0){
+                    $('.aside-content').toggleClass('is-active')
                 }
                 else{
                     html = '';
@@ -541,7 +546,7 @@
                             <button type="button" class="button is-medium button--outline">계약서 확인하기</button>
                         </div>
                     `
-                    $('#aside-content').append(html).addClass('is-active')
+                    $('.aside-content').append(html).addClass('is-active')
                 }
 
                 let userId = $(this).attr('data-id')
@@ -566,7 +571,6 @@
                         $('.aside__list-item').remove()
                     }
 
-                    console.log(result)
                     for(let i = 0; i < 2; i++){
                         html += `
                         <li class="aside__list-item">
@@ -583,10 +587,6 @@
                 .always(function(xhr, status) {
                 });
             }
-
-
-            
-
 
         </script>
         <!-- <script src="/statics/js/tutorial.js"></script> -->

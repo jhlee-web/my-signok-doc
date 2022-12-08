@@ -313,6 +313,10 @@ option{
 /* input */
 .input-area{
     margin-bottom: 2rem;
+    
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
 }
 .input-box{
     position: relative;
@@ -326,7 +330,11 @@ option{
     padding: 1rem;
     border-radius: 0.5rem;
     border: 1px solid var(--theme-color-400);
+
     height: 2.5rem;
+}
+.input.is-small{
+    height: 2rem;
 }
 .input-box .icon{
     position: absolute;
@@ -410,6 +418,8 @@ option{
 /* button */
 .button{
     border-radius: 0.5rem;
+    font-weight: 500;
+
     cursor: pointer;
     color: var(--text-color-800);
 
@@ -467,23 +477,28 @@ option{
     line-height: 4rem;
     padding: 0 2rem;
 
+    font-size: 0.875rem;
 }
 .button.is-large{
     height: 3rem;
     line-height: 3rem;
     padding: 0 1.5rem;
 
+    font-size: 1rem;
 }
 .button.is-medium{
     height: 2.5rem;
     line-height: 2.5rem;
     padding: 0 1.25rem;
 
+    font-size: 0.875rem;
 }
 .button.is-small{
     height: 2rem;
     line-height: 2rem;
     padding: 0 .75rem;
+
+    font-size: 0.875rem;
 }
 
 @media all and (max-width:1280px){
@@ -647,9 +662,7 @@ option{
 
 
 
-
-
-/* tab */
+/* tab type:text*/
 .tab{
     display: flex;
     flex-direction: row;
@@ -663,11 +676,31 @@ option{
     color: var(--text-color-600);
     cursor: pointer;
 }
-
 .tab__item.is-active{
     font-weight: 500;
     color: var(--text-color-800);
 }
+
+.tab__item--badge{
+    padding: 0 1.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+
+    color: var(--text-color-600);
+    cursor: pointer;
+
+    border-radius: 99rem;
+
+}
+.tab__item--badge:hover{
+    background:var(--theme-color-100);
+    transition: .3s;
+}
+.tab__item--badge.is-active{
+    background:var(--theme-color-400);
+}
+
+
 
 
 /* bar */
