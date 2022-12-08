@@ -251,36 +251,30 @@
 .doc-header__user-wrap{
     position: relative;
 }
-.doc-header__user{
-    display: inline-flex;
-    align-items: center;
-}
 #user_name{
     font-weight: 600;
     color: var(--secondary-color-500);
 }
-.doc-header__modal{
-    border-radius: .5rem;
-    background:var(--background-color);
-    box-shadow: var(--box-shadow--5);
-
+.doc-header__user-wrap .list-modal{
     display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-
-    width: 10rem;
 }
-.doc-header__user-wrap.is-active .doc-header__modal{
+.doc-header__user-wrap.is-active .list-modal{
     display: flex;
     flex-direction: column;
-
-   
 }
-.doc-header__modal li{
-    padding: .5rem;
+
+.list-modal li{
+    padding: .5rem 0;
     font-size: 0.875rem;
 }
+.list-modal li *{
+    width: 100%;
+    height: 1.5em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 
 
 

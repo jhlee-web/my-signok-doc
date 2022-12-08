@@ -125,7 +125,7 @@
                                 <div class="table__col" style="width:8%"></div>
                                 <div class="table__col" style="width:8%"></div>
                                 <div class="table__col" style="width:12%"></div>
-                                <div class="table__col" style="width:8%"></div>
+                                <div class="table__col" style="width:5%"></div>
                             </div>
                             <div class="table__thead">
                                 <ul class="table__tr">
@@ -266,14 +266,14 @@
 
                     if(data[i].isActive == false){
                         state = `
-                        <p class="table__td state success">
-                            <img src="/statics/icon/hourglass-line.svg" class="icon">
-                            진행중
-                        </p>`
+                            <p class="state success" >
+                                <img src="/statics/icon/hourglass-line.svg" class="icon">
+                                진행중
+                            </p>`
                     }
                     else{
                         state = `
-                        <p class="table__td state ban">
+                        <p class="state ban">
                             <img src="/statics/icon/ban-line.svg" class="icon">
                             만료
                         </p>`
@@ -286,7 +286,9 @@
                             <input type="checkbox" class="checkbox"
                             id="">
                         </div>
-                        ${state}
+                        <div class="table__td">
+                            ${state}
+                        </div>
                         <div class="table__td font-weight--medium">
                             <p class="table__td--title">${data[i].guid}</p>
                             <p class="is-remark">${friends}</p>
@@ -462,14 +464,20 @@
                 const documentId =$(this).attr('data-id')
                 html = '';
                 html += `
-                <ul class="table__modal">
+                <ul class="list-modal">
                     <li id="document-name-change-this">문서이름변경</li>
                     <li id="document-download-this">다운로드</li>
                     <li id="document-move-this">폴더이동</li>
                     <li id="document-delete-this">삭제</li>
                 </ul>
                 `
-                $('.table__modal').length < 1 ? $(this).append(html):$('.table__modal').remove()
+                if($('.list-modal').length < 1){
+                    $(this).append(html)
+                    $(this).parents('.table__tr').css('z-index','10')
+                }
+                else{
+                    $('.list-modal').remove()
+                }
 
                 $('#document-name-change-this').on('click',makeDeleteModal)
                 $('#document-download-this').on('click',makeDeleteModal)
@@ -513,7 +521,7 @@
             function makeAsideContent(e){
                 // 버튼을 클릭한 경우 취소
                 if(e.target.closest('.toggle')) return ;
-                if(e.target.closest('button')||e.target.closest('.table__modal')) return false;
+                if(e.target.closest('button')||e.target.closest('.list-modal')) return false;
                 else if ($('#aside-content .container').length > 0){
                     $('#aside-content').toggleClass('is-active')
                 }
@@ -581,7 +589,7 @@
 
 
         </script>
-        <script src="/statics/js/tutorial.js"></script>
+        <!-- <script src="/statics/js/tutorial.js"></script> -->
         <script src="/statics/js/common.js"></script>
     </body>
     
