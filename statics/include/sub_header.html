@@ -10,7 +10,7 @@
             <!-- <div class="search-form">
                 <form class="search-form__form">
                     <input type="text"
-                        class="input input--large search-form__input"
+                        class="input is-large search-form__input"
                         placeholder="검색어를 입력해주세요">
                     <button type="button"
                         class="button button--outline is-medium
@@ -47,7 +47,27 @@
                     <img class="icon icon--large" src="/statics/icon/help-line.svg" alt="도움말">
                 </button>
             </div>
-            <p>안녕하세요, <span id="user_id">홍길동</span>님</p>
+            <div class="doc-header__user-wrap">
+                <p class="doc-header__user">안녕하세요, <span id="user_name">홍길동</span>님</p>
+                <ul class="doc-header__modal">
+                    <li>
+                        <span id="user_mail"></span>
+                    </li> 
+                    <li>
+                        [<span id="user_product"></span>] 이용중
+                    </li> 
+                    <li>
+                        잔여일수: <span id="user_left_day"></span>일
+                    </li> 
+                    <li>
+                        <a href="void:javascript(0)">내정보관리</a>
+                    </li> 
+                    <li>
+                        <button type="button" class="button">로그아웃 </button>
+                    </li> 
+
+                </ul>
+            </div>
         </div> 
     </div>
 </div>
@@ -58,6 +78,15 @@
         let currentTitle = $('.is-active span').text()
         $('#doc-header__title').text(currentTitle)
     }
+
+    let testData = {
+        'user_name':'user_name',
+        'user_product':['베이직','비즈니스','프리미엄'],
+        'user_mail':['sammy53@hotmail.com','nicole80@hotmail.com','georgianna_mccullough@yahoo.com'],
+    }
+    $('.doc-header__user').on('click',function(){
+        $(this).parents('.doc-header__user-wrap').toggleClass('is-active')
+    })
     
 
 </script>

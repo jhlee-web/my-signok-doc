@@ -58,30 +58,35 @@
                     <div id="main-content">
                         <!-- 상단 -->
                         <div class="flex--row is-change">
-                            <button type="button" class="button is-medium button--outline"
+                            <button type="button" class="button is-small button--outline"
                             id="change-folder">
                                 <img src="/statics/icon/folder-line.svg" alt="닫기" class="icon icon--large icon--warning">
                                 폴더선택
                             </button>
-                            <div id="" class="select-box is-medium">
+                            <div id="" class="select-box is-small">
                                 <select class="select-box__select">
-                                    <option value="10" selected>전체</option>
-                                    <option value="30">항목1</option>
-                                    <option value="50">항목2</option>
+                                    <option value="" selected>전체</option>
+                                    <option value="">완료</option>
+                                    <option value="">진행중</option>
+                                    <option value="">만료</option>
                                 </select>
                                 <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
                             </div>
-                            <intput type="text"></intput>
+                            <div class="doc-search">
+                                <select class="doc-search__select select">
+                                    <option value="" selected>문서명</option>
+                                    <option value="">옵션2</option>
+                                    <option value="">옵션3</option>
+                                </select>
+                                <input type="text" maxlength="50"
+                                placeholder="검색어를 입력해주세요"
+                                class="doc-search__input input">
+                            </div>
+                            
                         </div>
                         <!-- 상단 2 -->
                         <div class="table-top">
                             <div id="default-top-box" class="table-top__box">
-                                <ul class="table-top__tab tab">
-                                    <li class="tab__item is-active">전체</li>
-                                    <li class="tab__item">완료</li>
-                                    <li class="tab__item">진행중</li>
-                                    <li class="tab__item">만료</li>
-                                </ul>
                                 <button type="button" class="button is-medium">
                                     <img src="/statics/icon/file_type_excel2.svg" class="icon">
                                     엑셀로 내려받기
@@ -124,16 +129,16 @@
                             </div>
                             <div class="table__thead">
                                 <ul class="table__tr">
-                                    <li class="table__td width-10">
+                                    <li class="table__td">
                                         <input type="checkbox" class="checkbox"
                                         id="checkbox-all">
                                     </li>
-                                    <li class="table__td width-20">상태</li>
-                                    <li class="table__td width-100">문서이름</li>
-                                    <li class="table__td width-20">알람</li>
-                                    <li class="table__td width-20">위치</li>
-                                    <li class="table__td width-25">마지막 활동시간</li>
-                                    <li class="table__td width-10">추가메뉴</li>
+                                    <li class="table__td">상태</li>
+                                    <li class="table__td">문서이름</li>
+                                    <li class="table__td">알람</li>
+                                    <li class="table__td">위치</li>
+                                    <li class="table__td">마지막 활동시간</li>
+                                    <li class="table__td">추가메뉴</li>
                                 </ul>
                             </div>
                             <div class="table__tbody"></div>
@@ -261,14 +266,14 @@
 
                     if(data[i].isActive == false){
                         state = `
-                        <p class="table__td width-20 state success">
+                        <p class="table__td state success">
                             <img src="/statics/icon/hourglass-line.svg" class="icon">
                             진행중
                         </p>`
                     }
                     else{
                         state = `
-                        <p class="table__td width-20 state ban">
+                        <p class="table__td state ban">
                             <img src="/statics/icon/ban-line.svg" class="icon">
                             만료
                         </p>`
@@ -277,24 +282,24 @@
                     html = ''
                     html += `
                     <div class="table__tr ${testClass}" data-id="${data[i].index}">
-                        <div class="table__td width-10">
+                        <div class="table__td">
                             <input type="checkbox" class="checkbox"
                             id="">
                         </div>
                         ${state}
-                        <div class="table__td width-100  font-weight--medium">
+                        <div class="table__td font-weight--medium">
                             <p class="table__td--title">${data[i].guid}</p>
-                            <p class="table__td--remark">${friends}</p>
+                            <p class="is-remark">${friends}</p>
                         </div>
-                        <div class="table__td width-20">
+                        <div class="table__td">
                             <label class="toggle--small toggle">
                                 <input type="checkbox" class="toggle__checkbox">
                                 <span class="toggle__slider"></span>
                             </label>
                         </div>
-                        <p class="table__td width-20 table__td--remark">기본폴더</p>
-                        <p class="table__td width-25 table__td--remark">${data[i].registered}</p>
-                        <div class="table__td width-10">
+                        <p class="table__td is-remark">기본폴더</p>
+                        <p class="table__td is-remark">${data[i].registered}</p>
+                        <div class="table__td">
                             <button type="button" class="button button--outline icon-button is-small">
                                 <img class="icon" src="/statics/icon/ellipsis-horizontal-line.svg">
                             </button>
@@ -369,7 +374,7 @@
                     </div>
                     <div class="modal__content">
                         <div class="modal__search-form">
-                            <input type="text" class="input input--large"
+                            <input type="text" class="input is-large"
                             placeholder="검색어를 입력해주세요">
                             <img class="icon icon" src="/statics/icon/search-line.svg" alt="검색">
                         </div>

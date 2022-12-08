@@ -71,7 +71,7 @@
 .table{
     display: table;
     table-layout: fixed;
-
+    width: 100%;
     color: var(--text-color-800);
 }
 .table__colgroup{
@@ -147,7 +147,7 @@
     white-space: nowrap;
 }
 
-.table__td--remark{
+.is-remark{
     color: var(--text-color-600);
     font-size: 0.875rem;
 }
@@ -202,28 +202,38 @@
 
 
 @media all and (max-width:768px){
+    
     .table-top__box{
         flex-direction: column-reverse;
     }
+    
+    [class*="table__"]:not(.table__td){
+        display: flex;
+        flex-direction: column;
+    }
     .table__thead{
-        display: none;
+        display: none!important;
     }
     .table__tr{
-        flex-direction: row;
-        align-items: center;
-
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
         padding: 1rem 0;
+        position: relative;
     }
     
     .table__tr .checkbox{
         display: none;
     }
     .table__td{
-        padding: 0;
-        padding-bottom: .5em;
+        padding: .5em;
     }
-    .table__td[class*='width-']{
-        width: unset;
+    .table__td:last-child{
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
     }
     .table-top .button{
         width: 100%;
@@ -233,6 +243,7 @@
         width: 100%;
     }
 }
+
 
 .state{
     display: inline-flex;
@@ -519,5 +530,27 @@
         min-height: calc(100vh - 10rem);
         height: 100%;
         background: var(--background-color);
+    }
+}
+
+
+.doc-search{
+    display: inline-flex;
+    align-items: center;
+    background: var(--theme-color-100);
+    border-radius: 99rem;
+
+    width: 100%;
+    max-width: 20rem;
+    height: 2rem;
+}
+.doc-search__input{
+    border: 0;
+}
+
+@media all and (max-width:1280px){
+    .doc-search{
+        max-width: unset;
+        height: 2.5rem;
     }
 }

@@ -256,14 +256,17 @@ option{
 
 
 /* select */
+.select{
+    border: none;
+    padding: 0 1rem;
+}
+
 .select-box{
     position: relative;
     font-size: 0.875rem;
 }
 
 .select-box__select{
-    border: none;
-    padding: 0 1rem;
     width: 100%;
     height: 100%;
 
@@ -284,23 +287,25 @@ option{
     transform: translateY(-50%) rotate(0deg);
     transition: .35s;
 }
-
-.select-box.is-small{
+.select-box.is-large{
     min-width: 12rem;
-    height: 2rem;
+    height: 3rem;
 }
 .select-box.is-medium{
     min-width: 12rem;
     height: 2.5rem;
 }
-.select-box.is-large{
+.select-box.is-small{
     min-width: 12rem;
-    height: 3rem;
+    height: 2rem;
 }
 
-@media all and (max-width:768px){
-    .select-box--large{
+@media all and (max-width:1280px){
+    .select-box.is-large{
         width: 100%;
+    }
+    .select-box.is-small{
+        height: 2.5rem;
     }
 }
 
@@ -338,7 +343,7 @@ option{
 ::placeholder{
     color: var(--text-color-600);
 }
-.input--large{
+.is-large{
     height: 3rem;
 }
 
@@ -457,30 +462,37 @@ option{
 }
 
 /* button size set */
-.button--xl{
+.button.is-xl{
     height: 4rem;
     line-height: 4rem;
     padding: 0 2rem;
 
 }
-.button--large{
+.button.is-large{
     height: 3rem;
     line-height: 3rem;
     padding: 0 1.5rem;
 
 }
-.is-medium{
+.button.is-medium{
     height: 2.5rem;
     line-height: 2.5rem;
     padding: 0 1.25rem;
 
 }
-.button--small{
+.button.is-small{
     height: 2rem;
     line-height: 2rem;
     padding: 0 .75rem;
 }
 
+@media all and (max-width:1280px){
+    .button.is-small{
+        height: 2.5rem;
+        line-height: 2.5rem;
+        padding: 0 1.25rem;
+    }
+}
 
 
 /* only icon button */
@@ -522,7 +534,15 @@ option{
     width: 1rem;
 }
 
-
+@media all and (max-width:1280px){
+    .icon-button.is-small{
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    .icon-button.is-small .icon{
+        width: 1.25rem;
+    }
+}
 /* group button */
 .group-button{
     display: flex;
