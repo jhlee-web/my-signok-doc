@@ -1,5 +1,5 @@
 @import url('/statics/css/reset.css');
-@import url('/statics/css/common.css');
+@import url('/statics/css/common.css?v=2');
 @import url('/statics/css/layout.css');
 @import url("/statics/css/font/web/static/pretendard.css");
 
@@ -550,4 +550,43 @@
     display: inline-flex;
     align-items: center;
     gap: .5rem;
+}
+
+[id^="sns-"]{
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    height: 2rem;
+    padding: .5rem;
+}
+
+[id^="sns-"] img{
+    width: 1.25rem;
+    margin-right: 1.5rem;
+}
+[id^="sns-"] span{
+    font-size: var(--text-small);
+    font-weight: 500;
+}
+#sns-naver{
+    background: #03c75a;
+}
+#sns-naver span{
+    color: white;
+}
+
+#sns-kakao{
+    background: #FEE500;
+}
+
+#sns-kakao span{
+    color: rgba(0,0,0,85);
+}
+
+@media all and (max-width:768px){
+    [id^="sns-"]{
+        justify-content: center;
+    }
 }

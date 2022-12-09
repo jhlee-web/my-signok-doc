@@ -85,7 +85,7 @@ html,body{
     min-height:100%;
     
     font-family: "Pretendard", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-    font-size: calc(14px + 0.1vw);
+    font-size: max(16px, calc(14px + 0.1vw));
     line-height: 150%;
 
     color: var(--text-color-800);
