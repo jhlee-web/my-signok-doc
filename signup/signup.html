@@ -32,11 +32,11 @@
                             <input type="text"
                             class="input"
                             id="login-mail"
-                            placeholder="이메일주소를 입력해주세요.">
+                            placeholder="이메일주소를 입력해주세요." required>
                             <img class="icon" src="/statics/icon/remove-solid.svg"></img>
                         </div>
+                        <p class="input-area__helper">메일 주소를 바르게 입력해주세요</p>
                     </div>
-                    <p class="input-area__helper"></p>
                     <!-- /이메일 -->
 
                     <!-- 패스워드 -->
@@ -46,7 +46,7 @@
                             <input type="password"
                             class="input"
                             id="login-password"
-                            placeholder="비밀번호를 입력해주세요.">
+                            placeholder="비밀번호를 입력해주세요." required>
                             <img class="icon" src="/statics/icon/eye-show-line.svg"></img>
                         </div>
 
@@ -90,7 +90,7 @@
                                 만 14세 이상입니다
                                 <img class="icon" src="/statics/icon/angle-right.svg">
                             </label>
-                            <input type="checkbox" class="checkbox">
+                            <input type="checkbox" class="checkbox" required>
 
                         </li>
                         <li class="form__checkbox">
@@ -99,7 +99,7 @@
                                 이용약관에 동의합니다
                                 <img class="icon" src="/statics/icon/angle-right.svg">
                             </label>
-                            <input type="checkbox" class="checkbox">
+                            <input type="checkbox" class="checkbox" required>
 
                         </li>
                         <li class="form__checkbox">
@@ -108,7 +108,7 @@
                                 개인정보 수집 및 이용 동의
                                 <img class="icon" src="/statics/icon/angle-right.svg">
                             </label>
-                            <input type="checkbox" class="checkbox">
+                            <input type="checkbox" class="checkbox" required>
 
                         </li>
                         <li class="form__checkbox">
@@ -124,7 +124,7 @@
                     <!-- /약관목록 -->
                    
                     <div class="form__button-wrap">
-                        <button type="button"
+                        <button type="submit" id="submit"
                         class="button button--secondary is-medium">무료 회원가입</button>
                     </div>
                    
@@ -159,6 +159,16 @@
         <script>
             $('html').attr('data-theme','light')
 
+            // 전체 동의
+            $('#checkbox-all').on('click',manageAllCheck)
+
+            function manageAllCheck(){
+                $(this).prop('checked')==true ?
+                $('.checkbox').prop('checked',true) :
+                $('.checkbox').prop('checked',false)
+            }
+
+
             /** input 입력시 값 지우기 버튼 생성 */
             function checkInputLength(){
                 this.value.length > 0 ?
@@ -168,56 +178,95 @@
 
             $('.input').on('keyup',checkInputLength)
 
-            function checkRegPwd(){
-                let regLength = /^.{8,25}$/;
-                let regAsterisk = /^(?=.*[!@#$%^*+=-]).$/;
-                let regType = /^(?=.*[a-zA-Z])(?=.*[0-9]).$/;
-
-                let value = $('#login-password').val()
-                
-                if(regLength.test(value)){
-                    console.log('length succeses')
-                }
-                if(regAsterisk.test(value)){
-                    console.log('asterisk succeses')
-                }
-                if(regType.test(value)){
-                    console.log('type succeses')
-                }
-                
-            }
-
-            $('#login-password').on('keyup',checkRegPwd)
-
 
             /** remove 아이콘 클릭시 input 값 초기화
              * 아이콘에 'eye'가 있을 경우 비밀번호 토글
              * 아이콘에 'eye'가 없을 경우 input 초기화
              */
             function handlingInputValue(){
-
                 if($(this).attr('src').indexOf('eye') > -1){
                     const inputType = $(this).prev('.input')
 
                     if(inputType.attr('type') == 'password'){
                         inputType.attr('type','text');
-                        $(this).attr('src',"/icon/eye-hide-line.svg")
+                        $(this).attr('src',"/statics/icon/eye-hide-line.svg")
                     }
 
                     else{
                         inputType.attr('type','password');
-                        $(this).attr('src',"/icon/eye-show-line.svg")
+                        $(this).attr('src',"/statics/icon/eye-show-line.svg")
                     }
                 }
-                
                 else{
                     $(this).prev('.input').val('')
                     $(this).hide()
                 }
-                
             }
 
             $('.icon').on('click',handlingInputValue)
+
+            // 비밀번호 유효성검사
+            function checkRegPwd(){
+                $('.input-area').removeClass('is-error');
+
+                let reg = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/
+                let password = $(this).val()
+
+                let checkAsterisk = password.search(/[!@#$%^*+=-]/g);
+                let checkNumber = password.search(/[0-9]/g);
+                let checkEnglish = password.search(/[a-z]/ig);
+
+
+                // css 찾거나 만들기
+                // 영문숫자 
+                if(checkNumber <0 || checkEnglish <0){
+                    $('#has-number').find('.is-remark').css('color','red')
+                }
+                else{
+                    $('#has-number').find('.is-remark').css('color','unset')
+                }
+
+                if(checkAsterisk <0){
+                    $('#has-asterisk').find('.is-remark').css('color','red')
+                }
+                else{
+                    $('#has-asterisk').find('.is-remark').css('color','unset')
+                }
+                if(password.length < 8){
+                    $('#has-length').find('.is-remark').css('color','red')
+                }
+                else{
+                    $('#has-length').find('.is-remark').css('color','unset')
+                }
+                
+            }
+
+            $('#login-password').on('keyup',checkRegPwd)
+
+            function submitData(e){
+                // e.preventDefault()
+                $('.input-area').removeClass('is-error');
+
+                let regMail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+                let regPwd = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/
+
+                let mail = $('#login-mail').val()
+                let pwd = $('#login-password').val()
+
+                if (!regMail.test(mail)){
+                    $('#login-mail').parents('.input-area').addClass('is-error');
+                }
+                else if (!regPwd.test(pwd)){
+                    $('#login-password').parents('.input-area').addClass('is-error');
+                }
+                else{
+                    e.preventDefault()
+                    location.href=`/signup/submit-mail.html?mail=${mail}`
+                }
+            }
+
+            $('#submit').on('click',submitData)
+            
 
         </script>
     </body>

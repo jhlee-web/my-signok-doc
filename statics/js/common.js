@@ -10,3 +10,4 @@ $('.tab__item').on('click',function(){
 function getUrl(){
     return param = new URLSearchParams(location.search).get('page')
 }
+

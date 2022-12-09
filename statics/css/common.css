@@ -94,6 +94,10 @@ html,body{
     word-break: keep-all;
 }
 
+.is-break{
+    word-break: break-all;
+}
+
 option{
     background: var(--background-color);
 }
@@ -319,7 +323,7 @@ option{
 
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    gap: .25rem;
 }
 .input-box{
     position: relative;
@@ -339,6 +343,9 @@ option{
 .input.is-small{
     height: 2rem;
 }
+.input.is-large{
+    height: 3rem;
+}
 .input-box .icon{
     position: absolute;
     right: 1em;
@@ -354,9 +361,15 @@ option{
 ::placeholder{
     color: var(--text-color-600);
 }
-.is-large{
-    height: 3rem;
+
+
+.input-area__helper{
+    display: none;
+
+    font-size: var(--text-small);
+    color:var(--text-color-600)
 }
+
 
 .input-area.is-error *:not(label){
     color: var(--primary-color-500);
@@ -364,13 +377,10 @@ option{
 .input-area.is-error .input{
     border: 1px solid var(--primary-color-500);
 }
-
-.input-area__helper{
-    margin-top: .5rem;
-    font-size: var(--text-small);
-    color:var(--text-color-600)
+.input-area.is-error .input-area__helper{
+    display: block;
+    visibility: visible;
 }
-
 
 
 /* checkbox box */
@@ -654,7 +664,7 @@ option{
     border-radius: 50%;
 }
 
-.is-small .toggle__slider::before{
+.toggle.is-small .toggle__slider::before{
     width: 1rem;
     height: 1rem;
     left: 10%;
@@ -735,6 +745,8 @@ option{
     gap: .5em;
 }
 
+
+/* width set */
 .width-100{
     width: 100%;
 }
