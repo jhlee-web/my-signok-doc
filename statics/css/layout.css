@@ -339,13 +339,6 @@
     text-align: center;
 }
 
-.form__input-box{
-    margin-bottom: 1rem;
-}
-.form__input-box:last-of-type{
-    margin-bottom: 4rem;
-}
-
 .from__control-form{
     display: inline-block;
 }
@@ -366,8 +359,27 @@
     gap: 1rem;
 }
 
+.form__checkbox-wrap{
 
+    margin-top: 2rem;
 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form__checkbox{
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    padding: .25rem 0;
+
+    justify-content: space-between;
+}
+
+@media all and (max-widht:768px){
+    
+}
 /* grid */
 .full-grid{
     display: grid;

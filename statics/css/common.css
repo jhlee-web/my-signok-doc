@@ -400,10 +400,11 @@ option{
     background-color: var(--primary-color-500);
 }
 .checkbox:checked::before{
-    width: 80%;
-    height: 80%;
+    /* width: 80%;
+    height: 80%; */
     box-shadow: none;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36'%3E%3Cpath fill='%23ffffff' d='M13.72 27.69 3.29 17.27a1 1 0 0 1 1.41-1.41l9 9L31.29 7.29A1 1 0 0 1 32.7 8.7Z' class='clr-i-outline clr-i-outline-path-1'/%3E%3C/svg%3E");
+    background-position: center;
     background-size: contain;
 }
 
@@ -420,6 +421,9 @@ option{
 
 /* button */
 .button{
+
+    max-width: 100%;
+
     border-radius: 0.5rem;
     font-weight: 500;
 
@@ -617,7 +621,7 @@ option{
     height: 2rem;
     cursor: pointer;
 }
-.is-small{
+.toggle.is-small{
     width: 3rem;
     height: 1.5rem;
 }
@@ -838,5 +842,13 @@ option{
     .modal__body{
         max-height: calc(100vh - 2rem - 5rem - 4rem);
     }
+}
+
+/* margin */
+.margin-bottom--medium{
+    margin-bottom: 1rem;
+}
+.margin-bottom--xl{
+    margin-bottom: 4rem;
 }
 

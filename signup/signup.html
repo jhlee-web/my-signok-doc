@@ -11,7 +11,7 @@
     <body>
         <main class="main main--background">
             <!-- // 상단헤더 -->
-            <div class="container flex--column gap--xl">
+            <div class="container flex--column gap--large">
                 <div class="title-box flex-align--center">
                     <h1 class="">
                         <a>
@@ -20,14 +20,12 @@
                     </h1>
                 </div>
 
-                
-               
-
                 <form class="form">
                     <div class="form__title-wrap">
                         <p class="body--large">싸인오케이 회원가입</p>
                         <p class="is-remark">싸인오케이로 간편한 전자계약을 시작해 보세요.</p>
                     </div>
+                    <!-- 이메일 -->
                     <div class="input-area">
                         <label for="login-mail">이메일</label>
                         <div class="input-box">
@@ -39,7 +37,9 @@
                         </div>
                     </div>
                     <p class="input-area__helper"></p>
+                    <!-- /이메일 -->
 
+                    <!-- 패스워드 -->
                     <div class="input-area">
                         <label for="login-password">비밀번호</label>
                         <div class="input-box">
@@ -49,37 +49,90 @@
                             placeholder="비밀번호를 입력해주세요.">
                             <img class="icon" src="/statics/icon/eye-show-line.svg"></img>
                         </div>
+
+                        <!-- 유효성검증 -->
                         <div class="flex--row">
-                            <div class="icon-with-text">
+                            <div class="icon-with-text"
+                            id="has-number">
                                 <img src="/statics/icon/check-line.svg"
                                 class="icon">
                                 <p class="is-remark">문자 및 숫자 포함</p>
                             </div>
-                            <div class="icon-with-text">
+                            <div class="icon-with-text"
+                            id="has-asterisk">
                                 <img src="/statics/icon/check-line.svg"
                                 class="icon">
                                 <p class="is-remark">특수문자</p>
                             </div>
-                            <div class="icon-with-text">
+                            <div class="icon-with-text"
+                            id="has-length">
                                 <img src="/statics/icon/check-line.svg"
                                 class="icon">
                                 <p class="is-remark"> 8자리 이상</p>
                             </div>
-
                         </div>
-
+                        <!-- /유효성검증 -->
                     </div>
+                    <!-- /패스워드 -->
+                    
+                    <!-- 약관목록 -->
+                    <ul class="form__checkbox-wrap">
+                        <li class="form__checkbox">
+                            <label for="checkbox-all"
+                            class="margin-bottom--medium font-weight--medium">
+                                약관전체동의(선택포함)
+                            </label>
+                            <input type="checkbox" id="checkbox-all" class="checkbox">
+                        </li>
+                        <li class="form__checkbox">
+                            <label for="" class="flex--row align-item-center">
+                                <span class="font-weight--medium">필수</span>
+                                만 14세 이상입니다
+                                <img class="icon" src="/statics/icon/angle-right.svg">
+                            </label>
+                            <input type="checkbox" class="checkbox">
 
+                        </li>
+                        <li class="form__checkbox">
+                            <label for="" class="flex--row align-item-center">
+                                <span class="font-weight--medium">필수</span>
+                                이용약관에 동의합니다
+                                <img class="icon" src="/statics/icon/angle-right.svg">
+                            </label>
+                            <input type="checkbox" class="checkbox">
+
+                        </li>
+                        <li class="form__checkbox">
+                            <label for="" class="flex--row align-item-center">
+                                <span class="font-weight--medium">필수</span>
+                                개인정보 수집 및 이용 동의
+                                <img class="icon" src="/statics/icon/angle-right.svg">
+                            </label>
+                            <input type="checkbox" class="checkbox">
+
+                        </li>
+                        <li class="form__checkbox">
+                            <label for="" class="flex--row align-item-center">
+                                <span class="font-weight--medium">선택</span>
+                                광고 마케팅 동의
+                                <img class="icon" src="/statics/icon/angle-right.svg">
+                            </label>
+                            <input type="checkbox" class="checkbox">
+
+                        </li>
+                    </ul>
+                    <!-- /약관목록 -->
+                   
                     <div class="form__button-wrap">
-                        <a href="/step-1.html"
-                        class="button button--secondary is-medium">무료 회원가입 계속하기</a>
+                        <button type="button"
+                        class="button button--secondary is-medium">무료 회원가입</button>
                     </div>
                    
                 </form>
 
                 <div class="flex--column">
-                    <p class="body--small font-color--third">다른 계정으로 로그인하기</p>
-                    <div class="button-wrap">
+                    <p class="body--small font-color--third">다른 계정으로 가입하기</p>
+                    <div class="basic-button-wrap">
                         <a class="button is-small">
                             <img class="icon" src="/statics/icon/pop-out-line.svg">
                             <span>구글</span>
@@ -94,6 +147,10 @@
                         </a>
                     </div>
                 </div>
+
+                <a href="/login.html"
+                    class="button button--text is-medium">이미 싸인오케이 회원이신가요?
+                </a>
             </div>
            <!-- // container -->
         </main>
@@ -110,6 +167,27 @@
             }
 
             $('.input').on('keyup',checkInputLength)
+
+            function checkRegPwd(){
+                let regLength = /^.{8,25}$/;
+                let regAsterisk = /^(?=.*[!@#$%^*+=-]).$/;
+                let regType = /^(?=.*[a-zA-Z])(?=.*[0-9]).$/;
+
+                let value = $('#login-password').val()
+                
+                if(regLength.test(value)){
+                    console.log('length succeses')
+                }
+                if(regAsterisk.test(value)){
+                    console.log('asterisk succeses')
+                }
+                if(regType.test(value)){
+                    console.log('type succeses')
+                }
+                
+            }
+
+            $('#login-password').on('keyup',checkRegPwd)
 
 
             /** remove 아이콘 클릭시 input 값 초기화
