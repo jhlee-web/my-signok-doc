@@ -80,11 +80,14 @@ html[data-theme='dark']{
     margin: 0;
     padding: 0;
 	box-sizing: border-box;
+
+    font-family: "Pretendard", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+
 }
 html,body{
     min-height:100%;
     
-    font-family: "Pretendard", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    /* font-family: "Pretendard", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif; */
     font-size: max(16px, calc(14px + 0.1vw));
     line-height: 150%;
 
@@ -94,8 +97,26 @@ html,body{
     word-break: keep-all;
 }
 
+.is-accent{
+    color: var(--primary-color-500);
+    font-weight: 500;
+}
+.is-primary{
+    color: var(--primary-color-500);
+}
+
 .is-break{
     word-break: break-all;
+}
+
+.is-remark{
+    color: var(--text-color-600);
+    font-size: var(--text-small);
+}
+
+/* hide setting */
+.is-hide{
+    display: none!important;
 }
 
 option{
@@ -218,6 +239,7 @@ option{
 }
 .flex--row{
     flex-direction: row;
+    align-items: center;
 }
 .flex--column{
     flex-direction: column;
@@ -241,8 +263,10 @@ option{
 .flex-justify--between{
     justify-content: space-between;
 }
+
+/* 생각해보기 */
 .flex-justify--end{
-    justify-content: flex-end;
+    justify-content: flex-end!important;
 }
 
 
@@ -340,6 +364,9 @@ option{
 
     height: 2.5rem;
 }
+.input.is-narrow{
+    max-width: 4rem;
+}
 .input.is-small{
     height: 2rem;
 }
@@ -417,6 +444,39 @@ option{
     background-position: center;
     background-size: contain;
 }
+
+/* radio box */
+.radio{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 99rem;
+    overflow: hidden;
+
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--theme-color-400);
+}
+.radio::before{
+    content: '';
+    display: block;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    border: 0;
+    background-color: transparent;
+    background-size: contain;
+}
+
+/* radio mark */
+.radio:checked{
+    border: .25rem solid var(--primary-color-500);
+}
+.radio:checked::before{
+    box-shadow: none;
+    background-position: center;
+    background-size: contain;
+}
+
 
 /* checkbox disabled */
 .checkbox:disabled,
@@ -577,33 +637,45 @@ option{
 }
 /* group button */
 .group-button{
-    display: flex;
-    flex-direction: row;
+    display: inline-flex;
     gap: 0;
     align-items: center;
-}
-.group-button__base{
-    display: grid;
-    place-items: center;
-    border: 1px solid var(--theme-color-400);
-    cursor: pointer;
-}
-.group-button__base:hover{
-    background: var(--focus-color-50);
-    transition: .3s;
-}
+    height: 2.5rem;
 
-.group-button__base .icon{
-    filter: var(--filter-text-400);
 }
-.group-button--large{
+.group-button.is-large{
     width: 3rem;
     height: 3rem;
 }
-.group-button__base--left{
+
+.group-button__base{
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+
+    min-width: 2.5rem;
+    height: 100%;
+    border: 1px solid var(--theme-color-400);
+
+}
+.group-button__base .icon{
+    filter: var(--filter-text-400);
+}
+
+.group-button__base.is-start{
     border-radius: .5rem 0 0 .5rem ;
 }
-.group-button__base--right{
+.group-button__base.is-middle{
+    width: fit-content;
+    text-align: center;
+
+    border-radius: 0;
+    border:unset;
+    border-top: 1px solid var(--theme-color-400);
+    border-bottom: 1px solid var(--theme-color-400);
+
+}
+.group-button__base.is-end{
     border-radius: 0 .5rem .5rem 0 ;
 }
 
@@ -617,10 +689,7 @@ option{
 }
 
 
-/* hide setting */
-.is-hide{
-    display: none!important;
-}
+
 
 
 /* toggle */
@@ -872,6 +941,9 @@ option{
 /* margin */
 .margin-bottom--medium{
     margin-bottom: 1rem;
+}
+.margin-bottom--large{
+    margin-bottom: 2rem;
 }
 .margin-bottom--xl{
     margin-bottom: 4rem;

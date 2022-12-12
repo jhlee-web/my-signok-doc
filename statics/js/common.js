@@ -15,9 +15,10 @@ function getUrl(){
 $('#checkbox-all').on('click',manageAllCheck)
 
 function manageAllCheck(){
+    let childrenCheckbox = $(this).parents('li').siblings().find('.checkbox')
     $(this).prop('checked')==true ?
-    $('.checkbox').prop('checked',true) :
-    $('.checkbox').prop('checked',false)
+    childrenCheckbox.prop('checked',true) :
+    childrenCheckbox.prop('checked',false)
 }
 
 
@@ -34,7 +35,7 @@ $('.input').on('keyup',checkInputLength)
              * 아이콘에 'eye'가 있을 경우 비밀번호 토글
              * 아이콘에 'eye'가 없을 경우 input 초기화
              */
- function handlingInputValue(){
+ function handlingInputType(){
 
     if($(this).attr('src').indexOf('eye') > -1){
         const inputType = $(this).prev('.input')
@@ -57,4 +58,4 @@ $('.input').on('keyup',checkInputLength)
     
 }
 
-$('#pwd-toggle').on('click',handlingInputValue)
+$('#pwd-toggle').on('click',handlingInputType)

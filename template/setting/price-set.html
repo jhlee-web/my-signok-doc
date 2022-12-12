@@ -5,7 +5,7 @@
         <script>
             loadHTML("/statics/include/head.html");
         </script>
-        <title>회원가입</title>
+        <title>설정|요금제</title>
     </head>
 
     <body>
@@ -52,57 +52,231 @@
                             <div class="card-wrap">
                                 <!-- card -->
                                 <div class="card">
-                                    <p class="card__title">현재<span>PREMIUM(월)</span>  요금제를 사용하고 계십니다.
-                                    </p>
-                                    <div>
-                                        <p>결제금액</p>
-                                        <p><span>0</span>원</p>
-                                    </div>
-                                    <div>
-                                        <p></p>
-                                        
-                                        <div>
-                                            <button type="button"
-                                            class="icon-button">
-                                                <img class="icon" src="/statics/icon/pop-out-line.svg" alt="빼기">
-                                            </button>
-                                            <input type="number" value="10"
-                                            class="input">
-                                            <button type="button"
-                                            class="icon-button">
-                                                <img class="icon" src="/statics/icon/pop-out-line.svg" alt="더하기">
-                                            </button>
+                                    <!-- 요금제 -->
+                                    <div class="card__content">
+                                        <p class="is-remark">
+                                            요금제
+                                        </p>
+                                        <div class="card__row">
+                                            <div class="flex--row">
+                                                <input type="radio" class="radio" name="product"
+                                                id="payment-contract"
+                                                checked>
+                                                <label for="payment-contract">베이직</label>
+                                            </div>
+                                            <div class="card__desc">
+                                                <div class="radio-wrap">
+                                                    <div class="flex--row">
+                                                        <input type="radio" class="radio" name="cycle"
+                                                        id="payment-contract"
+                                                        checked>
+                                                        <label for="payment-contract">월간</label>
+                                                    </div>
+                                                    <div class="flex--row">
+                                                        <input type="radio" class="radio" name="cycle"
+                                                        id="payment-contract"
+                                                        >
+                                                        <label for="payment-contract">연간</label>
+                                                    </div>
+                                                </div>
+                                                
+                                                
+                                                <p>0원</p>
+                                            </div>
+                                            
                                         </div>
-                                        <p><span>0</span>원</p>
-                                        
+                                        <div class="card__row">
+                                            <div class="flex--row">
+                                                <input type="radio" class="radio" name="product"
+                                                id="payment-contract"
+                                                checked>
+                                                <label for="payment-contract">비즈니스</label>
+                                            </div>
+                                            <div class="card__desc">
+                                                <div class="radio-wrap">
+                                                    <div class="flex--row">
+                                                        <input type="radio" class="radio" name="cycle"
+                                                        id="payment-contract"
+                                                        checked>
+                                                        <label for="payment-contract">월간</label>
+                                                    </div>
+                                                    <div class="flex--row">
+                                                        <input type="radio" class="radio" name="cycle"
+                                                        id="payment-contract"
+                                                        >
+                                                        <label for="payment-contract">연간</label>
+                                                    </div>
+                                                </div>
+                                                
+                                                <p>0원</p>
+                                            </div>
+                                        </div>
+                                        <div class="card__row">
+                                            <div class="flex--row">
+                                                <input type="radio" class="radio" name="product"
+                                                id="payment-contract"
+                                                checked>
+                                                <label for="payment-contract">프리미엄</label>
+                                            </div>
+                                            <div class="card__desc">
+                                                <div class="radio-wrap">
+                                                    <div class="flex--row">
+                                                        <input type="radio" class="radio" name="cycle"
+                                                        id="payment-contract"
+                                                        checked>
+                                                        <label for="payment-contract">월간</label>
+                                                    </div>
+                                                    <div class="flex--row">
+                                                        <input type="radio" class="radio" name="cycle"
+                                                        id="payment-contract"
+                                                        >
+                                                        <label for="payment-contract">연간</label>
+                                                    </div>
+                                                </div>
+                                                <p>0원</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- 상품 -->
+
+                                    <div class="card__content">
+                                        <p class="is-remark">
+                                            상품목록
+                                        </p>
+                                        <div class="card__row is-change">
+                                            <div class="flex--row">
+                                                <input type="checkbox" class="checkbox" 
+                                                id="payment-contract"
+                                                checked>
+                                                <label for="payment-contract">서명요청</label>
+                                            </div>
+    
+                                            <div class="card__desc">
+                                                <div class="group-button">
+                                                    <button type="button"
+                                                    class="icon-button group-button__base is-start" id="input-minus">
+                                                        <img class="icon" src="/statics/icon/minus-line.svg" alt="빼기">
+                                                    </button>
+                                                    <input type="number" value="10" readonly
+                                                    class="input group-button__base is-middle is-narrow">
+                                                    <button type="button"
+                                                    class="icon-button group-button__base" id="input-plus">
+                                                        <img class="icon" src="/statics/icon/plus-line.svg" alt="더하기">
+                                                    </button>
+                                                </div>
+                                                <p><span>3,000</span>원</p>
+                                            </div>
+                                        </div>
+                                        <div class="card__row is-change">
+                                            <div class="flex--row">
+                                                <input type="checkbox" class="checkbox" id="payment-large"
+                                                checked>
+                                                <label for="payment-large">대량발송</label>
+                                            </div>
+    
+                                            <div class="card__desc">
+                                                <div class="group-button">
+                                                    <button type="button"
+                                                    class="icon-button group-button__base is-start" id="input-minus">
+                                                        <img class="icon" src="/statics/icon/minus-line.svg" alt="빼기">
+                                                    </button>
+                                                    <input type="number" value="10" readonly
+                                                    class="input group-button__base is-middle is-narrow">
+                                                    <button type="button"
+                                                    class="icon-button group-button__base is-end" id="input-plus">
+                                                        <img class="icon" src="/statics/icon/plus-line.svg" alt="더하기">
+                                                    </button>
+                                                </div>
+                                                <p><span>3,000</span>원</p>
+                                            </div>
+                                        </div>
+                                        <div class="card__row is-change">
+                                            <div class="flex--row">
+                                                <input type="checkbox" class="checkbox" id="payment-price"
+                                                checked>
+                                                <label for="payment-price">링크서명</label>
+                                            </div>
+    
+                                            <div class="card__desc">
+                                                <div class="group-button">
+                                                    <button type="button"
+                                                    class="icon-button group-button__base is-start" id="input-minus">
+                                                        <img class="icon" src="/statics/icon/minus-line.svg" alt="빼기">
+                                                    </button>
+                                                    <input type="number" value="10" readonly
+                                                    class="input group-button__base is-middle is-narrow">
+                                                    <button type="button"
+                                                    class="icon-button group-button__base is-end" id="input-plus">
+                                                        <img class="icon" src="/statics/icon/plus-line.svg" alt="더하기">
+                                                    </button>
+                                                </div>
+                                                
+                                                <p><span>3,000</span>원</p>
+                                            </div>
+                                        </div>
+                                        <div class="card__row is-change">
+                                            <div class="flex--row">
+                                                <input type="checkbox" class="checkbox" id="payment-share"
+                                                checked>
+                                                <label for="payment-share">공유발송</label>
+                                            </div>
+    
+                                            <div class="card__desc">
+                                                <div class="group-button">
+                                                    <button type="button"
+                                                    class="icon-button group-button__base is-start" id="input-minus">
+                                                        <img class="icon" src="/statics/icon/minus-line.svg" alt="빼기">
+                                                    </button>
+                                                    <input type="number" value="10" readonly
+                                                    class="input group-button__base is-middle is-narrow">
+                                                    <button type="button"
+                                                    class="icon-button group-button__base is-end" id="input-plus">
+                                                        <img class="icon" src="/statics/icon/plus-line.svg" alt="더하기">
+                                                    </button>
+                                                </div>
+                                                <p><span>3,000</span>원</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card__row is-end">
+                                        <!-- <p class="is-remark"> 총</p> -->
+                                        <p class="is-accent">0원</p>
                                     </div>
                                 </div>
                                 <!-- /card -->
 
                                 <!-- card -->
                                 <div class="card">
-                                    <p class="card__title">구매상품</p>
-                                    <div>
-                                        <p></p>
-                                        <p><span>0</span>원</p>
-                                    </div>
-                                    <div>
-                                        <p></p>
-                                        
-                                        <div>
-                                            <button type="button"
-                                            class="icon-button">
-                                                <img class="icon" src="/statics/icon/pop-out-line.svg" alt="빼기">
-                                            </button>
-                                            <input type="number" value="10"
-                                            class="input">
-                                            <button type="button"
-                                            class="icon-button">
-                                                <img class="icon" src="/statics/icon/pop-out-line.svg" alt="더하기">
-                                            </button>
-                                        </div>
-                                        <p><span>0</span>원</p>
-                                    </div>
+                                    <ul class="checkbox-wrap">
+                                        <li class="checkbox__item margin-bottom--medium " >
+                                            <label for="checkbox-all"
+                                            class="font-weight--medium">
+                                                약관전체동의(선택포함)
+                                            </label>
+                                            <input type="checkbox" id="checkbox-all" class="checkbox">
+                                        </li>
+
+                                        <li class="checkbox__item">
+                                            <label for="" class="card__desc align-item-center">
+                                                <span class="font-weight--medium">필수</span>
+                                                서비스 이용약관
+                                                <img class="icon" src="/statics/icon/angle-right.svg">
+                                            </label>
+                                            <input type="checkbox" class="checkbox" required>
+                                        </li>
+
+                                        <li class="checkbox__item">
+                                            <label for="" class="card__desc align-item-center">
+                                                <span class="font-weight--medium">필수</span>
+                                                개인정보 처리방침
+                                                <img class="icon" src="/statics/icon/angle-right.svg">
+                                            </label>
+                                            <input type="checkbox" class="checkbox" required>
+                                        </li>
+
+                                    </ul>
                                 </div>
                                 <!-- /card -->
                             </div>
@@ -119,11 +293,29 @@
             </main>
         </div>
        
-        
+        <script src="/statics/js/common.js"></script>
         <script>
+            $('.icon-button').on('click',function(){
+                let button = $(this).attr('id').split('-').pop()
+                let input = $(this).siblings('.input')
+                let value = Number(input.val())
 
+                if(button == 'plus' && value > 0){
+                    value = value + 10
+                }
+                else if(button == 'minus' && value > 10){
+                    value = value - 10
+                }
 
+                input.val(value)
+            })
+
+            function totalPayment(){
+
+            }
+            
         </script>
+
     </body>
     
 </html>

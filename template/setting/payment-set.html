@@ -5,7 +5,7 @@
         <script>
             loadHTML("/statics/include/head.html");
         </script>
-        <title>회원가입</title>
+        <title>설정 | 결제 정보</title>
     </head>
 
     <body>
@@ -52,61 +52,51 @@
                             <div class="card-wrap">
                                 <!-- card -->
                                 <div class="card">
-                                    <div class="flex--row">
-                                        <p class="card__title">현재<span id="user_price">PREMIUM(월)</span>  요금제를 사용하고 계십니다.
+                                    <div class="card__row">
+                                        <p class="">현재 <span id="user_membership" class="is-accent">PREMIUM(월)</span>  요금제를 사용하고 계십니다.
                                         </p>
-                                        <p><span id="user_price">0</span>원</p>
+                                        <a href="/template/setting/payment-set.html" class="button button--text is-small">변경하기</a>
+                                    </div>
+                                    <div class="card__content">
+                                        <div class="card__row">
+                                            <p class="is-remark">결제금액</p>
+                                            <p id="user_price">0원</p>
+                                        </div>
+    
+                                        <div class="card__row">
+                                            <p class="is-remark">만료일</p>
+                                            <p id="user_deadline">2020년 1월 1일</p>
+                                        </div>
                                     </div>
                                     
-                                    <div class="flex--row">
-                                        <p>결제금액</p>
-                                        <p><span id="user_price">0</span>원</p>
-                                    </div>
-                                    <div class="flex--row">
-                                        <p></p>
-                                        
-                                        <div>
-                                            <button type="button"
-                                            class="icon-button">
-                                                <img class="icon" src="/statics/icon/pop-out-line.svg" alt="빼기">
-                                            </button>
-                                            <input type="number" value="10"
-                                            class="input">
-                                            <button type="button"
-                                            class="icon-button">
-                                                <img class="icon" src="/statics/icon/pop-out-line.svg" alt="더하기">
-                                            </button>
-                                        </div>
-                                        <p><span>0</span>원</p>
-                                        
-                                    </div>
                                 </div>
                                 <!-- /card -->
 
                                 <!-- card -->
                                 <div class="card">
-                                    <p class="card__title">구매상품</p>
-                                    <div>
-                                        <p></p>
-                                        <p><span>0</span>원</p>
+                                    <div class="card__row">
+                                        <p class="is-remark">사용현황</p>
+                                        <a href="/template/setting/payment-set.html" class="button button--text is-small">충전하기</a>
                                     </div>
-                                    <div>
-                                        <p></p>
-                                        
-                                        <div>
-                                            <button type="button"
-                                            class="icon-button">
-                                                <img class="icon" src="/statics/icon/pop-out-line.svg" alt="빼기">
-                                            </button>
-                                            <input type="number" value="10"
-                                            class="input">
-                                            <button type="button"
-                                            class="icon-button">
-                                                <img class="icon" src="/statics/icon/pop-out-line.svg" alt="더하기">
-                                            </button>
+                                    <div class="card__content">
+                                        <div class="card__row">
+                                            <p class="is-remark">계약 가능</p>
+                                            <p id="user_count-contract">0건 / 0건</p>
                                         </div>
-                                        <p><span>0</span>원</p>
+                                        <div class="card__row">
+                                            <p class="is-remark">대량발송</p>
+                                            <p id="user_count-large">0건 / 0건</p>
+                                        </div>
+                                        <div class="card__row">
+                                            <p class="is-remark">링크서명</p>
+                                            <p id="user_count-link">0건 / 0건</p>
+                                        </div>
+                                        <div class="card__row">
+                                            <p class="is-remark">공유발송</p>
+                                            <p id="user_count-office">0건 / 0건</p>
+                                        </div>
                                     </div>
+                                    
                                 </div>
                                 <!-- /card -->
                             </div>
@@ -125,7 +115,26 @@
        
         
         <script>
+            let price = ['9,900','99,900','999,900']
+            $(function(){
+                for(let i = 0; i < $('.card__row').length; i++){
+                    $('p[id^="user_count"]').eq(i).text(`${resultRandomNum(100)}건 / ${resultRandomNum(200)}건`)
+                }
+                $('#user_deadline').text(`20${resultRandomNum(22)}년 ${resultRandomNum(12)}월 ${resultRandomNum(30)}일`)
+                $('#user_price').text(price[resultRandomNum(2)]+'원')
+            })
 
+            function resultRandomNum(value){
+                randomVal = Math.floor(Math.random() * value)
+                if(value < 10 && randomVal > 0 ){
+                    return randomVal
+                }
+                else{
+                    return randomVal
+                }
+            }
+
+            
         </script>
     </body>
     
