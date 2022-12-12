@@ -193,7 +193,6 @@
 
 /* container */
 .container{
-    padding: 2rem;
     border: 1px solid black;
 }
 .container.flex--row{
@@ -217,7 +216,6 @@
 
 @media all and (max-width:768px){
     .container{
-        padding: 1rem;
     }
     .main-content{
         padding: 1rem;

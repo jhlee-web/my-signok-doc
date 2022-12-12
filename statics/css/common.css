@@ -680,6 +680,7 @@ option{
 
 
 /* tab type:text*/
+
 .tab{
     display: flex;
     flex-direction: row;

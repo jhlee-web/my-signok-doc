@@ -14,95 +14,108 @@
                 loadHTML("/statics/include/nav.html");
             </script>
             
-            <main class="main ">
+            <main class="main">
                 <!-- 상단 헤더 -->
                 <script>
                     loadHTML("/statics/include/sub_header.html");
                 </script>
                 <!-- // 상단헤더 -->
+                
                 <!-- 메인 컨텐츠 -->
-                <div class="main-content">
-                    <div class="tab-wrap">
-                        <ul class="tab">
-                            <li class="tab__item--badge ">
-                                <a href="/template/setting/user-set.html">내 정보</a>
-                            </li>
-                            <li class="tab__item--badge">
-                                <a href="/template/setting/company-set.html">기업 정보</a>
-                            </li>
-                            <li class="tab__item--badge is-active">
-                                <a href="javascript:void(0)">요금제</a>
-                            </li>
-                            <li class="tab__item--badge">
-                                <a href="/template/setting/payment-set.html">결제 정보</a>
-                            </li>
-                            <li class="tab__item--badge">
-                                <a href="/template/setting/addr-set.html">주소록</a>
-                            </li>
-                            <li class="tab__item--badge">
-                                <a href="/template/setting/brand-set.html">브랜딩</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="full-grid left-double">
-                        <div class="container">
-                            <div class="card">
-                                <p class="card__title">현재<span>PREMIUM(월)</span>  요금제를 사용하고 계십니다.
-                                </p>
-                                <div>
-                                    <p>결제금액</p>
-                                    <p><span>0</span>원</p>
-                                </div>
-                                <div>
-                                    <p></p>
-                                    
-                                    <div>
-                                        <button type="button"
-                                        class="icon-button">
-                                            <img class="icon" src="/statics/icon/pop-out-line.svg" alt="빼기">
-                                        </button>
-                                        <input type="number" value="10"
-                                        class="input">
-                                        <button type="button"
-                                        class="icon-button">
-                                            <img class="icon" src="/statics/icon/pop-out-line.svg" alt="더하기">
-                                        </button>
-                                    </div>
-                                    <p><span>0</span>원</p>
-                                    
-                                </div>
-                            </div>
-                            <!-- /card -->
-                            <div class="card">
-                                <p class="card__title">구매상품</p>
-                                <div>
-                                    <p></p>
-                                    <p><span>0</span>원</p>
-                                </div>
-                                <div>
-                                    <p></p>
-                                    
-                                    <div>
-                                        <button type="button"
-                                        class="icon-button">
-                                            <img class="icon" src="/statics/icon/pop-out-line.svg" alt="빼기">
-                                        </button>
-                                        <input type="number" value="10"
-                                        class="input">
-                                        <button type="button"
-                                        class="icon-button">
-                                            <img class="icon" src="/statics/icon/pop-out-line.svg" alt="더하기">
-                                        </button>
-                                    </div>
-                                    <p><span>0</span>원</p>
-                                    
-                                </div>
-                            </div>
-                            <!-- /card -->
+                <div class="container">
+                    <div class="main-content">
+                        <!-- tabs -->
+                        <div class="tab-wrap">
+                            <ul class="tab">
+                                <li class="tab__item--badge ">
+                                    <a href="/template/setting/user-set.html">내 정보</a>
+                                </li>
+                                <li class="tab__item--badge">
+                                    <a href="/template/setting/company-set.html">기업 정보</a>
+                                </li>
+                                <li class="tab__item--badge is-active">
+                                    <a href="javascript:void(0)">요금제</a>
+                                </li>
+                                <li class="tab__item--badge">
+                                    <a href="/template/setting/payment-set.html">결제 정보</a>
+                                </li>
+                                <li class="tab__item--badge">
+                                    <a href="/template/setting/addr-set.html">주소록</a>
+                                </li>
+                                <li class="tab__item--badge">
+                                    <a href="/template/setting/brand-set.html">브랜딩</a>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="container"></div>
+                        <!-- /tabs -->
+                        <div class="full-grid left-double">
+                            <div class="card-wrap">
+                                <!-- card -->
+                                <div class="card">
+                                    <p class="card__title">현재<span>PREMIUM(월)</span>  요금제를 사용하고 계십니다.
+                                    </p>
+                                    <div>
+                                        <p>결제금액</p>
+                                        <p><span>0</span>원</p>
+                                    </div>
+                                    <div>
+                                        <p></p>
+                                        
+                                        <div>
+                                            <button type="button"
+                                            class="icon-button">
+                                                <img class="icon" src="/statics/icon/pop-out-line.svg" alt="빼기">
+                                            </button>
+                                            <input type="number" value="10"
+                                            class="input">
+                                            <button type="button"
+                                            class="icon-button">
+                                                <img class="icon" src="/statics/icon/pop-out-line.svg" alt="더하기">
+                                            </button>
+                                        </div>
+                                        <p><span>0</span>원</p>
+                                        
+                                    </div>
+                                </div>
+                                <!-- /card -->
+
+                                <!-- card -->
+                                <div class="card">
+                                    <p class="card__title">구매상품</p>
+                                    <div>
+                                        <p></p>
+                                        <p><span>0</span>원</p>
+                                    </div>
+                                    <div>
+                                        <p></p>
+                                        
+                                        <div>
+                                            <button type="button"
+                                            class="icon-button">
+                                                <img class="icon" src="/statics/icon/pop-out-line.svg" alt="빼기">
+                                            </button>
+                                            <input type="number" value="10"
+                                            class="input">
+                                            <button type="button"
+                                            class="icon-button">
+                                                <img class="icon" src="/statics/icon/pop-out-line.svg" alt="더하기">
+                                            </button>
+                                        </div>
+                                        <p><span>0</span>원</p>
+                                    </div>
+                                </div>
+                                <!-- /card -->
+                            </div>
+                            <!-- /card-wrap -->
+                            <div class="container card">
+                                imgae
+                            </div>
+                        </div>
+                        <!-- /full-grid -->
                     </div>
+                    <!-- /main-content -->
                 </div>
+                <!-- /container -->
             </main>
         </div>
        
