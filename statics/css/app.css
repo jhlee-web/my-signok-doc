@@ -15,8 +15,14 @@
     gap: 1rem;
 }
 
+/* checkbox, radio form */
+.control-form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .5em;
+}
 
-/* control form */
 .control-form__label{
     display: flex;
     flex-direction: row;

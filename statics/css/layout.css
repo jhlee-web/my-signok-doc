@@ -226,6 +226,7 @@
 
 /* document header */
 .doc-header{
+    height: 5rem;
     width: 100%;
 }
 .doc-header .container{
@@ -325,13 +326,7 @@
 }
 
 
-/* checkbox, radio form */
-.control-form{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: .5em;
-}
+
 
 
 /* form */
@@ -378,7 +373,7 @@
 .radio-wrap{
     display: inline-flex;
     align-items: center;
-    
+
     gap: 1rem;
 }
 
@@ -412,6 +407,12 @@
 }
 .full-grid.right-double{
     grid-template-columns: 33% 1fr;
+}
+
+@media all and (max-width:1279px){
+    .full-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media all and (max-width:768px){

@@ -2,25 +2,6 @@
     <div class="container">
         <p id="doc-header__title" class="body--large font-weight--medium"></p>
         <div class="doc-header__right">
-
-
-            <!-- 20221208 수정 - 이지현 -->
-
-            <!-- 검색상자 -->
-            <!-- <div class="search-form">
-                <form class="search-form__form">
-                    <input type="text"
-                        class="input is-large search-form__input"
-                        placeholder="검색어를 입력해주세요">
-                    <button type="button"
-                        class="button button--outline is-medium
-                                icon-button search-form__button">
-                        <img class="icon icon--large" src="/statics/icon/search-line.svg" alt="검색">
-                    </button>
-                </form>
-            </div> -->
-            <!-- // 검색상자 -->
-            <!-- 20221208 추가 - 이지현 -->
             <div class="doc-header__button-wrap">
                 <button type="button"
                     class="icon-button is-medium"
@@ -81,7 +62,7 @@
     $(function(){
         let randomNum = Math.floor(Math.random() * 3)
         let randomDate = Math.floor(Math.random() * 365)
-        
+
         $('#user_mail').text(testData['user_mail'][randomNum])
         $('#user_product').text(testData['user_product'][randomNum])
         $('#user_name').text(testData['user_name'][randomNum])

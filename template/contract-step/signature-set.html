@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <script src="/statics/js/loadHTML.js"></script>
+        <script>
+            loadHTML("/statics/include/head.html");
+        </script>
+        <title>계약 | 서명자</title>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <script>
+                loadHTML("/statics/include/nav.html");
+            </script>
+            
+            <main class="main">
+                <!-- 상단 헤더 -->
+                <div class="doc-header">
+                    <div class="container">
+                        <ul class="flex--row">
+                            <li><span>1</span>서명자 정보 입력</li>
+                            <li><span>2</span>서명 영역 지정</li>
+                            <li><span>3</span>계약서 설정 및 발송</li>
+
+                        </ul>
+                    </div>
+                </div>
+                <!-- // 상단헤더 -->
+                
+                <!-- 메인 컨텐츠 -->
+                <div class="container">
+                    <div class="main-content">
+                        <!-- tabs -->
+                        <div class="tab-wrap">
+                            <ul class="tab">
+                                <li class="tab__item--badge is-active">
+                                    <a href="javascript:void(0">서명자 입력 (필수)</a>
+                                </li>
+                                <li class="tab__item--badge">
+                                    <a href="/template/setting/addr-set.html">참조자</a>
+                                </li>
+                                <li class="tab__item--badge">
+                                    <a href="/template/setting/brand-set.html">검토자</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /tabs -->
+
+                        <!-- top -->
+                        <div class="">
+                            <ul class="flex--row">
+                                <li class="control-form">
+                                    <span>순서없이</span>
+                                    <label class="is-small toggle">
+                                        <input type="checkbox" class="toggle__checkbox" checked>
+                                        <span class="toggle__slider"></span>
+                                    </label>
+                                    <span class="">순서대로</span>
+                                </li>
+                                <li class="control-form">
+                                    <input type="checkbox" id="keep-mail"  class="checkbox">
+                                    <label for="keep-mail" class="">내 서명 포함</label>
+                                </li>
+                                <li class="control-form">
+                                    <img src="/statics/icon/world-line.svg" class="icon" alt="언어 변경">
+                                    <p>한국어</p>
+                                </li>
+                            </ul>
+                            <p class="is-remark"> * 각 서명자를 드래그하여 순서를 변경할 수 있습니다. </p>
+                        </div>
+                        <!-- /tabs -->
+                        <div class="full-grid">
+                            <!-- card -->
+                            <div class="card" data-id="0">
+                                <div class="card__content">
+                                    <div class="card__row">
+                                        <p class="">첫 번째 서명자</p>
+                                        <button type="button" class="button button--text is-small is-accent">삭제</button>
+                                    </div>
+                                    <input type="text" class="input is-small" placeholder="성명을 입력해주세요">
+
+                                    <ul class="tab">
+                                        <li class="tab__item is-active" data-type="email">이메일</li>
+                                        <li class="tab__item" data-type="number">휴대전화</li>
+                                    </ul>
+                                    <input type="email" class="input is-small is-hide" placeholder="이메일을 입력해주세요">
+                                    <input type="number" class="input is-small is-hide" placeholder="휴대전화번호를 입력해주세요">
+                                </div>
+                            </div>
+                            <!-- /card -->
+
+                            <!-- card -->
+                            <div class="card" data-id="1">
+                                <div class="card__content">
+                                    <div class="card__row">
+                                        <p class="">두 번째 서명자</p>
+                                        <button type="button" class="button button--text is-small is-accent">삭제</button>
+                                    </div>
+                                    <input type="text" class="input is-small" placeholder="성명을 입력해주세요">
+
+                                    <ul class="tab">
+                                        <li class="tab__item is-active" data-type="email">이메일</li>
+                                        <li class="tab__item" data-type="number">휴대전화</li>
+                                    </ul>
+                                    <input type="email" class="input is-small is-hide" placeholder="이메일을 입력해주세요">
+                                    <input type="number" class="input is-small is-hide" placeholder="휴대전화번호를 입력해주세요">
+                                </div>
+                            </div>
+                            <!-- /card -->
+                            <!-- card -->
+                            <div class="card">
+                                <button type="button" id="add-signature" class="button is-large button--text">
+                                    <img src="/statics/icon/plus-circle-line.svg" class="icon">
+                                    서명자 추가하기
+                                </button>
+                            </div>
+                            <!-- /card -->
+                            
+                        </div>
+                        <!-- /full-grid -->
+                    </div>
+                    <!-- /main-content -->
+                </div>
+                <!-- /container -->
+            </main>
+        </div>
+        <script>
+
+            function manageCardInput(id,type){
+                if(id!==null){
+                    $(`.card[data-id=${id}] .input`).not('input[type=text]').addClass('is-hide')
+                    $(`.card[data-id=${id}] .input[type=${type}]`).removeClass('is-hide')
+                }
+                else{
+                    $(`.card .input`).not('input[type=text]').addClass('is-hide')
+                    $(`.card .input[type=${type}]`).removeClass('is-hide')
+                }
+            }
+
+
+            $(function(){
+                let type = $('.card .tab__item.is-active').attr('data-type');
+                manageCardInput(null,type)
+            })
+            
+
+            $('.card .tab__item').on('click',function(){
+                let card_id = $(this).parents('.card').attr('data-id')
+                let type = $(this).attr('data-type');
+
+                manageCardInput(card_id,type)
+            })
+
+            $('#add-signature').on('click',function(){
+                card_id = Number($(`.card:nth-child(${$('.card').length - 1})`).attr('data-id'))
+                console.log(card_id)
+
+                let html = ''
+                html += `<div class="card" data-id="${card_id+1}">
+                    <div class="card__content">
+                        <div class="card__row">
+                            <p class="">${card_id+1} 번째 서명자</p>
+                            <button type="button" class="button button--text is-small is-accent">삭제</button>
+                        </div>
+                        <input type="text" class="input is-small" placeholder="성명을 입력해주세요">
+
+                        <ul class="tab">
+                            <li class="tab__item is-active" data-type="email">이메일</li>
+                            <li class="tab__item" data-type="number">휴대전화</li>
+                        </ul>
+                        <input type="email" class="input is-smalle" placeholder="이메일을 입력해주세요">
+                        <input type="number" class="input is-small is-hide" placeholder="휴대전화번호를 입력해주세요">
+                    </div>
+                </div>`
+                $(this).parents('.card').before(html)
+            })
+
+            
+        </script>
+    </body>
+    
+</html>

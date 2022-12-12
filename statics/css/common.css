@@ -751,17 +751,21 @@ option{
 /* tab type:text*/
 
 .tab{
-    display: flex;
-    flex-direction: row;
+    display: inline-flex;
     align-items: center;
 }
 
 .tab__item{
+    padding: 0 1rem;
     height: 3rem;
     line-height: 3rem;
 
     color: var(--text-color-600);
+    font-size: var(--text-small);
     cursor: pointer;
+}
+.tab__item:hover{
+    color: var(--text-color-800);
 }
 .tab__item.is-active{
     font-weight: 500;
