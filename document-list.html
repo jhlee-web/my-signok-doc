@@ -55,7 +55,7 @@
                 <!-- // 상단헤더 -->
                 <div class="container flex--row">
                     <!-- 메인 컨텐츠 -->
-                    <div id="main-content">
+                    <div class="main-content">
                         <!-- 상단 -->
                         <div class="flex--row is-change">
                             <button type="button" class="button is-small button--outline"
@@ -88,7 +88,8 @@
                         <div class="table-top">
                             <div id="default-top-box" class="table-top__box">
                                 <button type="button" class="button is-medium">
-                                    <img src="/statics/icon/file_type_excel2.svg" class="icon">
+                                    <img src="/statics/icon/file_type_excel2.svg"
+                                    alt="엑셀 내려받기" class="icon">
                                     엑셀로 내려받기
                                 </button>
                             </div>
@@ -100,18 +101,21 @@
                                     </p>
                                     <button type="button" class="button button--text"
                                     id="document-move">
-                                        <img src="/statics/icon/folder-line.svg" class="icon">
+                                        <img src="/statics/icon/folder-line.svg"
+                                        alt="폴더 이동하기" class="icon">
                                         폴더 이동하기
                                     </button>
                                     <button type="button" class="button button--text"
                                     id="document-delete">
-                                        <img src="/statics/icon/trash-line.svg" class="icon">
-                                        휴지통으로 보내기
+                                        <img src="/statics/icon/trash-line.svg"
+                                        alt="삭제"class="icon">
+                                        삭제하기
                                     </button>
                                 </div>
                                 <button type="button" class="button button--text"
                                 id="cancel-selected">
-                                    <img src="/statics/icon/close-line.svg" class="icon">
+                                    <img src="/statics/icon/close-line.svg"
+                                    alt="선택취소" class="icon">
                                     선택 취소
                                 </button>
                             </div>
@@ -163,14 +167,23 @@
                     <div class="aside-content">
                         <div class="container">
                             <h5>문서 이력</h5>
-                            <ul id="aside__history-summary">
-                            </ul>
+                            <div class="inner">
+                                <ul id="aside__history-summary">
+                                </ul>
+                                <button type="button"
+                                class="button button--secondary is-medium">진행정보 보기</button>
+                            </div>
+                            
+                            <div class="aside__button-wrap">
+                                <button type="button"
+                                class="button button--outline is-medium is-break">내용 확인하기</button>
+                            </div>
+                            
                         </div>
-                        
-                        <button type="button">전체 진행정보 보기</button>
-                        <button type="button">계약서 내용 확인하기</button> -->
                     </div>
+                    <!-- /aside-content -->
                 </div>
+                <!-- /container -->
             </main>
         </div>
 
@@ -210,10 +223,8 @@
                 });
             }
             
-            
             // 쿼리에서 현재 페이지 위치 추출
             function makePagination(paginationLength){
-
                 let minPage = 1;                    // 시작페이지
                 let maxPage = paginationLength;     // 최대페이지 (단, 10개 미만일 경우 total값)
                 let perPage = 10;                   // 뷰에 보이는 페이지 개수
@@ -303,7 +314,8 @@
                         <p class="table__td is-remark">${data[i].registered}</p>
                         <div class="table__td">
                             <button type="button" class="button button--outline icon-button is-small">
-                                <img class="icon" src="/statics/icon/ellipsis-horizontal-line.svg">
+                                <img class="icon" src="/statics/icon/ellipsis-horizontal-line.svg"
+                                alt="추가메뉴">
                             </button>
                         </div>
                     </div>`
@@ -467,12 +479,13 @@
                     <li id="document-delete-this">삭제</li>
                 </ul>
                 `
-                if($('.list-modal').length < 1){
+                if($('.table__tr .list-modal').length < 1){
                     $(this).append(html)
                     $(this).parents('.table__tr').css('z-index','10')
                 }
                 else{
-                    $('.list-modal').remove()
+                    $('.table__tr').css('z-index','0')
+                    $('.table__tr .list-modal').remove()
                 }
 
                 $('#document-name-change-this').on('click',makeDeleteModal)
@@ -515,9 +528,10 @@
             $(document).on('click','.table__tr',makeAsideContent)
 
             function makeAsideContent(e){
-                // 버튼을 클릭한 경우 취소
+                // 토글을 클릭한 aisde 생성 안함
                 if(e.target.closest('.toggle')) return ;
 
+                // thead 영역일 경우 aisde 생성 안함
                 if($(this).parent('.table__thead').length > 0){
                     if(e.target.className !== 'checkbox'){
                         return false;
@@ -526,27 +540,24 @@
                         return
                     }
                 }
+
+
                 if(e.target.closest('button')||e.target.closest('.list-modal')) return false;
                 else if ($('.aside-content .container').length > 0){
                     $('.aside-content').toggleClass('is-active')
                 }
                 else{
-                    html = '';
-                    html += `
-                        <div class="container">
-                            <h5 class="h5 font-weight--semibold">문서 이력</h5>
-                            <ul>
-                                <li>
-                                    <p>hong12</p>
-                                    <p>(hong1234@naver.com)</p>
-                                    <p>서명 2022-12-12 16:50</p>
-                                </li>
-                            </ul>
-                            <button type="button" class="button is-medium button--primary">전체 진행정보 보기</button>
-                            <button type="button" class="button is-medium button--outline">계약서 확인하기</button>
-                        </div>
-                    `
-                    $('.aside-content').append(html).addClass('is-active')
+                    return false;
+
+                    // html = '';
+                    // html += `
+                    //     <li>
+                    //         <p>hong12</p>
+                    //         <p>(hong1234@naver.com)</p>
+                    //         <p>서명 2022-12-12 16:50</p>
+                    //     </li>
+                    // `
+                    // $('.aside-content').append(html).addClass('is-active')
                 }
 
                 let userId = $(this).attr('data-id')
@@ -574,8 +585,8 @@
                     for(let i = 0; i < 2; i++){
                         html += `
                         <li class="aside__list-item">
-                            <p>${result.friends[i].name}</p>
-                            <p>${result.email}</p>
+                            <p><img src="" alt="사용자">${result.friends[i].name}</p>
+                            <p><img src="" alt="이름">${result.email}</p>
                             <p class="body--small">${result.registered.substr(0,10)}</p>
                         </li>
                             `

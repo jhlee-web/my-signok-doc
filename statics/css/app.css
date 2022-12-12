@@ -68,12 +68,7 @@
 }
 .table__tr{
     display:table-row;
-    border-bottom: 1px solid var(--theme-color-400);
     position: relative;
-
-}
-.talbe__tr *{
-    display:table-cell
 }
 .table__tr--right{
     display: grid;
@@ -84,17 +79,12 @@
     gap: 0;
 }
 
-.table__td:last-child{
-    position: absolute;
-    display: grid;
-    place-items: center;
-}
 
 .table__tbody .table__tr:hover{
     cursor: pointer;
     transform: translateY(-.25rem);
     box-shadow: var(--box-shadow--3);
-    transition: .65s;
+    transition: .3s;
 }
 .table__tr.is-active{
     transform: translateY(-.25rem);
@@ -107,7 +97,19 @@
     height: 100%;
     display: table-cell;
     vertical-align: middle;
+
+    border-bottom: 1px solid var(--theme-color-400);
 }
+
+.table__td:last-child {
+    text-align: center;
+}
+.table__td:last-of-type * {
+    margin: auto;
+
+}
+
+
 .table__td .checkbox{
     display: inline-block;
 }
@@ -197,17 +199,20 @@
         flex-direction: column;
         align-items: flex-start;
         width: 100%;
-        padding: 1rem 0;
+        padding: 1rem 0.5rem;
     }
     
     .table__tr .checkbox{
         display: none;
     }
     .table__td{
-        padding: .5em;
+        padding: .5rem;
+        border-bottom: 0;
     }
     .table__td:last-child{
-        right: 0;
+        height: auto;
+        position: absolute;
+        right: 0.5rem;
         top: 50%;
         transform: translateY(-50%);
     }
@@ -218,6 +223,8 @@
     .table-top__tab {
         width: 100%;
     }
+
+    
 }
 
 
@@ -486,16 +493,20 @@
     width: 0;
     transform: scaleX(0);
     transform-origin: right;
-    transition: width .4s ease-in-out ;
+    transition: width .3s ease-in-out ;
 }
 .aside-content .container{
     min-height: 100vh;
+}
+.aside-content .inner{
+    background:var(--theme-color-100);
+    padding: 1rem .5rem;
 }
 .aside-content.is-active{
     width: 20rem;
     transform: scaleX(1);
     transform-origin: right;
-    transition: width .4s ease-in-out ;
+    transition: width .3s ease-in-out ;
 }
 
 @media all and (max-width:768px){
@@ -503,7 +514,7 @@
         position: absolute;
         right: 0;;
         top: 10rem;
-        min-height: calc(100vh - 10rem);
+        max-width: max(80vw, calc(100vw - 2rem));
         height: 100%;
         background: var(--background-color);
     }
@@ -589,4 +600,11 @@
     [id^="sns-"]{
         justify-content: center;
     }
+}
+
+.card{
+    border: 1px solid var(--theme-color-400);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
 }

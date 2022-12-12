@@ -48,13 +48,13 @@
                         <a class="flex--row align-item-center flex-justify--between"
                         href="javascript:void(0)">
                             내정보관리
-                            <img class="icon icon--large" src="/statics/icon/angle-down.svg" alt="이동">
+                            <img class="icon" src="/statics/icon/angle-right.svg" alt="이동">
                         </a>
                     </li> 
                     <li>
                         <button type="button" class="button">
                             로그아웃
-                            <img class="icon icon--large" src="/statics/icon/book-line.svg" alt="로그아웃">
+                            <img class="icon icon--large" src="/statics/icon/logout-line.svg" alt="로그아웃">
                         </button>
                     </li> 
 
@@ -76,9 +76,12 @@
         'user_product':['베이직','비즈니스','프리미엄'],
         'user_mail':['sammy53@hotmail.com','nicole80@hotmail.com','georgianna_mccullough@yahoo.com'],
     }
+
+    // 사용자모달 테스트
     $(function(){
         let randomNum = Math.floor(Math.random() * 3)
         let randomDate = Math.floor(Math.random() * 365)
+        
         $('#user_mail').text(testData['user_mail'][randomNum])
         $('#user_product').text(testData['user_product'][randomNum])
         $('#user_name').text(testData['user_name'][randomNum])

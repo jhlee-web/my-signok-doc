@@ -718,6 +718,18 @@ option{
 }
 
 
+@media all and (max-width:768px){
+    .tab__item--badge{
+        padding: 0 .5rem;
+        /* font-size: var(--text-small); */
+        flex:  0 0 3rem;
+        white-space: nowrap;
+    }
+    .tab{
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+}
 
 
 /* bar */

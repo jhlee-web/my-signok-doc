@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <script src="/statics/js/loadHTML.js"></script>
+        <script>
+            loadHTML("/statics/include/head.html");
+        </script>
+        <title>조직관리</title>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <script>
+                loadHTML("/statics/include/nav.html");
+            </script>
+            
+            <main class="main ">
+                <!-- 상단 헤더 -->
+                <script>
+                    loadHTML("/statics/include/sub_header.html");
+                </script>
+                <!-- // 상단헤더 -->
+                <!-- 메인 컨텐츠 -->
+                <div class="main-content">
+                    <div class="tab-wrap">
+                        <ul class="tab">
+                            <li class="tab__item--badge is-active">
+                                <a href="javascript:void(0)">회사 조직도</a>
+                            </li>
+                            <li class="tab__item--badge">
+                                <a href="/template/group/member-info.html">멤버 관리</a>
+                            </li>
+                            <li class="tab__item--badge ">
+                                <a href="/template/group/role-info.html">역할 관리</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="full-grid right-double">
+                        <div class="container">
+                            <h5>조직도</h5>
+                            <button type="button" class="button button--text is-medium">
+                                <img src="/statics/icon/pop-out-line.svg" class="icon" alt="부서추가">
+                                부서추가
+                            </button>
+
+                            <div class="doc-search">
+                                <input type="text"
+                                class="doc-search__input input"
+                                placeholder="부서를 검색해주세요."
+                                maxlength="64">
+                            </div>
+
+                            <ul>
+                                <li>
+                                    <img src="" alt="회사명">길동기업
+                                </li>
+                                <li>
+                                    <img src="" alt="회사명">길동기업
+                                </li>
+                                
+                            </ul>
+                        </div>
+                        <div class="container">
+                            <h5>부서미지정</h5>
+                            <div class="table">
+                                <div class="table__colgroup">
+                                    <div class="table__col" style="width:auto"></div>
+                                    <div class="table__col" style="width:auto"></div>
+                                    <div class="table__col" style="width:8%"></div>
+                                    <div class="table__col" style="width:8%"></div>
+                                </div>
+                                <div class="table__thead">
+                                    <ul class="table__tr">
+                                        <li class="table__td">이름</li>
+                                        <li class="table__td">이메일</li>
+                                        <li class="table__td">역할</li>
+                                        <li class="table__td">부서</li>
+                                    </ul>
+                                </div>
+                                <div class="table__tbody">
+                                    <div class="table__tr">
+                                        <div class="table__td">
+                                            홍길동
+                                        </div>
+                                        <div class="table__td">
+                                            hong123@naver.com
+                                        </div>
+                                        <div class="table__td">
+                                            없음
+                                        </div>
+                                        <div class="table__td">
+                                            없음
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /table -->
+                        </div>
+                        <!-- /user list -->
+                    </div>
+
+                </div>
+                <!-- /main-content -->
+            </main>
+        </div>
+       
+        
+        <script>
+
+        </script>
+    </body>
+    
+</html>

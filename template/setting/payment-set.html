@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <script src="/statics/js/loadHTML.js"></script>
+        <script>
+            loadHTML("/statics/include/head.html");
+        </script>
+        <title>회원가입</title>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <script>
+                loadHTML("/statics/include/nav.html");
+            </script>
+            
+            <main class="main ">
+                <!-- 상단 헤더 -->
+                <script>
+                    loadHTML("/statics/include/sub_header.html");
+                </script>
+                <!-- // 상단헤더 -->
+                <!-- 메인 컨텐츠 -->
+                <div class="main-content">
+                    <div class="tab-wrap">
+                        <ul class="tab">
+                            <li class="tab__item--badge ">
+                                <a href="/template/setting/user-set.html">내 정보</a>
+                            </li>
+                            <li class="tab__item--badge ">
+                                <a href="/template/setting/company-set.html">기업 정보</a>
+                            </li>
+                            <li class="tab__item--badge ">
+                                <a href="/template/setting/price-set.html">요금제</a>
+                            </li>
+                            <li class="tab__item--badge is-active">
+                                <a href="javascript:void(0)">결제 정보</a>
+                            </li>
+                            <li class="tab__item--badge">
+                                <a href="/template/setting/addr-set.html">주소록</a>
+                            </li>
+                            <li class="tab__item--badge">
+                                <a href="/template/setting/brand-set.html">브랜딩</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="full-grid left-double ">
+                        <div class="container">
+                            <div class="card">
+                                <p class="card__title">구매상품</p>
+                                <div>
+                                    <p></p>
+                                    <p><span>0</span>원</p>
+                                </div>
+                                <div>
+                                    <p></p>
+                                    
+                                    <div>
+                                        <button type="button"
+                                        class="icon-button">
+                                            <img class="icon" src="/statics/icon/pop-out-line.svg" alt="빼기">
+                                        </button>
+                                        <input type="number" value="10"
+                                        class="input">
+                                        <button type="button"
+                                        class="icon-button">
+                                            <img class="icon" src="/statics/icon/pop-out-line.svg" alt="더하기">
+                                        </button>
+                                    </div>
+                                    <p><span>0</span>원</p>
+                                    
+                                </div>
+                            </div>
+                            <!-- /card -->
+                            <div class="card">
+                                <p class="card__title">약관동의</p>
+
+                                <ul class="form__checkbox-wrap">
+                                    <li class="form__checkbox">
+                                        <label for="checkbox-all"
+                                        class="margin-bottom--medium font-weight--medium">
+                                            약관전체동의(선택포함)
+                                        </label>
+                                        <input type="checkbox" id="checkbox-all" class="checkbox">
+                                    </li>
+                                   
+                                    <li class="form__checkbox">
+                                        <label for="" class="flex--row align-item-center">
+                                            <span class="font-weight--medium">필수</span>
+                                            이용약관에 동의합니다
+                                            <img class="icon" src="/statics/icon/angle-right.svg">
+                                        </label>
+                                        <input type="checkbox" class="checkbox" required>
+            
+                                    </li>
+                                    <li class="form__checkbox">
+                                        <label for="" class="flex--row align-item-center">
+                                            <span class="font-weight--medium">필수</span>
+                                            개인정보 수집 및 이용 동의
+                                            <img class="icon" src="/statics/icon/angle-right.svg">
+                                        </label>
+                                        <input type="checkbox" class="checkbox" required>
+            
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                            <!-- /card -->
+                            <div class="basic-button-wrap">
+                                <button type="submit" id="submit"
+                                class="button button--text is-medium">취소</button>
+                                <button type="submit" id="submit"
+                                class="button button--secondary is-medium">결제</button>
+                            </div>
+                        </div>
+                        <div class="container"></div>
+                    </div>
+                    
+
+                </div>
+            </main>
+        </div>
+       
+        
+        <script>
+
+        </script>
+    </body>
+    
+</html>
