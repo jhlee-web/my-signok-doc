@@ -59,14 +59,14 @@
                                 
                             </div>
                                 
-                            <div class="card">
+                            <div class="card" id="mobile-aside-container">
                                 <p class="is-remark">부서미지정</p>
                                 <div class="table">
                                     <div class="table__colgroup">
                                         <div class="table__col" style="width:auto"></div>
                                         <div class="table__col" style="width:auto"></div>
-                                        <div class="table__col" style="width:8%"></div>
-                                        <div class="table__col" style="width:8%"></div>
+                                        <div class="table__col" style="width:15%"></div>
+                                        <div class="table__col" style="width:15%"></div>
                                     </div>
                                     <div class="table__thead">
                                         <ul class="table__tr">
@@ -77,20 +77,7 @@
                                         </ul>
                                     </div>
                                     <div class="table__tbody">
-                                        <div class="table__tr">
-                                            <div class="table__td">
-                                                홍길동
-                                            </div>
-                                            <div class="table__td">
-                                                hong123@naver.com
-                                            </div>
-                                            <div class="table__td">
-                                                없음
-                                            </div>
-                                            <div class="table__td">
-                                                없음
-                                            </div>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                                 <!-- /table -->
@@ -109,6 +96,22 @@
         <script src="/statics/lib/jstree/dist/jstree.min.js"></script>
         <script>
             $(function () {
+                makeTree()
+            });
+
+            let to = false;
+
+            $('#group-search-input').on('keyup',searchTree)
+
+            function searchTree(){
+                if(to) { clearTimeout(to); }
+                to = setTimeout(function () {
+                    let value = $('#group-search-input').val();
+                    $('#jstree').jstree(true).search(value);
+                }, 100);
+            }
+
+            function makeTree(){
                 $('#jstree').jstree({
                     "types" : {
                         "default" : {
@@ -132,7 +135,7 @@
                         },
                         "themes" : {
                             // "variant" : "large"
-                            // "icons" : false
+                            "icons" : false
                         }
                     },
                     "plugins" : [
@@ -145,18 +148,48 @@
                         "changed",
                         "conditionalselect"
                     ],
-                });
-                var to = false;
-
-                // 수정필요
-                $('#group-search-input').keyup(function () {
-                    if(to) { clearTimeout(to); }
-                    to = setTimeout(function () {
-                        var v = $('#group-search-input').val();
-                        $('#jstree').jstree(true).search(v);
-                    }, 100);
                 })
-            });
+                .on("changed.jstree", function (e, data) {
+                    $.ajax({
+                        url: "/json/dummy.json",
+                        type: "GET", 
+                        data:{},
+                        dataType: "json"
+                    })
+                    .done(function(res) {
+                        if($('.table__tbody .table__tr').length > 0) $('.table__tbody .table__tr').remove()
+                        let randomNum = Math.floor(Math.random() * 10)
+
+                        // 테스트용
+                        const arr = [];
+                        for (let i = 0; i < res.length; i += randomNum) {
+                            arr.push(res.slice(i, i + randomNum));
+                        }
+
+                        // 테스트용
+                        for (let i = 0; i<arr[0].length; i++){
+                            console.log(arr[0][0])
+                            html = '';
+                            html += `<div class="table__tr">
+                                <div class="table__td">
+                                    ${arr[0][i].name}
+                                </div>
+                                <div class="table__td is-remark">
+                                    ${arr[0][i].email}
+                                </div>
+                                <div class="table__td is-remark">
+                                    ${arr[0][i].favoriteFruit}
+                                </div>
+                                <div class="table__td is-remark">
+                                    ${arr[0][i].company}
+                                </div>
+                            </div>`
+                            $('.table__tbody').append(html)
+                        }
+                        
+                    })
+                })
+            }
         </script>
     </body>
     

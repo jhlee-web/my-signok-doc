@@ -58,4 +58,4 @@ $('.input').on('keyup',checkInputLength)
     
 }
 
-$('#pwd-toggle').on('click',handlingInputType)
+$('.input-box .icon').on('click',handlingInputType)

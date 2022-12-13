@@ -608,3 +608,17 @@
     font-style: normal;
     font-weight: 500;
 }
+
+@media all and (max-width:768px){
+    #mobile-aside-container{
+        position: absolute;
+        top: 0;
+        right: 0;
+        max-width: calc(100vw - 2rem);
+        height: 100vh;
+        background: var(--background-color);
+        z-index: 99;
+        border-radius: 0;   
+    }
+    
+}
