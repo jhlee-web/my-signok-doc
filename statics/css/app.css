@@ -601,3 +601,10 @@
 /* .jstree-icon{
     background-size: contain!important;
 } */
+.jstree-default .jstree-search {
+    width: 100%;
+   background: var(--theme-color-100);
+    color: var(--primary-color-500);
+    font-style: normal;
+    font-weight: 500;
+}

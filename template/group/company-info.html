@@ -2,10 +2,10 @@
 <html lang="ko">
     <head>
         <script src="/statics/js/loadHTML.js"></script>
+        <link rel="stylesheet" href="/statics/lib/jstree/dist/themes/default/style.min.css">
         <script>
             loadHTML("/statics/include/head.html");
         </script>
-        <link rel="stylesheet" href="/statics/lib/jstree/dist/themes/default/style.min.css">
 
         <title>조직관리</title>
     </head>
@@ -50,6 +50,7 @@
                                 <div class="doc-search">
                                     <input type="text"
                                     class="doc-search__input input"
+                                    id="group-search-input"
                                     placeholder="부서를 검색해주세요."
                                     maxlength="64">
                                 </div>
@@ -109,7 +110,16 @@
         <script>
             $(function () {
                 $('#jstree').jstree({
+                    "types" : {
+                        "default" : {
+                            "icon" : "icon"
+                        },
+                    },
+                    "state" : {
+                        "key" : "demo"
+                    },
                     "core" : {
+                        "check_callback" : true,
                         'data' : {
                             'url' : function (node) {
                                 return node.id === '#' ?
@@ -122,12 +132,30 @@
                         },
                         "themes" : {
                             // "variant" : "large"
-                            "icons" : false
+                            // "icons" : false
                         }
                     },
-                    "plugins" : [ "wholerow",]
+                    "plugins" : [
+                        "contextmenu",
+                        "massload",
+                        "search",
+                        "state",
+                        "types",
+                        "unique",
+                        "changed",
+                        "conditionalselect"
+                    ],
                 });
+                var to = false;
 
+                // 수정필요
+                $('#group-search-input').keyup(function () {
+                    if(to) { clearTimeout(to); }
+                    to = setTimeout(function () {
+                        var v = $('#group-search-input').val();
+                        $('#jstree').jstree(true).search(v);
+                    }, 100);
+                })
             });
         </script>
     </body>
