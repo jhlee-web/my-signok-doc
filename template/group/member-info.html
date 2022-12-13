@@ -21,22 +21,22 @@
                 </script>
                 <!-- // 상단헤더 -->
                 <!-- 메인 컨텐츠 -->
-                <div class="main-content">
-                    <div class="tab-wrap">
-                        <ul class="tab">
-                            <li class="tab__item--badge ">
-                                <a href="/template/group/company-info.html">회사 조직도</a>
-                            </li>
-                            <li class="tab__item--badge is-active">
-                                <a href="javascript:void(0)">멤버 관리</a>
-                            </li>
-                            <li class="tab__item--badge ">
-                                <a href="/template/group/role-info.html">역할 관리</a>
-                            </li>
-
-                        </ul>
-                    </div>
-                    <div class="container">
+                <div class="container">
+                    <div class="main-content">
+                        <div class="tab-wrap">
+                            <ul class="tab">
+                                <li class="tab__item--badge ">
+                                    <a href="/template/group/company-info.html">회사 조직도</a>
+                                </li>
+                                <li class="tab__item--badge is-active">
+                                    <a href="javascript:void(0)">멤버 관리</a>
+                                </li>
+                                <li class="tab__item--badge ">
+                                    <a href="/template/group/role-info.html">역할 관리</a>
+                                </li>
+    
+                            </ul>
+                        </div>
                         <div class="flex--row">
                             <div>
                                 <div>
@@ -69,7 +69,7 @@
                                 maxlength="64">
                             </div>
                             <button type="button" class="button button--text is-medium">
-                                <img src="/statics/icon/pop-out-line.svg" class="icon" alt="부서추가">
+                                <img src="/statics/icon/plus-line.svg" class="icon" alt="부서추가">
                                 부서추가
                             </button>
                         </div>
@@ -108,15 +108,72 @@
                         </div>
                         <!-- /table -->
                     </div>
-                    <!-- container -->
+                    <!-- /main-content -->
                 </div>
-                <!-- /main-content -->
+                <!-- /container -->
             </main>
         </div>
        
         
         <script>
+            $(function(){
+                $.ajax({
+                    url: "/json/dummy.json",
+                    type: "GET", 
+                    data:{},
+                    dataType: "json"
+                })
+                .done(function(res) {
+                    randomNum = Math.floor(Math.random() * 10)
+                    $('.table__tbody .table__tr').remove();
 
+                    if(randomNum < 5) {
+                        html = ''
+                        html += `
+                        <div class="table__tr">
+                            <div class="table__td is-empty">
+                                <img src="/statics/icon/exclamation-triangle-line.svg"
+                                alt="아직 소속된 멤버가 없습니다">
+                                <p>아직 소속된 멤버가 없습니다</p>
+                                <button type="button" class="button button--secondary is-medium"
+                                id="invite-member" >멤버 초대하기</button>
+                            </div>
+                        </div>
+                            
+                        `
+                        $('.table__tbody').append(html)
+                        return false;
+                    }
+
+                    // 테스트용
+                    const arr = [];
+                    for (let i = 0; i < res.length; i += randomNum) {
+                        arr.push(res.slice(i, i + randomNum));
+                    }
+
+
+                    // 테스트용
+                    for (let i = 0; i<arr[0].length; i++){
+                        html = '';
+                        html += `<div class="table__tr">
+                            <div class="table__td">
+                                ${arr[0][i].name}
+                            </div>
+                            <div class="table__td is-remark">
+                                ${arr[0][i].email}
+                            </div>
+                            <div class="table__td is-remark">
+                                ${arr[0][i].favoriteFruit}
+                            </div>
+                            <div class="table__td is-remark">
+                                ${arr[0][i].company}
+                            </div>
+                        </div>`
+                        $('.table__tbody').append(html)
+                    }
+                    
+                })
+            })
         </script>
     </body>
     

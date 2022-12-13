@@ -328,6 +328,9 @@
     .doc-header__right .group-button{
         display: none;
     }
+    .doc-header__user-wrap{
+        display: none;
+    }
 
     .doc-header .container{
         padding: 1rem;

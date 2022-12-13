@@ -42,7 +42,8 @@
                             <div class="card">
                                 <div class="card__row">
                                     <p class="is-remark">조직도</p>
-                                    <button type="button" class="button button--text is-medium">
+                                    <button type="button" class="button button--text is-medium"
+                                    id="add-group">
                                         <img src="/statics/icon/plus-line.svg" class="icon" alt="부서추가">
                                         부서추가
                                     </button>
@@ -59,30 +60,48 @@
                                 
                             </div>
                                 
-                            <div class="card" id="mobile-aside-container">
-                                <p class="is-remark">부서미지정</p>
-                                <div class="table">
-                                    <div class="table__colgroup">
-                                        <div class="table__col" style="width:auto"></div>
-                                        <div class="table__col" style="width:auto"></div>
-                                        <div class="table__col" style="width:15%"></div>
-                                        <div class="table__col" style="width:15%"></div>
+                            <div class="dim is-mobile">
+                                <div class="card" id="mobile-aside-container">
+                                    <div class="card__row">
+                                        <p class="is-remark">부서미지정</p>
+                                        <p class="is-remark">생성일:<span>2022-10-14</span></p>
                                     </div>
-                                    <div class="table__thead">
-                                        <ul class="table__tr">
-                                            <li class="table__td">이름</li>
-                                            <li class="table__td">이메일</li>
-                                            <li class="table__td">역할</li>
-                                            <li class="table__td">부서</li>
-                                        </ul>
-                                    </div>
-                                    <div class="table__tbody">
+
+                                    <div class="is-empty">
+                                        <div class="flex--column flex-align--center
+                                        ">
+                                            <img class="icon is-large"
+                                            src="/statics/icon/exclamation-triangle-line.svg"
+                                            alt="아직 소속된 멤버가 없습니다">
+                                            <p>아직 소속된 멤버가 없습니다</p>
+                                            <button type="button" class="button button--secondary is-medium"
+                                            id="invite-member" >멤버 초대하기</button>
+                                        </div>
                                         
                                     </div>
+
+                                    <div class="table">
+                                        <div class="table__colgroup">
+                                            <div class="table__col" style="width:auto"></div>
+                                            <div class="table__col" style="width:auto"></div>
+                                            <div class="table__col" style="width:15%"></div>
+                                            <div class="table__col" style="width:15%"></div>
+                                        </div>
+                                        <div class="table__thead">
+                                            <ul class="table__tr">
+                                                <li class="table__td">이름</li>
+                                                <li class="table__td">이메일</li>
+                                                <li class="table__td">역할</li>
+                                                <li class="table__td">부서</li>
+                                            </ul>
+                                        </div>
+                                        <div class="table__tbody">
+                                        </div>
+                                    </div>
+                                    <!-- /table -->
+
                                 </div>
-                                <!-- /table -->
                             </div>
-                            <!-- /user list -->
                         </div>
     
                     </div>
@@ -94,6 +113,8 @@
        
         
         <script src="/statics/lib/jstree/dist/jstree.min.js"></script>
+        <script src="/statics/js/common.js"></script>
+
         <script>
             $(function () {
                 makeTree()
@@ -153,12 +174,23 @@
                     $.ajax({
                         url: "/json/dummy.json",
                         type: "GET", 
-                        data:{},
                         dataType: "json"
                     })
                     .done(function(res) {
-                        if($('.table__tbody .table__tr').length > 0) $('.table__tbody .table__tr').remove()
-                        let randomNum = Math.floor(Math.random() * 10)
+                        randomNum = Math.floor(Math.random() * 10)
+                        $('.table__tbody .table__tr').remove();
+                        randomNum=0
+                        
+                        if(randomNum > 0){
+                            $('.is-empty').hide();
+                            $('.table').show();
+                        }
+                        else{
+                            $('.table').hide()
+                            $('.is-empty').show();
+
+                            return false;
+                        }
 
                         // 테스트용
                         const arr = [];
@@ -166,9 +198,9 @@
                             arr.push(res.slice(i, i + randomNum));
                         }
 
+
                         // 테스트용
                         for (let i = 0; i<arr[0].length; i++){
-                            console.log(arr[0][0])
                             html = '';
                             html += `<div class="table__tr">
                                 <div class="table__td">
@@ -190,6 +222,96 @@
                     })
                 })
             }
+
+            $('#add-group').on('click',makeModal)
+            function makeModal(){
+                html = '';
+                html += `
+                <div class="modal">
+                    <div class="modal__header">
+                        <p class="modal__title">
+                            부서 추가하기
+                        </p>
+                        <button type="button" class="icon-button">
+                            <img src="/statics/icon/close-line.svg" alt="닫기" class="icon modal__close-button">
+                        </button>
+                    </div>
+                    <div class="modal__content">
+                        <div class="doc-search">
+                            <label for="">부서명</label>
+                            <input type="text"
+                            class="doc-search__input input"
+                            placeholder="부서명을 입력해주세요."
+                            maxlength="32">
+                        </div>
+                        
+                    </div>
+                    <div class="modal__button-wrap">
+                        <button type="button" class="button--primary button--large"
+                        id="">부서 추가하기</button>
+                    </div>
+                </div>
+                `
+                $('.main').append(html)
+            }
+
+            $('#invite-member').on('click',makeMemberModal)
+            function makeMemberModal(){
+                html = '';
+                html += `
+                <div class="modal">
+                    <div class="modal__header">
+                        <p class="modal__title">
+                            멤버 초대하기
+                        </p>
+                        <button type="button" class="icon-button">
+                            <img src="/statics/icon/close-line.svg" alt="닫기" class="icon modal__close-button">
+                        </button>
+                    </div>
+                    <div class="modal__content">
+                        <div>
+                            <label for="">사원명</label>
+                            <input type="text" class="input">
+                        </div>
+                        <div>
+                            <label for="">ID</label>
+                            <input type="text" class="input">
+                        </div>
+                        <div>
+                            <label for="">이메일</label>
+                            <input type="text" class="input">
+                        </div>
+                        <div>
+                            <label for="">역할</label>
+                            <div id="" class="select-box is-small">
+                                <select class="select-box__select">
+                                    <option value="" selected>전체</option>
+                                    <option value="">완료</option>
+                                    <option value="">진행중</option>
+                                    <option value="">만료</option>
+                                </select>
+                                <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="modal__button-wrap">
+                        <button type="button" class="button--primary button--large"
+                        id="">초대하기</button>
+                    </div>
+                </div>
+                `
+                $('.main').append(html)
+            }
+
+            $('.dim').on('click',function(){
+                $('.dim, #mobile-aside-container').hide()
+            })
+            $(document).on('click','.jstree-anchor',function(){
+                console.log('hello')
+                $('.dim, #mobile-aside-container').show()
+            })
         </script>
     </body>
     

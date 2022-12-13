@@ -93,7 +93,7 @@ html,body{
     min-height:100%;
     
     /* font-family: "Pretendard", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif; */
-    font-size: max(16px, calc(14px + 0.1vw));
+    font-size: max(14px, calc(14px + 0.1vw));
     line-height: 150%;
 
     color: var(--text-color-800);
@@ -123,6 +123,17 @@ html,body{
 .is-hide{
     display: none!important;
 }
+
+/* only pc */
+/* .is-mobile{
+    display: none;
+}
+@media all and (max-width:768px){
+    .is-mobile{
+        display: block;
+    }   
+} */
+
 
 option{
     background: var(--background-color);
@@ -231,8 +242,11 @@ option{
     /* height: 1.25rem; */
     filter:var(--filter-text-800)
 }
+.icon.is-large{
+    width: 2rem;
+}
 
-.icon--warning{
+.icon.is-warning{
     filter: var(--filter-primary);
 }
 
@@ -511,6 +525,12 @@ option{
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
+    height: 2.5rem;
+    line-height: 2.5rem;
+    padding: 0 1.25rem;
+
+    font-size: var(--text-small);
 }
 
 .button:not(.icon-button) .icon{
@@ -879,13 +899,22 @@ option{
 
 
 /* modal */
-.modal-container{
+.dim:not(.is-mobile){
     background: var(--dim);
     position: fixed;
     left: 0; right: 0; top: 0; bottom: 0;
     z-index: 100;
-    /* display: none; */
     text-align: center;
+}
+@media all and (max-width:768px){
+    .dim.is-mobile{
+        background: var(--dim);
+        position: fixed;
+        left: 0; right: 0; top: 0; bottom: 0;
+        z-index: 100;
+        text-align: center;
+    }
+
 }
 .modal-content{
     background: var(--background-color);
