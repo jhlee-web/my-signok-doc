@@ -48,6 +48,8 @@ html[data-theme='light']{
     --box-shadow--3: 0 0.75rem 1.5rem 0 rgba(94,95,97,0.1);
     --box-shadow--5: 0 2rem 3rem 0 rgba(94,95,97,0.1);
 
+    --dim:rgba(0,0,0,0.1);
+
 }
 
 html[data-theme='dark']{
@@ -73,6 +75,9 @@ html[data-theme='dark']{
 
     --box-shadow--3: 0 0.75rem 1.5rem 0 rgba(17,17,17,0.1);
     --box-shadow--5: 0 2rem 3rem 0 rgba(17,17,17,0.1);
+
+    --dim:rgba(255,255,255,0.1);
+
 }
 
 
@@ -875,7 +880,7 @@ option{
 
 /* modal */
 .modal-container{
-    background: rgba(0,0,0,0.25);
+    background: var(--dim);
     position: fixed;
     left: 0; right: 0; top: 0; bottom: 0;
     z-index: 100;

@@ -1,0 +1,258 @@
+[
+    {
+      "id": "6397de623a37e1756a7a5744",
+      "text": "ipsum",
+      "icon": "/statics/icon/pop-out-line.svg",
+      "state": {
+        "opened": true,
+        "disabled": true,
+        "selected": true
+      },
+      "children": [
+        {
+          "text": "Boone",
+          "icon": "/statics/icon/pop-out-line.svg"
+        },
+        {
+          "text": "Barry",
+          "icon": "/statics/icon/pop-out-line.svg"
+        },
+        {
+          "text": "Woodard",
+          "icon": "/statics/icon/pop-out-line.svg"
+        }
+      ],
+      "li_attr": {
+        "id": 0,
+        "name": "Rutledge Reese"
+      },
+      "a_attr": {
+        "id": 0,
+        "name": "Cooke Horton"
+      }
+    },
+    {
+      "id": "6397de62007b36a9fed600cf",
+      "text": "fugiat",
+      "icon": "/statics/icon/pop-out-line.svg",
+      "state": {
+        "opened": true,
+        "disabled": true,
+        "selected": true
+      },
+      "children": [
+        {
+          "text": "Odom",
+          "icon": "/statics/icon/pop-out-line.svg"
+        },
+        {
+          "text": "Phillips",
+          "icon": "/statics/icon/pop-out-line.svg"
+        },
+        {
+          "text": "Galloway",
+          "icon": "/statics/icon/pop-out-line.svg"
+        }
+      ],
+      "li_attr": {
+        "id": 1,
+        "name": "Stanley Vasquez"
+      },
+      "a_attr": {
+        "id": 1,
+        "name": "Sherry Estes"
+      }
+    },
+    {
+      "id": "6397de62d42b0d0e9115d0de",
+      "text": "officia",
+      "icon": "/statics/icon/pop-out-line.svg",
+      "state": {
+        "opened": true,
+        "disabled": true,
+        "selected": false
+      },
+      "children": [
+        {
+          "text": "Ana",
+          "icon": "/statics/icon/pop-out-line.svg"
+        },
+        {
+          "text": "Tillman",
+          "icon": "/statics/icon/pop-out-line.svg"
+        },
+        {
+          "text": "Lena",
+          "icon": "/statics/icon/pop-out-line.svg"
+        }
+      ],
+      "li_attr": {
+        "id": 2,
+        "name": "Marissa Petersen"
+      },
+      "a_attr": {
+        "id": 2,
+        "name": "Meyer Mcguire"
+      }
+    },
+    {
+      "id": "6397de624ad1b9e8bd1857a6",
+      "text": "aute",
+      "icon": "/statics/icon/pop-out-line.svg",
+      "state": {
+        "opened": true,
+        "disabled": true,
+        "selected": false
+      },
+      "children": [
+        {
+          "text": "Perez",
+          "icon": "/statics/icon/pop-out-line.svg"
+        },
+        {
+          "text": "Terri",
+          "icon": "/statics/icon/pop-out-line.svg"
+        },
+        {
+          "text": "Leona",
+          "icon": "/statics/icon/pop-out-line.svg"
+        }
+      ],
+      "li_attr": {
+        "id": 3,
+        "name": "Moran Roberts"
+      },
+      "a_attr": {
+        "id": 3,
+        "name": "Mcbride Barton"
+      }
+    },
+    {
+      "id": "6397de628275cc9de02004d1",
+      "text": "aliqua",
+      "icon": "/statics/icon/pop-out-line.svg",
+      "state": {
+        "opened": false,
+        "disabled": true,
+        "selected": true
+      },
+      "children": [
+        {
+          "text": "Daisy",
+          "icon": "/statics/icon/pop-out-line.svg"
+        },
+        {
+          "text": "Carmela",
+          "icon": "/statics/icon/pop-out-line.svg"
+        },
+        {
+          "text": "Bolton",
+          "icon": "/statics/icon/pop-out-line.svg"
+        }
+      ],
+      "li_attr": {
+        "id": 4,
+        "name": "Yvonne Hodge"
+      },
+      "a_attr": {
+        "id": 4,
+        "name": "Marsh Pacheco"
+      }
+    },
+    {
+      "id": "6397de6298754077ef23bab5",
+      "text": "minim",
+      "icon": "/statics/icon/pop-out-line.svg",
+      "state": {
+        "opened": true,
+        "disabled": false,
+        "selected": false
+      },
+      "children": [
+        {
+          "text": "Blair",
+          "icon": "/statics/icon/pop-out-line.svg"
+        },
+        {
+          "text": "Mclean",
+          "icon": "/statics/icon/pop-out-line.svg"
+        },
+        {
+          "text": "Francis",
+          "icon": "/statics/icon/pop-out-line.svg"
+        }
+      ],
+      "li_attr": {
+        "id": 5,
+        "name": "Banks Molina"
+      },
+      "a_attr": {
+        "id": 5,
+        "name": "Simon Joyce"
+      }
+    },
+    {
+      "id": "6397de62712523c87daa68b7",
+      "text": "aute",
+      "icon": "/statics/icon/pop-out-line.svg",
+      "state": {
+        "opened": false,
+        "disabled": false,
+        "selected": false
+      },
+      "children": [
+        {
+          "text": "Abbott",
+          "icon": "/statics/icon/pop-out-line.svg"
+        },
+        {
+          "text": "Moreno",
+          "icon": "/statics/icon/pop-out-line.svg"
+        },
+        {
+          "text": "Minnie",
+          "icon": "/statics/icon/pop-out-line.svg"
+        }
+      ],
+      "li_attr": {
+        "id": 6,
+        "name": "Eugenia Cherry"
+      },
+      "a_attr": {
+        "id": 6,
+        "name": "Rosalind Tate"
+      }
+    },
+    {
+      "id": "6397de62dd6657f190590ee2",
+      "text": "veniam",
+      "icon": "/statics/icon/pop-out-line.svg",
+      "state": {
+        "opened": false,
+        "disabled": true,
+        "selected": true
+      },
+      "children": [
+        {
+          "text": "Mcclain",
+          "icon": "/statics/icon/pop-out-line.svg"
+        },
+        {
+          "text": "Staci",
+          "icon": "/statics/icon/pop-out-line.svg"
+        },
+        {
+          "text": "Wendi",
+          "icon": "/statics/icon/pop-out-line.svg"
+        }
+      ],
+      "li_attr": {
+        "id": 7,
+        "name": "Hart Blair"
+      },
+      "a_attr": {
+        "id": 7,
+        "name": "Joanne Shepherd"
+      }
+    }
+  ]

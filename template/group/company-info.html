@@ -5,6 +5,8 @@
         <script>
             loadHTML("/statics/include/head.html");
         </script>
+        <link rel="stylesheet" href="/statics/lib/jstree/dist/themes/default/style.min.css">
+
         <title>조직관리</title>
     </head>
 
@@ -21,92 +23,111 @@
                 </script>
                 <!-- // 상단헤더 -->
                 <!-- 메인 컨텐츠 -->
-                <div class="main-content">
-                    <div class="tab-wrap">
-                        <ul class="tab">
-                            <li class="tab__item--badge is-active">
-                                <a href="javascript:void(0)">회사 조직도</a>
-                            </li>
-                            <li class="tab__item--badge">
-                                <a href="/template/group/member-info.html">멤버 관리</a>
-                            </li>
-                            <li class="tab__item--badge ">
-                                <a href="/template/group/role-info.html">역할 관리</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="full-grid right-double">
-                        <div class="container">
-                            <h5>조직도</h5>
-                            <button type="button" class="button button--text is-medium">
-                                <img src="/statics/icon/pop-out-line.svg" class="icon" alt="부서추가">
-                                부서추가
-                            </button>
-
-                            <div class="doc-search">
-                                <input type="text"
-                                class="doc-search__input input"
-                                placeholder="부서를 검색해주세요."
-                                maxlength="64">
-                            </div>
-
-                            <ul>
-                                <li>
-                                    <img src="" alt="회사명">길동기업
+                <div class="container">
+                    <div class="main-content">
+                        <div class="tab-wrap">
+                            <ul class="tab">
+                                <li class="tab__item--badge is-active">
+                                    <a href="javascript:void(0)">회사 조직도</a>
                                 </li>
-                                <li>
-                                    <img src="" alt="회사명">길동기업
+                                <li class="tab__item--badge">
+                                    <a href="/template/group/member-info.html">멤버 관리</a>
                                 </li>
-                                
+                                <li class="tab__item--badge ">
+                                    <a href="/template/group/role-info.html">역할 관리</a>
+                                </li>
                             </ul>
                         </div>
-                        <div class="container">
-                            <h5>부서미지정</h5>
-                            <div class="table">
-                                <div class="table__colgroup">
-                                    <div class="table__col" style="width:auto"></div>
-                                    <div class="table__col" style="width:auto"></div>
-                                    <div class="table__col" style="width:8%"></div>
-                                    <div class="table__col" style="width:8%"></div>
+                        <div class="full-grid right-double">
+                            <div class="card">
+                                <div class="card__row">
+                                    <p class="is-remark">조직도</p>
+                                    <button type="button" class="button button--text is-medium">
+                                        <img src="/statics/icon/plus-line.svg" class="icon" alt="부서추가">
+                                        부서추가
+                                    </button>
                                 </div>
-                                <div class="table__thead">
-                                    <ul class="table__tr">
-                                        <li class="table__td">이름</li>
-                                        <li class="table__td">이메일</li>
-                                        <li class="table__td">역할</li>
-                                        <li class="table__td">부서</li>
-                                    </ul>
+                                <div class="doc-search">
+                                    <input type="text"
+                                    class="doc-search__input input"
+                                    placeholder="부서를 검색해주세요."
+                                    maxlength="64">
                                 </div>
-                                <div class="table__tbody">
-                                    <div class="table__tr">
-                                        <div class="table__td">
-                                            홍길동
-                                        </div>
-                                        <div class="table__td">
-                                            hong123@naver.com
-                                        </div>
-                                        <div class="table__td">
-                                            없음
-                                        </div>
-                                        <div class="table__td">
-                                            없음
+    
+                                <div id="jstree"></div>
+                                
+                            </div>
+                                
+                            <div class="card">
+                                <p class="is-remark">부서미지정</p>
+                                <div class="table">
+                                    <div class="table__colgroup">
+                                        <div class="table__col" style="width:auto"></div>
+                                        <div class="table__col" style="width:auto"></div>
+                                        <div class="table__col" style="width:8%"></div>
+                                        <div class="table__col" style="width:8%"></div>
+                                    </div>
+                                    <div class="table__thead">
+                                        <ul class="table__tr">
+                                            <li class="table__td">이름</li>
+                                            <li class="table__td">이메일</li>
+                                            <li class="table__td">역할</li>
+                                            <li class="table__td">부서</li>
+                                        </ul>
+                                    </div>
+                                    <div class="table__tbody">
+                                        <div class="table__tr">
+                                            <div class="table__td">
+                                                홍길동
+                                            </div>
+                                            <div class="table__td">
+                                                hong123@naver.com
+                                            </div>
+                                            <div class="table__td">
+                                                없음
+                                            </div>
+                                            <div class="table__td">
+                                                없음
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <!-- /table -->
                             </div>
-                            <!-- /table -->
+                            <!-- /user list -->
                         </div>
-                        <!-- /user list -->
+    
                     </div>
-
+                    <!-- /main-content -->
                 </div>
-                <!-- /main-content -->
+                <!-- /container -->
             </main>
         </div>
        
         
+        <script src="/statics/lib/jstree/dist/jstree.min.js"></script>
         <script>
+            $(function () {
+                $('#jstree').jstree({
+                    "core" : {
+                        'data' : {
+                            'url' : function (node) {
+                                return node.id === '#' ?
+                                '/json/jstree-test.json' :
+                                '/json/jstree-test.json';
+                            },
+                            'data' : function (node) {
+                                return { 'id' : node.id };
+                            }
+                        },
+                        "themes" : {
+                            // "variant" : "large"
+                        }
+                    },
+                    "plugins" : [ "wholerow",]
+                });
 
+            });
         </script>
     </body>
     
