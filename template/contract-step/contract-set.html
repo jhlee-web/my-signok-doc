@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <script src="/statics/js/loadHTML.js"></script>
+        <script>
+            loadHTML("/statics/include/head.html");
+        </script>
+        <title>계약 | 계약서 설정 및 발송</title>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <main class="main">
+                <!-- 상단 헤더 -->
+                <div class="doc-header">
+                    <div class="container is-center">
+                        <ul class="flex--row">
+                            <li class="step">
+                                <a href="javascript:void(0)">
+                                    <span>1</span>서명자 정보 입력
+                                </a>
+                            </li>
+                            <li class="step">
+                                <a href="javascript:void(0)">
+                                    <span>2</span>서명 영역 지정
+                                </a>
+                            </li>
+                            <li class="step is-active">
+                                <a href="javascript:void(0)">
+                                    <span>3</span>계약서 설정 및 발송
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- // 상단헤더 -->
+                
+                <!-- 메인 컨텐츠 -->
+                <div class="container">
+                    <div class="main-content">
+                        <!-- card -->
+                        <div class="card">
+                            <div class="card__content">
+                                <div>
+                                    <label for="" class="is-remark">계약서 이름(필수)</label>
+                                    <input type="text" placeholder="" class="input">
+                                    <button type="button" class="button button--secondary">수정하기</button>
+                                </div>
+                                
+                                <div class="full-grid">
+                                    <div>
+                                        <p>서명 요청 수신 수 <input type="number" class="input" maxlength="365">일 후 만료 </p>
+                                    </div>
+                                    <div>
+                                        <div class="control-form">
+                                            <input type="radio" class="radio" name="submit-type">
+                                            <label for="">바로발송</label>
+                                        </div>
+                                        <div class="control-form">
+                                            <input type="radio" class="radio" name="submit-type">
+                                            <label for="">예약발송</label>
+                                        </div>
+                                        <div>
+
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <textarea placeholder="서명 대상자에게 남길 말을 입력해주세요." maxlength="200"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="is-remark">수신자<span>* 선택한 수신자는 주소록에 저장됩니다.</span></p>
+                        </div>
+                        <div>
+                            <div class="control-form">
+                                <input type="checkbox" class="checkbox">
+                                <label for="">서명완료 메일을 매회 수신합니다</label>
+                            </div>
+                        </div>
+                        <div>
+                            <ul class="checkbox-wrap">
+                                <li class="checkbox__item">
+                                    <label for="checkbox-all"
+                                    class="margin-bottom--medium font-weight--medium">
+                                        전체동의
+                                    </label>
+                                    <input type="checkbox" id="checkbox-all" class="checkbox">
+                                </li>
+                                <li class="checkbox__item">
+                                    <label for="" class="flex--row flex-align--center">
+                                        <span class="font-weight--medium">필수</span>
+                                        개인정보 수집에 동의합니다
+                                        <img class="icon" src="/statics/icon/angle-right.svg">
+                                    </label>
+                                    <input type="checkbox" class="checkbox" required>
+        
+                                </li>
+                                <li class="checkbox__item">
+                                    <label for="" class="flex--row flex-align--center">
+                                        <span class="font-weight--medium">필수</span>
+                                        계약 건수 1회가 차감됩니다
+                                        <img class="icon" src="/statics/icon/angle-right.svg">
+                                    </label>
+                                    <input type="checkbox" class="checkbox" required>
+                                </li>
+                            </ul>  
+                        </div>
+                    </div>
+                    <!-- /main-content -->
+                    <div class="doc-header" id="doc-footer">
+                        <div class="container is-center">
+                            <button type="button" class="button is-large button--text">이전</button>
+                            <button type="button" class="button is-large button--primary">다음</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- /container -->
+            </main>
+        </div>
+        <script>
+            $('html').attr('data-theme',localStorage.getItem('data-theme'))
+            // function manageCardInput(id,type){
+            //     if(id!==null){
+            //         $(`.card[data-id=${id}] .input`).not('input[type=text]').addClass('is-hide')
+            //         $(`.card[data-id=${id}] .input[type=${type}]`).removeClass('is-hide')
+            //     }
+            //     else{
+            //         $(`.card .input`).not('input[type=text]').addClass('is-hide')
+            //         $(`.card .input[type=${type}]`).removeClass('is-hide')
+            //     }
+            // }
+
+
+            // $(function(){
+            //     $('.nav').hide()
+
+            //     let type = $('.card .tab__item.is-active').attr('data-type');
+            //     manageCardInput(null,type)
+            // })
+            
+
+            // $('.card .tab__item').on('click',function(){
+            //     let card_id = $(this).parents('.card').attr('data-id')
+            //     let type = $(this).attr('data-type');
+
+            //     manageCardInput(card_id,type)
+            // })
+
+            
+        </script>
+    </body>
+</html>

@@ -418,6 +418,9 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
+.full-grid.is-double{
+    grid-template-columns: repeat(2,1fr);
+}
 
 .full-grid.left-double{
     grid-template-columns: 1fr 33%;
