@@ -124,15 +124,20 @@ html,body{
     display: none!important;
 }
 
-/* only pc */
-/* .is-mobile{
+.is-pc{
+    display: block;;
+}
+.is-mobile{
     display: none;
 }
 @media all and (max-width:768px){
     .is-mobile{
         display: block;
     }   
-} */
+    .is-pc{
+        display: none;
+    }
+}
 
 
 option{

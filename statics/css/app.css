@@ -109,21 +109,6 @@
     white-space: nowrap;
     border-bottom: 1px solid var(--theme-color-400);
 }
-/* .table__td.is-empty{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: auto;
-    position: absolute;
-    border-bottom: unset;
-
-    gap: 1rem;
-}
-.table__tr.is-empty:hover,
-.table__td.is-empty:hover{
-    transform: translateY(0);
-    box-shadow: unset;
-} */
 
 .table__td:last-child {
     text-align: center;

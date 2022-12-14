@@ -59,3 +59,31 @@ $('.input').on('keyup',checkInputLength)
 }
 
 $('.input-box .icon').on('click',handlingInputType)
+
+checkDeviceWidth()
+
+function checkDeviceWidth(){
+    let deviceWidth = $(window).innerWidth()
+    
+    if(deviceWidth < 768){
+        console.log('mobile')
+    }
+    else{
+        console.log('pc or tablet')
+    }
+
+}
+
+$(document).on('click','.modal .tab__item',manageModalTab)
+
+function manageModalTab(){
+    $('.tab__item').removeClass('is-active')
+    $(this).addClass('is-acitve')
+
+    if($(this).parents('.modal').find('.modal__tab-container').length > 1){
+        modalContentType = $(this).attr('data-tab')
+
+        $('.modal__tab-container').hide();
+        $(`.modal__tab-container[data-tab="${modalContentType}"]`).show()
+    }
+}
