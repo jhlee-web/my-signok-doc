@@ -334,9 +334,15 @@
 }
 
 .modal__content{
-    padding: 2rem 2rem;
     max-height:27.5rem;
     overflow-y: scroll;
+}
+
+.modal__content .tab-wrap{
+ padding: 1rem 2rem;   
+}
+.modal__content .modal__tab-container{
+    padding: 0rem 2rem;
 }
 
 .modal__search-form{

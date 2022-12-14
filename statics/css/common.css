@@ -18,9 +18,10 @@
     --success-color-500:#F8AF1D;
 
     --filter-primary:invert(31%) sepia(46%) saturate(6438%) hue-rotate(339deg) brightness(100%) contrast(87%);
+    --filter-secondary: invert(29%) sepia(14%) saturate(1806%) hue-rotate(178deg) brightness(92%) contrast(86%);
     --filter-focus:invert(48%) sepia(70%) saturate(2205%) hue-rotate(168deg) brightness(96%) contrast(101%);
     --filter-success:invert(71%) sepia(96%) saturate(1039%) hue-rotate(344deg) brightness(99%) contrast(96%);
-
+    --filter-white: invert(99%) sepia(83%) saturate(738%) hue-rotate(210deg) brightness(122%) contrast(99%);
 }
 
 
@@ -279,6 +280,9 @@ option{
 }
 .flex-align--center{
     align-items: center;
+}
+.flex-align--start{
+    align-items: flex-start;
 }
 .flex-align--end{
     align-items: flex-end;
@@ -540,8 +544,8 @@ option{
 
 .button:not(.icon-button) .icon{
     margin-right: .5rem;
-    filter: var(--filter-text-400);
 }
+
 .button:hover{
     transition: .3s;
 }
@@ -559,6 +563,10 @@ option{
 .button--text:hover{
     color: var(--secondary-color-500);
 }
+.button--text .icon{
+    filter: var(--filter-secondary);
+}
+
 
 .button--primary{
     background: var(--primary-color-500);
@@ -568,18 +576,27 @@ option{
     background-color: var(--primary-color-400);
 }
 
+
 .button--secondary{
     background: var(--secondary-color-500);
     color: var(--white);
-
 }
 .button--secondary:hover{
     background-color: var(--secondary-color-400);
 }
 
+.button--primary .icon,
+.button--secondary .icon{
+    filter: var(--filter-white);
+}
+
 .button--outline{
     border: 1px solid var(--theme-color-400);
 }
+.button--text .icon{
+    filter: var(--filter-text-400);
+}
+
 
 /* button size set */
 .button.is-xl{

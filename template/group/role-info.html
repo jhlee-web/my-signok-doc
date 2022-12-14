@@ -5,6 +5,7 @@
         <script>
             loadHTML("/statics/include/head.html");
         </script>
+        <link rel="stylesheet" href="/statics/lib/fancy-file-uploader/fancy_fileupload.css">
         <title>조직관리</title>
     </head>
 
@@ -87,7 +88,9 @@
                 </div>
             </main>
         </div>
-       
+
+        <script src="/statics/lib/fancy-file-uploader/jquery.fancy-fileupload.js"></script>
+
         <script>
             $(function(){
                 makeModal()
@@ -123,15 +126,11 @@
                         </div>
                         <div class="modal__tab-container" data-tab="upload">
                             <div class="file-area">
-                                <label for="input-file" class="file-area__label">
+                                <label for="upload-file" class="file-area__label">
                                     <input type="file"
-                                    id="input-file" class="file-area__input">    
+                                    id="upload-file" class="file-area__input"
+                                    accept=".jpg, .png, .jpeg, .hwp, .doc, .pdf">    
                                 </label>
-                                <p class="is-remark">pdf, jpg, png, hwp 파일을 업로드 할 수 있습니다.</p>
-                                <button type="button" class="button button--primary">
-                                    <img src="/statics/icon/close-line.svg" class="icon" alt="파일업로드">
-                                    파일 업로드
-                                </button>
                             </div>
                             <div>
                                 <p class="is-remark">pdf, jpg, png, hwp 파일을 업로드 할 수 있습니다.</p>
@@ -140,32 +139,50 @@
                         </div>
                         <div class="modal__tab-container" data-tab="template">
                             <div>
-                                <p class="is-remark">아직 생성된 템플릿이 없습니다. 자주 사용하는 계약서는 템플릿으로 만들어 간편하게 재사용이 가능합니다.</p>
+                                <p class="is-remark">
+                                    아직 생성된 템플릿이 없습니다.<br>
+                                    자주 사용하는 계약서는 템플릿으로 만들어 간편하게 재사용이 가능합니다.
+                                </p>
                                 <a href="javascript:void(0)" class="button button--text">템플릿 생성하기</a>
                             </div>
                         </div>
                         <div class="modal__tab-container" data-tab="format">
                             <div>
-                                <p class="is-remark">아직 생성된 서식이 없습니다. 자주 사용하는 계약서는 서식으로 만들어 간편하게 재사용이 가능합니다.</p>
+                                <p class="is-remark">
+                                    아직 생성된 서식이 없습니다.<br>
+                                    자주 사용하는 계약서는 서식으로 만들어 간편하게 재사용이 가능합니다.
+                                </p>
                                 <a href="javascript:void(0)" class="button button--text">템플릿 생성하기</a>
                             </div>
                         </div>
                         <div class="modal__tab-container" data-tab="offer">
-                            <div class="file-area">
-                                <label for="input-file" class="file-area__label">
-                                    <input type="file"
-                                    id="input-file" class="file-area__input">    
-                                </label>
-                                <p class="is-remark">pdf, jpg, png, hwp 파일을 업로드 할 수 있습니다.</p>
-                                <button type="button" class="button button--primary">
-                                    <img src="/statics/icon/close-line.svg" class="icon" alt="파일업로드">
-                                    파일 업로드
-                                </button>
+                            <div class="flex--row flex-align--start">
+                                <div class="">
+                                    <p>STEP 1</p>
+                                    <ul>
+                                        <li>인사/근로</li>
+                                        <li>금융/결제</li>
+                                        <li>법률/회의</li>
+                                        <li>동의/서명</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p>STEP 2</p>
+                                    <ul>
+                                        <li>채용</li>
+                                        <li>실업급여</li>
+                                        <li>프랜서</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p>STEP 3</p>
+                                    <ul>
+                                        <li>용역계약서</li>
+                                        <li>프리랜서 계약서</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div>
-                                <p class="is-remark">pdf, jpg, png, hwp 파일을 업로드 할 수 있습니다.</p>
-                                <p class="is-remark">파일은 최대 10MB까지 업로드 할 수 있습니다.</p>
-                            </div>
+                           
                         </div>
                     </div>
                     <div class="modal__button-wrap">
@@ -176,6 +193,7 @@
                 `
                 $('.main').append(html)
                 setModalContent()
+                loadFancyUpload()
             }
 
             function setModalContent(){
@@ -185,8 +203,40 @@
 
             }
 
-            let tabData;
-            if(tabData) console.log(tabData)
+            function loadFancyUpload(){
+                $('#upload-file').FancyFileUpload({
+                // 'url' : '',
+                // 'params' : {},
+                'edit' : false,                      // 업로드한 파일의 이름 변경
+                'maxfilesize' : 10000000,            // 최대 10MB
+                // 'accept' : null,
+                'displayunits' : 'si',              // 'iec_windows', 'iec_formal', or 'si'
+                'adjustprecision' : true,           // 파일 크기를 표시할 때 최종 정밀도 조정
+                'retries' : 5,
+                'retrydelay' : 500,
+                'showpreview' : function(e, data, preview, previewclone) {},
+                'hidepreview' : function(e, data, preview, previewclone) {},
+                'added' : function(e, data) {},
+                // 'startupload' : function(SubmitUpload, e, data){
+                //     console.log('start upload')
+                // },
+                // 'continueupload' : function(e, data) {
+                //     console.log('continue upload')
+                // },
+                // 'uploadcancelled' : function(e, data) {
+                //     console.log('upload cancel')
+                // },
+                // 'uploadcompleted' : function(e, data) {
+                //     console.log('upload completed')
+                // },
+                // 'fileupload' : {
+                //     function(e,data){
+                //         console.log(fileupload)
+                //     }
+                // },
+            });
+            }
+            
 
         </script>
         <script src="/statics/js/common.js"></script>
