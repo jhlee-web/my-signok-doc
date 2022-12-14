@@ -248,11 +248,12 @@ option{
     /* height: 1.25rem; */
     filter:var(--filter-text-800)
 }
+
 .icon.is-large{
     width: 2rem;
 }
 
-.icon.is-warning{
+.icon.is-primary{
     filter: var(--filter-primary);
 }
 
@@ -824,6 +825,7 @@ option{
 .tab__item.is-active{
     font-weight: 500;
     color: var(--text-color-800);
+    border-bottom: 1px solid var(--primary-color-500);
 }
 
 .tab__item--badge{

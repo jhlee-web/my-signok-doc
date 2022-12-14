@@ -5,7 +5,7 @@
 .ff_fileupload_wrap .ff_fileupload_dropzone {
 	display: block;
 	width: 100%;
-	height: 15rem;
+	height: 12rem;
 	box-sizing: border-box;
 	border: .25rem dashed var(--theme-color-400);
 	border-radius: .5rem;

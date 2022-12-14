@@ -363,6 +363,7 @@
 			// Action buttons.
 			if (!data.ff_info.errors.length)
 			{
+				console.log('addeddd')
 				inforow.find('.ff_fileupload_actions').append($('<button>').addClass('ff_fileupload_start_upload').attr('type', 'button').attr('aria-label', Translate('Start uploading')).click(StartUpload));
 				inforow.find('.ff_fileupload_actions_mobile').append($('<button>').addClass('ff_fileupload_start_upload').attr('type', 'button').attr('aria-label', Translate('Start uploading')).click(StartUpload));
 
@@ -591,8 +592,8 @@
 			var dropzone = $('<button>').addClass('ff_fileupload_dropzone').attr('type', 'button').attr('aria-label', Translate('Browse, drag-and-drop, or paste files to upload'));
 			dropzone.html(`
 				<div class="flex--column flex-align--center">
-					<img src="/statics/icon/close-line.svg" alt="파일업로드"
-					class="icon">
+					<img src="/statics/icon/file-line.svg" alt="파일업로드"
+					class="icon is-large">
 					<p class="is-remark">이곳에 파일을 직접 드래그하거나
 					클릭해 파일을 업로드해주세요.</p>
 					<button type="button" class="button button--primary">

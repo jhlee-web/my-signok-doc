@@ -138,7 +138,7 @@
                                     </li>
                                     <li class="table__td">상태</li>
                                     <li class="table__td">문서이름</li>
-                                    <li class="table__td">알람</li>
+                                    <li class="table__td">진행 알림</li>
                                     <li class="table__td">위치</li>
                                     <li class="table__td">마지막 활동시간</li>
                                     <li class="table__td">추가메뉴</li>
@@ -279,14 +279,26 @@
                             <p class="state success" >
                                 <img src="/statics/icon/hourglass-line.svg" class="icon">
                                 진행중
-                            </p>`
+                            </p>
+                        `
+                        mailAlert = `
+                            <p class="is-remark" >
+                                수신
+                            </p>
+                        `
                     }
                     else{
                         state = `
-                        <p class="state ban">
-                            <img src="/statics/icon/ban-line.svg" class="icon">
-                            만료
-                        </p>`
+                            <p class="state ban">
+                                <img src="/statics/icon/ban-line.svg" class="icon">
+                                만료
+                            </p>
+                        `
+                        mailAlert = `
+                            <p class="is-remark" >
+                                수신안함
+                            </p>
+                        `
                     }
 
                     html = ''
@@ -304,13 +316,17 @@
                             <p class="is-remark">${friends}</p>
                         </div>
                         <div class="table__td">
-                            <label class="is-small toggle">
-                                <input type="checkbox" class="toggle__checkbox">
-                                <span class="toggle__slider"></span>
-                            </label>
+                            ${mailAlert}
                         </div>
-                        <p class="table__td is-remark">기본폴더</p>
-                        <p class="table__td is-remark">${data[i].registered}</p>
+                        <div class="table__td">
+                            <p class="is-remark">
+                                <img src="/statics/icon/folder-line.svg" class="icon" alt="폴더">
+                                기본폴더
+                            </p>
+                        </div>
+                        <div class="table__td">
+                            <p class="is-remark">${data[i].registered}</p>
+                        </div>
                         <div class="table__td">
                             <button type="button" class="button button--outline icon-button is-small">
                                 <img class="icon" src="/statics/icon/ellipsis-horizontal-line.svg"

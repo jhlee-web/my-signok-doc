@@ -38,42 +38,53 @@
                             </ul>
                         </div>
                         <div class="flex--row">
-                            <div>
-                                <div>
-                                    <p>현재 멤버 수 </p>
+                            <div class="flex--column">
+                                <p class="is-remark">현재 멤버</p>
+                                <div class="flex--row">
                                     <p><span>0</span>명</p>
+                                    <button type="button" class="button button--text is-medium">목록보기</button>
                                 </div>
-                                <button type="button" class="button button--text is-medium">목록보기</button>
                             </div>
-                            <div>
-                                <div>
-                                    <p>초대 대기 멤버 수 </p>
+                            <div class="flex--column">
+                                <p class="is-remark">초대 중</p>
+                                <div class="flex--row">
                                     <p><span>0</span>명</p>
+                                    <button type="button" class="button button--text is-medium">목록보기</button>
                                 </div>
-                                
-                                <button type="button" class="button button--text is-medium">목록보기</button>
                             </div>
-                            <div>
-                                <div>
-                                    <p>삭제 멤버 수 </p>
+                            <div class="flex--column">
+                                <p class="is-remark">삭제 멤버</p>
+                                <div class="flex--row">
                                     <p><span>0</span>명</p>
+                                    <button type="button" class="button button--text is-medium">목록보기</button>
                                 </div>
-                                <button type="button" class="button button--text is-medium">목록보기</button>
                             </div>
                         </div>
-                        <div>
+                        <div class="card__row">
                             <div class="doc-search">
                                 <input type="text"
                                 class="doc-search__input input"
                                 placeholder="부서를 검색해주세요."
                                 maxlength="64">
                             </div>
-                            <button type="button" class="button button--text is-medium">
+                            <button type="button" class="button button--secondary is-medium">
                                 <img src="/statics/icon/plus-line.svg" class="icon" alt="부서추가">
                                 부서추가
                             </button>
                         </div>
                         
+                        <div class="is-empty">
+                            <div class="flex--column flex-align--center
+                            ">
+                                <img class="icon is-large"
+                                src="/statics/icon/exclamation-triangle-line.svg"
+                                alt="아직 소속된 멤버가 없습니다">
+                                <p>아직 소속된 멤버가 없습니다</p>
+                                <button type="button" class="button button--secondary is-medium"
+                                id="invite-member" >멤버 초대하기</button>
+                            </div>
+                        </div>
+
                         <div class="table">
                             <div class="table__colgroup">
                                 <div class="table__col" style="width:auto"></div>
@@ -126,22 +137,16 @@
                 .done(function(res) {
                     randomNum = Math.floor(Math.random() * 10)
                     $('.table__tbody .table__tr').remove();
+                    randomNum=0
 
-                    if(randomNum < 5) {
-                        html = ''
-                        html += `
-                        <div class="table__tr">
-                            <div class="table__td is-empty">
-                                <img src="/statics/icon/exclamation-triangle-line.svg"
-                                alt="아직 소속된 멤버가 없습니다">
-                                <p>아직 소속된 멤버가 없습니다</p>
-                                <button type="button" class="button button--secondary is-medium"
-                                id="invite-member" >멤버 초대하기</button>
-                            </div>
-                        </div>
-                            
-                        `
-                        $('.table__tbody').append(html)
+                    if(randomNum > 0){
+                        $('.is-empty').hide();
+                        $('.table').show();
+                    }
+                    else{
+                        $('.table').hide()
+                        $('.is-empty').show();
+
                         return false;
                     }
 

@@ -78,7 +78,7 @@ $(document).on('click','.modal .tab__item',manageModalTab)
 
 function manageModalTab(){
     $('.tab__item').removeClass('is-active')
-    $(this).addClass('is-acitve')
+    $(this).addClass('is-active')
 
     if($(this).parents('.modal').find('.modal__tab-container').length > 1){
         modalContentType = $(this).attr('data-tab')

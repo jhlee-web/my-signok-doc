@@ -118,9 +118,8 @@
 
 }
 
-
-.table__td .checkbox{
-    display: inline-block;
+.table__td .icon{
+    vertical-align: middle;
 }
 
 .table__td--title{

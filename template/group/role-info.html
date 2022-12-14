@@ -39,15 +39,15 @@
                             </ul>
                         </div>
                         <div class="card">
-                            <div calss="flex--row flex-align--center flex-justify--between">
+                            <div class="card__row">
                                 <div class="doc-search">
                                     <input type="text"
                                     class="doc-search__input input"
                                     placeholder="부서를 검색해주세요."
                                     maxlength="64">
                                 </div>
-                                <button type="button" class="button button--text is-medium">
-                                    <img src="/statics/icon/pop-out-line.svg" class="icon" alt="부서추가">
+                                <button type="button" class="button button--secondary is-medium">
+                                    <img src="/statics/icon/plus-line.svg" class="icon" alt="부서추가">
                                     부서추가
                                 </button>
                             </div>
@@ -125,6 +125,23 @@
                             </ul>
                         </div>
                         <div class="modal__tab-container" data-tab="upload">
+                            <div class="flex--column flex-align--center">
+                                <div class="flex--column flex-align--center">
+                                    <img class="icon is-large is-primary" src="/statics/icon/check-circle-solid.svg" alt="문서 업로드 성공">
+                                    <p class="is-remark">문서를 성공적으로 업로드하였습니다.</p>
+                                </div>
+                                <p>파일명</p>
+                                <div class="flex--row">
+                                    <button type="button" class="button button--outline">
+                                        <img src="/statics/icon/pop-out-line.svg" alt="미리보기 버튼" class="icon">
+                                        미리보기    
+                                    </button>
+                                    <button type="button" class="button button--outline">
+                                        <img src="/statics/icon/pop-out-line.svg" alt="삭제 버튼" class="icon">
+                                        삭제    
+                                    </button>    
+                                </div>
+                            </div>
                             <div class="file-area">
                                 <label for="upload-file" class="file-area__label">
                                     <input type="file"
@@ -158,7 +175,7 @@
                         <div class="modal__tab-container" data-tab="offer">
                             <div class="flex--row flex-align--start">
                                 <div class="">
-                                    <p>STEP 1</p>
+                                    <p class="is-remark">STEP 1</p>
                                     <ul>
                                         <li>인사/근로</li>
                                         <li>금융/결제</li>
@@ -167,22 +184,14 @@
                                     </ul>
                                 </div>
                                 <div>
-                                    <p>STEP 2</p>
+                                    <p class="is-remark">STEP 2</p>
                                     <ul>
                                         <li>채용</li>
                                         <li>실업급여</li>
                                         <li>프랜서</li>
                                     </ul>
                                 </div>
-                                <div>
-                                    <p>STEP 3</p>
-                                    <ul>
-                                        <li>용역계약서</li>
-                                        <li>프리랜서 계약서</li>
-                                    </ul>
-                                </div>
                             </div>
-                           
                         </div>
                     </div>
                     <div class="modal__button-wrap">
@@ -216,7 +225,9 @@
                 'retrydelay' : 500,
                 'showpreview' : function(e, data, preview, previewclone) {},
                 'hidepreview' : function(e, data, preview, previewclone) {},
-                'added' : function(e, data) {},
+                'added' : function(e, data) {
+
+                },
                 // 'startupload' : function(SubmitUpload, e, data){
                 //     console.log('start upload')
                 // },
