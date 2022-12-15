@@ -5,6 +5,7 @@
         <script>
             loadHTML("/statics/include/head.html");
         </script>
+        <link rel="stylesheet" href="/statics/lib/Datetime-Picker/css/datetimepicker.css">
         <title>계약 | 계약서 설정 및 발송</title>
     </head>
 
@@ -16,7 +17,7 @@
                     <div class="container is-center">
                         <ul class="flex--row">
                             <li class="step">
-                                <a href="javascript:void(0)">
+                                <a href="/template/contract-stepsignature-set.html">
                                     <span>1</span>서명자 정보 입력
                                 </a>
                             </li>
@@ -41,30 +42,47 @@
                         <!-- card -->
                         <div class="card">
                             <div class="card__content">
-                                <div>
-                                    <label for="" class="is-remark">계약서 이름(필수)</label>
-                                    <input type="text" placeholder="" class="input">
-                                    <button type="button" class="button button--secondary">수정하기</button>
+                                <div class="input-area">
+                                    <label for="" class="is-remark">
+                                        계약서 이름
+                                        <span class="is-primary"> *</span>
+                                    </label>
+                                    <div class="input-box flex--row">
+                                        <input type="text" placeholder="" class="input">
+                                        <button type="button" class="button button--secondary">수정하기</button>
+                                    </div>
                                 </div>
                                 
                                 <div class="full-grid">
-                                    <div>
-                                        <p>서명 요청 수신 수 <input type="number" class="input" maxlength="365">일 후 만료 </p>
+                                    <div class="flex--column">
+                                        <p class="is-remark">서명 기간 <span class="is-primary"> *</span></p>
+                                        <div class="flex--row">
+                                            <p>서명 발송일로부터</p>
+                                            <input type="number" class="input is-narrow" maxlength="365"
+                                            value="14">
+                                            <p>일 동안 서명을 받습니다.</p>
+                                        </div>
+                                        <p class="is-remark">서명 만료일: <span>2022-12-31</span></p>
                                     </div>
-                                    <div>
+
+                                    <div class="flex--column">
+                                        <p class="is-remark">서명 기간 <span class="is-primary"> *</span></p>
                                         <div class="control-form">
-                                            <input type="radio" class="radio" name="submit-type">
+                                            <input type="radio" class="radio" name="submit-type" checked>
                                             <label for="">바로발송</label>
                                         </div>
+                                        <p class="is-remark">일자 + 시간 + 분</p>
                                         <div class="control-form">
                                             <input type="radio" class="radio" name="submit-type">
                                             <label for="">예약발송</label>
                                         </div>
-                                        <div>
-
+                                        <div id="">   
+                                            <div id="date-time-picker"></div>
+                                            <input type="hidden" id="" readonly >
                                         </div>
                                     </div>
-                                    <div>
+                                    <div class="flex--column">
+                                        <p class="is-remark">남길말 (선택)</p>
                                         <textarea placeholder="서명 대상자에게 남길 말을 입력해주세요." maxlength="200"></textarea>
                                     </div>
                                 </div>
@@ -119,7 +137,23 @@
                 <!-- /container -->
             </main>
         </div>
+
+        <script src="/statics/lib/moment/min/moment-with-locales.min.js"></script>
+        <script src="/statics/lib/Datetime-Picker/js/datetimepicker.js"></script>
+
         <script>
+            $('#date-time-picker').dateTimePicker({
+                dateFormat:"YYYY-MM-DD HH:mm",
+                locale:"ko",
+                showtime:true,
+                selectData:'now',
+                positionShift:{
+                    top:0,
+                    left:0
+                },
+                title:"예약시간을 설정해주세요",
+                buttonTitle:"확인",
+            })
             $('html').attr('data-theme',localStorage.getItem('data-theme'))
             // function manageCardInput(id,type){
             //     if(id!==null){

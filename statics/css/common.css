@@ -253,7 +253,7 @@ option{
     width: 2rem;
 }
 
-.icon.is-primary{
+.icon.is-warning{
     filter: var(--filter-primary);
 }
 
@@ -501,7 +501,7 @@ option{
 
 /* radio mark */
 .radio:checked{
-    border: .25rem solid var(--primary-color-500);
+    border: .33rem solid var(--primary-color-500);
 }
 .radio:checked::before{
     box-shadow: none;
