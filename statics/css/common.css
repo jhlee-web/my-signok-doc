@@ -543,6 +543,10 @@ option{
     font-size: var(--text-small);
 }
 
+.button.is-round{
+    border-radius: 50rem;
+}
+
 .button:not(.icon-button) .icon{
     margin-right: .5rem;
 }
@@ -592,9 +596,14 @@ option{
 }
 
 .button--outline{
+    color: var(--text-color-600);
     border: 1px solid var(--theme-color-400);
 }
-.button--text .icon{
+.button--outline:hover{
+    color: var(--text-color-800);
+    background: var(--theme-color-50);
+}
+.button--outline .icon{
     filter: var(--filter-text-400);
 }
 
@@ -891,6 +900,21 @@ option{
 /* width set */
 .width-100{
     width: 100%;
+}
+.width-auto{
+    width: auto;
+}
+.width-8{
+    width: 8%;
+}
+.width-15{
+    width: 15%;
+}
+.width-30{
+    width: 30%;
+}
+.widht-50{
+    width: 50%;
 }
 
 

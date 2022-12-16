@@ -12,13 +12,20 @@ function getUrl(){
 }
 
 // 전체 동의
-$('#checkbox-all').on('click',manageAllCheck)
+$('.checkbox-all').on('click',manageAllCheck)
 
 function manageAllCheck(){
-    let childrenCheckbox = $(this).parents('li').siblings().find('.checkbox')
+    console.log('clicked ')
+    if(($(this).parent() == 'li')){
+        childrenCheckbox = $(this).parents('li').siblings().find('.checkbox')
+    }
+    else{
+        childrenCheckbox = $('.checkbox')
+    }
     $(this).prop('checked')==true ?
-    childrenCheckbox.prop('checked',true) :
-    childrenCheckbox.prop('checked',false)
+        childrenCheckbox.prop('checked',true) :
+        childrenCheckbox.prop('checked',false)
+   
 }
 
 

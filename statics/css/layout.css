@@ -429,6 +429,20 @@
     grid-template-columns: 33% 1fr;
 }
 
+.card.is-column-full{
+    grid-column: 1/3;
+}
+.card.is-row-full{
+    grid-row: 1/5;
+}
+.card#event{
+    grid-column-start: 3;
+}
+
+.full-grid[class*="-double"] #event{
+    grid-column-start: 2;
+}
+
 @media all and (max-width:1279px){
     .full-grid{
         grid-template-columns: repeat(2, 1fr);

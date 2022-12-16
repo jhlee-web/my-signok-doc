@@ -222,7 +222,6 @@
     $(function(){
         setTheme(loadedTheme)
         setNavActive()
-
     })
 
     function setTheme(setTheme){
@@ -247,12 +246,6 @@
         $('html').attr('data-theme',currentTheme['data-theme'])
     }
 
-    function toggleTheme(){
-        loadedTheme =  localStorage.getItem('data-theme');
-        setTheme(loadedTheme == "dark" ? "light" : "dark");
-    }
-
-    $('#toggle-theme').on('click',toggleTheme)
 
 
     // Nav Setting

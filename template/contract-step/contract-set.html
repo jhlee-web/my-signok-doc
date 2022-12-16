@@ -17,7 +17,7 @@
                     <div class="container is-center">
                         <ul class="flex--row">
                             <li class="step">
-                                <a href="/template/contract-stepsignature-set.html">
+                                <a href="/template/contract-step/signature-set.html">
                                     <span>1</span>서명자 정보 입력
                                 </a>
                             </li>
@@ -44,8 +44,8 @@
                             <div class="card__content">
                                 <div class="input-area">
                                     <label for="" class="is-remark">
-                                        계약서 이름
-                                        <span class="is-primary"> *</span>
+                                        계약서 이름 
+                                        <span class="is-primary">*</span>
                                     </label>
                                     <div class="input-box flex--row">
                                         <input type="text" placeholder="" class="input">
@@ -55,7 +55,7 @@
                                 
                                 <div class="full-grid">
                                     <div class="flex--column">
-                                        <p class="is-remark">서명 기간 <span class="is-primary"> *</span></p>
+                                        <p class="is-remark">서명 기간 <span class="is-primary">*</span></p>
                                         <div class="flex--row">
                                             <p>서명 발송일로부터</p>
                                             <input type="number" class="input is-narrow" maxlength="365"
@@ -66,20 +66,22 @@
                                     </div>
 
                                     <div class="flex--column">
-                                        <p class="is-remark">서명 기간 <span class="is-primary"> *</span></p>
-                                        <div class="control-form">
-                                            <input type="radio" class="radio" name="submit-type" checked>
-                                            <label for="">바로발송</label>
+                                        <p class="is-remark">발송 방법 <span class="is-primary">*</span></p>
+                                        <div class="flex--row">
+                                            <div class="control-form">
+                                                <input type="radio" class="radio" name="submit-type" checked>
+                                                <label for="">바로발송</label>
+                                            </div>
                                         </div>
-                                        <p class="is-remark">일자 + 시간 + 분</p>
-                                        <div class="control-form">
-                                            <input type="radio" class="radio" name="submit-type">
-                                            <label for="">예약발송</label>
-                                        </div>
-                                        <div id="">   
+                                        <div class="flex--row">
+                                            <div class="control-form">
+                                                <input type="radio" class="radio" name="submit-type">
+                                                <label for="">예약발송</label>
+                                            </div>
                                             <div id="date-time-picker"></div>
                                             <input type="hidden" id="" readonly >
                                         </div>
+                                        
                                     </div>
                                     <div class="flex--column">
                                         <p class="is-remark">남길말 (선택)</p>
@@ -88,8 +90,40 @@
                                 </div>
                             </div>
                         </div>
-                        <div>
-                            <p class="is-remark">수신자<span>* 선택한 수신자는 주소록에 저장됩니다.</span></p>
+                        <div class="flex--column">
+                            <div>
+                                <p class="is-remark">수신자</p>
+                                <p class="is-remark">*선택한 수신자는 주소록에 저장됩니다.</p>
+                            </div>
+                            
+                             <!-- 서명자 목록 5인 단위 -->
+                            <div class="table">
+                                <div class="table__thead">
+                                    <div class="table__tr">
+                                        <ul class="table__td width-100">
+                                            <li class="table__td width-15">
+                                                <div class="flex--row">
+                                                    <input type="checkbox" class="checkbox checkbox-all"
+                                                    id="">
+                                                    <p>수신자</p>
+                                                </div>
+                                            </li>
+                                            <li class="table__td width-15">구분</li>
+                                            <li class="table__td width-50">접근설정</li>
+                                        </ul>
+                                        <li class="table__td width-15">전자서명</li>
+                                    </div>
+                                </div>
+                                <div class="table__tbody"></div>
+                            </div>
+                            <!-- 페이지네이션 -->
+                            <div class="table__paging">
+                                <ul class="pagination">
+                                    <li class="pagination__item pagination__icon">이전</li>
+                                    <ul id="pagination-index-wrap" class="pagination"></ul>
+                                    <li class="pagination__item pagination__icon">다음</li>
+                                </ul>
+                            </div>
                         </div>
                         <div>
                             <div class="control-form">
@@ -104,7 +138,7 @@
                                     class="margin-bottom--medium font-weight--medium">
                                         전체동의
                                     </label>
-                                    <input type="checkbox" id="checkbox-all" class="checkbox">
+                                    <input type="checkbox" id="" class="checkbox checkbox-all">
                                 </li>
                                 <li class="checkbox__item">
                                     <label for="" class="flex--row flex-align--center">
@@ -140,7 +174,7 @@
 
         <script src="/statics/lib/moment/min/moment-with-locales.min.js"></script>
         <script src="/statics/lib/Datetime-Picker/js/datetimepicker.js"></script>
-
+        <script src="/statics/js/common.js"></script>
         <script>
             $('#date-time-picker').dateTimePicker({
                 dateFormat:"YYYY-MM-DD HH:mm",
@@ -155,33 +189,133 @@
                 buttonTitle:"확인",
             })
             $('html').attr('data-theme',localStorage.getItem('data-theme'))
-            // function manageCardInput(id,type){
-            //     if(id!==null){
-            //         $(`.card[data-id=${id}] .input`).not('input[type=text]').addClass('is-hide')
-            //         $(`.card[data-id=${id}] .input[type=${type}]`).removeClass('is-hide')
-            //     }
-            //     else{
-            //         $(`.card .input`).not('input[type=text]').addClass('is-hide')
-            //         $(`.card .input[type=${type}]`).removeClass('is-hide')
-            //     }
-            // }
+           
+            $(function(){
+                loadData()
+            })
+            // 데이터 로드
+            function loadData(breakpoint){
+                $.ajax({
+                    url: "/json/dummy.json",
+                    type: "GET", 
+                    dataType: "json"
+                })
+                .done(function(res) {
+                    let total = res.length;
+                    let paginationLength = Math.ceil(Number(total) / Number(breakpoint));
+
+                    makePagination(paginationLength);
+                    makeTable(res,5)
+                })
+                .fail(function(xhr, status, errorThrown) {
+                })
+                .always(function(xhr, status) {
+                });
+            }
+
+            function makePagination(paginationLength){
+                let minPage = 1;                    // 시작페이지
+                let maxPage = paginationLength;     // 최대페이지 (단, 10개 미만일 경우 total값)
+                let perPage = 10;                   // 뷰에 보이는 페이지 개수
+                let currentPage = getUrl();            // 현재 페이지 (url 추출)
+
+                console.log(currentPage)
+                if(paginationLength > 10){
+                    if(paginationLength % 10 > 0) {
+                        minPage = Math.floor(paginationLength / 10) * 10
+                        maxPage = minPage + 9
+                    }
+                    else{
+                        maxPage = paginationLength / 10 * 10
+                        minPage = maxPage - 9
+                    }
+                }
+
+                for(let i = minPage; i <= maxPage; i++ ){
+                    html = ''
+
+                    if( i == currentPage){
+                        html += `<li class="pagination__item is-active" data-page_num=${i}>${i}</li>`
+                    }
+                    else{
+                        html += `
+                            <li class="pagination__item" data-page_num=${i}>${i}</li>
+                        `
+                    }
+                    $('#pagination-index-wrap').append(html)
+                }
+            }
 
 
-            // $(function(){
-            //     $('.nav').hide()
+            // 테이블 만들기
+            function makeTable(data,breakpoint){
 
-            //     let type = $('.card .tab__item.is-active').attr('data-type');
-            //     manageCardInput(null,type)
-            // })
-            
+                // 이미 테이블이 생성된 경우 테이블 삭제 후 재생성
+                if($('.table__tbody .table__tr').length > 0) {
+                    $('.table__tbody .table__tr').remove()
+                }
 
-            // $('.card .tab__item').on('click',function(){
-            //     let card_id = $(this).parents('.card').attr('data-id')
-            //     let type = $(this).attr('data-type');
+                for (let i = 0; i < breakpoint; i++){
+                    console.log(i)
+                    if(i > data.length) break;
+                    testClass = null
 
-            //     manageCardInput(card_id,type)
-            // })
+                    if(data[i].isActive == false){
+                        state = `
+                            <p class="is-remark">
+                                해당없음
+                            </p>
+                        `
+                    }
+                    else{
+                        state = `
+                            <div class="control-form is-change">
+                                <input type="checkbox" class="checkbox">
+                                <p class="is-remark">공동인증서</p>
+                            </div>
+                        `
+                    }
 
+                    html = ''
+                    html += `
+                        <div class="table__tr ${testClass}" data-id="${data[i].index}">
+                            <div class="table__td is-left width-100">
+                                <div class="table__td width-15">
+                                    <div class="flex--row">
+                                        <input type="checkbox" class="checkbox"
+                                        id="">
+                                        <p class="table__td--title">${data[i].guid}</p>
+                                    </div>
+                                </div>
+                                <div class="table__td width-15">
+                                    <p class="is-remark">개인회원</p>
+                                </div>
+                                <div class="table__td width-50">
+                                    <div class="flex--row is-change flex-align--start">
+                                        <div class="control-form">
+                                            <input type="radio" class="radio" name="viewer_${i}" checked>
+                                            <label for="">설정안함</label>
+                                        </div>
+                                        <div class="control-form">
+                                            <input type="radio" class="radio" name="viewer_${i}">
+                                            <label for="">비밀번호설정</label>
+                                        </div>
+                                        
+                                        <div class="control-form">
+                                            <input type="radio" class="radio" name="viewer_${i}">PASS 간편본인인증
+                                            <label for=""></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table__td is-right width-15">
+                                ${state}
+                            </div>
+                        </div>
+                    `
+                    $('.table__tbody').append(html)
+                }
+            }
             
         </script>
     </body>

@@ -5,7 +5,7 @@
         <script>
             loadHTML("/statics/include/head.html");
         </script>
-        <title>회원가입</title>
+        <title>설정|내정보</title>
     </head>
 
     <body>
@@ -21,43 +21,147 @@
                 </script>
                 <!-- // 상단헤더 -->
                 <!-- 메인 컨텐츠 -->
-                <div class="main-content">
-                    <div class="tab-wrap">
-                        <ul class="tab">
-                            <li class="tab__item--badge is-active">
-                                <a href="javascript:void(0)">내 정보</a>
-                            </li>
-                            <li class="tab__item--badge">
-                                <a href="/template/setting/company-set.html">기업 정보</a>
-                            </li>
-                            <li class="tab__item--badge ">
-                                <a href="/template/setting/price-set.html">요금제</a>
-                            </li>
-                            <li class="tab__item--badge">
-                                <a href="/template/setting/payment-set.html">결제 정보</a>
-                            </li>
-                            <li class="tab__item--badge">
-                                <a href="/template/setting/addr-set.html">주소록</a>
-                            </li>
-                            <li class="tab__item--badge">
-                                <a href="/template/setting/brand-set.html">브랜딩</a>
-                            </li>
-                        </ul>
+                <div class="container">
+                    <div class="main-content">
+                        <div class="tab-wrap">
+                            <ul class="tab">
+                                <li class="tab__item--badge is-active">
+                                    <a href="javascript:void(0)">내 정보</a>
+                                </li>
+                                <li class="tab__item--badge">
+                                    <a href="/template/setting/company-set.html">기업 정보</a>
+                                </li>
+                                <li class="tab__item--badge ">
+                                    <a href="/template/setting/price-set.html">요금제</a>
+                                </li>
+                                <li class="tab__item--badge">
+                                    <a href="/template/setting/payment-set.html">결제 정보</a>
+                                </li>
+                                <li class="tab__item--badge">
+                                    <a href="/template/setting/addr-set.html">주소록</a>
+                                </li>
+                                <li class="tab__item--badge">
+                                    <a href="/template/setting/brand-set.html">브랜딩</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="full-grid">
+                            <div class="card is-column-full">
+                                <div class="card__content">
+                                    <div class="card__row">
+                                        <p class="">안녕하세요, <span>홍길동</span>님</p>
+                                        <button type="button" class="button is-round button--outline">
+                                            <img src="/statics/icon/switch-line.svg" class="icon" alt="기업회원 전환하기">
+                                            기업회원 전환하기
+                                        </button>
+                                    </div>
+                                    <p class="is-remark">hong123@naver.com</p>
+                                    
+                                    <p class="card__row is-end is-remark">최종변경일: <span>2022-12-15</span></p>
+                                </div>
+                                
+                            </div>
+                            <div class="card" id="setting-name">
+                                <div class="card__content">
+                                    <div class="card__row">
+                                        <p class="is-remark ">이름</p>
+                                        <button type="button" class="button button--text">수정하기</button>
+                                    </div>
+                                    <p class="to-be-input">홍길동</p>
+                                    <p class="is-remark">
+                                        본인 이름 또는 기업 이름으로 설정해주세요.
+                                        수신자에게 서명 요청자로 노출됩니다.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card is-row-full" id="event"> event</div>
+                            <div class="card" id="setting-price">
+                                <div class="card__content">
+                                    <div class="card__row">
+                                        <p class="is-remark">요금제</p>
+                                        <a href="/template/setting/price-set.html" class="button button--outline is-round">변경하기</a>
+                                    </div>
+                                    <div class="card__row">
+                                        <p>Premium(월)</p>
+                                        <p class="">99,000원</p>
+                                    </div>
+                                    <p class="is-remark card__row is-end">잔여일수 : 15일</p>
+                                </div>
+                            </div>
+                            <div class="card" id="setting-password">
+                                <div class="card__row">
+                                    <p class="is-remark">비밀번호</p>
+                                    <button type="button" class="button button--text">수정하기</button>
+                                </div>
+                                <div class="to-be-input is-hide"></div>
+                                <p class="is-remark ">
+                                    개인정보 보호와 안전한 계약을 위해 비밀번호는 6개월마다 변경해 주세요.
+                                </p>
+                            </div>
+                            <div class="card" id="setting-phone">
+                                <div class="card__row">
+                                    <p class="is-remark">연락처</p>
+                                    <button type="button" class="button button--text">수정하기</button>
+                                </div>
+                                <p class="to-be-input">010-1234-5678</p>
+                            </div>
+                            <div class="card">
+                                <div class="card__row">
+                                    <p class="is-remark">수신동의</p>
+                                </div>
+                                <div class="card__row">
+                                    <p>마케팅 수신 동의</p>
+                                    <label class="is-small toggle">
+                                        <input type="checkbox" class="toggle__checkbox">
+                                        <span class="toggle__slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card__row">
+                                    <p class="is-remark">테마설정</p>
+                                </div>
+                                <div class="card__row">
+                                    <p>어두운 테마</p>
+                                    <label class="is-small toggle" for="toggle-theme">
+                                        <input type="checkbox" class="toggle__checkbox" id="toggle-theme">
+                                        <span class="toggle__slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="full-grid">
-                        <div class="container"></div>
-                        <div class="container"></div>
-    
-                        <div class="container"></div>
-                    </div>
-                    
-
                 </div>
             </main>
         </div>
        
         
         <script>
+
+            // 카드 인풋 변경
+            function manageCard(){
+                if($(this).parents('.card')){
+                    let $el = $(this).parents('.card').find('.to-be-input')
+
+                    if($el.hasClass('is-hide')) $el.removeClass('is-hide')
+
+                    $(this).text('저장하기')
+                    $el.html(`
+                        <input type="text" class="input">
+                    `)
+                }
+            }
+
+            $('.button').on('click',manageCard)
+
+            
+            // 테마 토글
+            function toggleTheme(){
+                loadedTheme =  localStorage.getItem('data-theme');
+                setTheme(loadedTheme == "dark" ? "light" : "dark");
+            }
+
+            $('#toggle-theme').on('click',toggleTheme)
 
         </script>
     </body>
