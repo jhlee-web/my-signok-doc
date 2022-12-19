@@ -22,8 +22,15 @@
     --filter-focus:invert(48%) sepia(70%) saturate(2205%) hue-rotate(168deg) brightness(96%) contrast(101%);
     --filter-success:invert(71%) sepia(96%) saturate(1039%) hue-rotate(344deg) brightness(99%) contrast(96%);
     --filter-white: invert(99%) sepia(83%) saturate(738%) hue-rotate(210deg) brightness(122%) contrast(99%);
+
+    --header-height: 5rem
 }
 
+@media all and (max-width:768px){
+    :root{
+        --header-height:4rem
+    }
+}
 
 html[data-theme='light']{
     --background-color:#fff;
@@ -301,6 +308,11 @@ option{
     justify-content: center;
 }
 
+.flex-justify--start{
+    justify-content: flex-start!important;
+}
+
+
 .flex-justify--end{
     justify-content: flex-end!important;
 }
@@ -392,16 +404,18 @@ option{
     display: inline-block;
     margin-bottom: .25rem;
 }
-.input{
+.input,.textarea{
     width: 100%;
     padding: 1rem;
     border-radius: 0.5rem;
     border: 1px solid var(--theme-color-400);
-
-    height: 2.5rem;
-
     color: var(--text-color-800);
+
 }
+.input{
+    height: 2.5rem;
+}
+
 .input.is-narrow{
     max-width: 4rem;
 }
@@ -907,8 +921,13 @@ option{
     background-color: var(--primary-color-500);
 }
 
-
-.list-item{
+.basic-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+.list__item{
     display: inline-flex;
     gap: .5em;
 }
@@ -1008,7 +1027,7 @@ option{
     border-top: 1px solid var(--theme-color-400);
 }
 .modal__header{
-    height: 5rem;
+    height: var(--header-height);
 }
 .modal__footer{
     height: 4rem;

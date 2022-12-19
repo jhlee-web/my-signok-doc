@@ -405,15 +405,15 @@
                             <img class="icon icon" src="/statics/icon/search-line.svg" alt="검색">
                         </div>
                         <ul class="modal__list">
-                            <li class="list-item is-active"> 
+                            <li class="list__item is-active"> 
                                 <img class="icon " src="/statics/icon/folder-open-solid.svg" alt="현재폴더">
                                 전체 폴더 보기
                             </li>
-                            <li class="list-item "> 
+                            <li class="list__item "> 
                                 <img class="icon " src="/statics/icon/folder-line.svg" alt="현재폴더">
                                 기본 폴더
                             </li>
-                            <li class="list-item" data-id="${0}"> 
+                            <li class="list__item" data-id="${0}"> 
                                 <img class="icon " src="/statics/icon/folder-line.svg" alt="현재폴더">
                                 기존 사용 서식
                                 <div class="flex--row flex-align--center">
@@ -583,13 +583,13 @@
                     let title = '문서이력'
                     let html = ''
 
-                    if($('.aside__list-item').length > 0){
-                        $('.aside__list-item').remove()
+                    if($('.aside__list__item').length > 0){
+                        $('.aside__list__item').remove()
                     }
 
                     for(let i = 0; i < 2; i++){
                         html += `
-                        <li class="aside__list-item">
+                        <li class="aside__list__item">
                             <p><img src="" alt="사용자">${result.friends[i].name}</p>
                             <p><img src="" alt="이름">${result.email}</p>
                             <p class="body--small">${result.registered.substr(0,10)}</p>

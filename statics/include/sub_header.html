@@ -54,19 +54,33 @@
 
     let testData = {
         'user_name':['Jaak Ylva Naumov','Gianpiero Bernhard Oomen','Padmavati Shailaja Devine'],
-        'user_product':['베이직','비즈니스','프리미엄'],
+        'user_product':['Basic','Business','Premium'],
+        'user_regular_payment':['월','연','월'],
         'user_mail':['sammy53@hotmail.com','nicole80@hotmail.com','georgianna_mccullough@yahoo.com'],
+        'marketing':[true,true,false]
     }
+
+    let newTestObj={};
 
     // 사용자모달 테스트
     $(function(){
         let randomNum = Math.floor(Math.random() * 3)
         let randomDate = Math.floor(Math.random() * 365)
 
-        $('#user_mail').text(testData['user_mail'][randomNum])
-        $('#user_product').text(testData['user_product'][randomNum])
-        $('#user_name').text(testData['user_name'][randomNum])
-        $('#user_left_day').text(randomDate)
+        newTestObj['user_mail'] = testData['user_mail'][randomNum]
+        newTestObj['user_regular_payment'] = testData['user_regular_payment'][randomNum]
+        newTestObj['user_product'] = testData['user_product'][randomNum]
+        newTestObj['user_name'] = testData['user_name'][randomNum]
+        newTestObj['left_day'] = randomDate
+        newTestObj['marketing'] = testData['marketing'][randomNum]
+
+
+        $('#user_mail').text(newTestObj['user_mail'])
+        $('#user_product').text(newTestObj['user_product'])
+        $('#user_name').text(newTestObj['user_name'])
+        $('#user_left_day').text(newTestObj['left_day'])
+
+        return newTestObj
     })
     $('.doc-header__user').on('click',function(){
         $(this).parents('.doc-header__user-wrap').toggleClass('is-active')

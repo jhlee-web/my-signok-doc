@@ -412,13 +412,13 @@
                     let title = '문서이력'
                     let html = ''
 
-                    if($('.aside__list-item').length > 0){
-                        $('.aside__list-item').remove()
+                    if($('.aside__list__item').length > 0){
+                        $('.aside__list__item').remove()
                     }
 
                     for(let i = 0; i < 2; i++){
                         html += `
-                        <li class="aside__list-item">
+                        <li class="aside__list__item">
                             <p><img src="" alt="사용자">${result.friends[i].name}</p>
                             <p><img src="" alt="이름">${result.email}</p>
                             <p class="body--small">${result.registered.substr(0,10)}</p>

@@ -15,7 +15,6 @@ function getUrl(){
 $('.checkbox-all').on('click',manageAllCheck)
 
 function manageAllCheck(){
-    console.log('clicked ')
     if(($(this).parent() == 'li')){
         childrenCheckbox = $(this).parents('li').siblings().find('.checkbox')
     }
@@ -36,7 +35,7 @@ function checkInputLength(){
         $(this).next('.icon').hide()
 }
 
-$('.input').on('keyup',checkInputLength)
+$(document).on('keyup','.input',checkInputLength)
 
 /** remove 아이콘 클릭시 input 값 초기화
              * 아이콘에 'eye'가 있을 경우 비밀번호 토글
@@ -65,7 +64,7 @@ $('.input').on('keyup',checkInputLength)
     
 }
 
-$('.input-box .icon').on('click',handlingInputType)
+$(document).on('click','.input-box .icon',handlingInputType)
 
 checkDeviceWidth()
 
@@ -73,10 +72,10 @@ function checkDeviceWidth(){
     let deviceWidth = $(window).innerWidth()
     
     if(deviceWidth < 768){
-        console.log('mobile')
+        // console.log('mobile')
     }
     else{
-        console.log('pc or tablet')
+        // console.log('pc or tablet')
     }
 
 }
