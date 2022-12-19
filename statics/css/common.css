@@ -438,7 +438,7 @@ option{
     display: none;
 }
 ::placeholder{
-    color: var(--text-color-600);
+    color: var(--text-color-400);
 }
 
 
@@ -715,13 +715,14 @@ option{
         width: 1.25rem;
     }
 }
+
+
 /* group button */
 .group-button{
     display: inline-flex;
     gap: 0;
     align-items: center;
     height: 2.5rem;
-
 }
 .group-button.is-small{
     height: 2rem;
@@ -766,6 +767,36 @@ option{
 }
 
 
+/* group button - vertical */
+.group-button--column{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    align-items: flex-start;
+    height: auto;
+}
+
+.group-button--column .group-button__base{
+    width: 100%;
+    height: 2.5rem;
+    border: 1px solid var(--theme-color-400);
+}
+
+.group-button__base > .input{
+    border: none;
+}
+
+.group-button--column .group-button__base.is-start{
+    border-radius: .5rem .5rem 0 0;
+}
+.group-button--column .group-button__base.is-middle{
+    border-left: 1px solid var(--theme-color-400);
+    border-right: 1px solid var(--theme-color-400);
+}
+.group-button--column .group-button__base.is-end{
+    border-radius: 0 0 .5rem .5rem ;
+}
 
 #tutorial.is-active{
     border-color: var(--focus-color-500);
@@ -773,7 +804,6 @@ option{
 #tutorial.is-active .icon{
     filter: var(--filter-focus);
 }
-
 
 
 

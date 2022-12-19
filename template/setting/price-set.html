@@ -52,89 +52,46 @@
                             <div class="card-wrap">
                                 <div class="card">
                                     <!-- 요금제 -->
-                                    <div class="card__content">
+                                    <div class="card__row">
                                         <p class="is-remark">
                                             요금제
                                         </p>
-                                        <div class="card__row is-change">
+                                        <div class="control-form">
+                                            <span>연간</span>
+                                            <label class="is-small toggle">
+                                                <input type="checkbox" class="toggle__checkbox">
+                                                <span class="toggle__slider"></span>
+                                            </label>
+                                            <span>월간</span>
+                                        </div>
+                                    </div>
+                                    <div class="card__content">
+                                        <div class="card__row ">
                                             <div class="control-form">
                                                 <input type="radio" class="radio" name="product"
                                                 id="payment-contract"
                                                 checked>
                                                 <label for="payment-contract">베이직</label>
                                             </div>
-                                            <div class="flex--row">
-                                                <div class="radio-wrap">
-                                                    <div class="control-form">
-                                                        <input type="radio" class="radio" name="cycle"
-                                                        id="payment-contract"
-                                                        checked>
-                                                        <label for="payment-contract">월간</label>
-                                                    </div>
-                                                    <div class="control-form">
-                                                        <input type="radio" class="radio" name="cycle"
-                                                        id="payment-contract"
-                                                        >
-                                                        <label for="payment-contract">연간</label>
-                                                    </div>
-                                                </div>
-                                                
-                                                
-                                                <p>0원</p>
-                                            </div>
-                                           
-                                            
+                                            <p>7,900원</p>
                                         </div>
-                                        <div class="card__row is-change">
+                                        <div class="card__row ">
                                             <div class="control-form">
                                                 <input type="radio" class="radio" name="product"
                                                 id="payment-contract"
                                                 checked>
                                                 <label for="payment-contract">비즈니스</label>
                                             </div>
-                                            <div class="flex--row">
-                                                <div class="radio-wrap">
-                                                    <div class="control-form">
-                                                        <input type="radio" class="radio" name="cycle"
-                                                        id="payment-contract"
-                                                        checked>
-                                                        <label for="payment-contract">월간</label>
-                                                    </div>
-                                                    <div class="control-form">
-                                                        <input type="radio" class="radio" name="cycle"
-                                                        id="payment-contract"
-                                                        >
-                                                        <label for="payment-contract">연간</label>
-                                                    </div>
-                                                </div>
-                                                
-                                                <p>0원</p>
-                                            </div>
+                                            <p>9,900원</p>
                                         </div>
-                                        <div class="card__row is-change">
+                                        <div class="card__row ">
                                             <div class="control-form">
                                                 <input type="radio" class="radio" name="product"
                                                 id="payment-contract"
                                                 checked>
                                                 <label for="payment-contract">프리미엄</label>
                                             </div>
-                                            <div class="flex--row">
-                                                <div class="radio-wrap">
-                                                    <div class="control-form">
-                                                        <input type="radio" class="radio" name="cycle"
-                                                        id="payment-contract"
-                                                        checked>
-                                                        <label for="payment-contract">월간</label>
-                                                    </div>
-                                                    <div class="control-form">
-                                                        <input type="radio" class="radio" name="cycle"
-                                                        id="payment-contract"
-                                                        >
-                                                        <label for="payment-contract">연간</label>
-                                                    </div>
-                                                </div>
-                                                <p>0원</p>
-                                            </div>
+                                            <p>39,000원</p>
                                         </div>
                                     </div>
                                     
@@ -152,7 +109,7 @@
                                                 <label for="payment-contract">서명요청</label>
                                             </div>
     
-                                            <div class="flex--row">
+                                            <div class="flex--row  width-100 flex-justify--end">
                                                 <div class="group-button is-small">
                                                     <button type="button"
                                                     class="icon-button group-button__base is-start" id="input-minus">
@@ -175,7 +132,7 @@
                                                 <label for="payment-large">대량발송</label>
                                             </div>
     
-                                            <div class="flex--row">
+                                            <div class="flex--row width-100 flex-justify--end">
                                                 <div class="group-button is-small">
                                                     <button type="button"
                                                     class="icon-button group-button__base is-start" id="input-minus">
@@ -198,7 +155,7 @@
                                                 <label for="payment-price">링크서명</label>
                                             </div>
     
-                                            <div class="flex--row">
+                                            <div class="flex--row  width-100 flex-justify--end">
                                                 <div class="group-button is-small">
                                                     <button type="button"
                                                     class="icon-button group-button__base is-start" id="input-minus">
@@ -222,7 +179,7 @@
                                                 <label for="payment-share">공유발송</label>
                                             </div>
     
-                                            <div class="flex--row">
+                                            <div class="flex--row  width-100 flex-justify--end">
                                                 <div class="group-button is-small">
                                                     <button type="button"
                                                     class="icon-button group-button__base is-start" id="input-minus">
@@ -280,8 +237,8 @@
                             </div>
 
                             <!-- /card -->
-                            <div class="card" id="event">
-                                event
+                            <div class="card is-row-full" id="event">
+                                <img class="" src="https://source.unsplash.com/random">
                             </div>
                         </div>
                         <!-- /full-grid -->

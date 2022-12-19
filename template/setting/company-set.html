@@ -5,7 +5,7 @@
         <script>
             loadHTML("/statics/include/head.html");
         </script>
-        <title>설정 | 조직관리</title>
+        <title>설정|기업정보</title>
     </head>
 
     <body>
@@ -13,19 +13,19 @@
             <script>
                 loadHTML("/statics/include/nav.html");
             </script>
-                <main class="main ">
             
+            <main class="main ">
+                <!-- 상단 헤더 -->
+                <script>
+                    loadHTML("/statics/include/sub_header.html");
+                </script>
+                <!-- // 상단헤더 -->
+                <!-- 메인 컨텐츠 -->
                 <div class="container">
-                    <!-- 상단 헤더 -->
-                    <script>
-                        loadHTML("/statics/include/sub_header.html");
-                    </script>
-                    <!-- // 상단헤더 -->
-                    <!-- 메인 컨텐츠 -->
                     <div class="main-content">
                         <div class="tab-wrap">
                             <ul class="tab">
-                                <li class="tab__item--badge ">
+                                <li class="tab__item--badge">
                                     <a href="/template/setting/user-set.html">내 정보</a>
                                 </li>
                                 <li class="tab__item--badge is-active">
@@ -46,15 +46,237 @@
                             </ul>
                         </div>
                         <div class="full-grid">
-                            <div class="card"></div>
-                            <div class="card"></div>
-                            <div class="card" id="event">event</div>
+                            <div class="card is-column-full">
+                                <div class="card__content">
+                                    <p class="">(주)<span id="set-user_name">홍길동</span></p>
+                                    <p class="is-remark" id="set-user_mail">hong123@naver.com</p>
+                                    <p class="card__row is-end is-remark">최종변경일: <span>2022-12-15</span></p>
+                                </div>
+                                
+                            </div>
+                            <div class="card" id="setting-name">
+                                <div class="card__content">
+                                    <div class="card__row">
+                                        <p class="is-remark ">최고관리자</p>
+                                        <button type="button" class="button button--text">멤버관리</button>
+                                    </div>
+                                    <div>
+                                        <p class=""><span id="set-user_name">홍길동</span></p>
+                                        <p class="is-remark" id="set-user_mail">hong123@naver.com</p>
+                                    </div>
+                                    
+                                    <p class="is-remark">
+                                        멤버 관리를 통해 등록된 멤버들의 서명 요청 권한을 제어할 수 있습니다.<br>
+                                        최고관리자 변경은 싸인오케이 관리자에게 문의해 주세요.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card is-row-full" id="event">
+                                <img class="" src="https://source.unsplash.com/random">
+                            </div>
+                            <div class="card" id="setting-price">
+                                <div class="card__content">
+                                    <p class="is-remark">사업자등록번호</p>
+                                    <p class="to-be-input">
+                                        ABC-DE-FGHIJ
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card" id="setting-password">
+                                <div class="card__content">
+                                    <div class="card__row">
+                                        <p class="is-remark">업태/업종</p>
+                                        <button type="button" class="button button--text">수정하기</button>
+                                    </div>
+                                    <div class="flex--row">
+                                        <p class="is-remark">업태</p>
+                                        <p class="to-be-input">
+                                            서비스
+                                        </p>
+                                    </div>
+                                    <div class="flex--row">
+                                        <p class="is-remark">업종</p>
+                                        <p class="to-be-input">
+                                            광고대행
+                                        </p>
+                                    </div>
+                                   
+                                    
+                                    
+                                </div>
+                                
+                            </div>
+                            <div class="card" id="setting-phone">
+                                <div class="card__content">
+                                    <div class="card__row">
+                                        <p class="is-remark">연락처</p>
+                                        <button type="button" class="button button--text">수정하기</button>
+                                    </div>
+                                    <p class="to-be-input">010-1234-5678</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card__content">
+                                    <div class="card__row">
+                                        <p class="is-remark">주소</p>
+                                        <button type="button" class="button button--text">수정하기</button>
+                                    </div>
+                                    <div class="flex--column">
+                                        <p class="to-be-input">40145</p>
+                                        <p class="to-be-input">서울특별시 도봉구 도봉빌딩 3층</p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                           
                         </div>
                     </div>
                 </div>
             </main>
         </div>
+       
         
+        <script>
+
+            // 카드 인풋 변경
+            function manageCard(){
+                let context = $(this).text()
+                let $el = $(this).parents('.card').find('.to-be-input')
+                let $title = $(this).prev('.is-remark').text()
+
+                console.log($el)
+                switch (context){
+                    case "수정하기": 
+                        if($el.hasClass('is-hide')) $el.removeClass('is-hide')
+
+                        switch($title){
+                            case "업태/업종":
+                                $el.eq(0).html(`
+                                    <div class="input-box">
+                                        <input type="text"
+                                        class="input"
+                                        id="change-category"
+                                        value = ${$el.eq(0).text()}
+                                        placeholder="${$title}을 입력해주세요">
+                                        <img class="icon" src="/statics/icon/remove-solid.svg"></img>
+                                    </div>
+                                `)
+                                $el.eq(1).html(`
+                                    <div class="input-box">
+                                        <input type="text"
+                                        class="input"
+                                        id="change-category"
+                                        value = ${$el.eq(1).text()}
+                                        placeholder="${$title}을 입력해주세요">
+                                        <img class="icon" src="/statics/icon/remove-solid.svg"></img>
+                                    </div>
+                                `)
+                                break;
+                            case "주소":
+                                $el.eq(0).html(`
+                                    <div class="flex--row">
+                                        <div class="input-box width-100">
+                                            <input type="text"
+                                            class="input "
+                                            id="change-address"
+                                            value="${$el.eq(0).text()}"
+                                            placeholder="우편번호를 입력해주세요">
+                                            <img class="icon" src="/statics/icon/remove-solid.svg"></img>
+                                        </div>
+                                        <button type="button" class="button button--outline">주소찾기</button>
+                                    </div>
+                                `)
+                                $el.eq(1).html(`
+                                    <div class="group-button--column">
+                                        <div class="input-box group-button__base is-start">
+                                            <input type="text"
+                                            class="input"
+                                            value="${$el.eq(1).text()}"
+                                            id="change-address"
+                                            placeholder="주소를 입력해주세요">
+                                            <img class="icon" src="/statics/icon/remove-solid.svg"></img>
+                                        </div>
+                                        <div class="input-box group-button__base is-end">
+                                            <input type="text"
+                                            class="input"
+                                            id="change-address"
+                                            placeholder="상세주소를 입력해주세요">
+                                            <img class="icon" src="/statics/icon/remove-solid.svg"></img>
+                                        </div>
+                                    </div>
+                                `)
+                                break;
+                            case "연락처":
+                                $el.html(`
+                                    <div class="input-box">
+                                        <input type="text"
+                                        class="input"
+                                        id="change-phone"
+                                        maxlength = 15
+                                        value = ${$el.text()}
+                                        placeholder="${$title}을 입력해주세요">
+                                        <img class="icon" src="/statics/icon/remove-solid.svg"></img>
+                                    </div>
+                                    <p class="input-area__helper"></p>
+                                `)
+                                break;
+                        }
+                        
+                        $(this).text('저장하기')
+                        break;
+
+                    case "저장하기":
+                        if($el.length > 1){
+                            for(let i = 0; i < $el.length; i++){
+                                value = $el.eq(i).find('.input').val()
+                                $el.eq(i).html(value)
+                            }
+                        }
+                        else{
+                            value = $el.find('.input').val()
+                            $el.html(value)
+                        }
+                        
+                        $(this).text('수정하기')
+                        break;
+                }
+
+            }
+
+            $('.button').on('click',manageCard)
+
+            
+
+            // 테마 토글
+            function toggleTheme(){
+                loadedTheme = localStorage.getItem('data-theme')
+                setTheme(loadedTheme == "dark" ? "light" : "dark");
+            }
+            $('#toggle-theme').on('click',toggleTheme)
+
+            $(function(){
+                $('#toggle-theme').prop('checked',currentTheme['toggle'])
+
+                $('#set-user_mail').text(newTestObj['user_mail'])
+                $('#set-user_product').text(newTestObj['user_product']+'('+newTestObj['user_regular_payment']+')')
+                $('#set-user_name').text(newTestObj['user_name'])
+                $('#set-user_left_day').text(newTestObj['left_day'])
+                $('#agree_marketing').prop('checked',newTestObj['marketing'])
+
+            })
+
+
+            // 폰넘버 하이픈 추가
+            $(document).on('keyup','#change-phone',function(){
+                let str = $(this).val()
+                $(this).val(str.replace(/[^0-9]/g, '')
+                        .replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, "$1-$2-$3").replace(/(\-{1,2})$/g, ""));
+            })
+
+            
+
+
+        </script>
         <script src="/statics/js/common.js"></script>
     </body>
     

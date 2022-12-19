@@ -83,8 +83,13 @@
                                         </ul>
                                     </div>
 
-                                    <div class="input-area">
-                                        <label for="password" class="is-remark">비밀번호</label>
+                                    <div class="card__content">
+                                        <div>
+                                            <label for="password" class="">비밀번호</label>
+                                            <p class="is-remark">
+                                                안전한 탈퇴를 위해 현재 비밀번호를 입력해주세요.
+                                            </p>
+                                        </div>
                                         <div class="input-box">
                                             <input type="password"
                                             class="input"
@@ -95,11 +100,14 @@
                                         <p class="input-area__helper"></p>
                                     </div>
                                     
-                                    <div class="input-area">
-                                        <label for="text" class="is-remark">탈퇴 동의</label>
-                                        <p class="is-remark">
-                                            "탈퇴 안내사항을 확인하고 동의합니다."를 입력해 주세요.
-                                        </p>
+                                    
+                                    <div class="card__content">
+                                        <div>
+                                            <label for="text" class="">탈퇴 동의</label>
+                                            <p class="is-remark">
+                                                "탈퇴 안내사항을 확인하고 동의합니다."를 입력해주세요.
+                                            </p>
+                                        </div>
                                         <div class="input-box">
                                             <input type="text"
                                             class="input"
@@ -111,13 +119,24 @@
                                         <p class="input-area__helper"></p>
                                     </div>
 
-                                    <div class="input-area">
-                                        <label for="textarea">무엇이 불편하셨나요?</label>
+                                    <div class="card__content">
+                                        <div>
+                                            <label for="text" class="">무엇이 불편하셨나요?</label>
+                                            <p class="is-remark">
+                                                탈퇴사유를 입력해주세요. signOK 서비스 개선에 더욱 힘쓰겠습니다.
+                                            </p>
+                                        </div>
                                         <textarea
                                         id="textarea" class="textarea"
                                         placeholder="탈퇴사유를 입력해주세요." maxlength="200" rows="4"></textarea>
                                     </div>
                                     <!-- /card-content -->
+                                    <div class="flex--row flex-justify--between">
+                                        <a class="button button--text"
+                                        href="/template/setting/user-set.html">뒤로가기</a>
+                                        <button type="button" class="button button--primary">동의하고 탈퇴하기</button>
+                                    </div>
+                                    
                                 </div>
                                 <!-- /card -->
                             </div>
@@ -134,138 +153,6 @@
        
         
         <script>
-
-            // 카드 인풋 변경
-            function manageCard(){
-                let context = $(this).text()
-                let $el = $(this).parents('.card').find('.to-be-input')
-                let $title = $(this).prev('.is-remark').text()
-
-                switch (context){
-                    case "수정하기": 
-                        if($el.hasClass('is-hide')) $el.removeClass('is-hide')
-
-                        if($title == '비밀번호'){
-                            $el.html(`
-                                <div class="input-area">
-                                    <div class="input-box">
-                                        <input type="password"
-                                        class="input"
-                                        id="change-password-before"
-                                        placeholder="현재 비밀번호를 입력해주세요.">
-                                        <img class="icon" src="/statics/icon/eye-show-line.svg"></img>
-                                    </div>
-                                </div>
-                                <div class="input-area">
-                                    <div class="input-box">
-                                        <input type="password"
-                                        class="input"
-                                        id="change-password"
-                                        placeholder="비밀번호를 입력해주세요.">
-                                        <img class="icon" src="/statics/icon/eye-show-line.svg"></img>
-                                    </div>
-                                    <div class="flex--row is-hide">
-                                        <div class="icon-with-text"
-                                        id="has-number">
-                                            <img src="/statics/icon/check-line.svg"
-                                            class="icon">
-                                            <p class="is-remark">문자 및 숫자 포함</p>
-                                        </div>
-                                        <div class="icon-with-text"
-                                        id="has-asterisk">
-                                            <img src="/statics/icon/check-line.svg"
-                                            class="icon">
-                                            <p class="is-remark">특수문자</p>
-                                        </div>
-                                        <div class="icon-with-text"
-                                        id="has-length">
-                                            <img src="/statics/icon/check-line.svg"
-                                            class="icon">
-                                            <p class="is-remark"> 8자리 이상</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="input-area">
-                                    <div class="input-box">
-                                        <input type="password"
-                                        class="input"
-                                        id="change-password-re"
-                                        placeholder="비밀번호를 한번 더 입력해주세요.">
-                                        <img class="icon" src="/statics/icon/eye-show-line.svg"></img>
-                                    </div>
-                                </div>
-                            `)
-                        }
-
-                        else{
-                            if($title == '이름'){
-                                inputLength = 64;
-                                inputId='name'
-                            }
-                            else{
-                                inputLength = 13;
-                                inputId='phone'
-                            }
-                            $el.html(`
-                                <div class="input-box">
-                                    <input type="text"
-                                    class="input"
-                                    id="change-${inputId}"
-                                    maxlength = ${inputLength}
-                                    value = ${$el.text()}
-                                    placeholder="${$title}을 입력해주세요">
-                                    <img class="icon" src="/statics/icon/remove-solid.svg"></img>
-                                </div>
-                                <p class="input-area__helper"></p>
-                            `)
-                        }
-                        
-                        $(this).text('저장하기')
-                        break;
-
-                    case "저장하기":
-                        value = $el.find('.input').val()
-
-                        $title !== "비밀번호" ? $el.html(value) : $el.html('')
-                        $(this).text('수정하기')
-                        break;
-                }
-
-            }
-
-            $('.button').on('click',manageCard)
-
-            
-
-            // 테마 토글
-            function toggleTheme(){
-                loadedTheme = localStorage.getItem('data-theme')
-                setTheme(loadedTheme == "dark" ? "light" : "dark");
-            }
-            $('#toggle-theme').on('click',toggleTheme)
-
-            $(function(){
-                $('#toggle-theme').prop('checked',currentTheme['toggle'])
-
-                $('#set-user_mail').text(newTestObj['user_mail'])
-                $('#set-user_product').text(newTestObj['user_product']+'('+newTestObj['user_regular_payment']+')')
-                $('#set-user_name').text(newTestObj['user_name'])
-                $('#set-user_left_day').text(newTestObj['left_day'])
-                $('#agree_marketing').prop('checked',newTestObj['marketing'])
-
-            })
-
-
-
-            // 폰넘버 하이픈 추가
-            $(document).on('keyup','#change-phone',function(){
-                let str = $(this).val()
-                $(this).val(str.replace(/[^0-9]/g, '')
-                        .replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, "$1-$2-$3").replace(/(\-{1,2})$/g, ""));
-            })
-
-            
-
 
         </script>
         <script src="/statics/js/common.js"></script>

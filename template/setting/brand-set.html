@@ -5,7 +5,7 @@
         <script>
             loadHTML("/statics/include/head.html");
         </script>
-        <title>회원가입</title>
+        <title>설정 | 브랜딩</title>
     </head>
 
     <body>
@@ -14,9 +14,8 @@
                 loadHTML("/statics/include/nav.html");
             </script>
             
-            <main class="main ">
+            <main class="main">
                 <div class="container">
-
                     <!-- 상단 헤더 -->
                     <script>
                         loadHTML("/statics/include/sub_header.html");
@@ -46,13 +45,89 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="full-grid">
-                            <div class="card"></div>
-                            <div class="card"></div>
-                            <div class="card" id="event">event</div>
+                        <div class="full-grid left-double">
+                            <div class="card-wrap">
+                                <div class="card">
+                                    <div class="card__row">
+                                        <p class="is-remark">
+                                            기업 설정
+                                        </p>
+                                        <button type="button" class="button button--text">수정하기</button>
+                                    </div>
+                                    <div class="card__content">
+                                        <div class="flex--row">
+                                            <p class="is-remark">기업소개</p>
+                                            <input type="text" class="input"
+                                            placeholder="기업 전용 URL 접속 시 로그인 페이지에 표시됩니다.
+                                            ">
+                                        </div>
+                                        <div class="flex--row">
+                                            <p class="is-remark">로고 변경</p>  
+                                            <input type="file" class="input"
+                                            placeholder="기업 전용 URL 접속 시 로그인 페이지에 표시됩니다.
+                                            ">
+                                        </div>
+                                        <div class="flex--row">
+                                            <p class="is-remark">파비콘 변경</p>
+                                            <input type="file" class="input"
+                                            placeholder="기업 전용 URL 접속 시 로그인 페이지에 표시됩니다.
+                                            ">
+                                        </div>
+                                    </div>
+                                    <!-- /card-content -->
+                                </div>
+                                <!-- /card -->
+                                
+                                <div class="card">
+                                    <div class="tab-wrap">
+                                        <ul class="tab">
+                                            <li class="tab__item--badge is-active ">
+                                                <a href="javascript:void(0)">이메일</a>
+                                            </li>
+                                            <li class="tab__item--badge ">
+                                                <a href="javascript:void(0)">카카오 알림톡</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- /tab-wrap -->
+                                    <div class="card__row">
+                                        <p class="is-remark">
+                                            계약을 통해 발송되는 이메일 양식을 기업의 이미지에 맞게 변경할 수 있습니다.
+                                        </p>
+                                        <button type="button" class="button button--text">수정하기</button>
+                                    </div>
+                                    <ul class="basic-list">
+                                        <li class="list__item">
+                                            로고 이미지
+                                        </li>
+                                        <li class="list__item">
+                                            로고 링크
+                                        </li>
+                                        <li class="list__item">
+                                            선 색
+                                        </li>
+                                        <li class="list__item">
+                                            메일 배경색
+                                        </li>
+                                        <li class="list__item">
+                                            본문 배경색
+                                        </li>
+                                        <li class="list__item">
+                                            버튼색
+                                        </li>
+                                        <li class="list__item">
+                                            발신자이름
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- /card-wrap -->
+                            <div class="card is-row-full" id="event">
+                                <img class="" src="https://source.unsplash.com/random">
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <!-- /container -->
             </main>
         </div>
        
