@@ -215,8 +215,7 @@
     let loadedTheme = localStorage.getItem('data-theme')
     let currentTheme={
         'data-theme':'light',
-        'icon':'sun',
-        'content':'라이트모드'
+        'toggle':'false'
     }
 
     $(function(){
@@ -225,24 +224,20 @@
     })
 
     function setTheme(setTheme){
+
         switch(setTheme){
             case undefined || null || 'light':
                 currentTheme['data-theme'] = 'light';
-                currentTheme['icon'] = 'sun'
-                currentTheme['content'] = '라이트모드'
+                currentTheme['toggle'] = false
                 break;
 
             case 'dark':
                 currentTheme['data-theme'] = 'dark';
-                currentTheme['icon'] = 'moon'
-                currentTheme['content'] = '다크모드'
+                currentTheme['toggle'] = true
                 break;
         }
 
-        $('#toggle-theme span').text(currentTheme['content'])
-        $('#toggle-theme').find('img').attr('src',`/statics/icon/${currentTheme['icon']}-line.svg`)
         localStorage.setItem('data-theme',setTheme);
-
         $('html').attr('data-theme',currentTheme['data-theme'])
     }
 

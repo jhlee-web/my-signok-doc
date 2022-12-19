@@ -447,6 +447,17 @@
     .full-grid{
         grid-template-columns: repeat(2, 1fr);
     }
+    .full-grid.left-double{
+        grid-template-columns: 1fr;
+    }
+    .full-grid.right-double{
+        grid-template-columns: 1fr;
+    }
+
+    .full-grid[class*="-double"] #event{
+        grid-column-start: unset;
+        order: 1;
+    }
 }
 
 @media all and (max-width:768px){
@@ -459,4 +470,14 @@
     .full-grid.right-double{
         grid-template-columns: 1fr;
     }
+
+    .card.is-column-full{
+        grid-column: unset;
+    }
+    
+    .card#event{
+        grid-column-start: unset;
+        order: 1;
+    }
+    
 }

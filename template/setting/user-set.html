@@ -51,8 +51,8 @@
                                     <div class="card__row">
                                         <p class="">안녕하세요, <span>홍길동</span>님</p>
                                         <button type="button" class="button is-round button--outline">
-                                            <img src="/statics/icon/switch-line.svg" class="icon" alt="기업회원 전환하기">
-                                            기업회원 전환하기
+                                            <img src="/statics/icon/switch-line.svg" class="icon" alt="기업회원전환">
+                                            기업회원전환
                                         </button>
                                     </div>
                                     <p class="is-remark">hong123@naver.com</p>
@@ -89,21 +89,26 @@
                                 </div>
                             </div>
                             <div class="card" id="setting-password">
-                                <div class="card__row">
-                                    <p class="is-remark">비밀번호</p>
-                                    <button type="button" class="button button--text">수정하기</button>
+                                <div class="card__content">
+                                    <div class="card__row">
+                                        <p class="is-remark">비밀번호</p>
+                                        <button type="button" class="button button--text">수정하기</button>
+                                    </div>
+                                    <div class="to-be-input is-hide"></div>
+                                    <p class="is-remark ">
+                                        개인정보 보호와 안전한 계약을 위해 비밀번호는 6개월마다 변경해 주세요.
+                                    </p>
                                 </div>
-                                <div class="to-be-input is-hide"></div>
-                                <p class="is-remark ">
-                                    개인정보 보호와 안전한 계약을 위해 비밀번호는 6개월마다 변경해 주세요.
-                                </p>
+                                
                             </div>
                             <div class="card" id="setting-phone">
-                                <div class="card__row">
-                                    <p class="is-remark">연락처</p>
-                                    <button type="button" class="button button--text">수정하기</button>
+                                <div class="card__content">
+                                    <div class="card__row">
+                                        <p class="is-remark">연락처</p>
+                                        <button type="button" class="button button--text">수정하기</button>
+                                    </div>
+                                    <p class="to-be-input">010-1234-5678</p>
                                 </div>
-                                <p class="to-be-input">010-1234-5678</p>
                             </div>
                             <div class="card">
                                 <div class="card__row">
@@ -150,18 +155,28 @@
                         <input type="text" class="input">
                     `)
                 }
+
+                // 비밀번호 input temp 추가
+                // 저장 어떻게 할지???
             }
 
             $('.button').on('click',manageCard)
 
             
+
             // 테마 토글
             function toggleTheme(){
-                loadedTheme =  localStorage.getItem('data-theme');
+                loadedTheme = localStorage.getItem('data-theme')
                 setTheme(loadedTheme == "dark" ? "light" : "dark");
             }
-
             $('#toggle-theme').on('click',toggleTheme)
+
+            $(function(){
+        console.log(currentTheme)
+
+                $('#toggle-theme').prop('checked',currentTheme['toggle'])
+            })
+
 
         </script>
     </body>
