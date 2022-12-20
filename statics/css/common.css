@@ -872,14 +872,16 @@ option{
 }
 
 .tab__item{
-    padding: 0 1rem;
-    height: 2.5rem;
-    line-height: 2.5rem;
-
     color: var(--text-color-600);
     font-size: var(--text-small);
     cursor: pointer;
 }
+.tab__item a{
+    padding: 0 1rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+}
+
 .tab__item.is-small{
     height: 2rem;
     line-height: 2rem;
@@ -894,14 +896,15 @@ option{
 }
 
 .tab__item--badge{
-    padding: 0 1.5rem;
-    height: 2.5rem;
-    line-height: 2.5rem;
-
     color: var(--text-color-600);
     cursor: pointer;
 
     border-radius: 99rem;
+}
+.tab__item--badge a{
+    padding: 0 1.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
 
 }
 .tab__item--badge:hover{
