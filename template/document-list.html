@@ -295,30 +295,30 @@
                     html = ''
                     html += `
                     <div class="table__tr ${testClass}" data-id="${data[i].index}">
-                        <div class="table__td width-2">
+                        <div class="table__td width-2 check-area">
                             <input type="checkbox" class="checkbox"
                             id="">
                         </div>
-                        <div class="table__td width-8">
+                        <div class="table__td width-8 status-area">
                             ${state}
                         </div>
-                        <div class="table__td font-weight--medium width-100">
+                        <div class="table__td font-weight--medium width-100 title-area">
                             <p class="table__td--title">${data[i].guid}</p>
                             <p class="is-remark">${friends}</p>
                         </div>
-                        <div class="table__td width-8">
+                        <div class="table__td width-8 alarm-area">
                             ${mailAlert}
                         </div>
-                        <div class="table__td width-8">
+                        <div class="table__td width-8 folder-area">
                             <p class="is-remark">
                                 <img src="/statics/icon/folder-line.svg" class="icon" alt="폴더">
                                 기본폴더
                             </p>
                         </div>
-                        <div class="table__td width-15">
+                        <div class="table__td width-15 latest-area">
                             <p class="is-remark">2022-12-31 10:59</p>
                         </div>
-                        <div class="table__td width-8">
+                        <div class="table__td width-8 more-area">
                             <button type="button" class="button button--outline icon-button is-small">
                                 <img class="icon" src="/statics/icon/ellipsis-horizontal-line.svg"
                                 alt="추가메뉴">

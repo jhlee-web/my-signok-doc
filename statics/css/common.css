@@ -351,7 +351,7 @@ option{
 
     border: 1px solid var(--theme-color-400);
     border-radius: .5rem;
-
+    padding: 0 1rem;
     cursor: pointer;
 }
 .select-box__icon{
@@ -385,6 +385,12 @@ option{
     }
     .select-box.is-small{
         height: 2.5rem;
+    }
+}
+
+@media all and (max-width:768px) {
+    .select-box{
+        width: 100%;
     }
 }
 
