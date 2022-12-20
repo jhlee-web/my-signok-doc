@@ -973,6 +973,9 @@ option{
 .width-auto{
     width: auto;
 }
+.width-2{
+    width: 2%;
+}
 .width-8{
     width: 8%;
 }

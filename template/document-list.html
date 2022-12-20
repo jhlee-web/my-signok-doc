@@ -121,27 +121,18 @@
                         </div>
                         <!-- 컨텐츠 테이블 (for문 생성) -->
                         <div class="table">
-                            <div class="table__colgroup">
-                                <div class="table__col" style="width:2%"></div>
-                                <div class="table__col" style="width:8%"></div>
-                                <div class="table__col" style="width:auto"></div>
-                                <div class="table__col" style="width:8%"></div>
-                                <div class="table__col" style="width:8%"></div>
-                                <div class="table__col" style="width:12%"></div>
-                                <div class="table__col" style="width:8%"></div>
-                            </div>
                             <div class="table__thead">
                                 <ul class="table__tr">
-                                    <li class="table__td">
+                                    <li class="table__td width-2">
                                         <input type="checkbox" class="checkbox checkbox-all"
                                         id="">
                                     </li>
-                                    <li class="table__td">상태</li>
-                                    <li class="table__td">문서이름</li>
-                                    <li class="table__td">진행 알림</li>
-                                    <li class="table__td">위치</li>
-                                    <li class="table__td">마지막 활동시간</li>
-                                    <li class="table__td">추가메뉴</li>
+                                    <li class="table__td width-8">상태</li>
+                                    <li class="table__td width-100">문서이름</li>
+                                    <li class="table__td width-8">진행 알림</li>
+                                    <li class="table__td width-8">위치</li>
+                                    <li class="table__td width-15">마지막 활동시간</li>
+                                    <li class="table__td width-8">추가메뉴</li>
                                 </ul>
                             </div>
                             <div class="table__tbody"></div>
@@ -304,30 +295,30 @@
                     html = ''
                     html += `
                     <div class="table__tr ${testClass}" data-id="${data[i].index}">
-                        <div class="table__td">
+                        <div class="table__td width-2">
                             <input type="checkbox" class="checkbox"
                             id="">
                         </div>
-                        <div class="table__td">
+                        <div class="table__td width-8">
                             ${state}
                         </div>
-                        <div class="table__td font-weight--medium">
+                        <div class="table__td font-weight--medium width-100">
                             <p class="table__td--title">${data[i].guid}</p>
                             <p class="is-remark">${friends}</p>
                         </div>
-                        <div class="table__td">
+                        <div class="table__td width-8">
                             ${mailAlert}
                         </div>
-                        <div class="table__td">
+                        <div class="table__td width-8">
                             <p class="is-remark">
                                 <img src="/statics/icon/folder-line.svg" class="icon" alt="폴더">
                                 기본폴더
                             </p>
                         </div>
-                        <div class="table__td">
-                            <p class="is-remark">${data[i].registered}</p>
+                        <div class="table__td width-15">
+                            <p class="is-remark">2022-12-31 10:59</p>
                         </div>
-                        <div class="table__td">
+                        <div class="table__td width-8">
                             <button type="button" class="button button--outline icon-button is-small">
                                 <img class="icon" src="/statics/icon/ellipsis-horizontal-line.svg"
                                 alt="추가메뉴">
