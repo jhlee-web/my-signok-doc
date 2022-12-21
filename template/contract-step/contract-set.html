@@ -10,32 +10,31 @@
     </head>
 
     <body>
-        <div class="wrapper">
-            <main class="main">
-                <!-- 상단 헤더 -->
-                <div class="doc-header">
-                    <div class="container is-center">
-                        <ul class="flex--row">
-                            <li class="step">
-                                <a href="/template/contract-step/signature-set.html">
-                                    <span>1</span>서명자 정보 입력
-                                </a>
-                            </li>
-                            <li class="step">
-                                <a href="javascript:void(0)">
-                                    <span>2</span>서명 영역 지정
-                                </a>
-                            </li>
-                            <li class="step is-active">
-                                <a href="javascript:void(0)">
-                                    <span>3</span>계약서 설정 및 발송
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+        <!-- <div class="wrapper"> -->
+            <!-- 상단 헤더 -->
+            <div class="doc-header">
+                <div class="container is-center">
+                    <ul class="flex--row">
+                        <li class="step">
+                            <a href="/template/contract-step/signature-set.html">
+                                <span>1</span>서명자 정보 입력
+                            </a>
+                        </li>
+                        <li class="step">
+                            <a href="javascript:void(0)">
+                                <span>2</span>서명 영역 지정
+                            </a>
+                        </li>
+                        <li class="step is-active">
+                            <a href="javascript:void(0)">
+                                <span>3</span>계약서 설정 및 발송
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <!-- // 상단헤더 -->
-                
+            </div>
+            <!-- // 상단헤더 -->
+            <main class="main">
                 <!-- 메인 컨텐츠 -->
                 <div class="container">
                     <div class="main-content">
@@ -56,7 +55,7 @@
                                 <div class="full-grid">
                                     <div class="flex--column">
                                         <p class="is-remark">서명 기간 <span class="is-primary">*</span></p>
-                                        <div class="flex--row">
+                                        <div class="flex--row is-change">
                                             <p>서명 발송일로부터</p>
                                             <input type="number" class="input is-narrow" maxlength="365"
                                             value="14">
@@ -85,7 +84,7 @@
                                     </div>
                                     <div class="flex--column">
                                         <p class="is-remark">남길말 (선택)</p>
-                                        <textarea placeholder="서명 대상자에게 남길 말을 입력해주세요." maxlength="200"></textarea>
+                                        <textarea class="textarea" placeholder="서명 대상자에게 남길 말을 입력해주세요." maxlength="200"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -100,18 +99,17 @@
                             <div class="table">
                                 <div class="table__thead">
                                     <div class="table__tr">
-                                        <ul class="table__td width-100">
-                                            <li class="table__td width-15">
-                                                <div class="flex--row">
-                                                    <input type="checkbox" class="checkbox checkbox-all"
-                                                    id="">
-                                                    <p>수신자</p>
-                                                </div>
-                                            </li>
-                                            <li class="table__td width-15">구분</li>
-                                            <li class="table__td width-50">접근설정</li>
-                                        </ul>
-                                        <li class="table__td width-15">전자서명</li>
+                                        <div class="table__td is-left width-100">
+                                            <div class="table__td">
+                                                <input type="checkbox" class="checkbox checkbox-all" id="">
+                                            </div>
+                                            <div class="table__td width-50">수신자 </div>
+                                            <div class="table__td width-8">구분</div>
+                                            <div class="table__td width-50">접근설정</div>
+                                        </div>
+                                        <!-- <div class="table__td is-right width-15">
+                                            <div class="table__td width">전자서명</div>
+                                        </div> -->
                                     </div>
                                 </div>
                                 <div class="table__tbody"></div>
@@ -119,9 +117,21 @@
                             <!-- 페이지네이션 -->
                             <div class="table__paging">
                                 <ul class="pagination">
-                                    <li class="pagination__item pagination__icon">이전</li>
-                                    <ul id="pagination-index-wrap" class="pagination"></ul>
-                                    <li class="pagination__item pagination__icon">다음</li>
+                                    <li class="">
+                                        <button type="button" class="button button--text">
+                                            <img src="/statics/icon/angle-left.svg" 
+                                            class="icon"
+                                            alt="이전페이지">
+                                        </button>
+                                    </li>
+                                    <ul id="pagination-index-wrap" class="pagination__index-wrap"></ul>
+                                    <li class="">
+                                        <button type="button" class="button button--text">
+                                            <img src="/statics/icon/angle-right.svg" 
+                                            class="icon"
+                                            alt="다음페이지">
+                                        </button>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -170,7 +180,7 @@
                 </div>
                 <!-- /container -->
             </main>
-        </div>
+        <!-- </div> -->
 
         <script src="/statics/lib/moment/min/moment-with-locales.min.js"></script>
         <script src="/statics/lib/Datetime-Picker/js/datetimepicker.js"></script>
@@ -219,7 +229,10 @@
                 let perPage = 10;                   // 뷰에 보이는 페이지 개수
                 let currentPage = getUrl();            // 현재 페이지 (url 추출)
 
-                console.log(currentPage)
+
+                currentPage = 1;
+                maxPage = 10
+                // console.log(currentPage)
                 if(paginationLength > 10){
                     if(paginationLength % 10 > 0) {
                         minPage = Math.floor(paginationLength / 10) * 10
@@ -234,12 +247,16 @@
                 for(let i = minPage; i <= maxPage; i++ ){
                     html = ''
 
+                    i > 5 ?
+                    hideViewportPaginationClass = 'is-pc' :
+                    hideViewportPaginationClass = ''
+
                     if( i == currentPage){
-                        html += `<li class="pagination__item is-active" data-page_num=${i}>${i}</li>`
+                        html += `<li class="pagination__item is-active ${hideViewportPaginationClass}" data-page_num=${i}>${i}</li>`
                     }
                     else{
                         html += `
-                            <li class="pagination__item" data-page_num=${i}>${i}</li>
+                            <li class="pagination__item ${hideViewportPaginationClass}" data-page_num=${i}>${i}</li>
                         `
                     }
                     $('#pagination-index-wrap').append(html)
@@ -262,16 +279,19 @@
 
                     if(data[i].isActive == false){
                         state = `
-                            <p class="is-remark">
-                                해당없음
-                            </p>
+                            <div class="control-form is-change">
+                                <input type="checkbox" class="checkbox" disabled id="license__${data[i].index}">
+                                <label class="is-remark" for="license__${data[i].index}">공동인증서</label>
+                            </div>
                         `
                     }
                     else{
                         state = `
                             <div class="control-form is-change">
-                                <input type="checkbox" class="checkbox">
-                                <p class="is-remark">공동인증서</p>
+                                <input type="checkbox" class="checkbox" id="license__${data[i].index}">
+                                <label class="is-remark" for="license__${data[i].index}">
+                                    공동인증서
+                                </label>
                             </div>
                         `
                     }
@@ -280,14 +300,14 @@
                     html += `
                         <div class="table__tr ${testClass}" data-id="${data[i].index}">
                             <div class="table__td is-left width-100">
-                                <div class="table__td width-15">
-                                    <div class="flex--row">
-                                        <input type="checkbox" class="checkbox"
+                                <div class="table__td">
+                                    <input type="checkbox" class="checkbox"
                                         id="">
-                                        <p class="table__td--title">${data[i].guid}</p>
-                                    </div>
                                 </div>
-                                <div class="table__td width-15">
+                                <div class="table__td width-50">
+                                        <p class="table__td--title">${data[i].guid}</p>
+                                </div>
+                                <div class="table__td width-8">
                                     <p class="is-remark">개인회원</p>
                                 </div>
                                 <div class="table__td width-50">
@@ -308,9 +328,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="table__td is-right width-15">
-                                ${state}
-                            </div>
+                           
                         </div>
                     `
                     $('.table__tbody').append(html)

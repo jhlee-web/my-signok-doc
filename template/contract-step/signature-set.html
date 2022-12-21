@@ -9,38 +9,39 @@
     </head>
 
     <body>
-        <div class="wrapper">
-            <main class="main">
-                <!-- 상단 헤더 -->
-                <div class="doc-header">
-                    <div class="container is-center">
-                        <ul class="flex--row ">
-                            <li class="is-active">
-                                <a href="javascript:void(0)">
-                                    <span>1</span>서명자 정보 입력
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)">
-                                    <span>2</span>서명 영역 지정
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/template/contract-step/contract-set.html">
-                                    <span>3</span>계약서 설정 및 발송
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+        <!-- <div class="wrapper"> -->
+            <!-- 상단 헤더 -->
+            <div class="doc-header">
+                <div class="container is-center">
+                    <ul class="flex--row ">
+                        <li class="step is-active">
+                            <a href="javascript:void(0)">
+                                <span>1</span>서명자 정보 입력
+                            </a>
+                        </li>
+                        <li class="step">
+                            <a href="javascript:void(0)">
+                                <span>2</span>서명 영역 지정
+                            </a>
+                        </li>
+                        <li class="step">
+                            <a href="/template/contract-step/contract-set.html">
+                                <span>3</span>계약서 설정 및 발송
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <!-- // 상단헤더 -->
+            </div>
+            <!-- // 상단헤더 -->
+            <main class="main main--background">
+                
                 
                 <!-- 메인 컨텐츠 -->
                 <div class="container">
                     <div class="main-content">
                         <!-- top -->
-                        <div class="flex--row flex-justify--between is-change">
-                            <ul class="flex--row">
+                        <div class="flex--column">
+                            <ul class="flex--row  flex-justify--between">
                                 <li class="control-form">
                                     <span>순서없이</span>
                                     <label class="is-small toggle">
@@ -49,10 +50,10 @@
                                     </label>
                                     <span class="">순서대로</span>
                                 </li>
-                                <li class="control-form">
+                                <!-- <li class="control-form">
                                     <input type="checkbox" id="keep-mail"  class="checkbox">
                                     <label for="keep-mail" class="">내 서명 포함</label>
-                                </li>
+                                </li> -->
                                 <li class="control-form">
                                     <img src="/statics/icon/world-line.svg" class="icon" alt="언어 변경">
                                     <p>한국어</p>
@@ -61,8 +62,8 @@
                             <p class="is-remark"> * 각 서명자를 드래그하여 순서를 변경할 수 있습니다. </p>
                         </div>
                         <!-- /tabs -->
-                        <div class="flex--row">
-                            <div class="full-grid is-double">
+                        <!-- <div class="flex--row"> -->
+                            <!-- <div class="full-grid is-double"> -->
                                 <!-- card -->
                                 <div class="card" data-id="0">
                                     <div class="card__content">
@@ -126,9 +127,9 @@
                                         서명자 추가하기
                                     </button>
                                 </div>
-                            </div>
+                            <!-- </div> -->
                             <!-- /full-grid -->
-                            <div class="flex--row">
+                            <!-- <div class="flex--row">
                                 <button type="button" class="button button--primary">
                                     <img src="/statics/icon/angle-left.svg" class="icon" alt="참조 추가">
                                 </button>
@@ -179,21 +180,21 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- /aside -->
-                        </div>
+                        <!-- </div> -->
                     </div>
                     <!-- /main-content -->
-                    <div class="doc-header" id="doc-footer">
-                        <div class="container is-center">
-                            <button type="button" class="button is-large button--text">이전</button>
-                            <button type="button" class="button is-large button--primary">다음</button>
-                        </div>
-                    </div>
-                </div>
+                    
                 <!-- /container -->
             </main>
-        </div>
+            <div class="doc-header" id="doc-footer">
+                <div class="container is-center">
+                    <button type="button" class="button is-large button--text">이전</button>
+                    <button type="button" class="button is-large button--primary">다음</button>
+                </div>
+            </div>
+        <!-- </div> -->
         <script>
             $('html').attr('data-theme',localStorage.getItem('data-theme'))
 

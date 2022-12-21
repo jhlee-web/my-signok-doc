@@ -997,7 +997,7 @@ option{
 .width-30{
     width: 30%;
 }
-.widht-50{
+.width-50{
     width: 50%;
 }
 
@@ -1038,6 +1038,17 @@ option{
         display:none
     } */
 }
+
+
+/* step */
+.step.is-active{
+    color: var(--primary-color-500);
+}
+.step span{
+    border: 1px solid var(--theme-color-400);
+}
+
+
 /* modal */
 .dim:not(.is-mobile){
     background: var(--dim);

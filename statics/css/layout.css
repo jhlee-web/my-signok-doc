@@ -229,12 +229,16 @@
     border-top: unset;
     border-bottom: unset;
 
-    max-width: 28rem;
+    max-width: 37rem;
     min-height: 100vh;
     margin: 0 auto;
 
-    padding: 5rem 2rem;
+    padding: 2rem;
 }
+.main--background .container .main-content{
+    padding: 0;
+}
+
 
 /* container */
 .container{
@@ -260,7 +264,8 @@
 }
 
 @media all and (max-width:768px){
-    .container{
+    .main--background .container{
+        padding: 1rem;
     }
     .main-content{
         padding: 1rem;

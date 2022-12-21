@@ -122,22 +122,22 @@
                         <!-- 컨텐츠 테이블 (for문 생성) -->
                         <div class="table">
                             <div class="table__thead">
-                                <ul class="table__tr">
+                                <div class="table__tr">
                                     <div class="table__td is-left width-100">
-                                        <li class="table__td">
+                                        <div class="table__td">
                                             <input type="checkbox" class="checkbox checkbox-all"
                                             id="">
-                                        </li>
-                                        <li class="table__td width-8">상태</li>
-                                        <li class="table__td width-100">문서이름</li>
-                                        <li class="table__td width-8">진행 알림</li>
-                                        <li class="table__td width-8">위치</li>
-                                        <li class="table__td width-15">마지막 활동시간</li>
+                                        </div>
+                                        <div class="table__td width-8">상태</div>
+                                        <div class="table__td width-100">문서이름</div>
+                                        <div class="table__td width-8">진행 알림</div>
+                                        <div class="table__td width-8">위치</div>
+                                        <div class="table__td width-15">마지막 활동시간</div>
                                     </div>
                                     <div class="table__td is-right width-8">
-                                        <li class="table__td">추가메뉴</li>
+                                        <div class="table__td">추가메뉴</div>
                                     </div>
-                                </ul>
+                                </div>
                             </div>
                             <div class="table__tbody"></div>
                         </div>
@@ -174,7 +174,7 @@
                         <div class="container">
                             <h5>문서 이력</h5>
                             <div class="inner">
-                                <ul id="aside__history-summary">
+                                <ul id="aside-summary" class="aside__list basic-list">
                                 </ul>
                                 <button type="button"
                                 class="button button--secondary is-medium">진행정보 보기</button>
@@ -544,8 +544,10 @@
                         </button>
                     </div>
                     <div class="modal__content">
-                        <span class="font-weight--medium">${string}</span>
-                        를 휴지통으로 보낼까요?
+                        <p>
+                            <span class="font-weight--medium">${string}</span>
+                            를 휴지통으로 보낼까요?
+                        </p>
                     </div>
                     <div class="modal__button-wrap">
                         <button type="button" class="button--primary button--large">확인</button>
@@ -602,16 +604,20 @@
                         $('.aside__list__item').remove()
                     }
 
-                    for(let i = 0; i < 2; i++){
+                    for(let i = 0; i < 3; i++){
                         html += `
                         <li class="aside__list__item">
-                            <p><img src="" alt="사용자">${result.friends[i].name}</p>
-                            <p><img src="" alt="이름">${result.email}</p>
+                            <p class="font-weight--medium">
+                                ${result.friends[i].name}
+                            </p>
+                            <p class="">
+                                ${result.email}
+                            </p>
                             <p class="body--small">${result.registered.substr(0,10)}</p>
                         </li>
                             `
                     }
-                    $('#aside__history-summary').append(html)
+                    $('#aside-summary').append(html)
                 })
                 .fail(function(xhr, status, errorThrown) {
                 })
