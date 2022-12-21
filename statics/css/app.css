@@ -433,13 +433,13 @@
     max-height:27.5rem;
     overflow-y: scroll;
 }
-
+/* 
 .modal__content .tab-wrap{
- padding: 1rem 2rem;   
+ padding: 1rem 0;   
 }
 .modal__content .modal__tab-container{
-    padding: 0rem 2rem;
-}
+    padding: 0rem;
+} */
 
 .modal__search-form{
     position: relative;
