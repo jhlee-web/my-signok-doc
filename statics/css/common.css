@@ -101,7 +101,7 @@ html,body{
     min-height:100%;
     
     font-family: "Pretendard", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-    
+
     font-size: max(14px, calc(14px + 0.1vw));
     line-height: 150%;
 
@@ -986,21 +986,35 @@ option{
 .width-auto{
     width: auto;
 }
-.width-2{
-    width: 2%;
+.width-5{
+    width: 5%;
 }
-.width-8{
-    width: 8%;
+.width-10{
+    width: 10%;
 }
 .width-15{
     width: 15%;
 }
+.width-20{
+    width: 20%;
+}
 .width-30{
     width: 30%;
+}
+.width-40{
+    width: 40%;
 }
 .width-50{
     width: 50%;
 }
+.width-80{
+    width: 80%;
+}
+
+.width-90{
+    width: 90%;
+}
+
 
 
 /* pagination */
