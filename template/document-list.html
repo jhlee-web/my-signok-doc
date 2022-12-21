@@ -10,7 +10,7 @@
 
     <body>
         <!-- tutorial -->
-        <div id="tutorial-wrap">
+        <!-- <div id="tutorial-wrap">
             <div class="tutorial__area">
                 <div class="tutorial__box">
                     <p>
@@ -39,7 +39,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- / tutorial -->
         <div class="wrapper">
             <script>
@@ -88,8 +88,8 @@
                             <div id="default-top-box" class="table-top__box">
                                 <button type="button" class="button is-medium">
                                     <img src="/statics/icon/file_type_excel2.svg"
-                                    alt="엑셀 내려받기" class="icon">
-                                    엑셀로 내려받기
+                                    alt="엑셀 다운로드" class="icon">
+                                    엑셀 다운로드
                                 </button>
                             </div>
                             <div id="selected-top-box" class="table-top__box is-hide">
@@ -123,25 +123,41 @@
                         <div class="table">
                             <div class="table__thead">
                                 <ul class="table__tr">
-                                    <li class="table__td width-2">
-                                        <input type="checkbox" class="checkbox checkbox-all"
-                                        id="">
-                                    </li>
-                                    <li class="table__td width-8">상태</li>
-                                    <li class="table__td width-100">문서이름</li>
-                                    <li class="table__td width-8">진행 알림</li>
-                                    <li class="table__td width-8">위치</li>
-                                    <li class="table__td width-15">마지막 활동시간</li>
-                                    <li class="table__td width-8">추가메뉴</li>
+                                    <div class="table__td is-left width-100">
+                                        <li class="table__td">
+                                            <input type="checkbox" class="checkbox checkbox-all"
+                                            id="">
+                                        </li>
+                                        <li class="table__td width-8">상태</li>
+                                        <li class="table__td width-100">문서이름</li>
+                                        <li class="table__td width-8">진행 알림</li>
+                                        <li class="table__td width-8">위치</li>
+                                        <li class="table__td width-15">마지막 활동시간</li>
+                                    </div>
+                                    <div class="table__td is-right width-8">
+                                        <li class="table__td">추가메뉴</li>
+                                    </div>
                                 </ul>
                             </div>
                             <div class="table__tbody"></div>
                         </div>
                         <div class="table__paging">
                             <ul class="pagination">
-                                <li class="pagination__item pagination__icon">이전</li>
-                                <ul id="pagination-index-wrap" class="pagination"></ul>
-                                <li class="pagination__item pagination__icon">다음</li>
+                                <li class="">
+                                    <button type="button" class="button button--text">
+                                        <img src="/statics/icon/angle-left.svg" 
+                                        class="icon"
+                                        alt="이전페이지">
+                                    </button>
+                                </li>
+                                <ul id="pagination-index-wrap" class="pagination__index-wrap"></ul>
+                                <li class="">
+                                    <button type="button" class="button button--text">
+                                        <img src="/statics/icon/angle-right.svg" 
+                                        class="icon"
+                                        alt="다음페이지">
+                                    </button>
+                                </li>
                             </ul>
                             <div id="count-load-table" class="select-box is-medium">
                                 <select class="select-box__select">
@@ -216,9 +232,11 @@
             // 쿼리에서 현재 페이지 위치 추출
             function makePagination(paginationLength){
                 let minPage = 1;                    // 시작페이지
-                let maxPage = paginationLength;     // 최대페이지 (단, 10개 미만일 경우 total값)
+                // let maxPage = paginationLength;     // 최대페이지 (단, 10개 미만일 경우 total값)
                 let perPage = 10;                   // 뷰에 보이는 페이지 개수
-                let currentPage = param;            // 현재 페이지 (url 추출)
+                // let currentPage = param;            // 현재 페이지 (url 추출)
+                currentPage = 1
+                maxPage = 10
 
                 if(paginationLength > 10){
                     if(paginationLength % 10 > 0) {
@@ -234,12 +252,16 @@
                 for(let i = minPage; i <= maxPage; i++ ){
                     html = ''
 
+                    i > 5 ?
+                    hideViewportPaginationClass = 'is-pc' :
+                    hideViewportPaginationClass = ''
+
                     if( i == currentPage){
-                        html += `<li class="pagination__item is-active" data-page_num=${i}>${i}</li>`
+                        html += `<li class="pagination__item is-active ${hideViewportPaginationClass}" data-page_num=${i}>${i}</li>`
                     }
                     else{
                         html += `
-                            <li class="pagination__item" data-page_num=${i}>${i}</li>
+                            <li class="pagination__item ${hideViewportPaginationClass}" data-page_num=${i}>${i}</li>
                         `
                     }
                     $('#pagination-index-wrap').append(html)
@@ -295,30 +317,32 @@
                     html = ''
                     html += `
                     <div class="table__tr ${testClass}" data-id="${data[i].index}">
-                        <div class="table__td width-2 check-area">
-                            <input type="checkbox" class="checkbox"
-                            id="">
+                        <div class="table__td is-left width-100">
+                            <div class="table__td check-area">
+                                <input type="checkbox" class="checkbox"
+                                id="">
+                            </div>
+                            <div class="table__td width-8 status-area">
+                                ${state}
+                            </div>
+                            <div class="table__td flex--column gap--sm width-100 title-area">
+                                <p class="table__td--title">${data[i].guid}</p>
+                                <p class="is-remark">${friends}</p>
+                            </div>
+                            <div class="table__td width-8 alarm-area">
+                                ${mailAlert}
+                            </div>
+                            <div class="table__td width-8 folder-area">
+                                <p class="is-remark">
+                                    <img src="/statics/icon/folder-line.svg" class="icon" alt="폴더">
+                                    기본폴더
+                                </p>
+                            </div>
+                            <div class="table__td width-15 latest-area">
+                                <p class="is-remark">2022-12-31 10:59</p>
+                            </div>
                         </div>
-                        <div class="table__td width-8 status-area">
-                            ${state}
-                        </div>
-                        <div class="table__td font-weight--medium width-100 title-area">
-                            <p class="table__td--title">${data[i].guid}</p>
-                            <p class="is-remark">${friends}</p>
-                        </div>
-                        <div class="table__td width-8 alarm-area">
-                            ${mailAlert}
-                        </div>
-                        <div class="table__td width-8 folder-area">
-                            <p class="is-remark">
-                                <img src="/statics/icon/folder-line.svg" class="icon" alt="폴더">
-                                기본폴더
-                            </p>
-                        </div>
-                        <div class="table__td width-15 latest-area">
-                            <p class="is-remark">2022-12-31 10:59</p>
-                        </div>
-                        <div class="table__td width-8 more-area">
+                        <div class="table__td is-right width-8 flex-justify--center">
                             <button type="button" class="button button--outline icon-button is-small">
                                 <img class="icon" src="/statics/icon/ellipsis-horizontal-line.svg"
                                 alt="추가메뉴">
@@ -534,8 +558,6 @@
             $(document).on('click','.table__tr',makeAsideContent)
 
             function makeAsideContent(e){
-                // 토글을 클릭한 aisde 생성 안함
-                if(e.target.closest('.toggle')) return ;
 
                 // thead 영역일 경우 aisde 생성 안함
                 if($(this).parent('.table__thead').length > 0){
@@ -555,6 +577,8 @@
                 else{
                     return false;
                 }
+                
+                // $('.aside-content').css({'height':$('.main > .container').outerHeight()})
 
                 let userId = $(this).attr('data-id')
                 loadAsideData(userId)
