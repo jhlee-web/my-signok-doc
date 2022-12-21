@@ -1117,7 +1117,7 @@ option{
     transform: translate(-50%, -50%);
 }
 
-.modal__header,.modal__footer{
+.modal__header,.modal__button-wrap{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -1129,7 +1129,7 @@ option{
 .modal__header{
     height: var(--header-height);
 }
-.modal__footer{
+.modal__button-wrap{
     height: 4rem;
 }
 .modal__title{

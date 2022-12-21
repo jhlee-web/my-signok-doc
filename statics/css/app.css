@@ -483,11 +483,11 @@
     background: var(--theme-color-100);
 }
 
-.modal__button-wrap{
+.modal__footer{
     display: inline-flex;
     height: 3.5rem;
 }
-.modal__button-wrap button{
+.modal__footer button{
     width: 100%;
     height: 100%;
 }
