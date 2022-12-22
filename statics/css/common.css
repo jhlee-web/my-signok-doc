@@ -504,6 +504,7 @@ label{
 /* checkbox mark */
 .checkbox:checked{
     background-color: var(--primary-color-500);
+    border-color: var(--primary-color-500);
 }
 .checkbox:checked::before{
     /* width: 80%;
@@ -1064,7 +1065,7 @@ label{
 
 /* step */
 .step a{
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: .5rem;
 }
@@ -1086,6 +1087,17 @@ label{
 .step.is-active a{
     color: var(--primary-color-500);
     font-weight: 500;
+}
+
+@media all and (max-width:768px){
+    .step a{
+        flex-direction: column;
+        gap: 0.25em;
+    }
+    .step span{
+        width: 1.5em;
+        height: 1.5em;
+    }
 }
 
 /* modal */

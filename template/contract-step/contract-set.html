@@ -48,7 +48,7 @@
                                         계약서 이름 
                                         <span class="is-primary">*</span>
                                     </label>
-                                    <div class="input-box flex--row">
+                                    <div class="input-box flex--row is-change">
                                         <input type="text" placeholder="" class="input">
                                         <button type="button" class="button button--secondary">수정하기</button>
                                     </div>
@@ -64,7 +64,7 @@
                             <div class="full-grid">
                                 <div class="flex--column">
                                     <p class="is-remark">서명 기간 <span class="is-primary">*</span></p>
-                                    <div class="flex--row is-change">
+                                    <div class="flex--row">
                                         <p>서명 발송일로부터</p>
                                         <input type="number" class="input is-narrow" maxlength="365"
                                         value="14">
@@ -108,10 +108,10 @@
                                 <div class="table__thead">
                                     <div class="table__tr">
                                         <div class="table__td is-left width-100">
-                                            <div class="table__td">
+                                            <div class="table__td width-5">
                                                 <input type="checkbox" class="checkbox checkbox-all" id="">
                                             </div>
-                                            <div class="table__td width-50">수신자 </div>
+                                            <div class="table__td width-40">수신자 </div>
                                             <div class="table__td width-10">구분</div>
                                             <div class="table__td width-50">접근설정</div>
                                         </div>
@@ -124,7 +124,7 @@
                             </div>
                             <!-- 페이지네이션 -->
                             <div class="table__paging">
-                                <ul class="pagination">
+                                <ul class="pagination flex-justify--center" >
                                     <li class="">
                                         <button type="button" class="button button--text">
                                             <img src="/statics/icon/angle-left.svg" 
@@ -132,7 +132,7 @@
                                             alt="이전페이지">
                                         </button>
                                     </li>
-                                    <ul id="pagination-index-wrap" class="pagination__index-wrap"></ul>
+                                    <ul id="pagination-index-wrap" class="pagination__index-wrap " ></ul>
                                     <li class="">
                                         <button type="button" class="button button--text">
                                             <img src="/statics/icon/angle-right.svg" 
@@ -319,11 +319,11 @@
                     html += `
                         <div class="table__tr ${testClass}" data-id="${data[i].index}">
                             <div class="table__td is-left width-100">
-                                <div class="table__td">
+                                <div class="table__td width-5">
                                     <input type="checkbox" class="checkbox"
                                         id="">
                                 </div>
-                                <div class="table__td width-50">
+                                <div class="table__td width-40">
                                         <p class="table__td--title">${data[i].guid}</p>
                                 </div>
                                 <div class="table__td width-10">

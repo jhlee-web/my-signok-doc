@@ -110,7 +110,7 @@
 }
 
 .table__td p{
-    width: 100%;
+    width: 95%;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -165,7 +165,7 @@
         flex-direction: column;
         justify-content: space-between;
     }
-    .table__paging .pagination{
+    .table__paging .pagination:not(.flex-justify--center){
         width: 100%;
         display: inline-flex;
         justify-content: unset;
