@@ -167,9 +167,16 @@
     gap: .5rem;
 }
 .dtp_modal-append{
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
     color: var(--theme-color-400);
     /* padding-left: 108px; */
     /* font-weight: normal; */
+}
+.dtp_modal-append > div{
+    width: 3rem;
+    text-align: center;
 }
 .dtp_modal-midle{
     display: inline-block;

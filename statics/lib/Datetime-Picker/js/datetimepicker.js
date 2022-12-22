@@ -246,24 +246,44 @@
                 function createTimer() {
                     var $div = $('<div>');
                     $div.addClass('dtp_modal-time-mechanic');
-                    var $panel = $('<div>');
 
+                    var $panel = $('<div>');
                     $panel.addClass('dtp_modal-append');
+
+                    var $div2 = $('<div>')
+
                     var $i = $('<img src="/statics/icon/angle-top.svg">');
                     $i.attr('id', 'angle-up-hour');
                     $i.addClass('icon is-large');
+                    $div2.append($i)
+                    $panel.append($div2);
 
-                    $panel.append($i);
-                    var $m = $('<span>');
+                    var $m = $('<div>');
                     $m.addClass('dtp_modal-midle');
-
                     $panel.append($m);
+
+                    $div2 = $('<div>')
                     $i = $('<img src="/statics/icon/angle-top.svg">');
                     $i.attr('id', 'angle-up-minute');
-
                     $i.addClass('icon is-large');
-                    $panel.append($i);
-                    $div.append($panel);
+                    $div2.append($i)
+                    $panel.append($div2);
+
+                    $div.append($panel)
+
+                    // $('.dtp_modal-time-mechanic').prepend(`
+                    //     <div class="dtp_modal-append">
+                    //         <div>
+                    //             <img id="angle-up-hour" src="/statics/icon/angle-top.svg">
+                    //         </div>
+                    //         <div class="dtp_modal-midle">
+                    //         </div>
+                    //         <div>
+                    //             <img id="angle-up-hour" src="/statics/icon/angle-top.svg">
+                    //         </div>
+                            
+                    //     </div>
+                    // `)
 
                     $panel = $('<div>');
                     $panel.addClass('dtp_modal-digits');
@@ -277,8 +297,8 @@
                     $m = $('<span>');
                     $m.addClass('dtp_modal-midle-dig');
                     $m.html(':');
-
                     $panel.append($m);
+
                     $d = $('<span>');
                     $d.addClass('dtp_modal-digit');
                     $d.attr('id', 'd-mm');
@@ -286,20 +306,46 @@
                     $panel.append($d);
                     $div.append($panel);
 
-                    $panel = $('<div>');
+                    // $panel = $('<div>');
+                    // $panel.addClass('dtp_modal-append');
+                    // $i = $('<img src="/statics/icon/angle-down.svg">');
+                    // $i.attr('id', 'angle-down-hour');
+                    // $i.addClass('icon is-large');
+                    
+                    // $panel.append($i);
+                    // $m = $('<span>');
+                    // $m.addClass('dtp_modal-midle');
+                    // $panel.append($m);
+                    // $i = $('<img src="/statics/icon/angle-down.svg">');
+                    // $i.attr('id', 'angle-down-minute');
+                    // $i.addClass('icon is-large');
+                    // $panel.append($i);
+                    // $div.append($panel);
+
+                    var $panel = $('<div>');
                     $panel.addClass('dtp_modal-append');
-                    $i = $('<img src="/statics/icon/angle-down.svg">');
-                    $i.attr('id', 'angle-down-hour');
+
+                    var $div2 = $('<div>')
+
+                    var $i = $('<img src="/statics/icon/angle-down.svg">');
+                    $i.attr('id', 'angle-up-hour');
                     $i.addClass('icon is-large');
-                    $panel.append($i);
-                    $m = $('<span>');
+                    $div2.append($i)
+                    $panel.append($div2);
+
+                    var $m = $('<div>');
                     $m.addClass('dtp_modal-midle');
                     $panel.append($m);
+
+                    $div2 = $('<div>')
                     $i = $('<img src="/statics/icon/angle-down.svg">');
-                    $i.attr('id', 'angle-down-minute');
+                    $i.attr('id', 'angle-up-minute');
                     $i.addClass('icon is-large');
-                    $panel.append($i);
-                    $div.append($panel);
+                    $div2.append($i)
+                    $panel.append($div2);
+
+                    $div.append($panel)
+
                     return $div;
                 }
 
