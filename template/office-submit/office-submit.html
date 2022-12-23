@@ -13,44 +13,47 @@
             <script>
                 loadHTML("/statics/include/nav.html");
             </script>
+            
             <main class="main">
                 <!-- 상단 헤더 -->
                 <script>
                     loadHTML("/statics/include/sub_header.html");
                 </script>
                 <!-- // 상단헤더 -->
-                <div class="container flex--row">
+                <div class="container flex--row flex-align--start">
                     <!-- 메인 컨텐츠 -->
                     <div class="main-content">
-                        <!-- 상단 -->
-                        <div class="flex--row is-change">
-                            <div id="" class="select-box is-small">
-                                <select class="select-box__select">
-                                    <option value="" selected>전체</option>
-                                    <option value="">완료</option>
-                                    <option value="">진행중</option>
-                                    <option value="">만료</option>
-                                </select>
-                                <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
-                            </div>
-                            <div class="round-input">
-                                <select class="round-input__select select">
-                                    <option value="" selected>문서명</option>
-                                    <option value="">옵션2</option>
-                                    <option value="">옵션3</option>
-                                </select>
-                                <input type="text" maxlength="50"
-                                placeholder="검색어를 입력해주세요"
-                                class="round-input__input input">
-                            </div>
-                            <button type="button" class="button is-small button--secondary"
-                            id="change-folder">
-                                <img src="/statics/icon/plus-line.svg" alt="공문발송 만들기" class="icon">
-                                공문발송 만들기
-                            </button>
-                        </div>
                         <!-- 상단 2 -->
                         <div class="table-top">
+                            <div id="default-top-box" class="table-top__box">
+                                <div class="flex--row">
+                                    <div id="" class="select-box is-small">
+                                        <select class="select-box__select">
+                                            <option value="" selected>전체</option>
+                                            <option value="">완료</option>
+                                            <option value="">진행중</option>
+                                            <option value="">만료</option>
+                                        </select>
+                                        <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
+                                    </div>
+                                    <div class="round-input">
+                                        <select class="round-input__select select">
+                                            <option value="" selected>문서명</option>
+                                            <option value="">옵션2</option>
+                                            <option value="">옵션3</option>
+                                        </select>
+                                        <input type="text" maxlength="50"
+                                        placeholder="검색어를 입력해주세요"
+                                        class="round-input__input input">
+                                    </div>
+                                </div>
+                                
+                                <button type="button" class="button button--secondary is-pc">
+                                    <img src="/statics/icon/plus-circle-line.svg"
+                                    alt="공문발송 템플릿 만들기" class="icon">
+                                    공문발송 템플릿 만들기
+                                </button>
+                            </div>
                             <div id="selected-top-box" class="table-top__box is-hide">
                                 <div class="table-top__tab tab">
                                     <p class="font-weight--medium">
@@ -80,35 +83,42 @@
                         </div>
                         <!-- 컨텐츠 테이블 (for문 생성) -->
                         <div class="table">
-                            <div class="table__colgroup">
-                                <div class="table__col" style="width:2%"></div>
-                                <div class="table__col" style="width:8%"></div>
-                                <div class="table__col" style="width:auto"></div>
-                                <div class="table__col" style="width:8%"></div>
-                                <div class="table__col" style="width:8%"></div>
-                                <div class="table__col" style="width:8%"></div>
-                                <div class="table__col" style="width:8%"></div>
-                            </div>
                             <div class="table__thead">
-                                <ul class="table__tr">
-                                    <li class="table__td">
-                                        <input type="checkbox" class="checkbox checkbox-all"
-                                        id="">
-                                    </li>
-                                    <li class="table__td">상태</li>
-                                    <li class="table__td">템플릿이름</li>
-                                    <li class="table__td">작성일</li>
-                                    <li class="table__td">수정일</li>
-                                    <li class="table__td">추가메뉴</li>
-                                </ul>
+                                <div class="table__tr">
+                                    <div class="table__td is-left width-90">
+                                        <div class="table__td width-2">
+                                            <input type="checkbox" class="checkbox checkbox-all"
+                                            id="">
+                                        </div>
+                                        <div class="table__td width-10">상태</div>
+                                        <div class="table__td width-50">템플릿 이름</div>
+                                        <div class="table__td width-10">작성일</div>
+                                        <div class="table__td width-10">수정일</div>
+                                    </div>
+                                    <div class="table__td is-right width-10 flex-justify--center">
+                                        <div class="table__td">추가메뉴</div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="table__tbody"></div>
                         </div>
                         <div class="table__paging">
                             <ul class="pagination">
-                                <li class="pagination__item pagination__icon">이전</li>
-                                <ul id="pagination-index-wrap" class="pagination"></ul>
-                                <li class="pagination__item pagination__icon">다음</li>
+                                <li class="">
+                                    <button type="button" class="button button--text">
+                                        <img src="/statics/icon/angle-left.svg" 
+                                        class="icon"
+                                        alt="이전페이지">
+                                    </button>
+                                </li>
+                                <ul id="pagination-index-wrap" class="pagination__index-wrap"></ul>
+                                <li class="">
+                                    <button type="button" class="button button--text">
+                                        <img src="/statics/icon/angle-right.svg" 
+                                        class="icon"
+                                        alt="다음페이지">
+                                    </button>
+                                </li>
                             </ul>
                             <div id="count-load-table" class="select-box is-medium">
                                 <select class="select-box__select">
@@ -125,7 +135,7 @@
                         <div class="container">
                             <h5>문서 이력</h5>
                             <div class="inner">
-                                <ul id="aside__history-summary">
+                                <ul id="aside-summary" class="aside__list basic-list">
                                 </ul>
                                 <button type="button"
                                 class="button button--secondary is-medium">진행정보 보기</button>
@@ -183,9 +193,11 @@
             // 쿼리에서 현재 페이지 위치 추출
             function makePagination(paginationLength){
                 let minPage = 1;                    // 시작페이지
-                let maxPage = paginationLength;     // 최대페이지 (단, 10개 미만일 경우 total값)
+                // let maxPage = paginationLength;     // 최대페이지 (단, 10개 미만일 경우 total값)
                 let perPage = 10;                   // 뷰에 보이는 페이지 개수
-                let currentPage = param;            // 현재 페이지 (url 추출)
+                // let currentPage = param;            // 현재 페이지 (url 추출)
+                currentPage = 1
+                maxPage = 10
 
                 if(paginationLength > 10){
                     if(paginationLength % 10 > 0) {
@@ -201,12 +213,16 @@
                 for(let i = minPage; i <= maxPage; i++ ){
                     html = ''
 
+                    i > 5 ?
+                    hideViewportPaginationClass = 'is-pc' :
+                    hideViewportPaginationClass = ''
+
                     if( i == currentPage){
-                        html += `<li class="pagination__item is-active" data-page_num=${i}>${i}</li>`
+                        html += `<li class="pagination__item is-active ${hideViewportPaginationClass}" data-page_num=${i}>${i}</li>`
                     }
                     else{
                         html += `
-                            <li class="pagination__item" data-page_num=${i}>${i}</li>
+                            <li class="pagination__item ${hideViewportPaginationClass}" data-page_num=${i}>${i}</li>
                         `
                     }
                     $('#pagination-index-wrap').append(html)
@@ -216,7 +232,6 @@
 
             // 테이블 만들기
             function makeTable(data,breakpoint){
-                console.log(data)
 
                 // 이미 테이블이 생성된 경우 테이블 삭제 후 재생성
                 if($('.table__tbody .table__tr').length > 0) {
@@ -238,39 +253,51 @@
                             <p class="state success" >
                                 <img src="/statics/icon/hourglass-line.svg" class="icon">
                                 진행중
-                            </p>`
+                            </p>
+                        `
+                        mailAlert = `
+                            <p class="is-remark" >
+                                수신
+                            </p>
+                        `
                     }
                     else{
                         state = `
-                        <p class="state ban">
-                            <img src="/statics/icon/ban-line.svg" class="icon">
-                            만료
-                        </p>`
+                            <p class="state ban">
+                                <img src="/statics/icon/ban-line.svg" class="icon">
+                                만료
+                            </p>
+                        `
+                        mailAlert = `
+                            <p class="is-remark" >
+                                수신안함
+                            </p>
+                        `
                     }
 
                     html = ''
                     html += `
                     <div class="table__tr ${testClass}" data-id="${data[i].index}">
-                        <div class="table__td">
-                            <input type="checkbox" class="checkbox"
-                            id="">
+                        <div class="table__td is-left width-90">
+                            <div class="table__td check-area width-2">
+                                <input type="checkbox" class="checkbox"
+                                id="">
+                            </div>
+                            <div class="table__td width-10 status-area">
+                                ${state}
+                            </div>
+                            <div class="table__td flex--column gap--sm width-50 title-area">
+                                <p class="table__td--title">${data[i].guid}</p>
+                                <p class="is-remark">${friends}</p>
+                            </div>
+                            <div class="table__td width-10 alarm-area">
+                                ${mailAlert}
+                            </div>
+                            <div class="table__td width-10 latest-area">
+                                <p class="is-remark">2022-12-31 10:59</p>
+                            </div>
                         </div>
-                        <div class="table__td">
-                            ${state}
-                        </div>
-                        <div class="table__td font-weight--medium">
-                            <p class="table__td--title">${data[i].guid}</p>
-                            <p class="is-remark">${friends}</p>
-                        </div>
-                        <div class="table__td">
-                            <label class="is-small toggle">
-                                <input type="checkbox" class="toggle__checkbox">
-                                <span class="toggle__slider"></span>
-                            </label>
-                        </div>
-                        <p class="table__td is-remark">기본폴더</p>
-                        <p class="table__td is-remark">${data[i].registered}</p>
-                        <div class="table__td">
+                        <div class="table__td is-right width-10 flex-justify--center">
                             <button type="button" class="button button--outline icon-button is-small">
                                 <img class="icon" src="/statics/icon/ellipsis-horizontal-line.svg"
                                 alt="추가메뉴">
@@ -279,6 +306,19 @@
                     </div>`
                     $('.table__tbody').append(html)
                 }
+            }
+
+            // 튜토리얼 기본 숨기기
+            $('#tutorial-wrap').hide()
+
+
+            // 전체 동의
+            $('#checkbox-all').on('click',manageAllCheck)
+
+            function manageAllCheck(){
+                $(this).prop('checked')==true ?
+                $('.checkbox').prop('checked',true) :
+                $('.checkbox').prop('checked',false)
             }
 
             // 체크박스 이벤트
@@ -311,6 +351,106 @@
             $('#cancel-selected').on('click',function(){
                 checkEvent(null)
             })
+
+            // 폴더변경 클릭 이벤트
+            $('#change-folder, #document-move, #document-move-this').on('click',makeFolderModal)
+
+            function makeFolderModal(){
+                html = '';
+                html += `
+                <div class="modal">
+                    <div class="modal__header">
+                        <p class="modal__title">
+                            <img src="/statics/icon/exclamation-triangle-line.svg" alt="닫기" class="icon icon--large icon--warning">
+                            폴더 선택
+                        </p>
+                        <button type="button" class="icon-button">
+                            <img src="/statics/icon/close-line.svg" alt="닫기" class="icon modal__close-button">
+                        </button>
+                    </div>
+                    <div class="modal__content">
+                        <div class="modal__search-form">
+                            <input type="text" class="input is-large"
+                            placeholder="검색어를 입력해주세요">
+                            <img class="icon icon" src="/statics/icon/search-line.svg" alt="검색">
+                        </div>
+                        <ul class="modal__list">
+                            <li class="list__item is-active"> 
+                                <img class="icon " src="/statics/icon/folder-open-solid.svg" alt="현재폴더">
+                                전체 폴더 보기
+                            </li>
+                            <li class="list__item "> 
+                                <img class="icon " src="/statics/icon/folder-line.svg" alt="현재폴더">
+                                기본 폴더
+                            </li>
+                            <li class="list__item" data-id="${0}"> 
+                                <img class="icon " src="/statics/icon/folder-line.svg" alt="현재폴더">
+                                기존 사용 서식
+                                <div class="flex--row flex-align--center">
+                                    <button type="button">삭제</button>
+                                    <button type="button">완료</button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="modal__footer">
+                        <button type="button" class="button--primary button--large"
+                        id="create-new-folder">새 폴더 추가하기</button>
+                    </div>
+                </div>
+                `
+                $('.main').append(html)
+            }
+
+            // 새 폴더 만들기
+            $(document).on('click','#create-new-folder',createNewFolder)
+            function createNewFolder(){
+                html = '';
+                html += `
+                    <div class="flex--row">
+                        <input type="text" class="input">
+                        <button type="button" id="cancel-new-folder">취소</button>
+                        <button type="button" id="submit-new-folder">완료</button>
+                    </div>
+                `
+                $('.modal__list').append(html)
+
+                $('#cancel-new-folder').on('click',function(){
+                    $(this).parents('.flex--row').remove()
+                })
+                $('#submit-new-folder').on('click',function(){
+                    if($(this).siblings('.input').val().length < 1){
+                        alert('폴더명을 입력해주세요')
+                    }
+                    else{
+                        $(this).parents('.flex--row').remove()
+                        $('.modal__list').append(`
+                            <li class="flex--row flex-align--center"> 
+                                <img class="icon " src="/statics/icon/folder-line.svg" alt="현재폴더">
+                                ${$(this).siblings('.input').val()}
+                            </li>
+                        `)
+                    }
+                })
+            }
+            
+            // 폴더 변경하기
+            function changeFolder(){
+                $.ajax({
+                    url: "/json/dummy.json",
+                    type: "GET", 
+                    data:{},
+                    dataType: "json"
+                })
+                .done(function(res) {
+                    makeTable(res)
+                })
+                .fail(function(xhr, status, errorThrown) {
+                })
+                .always(function(xhr, status) {
+                });
+            }
+
 
             // 더보기 버튼 클릭
             function makeMoreEvent(){
@@ -359,8 +499,10 @@
                         </button>
                     </div>
                     <div class="modal__content">
-                        <span class="font-weight--medium">${string}</span>
-                        를 휴지통으로 보낼까요?
+                        <p>
+                            <span class="font-weight--medium">${string}</span>
+                            를 휴지통으로 보낼까요?
+                        </p>
                     </div>
                     <div class="modal__footer">
                         <button type="button" class="button--primary button--large">확인</button>
@@ -373,8 +515,6 @@
             $(document).on('click','.table__tr',makeAsideContent)
 
             function makeAsideContent(e){
-                // 토글을 클릭한 aisde 생성 안함
-                if(e.target.closest('.toggle')) return ;
 
                 // thead 영역일 경우 aisde 생성 안함
                 if($(this).parent('.table__thead').length > 0){
@@ -394,6 +534,8 @@
                 else{
                     return false;
                 }
+                
+                // $('.aside-content').css({'height':$('.main > .container').outerHeight()})
 
                 let userId = $(this).attr('data-id')
                 loadAsideData(userId)
@@ -404,6 +546,7 @@
                 $.ajax({
                     url: "/json/dummy.json",
                     type: "GET", 
+                    data:{},
                     dataType: "json"
                 })
                 .done(function(res) {
@@ -416,16 +559,20 @@
                         $('.aside__list__item').remove()
                     }
 
-                    for(let i = 0; i < 2; i++){
+                    for(let i = 0; i < 3; i++){
                         html += `
                         <li class="aside__list__item">
-                            <p><img src="" alt="사용자">${result.friends[i].name}</p>
-                            <p><img src="" alt="이름">${result.email}</p>
+                            <p class="font-weight--medium">
+                                ${result.friends[i].name}
+                            </p>
+                            <p class="">
+                                ${result.email}
+                            </p>
                             <p class="body--small">${result.registered.substr(0,10)}</p>
                         </li>
                             `
                     }
-                    $('#aside__history-summary').append(html)
+                    $('#aside-summary').append(html)
                 })
                 .fail(function(xhr, status, errorThrown) {
                 })

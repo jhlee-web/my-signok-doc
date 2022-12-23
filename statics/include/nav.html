@@ -11,7 +11,7 @@
         </h1>
     </div>
     <div class="nav__middle is-unfold">
-        <button type="button"
+        <button type="button" id="common-contract-button"
             class="button button--primary is-medium">
             계약 시작하기
         </button>
@@ -29,7 +29,7 @@
             <p class="">계약관리</p>
         </li>
 
-        <li data-nav="contract-list">
+        <li data-nav="document-list">
             <a href="/template/document-list.html" class="nav-item">
                 <img class="icon nav-item__icon" src="/statics/icon/document-line.svg"></img>
                 <span class="nav__name is-unfold">내 계약 현황</span>
@@ -83,7 +83,7 @@
             </a>
         </li>
         <li data-nav="office-submit">
-            <a href="/template\office-submit.html" class="nav-item is-border">
+            <a href="/template/office-submit/office-submit.html" class="nav-item is-border">
                 <img class="icon nav-item__icon" src="/statics/icon/briefcase-line.svg"></img>
                 <span class="nav__name is-unfold">공문발송</span>
             </a>
@@ -169,6 +169,9 @@
         </li> -->
     </ul>
 </nav>
+
+<script src="/statics/lib/fancy-file-uploader/jquery.fancy-fileupload.js"></script>
+
 <script>
 
     let navState = localStorage.getItem('data-fold')
@@ -246,12 +249,13 @@
     // Nav Setting
     function setNavActive(){
         const currentFolder = $(location).attr('href').split('/')
-        if(currentFolder.length > 4){
+        if(currentFolder.length > 5){
             currentFileName = currentFolder[4].split('.')[0]
         }
         else{
             currentFileName = currentFolder.pop().split('.')[0]
         }
+        console.log(currentFileName)
 
         if(currentFileName == 'index'){
             $(`.nav li[data-nav=dashboard] a`).addClass('is-active')
@@ -262,7 +266,176 @@
 
     }
 
-    
+    // file upload modal 등으로 이름 바꾸고 정보를 받은 뒤 tab별로 hide t/f처리를 하는 게 좋을 듯..??
+    $('#common-contract-button').on('click',makeCommonModal)
+    function makeCommonModal(){
+                html = '';
+                html += `
+                <div class="modal">
+                    <div class="modal__header">
+                        <p class="modal__title">
+                            문서 선택하기
+                        </p>
+                        <button type="button" class="icon-button">
+                            <img src="/statics/icon/close-line.svg" alt="닫기" class="icon modal__close-button">
+                        </button>
+                    </div>
+                    <div class="modal__content">
+                        <div class="tab-wrap flex--row flex-justify--between">
+                            <ul class="tab">
+                                <li class="tab__item is-active" data-tab="upload">
+                                    <a href="javascript:void(0)">
+                                        내 컴퓨터
+                                    </a>
+                                </li>
+                                <li class="tab__item" data-tab="template">
+                                    <a href="javascript:void(0)">
+                                        템플릿
+                                    </a>
+                                </li>
+                                <li class="tab__item is-hide" data-tab="format">
+                                    <a href="javascript:void(0)">
+                                        서식
+                                    </a>
+                                </li>
+                                <li class="tab__item is-hide" data-tab="offer">
+                                    <a href="javascript:void(0)">
+                                        맞춤계약서
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="tab__item">
+                                <a href="javascript:void(0)"
+                                class="button--text">
+                                    맞춤 계약서 찾기
+                                </a>
+                            </div>
+                        </div>
+                        <div class="modal__tab-container" data-tab="upload">
+                            <div class="flex--column flex-align--center">
+                                <div class="flex--column flex-align--center">
+                                    <img class="icon is-large is-primary" src="/statics/icon/check-circle-solid.svg" alt="문서 업로드 성공">
+                                    <p class="is-remark">문서를 성공적으로 업로드하였습니다.</p>
+                                </div>
+                                <p>파일명</p>
+                                <div class="flex--row">
+                                    <button type="button" class="button button--outline">
+                                        <img src="/statics/icon/pop-out-line.svg" alt="미리보기 버튼" class="icon">
+                                        미리보기    
+                                    </button>
+                                    <button type="button" class="button button--outline">
+                                        <img src="/statics/icon/pop-out-line.svg" alt="삭제 버튼" class="icon">
+                                        삭제    
+                                    </button>    
+                                </div>
+                            </div>
+                            <div class="file-area">
+                                <label for="upload-file" class="file-area__label">
+                                    <input type="file"
+                                    id="upload-file" class="file-area__input"
+                                    accept=".jpg, .png, .jpeg, .hwp, .doc, .pdf">    
+                                </label>
+                            </div>
+                            <div>
+                                <p class="is-remark">pdf, jpg, png, hwp 파일을 업로드 할 수 있습니다.</p>
+                                <p class="is-remark">파일은 최대 10MB까지 업로드 할 수 있습니다.</p>
+                            </div>
+                        </div>
+                        <div class="modal__tab-container" data-tab="template">
+                            <div>
+                                <p class="is-remark">
+                                    아직 생성된 템플릿이 없습니다.<br>
+                                    자주 사용하는 계약서는 템플릿으로 만들어 간편하게 재사용이 가능합니다.
+                                </p>
+                                <a href="javascript:void(0)" class="button button--text">템플릿 생성하기</a>
+                            </div>
+                        </div>
+                        <div class="modal__tab-container" data-tab="format">
+                            <div>
+                                <p class="is-remark">
+                                    아직 생성된 서식이 없습니다.<br>
+                                    자주 사용하는 계약서는 서식으로 만들어 간편하게 재사용이 가능합니다.
+                                </p>
+                                <a href="javascript:void(0)" class="button button--text">템플릿 생성하기</a>
+                            </div>
+                        </div>
+                        <div class="modal__tab-container" data-tab="offer">
+                            <p class="is-remark">SignOK에서 제공하는 간편 템플릿입니다.</p>
+
+                            <div class="flex--row flex-align--start">
+                                <div class="">
+                                    <p class="is-remark">STEP 1</p>
+                                    <ul>
+                                        <li>인사/근로</li>
+                                        <li>금융/결제</li>
+                                        <li>법률/회의</li>
+                                        <li>동의/서명</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="is-remark">STEP 2</p>
+                                    <ul>
+                                        <li>채용</li>
+                                        <li>실업급여</li>
+                                        <li>프랜서</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal__footer">
+                        <button type="button" class="button--primary button--large" disabled
+                        id="">다음</button>
+                    </div>
+                </div>
+                `
+                $('.main').append(html)
+                setModalContent()
+                loadFancyUpload()
+            }
+
+            function setModalContent(){
+                let modalContentType = $('.tab__item.is-active').attr('data-tab')
+                $('.modal__tab-container').hide();
+                $(`.modal__tab-container[data-tab="${modalContentType}"]`).show()
+
+            }
+
+            function loadFancyUpload(){
+                $('#upload-file').FancyFileUpload({
+                // 'url' : '',
+                // 'params' : {},
+                'edit' : false,                      // 업로드한 파일의 이름 변경
+                'maxfilesize' : 10000000,            // 최대 10MB
+                // 'accept' : null,
+                'displayunits' : 'si',              // 'iec_windows', 'iec_formal', or 'si'
+                'adjustprecision' : true,           // 파일 크기를 표시할 때 최종 정밀도 조정
+                'retries' : 5,
+                'retrydelay' : 500,
+                'showpreview' : function(e, data, preview, previewclone) {},
+                'hidepreview' : function(e, data, preview, previewclone) {},
+                'added' : function(e, data) {
+
+                },
+                // 'startupload' : function(SubmitUpload, e, data){
+                //     console.log('start upload')
+                // },
+                // 'continueupload' : function(e, data) {
+                //     console.log('continue upload')
+                // },
+                // 'uploadcancelled' : function(e, data) {
+                //     console.log('upload cancel')
+                // },
+                // 'uploadcompleted' : function(e, data) {
+                //     console.log('upload completed')
+                // },
+                // 'fileupload' : {
+                //     function(e,data){
+                //         console.log(fileupload)
+                //     }
+                // },
+            });
+            }
     
 
 </script>

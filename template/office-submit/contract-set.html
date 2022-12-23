@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <script src="/statics/js/loadHTML.js"></script>
+        <script>
+            loadHTML("/statics/include/head.html");
+        </script>
+        <link rel="stylesheet" href="/statics/lib/Datetime-Picker/css/datetimepicker.css">
+        <title>공문발송 | 계약서 설정 및 발송</title>
+
+    </head>
+
+    <body>
+        <!-- <div class="wrapper"> -->
+            <!-- 상단 헤더 -->
+            <div class="doc-header">
+                <div class="container is-center">
+                    <ul class="flex--row">
+                        <li class="step">
+                            <a href="/template/contract-step/signature-set.html">
+                                <span>1</span>서명자 정보 입력
+                            </a>
+                        </li>
+                        <li class="step">
+                            <a href="javascript:void(0)">
+                                <span>2</span>서명 영역 지정
+                            </a>
+                        </li>
+                        <li class="step is-active">
+                            <a href="javascript:void(0)">
+                                <span>3</span>계약서 설정 및 발송
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- // 상단헤더 -->
+            <main class="main">
+                <!-- 메인 컨텐츠 -->
+                <div class="container">
+                    <div class="main-content">
+                        <!-- card -->
+                        <div class="card">
+
+                            <div class="full-grid left-double">
+                                <div class="input-area">
+                                    <label for="" class="is-remark">
+                                        계약서 이름 
+                                        <span class="is-primary">*</span>
+                                    </label>
+                                    <div class="input-box flex--row is-change">
+                                        <input type="text" placeholder="" class="input">
+                                        <button type="button" class="button button--secondary">수정하기</button>
+                                    </div>
+                                </div>
+                                <div class="flex--column">
+                                    <div class="control-form flex-justify--between">
+                                        <label for="">서명완료 메일을 매회 수신합니다</label>
+                                        <input type="checkbox" class="checkbox">
+                                    </div>
+                                    <p class="is-remark">서명자가 서명을 할 때마다 서명 완료 메일을 받을 수 있습니다.</p>
+                                </div>
+                            </div>
+                            <div class="full-grid">
+                                <div class="flex--column">
+                                    <p class="is-remark">서명 기간 <span class="is-primary">*</span></p>
+                                    <div class="flex--row">
+                                        <p>서명 발송일로부터</p>
+                                        <input type="number" class="input is-narrow" maxlength="365"
+                                        value="14">
+                                        <p>일 동안 서명을 받습니다.</p>
+                                    </div>
+                                    <p class="is-remark">서명 만료일: <span>2022-12-31</span></p>
+                                </div>
+
+                                <div class="flex--column width-100">
+                                    <p class="is-remark">발송 방법 <span class="is-primary">*</span></p>
+                                    <div class="flex--row">
+                                        <div class="control-form">
+                                            <input type="radio" class="radio" name="submit-type" checked>
+                                            <label for="">바로발송</label>
+                                        </div>
+                                    </div>
+                                    <div class="flex--row">
+                                        <div class="control-form">
+                                            <input type="radio" class="radio" name="submit-type">
+                                            <label for="">예약발송</label>
+                                        </div>
+                                        <div id="date-time-picker" class="width-100"></div>
+                                        <input type="hidden" id="" readonly >
+                                    </div>
+                                    
+                                </div>
+                                <div class="flex--column">
+                                    <p class="is-remark">남길말 (선택)</p>
+                                    <textarea class="textarea" placeholder="서명 대상자에게 남길 말을 입력해주세요." maxlength="200"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex--column">
+                            <div>
+                                <p class="is-remark">수신자</p>
+                                <p class="is-remark">*선택한 수신자는 주소록에 저장됩니다.</p>
+                            </div>
+                            
+                             <!-- 서명자 목록 5인 단위 -->
+                            <div class="table">
+                                <div class="table__thead">
+                                    <div class="table__tr">
+                                        <div class="table__td is-left width-100">
+                                            <div class="table__td width-5">
+                                                <input type="checkbox" class="checkbox checkbox-all" id="">
+                                            </div>
+                                            <div class="table__td width-40">수신자 </div>
+                                            <div class="table__td width-10">구분</div>
+                                            <div class="table__td width-50">접근설정</div>
+                                        </div>
+                                        <!-- <div class="table__td is-right width-15">
+                                            <div class="table__td width">전자서명</div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                                <div class="table__tbody"></div>
+                            </div>
+                            <!-- 페이지네이션 -->
+                            <div class="table__paging">
+                                <ul class="pagination flex-justify--center" >
+                                    <li class="">
+                                        <button type="button" class="button button--text">
+                                            <img src="/statics/icon/angle-left.svg" 
+                                            class="icon"
+                                            alt="이전페이지">
+                                        </button>
+                                    </li>
+                                    <ul id="pagination-index-wrap" class="pagination__index-wrap " ></ul>
+                                    <li class="">
+                                        <button type="button" class="button button--text">
+                                            <img src="/statics/icon/angle-right.svg" 
+                                            class="icon"
+                                            alt="다음페이지">
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="full-grid right-double">
+                            <div>
+                                <ul class="checkbox-wrap">
+                                    <li class="checkbox__item">
+                                        <label for="checkbox-all"
+                                        class="margin-bottom--medium font-weight--medium">
+                                            전체동의
+                                        </label>
+                                        <input type="checkbox" id="" class="checkbox checkbox-all">
+                                    </li>
+                                    <li class="checkbox__item">
+                                        <label for="" class="flex--row flex-align--center">
+                                            <span class="font-weight--medium">필수</span>
+                                            개인정보 수집에 동의합니다
+                                            <img class="icon" src="/statics/icon/angle-right.svg">
+                                        </label>
+                                        <input type="checkbox" class="checkbox" required>
+            
+                                    </li>
+                                    <li class="checkbox__item">
+                                        <label for="" class="flex--row flex-align--center">
+                                            <span class="font-weight--medium">필수</span>
+                                            계약 건수 1회가 차감됩니다
+                                            <img class="icon" src="/statics/icon/angle-right.svg">
+                                        </label>
+                                        <input type="checkbox" class="checkbox" required>
+                                    </li>
+                                </ul>  
+                            </div>
+                            <div class="flex--column">
+                                <p class="is-remark">참조자<span>(10)</span></p>
+                                <div class="round-input width-100">
+                                    <select class="round-input__select select">
+                                        <option value="" selected>이메일</option>
+                                        <option value="">카카오톡</option>
+                                    </select>
+                                    <input type="text" maxlength="50"
+                                    placeholder="검색어를 입력해주세요"
+                                    class="round-input__input input">
+                                </div>
+                               <ul class="dynamic-badge-set"></ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <!-- /main-content -->
+                </div>
+                <!-- /container -->
+                <div class="doc-header is-fixed" id="doc-footer">
+                    <div class="container is-center">
+                        <button type="button" class="button is-large button--text">이전</button>
+                        <button type="button" class="button is-large button--primary">다음</button>
+                    </div>
+                </div>
+            </main>
+        <!-- </div> -->
+
+        <script src="/statics/lib/moment/min/moment-with-locales.min.js"></script>
+        <script src="/statics/lib/Datetime-Picker/js/datetimepicker.js"></script>
+        <script src="/statics/js/common.js"></script>
+        <script>
+            $('#date-time-picker').dateTimePicker({
+                dateFormat:"YYYY-MM-DD HH:mm",
+                locale:"ko",
+                showtime:true,
+                selectData:'now',
+                positionShift:{
+                    top:0,
+                    left:0
+                },
+                title:"예약시간을 설정해주세요",
+                buttonTitle:"확인",
+            })
+            $('html').attr('data-theme',localStorage.getItem('data-theme'))
+           
+            $(function(){
+                loadData()
+            })
+            // 데이터 로드
+            function loadData(breakpoint){
+                $.ajax({
+                    url: "/json/dummy.json",
+                    type: "GET", 
+                    dataType: "json"
+                })
+                .done(function(res) {
+                    let total = res.length;
+                    let paginationLength = Math.ceil(Number(total) / Number(breakpoint));
+
+                    makePagination(paginationLength);
+                    makeTable(res,5)
+                    run(res)
+                })
+                .fail(function(xhr, status, errorThrown) {
+                })
+                .always(function(xhr, status) {
+                });
+            }
+
+            function makePagination(paginationLength){
+                let minPage = 1;                    // 시작페이지
+                let maxPage = paginationLength;     // 최대페이지 (단, 10개 미만일 경우 total값)
+                let perPage = 10;                   // 뷰에 보이는 페이지 개수
+                let currentPage = getUrl();            // 현재 페이지 (url 추출)
+
+
+                currentPage = 1;
+                maxPage = 10
+                // console.log(currentPage)
+                if(paginationLength > 10){
+                    if(paginationLength % 10 > 0) {
+                        minPage = Math.floor(paginationLength / 10) * 10
+                        maxPage = minPage + 9
+                    }
+                    else{
+                        maxPage = paginationLength / 10 * 10
+                        minPage = maxPage - 9
+                    }
+                }
+
+                for(let i = minPage; i <= maxPage; i++ ){
+                    html = ''
+
+                    i > 5 ?
+                    hideViewportPaginationClass = 'is-pc' :
+                    hideViewportPaginationClass = ''
+
+                    if( i == currentPage){
+                        html += `<li class="pagination__item is-active ${hideViewportPaginationClass}" data-page_num=${i}>${i}</li>`
+                    }
+                    else{
+                        html += `
+                            <li class="pagination__item ${hideViewportPaginationClass}" data-page_num=${i}>${i}</li>
+                        `
+                    }
+                    $('#pagination-index-wrap').append(html)
+                }
+            }
+
+
+            // 테이블 만들기
+            function makeTable(data,breakpoint){
+
+                // 이미 테이블이 생성된 경우 테이블 삭제 후 재생성
+                if($('.table__tbody .table__tr').length > 0) {
+                    $('.table__tbody .table__tr').remove()
+                }
+
+                for (let i = 0; i < breakpoint; i++){
+                    if(i > data.length) break;
+                    testClass = null
+
+                    if(data[i].isActive == false){
+                        state = `
+                            <div class="control-form is-change">
+                                <input type="checkbox" class="checkbox" disabled id="license__${data[i].index}">
+                                <label class="is-remark" for="license__${data[i].index}">공동인증서</label>
+                            </div>
+                        `
+                    }
+                    else{
+                        state = `
+                            <div class="control-form is-change">
+                                <input type="checkbox" class="checkbox" id="license__${data[i].index}">
+                                <label class="is-remark" for="license__${data[i].index}">
+                                    공동인증서
+                                </label>
+                            </div>
+                        `
+                    }
+
+                    html = ''
+                    html += `
+                        <div class="table__tr ${testClass}" data-id="${data[i].index}">
+                            <div class="table__td is-left width-100">
+                                <div class="table__td width-5">
+                                    <input type="checkbox" class="checkbox"
+                                        id="">
+                                </div>
+                                <div class="table__td width-40">
+                                        <p class="table__td--title">${data[i].guid}</p>
+                                </div>
+                                <div class="table__td width-10">
+                                    <p class="is-remark">개인회원</p>
+                                </div>
+                                <div class="table__td width-50">
+                                    <div class="flex--row is-change flex-align--start">
+                                        <div class="control-form">
+                                            <input type="radio" class="radio" name="viewer_${i}" checked>
+                                            <label for="">설정안함</label>
+                                        </div>
+                                        <div class="control-form">
+                                            <input type="radio" class="radio" name="viewer_${i}">
+                                            <label for="">비밀번호설정</label>
+                                        </div>
+                                        
+                                        <div class="control-form">
+                                            <input type="radio" class="radio" name="viewer_${i}">PASS 간편본인인증
+                                            <label for=""></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    `
+                    $('.table__tbody').append(html)
+                    
+                }
+            }
+
+            function run(data){
+                console.log(data)
+                // return false;
+                for(let i = 0; i < data.length; i++){
+                    if(data[i].index % 6 == 0){
+                        context = data[i].guid.replaceAll('-','')
+                    }
+                    else{
+                        context = data[i].phone.replaceAll('+1','')
+                    }
+                    $('.dynamic-badge-set').append(`<li><span>${context}<img src="/statics/icon/close-line.svg" class="icon"></span></li>`)
+
+                }
+            }
+            
+        </script>
+    </body>
+</html>
