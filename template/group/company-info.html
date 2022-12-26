@@ -60,49 +60,45 @@
                                 
                             </div>
                                 
-                            <div class="dim is-mobile">
-                                <div class="card" id="mobile-aside-container">
-                                    <div class="card__row">
-                                        <p class="is-remark">부서미지정</p>
-                                        <p class="is-remark">생성일:<span>2022-10-14</span></p>
-                                    </div>
-
-                                    <div class="is-empty">
-                                        <div class="flex--column flex-align--center
-                                        ">
-                                            <img class="icon is-large"
-                                            src="/statics/icon/exclamation-triangle-line.svg"
-                                            alt="아직 소속된 멤버가 없습니다">
-                                            <p>아직 소속된 멤버가 없습니다</p>
-                                            <button type="button" class="button button--secondary is-medium"
-                                            id="invite-member" >멤버 초대하기</button>
-                                        </div>
-                                    </div>
-
-                                    <div class="table">
-                                        <div class="table__colgroup">
-                                            <div class="table__col" style="width:auto"></div>
-                                            <div class="table__col" style="width:auto"></div>
-                                            <div class="table__col" style="width:15%"></div>
-                                            <div class="table__col" style="width:15%"></div>
-                                        </div>
-                                        <div class="table__thead">
-                                            <ul class="table__tr">
-                                                <li class="table__td">이름</li>
-                                                <li class="table__td">이메일</li>
-                                                <li class="table__td">역할</li>
-                                                <li class="table__td">부서</li>
-                                            </ul>
-                                        </div>
-                                        <div class="table__tbody">
-                                        </div>
-                                    </div>
-                                    <!-- /table -->
-
+                            <div class="card" id="mobile-aside-container">
+                                <div class="card__row">
+                                    <p class="is-remark">부서미지정</p>
+                                    <p class="is-remark">생성일:<span>2022-10-14</span></p>
                                 </div>
+
+                                <div class="is-empty">
+                                    <div class="flex--column flex-align--center
+                                    ">
+                                        <img class="icon is-large"
+                                        src="/statics/icon/exclamation-triangle-line.svg"
+                                        alt="아직 소속된 멤버가 없습니다">
+                                        <p>아직 소속된 멤버가 없습니다</p>
+                                        <button type="button" class="button button--secondary is-medium"
+                                        id="invite-member" >멤버 초대하기</button>
+                                    </div>
+                                </div>
+
+                                <div class="table">
+                                    <div class="table__colgroup">
+                                        <div class="table__col" style="width:auto"></div>
+                                        <div class="table__col" style="width:auto"></div>
+                                        <div class="table__col" style="width:15%"></div>
+                                        <div class="table__col" style="width:15%"></div>
+                                    </div>
+                                    <div class="table__thead">
+                                        <ul class="table__tr">
+                                            <li class="table__td">이름</li>
+                                            <li class="table__td">이메일</li>
+                                            <li class="table__td">역할</li>
+                                            <li class="table__td">부서</li>
+                                        </ul>
+                                    </div>
+                                    <div class="table__tbody">
+                                    </div>
+                                </div>
+                                <!-- /table -->
                             </div>
                         </div>
-    
                     </div>
                     <!-- /main-content -->
                 </div>
@@ -268,17 +264,38 @@
                         </button>
                     </div>
                     <div class="modal__content">
-                        <div>
-                            <label for="">사원명</label>
-                            <input type="text" class="input">
+                        <div class="input-area">
+                                <label for="login-mail">사원명</label>
+                            <div class="input-box">
+                                <input type="text"
+                                class="input"
+                                id="login-mail"
+                                placeholder="사원명을 입력해주세요.">
+                                <img class="icon" src="/statics/icon/remove-solid.svg"></img>
+                            </div>
+                            <p class="input-area__helper"></p>
                         </div>
-                        <div>
-                            <label for="">ID</label>
-                            <input type="text" class="input">
+                        <div class="input-area">
+                                <label for="login-mail">이메일</label>
+                            <div class="input-box">
+                                <input type="text"
+                                class="input"
+                                id="login-mail"
+                                placeholder="사원명을 입력해주세요.">
+                                <img class="icon" src="/statics/icon/remove-solid.svg"></img>
+                            </div>
+                            <p class="input-area__helper"></p>
                         </div>
-                        <div>
-                            <label for="">이메일</label>
-                            <input type="text" class="input">
+                        <div class="input-area">
+                                <label for="login-mail">사원명</label>
+                            <div class="input-box">
+                                <input type="text"
+                                class="input"
+                                id="login-mail"
+                                placeholder="사원명을 입력해주세요.">
+                                <img class="icon" src="/statics/icon/remove-solid.svg"></img>
+                            </div>
+                            <p class="input-area__helper"></p>
                         </div>
                         <div>
                             <label for="">역할</label>

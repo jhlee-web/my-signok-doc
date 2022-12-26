@@ -238,7 +238,7 @@
     min-height: 100vh;
     background-color: var(--theme-color-100);
 }
-.main--background .container{
+.main--background > .container{
     background-color: var(--white);
     border: 1px solid var(--theme-color-200);
     border-top: unset;
@@ -250,7 +250,7 @@
 
     padding: 2rem;
 }
-.main--background .container .main-content{
+.main--background > .container .main-content{
     padding: 0;
 }
 
@@ -282,11 +282,17 @@
 .doc-header{
     width: 100%;
     height: var(--header-height);
+    z-index: 99;
 }
-#doc-footer.is-fixed{
+#doc-header.is-fixed,#doc-footer.is-fixed{
     background: var(--background-color);
     position: fixed;
     left: 0;
+}
+#doc-header.is-fixed{
+    top: 0;
+}
+#doc-footer.is-fixed{
     bottom: 0;
 }
 

@@ -93,3 +93,14 @@ function manageModalTab(){
         $(`.modal__tab-container[data-tab="${modalContentType}"]`).show()
     }
 }
+
+
+// select div 수정 + 이벤트 추가
+$(document).on('click','.select-box',function(){
+    $(this).toggleClass('is-active')
+})
+
+// select div 수정 + 이벤트 추가
+$(document).on('click','.accordion',function(){
+    $(this).toggleClass('is-active')
+})
