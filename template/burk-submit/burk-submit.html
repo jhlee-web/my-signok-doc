@@ -26,57 +26,17 @@
                             <div class="step-container">
                                 <h3 class="step__title">
                                     <span>01</span>
-                                    템플릿 대량 발송 여부 확인
-                                </h3>
-                                <div class="flex--column">
-                                    <p class="is-remark">계약서</p>
-                                    <div class="control-form">
-                                        <input type="text" class="input" readonly>
-                                        <button type="button" class="button button--secondary" disabled>이름변경</button>
-                                    </div>
-                                </div>
-                                <div class="flex--column">
-                                    <p class="is-remark">접근설정</p>
-                                    <div class="control-form">
-                                        <input type="radio" class="radio" name="auth-method" checked>
-                                        <label for="">설정안함</label>
-                                    </div>
-                                    <div class="control-form">
-                                        <input type="radio" class="radio" name="auth-method">
-                                        <label for="">비밀번호</label>
-                                    </div>
-                                    <div class="control-form">
-                                        <input type="radio" class="radio" name="auth-method">
-                                        <label for="">PASS 간편</label>
-                                    </div>
-                                </div>
-                                <div class="flex--column">
-                                    <p class="is-remark">계약서</p>
-                                    <textarea class="textarea" rows="4" maxlength="200"></textarea>
-                                </div>
-                                <div class="flex--column">
-                                    <div class="control-form">
-                                        <label for="">
-                                            서명완료 메일을 매회 수신합니다
-                                            <img src="/statics/icon/angle-right.svg" class="icon">
-                                        </label>
-                                        <input type="checkbox" class="checkbox">
-                                    </div>
-                                    <p class="is-remark">서명자가 서명을 할 때마다 서명 완료 메일을 받을 수 있습니다.</p>
-                                </div>
-                            </div>
-                            
-                            <!-- step 2 -->
-                            <div class="step-container">
-                                <h3 class="step__title">
-                                    <span>02</span>
                                     엑셀 파일 업로드
                                 </h3>
-                                <div class="flex--column">
-                                    <img src="/statics/icon/plus-circle-line.svg" class="icon is-large">
-                                    <p class="k">대량발송 시작하기</p>
-                                    <p class="font-weight--medium">문서명</p>
-                                    <p class="font-weight--medium">계약서 대량 발송을 시작합니다.</p>
+                                <div class="flex--column flex-align--center">
+                                    <div class="flex--column flex-align--center gap--sm">
+                                        <img src="/statics/icon/info-standard-line.svg" class="icon is-large">
+                                        <p class="font-weight--semibold font--large">대량발송 시작하기</p>
+                                    </div>
+                                    <div class="gap--sm flex--column flex-align--center">
+                                        <p class="font-weight--medium">문서명</p>
+                                        <p class="">계약서 대량 발송을 시작합니다.</p>
+                                    </div>
                                 </div>
                                 <div class="flex--column">
                                     <button type="button" class="button button--secondary">
@@ -85,6 +45,51 @@
                                     <button type="button" class="button button--outline">
                                         <img src="/statics/icon/angle-down.svg" class="icon">엑셀 파일 업로드
                                     </button>
+                                </div>
+                                <div class="flex--column">
+                                    <button type="button" class="button button--secondary">
+                                        <img src="/statics/icon/angle-down.svg" class="icon">엑셀 양식 다운로드
+                                    </button>
+                                    <button type="button" class="button button--outline">
+                                        <img src="/statics/icon/angle-down.svg" class="icon">엑셀 파일 업로드
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- step 2 -->
+                            <div class="step-container">
+                                <h3 class="step__title">
+                                    <span>02</span>
+                                    발송 가능 수량 확인
+                                </h3>
+                                <div class="flex--row flex-justify--between">
+                                    <p class="is-remark">
+                                        계약수량
+                                    </p>
+                                    <button type="button" class="button button--text">
+                                        충전하기
+                                        <img class="icon" src="/statics/icon/pop-out-line.svg"
+                                        alt="충전하기">
+                                    </button>
+                                </div>
+                                <ul class="basic-list">
+                                    <li class="flex--row flex-justify--between">
+                                        <p>보유중</p>
+                                        <p><span>10</span>건</p>
+                                    </li>
+                                    <li class="flex--row flex-justify--between">
+                                        <p>사용가능</p>
+                                        <p><span>10</span>건</p>
+                                    </li>
+                                    <li class="flex--row flex-justify--between ">
+                                        <p>잔여수량</p>
+                                        <p class="font-weight--medium"><span>10</span>건</p>
+                                    </li>
+                                </ul>
+                                <div class="">
+                                    <img class="is-primary icon" src="/statics/icon/exclamation-triangle-line.svg"
+                                    alt="">
+                                    <p class="is-primary">보유한 계약 건수가 부족합니다.</p>
                                 </div>
                             </div>
 
