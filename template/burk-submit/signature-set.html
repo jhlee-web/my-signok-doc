@@ -11,7 +11,7 @@
     <body>
         <!-- <div class="wrapper"> -->
             <!-- 상단 헤더 -->
-            <div class="doc-header">
+            <div class="doc-header is-fixed" id="doc-header">
                 <div class="container is-center">
                     <ul class="flex--row ">
                         <li class="step is-active">
@@ -33,7 +33,7 @@
                 </div>
             </div>
             <!-- // 상단헤더 -->
-            <main class="main main--background">
+            <main class="main main--background padding-vertical--xxl">
                 
                 
                 <!-- 메인 컨텐츠 -->
@@ -206,16 +206,15 @@
                         <!-- </div> -->
                     </div>
                     <!-- /main-content -->
-                    
-                <!-- /container -->
-            </main>
-            <div class="doc-header" id="doc-footer">
-                <div class="container is-center">
-                    <button type="button" class="button is-large button--text">이전</button>
-                    <button type="button" class="button is-large button--primary">다음</button>
+                <div class="doc-header is-fixed" id="doc-footer">
+                    <div class="container is-center">
+                        <a href="/template/burk-submit/burk-list.html" class="button is-large button--text">이전</a>
+                        <a href="javascript:void(0)" class="button is-large button--primary">다음</a>
+                    </div>
                 </div>
-            </div>
-        <!-- </div> -->
+            <!-- </div> -->
+            </main>
+            
         <script>
             $('html').attr('data-theme',localStorage.getItem('data-theme'))
 

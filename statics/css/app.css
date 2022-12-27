@@ -136,9 +136,9 @@
 .table__td.is-right, .table__td.is-left{
     padding: 0;
 }
-.table__td.is-right .table__td, .table__td.is-left .table__td{
+/* .table__td.is-right .table__td, .table__td.is-left .table__td{
     width: 100%;
-}
+} */
 
 .table__td .icon{
     vertical-align: middle;

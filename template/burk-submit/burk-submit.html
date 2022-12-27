@@ -5,583 +5,118 @@
         <script>
             loadHTML("/statics/include/head.html");
         </script>
-        <title>대량발송</title>
+        <title>대량발송 | 대량발송 시작하기</title>
     </head>
 
     <body>
-        <div class="wrapper">
-            <script>
-                loadHTML("/statics/include/nav.html");
-            </script>
-            
-            <main class="main">
-                <!-- 상단 헤더 -->
-                <script>
-                    loadHTML("/statics/include/sub_header.html");
-                </script>
-                <!-- // 상단헤더 -->
-                <div class="container flex--row flex-align--start">
-                    <!-- 메인 컨텐츠 -->
-                    <div class="main-content">
-                        <!-- 상단 2 -->
-                        <div class="table-top">
-                            <div id="default-top-box" class="table-top__box">
-                                <div class="flex--row">
-                                    <div id="" class="select-box is-small">
-                                        <select class="select-box__select">
-                                            <option value="" selected>전체</option>
-                                            <option value="">완료</option>
-                                            <option value="">진행중</option>
-                                            <option value="">만료</option>
-                                        </select>
-                                        <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
-                                    </div>
-                                    <div class="round-input">
-                                        <select class="round-input__select select">
-                                            <option value="" selected>문서명</option>
-                                            <option value="">옵션2</option>
-                                            <option value="">옵션3</option>
-                                        </select>
-                                        <input type="text" maxlength="50"
-                                        placeholder="검색어를 입력해주세요"
-                                        class="round-input__input input">
-                                    </div>
-                                </div>
-                                
-                                <a href="/template/burk-submit/signature-set.html" class="button button--secondary is-pc">
-                                    <img src="/statics/icon/plus-line.svg"
-                                    alt="대량발송 템플릿 만들기" class="icon">
-                                    대량발송 템플릿 만들기
-                                </a>
-                            </div>
-                            <div id="selected-top-box" class="table-top__box is-hide">
-                                <div class="table-top__tab tab">
-                                    <p class="font-weight--medium">
-                                        선택한 문서
-                                        <span id="selected-count" class="">(1)</span>
-                                    </p>
-                                    <button type="button" class="button button--text"
-                                    id="document-move">
-                                        <img src="/statics/icon/folder-line.svg"
-                                        alt="폴더 이동하기" class="icon">
-                                        폴더 이동하기
-                                    </button>
-                                    <button type="button" class="button button--text"
-                                    id="document-delete">
-                                        <img src="/statics/icon/trash-line.svg"
-                                        alt="삭제"class="icon">
-                                        삭제하기
-                                    </button>
-                                </div>
-                                <button type="button" class="button button--text"
-                                id="cancel-selected">
-                                    <img src="/statics/icon/close-line.svg"
-                                    alt="선택취소" class="icon">
-                                    선택 취소
-                                </button>
-                            </div>
-                        </div>
-                        <!-- 컨텐츠 테이블 (for문 생성) -->
-                        <div class="table">
-                            <div class="table__thead">
-                                <div class="table__tr">
-                                    <div class="table__td is-left width-90">
-                                        <div class="table__td width-2">
-                                            <input type="checkbox" class="checkbox checkbox-all"
-                                            id="">
-                                        </div>
-                                        <div class="table__td width-10">상태</div>
-                                        <div class="table__td width-50">템플릿 이름</div>
-                                        <div class="table__td width-10">작성일</div>
-                                        <div class="table__td width-10">수정일</div>
-                                    </div>
-                                    <div class="table__td is-right width-10 flex-justify--center">
-                                        <div class="table__td">추가메뉴</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="table__tbody"></div>
-                        </div>
-                        <div class="table__paging">
-                            <ul class="pagination">
-                                <li class="">
-                                    <button type="button" class="button button--text">
-                                        <img src="/statics/icon/angle-left.svg" 
-                                        class="icon"
-                                        alt="이전페이지">
-                                    </button>
-                                </li>
-                                <ul id="pagination-index-wrap" class="pagination__index-wrap"></ul>
-                                <li class="">
-                                    <button type="button" class="button button--text">
-                                        <img src="/statics/icon/angle-right.svg" 
-                                        class="icon"
-                                        alt="다음페이지">
-                                    </button>
-                                </li>
-                            </ul>
-                            <div id="count-load-table" class="select-box is-medium">
-                                <select class="select-box__select">
-                                    <option value="10" selected>10개씩 보기</option>
-                                    <option value="30">30개씩 보기</option>
-                                    <option value="50">50개씩 보기</option>
-                                </select>
-                                <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
-                            </div>
-                        </div>
-                    </div>
-                   <!-- 사이드 컨텐츠 (이벤트 때 생성) -->
-                    <div class="aside-content">
-                        <div class="container">
-                            <h5>문서 이력</h5>
-                            <div class="inner">
-                                <ul id="aside-summary" class="aside__list basic-list">
-                                </ul>
-                                <a href="/template/burk-submit/signature-set.html"
-                                class="button button--secondary is-medium">진행정보 보기</a>
-                            </div>
-                            
-                            <div class="aside__button-wrap">
-                                <button type="button"
-                                class="button button--outline is-medium is-break">내용 확인하기</button>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <!-- /aside-content -->
-                </div>
-                <!-- /container -->
-            </main>
-        </div>
-
-        
-        <script>
-            let breakpoint = 10
-            
-             $(function(){
-                loadData(breakpoint)
-                getUrl()
-            })
-
-            // 갯수 바뀔 때마다 테이블 새로 불러오기
-            $('#count-load-table').on('change',function(){
-                breakpoint = $('#count-load-table option:selected').val()
-                loadData(breakpoint)
-            })
-
-            // 데이터 로드
-            function loadData(breakpoint){
-                $.ajax({
-                    url: "/json/dummy.json",
-                    type: "GET", 
-                    data:{},
-                    dataType: "json"
-                })
-                .done(function(res) {
-                    let total = res.length;
-                    let paginationLength = Math.ceil(Number(total) / Number(breakpoint));
-
-                    makePagination(paginationLength);
-                    makeTable(res,breakpoint)
-                })
-                .fail(function(xhr, status, errorThrown) {
-                })
-                .always(function(xhr, status) {
-                });
-            }
-            
-            // 쿼리에서 현재 페이지 위치 추출
-            function makePagination(paginationLength){
-                let minPage = 1;                    // 시작페이지
-                // let maxPage = paginationLength;     // 최대페이지 (단, 10개 미만일 경우 total값)
-                let perPage = 10;                   // 뷰에 보이는 페이지 개수
-                // let currentPage = param;            // 현재 페이지 (url 추출)
-                currentPage = 1
-                maxPage = 10
-
-                if(paginationLength > 10){
-                    if(paginationLength % 10 > 0) {
-                        minPage = Math.floor(paginationLength / 10) * 10
-                        maxPage = minPage + 9
-                    }
-                    else{
-                        maxPage = paginationLength / 10 * 10
-                        minPage = maxPage - 9
-                    }
-                }
-
-                for(let i = minPage; i <= maxPage; i++ ){
-                    html = ''
-
-                    i > 5 ?
-                    hideViewportPaginationClass = 'is-pc' :
-                    hideViewportPaginationClass = ''
-
-                    if( i == currentPage){
-                        html += `<li class="pagination__item is-active ${hideViewportPaginationClass}" data-page_num=${i}>${i}</li>`
-                    }
-                    else{
-                        html += `
-                            <li class="pagination__item ${hideViewportPaginationClass}" data-page_num=${i}>${i}</li>
-                        `
-                    }
-                    $('#pagination-index-wrap').append(html)
-                }
-            }
-
-
-            // 테이블 만들기
-            function makeTable(data,breakpoint){
-
-                // 이미 테이블이 생성된 경우 테이블 삭제 후 재생성
-                if($('.table__tbody .table__tr').length > 0) {
-                    $('.table__tbody .table__tr').remove()
-                }
-
-                for (let i = 0; i < breakpoint; i++){
-
-                    if(i > data.length) break;
-                    testClass = null
-
-                    let friends = [];
-                    for(let a = 0; a < data[i].friends.length; a++){
-                        friends.push(data[i].friends[a].name)
-                    }
-
-                    if(data[i].isActive == false){
-                        state = `
-                            <p class="state success" >
-                                <img src="/statics/icon/hourglass-line.svg" class="icon">
-                                진행중
-                            </p>
-                        `
-                        mailAlert = `
-                            <p class="is-remark" >
-                                수신
-                            </p>
-                        `
-                    }
-                    else{
-                        state = `
-                            <p class="state ban">
-                                <img src="/statics/icon/ban-line.svg" class="icon">
-                                만료
-                            </p>
-                        `
-                        mailAlert = `
-                            <p class="is-remark" >
-                                수신안함
-                            </p>
-                        `
-                    }
-
-                    html = ''
-                    html += `
-                    <div class="table__tr ${testClass}" data-id="${data[i].index}">
-                        <div class="table__td is-left width-90">
-                            <div class="table__td check-area width-2">
-                                <input type="checkbox" class="checkbox"
-                                id="">
-                            </div>
-                            <div class="table__td width-10 status-area">
-                                ${state}
-                            </div>
-                            <div class="table__td flex--column gap--sm width-50 title-area">
-                                <p class="table__td--title">${data[i].guid}</p>
-                                <p class="is-remark">${friends}</p>
-                            </div>
-                            <div class="table__td width-10 alarm-area">
-                                ${mailAlert}
-                            </div>
-                            <div class="table__td width-10 latest-area">
-                                <p class="is-remark">2022-12-31 10:59</p>
-                            </div>
-                        </div>
-                        <div class="table__td is-right width-10 flex-justify--center">
-                            <button type="button" class="button button--outline icon-button is-small">
-                                <img class="icon" src="/statics/icon/ellipsis-horizontal-line.svg"
-                                alt="추가메뉴">
-                            </button>
-                        </div>
-                    </div>`
-                    $('.table__tbody').append(html)
-                }
-            }
-
-            // 튜토리얼 기본 숨기기
-            $('#tutorial-wrap').hide()
-
-
-            // 전체 동의
-            $('#checkbox-all').on('click',manageAllCheck)
-
-            function manageAllCheck(){
-                $(this).prop('checked')==true ?
-                $('.checkbox').prop('checked',true) :
-                $('.checkbox').prop('checked',false)
-            }
-
-            // 체크박스 이벤트
-            $(document).on('click','.checkbox',function(){
-                let count = $('.checkbox').filter(':checked').length;
-                checkEvent(count)
-            })
-
-            function checkEvent(count){
-                if(count && count > 0){
-                    $('.table-top').addClass('is-active')
-                    $('#default-top-box').addClass('is-hide')
-                    $('#selected-top-box').removeClass('is-hide')
-
-                    $('#selected-count').text(`(${count})`)
-
-                    $('#document-delete').on('click',function(){
-                        title = '선택한 문서'
-                        makeDeleteModal(title)
-                    })
-                }
-                else{
-                    $('.checkbox').prop('checked',false)
-                    $('.table-top').removeClass('is-active')
-                    $('#default-top-box').removeClass('is-hide')
-                    $('#selected-top-box').addClass('is-hide')
-                }
-            }
-
-            $('#cancel-selected').on('click',function(){
-                checkEvent(null)
-            })
-
-            // 폴더변경 클릭 이벤트
-            $('#change-folder, #document-move, #document-move-this').on('click',makeFolderModal)
-
-            function makeFolderModal(){
-                html = '';
-                html += `
-                <div class="modal">
-                    <div class="modal__header">
-                        <p class="modal__title">
-                            <img src="/statics/icon/exclamation-triangle-line.svg" alt="닫기" class="icon icon--large icon--warning">
-                            폴더 선택
-                        </p>
-                        <button type="button" class="icon-button">
-                            <img src="/statics/icon/close-line.svg" alt="닫기" class="icon modal__close-button">
-                        </button>
-                    </div>
-                    <div class="modal__content">
-                        <div class="modal__search-form">
-                            <input type="text" class="input is-large"
-                            placeholder="검색어를 입력해주세요">
-                            <img class="icon icon" src="/statics/icon/search-line.svg" alt="검색">
-                        </div>
-                        <ul class="modal__list">
-                            <li class="list__item is-active"> 
-                                <img class="icon " src="/statics/icon/folder-open-solid.svg" alt="현재폴더">
-                                전체 폴더 보기
-                            </li>
-                            <li class="list__item "> 
-                                <img class="icon " src="/statics/icon/folder-line.svg" alt="현재폴더">
-                                기본 폴더
-                            </li>
-                            <li class="list__item" data-id="${0}"> 
-                                <img class="icon " src="/statics/icon/folder-line.svg" alt="현재폴더">
-                                기존 사용 서식
-                                <div class="flex--row flex-align--center">
-                                    <button type="button">삭제</button>
-                                    <button type="button">완료</button>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="modal__footer">
-                        <button type="button" class="button--primary button--large"
-                        id="create-new-folder">새 폴더 추가하기</button>
-                    </div>
-                </div>
-                `
-                $('.main').append(html)
-            }
-
-            // 새 폴더 만들기
-            $(document).on('click','#create-new-folder',createNewFolder)
-            function createNewFolder(){
-                html = '';
-                html += `
-                    <div class="flex--row">
-                        <input type="text" class="input">
-                        <button type="button" id="cancel-new-folder">취소</button>
-                        <button type="button" id="submit-new-folder">완료</button>
-                    </div>
-                `
-                $('.modal__list').append(html)
-
-                $('#cancel-new-folder').on('click',function(){
-                    $(this).parents('.flex--row').remove()
-                })
-                $('#submit-new-folder').on('click',function(){
-                    if($(this).siblings('.input').val().length < 1){
-                        alert('폴더명을 입력해주세요')
-                    }
-                    else{
-                        $(this).parents('.flex--row').remove()
-                        $('.modal__list').append(`
-                            <li class="flex--row flex-align--center"> 
-                                <img class="icon " src="/statics/icon/folder-line.svg" alt="현재폴더">
-                                ${$(this).siblings('.input').val()}
-                            </li>
-                        `)
-                    }
-                })
-            }
-            
-            // 폴더 변경하기
-            function changeFolder(){
-                $.ajax({
-                    url: "/json/dummy.json",
-                    type: "GET", 
-                    data:{},
-                    dataType: "json"
-                })
-                .done(function(res) {
-                    makeTable(res)
-                })
-                .fail(function(xhr, status, errorThrown) {
-                })
-                .always(function(xhr, status) {
-                });
-            }
-
-
-            // 더보기 버튼 클릭
-            function makeMoreEvent(){
-                const documentId =$(this).attr('data-id')
-                html = '';
-                html += `
-                <ul class="list-modal">
-                    <li id="document-name-change-this">문서이름변경</li>
-                    <li id="document-download-this">다운로드</li>
-                    <li id="document-move-this">폴더이동</li>
-                    <li id="document-delete-this">삭제</li>
-                </ul>
-                `
-                if($('.table__tr .list-modal').length < 1){
-                    $(this).append(html)
-                    $(this).parents('.table__tr').css('z-index','10')
-                }
-                else{
-                    $('.table__tr').css('z-index','0')
-                    $('.table__tr .list-modal').remove()
-                }
-
-                $('#document-name-change-this').on('click',makeDeleteModal)
-                $('#document-download-this').on('click',makeDeleteModal)
-                $('#document-move-this').on('click',makeFolderModal)
-                $('#document-delete-this').on('click',function(){
-                    const documentTitle = $(this).parents('.table__tr').find('.doc-header__title').text()
-                    makeDeleteModal(documentTitle)
-                })
-            }
-
-            $(document).on('click','.table__tbody .table__tr .button--outline',makeMoreEvent)
-
-            // 삭제 이벤트
-            function makeDeleteModal(string){
-                html = '';
-                html += `
-                <div class="modal">
-                    <div class="modal__header">
-                        <p class="modal__title">
-                            <img src="/statics/icon/exclamation-triangle-line.svg" alt="닫기" class="icon icon--large icon--warning">
-                            휴지통으로 보내기
-                        </p>
-                        <button type="button" class="icon-button">
-                            <img src="/statics/icon/close-line.svg" alt="닫기" class="icon modal__close-button">
-                        </button>
-                    </div>
-                    <div class="modal__content">
-                        <p>
-                            <span class="font-weight--medium">${string}</span>
-                            를 휴지통으로 보낼까요?
-                        </p>
-                    </div>
-                    <div class="modal__footer">
-                        <button type="button" class="button--primary button--large">확인</button>
-                    </div>
-                </div>
-                `
-                $('.main').append(html)
-            }
-
-            $(document).on('click','.table__tr',makeAsideContent)
-
-            function makeAsideContent(e){
-
-                // thead 영역일 경우 aisde 생성 안함
-                if($(this).parent('.table__thead').length > 0){
-                    if(e.target.className !== 'checkbox'){
-                        return false;
-                    }
-                    else{
-                        return
-                    }
-                }
-
-
-                if(e.target.closest('button')||e.target.closest('.list-modal')) return false;
-                else if ($('.aside-content .container').length > 0){
-                    $('.aside-content').toggleClass('is-active')
-                }
-                else{
-                    return false;
-                }
-                
-                // $('.aside-content').css({'height':$('.main > .container').outerHeight()})
-
-                let userId = $(this).attr('data-id')
-                loadAsideData(userId)
-            }
-
-            // 문서이력
-            function loadAsideData(userId){
-                $.ajax({
-                    url: "/json/dummy.json",
-                    type: "GET", 
-                    data:{},
-                    dataType: "json"
-                })
-                .done(function(res) {
-                    const result = res.find(item => item.index == userId)
-                    
-                    let title = '문서이력'
-                    let html = ''
-
-                    if($('.aside__list__item').length > 0){
-                        $('.aside__list__item').remove()
-                    }
-
-                    for(let i = 0; i < 3; i++){
-                        html += `
-                        <li class="aside__list__item">
-                            <p class="font-weight--medium">
-                                ${result.friends[i].name}
-                            </p>
-                            <p class="">
-                                ${result.email}
-                            </p>
-                            <p class="body--small">${result.registered.substr(0,10)}</p>
+        <!-- <div class="wrapper"> -->
+            <!-- 상단 헤더 -->
+            <div class="doc-header is-fixed" id="doc-header">
+                <div class="container is-center">
+                    <ul class="flex--row ">
+                        <li class="step is-active">
+                            <a href="javascript:void(0)">
+                                <span>1</span>서명자 정보 입력
+                            </a>
                         </li>
-                            `
-                    }
-                    $('#aside-summary').append(html)
-                })
-                .fail(function(xhr, status, errorThrown) {
-                })
-                .always(function(xhr, status) {
-                });
-            }
+                        <li class="step">
+                            <a href="javascript:void(0)">
+                                <span>2</span>서명 영역 지정
+                            </a>
+                        </li>
+                        <li class="step">
+                            <a href="/template/burk-submit/contract-set.html">
+                                <span>3</span>계약서 설정 및 발송
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- // 상단헤더 -->
+            <main class="main main--background padding-vertical--xxl">
+                <!-- 메인 컨텐츠 -->
+                <div class="container">
+                    <div class="main-content">
+                        
+                    </div>
+                    <!-- /main-content -->
+                </div>
+                <!-- container -->
+                <div class="doc-header is-fixed" id="doc-footer">
+                    <div class="container is-center">
+                        <a href="/template/burk-submit/burk-list.html" class="button is-large button--text">이전</a>
+                        <a href="javascript:void(0)" class="button is-large button--primary">다음</a>
+                    </div>
+                </div>
+            <!-- </div> -->
+            </main>
+            
+        <script>
+            $('html').attr('data-theme',localStorage.getItem('data-theme'))
 
+            // function manageCardInput(id,type){
+            //     if(id!==null){
+            //         $(`.card[data-id=${id}] .input`).not('input[type=text]').addClass('is-hide')
+            //         $(`.card[data-id=${id}] .input[type=${type}]`).removeClass('is-hide')
+            //     }
+            //     else{
+            //         $(`.card .input`).not('input[type=text]').addClass('is-hide')
+            //         $(`.card .input[type=${type}]`).removeClass('is-hide')
+            //     }
+            // }
+
+
+            // $(function(){
+            //     $('.nav').hide()
+
+            //     let type = $('.card .tab__item.is-active').attr('data-type');
+            //     manageCardInput(null,type)
+            // })
+            
+
+            // $('.card .tab__item').on('click',function(){
+            //     let card_id = $(this).parents('.card').attr('data-id')
+            //     let type = $(this).attr('data-type');
+
+            //     manageCardInput(card_id,type)
+            // })
+
+            // $('#add-signature').on('click',function(){
+            //     card_id = Number($(`.card:nth-child(${$('.card').length - 1})`).attr('data-id'))
+
+            //     let html = ''
+            //     html += `<div class="card" data-id="${card_id+1}">
+            //         <div class="card__content">
+            //             <div class="card__row">
+            //                 <p class="">${card_id+1} 번째 서명자</p>
+            //                 <button type="button" class="button button--text is-small is-accent">삭제</button>
+            //             </div>
+            //             <input type="text" class="input is-small" placeholder="성명을 입력해주세요">
+
+            //             <ul class="tab">
+            //                 <li class="tab__item is-active" data-type="email">이메일</li>
+            //                 <li class="tab__item" data-type="number">휴대전화</li>
+            //             </ul>
+            //             <input type="email" class="input is-smalle" placeholder="이메일을 입력해주세요">
+            //             <input type="number" class="input is-small is-hide" placeholder="휴대전화번호를 입력해주세요">
+            //         </div>
+            //     </div>`
+            //     $(this).parents('.card').before(html)
+
+            //     if($('#doc-footer').offset().top > $(window).height()) {
+            //         console.log('hello')
+            //         $('body').animate({
+            //             'scrollTop':$('.card:last-child').offset().top + $('.card:last-child').innerHeight()
+            //         },10)
+            //         $('.full-grid').css({
+            //             'padding-bottom':'6rem'
+            //         })
+            //         $('#doc-footer').addClass('is-fixed');
+            //     }
+            // })
+
+            
         </script>
-        <!-- <script src="/statics/js/tutorial.js"></script> -->
         <script src="/statics/js/common.js"></script>
     </body>
     
