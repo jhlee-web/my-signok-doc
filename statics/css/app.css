@@ -790,6 +790,23 @@
     display: block;
 }
 */
+.signature-area {
+    display: flex;
+    padding: 0 2rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+@media all and (max-width: 768px) {
+    .check-default-area .button{
+        width: unset;
+    }
+    .signature-area{
+        height: 10rem;
+    }
+}
+
 
 /* jstree */
 /* .jstree-icon{

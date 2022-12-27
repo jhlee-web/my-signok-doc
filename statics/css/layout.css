@@ -537,6 +537,9 @@
     .full-grid.right-double{
         grid-template-columns: 1fr;
     }
+    .full-grid.is-quarter{
+        grid-template-columns: repeat(3,1fr);
+    }
 
     .card.is-column-full{
         grid-column: unset;
@@ -567,6 +570,9 @@
     }
     .full-grid.right-double{
         grid-template-columns: 1fr;
+    }
+    .full-grid.is-quarter{
+        grid-template-columns: repeat(2,1fr);
     }
 
     .card.is-column-full{
