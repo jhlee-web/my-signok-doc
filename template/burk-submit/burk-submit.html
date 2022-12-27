@@ -5,6 +5,7 @@
         <script>
             loadHTML("/statics/include/head.html");
         </script>
+        <link rel="stylesheet" href="/statics/lib/Datetime-Picker/css/datetimepicker.css">
         <title>대량발송 | 대량발송 시작하기</title>
     </head>
 
@@ -78,11 +79,11 @@
                                     <p class="is-remark">
                                         계약수량
                                     </p>
-                                    <button type="button" class="button button--text">
+                                    <a href="javascript:void(0)" class="button button--text">
                                         충전하기
                                         <img class="icon is-end" src="/statics/icon/pop-out-line.svg"
                                         alt="충전하기">
-                                    </button>
+                                    </a>
                                 </div>
                                 <ul class="basic-list">
                                     <li class="flex--row flex-justify--between">
@@ -119,6 +120,23 @@
                                     <input type="text" class="input" readonly>
                                     <button type="button" class="button button--secondary" disabled>이름변경</button>
                                 </div>
+                                <div class="flex--column width-100">
+                                    <p class="is-remark">발송 방법 <span class="is-primary">*</span></p>
+                                    <div class="flex--row">
+                                        <div class="control-form">
+                                            <input type="radio" class="radio" name="submit-type" checked>
+                                            <label for="">바로발송</label>
+                                        </div>
+                                    </div>
+                                    <div class="flex--row">
+                                        <div class="control-form">
+                                            <input type="radio" class="radio" name="submit-type">
+                                            <label for="">예약발송</label>
+                                        </div>
+                                        <div id="date-time-picker" class="width-100"></div>
+                                        <input type="hidden" id="" readonly >
+                                    </div>
+                                </div>
                             </div>
                             
                         </div>
@@ -136,72 +154,22 @@
             </main>
         </div>
         <!-- /wrapper -->
-            
+        <script src="/statics/lib/moment/min/moment-with-locales.min.js"></script>
+        <script src="/statics/lib/Datetime-Picker/js/datetimepicker.js"></script>
         <script>
-            $('html').attr('data-theme',localStorage.getItem('data-theme'))
-
-            // function manageCardInput(id,type){
-            //     if(id!==null){
-            //         $(`.card[data-id=${id}] .input`).not('input[type=text]').addClass('is-hide')
-            //         $(`.card[data-id=${id}] .input[type=${type}]`).removeClass('is-hide')
-            //     }
-            //     else{
-            //         $(`.card .input`).not('input[type=text]').addClass('is-hide')
-            //         $(`.card .input[type=${type}]`).removeClass('is-hide')
-            //     }
-            // }
-
-
-            // $(function(){
-            //     $('.nav').hide()
-
-            //     let type = $('.card .tab__item.is-active').attr('data-type');
-            //     manageCardInput(null,type)
-            // })
-            
-
-            // $('.card .tab__item').on('click',function(){
-            //     let card_id = $(this).parents('.card').attr('data-id')
-            //     let type = $(this).attr('data-type');
-
-            //     manageCardInput(card_id,type)
-            // })
-
-            // $('#add-signature').on('click',function(){
-            //     card_id = Number($(`.card:nth-child(${$('.card').length - 1})`).attr('data-id'))
-
-            //     let html = ''
-            //     html += `<div class="card" data-id="${card_id+1}">
-            //         <div class="card__content">
-            //             <div class="card__row">
-            //                 <p class="">${card_id+1} 번째 서명자</p>
-            //                 <button type="button" class="button button--text is-small is-accent">삭제</button>
-            //             </div>
-            //             <input type="text" class="input is-small" placeholder="성명을 입력해주세요">
-
-            //             <ul class="tab">
-            //                 <li class="tab__item is-active" data-type="email">이메일</li>
-            //                 <li class="tab__item" data-type="number">휴대전화</li>
-            //             </ul>
-            //             <input type="email" class="input is-smalle" placeholder="이메일을 입력해주세요">
-            //             <input type="number" class="input is-small is-hide" placeholder="휴대전화번호를 입력해주세요">
-            //         </div>
-            //     </div>`
-            //     $(this).parents('.card').before(html)
-
-            //     if($('#doc-footer').offset().top > $(window).height()) {
-            //         console.log('hello')
-            //         $('body').animate({
-            //             'scrollTop':$('.card:last-child').offset().top + $('.card:last-child').innerHeight()
-            //         },10)
-            //         $('.full-grid').css({
-            //             'padding-bottom':'6rem'
-            //         })
-            //         $('#doc-footer').addClass('is-fixed');
-            //     }
-            // })
-
-            
+            $('#date-time-picker').dateTimePicker({
+                dateFormat:"YYYY-MM-DD HH:mm",
+                locale:"ko",
+                showtime:true,
+                selectData:'now',
+                positionShift:{
+                    top:0,
+                    left:0,
+                    // right:0
+                },
+                title:"예약시간을 설정해주세요",
+                buttonTitle:"확인",
+            })
         </script>
         <script src="/statics/js/common.js"></script>
     </body>
