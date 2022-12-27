@@ -625,6 +625,11 @@ label{
     margin-right: .5rem;
 }
 
+.button:not(.icon-button) .icon.is-end{
+    margin: 0;
+    margin-left: .5rem;
+}
+
 .button:hover{
     transition: .3s;
 }
@@ -720,6 +725,11 @@ label{
         height: 2.5rem;
         line-height: 2.5rem;
         padding: 0 1.25rem;
+    }
+
+    .card .button--text{
+        width: fit-content;
+        padding: 0;
     }
 }
 
