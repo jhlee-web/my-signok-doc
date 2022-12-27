@@ -629,9 +629,9 @@ label{
     transition: .3s;
 }
 .button:disabled{
-    background: var(--theme-color-100);
-    border: var(--theme-color-400);
-    color: var(--theme-color-400);
+    background: var(--theme-color-400);
+    border: 1px solid var(--theme-color-400);
+    color: var(--text-color-400);
 }
 
 
@@ -1105,12 +1105,12 @@ label{
 
 
 /* step */
-.step a{
+.header-step a{
     display: flex;
     align-items: center;
     gap: .5rem;
 }
-.step span{
+.header-step span{
     border: 1px solid var(--theme-color-400);
     display: inline-flex;
     align-items: center;
@@ -1120,22 +1120,22 @@ label{
     height: 2rem;
     border-radius: 999%;
 }
-.step.is-active span{
+.header-step.is-active span{
     background: var(--primary-color-500);
     color: var(--white);
     border: unset;
 }
-.step.is-active a{
+.header-step.is-active a{
     color: var(--primary-color-500);
     font-weight: 500;
 }
 
 @media all and (max-width:768px){
-    .step a{
+    .header-step a{
         flex-direction: column;
         gap: 0.25em;
     }
-    .step span{
+    .header-step span{
         width: 1.5em;
         height: 1.5em;
     }

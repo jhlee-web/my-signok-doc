@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="/statics/lib/jquery-3.6.1.min.js"></script>
+
+    <link rel="stylesheet" href="/statics/lib/SpreadJS/css/gc.spread.sheets.15.2.5.css">
+    <script src="/statics/lib/jquery-3.6.1.min.js"></script>
+    <script src="/statics/lib/SpreadJS/scripts/gc.spread.sheets.all.15.2.5.min.js"></script>
+    
+    <style>
+    *{
+        background: #BB49BA;
+        background: #DB7093;
+        background: #5508c3;
+        background: #5942bb;
+        background: #6967DC;
+
+        background: #3f4acb;
+        background: #4169E1;
+        background: #0079E1;
+        background: #1E90FF;
+        background: #4682B4;
+        
+        background: #FA8072;
+        background: #FFA07A;
+        background: #FFA500;
+        background: #feba45;
+        background: #ffd706;
+
+        background: #3CB371;
+        background: #21c596;
+        background: #13d19b;
+        background: #6add72;
+
+
+    }
+
+    </style>
+</head>
+<body>
+    <button type="button" class="" id="run">업로드</button>
+    <div id="spread__body">here</div>
+    <script>
+        $('#spread__body').hide()
+        $('#run').on('click',function(){
+            $('#spread__body').show()
+        })
+
+        $(function(){
+            loadSpreadJs()
+        })
+
+        function loadSpreadJs(){
+            const spread = new GC.Spread.Sheets.Workbook(document.getElementById('spread__body'), {
+                sheetCount: 1
+            });
+        }
+    </script>
+
+<script>
+    let arr = [
+        '#EE3649',
+        '#E62A85',
+        '#BB49BA',
+        '#6967DC',
+        '#0079E1',
+        '#0081C9',
+        '#EE3649',
+        '#EE3649',
+        '#EE3649',
+        '#EE3649',
+        '#EE3649',
+        '#EE3649',
+        '#EE3649',
+        '#EE3649',
+        '#EE3649',
+        '#EE3649',
+        '#EE3649',
+        '#EE3649',
+        '#EE3649',
+        '#EE3649',
+        '#EE3649',
+
+    ] 
+
+</script>
+</body>
+</html>

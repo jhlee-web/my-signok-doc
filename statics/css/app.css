@@ -787,3 +787,30 @@
     font-weight: 500;
 }
 
+/*
+    step sets
+    대량발송에 사용
+*/
+
+.step-container{
+    padding: 2rem;
+    border-right: 1px solid black;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.step__title{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+
+    font-weight: 700;
+    font-size: calc(1.333 * 1.333 * 1rem);
+    line-height: 1.5em;
+}
+
+.step__title span{
+    color: var(--primary-color-500);
+}

@@ -9,47 +9,116 @@
     </head>
 
     <body>
-        <!-- <div class="wrapper"> -->
-            <!-- 상단 헤더 -->
-            <div class="doc-header is-fixed" id="doc-header">
-                <div class="container is-center">
-                    <ul class="flex--row ">
-                        <li class="step is-active">
-                            <a href="javascript:void(0)">
-                                <span>1</span>서명자 정보 입력
-                            </a>
-                        </li>
-                        <li class="step">
-                            <a href="javascript:void(0)">
-                                <span>2</span>서명 영역 지정
-                            </a>
-                        </li>
-                        <li class="step">
-                            <a href="/template/burk-submit/contract-set.html">
-                                <span>3</span>계약서 설정 및 발송
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!-- // 상단헤더 -->
-            <main class="main main--background padding-vertical--xxl">
+        <div class="wrapper">
+            <script>
+                loadHTML("/statics/include/nav.html");
+            </script>
+            <main class="main ">
+                <!-- 상단 헤더 -->
+                <script>
+                    loadHTML("/statics/include/sub_header.html");
+                </script>
+                <!-- // 상단헤더 -->
                 <!-- 메인 컨텐츠 -->
                 <div class="container">
                     <div class="main-content">
-                        
+                        <div class="full-grid">
+                            <div class="step-container">
+                                <h3 class="step__title">
+                                    <span>01</span>
+                                    템플릿 대량 발송 여부 확인
+                                </h3>
+                                <div class="flex--column">
+                                    <p class="is-remark">계약서</p>
+                                    <div class="control-form">
+                                        <input type="text" class="input" readonly>
+                                        <button type="button" class="button button--secondary" disabled>이름변경</button>
+                                    </div>
+                                </div>
+                                <div class="flex--column">
+                                    <p class="is-remark">접근설정</p>
+                                    <div class="control-form">
+                                        <input type="radio" class="radio" name="auth-method" checked>
+                                        <label for="">설정안함</label>
+                                    </div>
+                                    <div class="control-form">
+                                        <input type="radio" class="radio" name="auth-method">
+                                        <label for="">비밀번호</label>
+                                    </div>
+                                    <div class="control-form">
+                                        <input type="radio" class="radio" name="auth-method">
+                                        <label for="">PASS 간편</label>
+                                    </div>
+                                </div>
+                                <div class="flex--column">
+                                    <p class="is-remark">계약서</p>
+                                    <textarea class="textarea" rows="4" maxlength="200"></textarea>
+                                </div>
+                                <div class="flex--column">
+                                    <div class="control-form">
+                                        <label for="">
+                                            서명완료 메일을 매회 수신합니다
+                                            <img src="/statics/icon/angle-right.svg" class="icon">
+                                        </label>
+                                        <input type="checkbox" class="checkbox">
+                                    </div>
+                                    <p class="is-remark">서명자가 서명을 할 때마다 서명 완료 메일을 받을 수 있습니다.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- step 2 -->
+                            <div class="step-container">
+                                <h3 class="step__title">
+                                    <span>02</span>
+                                    엑셀 파일 업로드
+                                </h3>
+                                <div class="flex--column">
+                                    <img src="/statics/icon/plus-circle-line.svg" class="icon is-large">
+                                    <p class="k">대량발송 시작하기</p>
+                                    <p class="font-weight--medium">문서명</p>
+                                    <p class="font-weight--medium">계약서 대량 발송을 시작합니다.</p>
+                                </div>
+                                <div class="flex--column">
+                                    <button type="button" class="button button--secondary">
+                                        <img src="/statics/icon/angle-down.svg" class="icon">엑셀 양식 다운로드
+                                    </button>
+                                    <button type="button" class="button button--outline">
+                                        <img src="/statics/icon/angle-down.svg" class="icon">엑셀 파일 업로드
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- step 3 -->
+                            <div class="step-container">
+                                <h3 class="step__title">
+                                    <span>03</span>
+                                    시험 발송 및 대량발송 시작
+                                </h3>
+                                <p class="is-remark">
+                                    서명요청 대량발송 전, 시험발송을 통해 보다 신중하게 대량발송을 할 수 있습니다.<br>
+                                    아래의 시험발송용 이메일 및 연락처를 입력하여 테스트 해보세요.
+                                </p>
+                                <div class="control-form">
+                                    <input type="text" class="input" readonly>
+                                    <button type="button" class="button button--secondary" disabled>이름변경</button>
+                                </div>
+                            </div>
+                            
+                        </div>
                     </div>
                     <!-- /main-content -->
                 </div>
                 <!-- container -->
                 <div class="doc-header is-fixed" id="doc-footer">
                     <div class="container is-center">
-                        <a href="/template/burk-submit/burk-list.html" class="button is-large button--text">이전</a>
-                        <a href="javascript:void(0)" class="button is-large button--primary">다음</a>
+                        <button type="button" class="button is-large button--text">이전</button>
+                        <button type="button" class="button is-large button--primary">다음</button>
                     </div>
                 </div>
             <!-- </div> -->
             </main>
+        </div>
+        <!-- /wrapper -->
             
         <script>
             $('html').attr('data-theme',localStorage.getItem('data-theme'))
