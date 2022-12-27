@@ -60,7 +60,11 @@
                 var $content = createContent();
                 $body.append($content);
                 var offset = elem.offset();
-                $content.css({top: (offset.top + settings.positionShift.top) + "px", left: (offset.left + settings.positionShift.left) + "px"});
+                // console.log(of fset)
+                $content.css({
+                    top: (offset.top + settings.positionShift.top) + "px",
+                    left: (offset.left + settings.positionShift.left) + "px"
+                });
                 feelDates(selectDate);
                 $win.on('click', function () {
                     $content.remove();

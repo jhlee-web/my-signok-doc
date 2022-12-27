@@ -57,8 +57,8 @@
                                 $(function(){
                                     for (let i = 1; i <= 5; i++){
                                         $('#test-wrap').append(`
-                                            <li class="list__item">
-                                                <span class="is-remark">${i}</span>
+                                            <li class="flex--row is-change flex-align--start">
+                                                <span class="is-remark is-pc">${i}</span>
                                                 <span class="is-ellipsis">0s,whenanunknownprintertookagal2 </span>
                                                 <span class="is-ellipsis is-remark">0s,whenanunknownprintertookagalleyoftypeandscrambledis@email.com</span>
                                             </li>
@@ -116,7 +116,7 @@
                                     서명요청 대량발송 전, 시험발송을 통해 보다 신중하게 대량발송을 할 수 있습니다.<br>
                                     아래의 시험발송용 이메일 및 연락처를 입력하여 테스트 해보세요.
                                 </p>
-                                <div class="control-form">
+                                <div class="flex--row is-change">
                                     <input type="text" class="input" readonly>
                                     <button type="button" class="button button--secondary" disabled>이름변경</button>
                                 </div>
@@ -157,18 +157,28 @@
         <script src="/statics/lib/moment/min/moment-with-locales.min.js"></script>
         <script src="/statics/lib/Datetime-Picker/js/datetimepicker.js"></script>
         <script>
-            $('#date-time-picker').dateTimePicker({
-                dateFormat:"YYYY-MM-DD HH:mm",
-                locale:"ko",
-                showtime:true,
-                selectData:'now',
-                positionShift:{
-                    top:0,
-                    left:0,
-                    // right:0
-                },
-                title:"예약시간을 설정해주세요",
-                buttonTitle:"확인",
+            $(function(){
+                let width = $('#date-time-picker').width()
+                let rem = 14 + ($(document).width() * 0.001)
+
+
+                // right fix하는 방법 찾아보기
+                /*
+                    viewport width 구해서
+                    left 변수로 저장해서 계산식 적용하기
+                */
+                $('#date-time-picker').dateTimePicker({
+                    dateFormat:"YYYY-MM-DD HH:mm",
+                    locale:"ko",
+                    showtime:true,
+                    selectData:'now',
+                    positionShift:{
+                        top:0,
+                        left:0 - width - (2 * rem),
+                    },
+                    title:"예약시간을 설정해주세요",
+                    buttonTitle:"확인",
+                })
             })
         </script>
         <script src="/statics/js/common.js"></script>

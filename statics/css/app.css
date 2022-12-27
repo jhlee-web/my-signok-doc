@@ -858,6 +858,11 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+
+    width: 100%;
+    overflow-x: hidden;
+
+    padding-bottom: var(--header-height);
 }
 
 .step__title{
@@ -872,4 +877,17 @@
 
 .step__title span{
     color: var(--primary-color-500);
+}
+
+@media all and (max-width:768px){
+    .step-container{
+        padding: 1rem;
+        gap: 1rem;
+
+        padding-bottom: var(--header-height);
+
+        border-right: none;
+        border-bottom:1px solid black
+
+    }
 }
