@@ -492,6 +492,9 @@
 .full-grid.is-double{
     grid-template-columns: repeat(2,1fr);
 }
+.full-grid.is-quarter{
+    grid-template-columns: repeat(4,1fr);
+}
 
 .full-grid.left-double{
     grid-template-columns: 1fr 33%;

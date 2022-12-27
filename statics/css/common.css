@@ -154,7 +154,7 @@ option{
     color: var(--secondary-color-400);
 }
 .is-primary{
-    color: var(--primary-color-500);
+    color: var(--primary-color-500) !important;
 }
 .is-break{
     word-break: break-all;
@@ -274,7 +274,7 @@ option{
     width: 2rem;
 }
 
-.icon.is-warning{
+.icon.is-primary{
     filter: var(--filter-primary);
 }
 

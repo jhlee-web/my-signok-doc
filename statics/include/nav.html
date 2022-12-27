@@ -65,7 +65,7 @@
         </li>
         
         <li data-nav="signature">
-            <a href="javascript:void(0)" class="nav-item">
+            <a href="/template/signature/signature.html" class="nav-item">
                 <img class="icon nav-item__icon" src="/statics/icon/digital-signature-line.svg"></img>
                 <span class="nav__name is-unfold">사인/도장</span>
             </a>
@@ -229,7 +229,7 @@
     function setTheme(setTheme){
 
         switch(setTheme){
-            case undefined || null || 'light':
+            case undefined || null || 'null' || 'light':
                 currentTheme['data-theme'] = 'light';
                 currentTheme['toggle'] = false
                 break;
