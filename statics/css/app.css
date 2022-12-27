@@ -699,7 +699,7 @@
     flex-direction: column;
     gap: 2rem;
 }
-.card .button--text{
+.card .button--text, .step-container .button--text{
     width: fit-content;
     padding: 0;
 }
