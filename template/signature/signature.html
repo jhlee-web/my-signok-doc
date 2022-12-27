@@ -33,19 +33,62 @@
                         <div class="full-grid is-quarter">
                             <div class="signature-card">
                                 <div class="check-default-area flex-justify--end">
-                                    <button class="button icon-button"><img src="/statics/icon/book-line.svg" alt="" class="icon"></button>
+                                    <button class="button icon-button">
+                                        <img src="/statics/icon/star-line.svg" alt="" class="icon on">
+                                        <img src="/statics/icon/star-solid.svg" alt="" class="icon is-primary">
+                                    </button>
                                 </div>
                                 <div class="signature-area">
                                     signature
                                 </div>
                                 <div class="user-active-area flex--row flex-justify--between">
                                     <button class="button button--text re"><img src="/statics/icon/trash-line.svg" class="icon">삭제</button>
-                                    <button class="button button--text"><img src="/statics/icon/ban-line.svg" class="icon">다운로드</button>
+                                    <button class="button button--text"><img src="/statics/icon/download-line.svg" class="icon">다운로드</button>
                                 </div>
                             </div>
-                            <div class="signature-card"></div>
-                            <div class="signature-card"></div>
-                            <div class="signature-card"></div>
+                            <div class="signature-card">
+                                <div class="check-default-area flex-justify--end">
+                                    <button class="button icon-button">
+                                        <img src="/statics/icon/star-line.svg" alt="" class="icon on">
+                                        <img src="/statics/icon/star-solid.svg" alt="" class="icon is-primary">
+                                    </button>
+                                </div>
+                                <div class="signature-area">
+                                    signature
+                                </div>
+                                <div class="user-active-area flex--row flex-justify--between">
+                                    <button class="button button--text re"><img src="/statics/icon/trash-line.svg" class="icon">삭제</button>
+                                    <button class="button button--text"><img src="/statics/icon/download-line.svg" class="icon">다운로드</button>
+                                </div>
+                            </div><div class="signature-card">
+                                <div class="check-default-area flex-justify--end">
+                                    <button class="button icon-button">
+                                        <img src="/statics/icon/star-line.svg" alt="" class="icon on">
+                                        <img src="/statics/icon/star-solid.svg" alt="" class="icon is-primary">
+                                    </button>
+                                </div>
+                                <div class="signature-area">
+                                    signature
+                                </div>
+                                <div class="user-active-area flex--row flex-justify--between">
+                                    <button class="button button--text re"><img src="/statics/icon/trash-line.svg" class="icon">삭제</button>
+                                    <button class="button button--text"><img src="/statics/icon/download-line.svg" class="icon">다운로드</button>
+                                </div>
+                            </div><div class="signature-card">
+                                <div class="check-default-area flex-justify--end">
+                                    <button class="button icon-button">
+                                        <img src="/statics/icon/star-line.svg" alt="" class="icon">
+                                        <img src="/statics/icon/star-solid.svg" alt="" class="icon is-primary">
+                                    </button>
+                                </div>
+                                <div class="signature-area">
+                                    signature
+                                </div>
+                                <div class="user-active-area flex--row flex-justify--between">
+                                    <button class="button button--text re"><img src="/statics/icon/trash-line.svg" class="icon">삭제</button>
+                                    <button class="button button--text"><img src="/statics/icon/download-line.svg" class="icon">다운로드</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -54,7 +97,14 @@
        
         
         <script>
+            $(".check-default-area .button").on("click", function() {
+                $('.check-default-area .icon').addClass('on')
+                $('.check-default-area .icon.is-primary').removeClass('on')
 
+                $(this).find('.icon').removeClass('on')
+                $(this).find('.icon.is-primary').addClass('on')
+
+            });
         </script>
     </body>
     
