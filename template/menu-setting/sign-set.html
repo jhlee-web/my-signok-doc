@@ -28,13 +28,13 @@
                         <div class="tab-wrap">
                             <ul class="tab">
                                 <li class="tab__item--badge ">
-                                    <a href="/template/menu-setting/user-set.html">메뉴 설정</a>
+                                    <a href="/template/menu-setting/menu-set.html">메뉴 설정</a>
                                 </li>
                                 <li class="tab__item--badge is-active">
                                     <a href="javascript:void(0)">서명 설정</a>
                                 </li>
                                 <li class="tab__item--badge ">
-                                    <a href="/template/menu-setting/company-set.html">고급 기능 설정</a>
+                                    <a href="/template/menu-setting/advance-set.html">고급 기능 설정</a>
                                 </li>
                             </ul>
                         </div>
@@ -45,7 +45,7 @@
                                 <div class="card">
                                     <p class="is-remark">서명 방식(필수)</p>
                                     <div class="flex--column gap--sm">
-                                        <div class="control-form">
+                                        <div class="checkbox__item">
                                             <label for="simple-contarct"
                                             class="font-weight--medium">
                                                 간편서명
@@ -58,12 +58,12 @@
                                         </p>
                                     </div>
                                     <div class="flex--column gap--sm">
-                                        <div class="control-form">
-                                            <label for="simple-contarct"
+                                        <div class="checkbox__item">
+                                            <label for="public-contarct"
                                             class="font-weight--medium">
                                                 공동인증서 서명 (구 공인인증서)
                                             </label>
-                                            <input type="checkbox" class="checkbox" id="simple-contarct">
+                                            <input type="checkbox" class="checkbox" id="public-contarct">
                                         </div>
                                         <p class="is-remark">
                                             서명자는 회원가입 없이 싸인, 도장을 만들어 서명할 수 있습니다.<br>
@@ -74,10 +74,10 @@
                                         </p>
                                     </div>
                                     <div class="flex--column gap--sm">
-                                        <div class="control-form">
-                                            <label for="simple-contarct"
+                                        <div class="checkbox__item">
+                                            <label for="burk-contarct"
                                             class="font-weight--medium">대량서명</label>
-                                            <input type="checkbox" class="checkbox" id="simple-contarct">
+                                            <input type="checkbox" class="checkbox" id="burk-contarct">
                                         </div>
                                         <p class="is-remark">
                                             최대 200명에게 동시다발적으로 많은 서명을 요청합니다.<br>
@@ -92,7 +92,7 @@
                                 <!-- /card -->
                             </div>
                             <!-- /card-wrap -->
-                            <div class="card" id="event">
+                            <div class="card is-row-full" id="event">
                                 <img class="" src="https://source.unsplash.com/random">
                             </div>
                         </div>
