@@ -380,7 +380,15 @@
 }
 
 
-
+/* popup */
+.popup__content{
+    padding: 2rem;
+}
+.popup__footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 /* modal */
 .modal,.popup{
     background:var(--background-color);

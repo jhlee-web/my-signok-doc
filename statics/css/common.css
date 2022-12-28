@@ -270,8 +270,15 @@ option{
     filter:var(--filter-text-600)
 }
 
+#download-excel .icon{
+    filter: unset;
+}
+
 .icon.is-large{
     width: 2rem;
+}
+.icon.is-xl{
+    width: 2.5rem;
 }
 
 .icon.is-primary{

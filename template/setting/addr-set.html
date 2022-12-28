@@ -51,31 +51,22 @@
                                     <div class="flex--row is-change">
                                         <button type="button" class="button is-small button--outline"
                                         id="change-folder">
-                                            <img src="/statics/icon/folder-line.svg" alt="닫기" class="icon icon--large icon--warning">
-                                            폴더선택
+                                            <img src="/statics/icon/group-line.svg" alt="닫기" class="icon icon--large icon--warning">
+                                            그룹보기
                                         </button>
                                         <!-- css수정 필요 -->
-                                        <div class="select-box">
-                                            <ul class="select-box__select">
-                                                <li class="is-active">개인</li>
-                                                <!-- <li>기업</li> -->
-                                            </ul>
-                                            <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
-                                            <ul class="select-box__option">
-                                                <li>개인</li>
-                                                <li>개인</li>
-                                            </ul>
-                                        </div>
                                         <div class="round-input">
                                             <div class="select-box">
                                                 <ul class="select-box__select">
-                                                    <li class="is-active">개인</li>
+                                                    <li class="is-active">이름</li>
                                                     <!-- <li>기업</li> -->
                                                 </ul>
                                                 <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
                                                 <ul class="select-box__option">
-                                                    <li>개인</li>
-                                                    <li>개인</li>
+                                                    <li>이름</li>
+                                                    <li>이메일</li>
+                                                    <li>연락처</li>
+                                                    <li>그룹</li>
                                                 </ul>
                                             </div>
                                             <input type="text" maxlength="50"
@@ -209,8 +200,67 @@
                 </div>`
                 $('.table__tbody').append(html)
             }
+            
+        }
+
+         // 더보기 버튼 클릭
+         function makeMoreEvent(){
+                const documentId =$(this).attr('data-id')
+                html = '';
+                html += `
+                <ul class="list-modal">
+                    <li id="document-name-change-this">수정</li>
+                    <li id="document-delete-this">삭제</li>
+                </ul>
+                `
+                if($('.table__tr .list-modal').length < 1){
+                    $(this).append(html)
+                    $(this).parents('.table__tr').css('z-index','10')
+                }
+                else{
+                    $('.table__tr').css('z-index','0')
+                    $('.table__tr .list-modal').remove()
+                }
+
+                $('#document-name-change-this').on('click',makeDeleteModal)
+                $('#document-delete-this').on('click',function(){
+                    const string = $(this).parents('.table__tr').find('.table__td--title').text()
+                    console.log()
+                    makeDeleteModal(string)
+                })
             }
+
+            $(document).on('click','.table__tbody .table__tr .button--outline',makeMoreEvent)
+
+            // 삭제 이벤트
+            function makeDeleteModal(string){
+                console.log(string)
+                html = '';
+                html += `
+                <div class="popup">
+                    <div class="popup__content">
+                        <button type="button" class="icon-button">
+                            <img src="/statics/icon/exclamation-triangle-line.svg"
+                            alt="닫기"
+                            class="icon is-primary is-xl">
+                        </button>
+                        <div class="flex--column flex-align--center gap--sm">
+                            <p class="font-weight--medium">"${string}"</p>
+                            <p>사용자를 주소록에서 삭제하시겠습니까?</p>
+                        </div>
+                    </div>
+                    <div class="popup__footer">
+                        <button type="button" class="button--text button button--large">취소</button>
+                        <button type="button" class="button--primary button button--large">확인</button>
+                    </div>
+                </div>
+                `
+                $('.main').append(html)
+            }
+
+
         </script>
+        <script src="/statics/js/common.js"></script>
     </body>
     
 </html>
