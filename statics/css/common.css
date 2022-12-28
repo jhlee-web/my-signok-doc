@@ -524,6 +524,11 @@ label{
     place-items: center;
     border: 1px solid var(--theme-color-400);
 }
+.checkbox:hover{
+    transition: .3s;
+    background: var(--theme-color-50);
+    border: 1px solid var(--text-color-600);
+}
 .checkbox::before{
     content: '';
     display: block;

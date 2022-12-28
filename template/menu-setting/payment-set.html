@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <script src="/statics/js/loadHTML.js"></script>
+        <script>
+            loadHTML("/statics/include/head.html");
+        </script>
+        <title>메뉴설정 | 서명설정</title>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <script>
+                loadHTML("/statics/include/nav.html");
+            </script>
+            
+            <main class="main">
+                <!-- 상단 헤더 -->
+                <script>
+                    loadHTML("/statics/include/sub_header.html");
+                </script>
+                <!-- // 상단헤더 -->
+                
+                <!-- 메인 컨텐츠 -->
+                <div class="container">
+                    <div class="main-content">
+                        <!-- tabs -->
+                        <div class="tab-wrap">
+                            <ul class="tab">
+                                <li class="tab__item--badge ">
+                                    <a href="/template/menu-setting/user-set.html">메뉴 설정</a>
+                                </li>
+                                <li class="tab__item--badge is-active">
+                                    <a href="javascript:void(0)">서명 설정</a>
+                                </li>
+                                <li class="tab__item--badge ">
+                                    <a href="/template/menu-setting/company-set.html">고급 기능 설정</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /tabs -->
+                        <div class="full-grid left-double">
+                            <div class="card-wrap">
+                                <!-- card -->
+                                <div class="card">
+                                    <p class="is-remark">서명 방식(필수)</p>
+                                    <div class="flex--column gap--sm">
+                                        <div class="control-form">
+                                            <label for="simple-contarct"
+                                            class="font-weight--medium">
+                                                간편서명
+                                            </label>
+                                            <input type="checkbox" class="checkbox" id="simple-contarct">
+                                        </div>
+                                        <p class="is-remark">
+                                            서명자는 회원가입 없이 싸인, 도장을 만들어 서명할 수 있습니다.<br>
+                                            시점확인인증서로 암호화 처리 및 문서 위변조를 방지합니다.
+                                        </p>
+                                    </div>
+                                    <div class="flex--column gap--sm">
+                                        <div class="control-form">
+                                            <label for="simple-contarct"
+                                            class="font-weight--medium">
+                                                공동인증서 서명 (구 공인인증서)
+                                            </label>
+                                            <input type="checkbox" class="checkbox" id="simple-contarct">
+                                        </div>
+                                        <p class="is-remark">
+                                            서명자는 회원가입 없이 싸인, 도장을 만들어 서명할 수 있습니다.<br>
+                                            범용 공동인증서(구 공인인증서)로 암호화 처리 및 문서 위변조를 방지합니다.
+                                        </p>
+                                        <p class="is-primary body--small">
+                                            모든 서명자는 범용 공동인증서가 필요합니다.
+                                        </p>
+                                    </div>
+                                    <div class="flex--column gap--sm">
+                                        <div class="control-form">
+                                            <label for="simple-contarct"
+                                            class="font-weight--medium">대량서명</label>
+                                            <input type="checkbox" class="checkbox" id="simple-contarct">
+                                        </div>
+                                        <p class="is-remark">
+                                            최대 200명에게 동시다발적으로 많은 서명을 요청합니다.<br>
+                                            문서 내 변경되는 항목을 엑셀에 기입하여 발송할 수 있습니다.
+                                        </p>
+                                        <p class="is-remark">
+                                            <span class="is-secondary">근로-연봉 계약서, 가맹계약서</span>
+                                            에 적합합니다.
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- /card -->
+                            </div>
+                            <!-- /card-wrap -->
+                            <div class="card" id="event">
+                                <img class="" src="https://source.unsplash.com/random">
+                            </div>
+                        </div>
+                        <!-- /full-grid -->
+                    </div>
+                    <!-- /main-content -->
+                </div>
+                <!-- /container -->
+            </main>
+        </div>
+       
+        
+        <script>
+            let price = ['9,900','99,900','999,900']
+            $(function(){
+                for(let i = 0; i < $('.card__row').length; i++){
+                    $('p[id^="user_count"]').eq(i).text(`${resultRandomNum(100)}건 / ${resultRandomNum(200)}건`)
+                }
+                $('#user_deadline').text(`20${resultRandomNum(22)}년 ${resultRandomNum(12)}월 ${resultRandomNum(30)}일`)
+                $('#user_price').text(price[resultRandomNum(2)]+'원')
+            })
+
+            function resultRandomNum(value){
+                randomVal = Math.floor(Math.random() * value)
+                if(value < 10 && randomVal > 0 ){
+                    return randomVal
+                }
+                else{
+                    return randomVal
+                }
+            }
+
+            
+        </script>
+    </body>
+    
+</html>

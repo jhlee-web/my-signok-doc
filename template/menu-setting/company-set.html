@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <script src="/statics/js/loadHTML.js"></script>
+        <script>
+            loadHTML("/statics/include/head.html");
+        </script>
+        <title>메뉴설정 | 기업정보</title>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <script>
+                loadHTML("/statics/include/nav.html");
+            </script>
+            
+            <main class="main ">
+                <!-- 상단 헤더 -->
+                <script>
+                    loadHTML("/statics/include/sub_header.html");
+                </script>
+                <!-- // 상단헤더 -->
+                <!-- 메인 컨텐츠 -->
+                <div class="container">
+                    <div class="main-content">
+                        <div class="tab-wrap">
+                            <ul class="tab">
+                                <li class="tab__item--badge ">
+                                    <a href="/template/menu-setting/user-set.html">메뉴 설정</a>
+                                </li>
+                                <li class="tab__item--badge ">
+                                    <a href="/template/menu-setting/payment-set.html">서명 설정</a>
+                                </li>
+                                <li class="tab__item--badge is-active">
+                                    <a href="javascript:void(0)">고급 기능 설정</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="full-grid">
+                            <div class="card is-row-full" id="event">
+                                <img class="" src="https://source.unsplash.com/random">
+                            </div>
+                            <div class="card" id="setting-name">
+                                <p class="is-remark">
+                                    고급기능
+                                </p>
+                                <div class="card__content">
+                                    <div class="flex--column gap--sm">
+                                        <div class="checkbox__item">
+                                            <label for="simple-contarct" class="font-weight--medium">암호인증</label>
+                                            <input type="checkbox" class="checkbox" id="simple-contarct">
+                                        </div>
+                                        <p class="is-remark">
+                                            서명자는 서명 요청자가 설정한 암호를 인증 후 서명할 수 있습니다.
+                                        </p>
+                                    </div>
+                                    <div class="flex--column gap--sm">
+                                        <div class="checkbox__item">
+                                            <label for="simple-contarct" class="font-weight--medium">자동승인</label>
+                                            <input type="checkbox" class="checkbox" id="simple-contarct">
+                                        </div>
+                                        <p class="is-remark">
+                                            서명이 완료된 문서를 직접 열람할 필요 없이 자동으로 승인합니다.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <p class="is-remark">조직 고급기능</p>
+                                <div class="card__content">
+                                    <div class="flex--column gap--sm">
+                                        <div class="checkbox__item">
+                                            <label for="simple-contarct" class="font-weight--medium">멤버 문서 작성</label>
+                                            <input type="checkbox" class="checkbox" id="simple-contarct">
+                                        </div>
+                                        <p class="is-remark">
+                                            최고관리자 외 멤버가 문서와 템플릿을 추가하여 사용할 수 있습니다.
+                                        </p>
+                                    </div>
+                                    <div class="flex--column gap--sm">
+                                        <div class="checkbox__item">
+                                            <label for="simple-contarct" class="font-weight--medium">문서 정보/항목 데이터 다운로드</label>
+                                            <input type="checkbox" class="checkbox" id="simple-contarct">
+                                        </div>
+                                        <p class="is-remark">
+                                            최고관리자 외 멤버 계정에서 문서 정보와 항목을 다운로드할 수 있습니다.
+                                        </p>
+                                    </div>
+                                    <div class="flex--column gap--sm">
+                                        <div class="checkbox__item">
+                                            <label for="simple-contarct" class="font-weight--medium">검토자 추가</label>
+                                            <input type="checkbox" class="checkbox" id="simple-contarct">
+                                        </div>
+                                        <p class="is-remark">
+                                            서명자 정보 입력 시 검토자를 추가할 수 있습니다.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /card -->
+
+                            <div class="card" id="setting-price">
+                                <p class="is-remark">
+                                    조직 고급기능
+                                </p>
+                                <div class="card__content">
+                                    <div class="flex--column gap--sm">
+                                        <div class="checkbox__item">
+                                            <label for="simple-contarct" class="font-weight--medium">멤버 문서 작성</label>
+                                            <input type="checkbox" class="checkbox" id="simple-contarct">
+                                        </div>
+                                        <p class="is-remark">
+                                            최고관리자 외 멤버가 문서와 템플릿을 추가하여 사용할 수 있습니다.
+                                        </p>
+                                    </div>
+                                    <div class="flex--column gap--sm">
+                                        <div class="checkbox__item">
+                                            <label for="simple-contarct" class="font-weight--medium">문서 정보/항목 데이터 다운로드</label>
+                                            <input type="checkbox" class="checkbox" id="simple-contarct">
+                                        </div>
+                                        <p class="is-remark">
+                                            최고관리자 외 멤버 계정에서 문서 정보와 항목을 다운로드할 수 있습니다.
+                                        </p>
+                                    </div>
+                                    <div class="flex--column gap--sm">
+                                        <div class="checkbox__item">
+                                            <label for="simple-contarct" class="font-weight--medium">검토자 추가</label>
+                                            <input type="checkbox" class="checkbox" id="simple-contarct">
+                                        </div>
+                                        <p class="is-remark">
+                                            서명자 정보 입력 시 검토자를 추가할 수 있습니다.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /card -->
+                        </div>
+                        <!-- /full-grid -->
+                    </div>
+                    <!-- /main-content -->
+                </div>
+                <!-- /content -->
+            </main>
+        </div>
+       
+        
+        <script>
+
+            // 카드 인풋 변경
+            function manageCard(){
+                let context = $(this).text()
+                let $el = $(this).parents('.card').find('.to-be-input')
+                let $title = $(this).prev('.is-remark').text()
+
+                console.log($el)
+                switch (context){
+                    case "수정하기": 
+                        if($el.hasClass('is-hide')) $el.removeClass('is-hide')
+
+                        switch($title){
+                            case "업태/업종":
+                                $el.eq(0).html(`
+                                    <div class="input-box">
+                                        <input type="text"
+                                        class="input"
+                                        id="change-category"
+                                        value = ${$el.eq(0).text()}
+                                        placeholder="${$title}을 입력해주세요">
+                                        <img class="icon" src="/statics/icon/remove-solid.svg"></img>
+                                    </div>
+                                `)
+                                $el.eq(1).html(`
+                                    <div class="input-box">
+                                        <input type="text"
+                                        class="input"
+                                        id="change-category"
+                                        value = ${$el.eq(1).text()}
+                                        placeholder="${$title}을 입력해주세요">
+                                        <img class="icon" src="/statics/icon/remove-solid.svg"></img>
+                                    </div>
+                                `)
+                                break;
+                            case "주소":
+                                $el.eq(0).html(`
+                                    <div class="flex--row">
+                                        <div class="input-box width-100">
+                                            <input type="text"
+                                            class="input "
+                                            id="change-address"
+                                            value="${$el.eq(0).text()}"
+                                            placeholder="우편번호를 입력해주세요">
+                                            <img class="icon" src="/statics/icon/remove-solid.svg"></img>
+                                        </div>
+                                        <button type="button" class="button button--outline">주소찾기</button>
+                                    </div>
+                                `)
+                                $el.eq(1).html(`
+                                    <div class="group-button--column">
+                                        <div class="input-box group-button__base is-start">
+                                            <input type="text"
+                                            class="input"
+                                            value="${$el.eq(1).text()}"
+                                            id="change-address"
+                                            placeholder="주소를 입력해주세요">
+                                            <img class="icon" src="/statics/icon/remove-solid.svg"></img>
+                                        </div>
+                                        <div class="input-box group-button__base is-end">
+                                            <input type="text"
+                                            class="input"
+                                            id="change-address"
+                                            placeholder="상세주소를 입력해주세요">
+                                            <img class="icon" src="/statics/icon/remove-solid.svg"></img>
+                                        </div>
+                                    </div>
+                                `)
+                                break;
+                            case "연락처":
+                                $el.html(`
+                                    <div class="input-box">
+                                        <input type="text"
+                                        class="input"
+                                        id="change-phone"
+                                        maxlength = 15
+                                        value = ${$el.text()}
+                                        placeholder="${$title}을 입력해주세요">
+                                        <img class="icon" src="/statics/icon/remove-solid.svg"></img>
+                                    </div>
+                                    <p class="input-area__helper"></p>
+                                `)
+                                break;
+                        }
+                        
+                        $(this).text('저장하기')
+                        break;
+
+                    case "저장하기":
+                        if($el.length > 1){
+                            for(let i = 0; i < $el.length; i++){
+                                value = $el.eq(i).find('.input').val()
+                                $el.eq(i).html(value)
+                            }
+                        }
+                        else{
+                            value = $el.find('.input').val()
+                            $el.html(value)
+                        }
+                        
+                        $(this).text('수정하기')
+                        break;
+                }
+
+            }
+
+            $('.button').on('click',manageCard)
+
+            
+
+            // 테마 토글
+            function toggleTheme(){
+                loadedTheme = localStorage.getItem('data-theme')
+                setTheme(loadedTheme == "dark" ? "light" : "dark");
+            }
+            $('#toggle-theme').on('click',toggleTheme)
+
+            $(function(){
+                $('#toggle-theme').prop('checked',currentTheme['toggle'])
+
+                $('#set-user_mail').text(newTestObj['user_mail'])
+                $('#set-user_product').text(newTestObj['user_product']+'('+newTestObj['user_regular_payment']+')')
+                $('#set-user_name').text(newTestObj['user_name'])
+                $('#set-user_left_day').text(newTestObj['left_day'])
+                $('#agree_marketing').prop('checked',newTestObj['marketing'])
+
+            })
+
+
+            // 폰넘버 하이픈 추가
+            $(document).on('keyup','#change-phone',function(){
+                let str = $(this).val()
+                $(this).val(str.replace(/[^0-9]/g, '')
+                        .replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, "$1-$2-$3").replace(/(\-{1,2})$/g, ""));
+            })
+
+            
+
+
+        </script>
+        <script src="/statics/js/common.js"></script>
+    </body>
+    
+</html>

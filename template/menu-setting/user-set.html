@@ -26,22 +26,13 @@
                         <div class="tab-wrap">
                             <ul class="tab">
                                 <li class="tab__item--badge is-active">
-                                    <a href="javascript:void(0)">내 정보</a>
+                                    <a href="javascript:void(0)">메뉴 설정</a>
                                 </li>
                                 <li class="tab__item--badge">
-                                    <a href="/template/setting/company-set.html">기업 정보</a>
+                                    <a href="/template/menu-setting/payment-set.html">서명 설정</a>
                                 </li>
                                 <li class="tab__item--badge ">
-                                    <a href="/template/setting/price-set.html">요금제</a>
-                                </li>
-                                <li class="tab__item--badge">
-                                    <a href="/template/setting/payment-set.html">결제 정보</a>
-                                </li>
-                                <li class="tab__item--badge">
-                                    <a href="/template/setting/addr-set.html">주소록</a>
-                                </li>
-                                <li class="tab__item--badge">
-                                    <a href="/template/setting/brand-set.html">브랜딩</a>
+                                    <a href="/template/menu-setting/company-set.html">고급 기능 설정</a>
                                 </li>
                             </ul>
                         </div>
@@ -49,100 +40,65 @@
                             <div class="card is-row-full" id="event">
                                 <img class="" src="https://source.unsplash.com/random">
                             </div>
-                            <div class="card is-column-full">
+                            <div class="card">
                                 <div class="card__content">
                                     <div class="card__row">
-                                        <p class="">안녕하세요, <span id="set-user_name">홍길동</span>님</p>
-                                        <button type="button" class="button is-round button--outline">
-                                            <img src="/statics/icon/switch-line.svg" class="icon" alt="기업회원전환">
-                                            기업회원전환
-                                        </button>
+                                        <p class="font-weight--medium">대량발송</p>
+                                        <label class="is-small toggle" for="agree_marketing">
+                                            <input type="checkbox" id="agree_marketing" class="toggle__checkbox">
+                                            <span class="toggle__slider"></span>
+                                        </label>
                                     </div>
-                                    <p class="is-remark" id="set-user_mail">hong123@naver.com</p>
-                                    
-                                    <p class="card__row is-end is-remark">최종변경일: <span>2022-12-15</span></p>
-                                </div>
-                                
-                            </div>
-                            <div class="card" id="setting-name">
-                                <div class="card__content">
-                                    <div class="card__row">
-                                        <p class="is-remark ">이름</p>
-                                        <button type="button" class="button button--text">수정하기</button>
-                                    </div>
-                                    <p class="to-be-input" id="set-user_name">홍길동</p>
-                                    <p class="is-remark">
-                                        본인 이름 또는 기업 이름으로 설정해주세요.
-                                        수신자에게 서명 요청자로 노출됩니다.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="card" id="setting-price">
-                                <div class="card__content">
-                                    <div class="card__row">
-                                        <p class="is-remark">요금제</p>
-                                        <a href="/template/setting/price-set.html" class="button button--outline is-round">변경하기</a>
-                                    </div>
-                                    <div class="card__row">
-                                        <p id="set-user_product">Premium(월)</p>
-                                        <p class="">99,000원</p>
-                                    </div>
-                                    <p class="is-remark card__row is-end">잔여일수 : <span id="set-user_left_day">15</span>일</p>
-                                </div>
-                            </div>
-                            <div class="card" id="setting-password">
-                                <div class="card__content">
-                                    <div class="card__row">
-                                        <p class="is-remark">비밀번호</p>
-                                        <button type="button" class="button button--text">수정하기</button>
-                                    </div>
-                                    <div class="to-be-input is-hide"></div>
-                                    <p class="is-remark ">
-                                        개인정보 보호와 안전한 계약을 위해 비밀번호는 6개월마다 변경해 주세요.
-                                    </p>
-                                </div>
-                                
-                            </div>
-                            <div class="card" id="setting-phone">
-                                <div class="card__content">
-                                    <div class="card__row">
-                                        <p class="is-remark">연락처</p>
-                                        <button type="button" class="button button--text">수정하기</button>
-                                    </div>
-                                    <p class="to-be-input">010-1234-5678</p>
+                                    <p class="is-remark">한 문서를 최대 1,000명에게 동시다발적으로 발송하여 서명을 요청할 수 있습니다.</p>
+                                        
                                 </div>
                             </div>
                             <div class="card">
-                                <div class="card__row">
-                                    <p class="is-remark">수신동의</p>
-                                </div>
-                                <div class="card__row">
-                                    <p>마케팅 수신 동의</p>
-                                    <label class="is-small toggle" for="agree_marketing">
-                                        <input type="checkbox" id="agree_marketing" class="toggle__checkbox">
-                                        <span class="toggle__slider"></span>
-                                    </label>
+                                <div class="card__content">
+                                    <div class="card__row">
+                                        <p class="font-weight--medium">링크발송</p>
+                                        <label class="is-small toggle" for="agree_marketing">
+                                            <input type="checkbox" id="agree_marketing" class="toggle__checkbox">
+                                            <span class="toggle__slider"></span>
+                                        </label>
+                                    </div>
+                                    <p class="is-remark">서명자가 URL 또는 QR코드로 서명을 완료할 수 있습니다.</p>
                                 </div>
                             </div>
                             <div class="card">
-                                <div class="card__row">
-                                    <p class="is-remark">테마설정</p>
-                                </div>
-                                <div class="card__row">
-                                    <p>어두운 테마</p>
-                                    <label class="is-small toggle" for="toggle-theme">
-                                        <input type="checkbox" class="toggle__checkbox" id="toggle-theme">
-                                        <span class="toggle__slider"></span>
-                                    </label>
+                                <div class="card__content">
+                                    <div class="card__row">
+                                        <p class="font-weight--medium">공문발송</p>
+                                        <label class="is-small toggle" for="agree_marketing">
+                                            <input type="checkbox" id="agree_marketing" class="toggle__checkbox">
+                                            <span class="toggle__slider"></span>
+                                        </label>
+                                    </div>
+                                    <p class="is-remark">최고관리자가 조직 멤버에게 공문을 발송할 수 있습니다.</p>
                                 </div>
                             </div>
-                            <a href="/template/setting/withdrawn-set.html"
-                            class="is-remark button button--text flex-justify--start">회원탈퇴</a>
+                            <div class="card">
+                                <div class="card__content">
+                                    <div class="card__row">
+                                        <p class="font-weight--medium">캘린더</p>
+                                        <label class="is-small toggle" for="">
+                                            <input type="checkbox" class="toggle__checkbox" id="">
+                                            <span class="toggle__slider"></span>
+                                        </label>
+                                    </div>
+                                    <p class="is-remark">예약 발송 문서 목록을 조회할 수 있습니다.</p>
+                                </div>
+                            </div>
+                            <!-- /card -->
                         </div>
+                        <!-- /full-grid -->
                     </div>
+                    <!-- /main-content -->
                 </div>
+                <!-- /container -->
             </main>
         </div>
+        <!-- /wrapper -->
        
         
         <script>
