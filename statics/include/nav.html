@@ -101,7 +101,7 @@
                 <span class="nav__name is-unfold">휴지통</span>
             </a>
         </li>
-        <li data-anv="calendar">
+        <li data-nav="calendar">
             <a href="javascript:void(0)" class="nav-item is-border">
                 <img class="icon nav-item__icon" src="/statics/icon/calendar-line.svg"></img>
                 <span class="nav__name is-unfold">캘린더</span>
@@ -218,7 +218,7 @@
     let loadedTheme = localStorage.getItem('data-theme')
     let currentTheme={
         'data-theme':'light',
-        'toggle':'false'
+        'toggle':0
     }
 
     $(function(){
@@ -231,12 +231,12 @@
         switch(setTheme){
             case undefined || null || 'null' || 'light':
                 currentTheme['data-theme'] = 'light';
-                currentTheme['toggle'] = false
+                currentTheme['toggle'] = 0
                 break;
 
             case 'dark':
                 currentTheme['data-theme'] = 'dark';
-                currentTheme['toggle'] = true
+                currentTheme['toggle'] = 1
                 break;
         }
 

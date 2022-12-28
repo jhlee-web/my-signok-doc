@@ -257,7 +257,9 @@
             $('#toggle-theme').on('click',toggleTheme)
 
             $(function(){
-                $('#toggle-theme').prop('checked',currentTheme['toggle'])
+                currentTheme['toggle'] === 0 ?
+                $('#toggle-theme').prop('checked',false)
+                :  $('#toggle-theme').prop('checked',true)
 
                 $('#set-user_mail').text(newTestObj['user_mail'])
                 $('#set-user_product').text(newTestObj['user_product']+'('+newTestObj['user_regular_payment']+')')
@@ -266,8 +268,6 @@
                 $('#agree_marketing').prop('checked',newTestObj['marketing'])
 
             })
-
-
 
             // 폰넘버 하이픈 추가
             $(document).on('keyup','#change-phone',function(){

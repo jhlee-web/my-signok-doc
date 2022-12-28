@@ -44,8 +44,8 @@
                                 <div class="card__content">
                                     <div class="card__row">
                                         <p class="font-weight--medium">대량발송</p>
-                                        <label class="is-small toggle" for="agree_marketing">
-                                            <input type="checkbox" id="agree_marketing" class="toggle__checkbox">
+                                        <label class="is-small toggle" for="set-burk-submit">
+                                            <input type="checkbox" id="set-burk-submit" class="toggle__checkbox">
                                             <span class="toggle__slider"></span>
                                         </label>
                                     </div>
@@ -57,8 +57,8 @@
                                 <div class="card__content">
                                     <div class="card__row">
                                         <p class="font-weight--medium">링크발송</p>
-                                        <label class="is-small toggle" for="agree_marketing">
-                                            <input type="checkbox" id="agree_marketing" class="toggle__checkbox">
+                                        <label class="is-small toggle" for="set-link-sign">
+                                            <input type="checkbox" id="set-link-sign" class="toggle__checkbox">
                                             <span class="toggle__slider"></span>
                                         </label>
                                     </div>
@@ -69,26 +69,26 @@
                                 <div class="card__content">
                                     <div class="card__row">
                                         <p class="font-weight--medium">공문발송</p>
-                                        <label class="is-small toggle" for="agree_marketing">
-                                            <input type="checkbox" id="agree_marketing" class="toggle__checkbox">
+                                        <label class="is-small toggle" for="set-office-submit">
+                                            <input type="checkbox" id="set-office-submit" class="toggle__checkbox">
                                             <span class="toggle__slider"></span>
                                         </label>
                                     </div>
                                     <p class="is-remark">최고관리자가 조직 멤버에게 공문을 발송할 수 있습니다.</p>
                                 </div>
                             </div>
-                            <div class="card">
+                            <!-- <div class="card">
                                 <div class="card__content">
                                     <div class="card__row">
                                         <p class="font-weight--medium">캘린더</p>
-                                        <label class="is-small toggle" for="">
-                                            <input type="checkbox" class="toggle__checkbox" id="">
+                                        <label class="is-small toggle" for="navigator-link">
+                                            <input type="checkbox" class="navigator-calendar" id="">
                                             <span class="toggle__slider"></span>
                                         </label>
                                     </div>
                                     <p class="is-remark">예약 발송 문서 목록을 조회할 수 있습니다.</p>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- /card -->
                         </div>
                         <!-- /full-grid -->
@@ -102,138 +102,24 @@
        
         
         <script>
-
-            // 카드 인풋 변경
-            function manageCard(){
-                let context = $(this).text()
-                let $el = $(this).parents('.card').find('.to-be-input')
-                let $title = $(this).prev('.is-remark').text()
-
-                switch (context){
-                    case "수정하기": 
-                        if($el.hasClass('is-hide')) $el.removeClass('is-hide')
-
-                        if($title == '비밀번호'){
-                            $el.html(`
-                                <div class="input-area">
-                                    <div class="input-box">
-                                        <input type="password"
-                                        class="input"
-                                        id="change-password-before"
-                                        placeholder="현재 비밀번호를 입력해주세요.">
-                                        <img class="icon" src="/statics/icon/eye-show-line.svg"></img>
-                                    </div>
-                                </div>
-                                <div class="input-area">
-                                    <div class="input-box">
-                                        <input type="password"
-                                        class="input"
-                                        id="change-password"
-                                        placeholder="비밀번호를 입력해주세요.">
-                                        <img class="icon" src="/statics/icon/eye-show-line.svg"></img>
-                                    </div>
-                                    <div class="flex--row is-hide">
-                                        <div class="icon-with-text"
-                                        id="has-number">
-                                            <img src="/statics/icon/check-line.svg"
-                                            class="icon">
-                                            <p class="is-remark">문자 및 숫자 포함</p>
-                                        </div>
-                                        <div class="icon-with-text"
-                                        id="has-asterisk">
-                                            <img src="/statics/icon/check-line.svg"
-                                            class="icon">
-                                            <p class="is-remark">특수문자</p>
-                                        </div>
-                                        <div class="icon-with-text"
-                                        id="has-length">
-                                            <img src="/statics/icon/check-line.svg"
-                                            class="icon">
-                                            <p class="is-remark"> 8자리 이상</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="input-area">
-                                    <div class="input-box">
-                                        <input type="password"
-                                        class="input"
-                                        id="change-password-re"
-                                        placeholder="비밀번호를 한번 더 입력해주세요.">
-                                        <img class="icon" src="/statics/icon/eye-show-line.svg"></img>
-                                    </div>
-                                </div>
-                            `)
-                        }
-
-                        else{
-                            if($title == '이름'){
-                                inputLength = 64;
-                                inputId='name'
-                            }
-                            else{
-                                inputLength = 13;
-                                inputId='phone'
-                            }
-                            $el.html(`
-                                <div class="input-box">
-                                    <input type="text"
-                                    class="input"
-                                    id="change-${inputId}"
-                                    maxlength = ${inputLength}
-                                    value = ${$el.text()}
-                                    placeholder="${$title}을 입력해주세요">
-                                    <img class="icon" src="/statics/icon/remove-solid.svg"></img>
-                                </div>
-                                <p class="input-area__helper"></p>
-                            `)
-                        }
-                        
-                        $(this).text('저장하기')
-                        break;
-
-                    case "저장하기":
-                        value = $el.find('.input').val()
-
-                        $title !== "비밀번호" ? $el.html(value) : $el.html('')
-                        $(this).text('수정하기')
-                        break;
-                }
-
-            }
-
-            $('.button').on('click',manageCard)
-
-            
-
-            // 테마 토글
-            function toggleTheme(){
-                loadedTheme = localStorage.getItem('data-theme')
-                setTheme(loadedTheme == "dark" ? "light" : "dark");
-            }
-            $('#toggle-theme').on('click',toggleTheme)
-
+            // nav 정보 가져오기
             $(function(){
-                $('#toggle-theme').prop('checked',currentTheme['toggle'])
+                getNavData()
+            })
+            function getNavData(){
+                $('.toggle__checkbox').prop('checked',true)
+            }
 
-                $('#set-user_mail').text(newTestObj['user_mail'])
-                $('#set-user_product').text(newTestObj['user_product']+'('+newTestObj['user_regular_payment']+')')
-                $('#set-user_name').text(newTestObj['user_name'])
-                $('#set-user_left_day').text(newTestObj['left_day'])
-                $('#agree_marketing').prop('checked',newTestObj['marketing'])
+            $('.toggle__checkbox').on('click',function(){
 
+                let data = $(this).attr('id').replace('set-','')
+                $(this).prop('checked')===false ? 
+                $(`.nav__list li[data-nav=${data}]`).addClass('is-hide')
+                : 
+                $(`.nav__list li[data-nav=${data}]`).removeClass('is-hide')
             })
 
-
-
-            // 폰넘버 하이픈 추가
-            $(document).on('keyup','#change-phone',function(){
-                let str = $(this).val()
-                $(this).val(str.replace(/[^0-9]/g, '')
-                        .replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, "$1-$2-$3").replace(/(\-{1,2})$/g, ""));
-            })
-
-            
-
+            // local Stroage로 저장은 안해봄
 
         </script>
         <script src="/statics/js/common.js"></script>
