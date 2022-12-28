@@ -418,6 +418,7 @@ option{
     box-shadow: var(--box-shadow--5);
     width: 100%;
     border-right: 0.5em;
+    z-index: 1;
 }
 
 .select-box__option li{

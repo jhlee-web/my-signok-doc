@@ -48,32 +48,40 @@
                         <div class="full-grid left-double">
                             <div class="card-wrap">
                                 <div class="card">
-                                    <div class="flex--row is-change">
-                                        <button type="button" class="button is-small button--outline"
-                                        id="change-folder">
-                                            <img src="/statics/icon/group-line.svg" alt="닫기" class="icon icon--large icon--warning">
-                                            그룹보기
-                                        </button>
-                                        <!-- css수정 필요 -->
-                                        <div class="round-input">
-                                            <div class="select-box">
-                                                <ul class="select-box__select">
-                                                    <li class="is-active">이름</li>
-                                                    <!-- <li>기업</li> -->
-                                                </ul>
-                                                <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
-                                                <ul class="select-box__option">
-                                                    <li>이름</li>
-                                                    <li>이메일</li>
-                                                    <li>연락처</li>
-                                                    <li>그룹</li>
-                                                </ul>
+                                    <div class="card__row">
+                                        <div class="flex--row is-change">
+                                            <button type="button" class="button is-small button--outline"
+                                            id="change-folder">
+                                                <img src="/statics/icon/group-line.svg" alt="닫기" class="icon icon--large icon--warning">
+                                                그룹보기
+                                            </button>
+                                            <!-- css수정 필요 -->
+                                            <div class="round-input">
+                                                <div class="select-box">
+                                                    <ul class="select-box__select">
+                                                        <li class="is-active">이름</li>
+                                                        <!-- <li>기업</li> -->
+                                                    </ul>
+                                                    <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
+                                                    <ul class="select-box__option">
+                                                        <li>이름</li>
+                                                        <li>이메일</li>
+                                                        <li>연락처</li>
+                                                        <li>그룹</li>
+                                                    </ul>
+                                                </div>
+                                                <input type="text" maxlength="50"
+                                                placeholder="검색어를 입력해주세요"
+                                                class="round-input__input input">
                                             </div>
-                                            <input type="text" maxlength="50"
-                                            placeholder="검색어를 입력해주세요"
-                                            class="round-input__input input">
                                         </div>
+                                        <button type="button" class="button button--secondary">
+                                            <img src="/statics/icon/plus-line.svg" alt="연락처 추가"
+                                            class="icon">
+                                            연락처추가
+                                        </button>
                                     </div>
+                                    
                                     <div class="table">
                                         <div class="table__thead">
                                             <div class="table__tr">
@@ -250,6 +258,77 @@
                     <div class="popup__footer">
                         <button type="button" class="button--text button button--large popup__close-button">취소</button>
                         <button type="button" class="button--primary button button--large">확인</button>
+                    </div>
+                </div>
+                `
+                $('.main').append(html)
+            }
+
+            $(document).on('click','.table__tr',makeModal)
+
+            function makeModal(e){
+
+                // thead 영역일 경우 aisde 생성 안함
+                if($(this).parent('.table__thead').length > 0){
+                    if(e.target.className !== 'checkbox'){
+                        return false;
+                    }
+                    else{
+                        return
+                    }
+                }
+
+                if(e.target.closest('button')||e.target.closest('.list-modal')) return false;
+
+
+                html = '';
+                html += `
+                <div class="modal">
+                    <div class="modal__header">
+                        <p class="modal__title">
+                            주소록 상세 보기
+                        </p>
+                        <button type="button" class="icon-button">
+                            <img src="/statics/icon/close-line.svg" alt="닫기" class="icon modal__close-button">
+                        </button>
+                    </div>
+                    <div class="modal__content">
+                        <ul class="basic-list">
+                            <li class="flex--column gap--sm is-active"> 
+                                <p class="is-remark">이름</p>
+                                <input type="text" class="input" value="">
+                            </li>
+                            <li class="flex--column gap--sm "> 
+                                <p class="is-remark">이메일</p>
+                                <input type="text" class="input" value="">
+                            </li>
+                            <li class="flex--column gap--sm"> 
+                                <p class="is-remark">연락처</p>
+                                <input type="text" class="input" value="">
+                            </li>
+                            <li class="flex--column gap--sm"> 
+                                <p class="is-remark">기업이름</p>
+                                <input type="text" class="input" value="" disabled>
+                            </li>
+                            <li class="flex--column gap--sm"> 
+                                <p class="is-remark">그룹</p>
+                                <div class="select-box">
+                                    <ul class="select-box__select">
+                                        <li class="is-active">개인</li>
+                                        <!-- <li>기업</li> -->
+                                    </ul>
+                                    <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
+                                    <ul class="select-box__option">
+                                        <li>개인</li>
+                                        <li>개인</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="modal__footer">
+                        <button type="button" class="button--primary button--large"
+                        id="create-new-folder">새 폴더 추가하기</button>
                     </div>
                 </div>
                 `
