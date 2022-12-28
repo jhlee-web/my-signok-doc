@@ -45,9 +45,67 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="full-grid">
-                            <div class="card"></div>
-                            <div class="card"></div>
+                        <div class="full-grid left-double">
+                            <div class="card-wrap">
+                                <div class="card">
+                                    <div class="flex--row is-change">
+                                        <button type="button" class="button is-small button--outline"
+                                        id="change-folder">
+                                            <img src="/statics/icon/folder-line.svg" alt="닫기" class="icon icon--large icon--warning">
+                                            폴더선택
+                                        </button>
+                                        <!-- css수정 필요 -->
+                                        <div class="select-box">
+                                            <ul class="select-box__select">
+                                                <li class="is-active">개인</li>
+                                                <!-- <li>기업</li> -->
+                                            </ul>
+                                            <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
+                                            <ul class="select-box__option">
+                                                <li>개인</li>
+                                                <li>개인</li>
+                                            </ul>
+                                        </div>
+                                        <div class="round-input">
+                                            <div class="select-box">
+                                                <ul class="select-box__select">
+                                                    <li class="is-active">개인</li>
+                                                    <!-- <li>기업</li> -->
+                                                </ul>
+                                                <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
+                                                <ul class="select-box__option">
+                                                    <li>개인</li>
+                                                    <li>개인</li>
+                                                </ul>
+                                            </div>
+                                            <input type="text" maxlength="50"
+                                            placeholder="검색어를 입력해주세요"
+                                            class="round-input__input input">
+                                        </div>
+                                    </div>
+                                    <div class="table">
+                                        <div class="table__thead">
+                                            <div class="table__tr">
+                                                <div class="table__td is-left width-90">
+                                                    <div class="table__td">
+                                                        <input type="checkbox" class="checkbox checkbox-all"
+                                                        id="">
+                                                    </div>
+                                                    <div class="table__td width-30">이름</div>
+                                                    <div class="table__td width-30">이메일</div>
+                                                    <div class="table__td width-15">연락처</div>
+                                                    <div class="table__td width-15">그룹</div>
+                                                </div>
+                                                <div class="table__td is-right width-10 flex-justify--center">
+                                                    <div class="table__td">추가메뉴</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table__tbody"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
                             <div class="card is-row-full" id="event">
                                 <img class="" src="https://source.unsplash.com/random">
                             </div>
@@ -59,7 +117,99 @@
        
         
         <script>
+            $(function(){
+                loadData(10)
+            })
 
+            // 데이터 로드
+            function loadData(breakpoint){
+                $.ajax({
+                    url: "/json/dummy.json",
+                    type: "GET", 
+                    data:{},
+                    dataType: "json"
+                })
+                .done(function(res) {
+                    let total = res.length;
+                    let paginationLength = Math.ceil(Number(total) / Number(breakpoint));
+
+                    // makePagination(paginationLength);
+                    makeTable(res,breakpoint)
+                })
+                .fail(function(xhr, status, errorThrown) {
+                })
+                .always(function(xhr, status) {
+                });
+            }
+
+            // 테이블 만들기
+            function makeTable(data,breakpoint){
+
+            // 이미 테이블이 생성된 경우 테이블 삭제 후 재생성
+            if($('.table__tbody .table__tr').length > 0) {
+                $('.table__tbody .table__tr').remove()
+            }
+
+            console.log(data)
+            for (let i = 0; i < breakpoint; i++){
+
+                if(i > data.length) break;
+                testClass = null
+
+                let friends = [];
+                for(let a = 0; a < data[i].friends.length; a++){
+                    friends.push(data[i].friends[a].name)
+                }
+
+                if(data[i].isActive == false){
+                    mailAlert = `
+                        <p class="is-remark" >
+                            수신
+                        </p>
+                    `
+                }
+                else{
+                    mailAlert = `
+                        <p class="is-remark" >
+                            수신안함
+                        </p>
+                    `
+                }
+
+                html = ''
+                html += `
+                <div class="table__tr ${testClass}" data-id="${data[i].index}">
+                    <div class="table__td is-left width-90">
+                        <div class="table__td check-area">
+                            <input type="checkbox" class="checkbox"
+                            id="">
+                        </div>
+                        <div class="table__td flex--column gap--sm width-30">
+                            <p class="table__td--title">${data[i].guid}</p>
+                        </div>
+                        <div class="table__td width-30">
+                            ${data[i].email}
+                        </div>
+                        <div class="table__td width-15">
+                            <p class="is-remark">010-1234-5678</p>
+                        </div>
+                        <div class="table__td width-15 folder-area">
+                            <p class="is-remark">
+                                <img src="/statics/icon/folder-line.svg" class="icon" alt="폴더">
+                                기본폴더
+                            </p>
+                        </div>
+                    </div>
+                    <div class="table__td is-right width-10 flex-justify--center">
+                        <button type="button" class="button button--outline icon-button is-small">
+                            <img class="icon" src="/statics/icon/ellipsis-horizontal-line.svg"
+                            alt="추가메뉴">
+                        </button>
+                    </div>
+                </div>`
+                $('.table__tbody').append(html)
+            }
+            }
         </script>
     </body>
     
