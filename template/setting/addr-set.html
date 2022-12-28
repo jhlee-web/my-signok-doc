@@ -105,8 +105,7 @@
                 </div>
             </main>
         </div>
-       
-        
+        <script src="/statics/js/common.js"></script>
         <script>
             $(function(){
                 loadData(10)
@@ -234,7 +233,6 @@
 
             // 삭제 이벤트
             function makeDeleteModal(string){
-                console.log(string)
                 html = '';
                 html += `
                 <div class="popup">
@@ -250,7 +248,7 @@
                         </div>
                     </div>
                     <div class="popup__footer">
-                        <button type="button" class="button--text button button--large">취소</button>
+                        <button type="button" class="button--text button button--large popup__close-button">취소</button>
                         <button type="button" class="button--primary button button--large">확인</button>
                     </div>
                 </div>
@@ -260,7 +258,6 @@
 
 
         </script>
-        <script src="/statics/js/common.js"></script>
     </body>
     
 </html>

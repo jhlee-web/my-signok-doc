@@ -1,6 +1,12 @@
 $(document).on('click','.modal__close-button', function(){
     $(this).parents('.modal').remove();
 })
+$(document).on('click','.popup__close-button', function(){
+    console.log('clicked')
+    $(this).parents('.popup').remove();
+})
+
+
 
 $('.tab__item').on('click',function(){
     $('.tab__item').removeClass('is-active')
