@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <script src="/statics/js/loadHTML.js"></script>
+        <script>
+            loadHTML("/statics/include/head.html");
+        </script>
+        <title>설정 | 결제 정보</title>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <script>
+                loadHTML("/statics/include/nav.html");
+            </script>
+            
+            <main class="main">
+                <!-- 상단 헤더 -->
+                <script>
+                    loadHTML("/statics/include/sub_header.html");
+                </script>
+                <!-- // 상단헤더 -->
+                
+                <!-- 메인 컨텐츠 -->
+                <div class="container">
+                    <div class="main-content">
+                        <!-- tabs -->
+                        <div class="tab-wrap">
+                            <ul class="tab">
+                                <li class="tab__item--badge ">
+                                    <a href="/template/setting/user-set.html">내 정보</a>
+                                </li>
+                                <li class="tab__item--badge">
+                                    <a href="/template/setting/company-set.html">기업 정보</a>
+                                </li>
+                                <li class="tab__item--badge ">
+                                    <a href="/template/setting/price-set-default.html">요금제</a>
+                                </li>
+                                <li class="tab__item--badge is-active">
+                                    <a href="javascript:void(0)">결제 정보</a>
+                                </li>
+                                <li class="tab__item--badge">
+                                    <a href="/template/setting/addr-set.html">주소록</a>
+                                </li>
+                                <li class="tab__item--badge">
+                                    <a href="/template/setting/brand-set.html">브랜딩</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /tabs -->
+                        <div class="full-grid left-double">
+                            <div class="card-wrap">
+                                <!-- card -->
+                                <div class="card">
+                                    <p class="is-remark">결제내역</p>
+                                    <div class="table">
+                                        <div class="table__tbody"></div>
+                                    </div>
+                                </div>
+                                <!-- /card -->
+                            </div>
+                            <!-- /card-wrap -->
+                            <div class="card is-row-full" id="event">
+                                <img class="" src="https://source.unsplash.com/random">
+                            </div>
+                        </div>
+                        <!-- /full-grid -->
+                    </div>
+                    <!-- /main-content -->
+                </div>
+                <!-- /container -->
+            </main>
+        </div>
+       
+        
+        <script>
+            $(function(){
+                loadData(10)
+            })
+            // 데이터 로드
+            function loadData(breakpoint){
+                $.ajax({
+                    url: "/json/dummy.json",
+                    type: "GET", 
+                    dataType: "json"
+                })
+                .done(function(res) {
+                    let total = res.length;
+                    let paginationLength = Math.ceil(Number(total) / Number(breakpoint));
+
+                    makePagination(paginationLength);
+                    makeTable(res,breakpoint)
+                })
+                .fail(function(xhr, status, errorThrown) {
+                })
+                .always(function(xhr, status) {
+                });
+            }
+
+            function makePagination(paginationLength){
+                let minPage = 1;                    // 시작페이지
+                let maxPage = paginationLength;     // 최대페이지 (단, 10개 미만일 경우 total값)
+                let perPage = 10;                   // 뷰에 보이는 페이지 개수
+                // let currentPage = getUrl();            // 현재 페이지 (url 추출)
+
+
+                currentPage = 1;
+                maxPage = 10
+                // console.log(currentPage)
+                if(paginationLength > 10){
+                    if(paginationLength % 10 > 0) {
+                        minPage = Math.floor(paginationLength / 10) * 10
+                        maxPage = minPage + 9
+                    }
+                    else{
+                        maxPage = paginationLength / 10 * 10
+                        minPage = maxPage - 9
+                    }
+                }
+
+                for(let i = minPage; i <= maxPage; i++ ){
+                    html = ''
+
+                    i > 5 ?
+                    hideViewportPaginationClass = 'is-pc' :
+                    hideViewportPaginationClass = ''
+
+                    if( i == currentPage){
+                        html += `<li class="pagination__item is-active ${hideViewportPaginationClass}" data-page_num=${i}>${i}</li>`
+                    }
+                    else{
+                        html += `
+                            <li class="pagination__item ${hideViewportPaginationClass}" data-page_num=${i}>${i}</li>
+                        `
+                    }
+                    $('#pagination-index-wrap').append(html)
+                }
+            }
+
+
+            // 테이블 만들기
+            function makeTable(data,breakpoint){
+
+                console.log(data)
+                console.log(breakpoint)
+
+                // 이미 테이블이 생성된 경우 테이블 삭제 후 재생성
+                if($('.table__tbody .table__tr').length > 0) {
+                    $('.table__tbody .table__tr').remove()
+                }
+
+                for (let i = 0; i < breakpoint; i++){
+                    if(i > data.length) break;
+                    testClass = null
+
+                    if(data[i].isActive == false){
+                        state = `<p class="is-primary">결제완료</p>`
+                    }
+                    else{
+                        state = `<p class="ban">결제취소</p>`
+                    }
+
+                    html = ''
+                    html += `
+                        <div class="table__tr ${testClass}" data-id="${data[i].index}">
+                            <div class="table__td is-left width-100">
+                                <div class="table__td width-10">
+                                    <p class="is-remark">${state}</p>
+                                </div>
+                                <div class="table__td width-60">
+                                    <p class="table__td--title">${data[i].guid}</p>
+                                </div>
+                                <div class="table__td width-10">
+                                    <p class="table__td--title">${data[i].balance.substring(0,6)}원</p>
+                                </div>
+                                <div class="table__td width-20">
+                                    <p>${data[i].tags[0]}(${data[i].phone})</p>
+                                </div>
+                                <div class="table__td width-10">
+                                    <p>${data[i].guid}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                    $('.table__tbody').append(html)
+                }
+            }
+
+
+            
+        </script>
+    </body>
+    
+</html>
