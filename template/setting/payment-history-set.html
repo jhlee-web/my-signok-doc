@@ -50,14 +50,42 @@
                         <!-- /tabs -->
                         <div class="full-grid left-double">
                             <div class="card-wrap">
-                                <!-- card -->
                                 <div class="card">
                                     <p class="is-remark">결제내역</p>
                                     <div class="table">
                                         <div class="table__tbody"></div>
                                     </div>
+                                    <div class="table__paging">
+                                        <ul class="pagination">
+                                            <li class="">
+                                                <button type="button" class="button button--text">
+                                                    <img src="/statics/icon/angle-left.svg" 
+                                                    class="icon"
+                                                    alt="이전페이지">
+                                                </button>
+                                            </li>
+                                            <ul id="pagination-index-wrap" class="pagination__index-wrap"></ul>
+                                            <li class="">
+                                                <button type="button" class="button button--text">
+                                                    <img src="/statics/icon/angle-right.svg" 
+                                                    class="icon"
+                                                    alt="다음페이지">
+                                                </button>
+                                            </li>
+                                        </ul>
+                                        <div id="count-load-table" class="select-box  is-top">
+                                            <div class="select-box__select">
+                                                <p> 10개씩 보기</p>
+                                                <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
+                                            </div>
+                                            <ul class="select-box__option">
+                                                <li>10개씩 보기</li>
+                                                <li>30개씩 보기</li>
+                                                <li>50개씩 보기</li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
-                                <!-- /card -->
                             </div>
                             <!-- /card-wrap -->
                             <div class="card is-row-full" id="event">
@@ -167,17 +195,17 @@
                                 <div class="table__td width-10">
                                     <p class="is-remark">${state}</p>
                                 </div>
-                                <div class="table__td width-60">
+                                <div class="table__td width-50">
                                     <p class="table__td--title">${data[i].guid}</p>
                                 </div>
                                 <div class="table__td width-10">
-                                    <p class="table__td--title">${data[i].balance.substring(0,6)}원</p>
+                                    <p class="table__td--title">${data[i].balance.replaceAll('$','').substring(0,5)}원</p>
                                 </div>
-                                <div class="table__td width-20">
-                                    <p>${data[i].tags[0]}(${data[i].phone})</p>
+                                <div class="table__td width-15">
+                                    <p>${data[i].tags[0]}<br>(${data[i].phone})</p>
                                 </div>
-                                <div class="table__td width-10">
-                                    <p>${data[i].guid}</p>
+                                <div class="table__td width-15">
+                                    <p>${data[i].registered.substring(0,10)} 23:59</p>
                                 </div>
                             </div>
                         </div>
@@ -189,6 +217,7 @@
 
             
         </script>
+        <script src="/statics/js/common.js"></script>
     </body>
     
 </html>
