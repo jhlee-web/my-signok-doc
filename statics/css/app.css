@@ -912,3 +912,37 @@
 
     }
 }
+
+#price-list .table__td{
+    justify-content: center;
+    padding: .5em 1em ;
+}
+
+
+/* price-list hover 효과 변경 필요해서 없앰 */
+#price-list .table__tr:hover {
+    cursor: pointer;
+    transform: none;
+    box-shadow: none;
+}
+
+/* #price-list .table__td:hover{
+    color: var(--primary-color-500);
+    transition: .3s;
+} */
+
+#price-list .table__td .is-active{
+    background:var(--primary-color-500);
+    color: var(--white);
+    padding: 1em;
+    border-radius: .5em;
+}
+
+@media all and (max-width:768px){
+    #price-list .table__td.is-left {
+        flex-direction: row;
+    }
+    #price-list .table__td{
+        align-items: center;
+    }
+}

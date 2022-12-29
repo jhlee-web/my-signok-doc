@@ -53,186 +53,108 @@
                                 <div class="card">
                                     <!-- 요금제 -->
                                     <div class="card__row">
-                                        <p class="is-remark">
-                                            요금제
+                                        <p class="font-weight--medium body--large">
+                                            요금제를 선택하세요
                                         </p>
                                         <div class="control-form">
-                                            <span>연간</span>
+                                            <span>연간결제</span>
                                             <label class="is-small toggle">
                                                 <input type="checkbox" class="toggle__checkbox">
                                                 <span class="toggle__slider"></span>
                                             </label>
-                                            <span>월간</span>
+                                            <span>월간결제</span>
                                         </div>
                                     </div>
-                                    <div class="card__content">
-                                        <div class="card__row ">
-                                            <div class="control-form">
-                                                <input type="radio" class="radio" name="product"
-                                                id="payment-contract"
-                                                checked>
-                                                <label for="payment-contract">베이직</label>
-                                            </div>
-                                            <p>7,900원</p>
-                                        </div>
-                                        <div class="card__row ">
-                                            <div class="control-form">
-                                                <input type="radio" class="radio" name="product"
-                                                id="payment-contract"
-                                                checked>
-                                                <label for="payment-contract">비즈니스</label>
-                                            </div>
-                                            <p>9,900원</p>
-                                        </div>
-                                        <div class="card__row ">
-                                            <div class="control-form">
-                                                <input type="radio" class="radio" name="product"
-                                                id="payment-contract"
-                                                checked>
-                                                <label for="payment-contract">프리미엄</label>
-                                            </div>
-                                            <p>39,000원</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- 상품 -->
-    
-                                    <div class="card__content">
-                                        <p class="is-remark">
-                                            상품목록
-                                        </p>
-                                        <div class="card__row is-change">
-                                            <div class="control-form">
-                                                <input type="checkbox" class="checkbox" 
-                                                id="payment-contract"
-                                                checked>
-                                                <label for="payment-contract">서명요청</label>
-                                            </div>
-    
-                                            <div class="flex--row  width-100 flex-justify--end">
-                                                <div class="group-button is-small">
-                                                    <button type="button"
-                                                    class="icon-button group-button__base is-start" id="input-minus">
-                                                        <img class="icon" src="/statics/icon/minus-line.svg" alt="빼기">
-                                                    </button>
-                                                    <input type="number" value="10" readonly
-                                                    class="input group-button__base is-middle is-narrow">
-                                                    <button type="button"
-                                                    class="icon-button group-button__base is-end" id="input-plus">
-                                                        <img class="icon" src="/statics/icon/plus-line.svg" alt="더하기">
-                                                    </button>
+                                    <div class="table" id="price-list">
+                                        <div class="table__tbody">
+                                            <div class="table__tr" id="price-select-area">
+                                                <div class="table__td width-100"></div>
+                                                <div data-membership="basic" class="table__td width-100">
+                                                    <span >베이직</span>
                                                 </div>
-                                                <p><span>3,000</span>원</p>
-                                            </div>
-                                        </div>
-                                        <div class="card__row is-change">
-                                            <div class="control-form">
-                                                <input type="checkbox" class="checkbox" id="payment-large"
-                                                checked>
-                                                <label for="payment-large">대량발송</label>
-                                            </div>
-    
-                                            <div class="flex--row width-100 flex-justify--end">
-                                                <div class="group-button is-small">
-                                                    <button type="button"
-                                                    class="icon-button group-button__base is-start" id="input-minus">
-                                                        <img class="icon" src="/statics/icon/minus-line.svg" alt="빼기">
-                                                    </button>
-                                                    <input type="number" value="10" readonly
-                                                    class="input group-button__base is-middle is-narrow">
-                                                    <button type="button"
-                                                    class="icon-button group-button__base is-end" id="input-plus">
-                                                        <img class="icon" src="/statics/icon/plus-line.svg" alt="더하기">
-                                                    </button>
+                                                <div data-membership="business" class="table__td width-100">
+                                                    <span>비즈니스</span>
                                                 </div>
-                                                <p><span>3,000</span>원</p>
-                                            </div>
-                                        </div>
-                                        <div class="card__row is-change">
-                                            <div class="control-form">
-                                                <input type="checkbox" class="checkbox" id="payment-price"
-                                                checked>
-                                                <label for="payment-price">링크서명</label>
-                                            </div>
-    
-                                            <div class="flex--row  width-100 flex-justify--end">
-                                                <div class="group-button is-small">
-                                                    <button type="button"
-                                                    class="icon-button group-button__base is-start" id="input-minus">
-                                                        <img class="icon" src="/statics/icon/minus-line.svg" alt="빼기">
-                                                    </button>
-                                                    <input type="number" value="10" readonly
-                                                    class="input group-button__base is-middle is-narrow">
-                                                    <button type="button"
-                                                    class="icon-button group-button__base is-end" id="input-plus">
-                                                        <img class="icon" src="/statics/icon/plus-line.svg" alt="더하기">
-                                                    </button>
+                                                <div data-membership="premium" class="table__td width-100 ">
+                                                    <span class="is-active">프리미엄</span>
                                                 </div>
-                                                
-                                                <p><span>3,000</span>원</p>
                                             </div>
-                                        </div>
-                                        <div class="card__row is-change">
-                                            <div class="control-form">
-                                                <input type="checkbox" class="checkbox" id="payment-share"
-                                                checked>
-                                                <label for="payment-share">공유발송</label>
+                                            <div class="table__tr" >
+                                                <div class="table__td width-100">요금</div>
+                                                <div class="table__td width-100"
+                                                data-membership="basic">8,800원</div>
+                                                <div class="table__td width-100" data-membership="business">33,000원</div>
+                                                <div class="table__td width-100" data-membership="premium">66,000원</div>
                                             </div>
-    
-                                            <div class="flex--row  width-100 flex-justify--end">
-                                                <div class="group-button is-small">
-                                                    <button type="button"
-                                                    class="icon-button group-button__base is-start" id="input-minus">
-                                                        <img class="icon" src="/statics/icon/minus-line.svg" alt="빼기">
-                                                    </button>
-                                                    <input type="number" value="10" readonly
-                                                    class="input group-button__base is-middle is-narrow">
-                                                    <button type="button"
-                                                    class="icon-button group-button__base is-end" id="input-plus">
-                                                        <img class="icon" src="/statics/icon/plus-line.svg" alt="더하기">
-                                                    </button>
-                                                </div>
-                                                <p><span>3,000</span>원</p>
+                                            <div class="table__tr">
+                                                <div class="table__td width-100">서명요청</div>
+                                                <div class="table__td width-100"
+                                                data-membership="basic">10건</div>
+                                                <div class="table__td width-100"
+                                                data-membership="business">무제한</div>
+                                                <div class="table__td width-100"
+                                                data-membership="premium">무제한</div>
+                                            </div>
+                                            <div class="table__tr">
+                                                <div class="table__td width-100">카카오톡알림</div>
+                                                <div class="table__td width-100"
+                                                data-membership="basic">10건</div>
+                                                <div class="table__td width-100"
+                                                data-membership="business">무제한</div>
+                                                <div class="table__td width-100"
+                                                data-membership="premium">무제한</div>
+                                            </div>
+                                            <div class="table__tr">
+                                                <div class="table__td width-100">휴대폰본인인증</div>
+                                                <div class="table__td width-100"
+                                                data-membership="basic">10건</div>
+                                                <div class="table__td width-100"
+                                                data-membership="business">무제한</div>
+                                                <div class="table__td width-100"
+                                                data-membership="premium">무제한</div>
+                                            </div>
+                                            <div class="table__tr">
+                                                <div class="table__td width-100">템플릿</div>
+                                                <div class="table__td width-100"
+                                                data-membership="basic">10건</div>
+                                                <div class="table__td width-100"
+                                                data-membership="business">무제한</div>
+                                                <div class="table__td width-100"
+                                                data-membership="premium">무제한</div>
+                                            </div>
+                                            <div class="table__tr">
+                                                <div class="table__td width-100">첨부파일 요청</div>
+                                                <div class="table__td width-100"
+                                                data-membership="basic">10건</div>
+                                                <div class="table__td width-100"
+                                                data-membership="business">무제한</div>
+                                                <div class="table__td width-100"
+                                                data-membership="premium">무제한</div>
+                                            </div>
+                                            <div class="table__tr">
+                                                <div class="table__td width-100">대량발송</div>
+                                                <div class="table__td width-100"
+                                                data-membership="basic">미제공</div>
+                                                <div class="table__td width-100"
+                                                data-membership="business">미제공</div>
+                                                <div class="table__td width-100"
+                                                data-membership="premium">100건</div>
                                             </div>
                                         </div>
                                     </div>
-                                    
-                                    <div class="card__row is-end">
-                                        <!-- <p class="is-remark"> 총</p> -->
-                                        <p class="is-accent">0원</p>
-                                    </div>
+    
                                 </div>
                                 <!-- /card -->
+
                                 <!-- card -->
                                 <div class="card">
-                                    <ul class="checkbox-wrap">
-                                        <li class="checkbox__item margin-bottom--medium " >
-                                            <label for="checkbox-all"
-                                            class="font-weight--medium">
-                                                약관전체동의(선택포함)
-                                            </label>
-                                            <input type="checkbox" id="" class="checkbox checkbox-all">
-                                        </li>
-
-                                        <li class="checkbox__item">
-                                            <label for="" class="card__desc flex-align--center">
-                                                <span class="font-weight--medium">필수</span>
-                                                서비스 이용약관
-                                                <img class="icon" src="/statics/icon/angle-right.svg">
-                                            </label>
-                                            <input type="checkbox" class="checkbox" required>
-                                        </li>
-
-                                        <li class="checkbox__item">
-                                            <label for="" class="card__desc flex-align--center">
-                                                <span class="font-weight--medium">필수</span>
-                                                개인정보 처리방침
-                                                <img class="icon" src="/statics/icon/angle-right.svg">
-                                            </label>
-                                            <input type="checkbox" class="checkbox" required>
-                                        </li>
-
-                                    </ul>
+                                    <div class="card__content">
+                                        <div class="card__row">
+                                            <p class="body--large font-weight--medium">기업맞춤형</p>
+                                            <a href="javascript:void(0)" class="button button--text">상담하기</a>
+                                        </div>
+                                        <p class="is-remark">기업 이용 패턴에 맞게 직접 설계를 도와드립니다.</p>
+                                    </div>
                                 </div>
                             </div>
 
@@ -251,24 +173,12 @@
        
         <script src="/statics/js/common.js"></script>
         <script>
-            $('.icon-button').on('click',function(){
-                let button = $(this).attr('id').split('-').pop()
-                let input = $(this).siblings('.input')
-                let value = Number(input.val())
 
-                if(button == 'plus' && value > 0){
-                    value = value + 10
-                }
-                else if(button == 'minus' && value > 10){
-                    value = value - 10
-                }
-
-                input.val(value)
+            // 클릭이벤트넣어야함
+            $('#price-select-area .table__td').on('click',function(e){
+                let value = $(this).attr('data-membership')
+                $('.table__td[data-membership="'+value+'"]').addClass('is-primary')
             })
-
-            function totalPayment(){
-
-            }
             
         </script>
 
