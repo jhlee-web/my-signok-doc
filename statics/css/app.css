@@ -112,7 +112,7 @@
 }
 
 .table__td p{
-    width: 95%;
+    /* width: 95%; */
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -450,7 +450,7 @@
 
 .modal__content{
     padding: 2rem;
-    max-height:27.5rem;
+    /* max-height:27.5rem; */
     overflow-y: scroll;
 }
 /* 
@@ -620,7 +620,7 @@
     border: 0;
 }
 
-.round-input .select-box__select{
+.round-input .select-box{
     border: unset;
     min-width: 2rem;
     /* padding: 0; */
@@ -632,6 +632,19 @@
         height: 2.5rem;
     }
 }
+
+@media all and (max-width:768px){
+    .round-input{
+        max-width: unset;
+        height: 2.5rem;
+        width: 100%;
+    }
+
+    .round-input .select-box{
+        max-width: max-content;
+    }
+}
+
 
 .basic-button-wrap{
     display: inline-flex;

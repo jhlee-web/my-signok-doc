@@ -302,6 +302,7 @@ option{
 @media all and (max-width:768px){
     .flex--row.is-change{
         flex-direction: column;
+        width: 100%;
     }
     .flex--column.is-change{
         flex-direction: row;
@@ -368,15 +369,17 @@ option{
     align-items: center;
     gap: .5em;
     cursor: pointer;
-}
-
-.select-box__select{
-    width: 100%;
-    height: 100%;
 
     border: 1px solid var(--theme-color-400);
     border-radius: .5rem;
     padding: 0 1rem;
+
+    min-width: 12rem;
+    height: 2.5rem;
+}
+
+.select-box__select{
+    width: 100%;
 }
 .select-box__select li:not(.is-active){
     display: none;
@@ -396,10 +399,6 @@ option{
     min-width: 12rem;
     height: 3rem;
 }
-.select-box.is-medium{
-    min-width: 12rem;
-    height: 2.5rem;
-}
 .select-box.is-small{
     min-width: 12rem;
     height: 2rem;
@@ -407,23 +406,41 @@ option{
 
 .select-box__option{
     display: none;
-}
-.select-box.is-active .select-box__option{
-    position: absolute;
-    left: 0;
-    top: 100%;
-    display: flex;
-    flex-direction: column;
+
+    
     background: var(--background-color);
     box-shadow: var(--box-shadow--5);
+    border: 1px solid var(--theme-color-400);
     width: 100%;
-    border-right: 0.5em;
+
+    height: max-content;
+    border-radius: 0.5em;
     z-index: 1;
+
+    position: absolute;
+    left: 0;
+
+    flex-direction: column;
+
 }
+.select-box.is-active .select-box__option{
+    display: flex;
+    top: 100%;
+}
+
+.select-box.is-active .select-box__option.is-top{
+    display: flex;
+    top: -200%;
+    /* bottom: 100%; */
+
+    /* border: 1px solid black; */
+}
+
 
 .select-box__option li{
     padding: .5em;
 }
+
 
 @media all and (max-width:1280px){
     .select-box.is-large{
@@ -466,6 +483,12 @@ label{
     border-radius: 0.5rem;
     border: 1px solid var(--theme-color-400);
     color: var(--text-color-800);
+
+    font-size: 1rem;
+}
+.input::placeholder,
+.textarea::placeholder{
+    font-size: var(--text-small);
 }
 .textarea{
     height: 100%;
@@ -731,9 +754,7 @@ label{
 }
 
 @media all and (max-width:1280px){
-    .button{
-        width: 100%;
-    }
+    
     .button.is-small{
         height: 2.5rem;
         line-height: 2.5rem;
@@ -743,6 +764,12 @@ label{
     .card .button--text{
         width: fit-content;
         padding: 0;
+    }
+}
+
+@media all and (max-width:768px){
+    .button{
+        width: 100%;
     }
 }
 

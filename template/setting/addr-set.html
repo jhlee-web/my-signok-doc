@@ -75,7 +75,7 @@
                                                 class="round-input__input input">
                                             </div>
                                         </div>
-                                        <button type="button" class="button button--secondary">
+                                        <button type="button" id="add-address" class="button button--secondary">
                                             <img src="/statics/icon/plus-line.svg" alt="연락처 추가"
                                             class="icon">
                                             연락처추가
@@ -193,8 +193,7 @@
                         </div>
                         <div class="table__td width-15 folder-area">
                             <p class="is-remark">
-                                <img src="/statics/icon/folder-line.svg" class="icon" alt="폴더">
-                                기본폴더
+                                기본그룹
                             </p>
                         </div>
                     </div>
@@ -216,8 +215,8 @@
                 html = '';
                 html += `
                 <ul class="list-modal">
-                    <li id="document-name-change-this">수정</li>
-                    <li id="document-delete-this">삭제</li>
+                    <li id="document-name-change-this">수정하기</li>
+                    <li id="document-delete-this">삭제하기</li>
                 </ul>
                 `
                 if($('.table__tr .list-modal').length < 1){
@@ -229,10 +228,20 @@
                     $('.table__tr .list-modal').remove()
                 }
 
-                $('#document-name-change-this').on('click',makeDeleteModal)
+
+                // 이것도 테스트용
+                $('#document-name-change-this').on('click',function(){
+                    let data = $(this).parents('.table__td.is-right').prev('.table__td.is-left').children('.table__td')
+                    
+                    let dataArr = [];
+                    for (let i = 0; i < data.length; i++){
+                        dataArr.push(data.eq(i).text().trim())
+                    }
+
+                    makeModal(dataArr)
+                })
                 $('#document-delete-this').on('click',function(){
                     const string = $(this).parents('.table__tr').find('.table__td--title').text()
-                    console.log()
                     makeDeleteModal(string)
                 })
             }
@@ -264,10 +273,7 @@
                 $('.main').append(html)
             }
 
-            $(document).on('click','.table__tr',makeModal)
-
-            function makeModal(e){
-
+            $(document).on('click','.table__tr',function(e){
                 // thead 영역일 경우 aisde 생성 안함
                 if($(this).parent('.table__thead').length > 0){
                     if(e.target.className !== 'checkbox'){
@@ -279,8 +285,26 @@
                 }
 
                 if(e.target.closest('button')||e.target.closest('.list-modal')) return false;
+                let data = $(this).find('.table__td.is-left').children('.table__td')
 
+                /* 
+                    test용 dataArr
+                    arr에 담아서 디테일/연락처추가 비교 보기용
+                */
+                let dataArr = [];
+                for (let i = 0; i < data.length; i++){
+                    dataArr.push(data.eq(i).text().trim())
+                }
 
+                makeModal(dataArr)
+            })
+            $('#add-address').on('click',function(){
+                makeModal(null)
+            })
+
+            function makeModal(data){
+                data === null ? data = ["","","","","",""] : data
+                
                 html = '';
                 html += `
                 <div class="modal">
@@ -296,31 +320,25 @@
                         <ul class="basic-list">
                             <li class="flex--column gap--sm is-active"> 
                                 <p class="is-remark">이름</p>
-                                <input type="text" class="input" value="">
+                                <input type="text" class="input" value="${data[1]}">
                             </li>
                             <li class="flex--column gap--sm "> 
                                 <p class="is-remark">이메일</p>
-                                <input type="text" class="input" value="">
+                                <input type="text" class="input" value="${data[2]}">
                             </li>
                             <li class="flex--column gap--sm"> 
                                 <p class="is-remark">연락처</p>
-                                <input type="text" class="input" value="">
+                                <input type="text" class="input" value="${data[3]}">
                             </li>
-                            <li class="flex--column gap--sm"> 
-                                <p class="is-remark">기업이름</p>
-                                <input type="text" class="input" value="" disabled>
-                            </li>
+                            
                             <li class="flex--column gap--sm"> 
                                 <p class="is-remark">그룹</p>
                                 <div class="select-box">
-                                    <ul class="select-box__select">
-                                        <li class="is-active">개인</li>
-                                        <!-- <li>기업</li> -->
-                                    </ul>
+                                    <p class="select-box__select">${data[4]}</p>
                                     <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
-                                    <ul class="select-box__option">
-                                        <li>개인</li>
-                                        <li>개인</li>
+                                    <ul class="select-box__option is-top">
+                                        <li>${data[4]}</li>
+                                        <li>해제</li>
                                     </ul>
                                 </div>
                             </li>
