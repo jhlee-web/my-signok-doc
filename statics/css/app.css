@@ -610,7 +610,7 @@
     border-radius: 99rem;
 
     width: 100%;
-    max-width: 20rem;
+    /* max-width: 20rem; */
     height: 2rem;
 }
 .round-input.width-100{
@@ -931,9 +931,14 @@
     transition: .3s;
 } */
 
-#price-list .table__td .is-active{
+#price-list .table__tr:first-child .table__td{
+    padding: 1em;
+}
+#price-list .table__td.is-active span{
     background:var(--primary-color-500);
     color: var(--white);
+    width: 100%;
+    text-align: center;
     padding: 1em;
     border-radius: .5em;
 }

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <script src="/statics/js/loadHTML.js"></script>
+        <script>
+            loadHTML("/statics/include/head.html");
+        </script>
+        <title>설정|요금제</title>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <script>
+                loadHTML("/statics/include/nav.html");
+            </script>
+            
+            <main class="main">
+                <!-- 상단 헤더 -->
+                <script>
+                    loadHTML("/statics/include/sub_header.html");
+                </script>
+                <!-- // 상단헤더 -->
+                
+                <!-- 메인 컨텐츠 -->
+                <div class="container">
+                    <div class="main-content">
+                        <!-- tabs -->
+                        <div class="tab-wrap">
+                            <ul class="tab">
+                                <li class="tab__item--badge ">
+                                    <a href="/template/setting/user-set.html">내 정보</a>
+                                </li>
+                                <li class="tab__item--badge">
+                                    <a href="/template/setting/company-set.html">기업 정보</a>
+                                </li>
+                                <li class="tab__item--badge is-active">
+                                    <a href="javascript:void(0)">요금제</a>
+                                </li>
+                                <li class="tab__item--badge">
+                                    <a href="/template/setting/payment-history-set.html">결제 정보</a>
+                                </li>
+                                <li class="tab__item--badge">
+                                    <a href="/template/setting/addr-set.html">주소록</a>
+                                </li>
+                                <li class="tab__item--badge">
+                                    <a href="/template/setting/brand-set.html">브랜딩</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /tabs -->
+                        <div class="full-grid left-double">
+                            <div class="card-wrap">
+                                <div class="card">
+                                    <!-- 요금제 -->
+                                    <div class="card__row">
+                                        <p class="is-remark">
+                                            요금제
+                                        </p>
+                                        <div class="control-form">
+                                            <span>연간</span>
+                                            <label class="is-small toggle">
+                                                <input type="checkbox" class="toggle__checkbox">
+                                                <span class="toggle__slider"></span>
+                                            </label>
+                                            <span>월간</span>
+                                        </div>
+                                    </div>
+                                    <div class="card__content">
+                                        <div class="card__row ">
+                                            <div class="control-form">
+                                                <input type="radio" class="radio" name="product"
+                                                id="payment-contract"
+                                                checked>
+                                                <label for="payment-contract">베이직</label>
+                                            </div>
+                                            <p>7,900원</p>
+                                        </div>
+                                        <div class="card__row ">
+                                            <div class="control-form">
+                                                <input type="radio" class="radio" name="product"
+                                                id="payment-contract"
+                                                checked>
+                                                <label for="payment-contract">비즈니스</label>
+                                            </div>
+                                            <p>9,900원</p>
+                                        </div>
+                                        <div class="card__row ">
+                                            <div class="control-form">
+                                                <input type="radio" class="radio" name="product"
+                                                id="payment-contract"
+                                                checked>
+                                                <label for="payment-contract">프리미엄</label>
+                                            </div>
+                                            <p>39,000원</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card__row is-end">
+                                        <!-- <p class="is-remark"> 총</p> -->
+                                        <p class="is-accent">0원</p>
+                                    </div>
+                                </div>
+                                <!-- /card -->
+                                <!-- card -->
+                                <div class="card">
+                                    <ul class="checkbox-wrap">
+                                        <li class="checkbox__item margin-bottom--medium " >
+                                            <label for="checkbox-all"
+                                            class="font-weight--medium">
+                                                약관전체동의(선택포함)
+                                            </label>
+                                            <input type="checkbox" id="" class="checkbox checkbox-all">
+                                        </li>
+
+                                        <li class="checkbox__item">
+                                            <label for="" class="card__desc flex-align--center">
+                                                <span class="font-weight--medium">필수</span>
+                                                서비스 이용약관
+                                                <img class="icon" src="/statics/icon/angle-right.svg">
+                                            </label>
+                                            <input type="checkbox" class="checkbox" required>
+                                        </li>
+
+                                        <li class="checkbox__item">
+                                            <label for="" class="card__desc flex-align--center">
+                                                <span class="font-weight--medium">필수</span>
+                                                개인정보 처리방침
+                                                <img class="icon" src="/statics/icon/angle-right.svg">
+                                            </label>
+                                            <input type="checkbox" class="checkbox" required>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- /card -->
+                            <div class="card is-row-full" id="event">
+                                <img class="" src="https://source.unsplash.com/random">
+                            </div>
+                        </div>
+                        <!-- /full-grid -->
+                    </div>
+                    <!-- /main-content -->
+                </div>
+                <!-- /container -->
+            </main>
+        </div>
+       
+        <script src="/statics/js/common.js"></script>
+        <script>
+            $('.icon-button').on('click',function(){
+                let button = $(this).attr('id').split('-').pop()
+                let input = $(this).siblings('.input')
+                let value = Number(input.val())
+
+                if(button == 'plus' && value > 0){
+                    value = value + 10
+                }
+                else if(button == 'minus' && value > 10){
+                    value = value - 10
+                }
+
+                input.val(value)
+            })
+
+            function totalPayment(){
+
+            }
+            
+        </script>
+
+    </body>
+    
+</html>

@@ -434,13 +434,13 @@ option{
 .select-box:not(.is-top).is-active .select-box__option{
     display: flex;
     box-shadow: var(--box-shadow--5);
-    /* top: 100%; */
+    top: 100%;
 }
 
 .select-box.is-top.is-active .select-box__option{
     display: flex;
-    top: -300%;
-    /* bottom: 100%; */
+    /* top: -100%; */
+    bottom: 100%;
 
     /* border: 1px solid black; */
 }

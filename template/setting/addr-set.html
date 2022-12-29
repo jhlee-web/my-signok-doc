@@ -58,11 +58,10 @@
                                             <!-- css수정 필요 -->
                                             <div class="round-input">
                                                 <div class="select-box">
-                                                    <ul class="select-box__select">
-                                                        <li class="is-active">이름</li>
-                                                        <!-- <li>기업</li> -->
-                                                    </ul>
-                                                    <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
+                                                    <div class="select-box__select">
+                                                        <p>이름</p>
+                                                        <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
+                                                    </div>
                                                     <ul class="select-box__option">
                                                         <li>이름</li>
                                                         <li>이메일</li>
@@ -333,12 +332,13 @@
                             
                             <li class="flex--column gap--sm"> 
                                 <p class="is-remark">그룹</p>
-                                <div class="select-box">
-                                    <p class="select-box__select">${data[4]}</p>
-                                    <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
-                                    <ul class="select-box__option is-top">
-                                        <li>${data[4]}</li>
-                                        <li>해제</li>
+                                <div class="select-box is-top">
+                                    <div class="select-box__select">
+                                        <p class="">기본그룹</p>
+                                        <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
+                                    </div>
+                                    <ul class="select-box__option ">
+                                        <li>기본그룹</li>
                                     </ul>
                                 </div>
                             </li>

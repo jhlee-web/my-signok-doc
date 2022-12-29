@@ -80,6 +80,8 @@
         $('#user_name').text(newTestObj['user_name'])
         $('#user_left_day').text(newTestObj['left_day'])
 
+        localStorage.setItem('testData',JSON.stringify(newTestObj))
+
         return newTestObj
     })
     $('.doc-header__user').on('click',function(){
