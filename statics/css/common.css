@@ -696,7 +696,6 @@ label{
     filter: var(--filter-secondary);
 }
 
-
 .button--primary{
     background: var(--primary-color-500);
     color: var(--white);
@@ -1373,4 +1372,25 @@ div:not(.card) .is-empty > div{
     height: auto;
     transform-origin: top;
     transition: transform .4s ease-in-out ;
+}
+
+
+/* file-box */
+.file-box{
+    display: inline-flex;
+    gap: .5em;
+    align-items: center;
+}
+.file-box.is-image{
+    display: flex;
+    flex-direction: column;
+}
+
+.file-box input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
 }
