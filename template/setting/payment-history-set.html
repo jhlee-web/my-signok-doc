@@ -169,9 +169,6 @@
             // 테이블 만들기
             function makeTable(data,breakpoint){
 
-                console.log(data)
-                console.log(breakpoint)
-
                 // 이미 테이블이 생성된 경우 테이블 삭제 후 재생성
                 if($('.table__tbody .table__tr').length > 0) {
                     $('.table__tbody .table__tr').remove()
@@ -193,7 +190,7 @@
                         <div class="table__tr ${testClass}" data-id="${data[i].index}">
                             <div class="table__td is-left width-100">
                                 <div class="table__td width-10">
-                                    <p class="is-remark">${state}</p>
+                                    ${state}
                                 </div>
                                 <div class="table__td width-50">
                                     <p class="table__td--title">${data[i].guid}</p>
@@ -202,10 +199,10 @@
                                     <p class="table__td--title">${data[i].balance.replaceAll('$','').substring(0,5)}원</p>
                                 </div>
                                 <div class="table__td width-15">
-                                    <p>${data[i].tags[0]}<br>(${data[i].phone})</p>
+                                    <p class="is-remark">${data[i].tags[0]}<br>(${data[i].phone})</p>
                                 </div>
                                 <div class="table__td width-15">
-                                    <p>${data[i].registered.substring(0,10)} 23:59</p>
+                                    <p class="is-remark">${data[i].registered.substring(0,10)} 23:59</p>
                                 </div>
                             </div>
                         </div>

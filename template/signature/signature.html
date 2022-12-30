@@ -42,8 +42,14 @@
                                     <img src="/statics/img/logo.png">
                                 </div>
                                 <div class="user-active-area flex--row flex-justify--between">
-                                    <button class="button button--text re"><img src="/statics/icon/trash-line.svg" class="icon">삭제</button>
-                                    <button class="button button--text"><img src="/statics/icon/download-line.svg" class="icon">다운로드</button>
+                                    <button class="button button--text re is-primary">
+                                        <img src="/statics/icon/trash-line.svg" class="icon is-primary">
+                                        삭제
+                                    </button>
+                                    <button class="button button--text">
+                                        <img src="/statics/icon/download-line.svg" class="icon">
+                                        다운로드
+                                    </button>
                                 </div>
                             </div>
                             <div class="signature-card">
@@ -57,8 +63,14 @@
                                     <img src="/statics/img/logo.png">
                                 </div>
                                 <div class="user-active-area flex--row flex-justify--between">
-                                    <button class="button button--text re"><img src="/statics/icon/trash-line.svg" class="icon">삭제</button>
-                                    <button class="button button--text"><img src="/statics/icon/download-line.svg" class="icon">다운로드</button>
+                                    <button class="button button--text re is-primary">
+                                        <img src="/statics/icon/trash-line.svg" class="icon is-primary">
+                                        삭제
+                                    </button>
+                                    <button class="button button--text">
+                                        <img src="/statics/icon/download-line.svg" class="icon">
+                                        다운로드
+                                    </button>
                                 </div>
                             </div><div class="signature-card">
                                 <div class="check-default-area flex-justify--end">
@@ -71,8 +83,14 @@
                                     <img src="/statics/img/logo.png">
                                 </div>
                                 <div class="user-active-area flex--row flex-justify--between">
-                                    <button class="button button--text re"><img src="/statics/icon/trash-line.svg" class="icon">삭제</button>
-                                    <button class="button button--text"><img src="/statics/icon/download-line.svg" class="icon">다운로드</button>
+                                    <button class="button button--text re is-primary">
+                                        <img src="/statics/icon/trash-line.svg" class="icon is-primary">
+                                        삭제
+                                    </button>
+                                    <button class="button button--text">
+                                        <img src="/statics/icon/download-line.svg" class="icon">
+                                        다운로드
+                                    </button>
                                 </div>
                             </div><div class="signature-card">
                                 <div class="check-default-area flex-justify--end">
@@ -85,8 +103,14 @@
                                     <img src="/statics/img/logo.png">
                                 </div>
                                 <div class="user-active-area flex--row flex-justify--between">
-                                    <button class="button button--text re"><img src="/statics/icon/trash-line.svg" class="icon">삭제</button>
-                                    <button class="button button--text"><img src="/statics/icon/download-line.svg" class="icon">다운로드</button>
+                                    <button class="button button--text re is-primary">
+                                        <img src="/statics/icon/trash-line.svg" class="icon is-primary">
+                                        삭제
+                                    </button>
+                                    <button class="button button--text">
+                                        <img src="/statics/icon/download-line.svg" class="icon">
+                                        다운로드
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -98,12 +122,19 @@
         
         <script>
             $(".check-default-area .button").on("click", function() {
-                $('.check-default-area .icon').addClass('on')
-                $('.check-default-area .icon.is-primary').removeClass('on')
+                if($(this).find('.is-primary').hasClass('on')){
+                    $('.check-default-area .icon').addClass('on')
+                    $('.check-default-area .icon.is-primary').removeClass('on')
+                }
+                else{
+                    $('.check-default-area .icon').addClass('on')
+                    $('.check-default-area .icon.is-primary').removeClass('on')
 
                 $(this).find('.icon').removeClass('on')
                 $(this).find('.icon.is-primary').addClass('on')
 
+                }
+                
             });
         </script>
     </body>

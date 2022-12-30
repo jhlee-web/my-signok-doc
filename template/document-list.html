@@ -55,35 +55,60 @@
                 <div class="container flex--row flex-align--start">
                     <!-- 메인 컨텐츠 -->
                     <div class="main-content">
-                        <!-- 상단 -->
-                        <div class="flex--row is-change">
-                            <button type="button" class="button is-small button--outline"
-                            id="change-folder">
-                                <img src="/statics/icon/folder-line.svg" alt="닫기" class="icon icon--large icon--warning">
-                                폴더선택
-                            </button>
-                            <div id="" class="select-box is-small">
-                                <select class="select-box__select">
-                                    <option value="" selected>전체</option>
-                                    <option value="">완료</option>
-                                    <option value="">진행중</option>
-                                    <option value="">만료</option>
-                                </select>
-                                <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
-                            </div>
-                            <div class="round-input">
-                                <select class="round-input__select select">
-                                    <option value="" selected>문서명</option>
-                                    <option value="">옵션2</option>
-                                    <option value="">옵션3</option>
-                                </select>
-                                <input type="text" maxlength="50"
-                                placeholder="검색어를 입력해주세요"
-                                class="round-input__input input">
-                            </div>
+                        <div class="tab-wrap">
+                            <ul class="tab">
+                                <li class="tab__item is-active">
+                                    <a href="javascript:void(0)">일반계약</a>
+                                </li>
+                                <li class="tab__item">
+                                    <a href="javascript:void(0)">대량발송</a>
+                                </li>
+                                <li class="tab__item ">
+                                    <a href="javascript:void(0)">링크서명</a>
+                                </li>
+                                <li class="tab__item ">
+                                    <a href="javascript:void(0)">공문발송</a>
+                                </li>
+                            </ul>
                         </div>
-                        <!-- 상단 2 -->
+                        <!-- 상단 -->
                         <div class="table-top">
+                            <div class="flex--row is-change">
+                                <button type="button" class="button is-small button--outline"
+                                id="change-folder">
+                                    <img src="/statics/icon/folder-line.svg" alt="닫기" class="icon icon--large icon--warning">
+                                    폴더선택
+                                </button>
+                                <div id="" class="select-box is-small">
+                                    <div class="select-box__select">
+                                        <p>전체</p>
+                                        <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
+                                    </div>
+                                    <ul class="select-box__option">
+                                        <li selected>전체</li>
+                                        <li>완료</li>
+                                        <li>진행중</li>
+                                        <li>만료</li>
+                                    </ul>
+                                </div>
+                                <div class="round-input">
+                                    <div class="select-box">
+                                        <div class="select-box__select">
+                                            <p>전체</p>
+                                            <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
+                                        </div>
+                                        <ul class="select-box__option">
+                                            <li selected>전체</li>
+                                            <li>완료</li>
+                                            <li>진행중</li>
+                                            <li>만료</li>
+                                        </ul>
+                                    </div>
+                                    <input type="text" maxlength="50"
+                                    placeholder="검색어를 입력해주세요"
+                                    class="round-input__input input">
+                                </div>
+                            </div>
                             <div id="default-top-box" class="table-top__box">
                                 <button type="button" id="download-excel" 
                                 class="button is-medium">
@@ -159,13 +184,18 @@
                                     </button>
                                 </li>
                             </ul>
-                            <div id="count-load-table" class="select-box is-medium">
-                                <select class="select-box__select">
-                                    <option value="10" selected>10개씩 보기</option>
-                                    <option value="30">30개씩 보기</option>
-                                    <option value="50">50개씩 보기</option>
-                                </select>
-                                <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
+                            <div id="count-load-table" class="select-box is-medium is-top">
+                                <div class="select-box__select">
+                                    <p>10개씩보기</p>
+                                    <img class="select-box__icon icon" src="/statics/icon/angle-down.svg" alt="화살표">
+                                    
+                                </div>
+                                <ul class="select-box__option">
+                                    <li selected>10개씩 보기</li>
+                                    <li>30개씩 보기</li>
+                                    <li>50개씩 보기</li>
+                                </ul>
+                                
                             </div>
                         </div>
                     </div>
