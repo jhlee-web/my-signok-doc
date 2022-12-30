@@ -61,7 +61,7 @@
                                 alt="대량발송 템플릿 만들기" class="icon">
                                 대량발송 템플릿 만들기
                             </a>
-                            
+
                             <div id="selected-top-box" class="table-top__box is-hide">
                                 <div class="table-top__tab tab">
                                     <p class="font-weight--medium">
@@ -143,15 +143,16 @@
                         <div class="container">
                             <div class="inner">
                                 <h5>대량발송</h5>
-                                <ul id="aside-summary" class="aside__list basic-list">
-                                </ul>
                             </div>
                             <a href="/template/burk-submit/burk-submit.html"
                                 class="button button--secondary is-medium">대량발송 시작하기</a>
-                            <div class="aside__button-wrap">
-                                <button type="button"
-                                class="button button--outline is-medium is-break">템플릿 수정하기</button>
-                            </div>
+                            <a href="javascript:void(0)"
+                            class="button button--outline is-medium is-break">템플릿 수정하기</a>
+                            
+                            <!-- documnet-list 페이지에서만 보입니다.
+                            테스트용 버튼  -->
+                            <a href="javascript:void(0)"
+                            class="button button--outline is-medium is-break">대량발송 자세히보기</a>
                             
                         </div>
                     </div>
@@ -562,24 +563,27 @@
                     let title = '대량발송'
                     let html = ''
 
-                    if($('.aside__list__item').length > 0){
-                        $('.aside__list__item').remove()
+                    if($('.aside__list').length > 0){
+                        $('.aside__list').remove()
                     }
 
                     html += `
-                        <p class="">
-                            대량발송 템플릿과 서명자 정보가 담긴 엑셀 파일로 다수에게 서명 요청을 할 수 있습니다.
-                        </p>
-                        <ul class="basic-list">
-                            <li>1. 계약서 템플릿 생성</li>
-                            <li>2. 엑셀파일 양식 다운로드</li>
-                            <li>3. 서명자 정보 작성</li>
-                            <li>4. 미리보기 및 테스트 발송</li>
-                            <li>5. 대량발송 및 진행상태 확인</li>
+                        <ul id="aside-summary" class="aside__list basic-list">
+                            <p class="">
+                                대량발송 템플릿과 서명자 정보가 담긴 엑셀 파일로 다수에게 서명 요청을 할 수 있습니다.
+                            </p>
+                            <ul class="basic-list">
+                                <li>1. 계약서 템플릿 생성</li>
+                                <li>2. 엑셀파일 양식 다운로드</li>
+                                <li>3. 서명자 정보 작성</li>
+                                <li>4. 미리보기 및 테스트 발송</li>
+                                <li>5. 대량발송 및 진행상태 확인</li>
 
+                            </ul>
                         </ul>
+
                     `
-                    $('#aside-summary').append(html)
+                    $('.aside-content .inner').append(html)
                 })
                 .fail(function(xhr, status, errorThrown) {
                 })

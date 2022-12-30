@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <script src="/statics/js/loadHTML.js"></script>
+        <script>
+            loadHTML("/statics/include/head.html");
+        </script>
+        <title>대량발송 | 상세보기</title>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <script>
+                loadHTML("/statics/include/nav.html");
+            </script>
+            
+            <main class="main ">
+                <!-- 상단 헤더 -->
+                <script>
+                    loadHTML("/statics/include/sub_header.html");
+                </script>
+                <!-- // 상단헤더 -->
+                <!-- 메인 컨텐츠 -->
+                <div class="container">
+                    <div class="main-content">
+                        <div class="tab-wrap">
+                            <ul class="tab">
+                                <li class="tab__item--badge ">
+                                    <a href="/template/group/company-info.html">회사 조직도</a>
+                                </li>
+                                <li class="tab__item--badge is-active">
+                                    <a href="javascript:void(0)">멤버 관리</a>
+                                </li>
+                                <li class="tab__item--badge ">
+                                    <a href="/template/group/role-info.html">역할 관리</a>
+                                </li>
+    
+                            </ul>
+                        </div>
+                        <!-- 여기 이름 짓기 -->
+                        <div class="flex--row"
+                        style="background: var(--theme-color-100); padding: 1rem">
+                            <div class="flex--column">
+                                <p class="is-remark">전송 실패</p>
+                                <div class="flex--row">
+                                    <p><span>0</span>명</p>
+                                    <button type="button" class="button button--text is-medium">목록보기</button>
+                                </div>
+                            </div>
+                            <div class="flex--column">
+                                <p class="is-remark">전송 완료</p>
+                                <div class="flex--row">
+                                    <p><span>0</span>명</p>
+                                    <button type="button" class="button button--text is-medium">목록보기</button>
+                                </div>
+                            </div>
+                            <div class="flex--column">
+                                <p class="is-remark">서명 대기중</p>
+                                <div class="flex--row">
+                                    <p><span>0</span>명</p>
+                                    <button type="button" class="button button--text is-medium">목록보기</button>
+                                </div>
+                            </div>
+                            <div class="flex--column">
+                                <p class="is-remark">서명 완료</p>
+                                <div class="flex--row">
+                                    <p><span>0</span>명</p>
+                                    <button type="button" class="button button--text is-medium">목록보기</button>
+                                </div>
+                            </div>
+                        </div>
+                            
+                        <div class="round-input width-20">
+                            <div class="select-box">
+                                <div class="select-box__select ">
+                                    <p>문서명</p>
+                                    <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
+                                </div>
+                                <ul class="select-box__option">
+                                    <li>문서명</li>
+                                    <li>문서명</li>
+                                    <li>문서명</li>
+                                    <li>문서명</li>
+                                </ul>
+                            </div>
+                            <input type="text"
+                            class="round-input__input input"
+                            placeholder="부서를 검색해주세요."
+                            maxlength="64">
+                        </div>
+                        
+                        <div class="is-empty">
+                            <div class="flex--column flex-align--center
+                            ">
+                                <img class="icon is-large"
+                                src="/statics/icon/exclamation-triangle-line.svg"
+                                alt="아직 소속된 멤버가 없습니다">
+                                <p>아직 소속된 멤버가 없습니다</p>
+                                <button type="button" class="button button--secondary is-medium"
+                                id="invite-member" >멤버 초대하기</button>
+                            </div>
+                        </div>
+
+                        <div class="table is-scroll--hor">
+                            <div class="table__thead">
+                                <ul class="table__tr">
+                                    <li class="table__td  width-2"></li>
+                                    <li class="table__td  width-10">상태</li>
+                                    <li class="table__td  width-15">서명자 이름 (필수)</li>
+                                    <li class="table__td  width-15">이메일 또는 휴대전화번호 (필수)</li>
+                                    <li class="table__td  width-15">남길말 (선택)</li>
+                                    <li class="table__td  width-10">접근암호 (선택)</li>
+                                    <li class="table__td  width-10">휴대폰본인인증 전화번호 (선택)</li>
+                                    <li class="table__td  width-10">상태</li>
+                                    <li class="table__td  width-15">서명자 이름 (필수)</li>
+                                    <li class="table__td  width-15">이메일 또는 휴대전화번호 (필수)</li>
+                                    <li class="table__td  width-15">남길말 (선택)</li>
+                                    <li class="table__td  width-10">접근암호 (선택)</li>
+                                    <li class="table__td  width-10">휴대폰본인인증 전화번호 (선택)</li>
+                                </ul>
+                            </div>
+                            <div class="table__tbody">
+                            </div>
+                        </div>
+                        <!-- /table -->
+                    </div>
+                    <!-- /main-content -->
+                </div>
+                <!-- /container -->
+            </main>
+        </div>
+       
+        
+        <script>
+            $(function(){
+                $.ajax({
+                    url: "/json/dummy.json",
+                    type: "GET", 
+                    data:{},
+                    dataType: "json"
+                })
+                .done(function(res) {
+                    randomNum = Math.floor(Math.random() * 1000)
+                    $('.table__tbody .table__tr').remove();
+                    // randomNum=0
+
+                    if(randomNum > 0){
+                        $('.is-empty').hide();
+                        $('.table').show();
+                    }
+                    else{
+                        $('.table').hide()
+                        $('.is-empty').show();
+
+                        return false;
+                    }
+
+                    // 테스트용
+                    const arr = [];
+                    for (let i = 0; i < res.length; i += randomNum) {
+                        arr.push(res.slice(i, i + randomNum));
+                    }
+
+
+                    // 테스트용
+                    for (let i = 0; i<arr[0].length; i++){
+                        html = '';
+                        html += `<div class="table__tr">
+                            <div class="table__td width-2 is-remark">
+                                ${i}
+                            </div>
+                            <div class="table__td width-10">
+                                <img src="/statics/icon/ban-line.svg" class="icon">
+                                <p>서명대기중
+                            </div>
+                            <div class="table__td  width-15">
+                                ${arr[0][i].name}
+                            </div>
+                            <div class="table__td  width-15">
+                                ${arr[0][i].name}
+                            </div>
+                            <div class="table__td width-15">
+                                ${arr[0][i].email}
+                            </div>
+                            <div class="table__td width-10">
+                                ${arr[0][i].favoriteFruit}
+                            </div>
+                            <div class="table__td width-10">
+                                ${arr[0][i].company}
+                            </div>
+                            <div class="table__td width-10">
+                                <img src="/statics/icon/ban-line.svg" class="icon">
+                                <p>서명대기중
+                            </div>
+                            <div class="table__td  width-15">
+                                ${arr[0][i].name}
+                            </div>
+                            <div class="table__td  width-15">
+                                ${arr[0][i].name}
+                            </div>
+                            <div class="table__td width-15">
+                                ${arr[0][i].email}
+                            </div>
+                            <div class="table__td width-10">
+                                ${arr[0][i].favoriteFruit}
+                            </div>
+                            <div class="table__td width-10">
+                                ${arr[0][i].company}
+                            </div>
+                        </div>`
+                        $('.table__tbody').append(html)
+                    }
+                    
+                })
+            })
+        </script>
+    </body>
+    
+</html>

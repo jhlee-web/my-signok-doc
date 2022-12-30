@@ -113,9 +113,9 @@ html,body{
     word-break: keep-all;
 }
 
-*::-webkit-scrollbar{
+/* *::-webkit-scrollbar{
     display: none;
-}
+} */
 
 
 

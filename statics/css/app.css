@@ -613,7 +613,7 @@
     border-radius: 99rem;
 
     width: 100%;
-    /* max-width: 20rem; */
+    max-width: 20rem;
     height: 2rem;
 }
 .round-input.width-100{
@@ -953,4 +953,39 @@
     #price-list .table__td{
         align-items: center;
     }
+}
+
+
+
+/* 
+    tbody 스크롤 완료
+    1. scorll 위치 fix 방법
+    2. thead fix 방법
+    찾아보기
+
+*/
+.table.is-scroll--hor{
+    overflow-x: scroll;
+
+    /* width: 100%; */
+    flex:  0 0 auto;
+    flex-wrap: nowrap;
+}
+
+.table.is-scroll--hor .table__tr,
+.table.is-scroll--hor .table__tbody,
+.table.is-scroll--hor .table__thead
+ {
+    flex:  0 0 auto;
+
+    width: 100%;
+    /* overflow-x: scroll; */
+    flex-wrap: nowrap;
+}
+.table.is-scroll--hor .table__td {
+    /* overflow-x: scroll; */
+    /* flex-wrap: nowrap; */
+
+    flex:  0 0 auto;
+    /* flex-grow flex-shrink flex-basis */
 }
