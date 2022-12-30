@@ -28,20 +28,30 @@
                             <div id="default-top-box" class="table-top__box">
                                 <div class="flex--row">
                                     <div id="" class="select-box is-small">
-                                        <select class="select-box__select">
-                                            <option value="" selected>전체</option>
-                                            <option value="">완료</option>
-                                            <option value="">진행중</option>
-                                            <option value="">만료</option>
-                                        </select>
-                                        <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
+                                        <div class="select-box__select">
+                                            <p>전체</p>
+                                            <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
+                                        </div>
+                                        <ul class="select-box__option">
+                                            <li>전체</li>
+                                            <li>완료</li>
+                                            <li>진행중</li>
+                                            <li>만료</li>
+                                        </ul>
                                     </div>
                                     <div class="round-input">
-                                        <select class="round-input__select select">
-                                            <option value="" selected>문서명</option>
-                                            <option value="">옵션2</option>
-                                            <option value="">옵션3</option>
-                                        </select>
+                                        <div class="select-box">
+                                            <div class="select-box__select ">
+                                                <p>문서명</p>
+                                                <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
+                                            </div>
+                                            <ul class="select-box__option">
+                                                <li>문서명</li>
+                                                <li>문서명</li>
+                                                <li>문서명</li>
+                                                <li>문서명</li>
+                                            </ul>
+                                        </div>
                                         <input type="text" maxlength="50"
                                         placeholder="검색어를 입력해주세요"
                                         class="round-input__input input">
@@ -86,7 +96,7 @@
                             <div class="table__thead">
                                 <div class="table__tr">
                                     <div class="table__td is-left width-90">
-                                        <div class="table__td width-2">
+                                        <div class="table__td">
                                             <input type="checkbox" class="checkbox checkbox-all"
                                             id="">
                                         </div>
@@ -279,7 +289,7 @@
                     html += `
                     <div class="table__tr ${testClass}" data-id="${data[i].index}">
                         <div class="table__td is-left width-90">
-                            <div class="table__td check-area width-2">
+                            <div class="table__td check-area ">
                                 <input type="checkbox" class="checkbox"
                                 id="">
                             </div>

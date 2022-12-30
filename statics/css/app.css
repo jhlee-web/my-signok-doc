@@ -112,7 +112,7 @@
 }
 
 .table__td p{
-    /* width: 95%; */
+    width: 95%;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;

@@ -64,32 +64,48 @@
                                         <div class="flex--row">
                                             <p class="is-remark width-10">로고 변경</p>  
                                             <div class="is-image file-box">
-                                                <input type="text" class="input" placeholder="thumbnail"
-                                                value="">
+                                                <div class="flex--row">
+                                                    <div id="thumbnail-logo"class="file-box__thumbnail">
+                                                        <img src="/statics/img/logo.png" alt="기본 로고">
+                                                    </div>
+                                                    <p class="is-remark">
+                                                        좌측 nav바에 표시되는 아이콘입니다.<br>
+                                                        가로 200px 이하, 세로 40px 이하의 JPG, GIF, PNG 형식 파일을 올려주세요.
+                                                    </p>
+                                                </div>
+                                                
                                                 <div class="basic-button-wrap">
-                                                    <button type="button" class="button button--outline">
+                                                    <button type="button" class="button button--outline is-small">
                                                         <img src="/statics/icon/angle-down.svg" alt="파비콘 이미지 찾기" class="icon">
                                                         원래대로
                                                     </button>
-                                                    <label for="file-favicon" class="file-box__label button button--secondary">
+                                                    <label for="file-logo" class="file-box__label button button--secondary is-small">
                                                         <img src="/statics/icon/angle-down.svg" alt="파비콘 이미지 찾기" class="icon">
                                                         파일찾기
                                                     </label>
-                                                    <input type="file" id="file-favicon" class="file-box__file">
+                                                    <input type="file" id="file-logo" class="file-box__file">
                                                 </div>
                                             </div>
                                         </div>
+                                        
                                         <div class="flex--row">
                                             <p class="is-remark width-10">파비콘 변경</p>
                                             <div class="is-image file-box">
-                                                <input type="text" class="input" placeholder="thumbnail"
-                                                value="">
-                                                <div class="basic-button-wrap">
-                                                    <button type="button" class="button button--outline">
+                                                <div class="flex--row">
+                                                    <div id="thumbnail-favicon"class="file-box__thumbnail">
+                                                        <img src="/statics/img/logo.png" alt="기본 파비콘">
+                                                    </div>
+                                                    <p class="is-remark">
+                                                        브라우저 탭에 표시되는 아이콘입니다.<br>
+                                                        jpg, gif, png 형식 파일을 올려주세요. 
+                                                    </p>
+                                                </div>
+                                                <div class="basic-button-wrap gap--sm">
+                                                    <button type="button" class="button button--outline is-small">
                                                         <img src="/statics/icon/angle-down.svg" alt="파비콘 이미지 찾기" class="icon">
                                                         원래대로
                                                     </button>
-                                                    <label for="file-favicon" class="file-box__label button button--secondary">
+                                                    <label for="file-favicon" class="file-box__label button button--secondary is-small">
                                                         <img src="/statics/icon/angle-down.svg" alt="파비콘 이미지 찾기" class="icon">
                                                         파일찾기
                                                     </label>
@@ -97,6 +113,9 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <button type="button" class="button button--text">
+                                            기본 설정으로 되돌리기
+                                        </button>
                                     </div>
                                     <!-- /card__content -->
                                 </div>
@@ -159,7 +178,21 @@
        
         
         <script>
+            // 썸네일 이벤트
+            $(".file-box.is-image .file-box__file").on("change", function(){
+                let files = !! this.files ? this.files : [];
+                if (!files.length || !window.FileReader) return; 
 
+                let target = $(this).attr('id').replace('file-','')
+                if (/^image/.test( files[0].type)){ 
+                    let reader = new FileReader(); 
+                    reader.readAsDataURL(files[0]); 
+                    reader.onloadend = function(){ 
+                        $('#thumbnail-'+target).find('img')
+                                                .attr('src',this.result); 
+                    };
+                }
+            });
         </script>
     </body>
     
