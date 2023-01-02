@@ -433,6 +433,12 @@ option{
     flex-direction: column;
 
 }
+
+.select-box__option li:hover {
+    cursor: pointer;
+    background: var(--theme-color-100);
+    transition: .4s;
+}
 .select-box:not(.is-top).is-active .select-box__option{
     display: flex;
     box-shadow: var(--box-shadow--5);
