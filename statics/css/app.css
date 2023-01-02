@@ -110,6 +110,9 @@
     vertical-align: middle;
     /* border-bottom: 1px solid var(--theme-color-400); */
 }
+.table__td.flex--column{
+    align-items: flex-start;
+}
 
 .table__td p{
     width: 95%;
@@ -1030,3 +1033,5 @@
     border-radius: 99em;
     background: var(--theme-color-200);
 }
+
+.bar__primary{}
