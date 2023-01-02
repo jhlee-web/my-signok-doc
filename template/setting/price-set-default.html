@@ -52,51 +52,68 @@
                             <div class="card-wrap">
                                 <!-- card -->
                                 <div class="card">
-                                    <div class="card__row">
-                                        <p class="">현재 <span id="user_membership" class="is-accent">PREMIUM(월)</span>  요금제를 사용하고 계십니다.
-                                        </p>
-                                        <a href="/template/setting/price-detail.html" class="button button--text is-small">변경하기</a>
-                                    </div>
                                     <div class="card__content">
                                         <div class="card__row">
                                             <p class="is-remark">결제금액</p>
+                                            
+                                            <a href="/template/setting/price-detail.html" class="button button--text is-small">변경하기</a>
+                                        </div>
+                                        <div class="card__row">
+                                            <p class="font-weight--medium body--large">Business(월)</p>
                                             <p id="user_price">0원</p>
                                         </div>
-    
-                                        <div class="card__row">
-                                            <p class="is-remark">만료일</p>
-                                            <p id="user_deadline">2020년 1월 1일</p>
+                                        <div class="flex--row">
+                                            <div class="icon-with-text is-secondary">
+                                                <img src="/statics/icon/check-circle-line.svg" alt="" class="icon">
+                                                <p>서명무제한</p>
+                                            </div>
+                                            <div class="icon-with-text is-secondary">
+                                                <img src="/statics/icon/check-circle-line.svg" alt="" class="icon">
+                                                <p>대량발송</p>
+                                            </div>
+                                            <div class="icon-with-text is-secondary">
+                                                <img src="/statics/icon/check-circle-line.svg" alt="" class="icon">
+                                                <p>링크발송</p>
+                                            </div>
+                                            <div class="icon-with-text is-secondary">
+                                                <img src="/statics/icon/check-circle-line.svg" alt="" class="icon">
+                                                <p>공문발송</p>
+                                            </div>
                                         </div>
                                     </div>
-                                    
-                                </div>
-                                <!-- /card -->
 
-                                <!-- card -->
-                                <div class="card">
-                                    <div class="card__row">
-                                        <p class="is-remark">사용현황</p>
-                                        <a href="/template/setting/price-pay-addition.html" class="button button--text is-small">충전하기</a>
-                                    </div>
                                     <div class="card__content">
                                         <div class="card__row">
-                                            <p class="is-remark">계약 가능</p>
-                                            <p id="user_count-contract">0건 / 0건</p>
+                                            <p class="is-remark">남은 서명</p>
+                                            
+                                            <a href="/template/setting/price-detail.html" class="button button--text is-small">충전하기</a>
                                         </div>
                                         <div class="card__row">
-                                            <p class="is-remark">대량발송</p>
-                                            <p id="user_count-large">0건 / 0건</p>
-                                        </div>
-                                        <div class="card__row">
-                                            <p class="is-remark">링크서명</p>
-                                            <p id="user_count-link">0건 / 0건</p>
-                                        </div>
-                                        <div class="card__row">
-                                            <p class="is-remark">공유발송</p>
-                                            <p id="user_count-office">0건 / 0건</p>
+                                            <div class="bar">
+                                            </div>
+                                            <p class="">
+                                                <span class="font-weight--medium">10</span>
+                                                /<span class="">60</span>건
+                                            </p>
                                         </div>
                                     </div>
                                     
+                                    <div class="state-box flex-justify--between">
+                                        <div class="flex--row gap--sm">
+                                            <img src="/statics/icon/exclamation-triangle-line.svg"
+                                            class="icon is-primary">
+                                            <p class="">정기 결제가 중단되었습니다.
+                                                <span id="user_deadline">2020년 1월 1일</span>
+                                                까지 이용 가능합니다.
+                                            </p>
+                                        </div>
+                                        
+                                        <a href="javscript:void(0)" class="icon-button">
+                                            <img src="/statics/icon/angle-right.svg" alt="바로가기"
+                                            class="icon is-primary">
+                                        </a>
+                                    </div>
+                                   
                                 </div>
                                 <!-- /card -->
                             </div>
