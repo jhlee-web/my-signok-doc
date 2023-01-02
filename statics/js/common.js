@@ -107,6 +107,6 @@ $(document).on('click','.select-box',function(){
 })
 
 // select div 수정 + 이벤트 추가
-$(document).on('click','.accordion',function(){
-    $(this).toggleClass('is-active')
+$(document).on('click','.accordion__header',function(){
+    $(this).parents('.accordion').toggleClass('is-active')
 })

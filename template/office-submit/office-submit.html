@@ -98,10 +98,9 @@
                                             <input type="checkbox" class="checkbox checkbox-all"
                                             id="">
                                         </div>
-                                        <div class="table__td width-10">상태</div>
-                                        <div class="table__td width-50">템플릿 이름</div>
-                                        <div class="table__td width-10">작성일</div>
-                                        <div class="table__td width-10">수정일</div>
+                                        <div class="table__td width-70">템플릿 이름</div>
+                                        <div class="table__td width-15">작성시간</div>
+                                        <div class="table__td width-15">최근수정시간</div>
                                     </div>
                                     <div class="table__td is-right width-10 flex-justify--center">
                                         <div class="table__td">추가메뉴</div>
@@ -128,13 +127,18 @@
                                     </button>
                                 </li>
                             </ul>
-                            <div id="count-load-table" class="select-box is-medium">
-                                <select class="select-box__select">
-                                    <option value="10" selected>10개씩 보기</option>
-                                    <option value="30">30개씩 보기</option>
-                                    <option value="50">50개씩 보기</option>
-                                </select>
-                                <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
+                            <div id="count-load-table" class="select-box is-medium is-top">
+                                <div class="select-box__select">
+                                    <p>10개씩보기</p>
+                                    <img class="select-box__icon icon" src="/statics/icon/angle-top.svg" alt="화살표">
+                                    
+                                </div>
+                                <ul class="select-box__option">
+                                    <li selected>10개씩 보기</li>
+                                    <li>30개씩 보기</li>
+                                    <li>50개씩 보기</li>
+                                </ul>
+                                
                             </div>
                         </div>
                     </div>
@@ -256,32 +260,6 @@
                         friends.push(data[i].friends[a].name)
                     }
 
-                    if(data[i].isActive == false){
-                        state = `
-                            <p class="state success" >
-                                <img src="/statics/icon/hourglass-line.svg" class="icon">
-                                진행중
-                            </p>
-                        `
-                        mailAlert = `
-                            <p class="is-remark" >
-                                수신
-                            </p>
-                        `
-                    }
-                    else{
-                        state = `
-                            <p class="state ban">
-                                <img src="/statics/icon/ban-line.svg" class="icon">
-                                만료
-                            </p>
-                        `
-                        mailAlert = `
-                            <p class="is-remark" >
-                                수신안함
-                            </p>
-                        `
-                    }
 
                     html = ''
                     html += `
@@ -291,18 +269,15 @@
                                 <input type="checkbox" class="checkbox"
                                 id="">
                             </div>
-                            <div class="table__td width-10 status-area">
-                                ${state}
-                            </div>
-                            <div class="table__td flex--column gap--sm width-50 title-area">
+                            <div class="table__td flex--column gap--sm width-70 title-area">
                                 <p class="table__td--title">${data[i].guid}</p>
                                 <p class="is-remark">${friends}</p>
                             </div>
-                            <div class="table__td width-10 alarm-area">
-                                ${mailAlert}
+                            <div class="table__td width-15 latest-area">
+                                <p class="is-remark">2022-12-31</br>오후 10:59</p>
                             </div>
-                            <div class="table__td width-10 latest-area">
-                                <p class="is-remark">2022-12-31 10:59</p>
+                            <div class="table__td width-15 latest-area">
+                                <p class="is-remark">2022-12-31</br>오후 10:59</p>
                             </div>
                         </div>
                         <div class="table__td is-right width-10 flex-justify--center">

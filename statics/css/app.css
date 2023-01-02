@@ -1035,3 +1035,73 @@
 }
 
 .bar__primary{}
+
+
+/* tooltip set */
+
+.tooltip{
+    position: relative;
+    cursor: pointer;
+}
+.tooltip__absolute{
+    position: absolute;
+    /* right: 0; */
+}
+.tooltip__modal{
+    visibility: hidden;
+
+    min-width: 15rem;
+    max-width: 20rem;
+
+    background: var(--theme-color-900);
+    filter: var(--filter-shadow-3);
+
+    padding: 1em;
+    border-radius: .5em;
+
+    color: var(--white);
+    position: absolute;
+}
+
+.tooltip:hover .tooltip__modal{
+    visibility: visible;
+    transition: .4s;
+}
+
+.tooltip__modal.is-bottom{
+    top: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tooltip__modal.is-left::before{
+    content: '';
+    width: 0;
+    height: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    right: 100%;
+
+    border-style: solid;
+    border-width: .75em 1em .75em 0;
+    border-radius: .25em 0 0 .25em ;
+    border-color: transparent var(--theme-color-900) transparent transparent;
+    background: transparent;
+}
+
+.tooltip__modal.is-bottom::before{
+    content: '';
+    width: 0;
+    height: 0;
+
+    position: absolute;
+    top: -.75em;
+    left: 50%;
+    transform: translateX(-50%);
+
+    border-style: solid;
+    border-width:  0 .75em  .75em .75em;
+    /* border-radius: .25em 0 0 .25em ; */
+    border-color: transparent transparent  var(--theme-color-900)  transparent;
+}
