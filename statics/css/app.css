@@ -1011,7 +1011,7 @@
 /* state box set */
 .state-box{
     width: 100%;
-    background: var(--primary-color-50);
+    background: var(--primary-color-10);
 
     display: flex;
     flex-direction: row;
@@ -1022,6 +1022,11 @@
     font-size: var(--text-small);
 
     padding: .5em;
+}
+
+.state-box.is-info{
+    background: var(--secondary-color-10);
+    color: vaR(--secondary-color-500);
 }
 
 

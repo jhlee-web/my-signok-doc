@@ -40,15 +40,17 @@
                 $s.text(lastSelected.format(arrF[0]));
                 elem.empty();
                 elem.append($s);
-                $s = $('<i>');
-                $s.addClass('fa fa-calendar ico-size');
+                // $s = $('<img>');
+                // $s.attr('src','/statics/icon/calendar-line.svg')
+                // $s.addClass('icon');
                 elem.append($s);
                 if (settings.showTime) {
                     $s = $('<span>');
                     $s.text(lastSelected.format(arrF[1]));
                     elem.append($s);
-                    $s = $('<i>');
-                    $s.addClass('fa fa-clock-o ico-size');
+                    $s = $('<img>');
+                    $s.attr('src','/statics/icon/calendar-line.svg')
+                    $s.addClass('icon');
                     elem.append($s);
                 }
             }
@@ -429,8 +431,9 @@
                     $s.text(lastSelected.format(arrF[0]));
                     elem.empty();
                     elem.append($s);
-                    $s = $('<i>');
-                    $s.addClass('fa fa-calendar ico-size');
+                    $s = $('<img>');
+                    $s.attr('src','/statics/icon/calendar-line.svg')
+                    $s.addClass('icon');
                     elem.append($s);
                     if (settings.showTime) {
                         $s = $('<span>');

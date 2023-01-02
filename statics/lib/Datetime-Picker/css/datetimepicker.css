@@ -22,8 +22,18 @@
     height: 2.5rem;
     line-height: 2.5rem;
     /* padding: 8px 0 8px 8px; */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+    /* justify-content: space-between; */
 }
-.dtp_main span, .dtp_main i{ display: inline-block; padding-right: 8px;}
+.dtp_main > .icon{
+    position: absolute;
+    right: 2em;
+}
+/* .dtp_main span, .dtp_main i{ display: inline-block; padding-right: 8px;} */
 .dtp_modal-win{
     position: fixed;
     left: 0; top: 0;

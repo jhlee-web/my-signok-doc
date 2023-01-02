@@ -69,58 +69,26 @@
                             </div>
                         </div>
                         
-                        <div class="flex--column">
-                            <div class="accordion is-active">
-                                <div class="accordion__header">
-                                    <p class="is-remark">수신자 <span>*선택한 수신자는 주소록에 저장됩니다.</span></p>
-                                    <button type="button" class="icon-button">
-                                        <img src="/statics/icon/angle-top.svg" class="icon">
-                                    </button>
-                                </div>
-                                <div class="accordion__body">
-                                     <!-- 서명자 목록 5인 단위 -->
-                                    <div class="table">
-                                        <div class="table__tbody"></div>
-                                         <!-- 페이지네이션 -->
-                                        <div class="table__paging">
-                                            <ul class="pagination flex-justify--center" >
-                                                <li class="">
-                                                    <button type="button" class="button button--text">
-                                                        <img src="/statics/icon/angle-left.svg" 
-                                                        class="icon"
-                                                        alt="이전페이지">
-                                                    </button>
-                                                </li>
-                                                <ul id="pagination-index-wrap" class="pagination__index-wrap " ></ul>
-                                                <li class="">
-                                                    <button type="button" class="button button--text">
-                                                        <img src="/statics/icon/angle-right.svg" 
-                                                        class="icon"
-                                                        alt="다음페이지">
-                                                    </button>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <!-- /table paging -->
-                                    </div>
-                                    <!-- /table -->
-                                </div>
-                                <!-- accordion body -->
+                        <!-- <div class="full-grid right-double"> -->
+                        <div class="card__content">
+                            <div class="card__row">
+                                <p class="is-remark">중복서명여부</p>
+                                <label class="is-small toggle">
+                                    <input type="checkbox" class="toggle__checkbox" checked>
+                                    <span class="toggle__slider"></span>
+                                </label>
                             </div>
-                            <!-- /accordion -->
+                            <p class="is-remark">
+                                한 서명자는 최대 30번까지 중복 서명할 수 있습니다.
+                            </p>
+                            <div class="state-box is-info">
+                                <img src="/statics/icon/info-circle-line.svg"
+                                class="icon is-secondary">
+                                <p class="">링크 생성 이후 수정할 수 없습니다.
+                                </p>
+                            </div>
                         </div>
                         
-                        <!-- <div class="full-grid right-double"> -->
-                        <div class="card__row">
-                            <p class="is-remark">중복서명여부</p>
-                            <label class="is-small toggle">
-                                <input type="checkbox" class="toggle__checkbox" checked>
-                                <span class="toggle__slider"></span>
-                            </label>
-                        </div>
-                        <p class="is-remark">
-                            한 서명자는 최대 30번까지 중복 서명할 수 있습니다.
-                        </p>
                         <div class="group-button is-small ">
                             <button type="button"
                             class="icon-button group-button__base is-start" id="input-minus">
@@ -251,7 +219,7 @@
                     let paginationLength = Math.ceil(Number(total) / Number(breakpoint));
 
                     makePagination(paginationLength);
-                    makeTable(res,5)
+                    // makeTable(res,5)
                     run(res)
                 })
                 .fail(function(xhr, status, errorThrown) {

@@ -4,14 +4,17 @@
     --text-small:0.875rem;
     --text-large:1.333rem;
 
-    --primary-color-50:#FDE7EA;
-    --primary-color-400:#EF4354;
+    --primary-color-10:#FDEBED;
+    --primary-color-50:#FBD0D4;
+    --primary-color-400:#F15565;
     --primary-color-500:#EE3649;
 
-    --secondary-color-400:#7490BE;
+    --secondary-color-10:#EBEEF2;
+    --secondary-color-50:#DCE3EF;
+    --secondary-color-400:#4A6BA0;
     --secondary-color-500:#385179;
 
-    --focus-color-50:#E5F7FF;
+    --focus-color-50:#DCE3EF;
     --focus-color-400:#33BEFF;
     --focus-color-500:#00A2ED;
 
