@@ -34,7 +34,7 @@
                                     <a href="/template/config/companyInfo.html">기업 정보</a>
                                 </li>
                                 <li class="tab__item--badge is-active">
-                                    <a href="javascript:void(0)">요금제</a>
+                                    <a href="/template/config/myPayInfo.html">요금제</a>
                                 </li>
                                 <li class="tab__item--badge">
                                     <a href="/template/config/myPayHisInfo.html">결제 정보</a>
@@ -76,8 +76,18 @@
                                         <p><span>3,000</span>원</p>
                                     </div>
                                 </div>
-                                <input type="input" class="input"
-                                placeholder="쿠폰번호를 입력해주세요.">
+                                <div class="select-box">
+                                    <div class="select-box__select">
+                                        <p>coupon a</p>
+                                        <img src="/statics/icon/angle-down.svg">
+                                    </div>
+                                    <ul class="select-box__option">
+                                        <li>coupon a </li>
+                                        <li>coupon b </li>
+                                        <li>coupon c </li>
+                                        <li>coupon d </li>
+                                    </ul>
+                                </div>
                             </div>
                             <!-- /card -->
                             <div class="card">
@@ -102,38 +112,10 @@
                                             <p class="is-remark">0원</p>
                                         </li>
                                     </ul>
-                                    <!-- 이거어디옮기죠 -->
-                                    <!-- <ul class="checkbox-wrap">
-                                        <li class="checkbox__item margin-bottom--medium " >
-                                            <label for="checkbox-all"
-                                            class="font-weight--medium">
-                                                약관전체동의(선택포함)
-                                            </label>
-                                            <input type="checkbox" id="checkbox-all" class="checkbox checkbox-all">
-                                        </li>
-
-                                        <li class="checkbox__item">
-                                            <label for="agreeServicelPolicy" class="card__desc flex-align--center">
-                                                <span class="font-weight--medium">필수</span>
-                                                서비스 이용약관
-                                                <img class="icon" src="/statics/icon/angle-right.svg">
-                                            </label>
-                                            <input type="checkbox" class="checkbox" id="agreeServicelPolicy" required>
-                                        </li>
-
-                                        <li class="checkbox__item">
-                                            <label for="agreePersonalPolicy" class="card__desc flex-align--center">
-                                                <span class="font-weight--medium">필수</span>
-                                                개인정보 처리방침
-                                                <img class="icon" src="/statics/icon/angle-right.svg">
-                                            </label>
-                                            <input type="checkbox" class="checkbox" id="agreePersonalPolicy"required>
-                                        </li>
-                                    </ul> -->
                                 </div>
                             </div>
                             <!-- /card -->
-                            <div class="card is-column-full"">
+                            <div class="card is-column-full">
                                 <div class="card__row">
                                     <a href="javascript:void(0)" class="button button--text">이전</a>
                                     <button type="button" class="button button--primary">결제하기</button>

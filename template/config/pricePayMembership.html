@@ -48,93 +48,75 @@
                             </ul>
                         </div>
                         <!-- /tabs -->
-                        <div class="full-grid left-double">
-                            <div class="card-wrap">
-                                <div class="card">
-                                    <!-- 요금제 -->
-                                    <div class="card__row">
-                                        <p class="is-remark">
-                                            요금제
-                                        </p>
-                                        <div class="control-form">
-                                            <span>연간</span>
-                                            <label class="is-small toggle">
-                                                <input type="checkbox" class="toggle__checkbox">
-                                                <span class="toggle__slider"></span>
-                                            </label>
-                                            <span>월간</span>
-                                        </div>
-                                    </div>
-                                    <div class="card__content">
-                                        <div class="card__row ">
-                                            <div class="control-form">
-                                                <input type="radio" class="radio" name="product"
-                                                id="payment-contract"
-                                                checked>
-                                                <label for="payment-contract">베이직</label>
-                                            </div>
-                                            <p>7,900원</p>
-                                        </div>
-                                        <div class="card__row ">
-                                            <div class="control-form">
-                                                <input type="radio" class="radio" name="product"
-                                                id="payment-contract"
-                                                checked>
-                                                <label for="payment-contract">비즈니스</label>
-                                            </div>
-                                            <p>9,900원</p>
-                                        </div>
-                                        <div class="card__row ">
-                                            <div class="control-form">
-                                                <input type="radio" class="radio" name="product"
-                                                id="payment-contract"
-                                                checked>
-                                                <label for="payment-contract">프리미엄</label>
-                                            </div>
-                                            <p>39,000원</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="card__row is-end">
-                                        <!-- <p class="is-remark"> 총</p> -->
-                                        <p class="is-accent">0원</p>
+                        <div class="full-grid">
+                            <div class="card">
+                                <!-- 요금제 -->
+                                <div class="card__row">
+                                    <p class="is-remark">
+                                        요금제
+                                    </p>
+                                    <div class="control-form">
+                                        <span>연간</span>
+                                        <label class="is-small toggle">
+                                            <input type="checkbox" class="toggle__checkbox">
+                                            <span class="toggle__slider"></span>
+                                        </label>
+                                        <span>월간</span>
                                     </div>
                                 </div>
-                                <!-- /card -->
-                                <!-- card -->
-                                <div class="card">
-                                    <ul class="checkbox-wrap">
-                                        <li class="checkbox__item margin-bottom--medium " >
-                                            <label for="checkbox-all"
-                                            class="font-weight--medium">
-                                                약관전체동의(선택포함)
-                                            </label>
-                                            <input type="checkbox" id="" class="checkbox checkbox-all">
-                                        </li>
-
-                                        <li class="checkbox__item">
-                                            <label for="" class="card__desc flex-align--center">
-                                                <span class="font-weight--medium">필수</span>
-                                                서비스 이용약관
-                                                <img class="icon" src="/statics/icon/angle-right.svg">
-                                            </label>
-                                            <input type="checkbox" class="checkbox" required>
-                                        </li>
-
-                                        <li class="checkbox__item">
-                                            <label for="" class="card__desc flex-align--center">
-                                                <span class="font-weight--medium">필수</span>
-                                                개인정보 처리방침
-                                                <img class="icon" src="/statics/icon/angle-right.svg">
-                                            </label>
-                                            <input type="checkbox" class="checkbox" required>
-                                        </li>
-
+                                <div class="card__content">
+                                    <div class="card__row ">
+                                        <p>Premium (월간결제) </p>
+                                        <p>39,000원</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="select-box">
+                                    <div class="select-box__select">
+                                        <p>coupon a</p>
+                                        <img src="/statics/icon/angle-down.svg" class="icon">
+                                    </div>
+                                    <ul class="select-box__option">
+                                        <li>coupon a </li>
+                                        <li>coupon b </li>
+                                        <li>coupon c </li>
+                                        <li>coupon d </li>
                                     </ul>
                                 </div>
                             </div>
-
                             <!-- /card -->
+                            <!-- card -->
+                            <div class="card">
+                                <div class="card__content">
+                                    <p class="is-remark">
+                                        결제상세
+                                    </p>
+                                    <ul class="checkbox-wrap">
+                                        <li class="checkbox__item margin-bottom--medium " >
+                                           <p>최종결제금액</p>
+                                           <p class="is-accent body--large">30,000원</p>
+                                        </li>
+
+                                        <li class="checkbox__item">
+                                            <p class="is-remark">상품금액</p>
+                                            <p class="is-remark">30,000원</p>
+                                        </li>
+
+                                        <li class="checkbox__item">
+                                            <p class="is-remark">할인금액</p>
+                                            <p class="is-remark">0원</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- 라디오 카드, 실시간계좌이제, 가상계좌이체 라디오 추가-->
+                            </div>
+                            <!-- /card -->
+                            <div class="card is-column-full">
+                                <div class="card__row">
+                                    <a href="javascript:void(0)" class="button button--text">이전</a>
+                                    <button type="button" class="button button--primary">결제하기</button>
+                                </div>
+                            </div>
                             <div class="card is-row-full" id="event">
                                 <img class="" src="https://source.unsplash.com/random">
                             </div>

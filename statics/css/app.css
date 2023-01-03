@@ -1143,3 +1143,25 @@
     height: 100%;
     object-fit: cover;
 }
+
+
+.table-state{
+    display: inline-flex;
+    background-color: var(--theme-color-100);
+    padding: 1em;
+
+    border-radius: .5em;
+
+}
+.table-state__item{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+}
+
+.table-state__accent{
+    font-size: var(--text-large);
+    font-weight: 600;
+}

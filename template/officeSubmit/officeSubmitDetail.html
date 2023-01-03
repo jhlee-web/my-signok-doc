@@ -5,7 +5,7 @@
         <script>
             loadHTML("/statics/include/head.html");
         </script>
-        <title>대량발송 | 상세보기</title>
+        <title>공문발송 | 상세보기</title>
     </head>
 
     <body>
@@ -23,6 +23,25 @@
                 <!-- 메인 컨텐츠 -->
                 <div class="container">
                     <div class="main-content">
+                        <!-- 여기table 고민하기 -->
+                        <div class="flex--row table-state">
+                            <div class="table-state__item">
+                                <p class="is-remark">전송 실패</p>
+                                <p class="table-state__accent"><span>0</span>명</p>
+                            </div>
+                            <div class="table-state__item">
+                                <p class="is-remark">전송 완료</p>
+                                <p class="table-state__accent"> <span>0</span>명</p>
+                            </div>
+                            <div class="table-state__item">
+                                <p class="is-remark">서명 대기중</p>
+                                <p class="table-state__accent"><span>0</span>명</p>
+                            </div>
+                            <div class="table-state__item">
+                                <p class="is-remark">서명 완료</p>
+                                <p class="table-state__accent"><span>0</span>명</p>
+                            </div>
+                        </div>
                         <div class="table-top">
                             <div class="flex--row is-change">
                                 <div id="" class="select-box is-small">
@@ -54,17 +73,9 @@
                                     class="round-input__input input">
                                 </div>
                             </div>
-                            <div class="flex--column">
-                                <li class="control-form">
-                                    <span>링크활성화</span>
-                                    <label class="is-small toggle">
-                                        <input type="checkbox" class="toggle__checkbox" checked>
-                                        <span class="toggle__slider"></span>
-                                    </label>
-                                </li>
-                                    <span class="">2022-12-25일에 자동 만료됩니다.</span>
-                            </div>
-                            
+                            <p>
+                                수신현황 <span>30</span>/40건
+                            </p>
                         </div>
                         
                         <div class="is-empty">
@@ -108,7 +119,7 @@
             </main>
         </div>
        
-        
+        <script src="/statics/js/common.js"></script>
         <script>
             $(function(){
                 $.ajax({

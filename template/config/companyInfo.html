@@ -245,27 +245,6 @@
 
             $('.button').on('click',manageCard)
 
-            
-
-            // 테마 토글
-            function toggleTheme(){
-                loadedTheme = localStorage.getItem('data-theme')
-                setTheme(loadedTheme == "dark" ? "light" : "dark");
-            }
-            $('#toggle-theme').on('click',toggleTheme)
-
-            $(function(){
-                $('#toggle-theme').prop('checked',currentTheme['toggle'])
-
-                $('#set-user_mail').text(newTestObj['user_mail'])
-                $('#set-user_product').text(newTestObj['user_product']+'('+newTestObj['user_regular_payment']+')')
-                $('#set-user_name').text(newTestObj['user_name'])
-                $('#set-user_left_day').text(newTestObj['left_day'])
-                $('#agree_marketing').prop('checked',newTestObj['marketing'])
-
-            })
-
-
             // 폰넘버 하이픈 추가
             $(document).on('keyup','#change-phone',function(){
                 let str = $(this).val()

@@ -247,16 +247,8 @@
 
             $('.button').on('click',manageCard)
 
-            
-
-            // 테마 토글
-            function toggleTheme(){
-                loadedTheme = localStorage.getItem('data-theme')
-                setTheme(loadedTheme == "dark" ? "light" : "dark");
-            }
-            $('#toggle-theme').on('click',toggleTheme)
-
             $(function(){
+
                 currentTheme['toggle'] === 0 ?
                 $('#toggle-theme').prop('checked',false)
                 :  $('#toggle-theme').prop('checked',true)
@@ -268,6 +260,28 @@
                 $('#agree_marketing').prop('checked',newTestObj['marketing'])
 
             })
+           
+            // 테마 토글
+            function toggleTheme(){
+                loadedTheme = localStorage.getItem('data-theme')
+                setTheme(loadedTheme == "dark" ? "light" : "dark");
+            }
+
+            function setTheme(setTheme){
+                if (setTheme == 'dark'){
+                    currentTheme['data-theme'] = 'dark';
+                        currentTheme['toggle'] = 1
+                }
+                else{
+                    currentTheme['data-theme'] = 'light';
+                        currentTheme['toggle'] = 0
+                }
+                localStorage.setItem('data-theme',setTheme);
+                $('html').attr('data-theme',currentTheme['data-theme'])
+            }
+
+            $('#toggle-theme').on('click',toggleTheme)
+
 
             // 폰넘버 하이픈 추가
             $(document).on('keyup','#change-phone',function(){
