@@ -48,149 +48,97 @@
                             </ul>
                         </div>
                         <!-- /tabs -->
-                        <div class="full-grid left-double">
-                            <div class="card-wrap">
-                                <div class="card">
-                                    <!-- 상품 -->
-                                    <div class="card__content">
-                                        <p class="is-remark">
-                                            상품목록
-                                        </p>
-                                        <div class="card__row is-change">
-                                            <div class="control-form">
-                                                <input type="checkbox" class="checkbox" 
-                                                id="payment-contract"
-                                                checked>
-                                                <label for="payment-contract">서명요청</label>
-                                            </div>
-    
-                                            <div class="flex--row  width-100 flex-justify--end">
-                                                <div class="group-button is-small">
-                                                    <button type="button"
-                                                    class="icon-button group-button__base is-start" id="input-minus">
-                                                        <img class="icon" src="/statics/icon/minus-line.svg" alt="빼기">
-                                                    </button>
-                                                    <input type="number" value="10" readonly
-                                                    class="input group-button__base is-middle is-narrow">
-                                                    <button type="button"
-                                                    class="icon-button group-button__base is-end" id="input-plus">
-                                                        <img class="icon" src="/statics/icon/plus-line.svg" alt="더하기">
-                                                    </button>
-                                                </div>
-                                                <p><span>3,000</span>원</p>
-                                            </div>
-                                        </div>
-                                        <div class="card__row is-change">
-                                            <div class="control-form">
-                                                <input type="checkbox" class="checkbox" id="payment-large"
-                                                checked>
-                                                <label for="payment-large">대량발송</label>
-                                            </div>
-    
-                                            <div class="flex--row width-100 flex-justify--end">
-                                                <div class="group-button is-small">
-                                                    <button type="button"
-                                                    class="icon-button group-button__base is-start" id="input-minus">
-                                                        <img class="icon" src="/statics/icon/minus-line.svg" alt="빼기">
-                                                    </button>
-                                                    <input type="number" value="10" readonly
-                                                    class="input group-button__base is-middle is-narrow">
-                                                    <button type="button"
-                                                    class="icon-button group-button__base is-end" id="input-plus">
-                                                        <img class="icon" src="/statics/icon/plus-line.svg" alt="더하기">
-                                                    </button>
-                                                </div>
-                                                <p><span>3,000</span>원</p>
-                                            </div>
-                                        </div>
-                                        <div class="card__row is-change">
-                                            <div class="control-form">
-                                                <input type="checkbox" class="checkbox" id="payment-price"
-                                                checked>
-                                                <label for="payment-price">링크서명</label>
-                                            </div>
-    
-                                            <div class="flex--row  width-100 flex-justify--end">
-                                                <div class="group-button is-small">
-                                                    <button type="button"
-                                                    class="icon-button group-button__base is-start" id="input-minus">
-                                                        <img class="icon" src="/statics/icon/minus-line.svg" alt="빼기">
-                                                    </button>
-                                                    <input type="number" value="10" readonly
-                                                    class="input group-button__base is-middle is-narrow">
-                                                    <button type="button"
-                                                    class="icon-button group-button__base is-end" id="input-plus">
-                                                        <img class="icon" src="/statics/icon/plus-line.svg" alt="더하기">
-                                                    </button>
-                                                </div>
-                                                
-                                                <p><span>3,000</span>원</p>
-                                            </div>
-                                        </div>
-                                        <div class="card__row is-change">
-                                            <div class="control-form">
-                                                <input type="checkbox" class="checkbox" id="payment-share"
-                                                checked>
-                                                <label for="payment-share">공유발송</label>
-                                            </div>
-    
-                                            <div class="flex--row  width-100 flex-justify--end">
-                                                <div class="group-button is-small">
-                                                    <button type="button"
-                                                    class="icon-button group-button__base is-start" id="input-minus">
-                                                        <img class="icon" src="/statics/icon/minus-line.svg" alt="빼기">
-                                                    </button>
-                                                    <input type="number" value="10" readonly
-                                                    class="input group-button__base is-middle is-narrow">
-                                                    <button type="button"
-                                                    class="icon-button group-button__base is-end" id="input-plus">
-                                                        <img class="icon" src="/statics/icon/plus-line.svg" alt="더하기">
-                                                    </button>
-                                                </div>
-                                                <p><span>3,000</span>원</p>
-                                            </div>
-                                        </div>
+                        <div class="full-grid">
+                            <div class="card">
+                                <!-- 상품 -->
+                                <p class="is-remark">
+                                    주문상품정보
+                                </p>
+                                <div class="card__row is-change">
+                                    <div class="flex--row gap--sm">
+                                        <img src="/statics/icon/document-line.svg" alt="" class="icon">
+                                        <p>대량/링크/공문</p>
                                     </div>
-                                    
-                                    <div class="card__row is-end">
-                                        <!-- <p class="is-remark"> 총</p> -->
-                                        <p class="is-accent">0원</p>
+
+                                    <div class="flex--row flex-justify--end">
+                                        <div class="group-button is-small">
+                                            <button type="button"
+                                            class="icon-button group-button__base is-start" id="input-minus">
+                                                <img class="icon" src="/statics/icon/minus-line.svg" alt="빼기">
+                                            </button>
+                                            <input type="number" value="10" readonly
+                                            class="input group-button__base is-middle is-narrow">
+                                            <button type="button"
+                                            class="icon-button group-button__base is-end" id="input-plus">
+                                                <img class="icon" src="/statics/icon/plus-line.svg" alt="더하기">
+                                            </button>
+                                        </div>
+                                        <p><span>3,000</span>원</p>
                                     </div>
                                 </div>
-                                <!-- /card -->
-                                <!-- card -->
-                                <div class="card">
+                                <input type="input" class="input"
+                                placeholder="쿠폰번호를 입력해주세요.">
+                            </div>
+                            <!-- /card -->
+                            <div class="card">
+                                <div class="card__content">
+                                    <p class="is-remark">
+                                        결제상세
+                                    </p>
+
                                     <ul class="checkbox-wrap">
+                                        <li class="checkbox__item margin-bottom--medium " >
+                                           <p>최종결제금액</p>
+                                           <p class="is-accent body--large">30,000원</p>
+                                        </li>
+
+                                        <li class="checkbox__item">
+                                            <p class="is-remark">상품금액</p>
+                                            <p class="is-remark">30,000원</p>
+                                        </li>
+
+                                        <li class="checkbox__item">
+                                            <p class="is-remark">할인금액</p>
+                                            <p class="is-remark">0원</p>
+                                        </li>
+                                    </ul>
+                                    <!-- 이거어디옮기죠 -->
+                                    <!-- <ul class="checkbox-wrap">
                                         <li class="checkbox__item margin-bottom--medium " >
                                             <label for="checkbox-all"
                                             class="font-weight--medium">
                                                 약관전체동의(선택포함)
                                             </label>
-                                            <input type="checkbox" id="" class="checkbox checkbox-all">
+                                            <input type="checkbox" id="checkbox-all" class="checkbox checkbox-all">
                                         </li>
 
                                         <li class="checkbox__item">
-                                            <label for="" class="card__desc flex-align--center">
+                                            <label for="agreeServicelPolicy" class="card__desc flex-align--center">
                                                 <span class="font-weight--medium">필수</span>
                                                 서비스 이용약관
                                                 <img class="icon" src="/statics/icon/angle-right.svg">
                                             </label>
-                                            <input type="checkbox" class="checkbox" required>
+                                            <input type="checkbox" class="checkbox" id="agreeServicelPolicy" required>
                                         </li>
 
                                         <li class="checkbox__item">
-                                            <label for="" class="card__desc flex-align--center">
+                                            <label for="agreePersonalPolicy" class="card__desc flex-align--center">
                                                 <span class="font-weight--medium">필수</span>
                                                 개인정보 처리방침
                                                 <img class="icon" src="/statics/icon/angle-right.svg">
                                             </label>
-                                            <input type="checkbox" class="checkbox" required>
+                                            <input type="checkbox" class="checkbox" id="agreePersonalPolicy"required>
                                         </li>
-
-                                    </ul>
+                                    </ul> -->
                                 </div>
                             </div>
-
+                            <!-- /card -->
+                            <div class="card is-column-full"">
+                                <div class="card__row">
+                                    <a href="javascript:void(0)" class="button button--text">이전</a>
+                                    <button type="button" class="button button--primary">결제하기</button>
+                                </div>
+                            </div>
                             <!-- /card -->
                             <div class="card is-row-full" id="event">
                                 <img class="" src="https://source.unsplash.com/random">

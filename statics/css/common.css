@@ -4,18 +4,11 @@
     --text-small:0.875rem;
     --text-large:1.333rem;
 
-    --primary-color-10:#FDEBED;
-    --primary-color-50:#FBD0D4;
-    --primary-color-400:#F15565;
-    --primary-color-500:#e nor;
+    
+    --primary-color-500:#EE3649;
 
-    --secondary-color-10:#EBEEF2;
-    --secondary-color-50:#DCE3EF;
-    --secondary-color-400:#4A6BA0;
     --secondary-color-500:#385179;
-
-    --focus-color-50:#DCE3EF;
-    --focus-color-400:#33BEFF;
+    
     --focus-color-500:#00A2ED;
 
     --success-color-500:#F8AF1D;
@@ -41,6 +34,17 @@ html[data-theme='light']{
     --text-color-400:#808080;
     --text-color-600:#5A5A5A;
     --text-color-800:#333333;
+
+    --primary-color-10:#FDEBED;
+    --primary-color-50:#FBD0D4;
+    --primary-color-400:#F15565;
+
+    --secondary-color-10:#EBEEF2;
+    --secondary-color-50:#DCE3EF;
+    --secondary-color-400:#4A6BA0;
+
+    --focus-color-50:#DCE3EF;
+    --focus-color-400:#33BEFF;
    
     --filter-text-400:invert(63%) sepia(8%) saturate(13%) hue-rotate(323deg) brightness(97%) contrast(81%);
     --filter-text-600:invert(36%) sepia(0%) saturate(561%) hue-rotate(167deg) brightness(96%) contrast(93%);
@@ -72,6 +76,17 @@ html[data-theme='dark']{
     --text-color-400:#A6A6A6;
     --text-color-600:#CCCCCC;
     --text-color-800:#F2F2F2;
+
+    --primary-color-10:rgba(238, 54, 73, 0.05);
+    --primary-color-50:rgba(238, 54, 73, 0.1);
+    --primary-color-400:rgba(238, 54, 73, 0.82);
+
+    --secondary-color-10:rgba(56, 81, 121, 0.05);
+    --secondary-color-50:rgba(56, 81, 121, 0.1);
+    --secondary-color-400:rgba(56, 81, 121, 0.82);
+
+    --focus-color-50:rgba(53, 165, 238, 0.1);
+    --focus-color-400:rgba(53, 165, 238, 0.82);
 
     --filter-text-400:invert(72%) sepia(19%) saturate(14%) hue-rotate(334deg) brightness(83%) contrast(79%);
     --filter-text-600:invert(95%) sepia(0%) saturate(605%) hue-rotate(133deg) brightness(87%) contrast(92%);
@@ -300,9 +315,14 @@ option{
 
 
 /* flex */
-[class*='flex']{
+[class*='flex-']{
     display: flex;
     gap: 1rem;
+
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
 }
 .flex--row{
     flex-direction: row;
@@ -356,6 +376,9 @@ option{
 }
 
 /* gap */
+.gap--none{
+    gap: 0!important;
+}
 .gap--sm{
     gap: .5rem!important;
 }

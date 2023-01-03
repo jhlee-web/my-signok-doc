@@ -80,6 +80,11 @@
     display: none;
 } */
 
+.nav__logo a{
+    display: grid;
+    place-items: center;
+}
+
 
 @media all and (max-width:768px){
     .nav, .nav[data-fold="true"]{

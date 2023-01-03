@@ -21,6 +21,8 @@
     flex-direction: row;
     align-items: center;
     gap: .5em;
+
+    flex: 0 0 auto;
 }
 @media all and (max-width:768px){
     .control-form.is-change{
@@ -927,7 +929,7 @@
 
 #price-list .table__td{
     justify-content: center;
-    padding: .5em 1em ;
+    padding: 1em ;
 }
 
 
@@ -945,6 +947,9 @@
 
 #price-list .table__tr:first-child .table__td{
     padding: 1em;
+}
+#price-list .table__td{
+    color: var(--text-color-400);
 }
 #price-list .table__td.is-active span{
     background:var(--primary-color-500);
@@ -1038,8 +1043,24 @@
     background: var(--theme-color-200);
 }
 
-.bar__primary{}
+.bar__primary{
+    height: .5em;
+    display: block;
+    border-radius: 99em;
+    background: var(--primary-color-500);
 
+    animation: animationBar 1.75s forwards ease-in-out;
+}
+
+@keyframes  animationBar{
+    from{
+       width: 0; 
+    }
+    to{
+        width: 33%;
+    }
+
+} 
 
 /* tooltip set */
 
