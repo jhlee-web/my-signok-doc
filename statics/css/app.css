@@ -209,8 +209,6 @@
     border: 1px solid var(--theme-color-400);
     box-shadow: var(--box-shadow--3);
 
-    z-index: 10;
-    padding: 1rem;
 }
 
 .table__tbody .table__tr .button--outline{
@@ -219,7 +217,8 @@
 
 
 .list-modal li{
-    padding: .5em 0;
+    padding: .5em 1em;
+    text-align: left;
 }  
 
 .list-modal li:hover{
@@ -628,7 +627,7 @@
 
 .round-input .select-box{
     border: unset;
-    min-width: 2rem;
+    min-width: min-content;
     /* padding: 0; */
 }
 
