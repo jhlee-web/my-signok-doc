@@ -28,10 +28,11 @@
     align-items: center;
     gap: 1em;
     /* justify-content: space-between; */
+    position: relative;
 }
 .dtp_main > .icon{
     position: absolute;
-    right: 2em;
+    right: 1rem;
 }
 /* .dtp_main span, .dtp_main i{ display: inline-block; padding-right: 8px;} */
 .dtp_modal-win{

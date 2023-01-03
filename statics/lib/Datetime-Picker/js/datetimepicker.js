@@ -203,7 +203,6 @@
                 }
 
                 function changeTime(el) {
-                    console.log('clicked')
                     var $el = this || el;
                     $el = $($el);
                     ///angle-up-hour angle-up-minute angle-down-hour angle-down-minute
@@ -334,7 +333,7 @@
                     var $div2 = $('<div>')
 
                     var $i = $('<img src="/statics/icon/angle-down.svg">');
-                    $i.attr('id', 'angle-up-hour');
+                    $i.attr('id', 'angle-down-hour');
                     $i.addClass('icon is-large');
                     $div2.append($i)
                     $panel.append($div2);
@@ -345,7 +344,7 @@
 
                     $div2 = $('<div>')
                     $i = $('<img src="/statics/icon/angle-down.svg">');
-                    $i.attr('id', 'angle-up-minute');
+                    $i.attr('id', 'angle-down-minute');
                     $i.addClass('icon is-large');
                     $div2.append($i)
                     $panel.append($div2);
