@@ -105,6 +105,10 @@ function manageModalTab(){
 $(document).on('click','.select-box',function(){
     $(this).toggleClass('is-active')
 })
+$(document).on('click','.select-box__option li',function(){
+    let value = $(this).text()
+    $(this).parents('.select-box').find('p').text(value)
+})
 
 // select div 수정 + 이벤트 추가
 $(document).on('click','.accordion__header',function(){

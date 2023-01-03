@@ -347,16 +347,16 @@
 }
 #user_name{
     font-weight: 600;
-    color: var(--secondary-color-500);
 }
 .doc-header__user-wrap .list-modal{
     display: flex;
     flex-direction: column;
     
+    margin-top: 1em;
     max-height: 0;
     transform: scaleY(0);
     transform-origin: top;
-    transition: all .3s ease-in ;
+    transition: all .275s ease-in ;
 }
 .doc-header__user-wrap.is-active .list-modal{
     

@@ -88,9 +88,9 @@ html[data-theme='dark']{
     --focus-color-50:rgba(53, 165, 238, 0.1);
     --focus-color-400:rgba(53, 165, 238, 0.82);
 
-    --filter-text-400:invert(72%) sepia(19%) saturate(14%) hue-rotate(334deg) brightness(83%) contrast(79%);
-    --filter-text-600:invert(95%) sepia(0%) saturate(605%) hue-rotate(133deg) brightness(87%) contrast(92%);
-    --filter-text-800:invert(100%) sepia(3%) saturate(1046%) hue-rotate(257deg) brightness(118%) contrast(90%);
+    --filter-text-400:invert(81%) sepia(4%) saturate(6%) hue-rotate(320deg) brightness(86%) contrast(73%);
+    --filter-text-600:invert(89%) sepia(0%) saturate(722%) hue-rotate(147deg) brightness(95%) contrast(88%);
+    --filter-text-800:invert(100%) sepia(0%) saturate(1156%) hue-rotate(288deg) brightness(112%) contrast(90%);
 
     --theme-color-800:#eaeaea;
     --theme-color-700:#bcbcbc;
@@ -172,9 +172,13 @@ option{
     color: var(--primary-color-500);
     font-weight: 500;
 }
-.is-secondary{
+html[data-theme='light'] .is-secondary{
     color: var(--secondary-color-400);
 }
+    /* in dark */
+    html[data-theme='dark'] .is-secondary{
+        color: var(--text-color-600);
+    }
 .is-primary{
     color: var(--primary-color-500) !important;
 }
@@ -733,7 +737,7 @@ label{
 .button--text:hover{
     color: var(--secondary-color-500);
 }
-.button--text .icon{
+html[data-theme='light'] .button--text .icon{
     filter: var(--filter-secondary);
 }
 
@@ -744,7 +748,6 @@ label{
 .button--primary:hover{
     background-color: var(--primary-color-400);
 }
-
 
 .button--secondary{
     background: var(--secondary-color-500);
@@ -771,6 +774,16 @@ label{
     filter: var(--filter-text-400);
 }
 
+    /* in dark */
+    html[data-theme='dark'] .button--text{
+        color: var(--text-color-600);
+    }
+    html[data-theme='dark'] .button--text:hover{
+        color: var(--text-color-800);
+    }
+    html[data-theme='dark'] .button--text .icon{
+        color: var(--filter-text-400);
+    }
 
 /* button size set */
 .button.is-xl{
@@ -1207,12 +1220,18 @@ label{
 
 
 /* step */
-.header-step a{
+
+.header-step{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.header-step__item a{
     display: flex;
     align-items: center;
     gap: .5rem;
 }
-.header-step span{
+.header-step__item span{
     border: 1px solid var(--theme-color-400);
     display: inline-flex;
     align-items: center;
@@ -1223,22 +1242,22 @@ label{
     line-height: 2rem;
     border-radius: 999%;
 }
-.header-step.is-active span{
+.header-step__item.is-active span{
     background: var(--primary-color-500);
     color: var(--white);
     border: unset;
 }
-.header-step.is-active a{
+.header-step__item.is-active a{
     color: var(--primary-color-500);
     font-weight: 500;
 }
 
 @media all and (max-width:768px){
-    .header-step a{
+    .header-step__item a{
         flex-direction: column;
         gap: 0.25em;
     }
-    .header-step span{
+    .header-step__item span{
         width: 1.5em;
         height: 1.5em;
     }

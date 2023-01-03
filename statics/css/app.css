@@ -211,17 +211,16 @@
     border: 1px solid var(--theme-color-400);
     box-shadow: var(--box-shadow--3);
 
+    z-index: 2;
 }
 
 .table__tbody .table__tr .button--outline{
     position: relative;
 }
 
-
-.list-modal li{
-    padding: .5em 1em;
-    text-align: left;
-}  
+.doc-header .list-modal li{
+    padding:.75em 1em
+}
 
 .list-modal li:hover{
     background:var(--theme-color-100);
