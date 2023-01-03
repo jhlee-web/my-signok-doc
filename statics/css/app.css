@@ -74,7 +74,7 @@
     display: inline-flex;
     align-items: center;
     width: 100%;
-    border-bottom: 1px solid var(--theme-color-400);
+    /* border-bottom: 1px solid var(--theme-color-400); */
 }
 
 .table__tr:last-child{
@@ -110,7 +110,7 @@
     display: inline-flex;
     align-items: center;
     vertical-align: middle;
-    /* border-bottom: 1px solid var(--theme-color-400); */
+    border-bottom: 1px solid var(--theme-color-400);
 }
 .table__td.flex--column{
     align-items: flex-start;
