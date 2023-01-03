@@ -252,7 +252,7 @@
     background-color: var(--theme-color-100);
 }
 .main--background > .container{
-    background-color: var(--white);
+    background-color: var(--background-color);
     border: 1px solid var(--theme-color-200);
     border-top: unset;
     border-bottom: unset;
@@ -262,6 +262,9 @@
     margin: 0 auto;
 
     padding: 2rem;
+}
+#login-template > .container{
+    padding: var(--header-height);
 }
 .main--background > .container .main-content{
     padding: 0;

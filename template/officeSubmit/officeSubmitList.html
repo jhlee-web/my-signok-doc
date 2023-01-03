@@ -5,7 +5,7 @@
         <script>
             loadHTML("/statics/include/head.html");
         </script>
-        <title>템플릿</title>
+        <title>공문발송</title>
     </head>
 
     <body>
@@ -23,32 +23,16 @@
                 <div class="container flex--row flex-align--start">
                     <!-- 메인 컨텐츠 -->
                     <div class="main-content">
-                        <div class="tab-wrap">
-                            <ul class="tab">
-                                <li class="tab__item is-active">
-                                    <a href="javascript:void(0)">일반계약</a>
-                                </li>
-                                <li class="tab__item">
-                                    <a href="/template/burk-submit/burk-list.html">대량발송</a>
-                                </li>
-                                <li class="tab__item ">
-                                    <a href="/template/linkContract/linkContract.html">링크서명</a>
-                                </li>
-                                <li class="tab__item ">
-                                    <a href="/template/office-submit/office-submit.html">공문발송</a>
-                                </li>
-                            </ul>
-                        </div>
                         <!-- 상단 -->
                         <div class="table-top">
-                            <div class="flex--row is-change">
+                            <div class="flex--row">
                                 <div id="" class="select-box is-small">
                                     <div class="select-box__select">
                                         <p>전체</p>
                                         <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
                                     </div>
                                     <ul class="select-box__option">
-                                        <li selected>전체</li>
+                                        <li>전체</li>
                                         <li>완료</li>
                                         <li>진행중</li>
                                         <li>만료</li>
@@ -56,15 +40,15 @@
                                 </div>
                                 <div class="round-input">
                                     <div class="select-box">
-                                        <div class="select-box__select">
-                                            <p>전체</p>
+                                        <div class="select-box__select ">
+                                            <p>문서명</p>
                                             <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
                                         </div>
                                         <ul class="select-box__option">
-                                            <li selected>전체</li>
-                                            <li>완료</li>
-                                            <li>진행중</li>
-                                            <li>만료</li>
+                                            <li>문서명</li>
+                                            <li>문서명</li>
+                                            <li>문서명</li>
+                                            <li>문서명</li>
                                         </ul>
                                     </div>
                                     <input type="text" maxlength="50"
@@ -72,10 +56,12 @@
                                     class="round-input__input input">
                                 </div>
                             </div>
-                            <button class="button button--secondary is-pc">
+                            
+                            <button type="button" class="button button--secondary is-pc"
+                            onclick="location.href='/template/officeSubmit/officeSignature.html'">
                                 <img src="/statics/icon/plus-line.svg"
-                                alt="대량발송 템플릿 만들기" class="icon">
-                                템플릿 만들기
+                                alt="공문발송 템플릿 만들기" class="icon">
+                                공문발송 템플릿 만들기
                             </button>
                             <div id="selected-top-box" class="table-top__box is-hide">
                                 <div class="table-top__tab tab">
@@ -113,7 +99,7 @@
                                             <input type="checkbox" class="checkbox checkbox-all"
                                             id="">
                                         </div>
-                                        <div class="table__td width-70">템플릿 이름</div>
+                                        <div class="table__td width-60">템플릿 이름</div>
                                         <div class="table__td width-15">작성시간</div>
                                         <div class="table__td width-15">최근수정시간</div>
                                     </div>
@@ -132,7 +118,7 @@
                                         class="icon"
                                         alt="이전페이지">
                                     </button>
-                            </li>
+                                </li>
                                 <ul id="pagination-index-wrap" class="pagination__index-wrap"></ul>
                                 <li class="">
                                     <button type="button" class="button button--text">
@@ -160,18 +146,19 @@
                    <!-- 사이드 컨텐츠 (이벤트 때 생성) -->
                     <div class="aside-content">
                         <div class="container">
-                            <h5>문서 이력</h5>
                             <div class="inner">
-                                <ul id="aside-summary" class="aside__list basic-list">
-                                </ul>
-                                <button type="button"
-                                class="button button--secondary is-medium">진행정보 보기</button>
+                                <h5>공문발송</h5>
+                                
                             </div>
-                            
-                            <div class="aside__button-wrap">
-                                <button type="button"
-                                class="button button--outline is-medium is-break">내용 확인하기</button>
-                            </div>
+                            <a href="javascript:void(0)"
+                                class="button button--secondary is-medium">공문발송 시작하기</a>
+                            <a href="javascript:void(0)"
+                            class="button button--outline is-medium is-break">템플릿 수정하기</a>
+
+                            <!-- documnet-list 페이지에서만 보입니다.
+                            테스트용 버튼  -->
+                            <a href="javascript:void(0)"
+                            class="button button--outline is-medium is-break">공문발송 자세히보기</a>
                             
                         </div>
                     </div>
@@ -275,23 +262,24 @@
                         friends.push(data[i].friends[a].name)
                     }
 
+
                     html = ''
                     html += `
                     <div class="table__tr ${testClass}" data-id="${data[i].index}">
                         <div class="table__td is-left width-90">
-                            <div class="table__td check-area">
+                            <div class="table__td check-area ">
                                 <input type="checkbox" class="checkbox"
                                 id="">
                             </div>
-                            <div class="table__td flex--column gap--sm width-70 title-area">
+                            <div class="table__td flex--column gap--sm width-60 title-area">
                                 <p class="table__td--title">${data[i].guid}</p>
                                 <p class="is-remark">${friends}</p>
                             </div>
                             <div class="table__td width-15 latest-area">
-                                <p class="is-remark">2022-12-31 오후 10:59</p>
+                                <p class="is-remark">2022-12-31</br>오후 10:59</p>
                             </div>
                             <div class="table__td width-15 latest-area">
-                                <p class="is-remark">2022-12-31 오후 10:59</p>
+                                <p class="is-remark">2022-12-31</br>오후 10:59</p>
                             </div>
                         </div>
                         <div class="table__td is-right width-10 flex-justify--center">

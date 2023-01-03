@@ -11,10 +11,14 @@
     <body>
         <!-- <div class="wrapper"> -->
             <!-- 상단 헤더 -->
-            <div class="doc-header is-fixed" id="doc-header">
-                <div class="container is-center">
+            <div class="doc-header">
+                <div class="container">
+                    <a href="/template/officeSubmit/officeSubmitList.html" type="button" class="button button--text">
+                        <img src="/statics/icon/angle-left.svg" class="icon">
+                        홈으로
+                    </a>
                     <ul class="flex--row ">
-                        <li class="step is-active">
+                        <li class="header-step is-active">
                             <a href="javascript:void(0)">
                                 <span>1</span>서명자 정보 입력
                             </a>
@@ -25,15 +29,15 @@
                             </a>
                         </li>
                         <li class="header-step">
-                            <a href="/template/burk-submit/contract-set.html">
-                                <span>3</span>계약서 설정 및 발송
+                            <a href="/template/officeSubmit/officeContract.html">
+                                <span>3</span>템플릿 설정
                             </a>
                         </li>
                     </ul>
                 </div>
             </div>
             <!-- // 상단헤더 -->
-            <main class="main main--background padding-vertical--xxl">
+            <main class="main main--background">
                 
                 
                 <!-- 메인 컨텐츠 -->
@@ -43,17 +47,13 @@
                         <div class="flex--column">
                             <ul class="flex--row  flex-justify--between">
                                 <li class="control-form">
-                                    대량발송 가이드
-                                    <img src="/statics/icon/help-line.svg" class="icon">
-                                </li>
-                                <!-- <li class="control-form">
                                     <span>순서없이</span>
                                     <label class="is-small toggle">
                                         <input type="checkbox" class="toggle__checkbox" checked>
                                         <span class="toggle__slider"></span>
                                     </label>
                                     <span class="">순서대로</span>
-                                </li> -->
+                                </li>
                                 <!-- <li class="control-form">
                                     <input type="checkbox" id="keep-mail"  class="checkbox">
                                     <label for="keep-mail" class="">내 서명 포함</label>
@@ -76,16 +76,10 @@
                                             <button type="button" class="button button--text is-small is-accent">삭제</button>
                                         </div>
                                         <div class="round-input width-100">
-                                            <div class="select-box">
-                                                <div class="select-box__select">
-                                                    <p>개인</p>
-                                                    <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
-                                                </div>
-                                                <ul class="select-box__option">
-                                                    <li>개인</li>
-                                                    <li>기업</li>
-                                                </ul>
-                                            </div>
+                                            <select class="round-input__select select">
+                                                <option value="" selected>개인</option>
+                                                <option value="">기업</option>
+                                            </select>
                                             <input type="text" maxlength="64"
                                             placeholder="홍길동"
                                             class="round-input__input input">
@@ -98,11 +92,6 @@
                                             <input type="text" maxlength="64"
                                             placeholder="01012345678"
                                             class="round-input__input input">
-                                        </div>
-                                        <div class="control-form">
-                                            <input type="checkbox" class="checkbox"
-                                            id="contract__1">
-                                            <label for="contract__1">공인인증서</label>
                                         </div>
                                     </div>
                                 </div>
@@ -116,16 +105,10 @@
                                             <button type="button" class="button button--text is-small is-accent">삭제</button>
                                         </div>
                                         <div class="round-input width-100">
-                                            <div class="select-box">
-                                                <div class="select-box__select">
-                                                    <p>개인</p>
-                                                    <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
-                                                </div>
-                                                <ul class="select-box__option">
-                                                    <li>개인</li>
-                                                    <li>기업</li>
-                                                </ul>
-                                            </div>
+                                            <select class="round-input__select select">
+                                                <option value="" selected>개인</option>
+                                                <option value="">기업</option>
+                                            </select>
                                             <input type="text" maxlength="64"
                                             placeholder="홍길동"
                                             class="round-input__input input">
@@ -138,11 +121,6 @@
                                             <input type="text" maxlength="64"
                                             placeholder="01012345678"
                                             class="round-input__input input">
-                                        </div>
-                                        <div class="control-form">
-                                            <input type="checkbox" class="checkbox"
-                                            id="contract__1">
-                                            <label for="contract__1">공인인증서</label>
                                         </div>
                                     </div>
                                 </div>
@@ -211,15 +189,16 @@
                         <!-- </div> -->
                     </div>
                     <!-- /main-content -->
-                <div class="doc-header is-fixed" id="doc-footer">
-                    <div class="container is-center">
-                        <a href="/template/burk-submit/burk-list.html" class="button is-large button--text">이전</a>
-                        <a href="javascript:void(0)" class="button is-large button--primary">다음</a>
-                    </div>
-                </div>
-            <!-- </div> -->
+                    
+                <!-- /container -->
             </main>
-            
+            <div class="doc-header" id="doc-footer">
+                <div class="container is-center">
+                    <button type="button" class="button is-large button--text">이전</button>
+                    <button type="button" class="button is-large button--primary">다음</button>
+                </div>
+            </div>
+        <!-- </div> -->
         <script>
             $('html').attr('data-theme',localStorage.getItem('data-theme'))
 
@@ -286,7 +265,6 @@
 
             
         </script>
-        <script src="/statics/js/common.js"></script>
     </body>
     
 </html>

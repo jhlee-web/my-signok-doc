@@ -108,7 +108,6 @@ html[data-theme='dark']{
 
     --filter-shadow-3:drop-shadow(0 0.75rem 1.5rem 0 rgba(17,17,17,0.1));
 
-
     --dim:rgba(255,255,255,0.25);
 
 }
@@ -535,6 +534,7 @@ label{
     color: var(--text-color-800);
 
     font-size: 1rem;
+    background: transparent;
 }
 .input::placeholder,
 .textarea::placeholder{

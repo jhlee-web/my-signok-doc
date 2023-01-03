@@ -13,10 +13,14 @@
         <!-- <div class="wrapper"> -->
             <!-- 상단 헤더 -->
             <div class="doc-header is-fixed" id="doc-header">
-                <div class="container is-center">
+                <div class="container">
+                    <a href="/template/burkSubmit/burkSubmitList.html" type="button" class="button button--text">
+                        <img src="/statics/icon/angle-left.svg" class="icon">
+                        홈으로
+                    </a>
                     <ul class="flex--row">
                         <li class="header-step">
-                            <a href="/template/contract-step/signature-set.html">
+                            <a href="/template/burkSubmit/burkSignature.html">
                                 <span>1</span>서명자 정보 입력
                             </a>
                         </li>
@@ -25,9 +29,9 @@
                                 <span>2</span>서명 영역 지정
                             </a>
                         </li>
-                        <li class="step is-active">
+                        <li class="header-step is-active">
                             <a href="javascript:void(0)">
-                                <span>3</span>계약서 설정 및 발송
+                                <span>3</span>템플릿 설정
                             </a>
                         </li>
                     </ul>
@@ -44,7 +48,7 @@
                                 <span class="is-primary">*</span>
                             </label>
                             <div class="input-box flex--row is-change">
-                                <input type="text" placeholder="" class="input">
+                                <input type="text" placeholder="" class="input" disabled>
                                 <button type="button" class="button button--secondary">수정하기</button>
                             </div>
                         </div>
@@ -56,7 +60,7 @@
                                 value="14">
                                 <p>일 동안 서명을 받습니다.</p>
                             </div>
-                            <p class="is-remark">서명 만료일: <span>2022-12-31</span></p>
+                            <p class="is-remark text-align--right">서명 만료일: <span>2022-12-31</span></p>
                         </div>
                         
                         <div class="flex--column">
@@ -92,7 +96,7 @@
                         </div>
                         
                         <!-- <div class="full-grid right-double"> -->
-                        <div class="accordion is-active">
+                        <!-- <div class="accordion is-active">
                             <div class="accordion__header">
                                 <p class="is-remark">참조자<span>(10)</span></p>
                                 <button type="button" class="icon-button">
@@ -111,7 +115,7 @@
                                 </div>
                                 <ul class="dynamic-badge-set"></ul>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="accordion is-active">
                             <div class="accordion__header">
                                 <p>기타 설정</p>
@@ -133,7 +137,7 @@
                                 </div>
                                 
         
-                                <div class="flex--column width-100">
+                                <!-- <div class="flex--column width-100">
                                     <p class="is-remark">발송 방법 <span class="is-primary">*</span></p>
                                     <div class="flex--row">
                                         <div class="control-form">
@@ -149,7 +153,7 @@
                                         <div id="date-time-picker" class="width-100"></div>
                                         <input type="hidden" id="" readonly >
                                     </div>
-                                </div>
+                                </div> -->
                                 
                             </div>
                             
@@ -191,7 +195,7 @@
                 <!-- /container -->
                 <div class="doc-header is-fixed" id="doc-footer">
                     <div class="container is-center">
-                        <a href="/template/burk-submit/burk-list.html" class="button is-large button--text">이전</a>
+                        <a href="/template/burkSubmit/burkSubmitList.html" class="button is-large button--text">이전</a>
                         <button type="button" class="button is-large button--primary">다음</button>
                     </div>
                 </div>
