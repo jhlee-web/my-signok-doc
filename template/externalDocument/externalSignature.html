@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <script src="/statics/js/loadHTML.js"></script>
+        <script>
+            loadHTML("/statics/include/head.html");
+        </script>
+        <title>링크서명 | 서명자 정보 입력</title>
+    </head>
+
+    <body>
+        <!-- <div class="wrapper"> -->
+            <!-- 상단 헤더 -->
+            <div class="doc-header is-fixed" id="doc-header">
+                <div class="container">
+                    <a href="/template/linkContract/linkContractList.html" type="button" class="button button--text">
+                        <img src="/statics/icon/angle-left.svg" class="icon">
+                        홈으로
+                    </a>
+                    <ul class="flex--row ">
+                        <li class="header-step__item is-active">
+                            <a href="javascript:void(0)">
+                                <span>1</span>서명자 정보 입력
+                            </a>
+                        </li>
+                        <li class="header-step__item">
+                            <a href="javascript:void(0)">
+                                <span>2</span>서명 영역 지정
+                            </a>
+                        </li>
+                        <li class="header-step__item">
+                            <a href="/template/linkContract/linkContract.html">
+                                <span>3</span>템플릿 설정
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- // 상단헤더 -->
+            <main class="main main--background padding-vertical--xxl">
+                
+                
+                <!-- 메인 컨텐츠 -->
+                <div class="container">
+                    <div class="main-content">
+                        <!-- top -->
+                        <div class="flex--column">
+                            <div class="flex--row  flex-justify--between">
+                                <div class="tooltip">
+                                    <p class="control-form">
+                                        링크서명 가이드
+                                        <img src="/statics/icon/help-line.svg" class="icon tooltip__icon">
+                                    </p>
+                                    <div class="tooltip__modal is-bottom">
+                                        링크서명은 별도의 회원가입/로그인 없이 공유 받은 URL 또는 QR코드를 통해 서명할 수 있습니다.
+                                    </div>
+                                </div>
+                                <li class="control-form">
+                                    <img src="/statics/icon/world-line.svg" class="icon" alt="언어 변경">
+                                    <p>한국어</p>
+                                </li>
+                            </div>
+                        </div>
+                        <!-- /tabs -->
+                        <!-- card -->
+                        <div class="card" data-id="0">
+                            <div class="card__content">
+                                <div class="card__row">
+                                    <p class="">서명자(대상자)</p>
+                                    <button type="button" class="button button--text is-small is-primary">삭제</button>
+                                </div>
+                                <div class="round-input width-100">
+                                    <input type="text" maxlength="64"
+                                    placeholder="서명할 그룹 또는 역할을 입력해 주세요.(예) 임직원, 근로자 등"
+                                    class="round-input__input input">
+                                </div>
+                                <div class="flex--column gap--sm">
+                                    <div class="checkbox__item">
+                                        <label for="security">서명자 인증 설정하기</label>
+                                        <input type="checkbox" id="security" class="checkbox">
+                                    </div>
+                                    <p class="is-remark">
+                                        서명을 하기 위해 휴대전화 본인 인증이 필요합니다.</br>
+                                        서명 요청자는 서명자 정보 확인과 개인정보 도용을 방지할 수 있습니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /card -->
+                    </div>
+                    <!-- /main-content -->
+                </div>
+                <!-- /container -->
+                <div class="doc-header is-fixed" id="doc-footer">
+                    <div class="container is-center">
+                        <a href="/template/linkContract/linkContractList.html" class="button is-large button--text">이전</a>
+                        <a href="/template/linkContract/contract-set.html" class="button is-large button--primary">다음</a>
+                    </div>
+                </div>
+            <!-- </div> -->
+            </main>
+            
+        <script>
+            $('html').attr('data-theme',localStorage.getItem('data-theme'))
+
+            // function manageCardInput(id,type){
+            //     if(id!==null){
+            //         $(`.card[data-id=${id}] .input`).not('input[type=text]').addClass('is-hide')
+            //         $(`.card[data-id=${id}] .input[type=${type}]`).removeClass('is-hide')
+            //     }
+            //     else{
+            //         $(`.card .input`).not('input[type=text]').addClass('is-hide')
+            //         $(`.card .input[type=${type}]`).removeClass('is-hide')
+            //     }
+            // }
+
+
+            // $(function(){
+            //     $('.nav').hide()
+
+            //     let type = $('.card .tab__item.is-active').attr('data-type');
+            //     manageCardInput(null,type)
+            // })
+            
+
+            // $('.card .tab__item').on('click',function(){
+            //     let card_id = $(this).parents('.card').attr('data-id')
+            //     let type = $(this).attr('data-type');
+
+            //     manageCardInput(card_id,type)
+            // })
+
+            // $('#add-signature').on('click',function(){
+            //     card_id = Number($(`.card:nth-child(${$('.card').length - 1})`).attr('data-id'))
+
+            //     let html = ''
+            //     html += `<div class="card" data-id="${card_id+1}">
+            //         <div class="card__content">
+            //             <div class="card__row">
+            //                 <p class="">${card_id+1} 번째 서명자</p>
+            //                 <button type="button" class="button button--text is-small is-accent">삭제</button>
+            //             </div>
+            //             <input type="text" class="input is-small" placeholder="성명을 입력해주세요">
+
+            //             <ul class="tab">
+            //                 <li class="tab__item is-active" data-type="email">이메일</li>
+            //                 <li class="tab__item" data-type="number">휴대전화</li>
+            //             </ul>
+            //             <input type="email" class="input is-smalle" placeholder="이메일을 입력해주세요">
+            //             <input type="number" class="input is-small is-hide" placeholder="휴대전화번호를 입력해주세요">
+            //         </div>
+            //     </div>`
+            //     $(this).parents('.card').before(html)
+
+            //     if($('#doc-footer').offset().top > $(window).height()) {
+            //         console.log('hello')
+            //         $('body').animate({
+            //             'scrollTop':$('.card:last-child').offset().top + $('.card:last-child').innerHeight()
+            //         },10)
+            //         $('.full-grid').css({
+            //             'padding-bottom':'6rem'
+            //         })
+            //         $('#doc-footer').addClass('is-fixed');
+            //     }
+            // })
+
+            
+        </script>
+        <script src="/statics/js/common.js"></script>
+    </body>
+    
+</html>
