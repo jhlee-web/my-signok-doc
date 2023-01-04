@@ -551,9 +551,10 @@ label{
     font-size: 1rem;
     background: transparent;
 }
-.input::placeholder,
-.textarea::placeholder{
+::placeholder,
+textarea::placeholder{
     font-size: var(--text-small);
+    color: var(--text-color-400);
 }
 .textarea{
     height: 100%;
@@ -584,10 +585,6 @@ label{
 .input-box .icon:not(img[src*='eye']){
     display: none;
 }
-::placeholder{
-    color: var(--text-color-400);
-}
-
 
 .input-area__helper{
     display: none;

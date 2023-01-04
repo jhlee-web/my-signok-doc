@@ -50,49 +50,24 @@
                 <div class="container">
                     <div class="main-content">
                         <!-- top -->
-                        <div class="flex--column">
-                            <div class="flex--row  flex-justify--between">
-                                <div class="tooltip">
-                                    <p class="control-form">
-                                        링크서명 가이드
-                                        <img src="/statics/icon/help-line.svg" class="icon tooltip__icon">
-                                    </p>
-                                    <div class="tooltip__modal is-bottom">
-                                        링크서명은 별도의 회원가입/로그인 없이 공유 받은 URL 또는 QR코드를 통해 서명할 수 있습니다.
-                                    </div>
-                                </div>
-                                <li class="control-form">
-                                    <img src="/statics/icon/world-line.svg" class="icon" alt="언어 변경">
-                                    <p>한국어</p>
-                                </li>
+                        <div class="file-area">
+                            <label for="upload-file" class="file-area__label">
+                                <input type="file"
+                                id="upload-file" class="file-area__input"
+                                accept=".jpg, .png, .jpeg, .hwp, .doc, .pdf">    
+                            </label>
+                            <div class="flex--column">
+                                <p class="font-weight--medium">
+                                    파일 중 계약서를 선택해주세요. 
+                                </p>
+                                <p class="is-remark">
+                                    계약서는 1개만 지정 가능하며,
+                                    계약에 관련된 첨부파일도 업로드 가능합니다.
+                                </p>
                             </div>
                         </div>
                         <!-- /tabs -->
-                        <!-- card -->
-                        <div class="card" data-id="0">
-                            <div class="card__content">
-                                <div class="card__row">
-                                    <p class="">서명자(대상자)</p>
-                                    <button type="button" class="button button--text is-small is-primary">삭제</button>
-                                </div>
-                                <div class="round-input width-100">
-                                    <input type="text" maxlength="64"
-                                    placeholder="서명할 그룹 또는 역할을 입력해 주세요.(예) 임직원, 근로자 등"
-                                    class="round-input__input input">
-                                </div>
-                                <div class="flex--column gap--sm">
-                                    <div class="checkbox__item">
-                                        <label for="security">서명자 인증 설정하기</label>
-                                        <input type="checkbox" id="security" class="checkbox">
-                                    </div>
-                                    <p class="is-remark">
-                                        서명을 하기 위해 휴대전화 본인 인증이 필요합니다.</br>
-                                        서명 요청자는 서명자 정보 확인과 개인정보 도용을 방지할 수 있습니다.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /card -->
+                        
                     </div>
                     <!-- /main-content -->
                 </div>
@@ -113,69 +88,49 @@
             <!-- </div> -->
             </main>
             
+        <script src="/statics/lib/fancy-file-uploader/jquery.fancy-fileupload.js"></script>
         <script>
             $('html').attr('data-theme',localStorage.getItem('data-theme'))
 
-            // function manageCardInput(id,type){
-            //     if(id!==null){
-            //         $(`.card[data-id=${id}] .input`).not('input[type=text]').addClass('is-hide')
-            //         $(`.card[data-id=${id}] .input[type=${type}]`).removeClass('is-hide')
-            //     }
-            //     else{
-            //         $(`.card .input`).not('input[type=text]').addClass('is-hide')
-            //         $(`.card .input[type=${type}]`).removeClass('is-hide')
-            //     }
-            // }
 
+            // 이거 좀더 고민해보기
+            function loadFancyUpload(){
+                $('#upload-file').FancyFileUpload({
+                // 'url' : '',
+                // 'params' : {},
+                'edit' : false,                      // 업로드한 파일의 이름 변경
+                'maxfilesize' : 10000000,            // 최대 10MB
+                // 'accept' : null,
+                'displayunits' : 'si',              // 'iec_windows', 'iec_formal', or 'si'
+                'adjustprecision' : true,           // 파일 크기를 표시할 때 최종 정밀도 조정
+                'retries' : 5,
+                'retrydelay' : 500,
+                'showpreview' : function(e, data, preview, previewclone) {},
+                'hidepreview' : function(e, data, preview, previewclone) {},
+                'added' : function(e, data) {
 
-            // $(function(){
-            //     $('.nav').hide()
-
-            //     let type = $('.card .tab__item.is-active').attr('data-type');
-            //     manageCardInput(null,type)
-            // })
-            
-
-            // $('.card .tab__item').on('click',function(){
-            //     let card_id = $(this).parents('.card').attr('data-id')
-            //     let type = $(this).attr('data-type');
-
-            //     manageCardInput(card_id,type)
-            // })
-
-            // $('#add-signature').on('click',function(){
-            //     card_id = Number($(`.card:nth-child(${$('.card').length - 1})`).attr('data-id'))
-
-            //     let html = ''
-            //     html += `<div class="card" data-id="${card_id+1}">
-            //         <div class="card__content">
-            //             <div class="card__row">
-            //                 <p class="">${card_id+1} 번째 서명자</p>
-            //                 <button type="button" class="button button--text is-small is-accent">삭제</button>
-            //             </div>
-            //             <input type="text" class="input is-small" placeholder="성명을 입력해주세요">
-
-            //             <ul class="tab">
-            //                 <li class="tab__item is-active" data-type="email">이메일</li>
-            //                 <li class="tab__item" data-type="number">휴대전화</li>
-            //             </ul>
-            //             <input type="email" class="input is-small" placeholder="이메일을 입력해주세요">
-            //             <input type="number" class="input is-small is-hide" placeholder="휴대전화번호를 입력해주세요">
-            //         </div>
-            //     </div>`
-            //     $(this).parents('.card').before(html)
-
-            //     if($('#doc-footer').offset().top > $(window).height()) {
-            //         console.log('hello')
-            //         $('body').animate({
-            //             'scrollTop':$('.card:last-child').offset().top + $('.card:last-child').innerHeight()
-            //         },10)
-            //         $('.full-grid').css({
-            //             'padding-bottom':'6rem'
-            //         })
-            //         $('#doc-footer').addClass('is-fixed');
-            //     }
-            // })
+                },
+                // 'startupload' : function(SubmitUpload, e, data){
+                //     console.log('start upload')
+                // },
+                // 'continueupload' : function(e, data) {
+                //     console.log('continue upload')
+                // },
+                // 'uploadcancelled' : function(e, data) {
+                //     console.log('upload cancel')
+                // },
+                // 'uploadcompleted' : function(e, data) {
+                //     console.log('upload completed')
+                // },
+                // 'fileupload' : {
+                //     function(e,data){
+                //         console.log(fileupload)
+                //     }
+                // },
+                });
+            }
+            loadFancyUpload()
+    
 
             
         </script>

@@ -1218,3 +1218,12 @@
 
     gap: .5em;
 }
+
+
+
+/* file-upload lib */
+.ff_fileupload_wrap{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
