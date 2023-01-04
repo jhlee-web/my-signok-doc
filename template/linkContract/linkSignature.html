@@ -11,13 +11,13 @@
     <body>
         <!-- <div class="wrapper"> -->
             <!-- 상단 헤더 -->
-            <div class="doc-header is-fixed" id="doc-header">
+            <div class="template-header">
                 <div class="container">
                     <a href="/template/linkContract/linkContractList.html" type="button" class="button button--text">
                         <img src="/statics/icon/angle-left.svg" class="icon">
                         홈으로
                     </a>
-                    <ul class="flex--row ">
+                    <ul class=" header-step flex--row">
                         <li class="header-step__item is-active">
                             <a href="javascript:void(0)">
                                 <span>1</span>서명자 정보 입력
@@ -34,12 +34,11 @@
                             </a>
                         </li>
                     </ul>
+                    <div>&nbsp;</div>
                 </div>
             </div>
             <!-- // 상단헤더 -->
             <main class="main main--background padding-vertical--xxl">
-                
-                
                 <!-- 메인 컨텐츠 -->
                 <div class="container">
                     <div class="main-content">
@@ -91,10 +90,17 @@
                     <!-- /main-content -->
                 </div>
                 <!-- /container -->
-                <div class="doc-header is-fixed" id="doc-footer">
-                    <div class="container is-center">
-                        <a href="/template/linkContract/linkContractList.html" class="button is-large button--text">이전</a>
-                        <a href="/template/linkContract/contract-set.html" class="button is-large button--primary">다음</a>
+                <div class="template-footer">
+                    <div class="container">
+                        <div>&nbsp;</div>
+                        <div class="flex--row flex-justify--center">
+                            <a href="/template/linkContract/linkContractList.html"
+                            class="button is-large button--text">이전</a>
+                            <button type="button" class="button is-large button--primary">
+                                다음
+                            </button>
+                        </div>
+                        <div>&nbsp;</div>
                     </div>
                 </div>
             <!-- </div> -->
@@ -103,68 +109,6 @@
         <script>
             $('html').attr('data-theme',localStorage.getItem('data-theme'))
 
-            // function manageCardInput(id,type){
-            //     if(id!==null){
-            //         $(`.card[data-id=${id}] .input`).not('input[type=text]').addClass('is-hide')
-            //         $(`.card[data-id=${id}] .input[type=${type}]`).removeClass('is-hide')
-            //     }
-            //     else{
-            //         $(`.card .input`).not('input[type=text]').addClass('is-hide')
-            //         $(`.card .input[type=${type}]`).removeClass('is-hide')
-            //     }
-            // }
-
-
-            // $(function(){
-            //     $('.nav').hide()
-
-            //     let type = $('.card .tab__item.is-active').attr('data-type');
-            //     manageCardInput(null,type)
-            // })
-            
-
-            // $('.card .tab__item').on('click',function(){
-            //     let card_id = $(this).parents('.card').attr('data-id')
-            //     let type = $(this).attr('data-type');
-
-            //     manageCardInput(card_id,type)
-            // })
-
-            // $('#add-signature').on('click',function(){
-            //     card_id = Number($(`.card:nth-child(${$('.card').length - 1})`).attr('data-id'))
-
-            //     let html = ''
-            //     html += `<div class="card" data-id="${card_id+1}">
-            //         <div class="card__content">
-            //             <div class="card__row">
-            //                 <p class="">${card_id+1} 번째 서명자</p>
-            //                 <button type="button" class="button button--text is-small is-accent">삭제</button>
-            //             </div>
-            //             <input type="text" class="input is-small" placeholder="성명을 입력해주세요">
-
-            //             <ul class="tab">
-            //                 <li class="tab__item is-active" data-type="email">이메일</li>
-            //                 <li class="tab__item" data-type="number">휴대전화</li>
-            //             </ul>
-            //             <input type="email" class="input is-smalle" placeholder="이메일을 입력해주세요">
-            //             <input type="number" class="input is-small is-hide" placeholder="휴대전화번호를 입력해주세요">
-            //         </div>
-            //     </div>`
-            //     $(this).parents('.card').before(html)
-
-            //     if($('#doc-footer').offset().top > $(window).height()) {
-            //         console.log('hello')
-            //         $('body').animate({
-            //             'scrollTop':$('.card:last-child').offset().top + $('.card:last-child').innerHeight()
-            //         },10)
-            //         $('.full-grid').css({
-            //             'padding-bottom':'6rem'
-            //         })
-            //         $('#doc-footer').addClass('is-fixed');
-            //     }
-            // })
-
-            
         </script>
         <script src="/statics/js/common.js"></script>
     </body>

@@ -220,7 +220,7 @@
 
     color: var(--text-color-600);
 }
-.nav-item.is-border{
+.nav-item.has-border{
     border-bottom: 1px solid var(--theme-color-500);
 }
 .nav-item:hover{
@@ -300,11 +300,6 @@
     width: 100%;
     height: var(--header-height);
     z-index: 99;
-}
-#doc-header.is-fixed,#doc-footer.is-fixed{
-    background: var(--background-color);
-    position: fixed;
-    left: 0;
 }
 #doc-header.is-fixed{
     top: 0;
@@ -614,4 +609,36 @@
         max-height: var(--header-height);
     }
     
+}
+
+
+/* template-header (header-step 가지고 있는 영역)  */
+.template-header, 
+.template-footer{
+    background: var(--background-color);
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    z-index: 1;
+}
+.template-header{
+    top: 0;
+    border-bottom: 1px solid var(--theme-color-400);
+}
+.template-footer{
+    bottom:0;
+    border-top: 1px solid var(--theme-color-400);
+}
+.template-footer .container,
+.template-header .container{
+    max-width: unset;
+    padding: 0 2rem;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+}
+.template-header .button{
+    justify-content: flex-start;
 }

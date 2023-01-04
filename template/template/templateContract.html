@@ -12,7 +12,7 @@
     <body>
         <!-- <div class="wrapper"> -->
             <!-- 상단 헤더 -->
-            <div class="doc-header is-fixed" id="doc-header">
+            <div class="template-header">
                 <div class="container">
                     <a href="/template/template/templateList.html" type="button" class="button button--text">
                         <img src="/statics/icon/angle-left.svg" class="icon">
@@ -35,6 +35,7 @@
                             </a>
                         </li>
                     </ul>
+                    <div></div>
                 </div>
             </div>
             <!-- // 상단헤더 -->
@@ -194,10 +195,15 @@
                     <!-- /main-content -->
                 </div>
                 <!-- /container -->
-                <div class="doc-header is-fixed" id="doc-footer">
-                    <div class="container is-center">
-                        <a href="/template/burkSubmit/burkSubmitList.html" class="button is-large button--text">이전</a>
-                        <button type="button" class="button is-large button--primary">다음</button>
+                <div class="template-footer">
+                    <div class="container">
+                        <div></div>
+                        <div class="flex--row flex-justify--center">
+                            <a href="/template/template/templateSignature.html"
+                                class="button is-large button--text">이전</a>
+                            <button type="button" class="button is-large button--primary">다음</button>
+                        </div>
+                        <div></div>
                     </div>
                 </div>
             </main>
@@ -293,7 +299,6 @@
                     $('.table__tbody .table__tr').remove()
                 }
 
-                console.log(data)
                 for (let i = 0; i < breakpoint; i++){
                     if(i > data.length) break;
                     testClass = null
