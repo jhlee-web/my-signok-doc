@@ -37,59 +37,99 @@
     
                             </ul>
                         </div>
-                        <div class="card">
-                            <div class="card__row">
-                                <div class="round-input">
-                                    <input type="text"
-                                    class="round-input__input input"
-                                    placeholder="부서를 검색해주세요."
-                                    maxlength="64">
-                                </div>
-                                <button type="button" class="button button--secondary is-medium">
-                                    <img src="/statics/icon/plus-line.svg" class="icon" alt="부서추가">
-                                    부서추가
-                                </button>
+                        <div class="table-top">
+                            <div class="round-input">
+                                <input type="text"
+                                class="round-input__input input"
+                                placeholder="역할명을 검색해주세요."
+                                maxlength="64">
                             </div>
+                            <button type="button" class="button button--secondary is-medium">
+                                <img src="/statics/icon/plus-line.svg" class="icon" alt="부서추가">
+                                부서추가
+                            </button>
+                        </div>
                             
-                            <div class="table">
-                                <div class="table__colgroup">
-                                    <div class="table__col" style="width:auto"></div>
-                                    <div class="table__col" style="width:auto"></div>
-                                    <div class="table__col" style="width:15%"></div>
-                                    <div class="table__col" style="width:15%"></div>
-                                </div>
-                                <div class="table__thead">
-                                    <ul class="table__tr">
-                                        <li class="table__td">이름</li>
-                                        <li class="table__td">이메일</li>
-                                        <li class="table__td">부서</li>
-                                        <li class="table__td">역할</li>
-                                    </ul>
-                                </div>
-                                <div class="table__tbody">
-                                    <div class="table__tr">
-                                        <div class="table__td">
-                                            홍길동
-                                        </div>
-                                        <div class="table__td">
-                                            hong123@naver.com
-                                        </div>
-                                        <div class="table__td">
-                                            없음
-                                        </div>
-                                        <div class="table__td">
-                                            없음
-                                        </div>
+                        <div class="table">
+                            <div class="table__thead">
+                                <div class="table__tr">
+                                    <div class="table__td is-left width-90">
+                                        <div class="table__td width-20">역할명</div>
+                                        <div class="table__td width-70">역할설명</div>
+                                        <div class="table__td width-10">멤버수</div>
+                                    </div>
+                                    <div class="table__td is-right width-10 flex-justify--center">
+                                        추가메뉴
                                     </div>
                                 </div>
                             </div>
-                            <!-- /table -->
+                            <div class="table__tbody">
+                                <div class="table__tr">
+                                    <div class="table__td is-left width-90">
+                                        <div class="table__td width-20">역할명</div>
+                                        <div class="table__td width-70">역할설명</div>
+                                        <div class="table__td width-10">멤버수</div>
+                                    </div>
+                                    <div class="table__td is-right width-10 flex-justify--center">
+                                        <button type="button" class="button button--outline">
+                                            수정
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="table__tr">
+                                    <div class="table__td is-left width-90">
+                                        <div class="table__td width-20">역할명</div>
+                                        <div class="table__td width-70">역할설명</div>
+                                        <div class="table__td width-10">멤버수</div>
+                                    </div>
+                                    <div class="table__td is-right width-10 flex-justify--center">
+                                        <button type="button" class="button button--outline">
+                                            수정
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- tbody -->
                         </div>
-                        <!-- container -->
+                        <!-- /table -->
+                        <div class="table__paging">
+                            <ul class="pagination">
+                                <li class="">
+                                    <button type="button" class="button button--text">
+                                        <img src="/statics/icon/angle-left.svg" 
+                                        class="icon"
+                                        alt="이전페이지">
+                                    </button>
+                                </li>
+                                <ul id="pagination-index-wrap" class="pagination__index-wrap"></ul>
+                                <li class="">
+                                    <button type="button" class="button button--text">
+                                        <img src="/statics/icon/angle-right.svg" 
+                                        class="icon"
+                                        alt="다음페이지">
+                                    </button>
+                                </li>
+                            </ul>
+                            <div id="count-load-table" class="select-box is-medium is-top">
+                                <div class="select-box__select">
+                                    <p>10개씩보기</p>
+                                    <img class="select-box__icon icon" src="/statics/icon/angle-down.svg" alt="화살표">
+                                    
+                                </div>
+                                <ul class="select-box__option">
+                                    <li selected>10개씩 보기</li>
+                                    <li>30개씩 보기</li>
+                                    <li>50개씩 보기</li>
+                                </ul>
+                                
+                            </div>
+                        </div>
                     </div>
                     <!-- /main-content -->
                 </div>
+                <!-- /container -->
             </main>
         </div>
+        <script src="/statics/js/common.js"></script>
     </body>
 </html>

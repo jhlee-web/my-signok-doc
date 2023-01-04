@@ -53,6 +53,27 @@
                                 <div class="card">
                                     <p class="is-remark">결제내역</p>
                                     <div class="table">
+                                        <div class="table__thead">
+                                            <div class="table__tr">
+                                                <div class="table__td is-left width-100">
+                                                    <div class="table__td width-10">
+                                                        상태
+                                                    </div>
+                                                    <div class="table__td width-40">
+                                                        상품명
+                                                    </div>
+                                                    <div class="table__td width-20">
+                                                        쿠폰명
+                                                    </div>
+                                                    <div class="table__td width-15">
+                                                        결제금액
+                                                    </div>
+                                                    <div class="table__td width-15">
+                                                        결제일
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="table__tbody"></div>
                                     </div>
                                     <div class="table__paging">
@@ -64,7 +85,8 @@
                                                     alt="이전페이지">
                                                 </button>
                                             </li>
-                                            <ul id="pagination-index-wrap" class="pagination__index-wrap"></ul>
+                                            <ul id="pagination-index-wrap"
+                                            class="pagination__index-wrap"></ul>
                                             <li class="">
                                                 <button type="button" class="button button--text">
                                                     <img src="/statics/icon/angle-right.svg" 
@@ -76,7 +98,8 @@
                                         <div id="count-load-table" class="select-box  is-top">
                                             <div class="select-box__select">
                                                 <p> 10개씩 보기</p>
-                                                <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
+                                                <img class="select-box__icon icon" 
+                                                src="/statics/icon/angle-line.svg" alt="화살표">
                                             </div>
                                             <ul class="select-box__option">
                                                 <li>10개씩 보기</li>
@@ -192,17 +215,19 @@
                                 <div class="table__td width-10">
                                     ${state}
                                 </div>
-                                <div class="table__td width-50">
+                                <div class="table__td width-40">
                                     <p class="table__td--title">${data[i].guid}</p>
                                 </div>
-                                <div class="table__td width-10">
-                                    <p class="table__td--title">${data[i].balance.replaceAll('$','').substring(0,5)}원</p>
+                                <div class="table__td width-20">
+                                    <p class="table__td--title">${data[i].guid}</p>
                                 </div>
                                 <div class="table__td width-15">
-                                    <p class="is-remark">${data[i].tags[0]}<br>(${data[i].phone})</p>
+                                    <p class="table__td--title">
+                                        ${data[i].balance.replaceAll('$','').substring(0,5)}원
+                                        </p>
                                 </div>
                                 <div class="table__td width-15">
-                                    <p class="is-remark">${data[i].registered.substring(0,10)} 23:59</p>
+                                    <p class="is-remark">2022-12-31 오후 14:40</p>
                                 </div>
                             </div>
                         </div>

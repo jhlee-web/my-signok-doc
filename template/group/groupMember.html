@@ -37,12 +37,10 @@
     
                             </ul>
                         </div>
-                        <div class="flex--row table-state">
+                        
+                        <!-- <div class="flex--row table-state">
                             <div class="table-state__item">
-                                <p class="is-remark">전송 실
-                                    \
-                                    
-                                </p>
+                                <p class="is-remark">전송 실패</p>
                                 <p class="table-state__accent"><span>0</span>명</p>
                             </div>
                             <div class="table-state__item">
@@ -57,34 +55,34 @@
                                 <p class="is-remark">서명 완료</p>
                                 <p class="table-state__accent"><span>0</span>명</p>
                             </div>
-                        </div>
-                        <div class="card__row">
-                            <div class="flex--row gap--sm">
-                                <img src="/statics/icon/user-line.svg" class="icon" alt="사용자">
-                                <p>
-                                    <span class="font-weight--medium">40명</span>
-                                    (<span>10명</span> 초대중)
-                                </p>
-                            </div>
-                            
-                            <div class="round-input">
-                                <div class="select-box">
-                                    <div class="select-box__select">
-                                        <p>2</p>
-                                        <img src="/statics/icon/angle-down.svg" class="icon">
-                                    </div>
-                                    <ul class="select-box__option">
-                                        <li>4</li>
-                                        <li>3</li>
-                                        <li>2</li>
-                                        <li>1</li>
+                        </div> -->
 
-                                    </ul>
+                        <div class="table-top">
+                            <div class="flex--row is-change">
+                                <div class="flex--row gap--sm">
+                                    <img src="/statics/icon/user-line.svg" class="icon" alt="사용자">
+                                    <p>
+                                        <span class="font-weight--medium">40명</span>
+                                        (<span>10명</span> 초대중)
+                                    </p>
                                 </div>
-                                <input type="text"
-                                class="round-input__input input"
-                                placeholder="부서를 검색해주세요."
-                                maxlength="64">
+                                <div class="round-input">
+                                    <div class="select-box">
+                                        <div class="select-box__select">
+                                            <p>개인</p>
+                                                <img class="select-box__icon icon" 
+                                                src="/statics/icon/angle-line.svg" alt="화살표">
+                                        </div>
+                                        <ul class="select-box__option">
+                                            <li>개인</li>
+                                            <li>기업</li>
+                                        </ul>
+                                    </div>
+                                    <input type="text"
+                                    class="round-input__input input"
+                                    placeholder="부서를 검색해주세요."
+                                    maxlength="64">
+                                </div>
                             </div>
                             <button type="button" class="button button--secondary is-medium">
                                 <img src="/statics/icon/plus-line.svg" class="icon" alt="부서추가">
@@ -112,11 +110,12 @@
                                 <div class="table__col" style="width:8%"></div>
                             </div>
                             <div class="table__thead">
-                                <ul class="table__tr">
-                                    <li class="table__td">이름</li>
-                                    <li class="table__td">이메일</li>
-                                    <li class="table__td">역할</li>
-                                    <li class="table__td">부서</li>
+                                <ul class="table__tr width-100">
+                                    <li class="table__td width-20">이름</li>
+                                    <li class="table__td width-40">이메일</li>
+                                    <li class="table__td width-15">역할</li>
+                                    <li class="table__td width-15">부서</li>
+                                    <li class="table__td width-10">상태</li>
                                 </ul>
                             </div>
                             <div class="table__tbody">
@@ -179,17 +178,20 @@
                     // 테스트용
                     for (let i = 0; i<arr[0].length; i++){
                         html = '';
-                        html += `<div class="table__tr">
-                            <div class="table__td">
+                        html += `<div class="table__tr width-100">
+                            <div class="table__td width-20">
                                 ${arr[0][i].name}
                             </div>
-                            <div class="table__td is-remark">
+                            <div class="table__td is-remark width-40">
                                 ${arr[0][i].email}
                             </div>
-                            <div class="table__td is-remark">
+                            <div class="table__td is-remark width-15">
                                 ${arr[0][i].favoriteFruit}
                             </div>
-                            <div class="table__td is-remark">
+                            <div class="table__td is-remark width-15">
+                                ${arr[0][i].company}
+                            </div>
+                            <div class="table__td is-remark width-10">
                                 ${arr[0][i].company}
                             </div>
                         </div>`
@@ -199,6 +201,7 @@
                 })
             })
         </script>
+        <script src="/statics/js/common.js"></script>
     </body>
     
 </html>
