@@ -642,3 +642,9 @@
 .template-header .button{
     justify-content: flex-start;
 }
+
+
+/* template detail page */
+.template-footer.is-detail{
+    position: unset;
+}
