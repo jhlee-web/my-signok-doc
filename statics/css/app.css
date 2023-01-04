@@ -231,7 +231,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 .5em;
+    /* padding: 0 .5em; */
 }
 .table-top.is-active{
     background: var(--theme-color-100);
@@ -978,7 +978,11 @@
 */
 .table.is-scroll--hor{
     overflow-x: scroll;
-
+    
+    
+    /* 이거.. 뭔가 방안 찾아보기 */
+    overflow-y: scroll;
+    max-height: calc(100vh - (var(--header-height) * 2) - 12rem );
     /* width: 100%; */
     flex:  0 0 auto;
     flex-wrap: nowrap;
