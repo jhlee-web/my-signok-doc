@@ -178,22 +178,22 @@
 }
 @media all and (max-width:768px) {
     .table__paging {
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    .table__paging .pagination:not(.flex-justify--center){
+        grid-template-columns: repeat(1,1fr);
+        row-gap: 1rem;
+    }  
+    /* .table__paging .pagination:not(.flex-justify--center){
         width: 100%;
         display: inline-flex;
         justify-content: unset;
         align-items: unset;
         justify-content: unset;
-    }
-    .table__paging .select-box{
+    } */
+    /* .table__paging .select-box{
         position: absolute;
         right: 1rem;
         min-width: 8rem;
         width: 8rem;
-    }
+    } */
 }
 
 .list-modal{
@@ -249,7 +249,13 @@
 .table-top__tab .tab__item{
     margin-right: 1.75rem;
 }
-
+@media all and (max-width:1279px){
+    .table-top{
+        flex-direction: column;
+        gap: 1em;
+        align-items: flex-start;
+    }
+}
 @media all and (max-width:768px){
     
     .table-top__box{
@@ -290,12 +296,11 @@
         border-bottom: 0;
     }
     .table__td.is-left{
-        width: 100%;
+        width: 80%;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         border-right: 1px solid var(--theme-color-400);
-
     }
     .table__td.is-left .table__td{
         width: 100%!important;
@@ -306,7 +311,7 @@
     }
     .table-top .button{
         width: 100%;
-        justify-content: flex-end;
+        /* justify-content: flex-end; */
     }
     .table-top__tab {
         width: 100%;

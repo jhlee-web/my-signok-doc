@@ -155,6 +155,11 @@ html,body{
 .is-mobile{
     display: none;
 }
+@media all and (max-width:1279px){
+    .is-pc{
+        display: none!important;
+    }
+}
 @media all and (max-width:768px){
     .is-mobile{
         display: block;
