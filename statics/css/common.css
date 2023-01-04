@@ -145,6 +145,9 @@ html,body{
 .is-hide{
     display: none!important;
 }
+.is-hidden{
+    visibility: hidden!important;
+}
 
 .is-pc{
     display: block;
