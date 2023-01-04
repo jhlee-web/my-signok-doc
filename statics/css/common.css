@@ -311,6 +311,9 @@ html[data-theme='light'] .is-secondary{
 .icon.is-xl{
     width: 2.5rem;
 }
+.icon.is-xxl{
+    width: 3rem;
+}
 
 .icon.is-primary{
     filter: var(--filter-primary)!important;
@@ -1385,18 +1388,6 @@ html[data-theme='light'] .button--text .icon{
     transition: .3s;
 }
 
-
-/* 나중에 좋은 방법 찾기 */
-.is-empty{
-    height: 45rem;
-}
-.card .is-empty{
-    height: 20rem;
-}
-div:not(.card) .is-empty > div{
-    height: 100%;
-    justify-content: center;
-}
 
 
 /* accordion */

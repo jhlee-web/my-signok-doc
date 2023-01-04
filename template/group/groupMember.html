@@ -26,42 +26,58 @@
                         <div class="tab-wrap">
                             <ul class="tab">
                                 <li class="tab__item--badge ">
-                                    <a href="/template/group/company-info.html">회사 조직도</a>
+                                    <a href="/template/group/groupCompany.html">회사 조직도</a>
                                 </li>
                                 <li class="tab__item--badge is-active">
                                     <a href="javascript:void(0)">멤버 관리</a>
                                 </li>
                                 <li class="tab__item--badge ">
-                                    <a href="/template/group/role-info.html">역할 관리</a>
+                                    <a href="/template/group/groupRole.html">역할 관리</a>
                                 </li>
     
                             </ul>
                         </div>
-                        <div class="flex--row">
-                            <div class="flex--column">
-                                <p class="is-remark">현재 멤버</p>
-                                <div class="flex--row">
-                                    <p><span>0</span>명</p>
-                                    <button type="button" class="button button--text is-medium">목록보기</button>
-                                </div>
+                        <div class="flex--row table-state">
+                            <div class="table-state__item">
+                                <p class="is-remark">전송 실패</p>
+                                <p class="table-state__accent"><span>0</span>명</p>
                             </div>
-                            <div class="flex--column">
-                                <p class="is-remark">초대 중</p>
-                                <div class="flex--row">
-                                    <p><span>0</span>명</p>
-                                    <button type="button" class="button button--text is-medium">목록보기</button>
-                                </div>
+                            <div class="table-state__item">
+                                <p class="is-remark">전송 완료</p>
+                                <p class="table-state__accent"> <span>0</span>명</p>
                             </div>
-                            <div class="flex--column">
-                                <p class="is-remark">삭제 멤버</p>
-                                <div class="flex--row">
-                                    <p><span>0</span>명</p>
-                                    <button type="button" class="button button--text is-medium">목록보기</button>
-                                </div>
+                            <div class="table-state__item">
+                                <p class="is-remark">서명 대기중</p>
+                                <p class="table-state__accent"><span>0</span>명</p>
+                            </div>
+                            <div class="table-state__item">
+                                <p class="is-remark">서명 완료</p>
+                                <p class="table-state__accent"><span>0</span>명</p>
                             </div>
                         </div>
                         <div class="card__row">
+                            <div class="flex--row gap--sm">
+                                <img src="/statics/icon/user-line.svg" class="icon" alt="사용자">
+                                <p>
+                                    <span class="font-weight--medium">40명</span>
+                                    (<span>10명</span> 초대중)
+                                </p>
+                            </div>
+                            
                             <div class="round-input">
+                                <div class="select-box">
+                                    <div class="select-box__select">
+                                        <p>2</p>
+                                        <img src="/statics/icon/angle-down.svg" class="icon">
+                                    </div>
+                                    <ul class="select-box__option">
+                                        <li>4</li>
+                                        <li>3</li>
+                                        <li>2</li>
+                                        <li>1</li>
+
+                                    </ul>
+                                </div>
                                 <input type="text"
                                 class="round-input__input input"
                                 placeholder="부서를 검색해주세요."
@@ -69,7 +85,7 @@
                             </div>
                             <button type="button" class="button button--secondary is-medium">
                                 <img src="/statics/icon/plus-line.svg" class="icon" alt="부서추가">
-                                부서추가
+                                멤버 초대하기
                             </button>
                         </div>
                         
@@ -137,18 +153,18 @@
                 .done(function(res) {
                     randomNum = Math.floor(Math.random() * 10)
                     $('.table__tbody .table__tr').remove();
-                    randomNum=0
+                    // randomNum=0
 
-                    if(randomNum > 0){
-                        $('.is-empty').hide();
-                        $('.table').show();
-                    }
-                    else{
-                        $('.table').hide()
-                        $('.is-empty').show();
+                    // if(randomNum > 0){
+                    //     $('.is-empty').hide();
+                    //     $('.table').show();
+                    // }
+                    // else{
+                    //     $('.table').hide()
+                    //     $('.is-empty').show();
 
-                        return false;
-                    }
+                    //     return false;
+                    // }
 
                     // 테스트용
                     const arr = [];

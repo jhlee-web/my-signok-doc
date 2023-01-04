@@ -74,7 +74,7 @@
     display: inline-flex;
     align-items: center;
     width: 100%;
-    /* border-bottom: 1px solid var(--theme-color-400); */
+    border-bottom: 1px solid var(--theme-color-400);
 }
 
 .table__tr:last-child{
@@ -110,8 +110,8 @@
     display: inline-flex;
     align-items: center;
     vertical-align: middle;
-    border-bottom: 1px solid var(--theme-color-400);
 }
+
 .table__td.flex--column{
     align-items: flex-start;
 }
@@ -1164,4 +1164,41 @@
 .table-state__accent{
     font-size: var(--text-large);
     font-weight: 600;
+}
+
+
+/* empty 영역 set */
+
+.is-empty{
+    height: 45rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    justify-content: center;
+}
+.card .is-empty{
+    height: 20rem;
+}
+/* div:not(.card) .is-empty > div{
+    height: 100%;
+    justify-content: center;
+} */
+
+
+.circle__item{
+    border: 1px solid var(--theme-color-400);
+    border-radius: 99em;
+
+    text-align: center;
+
+    width: 10em;
+    height: 10em;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: .5em;
 }
