@@ -35,7 +35,7 @@
                                     <a href="/template/linkContract/linkContractList.html">링크서명</a>
                                 </li>
                                 <li class="tab__item ">
-                                    <a href="/template/officeSubmit/office-submit.html">공문발송</a>
+                                    <a href="/template/officeSubmit/officeSubmitList.html">공문발송</a>
                                 </li>
                             </ul>
                         </div>
@@ -554,13 +554,13 @@
                     let title = '문서이력'
                     let html = ''
 
-                    if($('.aside__list__item').length > 0){
-                        $('.aside__list__item').remove()
+                    if($('.aside-list__item').length > 0){
+                        $('.aside-list__item').remove()
                     }
 
                     for(let i = 0; i < 3; i++){
                         html += `
-                        <li class="aside__list__item">
+                        <li class="aside-list__item">
                             <p class="font-weight--medium">
                                 ${result.friends[i].name}
                             </p>

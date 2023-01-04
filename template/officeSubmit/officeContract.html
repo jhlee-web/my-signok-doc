@@ -85,12 +85,19 @@
                             </div>
                             <div class="accordion__body">
                                 <div class="round-input width-100">
-                                    <select class="round-input__select select">
-                                        <option value="" selected>이메일</option>
-                                        <option value="">카카오톡</option>
-                                    </select>
+                                    <div class="select-box">
+                                        <div class="select-box__select">
+                                            <p>이메일</p>
+                                            <img src="/statics/icon/angle-top.svg"
+                                            class="select-box__icon icon">
+                                        </div>
+                                        <ul class="select-box__option">
+                                            <li>이메일</li>
+                                            <li>휴대전화</li>
+                                        </ul>
+                                    </div>
                                     <input type="text" maxlength="50"
-                                    placeholder="이메일 또는 연락처를 입력해 주세요."
+                                    placeholder="이메일 또는 휴대전화번호를 입력해 주세요."
                                     class="round-input__input input">
                                 </div>
                                 <ul class="dynamic-badge-set"></ul>

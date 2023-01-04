@@ -6,7 +6,7 @@
             loadHTML("/statics/include/head.html");
         </script>
         <link rel="stylesheet" href="/statics/lib/Datetime-Picker/css/datetimepicker.css">
-        <title>링크서명 | 템플릿 설정</title>
+        <title>외부계약서 | 템플릿 설정</title>
     </head>
 
     <body>
@@ -19,22 +19,28 @@
                         홈으로
                     </a>
                     <ul class="flex--row header-step">
-                        <li class="header-step__item">
-                            <a href="/template/linkContract/linkSignature.html">
-                                <span>1</span>서명자 정보 입력
+                        <li class="header-step__item is-active">
+                            <a href="/template/externalDocument/externalDocumentUpload.html">
+                                <span>1</span>계약서 업로드
                             </a>
                         </li>
                         <li class="header-step__item">
                             <a href="javascript:void(0)">
-                                <span>2</span>서명 영역 지정
+                                <span>2</span>계약 정보 입력
+                            </a>
+                        </li>
+                        <li class="header-step__item">
+                            <a href="/template/externalDocument/externalSignature.html">
+                                <span>3</span>서명자 정보 입력
                             </a>
                         </li>
                         <li class="header-step__item is-active">
-                            <a href="javascript:void(0)">
-                                <span>3</span>템플릿 설정
+                            <a href="/template/externalDocument/externalContract.html">
+                                <span>4</span>저장 및 등록
                             </a>
                         </li>
                     </ul>
+                    <div>&nbsp;</div>
                 </div>
             </div>
             <!-- // 상단헤더 -->
@@ -164,10 +170,17 @@
                     <!-- /main-content -->
                 </div>
                 <!-- /container -->
-                <div class="template-header" id="doc-footer">
-                    <div class="container is-center">
-                        <a href="/template/burkSubmit/burkSubmitList.html" class="button is-large button--text">이전</a>
-                        <button type="button" class="button is-large button--primary">다음</button>
+                <div class="template-footer">
+                    <div class="container">
+                        <div>&nbsp;</div>
+                        <div class="flex--row flex-justify--center">
+                            <a href="/template/externalDocument/externalDocumentList.html"
+                            class="button is-large button--text">이전</a>
+                            <button type="button" class="button is-large button--primary">
+                                다음
+                            </button>
+                        </div>
+                        <div>&nbsp;</div>
                     </div>
                 </div>
             </main>

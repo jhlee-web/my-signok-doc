@@ -5,7 +5,7 @@
         <script>
             loadHTML("/statics/include/head.html");
         </script>
-        <title>링크발송</title>
+        <title>외부계약서</title>
     </head>
 
     <body>
@@ -29,7 +29,8 @@
                                 <div id="" class="select-box is-small">
                                     <div class="select-box__select">
                                         <p>전체</p>
-                                        <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
+                                        <img class="select-box__icon icon"
+                                        src="/statics/icon/angle-line.svg" alt="화살표">
                                     </div>
                                     <ul class="select-box__option">
                                         <li selected>전체</li>
@@ -42,7 +43,8 @@
                                     <div class="select-box">
                                         <div class="select-box__select">
                                             <p>전체</p>
-                                            <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
+                                            <img class="select-box__icon icon" 
+                                            src="/statics/icon/angle-line.svg" alt="화살표">
                                         </div>
                                         <ul class="select-box__option">
                                             <li selected>문서명</li>
@@ -57,10 +59,10 @@
                             </div>
                             
                             <button class="button button--secondary is-pc"
-                            onclick="location.href='/template/linkContract/linkSignature.html'">
+                            onclick="location.href='/template/externalDocument/externalSignature.html'">
                                 <img src="/statics/icon/plus-line.svg"
-                                alt="링크서명 템플릿 만들기" class="icon">
-                                링크서명 템플릿 만들기
+                                alt="외부계약서 추가하기" class="icon">
+                                외부계약서 추가하기
                             </button>
 
                             <div id="selected-top-box" class="table-top__box is-hide">
@@ -99,7 +101,7 @@
                                             <input type="checkbox" class="checkbox checkbox-all"
                                             id="">
                                         </div>
-                                        <div class="table__td width-70">템플릿 이름</div>
+                                        <div class="table__td width-70">폴더명</div>
                                         <div class="table__td width-15">작성시간</div>
                                         <div class="table__td width-15">최근수정시간</div>
                                     </div>
@@ -132,7 +134,8 @@
                             <div id="count-load-table" class="select-box is-top">
                                 <div class="select-box__select">
                                     <p>10개씩 보기</p>
-                                    <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
+                                    <img class="select-box__icon icon"
+                                    src="/statics/icon/angle-line.svg" alt="화살표">
                                 </div>
                                 <ul class="select-box__option">
                                     <li>10개씩 보기</li>
@@ -148,15 +151,13 @@
                             <div class="inner">
                                 <h5>링크서명</h5>
                             </div>
-                            <button type="button"
-                                class="button button--secondary is-medium">링크서명 시작하기</button>
                             <a href="javascript:void(0)"
                             class="button button--outline is-medium is-break">템플릿 수정하기</a>
                             
                             <!-- documnet-list 페이지에서만 보입니다.
                             테스트용 버튼  -->
                             <a href="/template/linkContract/linkDetail.html"
-                            class="button button--outline is-medium is-break">링크서명 자세히보기</a>
+                            class="button button--outline is-medium is-break">외부계약서 자세히보기</a>
                             
                         </div>
                     </div>
