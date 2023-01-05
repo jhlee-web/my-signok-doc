@@ -740,6 +740,7 @@
     border: 1px solid var(--theme-color-400);
     border-radius: 1rem;
     padding: 2rem;
+    background-color: var(--background-color);
 
     display: flex;
     flex-direction: column;

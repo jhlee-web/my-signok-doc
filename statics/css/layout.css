@@ -29,7 +29,7 @@
 
 /* nav */
 .nav{
-    background-color: var(--theme-color-100);
+    background-color: var(--text-color-800);
     left: 0;
     min-height: 100vh;
 
@@ -54,7 +54,7 @@
 }
 
 .nav[data-fold="false"]{
-    width: 12rem;
+    width: 15rem;
     padding: 2rem 1rem;
 }
 .nav[data-fold="false"] .button--primary,
@@ -218,13 +218,13 @@
     gap: 1rem;
     cursor: pointer;
 
-    color: var(--text-color-600);
+    color: var(--text-color-400);
 }
 .nav-item.has-border{
-    border-bottom: 1px solid var(--theme-color-500);
+    border-bottom: 1px solid var(--text-color-600);
 }
 .nav-item:hover{
-    background-color: var(--theme-color-50);
+    background-color: var(--text-color-600);
     transition: .3s;
 }
 
@@ -232,10 +232,17 @@
     filter: var(--filter-text-400)
 }
 .nav-item.is-active{
-    color: var(--primary-color-500);
+    color: var(--background-color);
 }
 .nav-item.is-active .nav-item__icon{
-    filter: var(--filter-primary)
+    filter: var(--filter-background)
+}
+
+.nav__middle .is-remark{
+    color: var(--text-color-400);
+}
+.nav__middle span{
+    color: var(--background-color);
 }
 
 
@@ -249,11 +256,11 @@
 .main--background{
     padding-left: 0;
     min-height: 100vh;
-    background-color: var(--theme-color-100);
+    background-color: var(--text-color-400);
 }
 .main--background > .container{
-    background-color: var(--background-color);
-    border: 1px solid var(--theme-color-200);
+    background-color: var(--theme-color-400);
+    /* border: 1px solid var(--theme-color-400); */
     border-top: unset;
     border-bottom: unset;
 
@@ -615,20 +622,28 @@
 /* template-header (header-step 가지고 있는 영역)  */
 .template-header, 
 .template-footer{
-    background: var(--background-color);
+    background: var(--text-color-800);
     position: fixed;
     left: 0;
     right: 0;
     height: var(--header-height);
     z-index: 1;
 }
+.template-header .button--text,
+.template-footer .button--text{
+    color: var(--background-color);
+}
+.template-header .button--text .icon,
+.template-footer .button--text .icon{
+    filter: var(--filter-text-400)!important;
+}
 .template-header{
     top: 0;
-    border-bottom: 1px solid var(--theme-color-400);
+    /* border-bottom: 1px solid var(--theme-color-400); */
 }
 .template-footer{
     bottom:0;
-    border-top: 1px solid var(--theme-color-400);
+    /* border-top: 1px solid var(--theme-color-400); */
 }
 .template-footer .container,
 .template-header .container{
