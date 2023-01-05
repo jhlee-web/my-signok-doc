@@ -256,11 +256,10 @@
 .main--background{
     padding-left: 0;
     min-height: 100vh;
-    background-color: var(--text-color-400);
+    background-color: var(--text-color-600);
 }
 .main--background > .container{
-    background-color: var(--theme-color-400);
-    /* border: 1px solid var(--theme-color-400); */
+    background-color: var(--text-color-200);
     border-top: unset;
     border-bottom: unset;
 
