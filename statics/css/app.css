@@ -408,7 +408,7 @@
 
     position: fixed;
     z-index: 99;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -423,7 +423,7 @@
 .modal{
     min-width: 30rem; /*480px*/
     max-width: 50rem; /*800px*/
-    max-height:37.5rem; /*600px*/
+    /* max-height:37.5rem; 600px */
 }
 .modal__header{
     padding: 0 2rem;
@@ -1099,7 +1099,7 @@
     padding: 1em;
     border-radius: .5em;
 
-    color: var(--white);
+    color: var(--background-color);
     position: absolute;
 }
 
