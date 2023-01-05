@@ -40,6 +40,8 @@ html[data-theme='light']{
     --text-color-600:#5A5A5A;
     --text-color-700:#4D4D4D;
     --text-color-800:#333333;
+    --text-color-900:#282828;
+
 /*     
     --text-color-400:#808080;
     --text-color-600:#5A5A5A;
@@ -84,14 +86,15 @@ html[data-theme='dark']{
     --background-color:#111;
     --filter-background: invert(0%) sepia(3%) saturate(7424%) hue-rotate(53deg) brightness(103%) contrast(87%);
 
-    --text-color-100:#333333;
-    --text-color-200:#4D4D4D;
-    --text-color-300:#5A5A5A;
-    --text-color-400:#808080;
-    --text-color-500:#A6A6A6;
-    --text-color-600:#B3B3B3;
-    --text-color-700:#CCCCCC;
-    --text-color-800:#F2F2F2;
+    --text-color-100:#282828;
+    --text-color-200:#333333;
+    --text-color-300:#4D4D4D;
+    --text-color-400:#5A5A5A;
+    --text-color-500:#808080;
+    --text-color-600:#A6A6A6;
+    --text-color-700:#B3B3B3;
+    --text-color-800:#CCCCCC;
+    --text-color-900:#F2F2F2;
 
     /*     
     --text-color-400:#A6A6A6;
@@ -1259,10 +1262,10 @@ html[data-theme='light'] .button--text .icon{
     gap: .5rem;
 }
 .header-step__item{
-    color: var(--text-color-400);
+    color: var(--text-color-500);
 }
 .header-step__item span{
-    background: var(--text-color-400);
+    background: var(--text-color-500);
     color: var(--text-color-800);
 
     display: inline-flex;

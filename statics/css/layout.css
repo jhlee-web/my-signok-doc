@@ -265,7 +265,7 @@
 .main--background{
     padding-left: 0;
     min-height: 100vh;
-    background-color: var(--text-color-600);
+    background-color: var(--text-color-700);
 }
 .main--background > .container{
     background-color: var(--text-color-300);
@@ -641,7 +641,7 @@
 /* template-header (header-step 가지고 있는 영역)  */
 .template-header, 
 .template-footer{
-    background: var(--text-color-800);
+    background: var(--text-color-900);
     position: fixed;
     left: 0;
     right: 0;
