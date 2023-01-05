@@ -184,7 +184,9 @@
             </main>
             
         <script>
-            $('html').attr('data-theme',localStorage.getItem('data-theme'))
+            let dataTheme = localStorage.getItem('data-theme');
+            if(dataTheme == undefined || null || 'null') dataTheme = 'light'
+            $('html').attr('data-theme',dataTheme)
 
             // function manageCardInput(id,type){
             //     if(id!==null){

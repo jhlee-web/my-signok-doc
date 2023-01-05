@@ -90,7 +90,10 @@
             
         <script src="/statics/lib/fancy-file-uploader/jquery.fancy-fileupload.js"></script>
         <script>
-            $('html').attr('data-theme',localStorage.getItem('data-theme'))
+           let dataTheme = localStorage.getItem('data-theme');
+            if(dataTheme == undefined || null || 'null') dataTheme = 'light'
+            $('html').attr('data-theme',dataTheme)
+
 
 
             // 이거 좀더 고민해보기

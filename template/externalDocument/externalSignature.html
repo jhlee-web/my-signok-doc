@@ -98,8 +98,9 @@
                             </div>
                         </div>
                         <!-- /card -->
-                        <div class="card flex-align--center">
-                            <button type="button" id="add-signature" 
+                        <div id="add-signature" 
+                         class="card flex-align--center">
+                            <button type="button" 
                             class="button is-large button--text">
                                 <img src="/statics/icon/plus-circle-line.svg" 
                                 class="icon">
@@ -129,10 +130,13 @@
             </main>
             
         <script>
-            $('html').attr('data-theme',localStorage.getItem('data-theme'))
+           let dataTheme = localStorage.getItem('data-theme');
+            if(dataTheme == undefined || null || 'null') dataTheme = 'light'
+            $('html').attr('data-theme',dataTheme)
+
 
            $('#add-signature').on('click',function(){
-                $(this).parent('.card').before(`
+                $(this).before(`
                 <div class="card" data-id="0">
                     <div class="card__content">
                         <div class="card__row">

@@ -201,7 +201,10 @@
                 title:"예약시간을 설정해주세요",
                 buttonTitle:"확인",
             })
-            $('html').attr('data-theme',localStorage.getItem('data-theme'))
+            let dataTheme = localStorage.getItem('data-theme');
+            if(dataTheme == undefined || null || 'null') dataTheme = 'light'
+            $('html').attr('data-theme',dataTheme)
+
            
             $(function(){
                 loadData()
