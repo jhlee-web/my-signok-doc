@@ -575,7 +575,7 @@ label{
 ::placeholder,
 textarea::placeholder{
     font-size: var(--text-small);
-    color: var(--text-color-400);
+    color: var(--text-color-600);
 }
 .textarea{
     height: 100%;
@@ -1434,7 +1434,7 @@ html[data-theme='light'] .button--text .icon{
     padding: 1em 0;
     width: 100%;
 
-    background: var(--background-color);
+    /* background: var(--background-color); */
     border-bottom: 1px solid var(--theme-color-400);
 }
 

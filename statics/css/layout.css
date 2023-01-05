@@ -276,6 +276,8 @@
     min-height: 100vh;
     margin: 0 auto;
 
+}
+.main--background > .container .main-content{
     padding: 2em 1em;
 }
 
@@ -291,9 +293,6 @@
 
 #login-template > .container{
     padding: var(--header-height);
-}
-.main--background > .container .main-content{
-    padding: 0;
 }
 
 .main-content{
