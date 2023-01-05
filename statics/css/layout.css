@@ -268,27 +268,36 @@
     background-color: var(--text-color-700);
 }
 .main--background > .container{
-    background-color: var(--text-color-300);
+    /* background-color: var(--text-color-300); */
     border-top: unset;
     border-bottom: unset;
 
     max-width: 37rem;
     min-height: 100vh;
     margin: 0 auto;
-
 }
+
+/* only login */
+#login-template{
+    background-color: var(--theme-color-200);
+}
+
+#login-template > .container{
+    background-color: var(--background-color);
+}
+
 .main--background > .container .main-content{
     padding: 2em 1em;
 }
 
 .main--background #add-signature  {
-    background: var(--text-color-200);
+    background: var(--text-color-500);
     border: unset;
     cursor: pointer;
 }
 .main--background #add-signature:hover {
     background: var(--text-color-100);
-    transition: .3s;
+    transition: .4s;
 }
 
 #login-template > .container{
@@ -641,7 +650,7 @@
 /* template-header (header-step 가지고 있는 영역)  */
 .template-header, 
 .template-footer{
-    background: var(--text-color-900);
+    background: var(--text-color-800);
     position: fixed;
     left: 0;
     right: 0;
