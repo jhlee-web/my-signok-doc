@@ -750,7 +750,7 @@
     width: fit-content;
     padding: 0;
 }
-.card__content{
+.card__inner{
     /* display: flex;
     flex-direction: column;
     gap: 1rem; */
