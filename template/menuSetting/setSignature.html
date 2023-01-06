@@ -108,7 +108,7 @@
         <script>
             let price = ['9,900','99,900','999,900']
             $(function(){
-                for(let i = 0; i < $('.card__row').length; i++){
+                for(let i = 0; i < $('.card__header').length; i++){
                     $('p[id^="user_count"]').eq(i).text(`${resultRandomNum(100)}건 / ${resultRandomNum(200)}건`)
                 }
                 $('#user_deadline').text(`20${resultRandomNum(22)}년 ${resultRandomNum(12)}월 ${resultRandomNum(30)}일`)

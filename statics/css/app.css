@@ -739,37 +739,38 @@
 .card{
     border: 1px solid var(--theme-color-400);
     border-radius: 1rem;
-    /* padding: 2rem; */
     background-color: var(--background-color);
 
-    display: flex;
-    flex-direction: column;
-    /* gap: 2rem; */
+    padding: 0 1em;
 }
 .card .button--text, .step-container .button--text{
     width: fit-content;
     padding: 0;
 }
 .card__inner{
-    /* display: flex;
+    display: flex;
     flex-direction: column;
-    gap: 1rem; */
-    padding: 1em 2em;
+    padding: 1em;
+    gap: 1em;
 }
-.card__row{
+.card__header{
     width: 100%;
 }
-
-.card__row,
-.card__desc{
+.card__body{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.has-border{
+    border-bottom: 1px solid var(--theme-color-400);
+}
+.card__header{
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
+
 }
-.card__desc{
-    gap: 2rem;
-}
-.card__row.is-end{
+.card__header.is-end{
     justify-content: flex-end;
 }
 
@@ -778,7 +779,7 @@
         padding: 1rem;
     }
 
-    .card__row.is-change{
+    .card__header.is-change{
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
@@ -791,7 +792,7 @@
         margin-bottom: 1rem;
 
     }
-    .card__row .card__desc{
+    .card__header .card__desc{
         width: 100%;
         justify-content: space-between;
     }
@@ -1084,6 +1085,7 @@
 .tooltip{
     position: relative;
     cursor: pointer;
+    width: fit-content;
 }
 .tooltip__absolute{
     position: absolute;
@@ -1095,14 +1097,19 @@
     min-width: 15rem;
     max-width: 20rem;
 
-    background: var(--theme-color-900);
+    background: var(--text-color-900);
     filter: var(--filter-shadow-3);
 
     padding: 1em;
     border-radius: .5em;
 
-    color: var(--background-color);
+    color: var(--text-color-100);
     position: absolute;
+}
+.tooltip__modal::before{
+    content: '';
+    width: 0;
+    height: 0;
 }
 
 .tooltip:hover .tooltip__modal{
@@ -1111,42 +1118,41 @@
 }
 
 .tooltip__modal.is-bottom{
-    top: 3rem;
+    top: 2em;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.tooltip__modal.is-left::before{
-    content: '';
-    width: 0;
-    height: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    position: absolute;
-    right: 100%;
-
-    border-style: solid;
-    border-width: .75em 1em .75em 0;
-    border-radius: .25em 0 0 .25em ;
-    border-color: transparent var(--theme-color-900) transparent transparent;
-    background: transparent;
-}
-
 .tooltip__modal.is-bottom::before{
-    content: '';
-    width: 0;
-    height: 0;
 
     position: absolute;
-    top: -.75em;
+    top: -.5em;
     left: 50%;
     transform: translateX(-50%);
 
     border-style: solid;
     border-width:  0 .75em  .75em .75em;
-    /* border-radius: .25em 0 0 .25em ; */
-    border-color: transparent transparent  var(--theme-color-900)  transparent;
+    border-color: transparent transparent  var(--text-color-900)  transparent;
 }
+
+
+.tooltip__modal.is-left{
+    left: 110%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.tooltip__modal.is-left::before{
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    left: -.5em;
+
+    border-style: solid;
+    border-width: .75em 1em .75em 0;
+    border-color: transparent var(--text-color-900) transparent transparent;
+}
+
 
 .login__image-box{
     width: 100%;

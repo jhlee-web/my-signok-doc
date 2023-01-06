@@ -63,20 +63,19 @@
                                         class="button button--secondary">수정하기</button>
                                     </div>
                                 </div>
-                                <div class="flex--row flex-justify--between">
-                                    <p class="">계약서가 <span class="is-accent">기본폴더</span>에 저장됩니다.</p>
-                                    <button type="button" class="button button--outline">
-                                        <img src="/statics/icon/folder-line.svg" alt="" class="icon">
-                                        폴더변경
-                                    </button>
-                                </div>
-                                <div class="flex--column gap--sm">
-                                    <p class="is-remark">서명 기간 <span class="is-primary">*</span></p>
-                                    <div class="control-form">
-                                        <p>서명 발송일로부터</p>
+                                <div class="card__inner has-border">
+                                    <div class="card__header">
+                                        <p class="is-remark">계약 기간 (필수)</p>
                                         <input type="number" class="input is-small is-narrow" maxlength="365"
                                         value="14">
-                                        <p>일 동안 서명을 받습니다.</p>
+                                    </div>
+                                    <p class="is-remark text-align--right">서명 만료일: <span>2022-12-31</span></p>
+                                </div>
+                                <div class="card__inner has-border">
+                                    <div class="card__header">
+                                        <p class="is-remark">계약 기간 (필수)</p>
+                                        <input type="number" class="input is-small is-narrow" maxlength="365"
+                                        value="14">
                                     </div>
                                     <p class="is-remark text-align--right">서명 만료일: <span>2022-12-31</span></p>
                                 </div>
@@ -84,7 +83,7 @@
                         </div>
                         <div class="card">
                             <div class="card__inner">
-                                <div class="card__row">
+                                <div class="card__header">
                                     <p class="is-remark">중복서명여부</p>
                                     <label class="is-small toggle">
                                         <input type="checkbox" class="toggle__checkbox" checked>

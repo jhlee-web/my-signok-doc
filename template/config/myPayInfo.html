@@ -52,12 +52,12 @@
                             <!-- card -->
                             <div class="card">
                                 <div class="card__inner">
-                                    <div class="card__row">
+                                    <div class="card__header">
                                         <p class="is-remark">결제금액</p>
                                         
                                         <a href="/template/config/priceDetail.html" class="button button--text is-small">변경하기</a>
                                     </div>
-                                    <div class="card__row">
+                                    <div class="card__header">
                                         <p class="font-weight--medium body--large">Business(월)</p>
                                         <p id="user_price">0원</p>
                                     </div>
@@ -81,7 +81,7 @@
                                     </div>
                                 </div>
                                 <div class="card__inner">
-                                    <div class="card__row">
+                                    <div class="card__header">
                                         <p class="is-remark">남은 서명</p>
                                         <a href="/template/config/pricePayAddition.html"
                                         class="button button--text is-small">충전하기</a>
@@ -166,7 +166,7 @@
         <script>
             let price = ['9,900','99,900','999,900']
             $(function(){
-                for(let i = 0; i < $('.card__row').length; i++){
+                for(let i = 0; i < $('.card__header').length; i++){
                     $('p[id^="user_count"]').eq(i).text(`${resultRandomNum(100)}건 / ${resultRandomNum(200)}건`)
                 }
                 $('#user_deadline').text(`20${resultRandomNum(22)}년 ${resultRandomNum(12)}월 ${resultRandomNum(30)}일`)

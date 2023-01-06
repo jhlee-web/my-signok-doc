@@ -290,13 +290,20 @@
     padding: 2em 1em;
 }
 
-.main--background #add-signature  {
+#add-signature  {
     background: var(--text-color-500);
     border: unset;
     cursor: pointer;
 }
-.main--background #add-signature:hover {
-    background: var(--text-color-100);
+#add-signature .button--text {
+    color: var(--text-color-100);
+}
+#add-signature .button--text .icon{
+    filter: unset;
+    filter: var(--filter-background);
+}
+#add-signature:hover {
+    background: var(--text-color-400);
     transition: .4s;
 }
 

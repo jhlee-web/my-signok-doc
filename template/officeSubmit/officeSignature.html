@@ -42,128 +42,129 @@
                 <div class="container">
                     <div class="main-content">
                         <!-- top -->
-                        <div class="flex--column">
-                            <ul class="flex--row  flex-justify--between">
-                                <li class="control-form">
-                                    <span>순서없이</span>
-                                    <label class="is-small toggle">
-                                        <input type="checkbox" class="toggle__checkbox" checked>
-                                        <span class="toggle__slider"></span>
-                                    </label>
-                                    <span class="">순서대로</span>
-                                </li>
-                                <!-- <li class="control-form">
-                                    <input type="checkbox" id="keep-mail"  class="checkbox">
-                                    <label for="keep-mail" class="">내 서명 포함</label>
-                                </li> -->
-                                <li class="control-form">
-                                    <img src="/statics/icon/world-line.svg" class="icon" alt="언어 변경">
-                                    <p>한국어</p>
-                                </li>
-                            </ul>
-                            <p class="is-remark"> * 각 서명자를 드래그하여 순서를 변경할 수 있습니다. </p>
+                        <div class="card">
+                            <div class="card__inner">
+                                <ul class="card__header">
+                                    <div class="tooltip">
+                                        <li class="control-form">
+                                            공문발송 가이드
+                                            <img src="/statics/icon/help-line.svg" class="icon">
+                                        </li>
+                                        <div class="tooltip__modal is-bottom">
+                                            링크서명은 별도의 회원가입/로그인 없이 공유 받은 URL 또는 QR코드를 통해 서명할 수 있습니다.
+                                        </div>
+                                    </div>
+                                    <li class="control-form">
+                                        <img src="/statics/icon/world-line.svg" class="icon" alt="언어 변경">
+                                        <p>한국어</p>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                         <!-- /tabs -->
-                        <!-- <div class="flex--row"> -->
-                            <!-- <div class="full-grid is-double"> -->
-                                <!-- card -->
-                                <div class="card" data-id="0">
-                                    <div class="card__inner">
-                                        <div class="card__row">
-                                            <p class="">1번 서명자</p>
-                                            <button type="button" class="button button--text is-small is-accent">삭제</button>
-                                        </div>
-                                        <div class="round-input width-100">
-                                            <div class="select-box">
-                                                <div class="select-box__select">
-                                                    <p>개인</p>
-                                                    <img src="/statics/icon/angle-top.svg"
-                                                    class="select-box__icon icon">
-                                                </div>
-                                                <ul class="select-box__option">
-                                                    <li>개인</li>
-                                                    <li>기업</li>
-                                                </ul>
+                        <!-- card -->
+                        <div class="card" data-id="0">
+                            <div class="card__inner">
+                                <div class="card__header">
+                                    <p class="">1번 서명자</p>
+                                    <button type="button" class="button button--text is-small is-accent">삭제</button>
+                                </div>
+                                <div class="card__body">
+                                    <div class="round-input width-100">
+                                        <div class="select-box">
+                                            <div class="select-box__select">
+                                                <p>개인</p>
+                                                <img src="/statics/icon/angle-top.svg"
+                                                class="select-box__icon icon">
                                             </div>
-                                            <input type="text" maxlength="64"
-                                            placeholder="홍길동"
-                                            class="round-input__input input">
+                                            <ul class="select-box__option">
+                                                <li>개인</li>
+                                                <li>기업</li>
+                                            </ul>
                                         </div>
-                                        <div class="round-input width-100">
-                                            <div class="select-box">
-                                                <div class="select-box__select">
-                                                    <p>이메일</p>
-                                                    <img src="/statics/icon/angle-top.svg"
-                                                    class="select-box__icon  icon">
-                                                </div>
-                                                <ul class="select-box__option">
-                                                    <li>이메일</li>
-                                                    <li>휴대전화</li>
-                                                </ul>
+                                        <input type="text" maxlength="64"
+                                        placeholder="홍길동"
+                                        class="round-input__input input">
+                                    </div>
+                                    <div class="round-input width-100">
+                                        <div class="select-box">
+                                            <div class="select-box__select">
+                                                <p>이메일</p>
+                                                <img src="/statics/icon/angle-top.svg"
+                                                class="select-box__icon  icon">
                                             </div>
-                                            <input type="text" maxlength="64"
-                                            placeholder="01012345678"
-                                            class="round-input__input input">
+                                            <ul class="select-box__option">
+                                                <li>이메일</li>
+                                                <li>휴대전화</li>
+                                            </ul>
                                         </div>
+                                        <input type="text" maxlength="64"
+                                        placeholder="01012345678"
+                                        class="round-input__input input">
                                     </div>
                                 </div>
-                                <!-- /card -->
+                                
+                                
+                            </div>
+                        </div>
+                        <!-- /card -->
 
-                                <!-- card -->
-                                <div class="card" data-id="1">
-                                    <div class="card__inner">
-                                        <div class="card__row">
-                                            <p class="">두 번째 서명자</p>
-                                            <button type="button"
-                                                class="button button--text is-small is-accent">
-                                                삭제
-                                            </button>
-                                        </div>
-                                        <div class="round-input width-100">
-                                            <div class="select-box">
-                                                <div class="select-box__select">
-                                                    <p>개인</p>
-                                                    <img src="/statics/icon/angle-top.svg"
-                                                    class="select-box__icon icon">
-                                                </div>
-                                                <ul class="select-box__option">
-                                                    <li>개인</li>
-                                                    <li>기업</li>
-                                                </ul>
-                                            </div>
-                                            <input type="text" maxlength="64"
-                                            placeholder="홍길동"
-                                            class="round-input__input input">
-                                        </div>
-                                        <div class="round-input  width-100">
-                                            <div class="select-box">
-                                                <div class="select-box__select">
-                                                    <p>이메일</p>
-                                                    <img src="/statics/icon/angle-top.svg"
-                                                    class="select-box__icon  icon">
-                                                </div>
-                                                <ul class="select-box__option">
-                                                    <li>이메일</li>
-                                                    <li>휴대전화</li>
-                                                </ul>
-                                            </div>
-                                            <input type="text" maxlength="64"
-                                            placeholder="01012345678"
-                                            class="round-input__input input">
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- /card -->
-                                <div id="add-signature"
-                                class="card flex-align--center">
-                                    <button type="button"  class="button is-large button--text">
-                                        <img src="/statics/icon/plus-circle-line.svg" class="icon">
-                                        서명자 추가하기
+                        <!-- card -->
+                        <div class="card" data-id="1">
+                            <div class="card__inner">
+                                <div class="card__header">
+                                    <p class="">두 번째 서명자</p>
+                                    <button type="button"
+                                        class="button button--text is-small is-accent">
+                                        삭제
                                     </button>
                                 </div>
-                            <!-- </div> -->
-                            <!-- /full-grid -->
-                        <!-- </div> -->
+                                <div class="card__body">
+                                    <div class="round-input width-100">
+                                        <div class="select-box">
+                                            <div class="select-box__select">
+                                                <p>개인</p>
+                                                <img src="/statics/icon/angle-top.svg"
+                                                class="select-box__icon icon">
+                                            </div>
+                                            <ul class="select-box__option">
+                                                <li>개인</li>
+                                                <li>기업</li>
+                                            </ul>
+                                        </div>
+                                        <input type="text" maxlength="64"
+                                        placeholder="홍길동"
+                                        class="round-input__input input">
+                                    </div>
+                                    <div class="round-input  width-100">
+                                        <div class="select-box">
+                                            <div class="select-box__select">
+                                                <p>이메일</p>
+                                                <img src="/statics/icon/angle-top.svg"
+                                                class="select-box__icon  icon">
+                                            </div>
+                                            <ul class="select-box__option">
+                                                <li>이메일</li>
+                                                <li>휴대전화</li>
+                                            </ul>
+                                        </div>
+                                        <input type="text" maxlength="64"
+                                        placeholder="01012345678"
+                                        class="round-input__input input">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /card -->
+                        <div id="add-signature"
+                        class="card ">
+                            <div class="card__inner flex-align--center">
+                                <button type="button"  class="button is-large button--text">
+                                    <img src="/statics/icon/plus-circle-line.svg" class="icon">
+                                    서명자 추가하기
+                                </button>
+                            </div>
+                        </div>
                     </div>
                     <!-- /main-content -->
                     

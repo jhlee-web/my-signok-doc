@@ -552,8 +552,6 @@ label{
     font-size: var(--text-small);
 }
 .input-area{
-    margin-bottom: 1rem;
-
     display: flex;
     flex-direction: column;
     gap: .25rem;
@@ -1442,25 +1440,22 @@ html[data-theme='light'] .button--text .icon{
 }
 
 .accordion__body{
-    padding: 1em 0;
+    margin: 1em 0;
 
     display: flex;
     flex-direction: column;
     gap: 1em;
 
-    /* transform: scaleY(0); */
     max-height: 0;
     overflow-y: hidden;
-    /* transform-origin: top; */
-    transition: max-height .4s ease-in-out ;
+    transition: max-height .65s ease-in-out ;
+
 }
 
 .accordion.is-active .accordion__body{
-    /* transform: scaleY(1); */
-    /* height: auto;
-    transform-origin: top;*/
-    transition: max-height .4s ease-in-out ; 
-    max-height: 100vh;
+    max-height: 200vh;
+    overflow-y: unset;
+    transition: max-height .5s ease-in-out ; 
 }
 
 .accordion .accordion__header .icon{
