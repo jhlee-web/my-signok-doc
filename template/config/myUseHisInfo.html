@@ -55,25 +55,25 @@
                             <div class="card-wrap">
                                 <div class="card">
                                     <div class="card__inner">
-                                        <p class="is-remark">결제내역</p>
+                                        <p class="is-remark">사용내역</p>
                                         <div class="table">
                                             <div class="table__thead">
                                                 <div class="table__tr">
                                                     <div class="table__td is-left width-100">
                                                         <div class="table__td width-10">
-                                                            상태
+                                                            타입
                                                         </div>
                                                         <div class="table__td width-50">
-                                                            상품명
+                                                            계약명
                                                         </div>
                                                         <div class="table__td width-10">
-                                                            쿠폰명
-                                                        </div>
-                                                        <div class="table__td width-10">
-                                                            결제금액
+                                                            사용 건수
                                                         </div>
                                                         <div class="table__td width-15">
-                                                            결제일
+                                                            사용자
+                                                        </div>
+                                                        <div class="table__td width-15">
+                                                            사용일
                                                         </div>
                                                     </div>
                                                 </div>
@@ -220,18 +220,16 @@
                         <div class="table__tr ${testClass}" data-id="${data[i].index}">
                             <div class="table__td is-left width-100">
                                 <div class="table__td width-10">
-                                    ${state}
+                                    대량발송
                                 </div>
                                 <div class="table__td width-50">
                                     <p class="table__td--title">${data[i].guid}</p>
                                 </div>
                                 <div class="table__td width-10">
-                                    <p class="is-remark">${data[i]._id.substring(0,9)}</p>
+                                    30
                                 </div>
-                                <div class="table__td width-10">
-                                    <p class="table__td--title">
-                                        ${data[i].balance.replaceAll('$','')}원
-                                        </p>
+                                <div class="table__td width-15">
+                                    ${data[i].name}
                                 </div>
                                 <div class="table__td width-15">
                                     <p class="is-remark">2022-12-31 오후 14:40</p>
