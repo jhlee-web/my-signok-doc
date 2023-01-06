@@ -67,7 +67,7 @@
                                 </div>
                                 <div class="select-box">
                                     <div class="select-box__select">
-                                        <p>coupon a</p>
+                                        <p>사용 가능한 쿠폰이 없습니다.</p>
                                         <img src="/statics/icon/angle-down.svg" class="icon select-box__icon">
                                     </div>
                                     <ul class="select-box__option">
@@ -77,6 +77,38 @@
                                         <li>coupon d </li>
                                     </ul>
                                 </div>
+                                <ul class="basic-list">
+                                    <li class="list__item">
+                                        <div class="control-form">
+                                            <input type="radio" class="radio" name="coupon" checked id="coupon-none">
+                                            <label for="coupon-none">사용안함</label>
+                                        </div>
+                                    </li>
+                                    <li class="list__item">
+                                        <div class="control-form">
+                                            <input type="radio" class="radio" name="coupon" id="coupon-a">
+                                            <label for="coupon-a">coupon A</label>
+                                        </div>
+                                    </li>
+                                    <li class="list__item">
+                                        <div class="control-form">
+                                            <input type="radio" class="radio" name="coupon" id="coupon-b">
+                                            <label for="coupon-b">coupon B</label>
+                                        </div>
+                                    </li>
+                                    <li class="list__item">
+                                        <div class="control-form">
+                                            <input type="radio" class="radio" name="coupon" id="coupon-c">
+                                            <label for="coupon-c">coupon C</label>
+                                        </div>
+                                    </li>
+                                    <li class="list__item">
+                                        <div class="control-form">
+                                            <input type="radio" class="radio" name="coupon" id="coupon-d">
+                                            <label for="coupon-d">coupon D</label>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
                             <!-- /card -->
                             <div class="card">
@@ -103,6 +135,29 @@
                                     </ul>
                                 </div>
                                 <div class="card__content">
+                                    <p class="is-remark">결제방법</p>
+                                    <div class="flex--column gap--sm">
+                                        <div class="control-form width-20">
+                                            <input type="radio"class="radio" name="paymentType" checked id="payment-card">
+                                            <label for="">카드결제</label>
+                                        </div>
+                                        <div class="flex--row">
+                                            <div class="control-form width-20">
+                                                <input type="radio"class="radio" name="paymentType" id="payment-a">
+                                                <label for="payment-a">실시간계좌이체</label>
+                                            </div>
+                                            <input type="number"class="input" placeholder="01-123-45678">
+                                        </div>
+                                        <div class="flex--row">
+                                            <div class="control-form width-20">
+                                                <input type="radio"class="radio" name="paymentType" id="payment-b">
+                                                <label for="payment-b">가상계좌이체</label>
+                                            </div>
+                                            <input type="number"class="input" placeholder="01-123-45678">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="card__content">
                                     <p class="is-remark">세금계산서 발행</p>
                                     <div class="flex--row flex-align--start">
                                         <div class="control-form width-50">
@@ -117,7 +172,7 @@
                                             <input type="number"class="input" placeholder="01-123-45678">
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <!-- /card -->
                             <div class="card is-column-full">

@@ -355,39 +355,39 @@
                     html += `
                         <div class="table__tr ${testClass}" data-id="${data[i].index}">
                             <div class="table__td is-vertical is-left width-100">
-                                <div class="table__td">
+                                <div class="table__td width-100">
                                     <p class="is-secondary">
                                         <span class="">개인</span> | <span class="">검토자</span>
                                     </p>
                                 </div>
-                                <div class="table__td">
+                                <div class="table__td  width-100">
                                         <p class="table__td--title">${data[i].guid}</p>
                                 </div>
-                                <div class="table__td">
+                                <div class="table__td  width-100">
                                         <p class="is-remark">
                                             ${i%2 == 0 ? data[i].phone : data[i].email}
                                         </p>
                                 </div>
                                 
-                                <div class="table__td">
+                                <div class="table__td  width-100">
                                     <div class="control-form">
                                         <input type="radio" class="radio" name="viewer_${i}" checked>
                                         <label for="">설정안함</label>
                                     </div>
                                 </div>
-                                <div class="table__td">
+                                <div class="table__td  width-100">
                                     <div class="control-form">
                                         <input type="radio" class="radio" name="viewer_${i}">
                                         <label for="">비밀번호설정</label>
                                     </div>
                                 </div>
-                                <div class="table__td">
+                                <div class="table__td  width-100">
                                     <div class="control-form">
                                         <input type="radio" class="radio" name="viewer_${i}">
                                         <label for="">PASS 간편본인인증</label>
                                     </div>
                                 </div>
-                                <div class="table__td">
+                                <div class="table__td  width-100">
                                     <div class="control-form">
                                         <label for="">주소록 저장</label>
                                         <input type="checkbox" class="checkbox" id="">

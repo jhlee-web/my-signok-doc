@@ -19,7 +19,7 @@
                         홈으로
                     </a>
                     <ul class="flex--row header-step">
-                        <li class="header-step__item is-active">
+                        <li class="header-step__item">
                             <a href="/template/externalDocument/externalDocumentUpload.html">
                                 <span>1</span>계약서 업로드
                             </a>
@@ -48,124 +48,127 @@
                 <!-- 메인 컨텐츠 -->
                 <div class="container">
                     <div class="main-content">
-                        <div class="card__content">
-                            <div class="input-area">
-                                <label for="" class="is-remark">
-                                    계약서 이름 
-                                    <span class="is-primary">*</span>
-                                </label>
-                                <div class="input-box flex--row is-change">
-                                    <input type="text" placeholder="" class="input"
-                                    value="indertds" disabled>
-                                    <button type="button" 
-                                    id=""
-                                    class="button button--secondary">수정하기</button>
-                                </div>
-                            </div>
-                            <div class="flex--row flex-justify--between">
-                                <p class="">계약서가 <span class="is-accent">기본폴더</span>에 저장됩니다.</p>
-                                <button type="button" class="button button--outline">
-                                    <img src="/statics/icon/folder-line.svg" alt="" class="icon">
-                                    폴더변경
-                                </button>
-                            </div>
-                            <div class="flex--column gap--sm">
-                                <p class="is-remark">서명 기간 <span class="is-primary">*</span></p>
-                                <div class="control-form">
-                                    <p>서명 발송일로부터</p>
-                                    <input type="number" class="input is-small is-narrow" maxlength="365"
-                                    value="14">
-                                    <p>일 동안 서명을 받습니다.</p>
-                                </div>
-                                <p class="is-remark text-align--right">서명 만료일: <span>2022-12-31</span></p>
-                            </div>
-                        </div>
-                        
-                        <!-- <div class="full-grid right-double"> -->
-                        <div class="card__content">
-                            <div class="card__row">
-                                <p class="is-remark">중복서명여부</p>
-                                <label class="is-small toggle">
-                                    <input type="checkbox" class="toggle__checkbox" checked>
-                                    <span class="toggle__slider"></span>
-                                </label>
-                            </div>
-                            <p class="is-remark">
-                                한 서명자는 최대 30번까지 중복 서명할 수 있습니다.
-                            </p>
-                            <div class="state-box is-info">
-                                <img src="/statics/icon/info-circle-line.svg"
-                                class="icon is-secondary">
-                                <p class="">링크 생성 이후 수정할 수 없습니다.
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <div class="group-button is-small ">
-                            <button type="button"
-                            class="icon-button group-button__base is-start" id="input-minus">
-                                <img class="icon" src="/statics/icon/minus-line.svg" alt="빼기">
-                            </button>
-                            <input type="number" value="10" readonly
-                            class="input group-button__base is-middle width-100">
-                            <button type="button"
-                            class="icon-button group-button__base is-end" id="input-plus">
-                                <img class="icon" src="/statics/icon/plus-line.svg" alt="더하기">
-                            </button>
-                        </div>
-                        <div class="accordion is-active">
-                            <div class="accordion__header">
-                                <p>기타 설정</p>
-                                <button type="button" class="icon-button">
-                                    <img src="/statics/icon/angle-top.svg" class="icon">
-                                </button>
-                            </div>
-                            <div class="accordion__body">
-                                <div class="flex--column">
-                                    <p class="is-remark">남길말 (선택)</p>
-                                    <textarea class="textarea" placeholder="서명 대상자에게 남길 말을 입력해주세요." rows="4"maxlength="200"></textarea>
-                                </div>
-                                <div class="flex--column">
-                                    <div class="control-form flex-justify--between">
-                                        <label for="">서명완료 메일을 매회 수신합니다</label>
-                                        <input type="checkbox" class="checkbox">
+                        <div class="card">
+                            <div class="card__content">
+                                <div class="input-area">
+                                    <label for="" class="is-remark">
+                                        계약서 이름 
+                                        <span class="is-primary">*</span>
+                                    </label>
+                                    <div class="input-box flex--row is-change">
+                                        <input type="text" placeholder="" class="input"
+                                        value="indertds" disabled>
+                                        <button type="button" 
+                                        id=""
+                                        class="button button--secondary">수정하기</button>
                                     </div>
-                                    <p class="is-remark">서명자가 서명을 할 때마다 서명 완료 메일을 받을 수 있습니다.</p>
+                                </div>
+                                <div class="flex--row flex-justify--between">
+                                    <p class="">계약서가 <span class="is-accent">기본폴더</span>에 저장됩니다.</p>
+                                    <button type="button" class="button button--outline">
+                                        <img src="/statics/icon/folder-line.svg" alt="" class="icon">
+                                        폴더변경
+                                    </button>
+                                </div>
+                                <div class="flex--column gap--sm">
+                                    <p class="is-remark">서명 기간 <span class="is-primary">*</span></p>
+                                    <div class="control-form">
+                                        <p>서명 발송일로부터</p>
+                                        <input type="number" class="input is-small is-narrow" maxlength="365"
+                                        value="14">
+                                        <p>일 동안 서명을 받습니다.</p>
+                                    </div>
+                                    <p class="is-remark text-align--right">서명 만료일: <span>2022-12-31</span></p>
                                 </div>
                             </div>
-                            
                         </div>
-                        
-
-                        <div>
-                            <ul class="checkbox-wrap">
-                                <li class="checkbox__item">
-                                    <label for="checkbox-all"
-                                    class="margin-bottom--medium font-weight--medium">
-                                        전체동의
+                        <div class="card">
+                            <div class="card__content">
+                                <div class="card__row">
+                                    <p class="is-remark">중복서명여부</p>
+                                    <label class="is-small toggle">
+                                        <input type="checkbox" class="toggle__checkbox" checked>
+                                        <span class="toggle__slider"></span>
                                     </label>
-                                    <input type="checkbox" id="" class="checkbox checkbox-all">
-                                </li>
-                                <li class="checkbox__item">
-                                    <label for="" class="flex--row flex-align--center">
-                                        <span class="font-weight--medium">필수</span>
-                                        개인정보 수집에 동의합니다
-                                        <img class="icon" src="/statics/icon/angle-right.svg">
-                                    </label>
-                                    <input type="checkbox" class="checkbox" required>
-        
-                                </li>
-                                <li class="checkbox__item">
-                                    <label for="" class="flex--row flex-align--center">
-                                        <span class="font-weight--medium">필수</span>
-                                        계약 건수 1회가 차감됩니다
-                                        <img class="icon" src="/statics/icon/angle-right.svg">
-                                    </label>
-                                    <input type="checkbox" class="checkbox" required>
-                                </li>
-                            </ul>  
+                                </div>
+                                <p class="is-remark">
+                                    한 서명자는 최대 30번까지 중복 서명할 수 있습니다.
+                                </p>
+                                <div class="state-box is-info">
+                                    <img src="/statics/icon/info-circle-line.svg"
+                                    class="icon is-secondary">
+                                    <p class="">링크 생성 이후 수정할 수 없습니다.
+                                    </p>
+                                </div>
+                                <div class="group-button is-small ">
+                                    <button type="button"
+                                    class="icon-button group-button__base is-start" id="input-minus">
+                                        <img class="icon" src="/statics/icon/minus-line.svg" alt="빼기">
+                                    </button>
+                                    <input type="number" value="10" readonly
+                                    class="input group-button__base is-middle width-100">
+                                    <button type="button"
+                                    class="icon-button group-button__base is-end" id="input-plus">
+                                        <img class="icon" src="/statics/icon/plus-line.svg" alt="더하기">
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <!-- </div> -->
+                        <div class="card">
+                            <div class="card__content">
+                                <div class="accordion is-active">
+                                    <div class="accordion__header">
+                                        <p>기타 설정</p>
+                                        <button type="button" class="icon-button">
+                                            <img src="/statics/icon/angle-top.svg" class="icon">
+                                        </button>
+                                    </div>
+                                    <div class="accordion__body">
+                                        <div class="flex--column">
+                                            <p class="is-remark">남길말 (선택)</p>
+                                            <textarea class="textarea" placeholder="서명 대상자에게 남길 말을 입력해주세요." rows="4"maxlength="200"></textarea>
+                                        </div>
+                                        <div class="flex--column">
+                                            <div class="control-form flex-justify--between">
+                                                <label for="">서명완료 메일을 매회 수신합니다</label>
+                                                <input type="checkbox" class="checkbox">
+                                            </div>
+                                            <p class="is-remark">서명자가 서명을 할 때마다 서명 완료 메일을 받을 수 있습니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__content">
+                                <ul class="checkbox-wrap">
+                                    <li class="checkbox__item">
+                                        <label for="checkbox-all"
+                                        class="margin-bottom--medium font-weight--medium">
+                                            전체동의
+                                        </label>
+                                        <input type="checkbox" id="" class="checkbox checkbox-all">
+                                    </li>
+                                    <li class="checkbox__item">
+                                        <label for="" class="flex--row flex-align--center">
+                                            <span class="font-weight--medium">필수</span>
+                                            개인정보 수집에 동의합니다
+                                            <img class="icon" src="/statics/icon/angle-right.svg">
+                                        </label>
+                                        <input type="checkbox" class="checkbox" required>
+            
+                                    </li>
+                                    <li class="checkbox__item">
+                                        <label for="" class="flex--row flex-align--center">
+                                            <span class="font-weight--medium">필수</span>
+                                            계약 건수 1회가 차감됩니다
+                                            <img class="icon" src="/statics/icon/angle-right.svg">
+                                        </label>
+                                        <input type="checkbox" class="checkbox" required>
+                                    </li>
+                                </ul>  
+                            </div>
+                        </div>
                     </div>
                     <!-- /main-content -->
                 </div>
