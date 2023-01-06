@@ -35,7 +35,10 @@
                                     <a href="/template/config/myPayInfo.html">요금제</a>
                                 </li>
                                 <li class="tab__item--badge">
-                                    <a href="/template/config/myPayHisInfo.html">결제 정보</a>
+                                    <a href="/template/config/myPayHisInfo.html">결제 내역</a>
+                                </li>
+                                <li class="tab__item--badge">
+                                    <a href="/template/config/myUseHisInfo.html">사용 내역</a>
                                 </li>
                                 <li class="tab__item--badge">
                                     <a href="/template/config/addressInfo.html">주소록</a>
@@ -113,28 +116,34 @@
                                 </div>
                             </div>
                             <div class="card">
-                                <div class="card__header">
-                                    <p class="is-remark">수신동의</p>
+                                <div class="card__inner">
+                                    <div class="card__header">
+                                        <p class="is-remark">수신동의</p>
+                                    </div>
+                                    <div class="card__header">
+                                        <p>마케팅 수신 동의</p>
+                                        <label class="is-small toggle" for="agree_marketing">
+                                            <input type="checkbox" id="agree_marketing" class="toggle__checkbox">
+                                            <span class="toggle__slider"></span>
+                                        </label>
+                                    </div>
                                 </div>
-                                <div class="card__header">
-                                    <p>마케팅 수신 동의</p>
-                                    <label class="is-small toggle" for="agree_marketing">
-                                        <input type="checkbox" id="agree_marketing" class="toggle__checkbox">
-                                        <span class="toggle__slider"></span>
-                                    </label>
-                                </div>
+                               
                             </div>
                             <div class="card">
-                                <div class="card__header">
-                                    <p class="is-remark">테마설정</p>
+                                <div class="card__inner">
+                                    <div class="card__header">
+                                        <p class="is-remark">테마설정</p>
+                                    </div>
+                                    <div class="card__header">
+                                        <p>어두운 테마</p>
+                                        <label class="is-small toggle" for="toggle-theme">
+                                            <input type="checkbox" class="toggle__checkbox" id="toggle-theme">
+                                            <span class="toggle__slider"></span>
+                                        </label>
+                                    </div>
                                 </div>
-                                <div class="card__header">
-                                    <p>어두운 테마</p>
-                                    <label class="is-small toggle" for="toggle-theme">
-                                        <input type="checkbox" class="toggle__checkbox" id="toggle-theme">
-                                        <span class="toggle__slider"></span>
-                                    </label>
-                                </div>
+                                
                             </div>
                             <a href="/template/config/userWithdrawn.html"
                             class="is-remark button button--text flex-justify--start">회원탈퇴</a>

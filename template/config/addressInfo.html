@@ -35,7 +35,10 @@
                                     <a href="/template/config/myPayInfo.html">요금제</a>
                                 </li>
                                 <li class="tab__item--badge">
-                                    <a href="/template/config/myPayHisInfo.html">결제 정보</a>
+                                    <a href="/template/config/myPayHisInfo.html">결제 내역</a>
+                                </li>
+                                <li class="tab__item--badge">
+                                    <a href="/template/config/myUseHisInfo.html">사용 내역</a>
                                 </li>
                                 <li class="tab__item--badge is-active">
                                     <a href="javascript:void(0)">주소록</a>
@@ -48,58 +51,59 @@
                         <div class="full-grid left-double">
                             <div class="card-wrap">
                                 <div class="card">
-                                    <div class="card__header">
-                                        <div class="flex--row is-change">
-                                            <button type="button" class="button is-small button--outline"
-                                            id="change-folder">
-                                                <img src="/statics/icon/group-line.svg" alt="닫기" class="icon is-large icon--warning">
-                                                그룹보기
+                                    <div class="card__inner">
+                                        <div class="card__header">
+                                            <div class="flex--row is-change">
+                                                <button type="button" class="button is-small button--outline"
+                                                id="change-folder">
+                                                    <img src="/statics/icon/group-line.svg" alt="닫기" class="icon">
+                                                    그룹보기
+                                                </button>
+                                                <!-- css수정 필요 -->
+                                                <div class="round-input">
+                                                    <div class="select-box">
+                                                        <div class="select-box__select">
+                                                            <p>이름</p>
+                                                            <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
+                                                        </div>
+                                                        <ul class="select-box__option">
+                                                            <li>이름</li>
+                                                            <li>이메일</li>
+                                                            <li>연락처</li>
+                                                            <li>그룹</li>
+                                                        </ul>
+                                                    </div>
+                                                    <input type="text" maxlength="50"
+                                                    placeholder="검색어를 입력해주세요"
+                                                    class="round-input__input input">
+                                                </div>
+                                            </div>
+                                            <button type="button" id="add-address" class="button button--secondary">
+                                                <img src="/statics/icon/plus-line.svg" alt="연락처 추가"
+                                                class="icon">
+                                                연락처추가
                                             </button>
-                                            <!-- css수정 필요 -->
-                                            <div class="round-input">
-                                                <div class="select-box">
-                                                    <div class="select-box__select">
-                                                        <p>이름</p>
-                                                        <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
-                                                    </div>
-                                                    <ul class="select-box__option">
-                                                        <li>이름</li>
-                                                        <li>이메일</li>
-                                                        <li>연락처</li>
-                                                        <li>그룹</li>
-                                                    </ul>
-                                                </div>
-                                                <input type="text" maxlength="50"
-                                                placeholder="검색어를 입력해주세요"
-                                                class="round-input__input input">
-                                            </div>
                                         </div>
-                                        <button type="button" id="add-address" class="button button--secondary">
-                                            <img src="/statics/icon/plus-line.svg" alt="연락처 추가"
-                                            class="icon">
-                                            연락처추가
-                                        </button>
-                                    </div>
-                                    
-                                    <div class="table">
-                                        <div class="table__thead">
-                                            <div class="table__tr">
-                                                <div class="table__td is-left width-90">
-                                                    <div class="table__td">
-                                                        <input type="checkbox" class="checkbox checkbox-all"
-                                                        id="">
+                                        <div class="table">
+                                            <div class="table__thead">
+                                                <div class="table__tr">
+                                                    <div class="table__td is-left width-90">
+                                                        <div class="table__td">
+                                                            <input type="checkbox" class="checkbox checkbox-all"
+                                                            id="">
+                                                        </div>
+                                                        <div class="table__td width-30">이름</div>
+                                                        <div class="table__td width-30">이메일</div>
+                                                        <div class="table__td width-15">연락처</div>
+                                                        <div class="table__td width-15">그룹</div>
                                                     </div>
-                                                    <div class="table__td width-30">이름</div>
-                                                    <div class="table__td width-30">이메일</div>
-                                                    <div class="table__td width-15">연락처</div>
-                                                    <div class="table__td width-15">그룹</div>
-                                                </div>
-                                                <div class="table__td is-right width-10 flex-justify--center">
-                                                    <div class="table__td">추가메뉴</div>
+                                                    <div class="table__td is-right width-10 flex-justify--center">
+                                                        <div class="table__td">추가메뉴</div>
+                                                    </div>
                                                 </div>
                                             </div>
+                                            <div class="table__tbody"></div>
                                         </div>
-                                        <div class="table__tbody"></div>
                                     </div>
                                 </div>
                             </div>

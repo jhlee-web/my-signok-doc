@@ -37,7 +37,10 @@
                                     <a href="/template/config/myPayInfo.html">요금제</a>
                                 </li>
                                 <li class="tab__item--badge">
-                                    <a href="/template/config/myPayHisInfo.html">결제 정보</a>
+                                    <a href="/template/config/myPayHisInfo.html">결제 내역</a>
+                                </li>
+                                <li class="tab__item--badge">
+                                    <a href="/template/config/myUseHisInfo.html">사용 내역</a>
                                 </li>
                                 <li class="tab__item--badge">
                                     <a href="/template/config/addressInfo.html">주소록</a>
@@ -50,69 +53,59 @@
                         <!-- /tabs -->
                         <div class="full-grid">
                             <div class="card">
-                                <!-- 상품 -->
-                                <p class="is-remark">
-                                    주문상품정보
-                                </p>
-                                <div class="card__header is-change">
-                                    <div class="flex--row gap--sm">
-                                        <img src="/statics/icon/document-line.svg"
-                                        alt="" class="icon">
-                                        <p>대량/링크/공문</p>
-                                    </div>
-                                    <!-- <div class="flex--row gap--sm"> -->
+                                <div class="card__inner has-border">
+                                    <p class="is-remark">
+                                        주문상품정보
+                                    </p>
+                                    <div class="card__header is-change">
+                                        <div class="flex--row gap--sm">
+                                            <img src="/statics/icon/document-line.svg"
+                                            alt="" class="icon">
+                                            <p>대량/링크/공문</p>
+                                        </div>
                                         <input type="number" class="input is-narrow" value="30"> 
-                                        <!-- <p><span>30,000</span>원</p> -->
-                                    <!-- </div> -->
-                                </div>
-                                <div class="select-box">
-                                    <div class="select-box__select">
-                                        <p>사용 가능한 쿠폰이 없습니다.</p>
-                                        <img src="/statics/icon/angle-down.svg" class="icon select-box__icon">
                                     </div>
-                                    <ul class="select-box__option">
-                                        <li>coupon a </li>
-                                        <li>coupon b </li>
-                                        <li>coupon c </li>
-                                        <li>coupon d </li>
+                                </div>
+                                <div class="card__inner">
+                                    <ul class="basic-list">
+                                        <li class="list__item">
+                                            <div class="control-form">
+                                                <input type="radio" class="radio" name="coupon" checked id="coupon-none">
+                                                <label for="coupon-none">사용안함</label>
+                                            </div>
+                                        </li>
+                                        <li class="list__item">
+                                            <div class="control-form">
+                                                <input type="radio" class="radio" name="coupon" id="coupon-a">
+                                                <label for="coupon-a">coupon A</label>
+                                            </div>
+                                        </li>
+                                        <li class="list__item">
+                                            <div class="control-form">
+                                                <input type="radio" class="radio" name="coupon" id="coupon-b">
+                                                <label for="coupon-b">coupon B</label>
+                                            </div>
+                                        </li>
+                                        <li class="list__item">
+                                            <div class="control-form">
+                                                <input type="radio" class="radio" name="coupon" id="coupon-c">
+                                                <label for="coupon-c">coupon C</label>
+                                            </div>
+                                        </li>
+                                        <li class="list__item">
+                                            <div class="control-form">
+                                                <input type="radio" class="radio" name="coupon" id="coupon-d">
+                                                <label for="coupon-d">coupon D</label>
+                                            </div>
+                                        </li>
                                     </ul>
                                 </div>
-                                <ul class="basic-list">
-                                    <li class="list__item">
-                                        <div class="control-form">
-                                            <input type="radio" class="radio" name="coupon" checked id="coupon-none">
-                                            <label for="coupon-none">사용안함</label>
-                                        </div>
-                                    </li>
-                                    <li class="list__item">
-                                        <div class="control-form">
-                                            <input type="radio" class="radio" name="coupon" id="coupon-a">
-                                            <label for="coupon-a">coupon A</label>
-                                        </div>
-                                    </li>
-                                    <li class="list__item">
-                                        <div class="control-form">
-                                            <input type="radio" class="radio" name="coupon" id="coupon-b">
-                                            <label for="coupon-b">coupon B</label>
-                                        </div>
-                                    </li>
-                                    <li class="list__item">
-                                        <div class="control-form">
-                                            <input type="radio" class="radio" name="coupon" id="coupon-c">
-                                            <label for="coupon-c">coupon C</label>
-                                        </div>
-                                    </li>
-                                    <li class="list__item">
-                                        <div class="control-form">
-                                            <input type="radio" class="radio" name="coupon" id="coupon-d">
-                                            <label for="coupon-d">coupon D</label>
-                                        </div>
-                                    </li>
-                                </ul>
+                                    
+                                <!-- 상품 -->
                             </div>
                             <!-- /card -->
                             <div class="card">
-                                <div class="card__inner">
+                                <div class="card__inner has-border">
                                     <p class="is-remark">
                                         결제상세
                                     </p>
@@ -157,28 +150,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- <div class="card__inner">
-                                    <p class="is-remark">세금계산서 발행</p>
-                                    <div class="flex--row flex-align--start">
-                                        <div class="control-form width-50">
-                                            <input type="radio"class="radio" checked>
-                                            <label for="">개인</label>
-                                        </div>
-                                        <div class="flex--column">
-                                            <div class="control-form width-50">
-                                                <input type="radio"class="radio">
-                                                <label for="">사업자</label>
-                                            </div>
-                                            <input type="number"class="input" placeholder="01-123-45678">
-                                        </div>
-                                    </div>
-                                </div> -->
+                                
                             </div>
                             <!-- /card -->
                             <div class="card is-column-full">
-                                <div class="card__header">
-                                    <a href="javascript:void(0)" class="button button--text">이전</a>
-                                    <button type="button" class="button button--primary">결제하기</button>
+                                <div class="card__inner">
+                                    <div class="card__header">
+                                        <a href="javascript:void(0)" class="button button--text">이전</a>
+                                        <button type="button" class="button button--primary">결제하기</button>
+                                    </div>
                                 </div>
                             </div>
                             <!-- /card -->

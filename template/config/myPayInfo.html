@@ -5,7 +5,7 @@
         <script>
             loadHTML("/statics/include/head.html");
         </script>
-        <title>설정 | 결제 정보</title>
+        <title>설정 | 결제 내역</title>
     </head>
 
     <body>
@@ -37,7 +37,10 @@
                                     <a href="javascript:void(0)">요금제</a>
                                 </li>
                                 <li class="tab__item--badge ">
-                                    <a href="/template/config/myPayHisInfo.html">결제 정보</a>
+                                    <a href="/template/config/myPayHisInfo.html">결제 내역</a>
+                                </li>
+                                <li class="tab__item--badge">
+                                    <a href="/template/config/myUseHisInfo.html">사용 내역</a>
                                 </li>
                                 <li class="tab__item--badge">
                                     <a href="/template/config/addressInfo.html">주소록</a>
@@ -96,22 +99,23 @@
                                             /<span class="">60</span>건
                                         </p>
                                     </div>
-                                </div>
-                                <div class="state-box flex-justify--between">
-                                    <div class="flex--row gap--sm">
-                                        <img src="/statics/icon/exclamation-triangle-line.svg"
-                                        class="icon is-primary">
-                                        <p class="">정기 결제가 중단되었습니다.
-                                            <span id="user_deadline">2020년 1월 1일</span>
-                                            까지 이용 가능합니다.
-                                        </p>
+                                    <div class="state-box flex-justify--between">
+                                        <div class="flex--row gap--sm">
+                                            <img src="/statics/icon/exclamation-triangle-line.svg"
+                                            class="icon is-primary">
+                                            <p class="">정기 결제가 중단되었습니다.
+                                                <span id="user_deadline">2020년 1월 1일</span>
+                                                까지 이용 가능합니다.
+                                            </p>
+                                        </div>
+                                        
+                                        <a href="/template/config/priceDetail.html" class="icon-button">
+                                            <img src="/statics/icon/angle-right.svg" alt="바로가기"
+                                            class="icon is-primary">
+                                        </a>
                                     </div>
-                                    
-                                    <a href="/template/config/priceDetail.html" class="icon-button">
-                                        <img src="/statics/icon/angle-right.svg" alt="바로가기"
-                                        class="icon is-primary">
-                                    </a>
                                 </div>
+                                
                             </div>
                             <!-- /card -->
                             <div class="card">

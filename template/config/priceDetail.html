@@ -37,7 +37,10 @@
                                     <a href="javascript:void(0)">요금제</a>
                                 </li>
                                 <li class="tab__item--badge">
-                                    <a href="/template/config/myPayHisInfo.html">결제 정보</a>
+                                    <a href="/template/config/myPayHisInfo.html">결제 내역</a>
+                                </li>
+                                <li class="tab__item--badge">
+                                    <a href="/template/config/myUseHisInfo.html">사용 내역</a>
                                 </li>
                                 <li class="tab__item--badge">
                                     <a href="/template/config/addressInfo.html">주소록</a>
@@ -51,67 +54,66 @@
                         <div class="full-grid left-double">
                             <div class="card-wrap">
                                 <div class="card">
-                                    <!-- 요금제 -->
-                                    <div class="card__header">
-                                        <p class="font-weight--medium body--large">
-                                            요금제를 선택하세요
-                                        </p>
-                                        <div class="control-form">
-                                            <span>연간결제</span>
-                                            <label class="is-small toggle">
-                                                <input type="checkbox" class="toggle__checkbox">
-                                                <span class="toggle__slider"></span>
-                                            </label>
-                                            <span>월간결제</span>
+                                    <div class="card__inner">
+                                        <div class="card__header">
+                                            <p class="font-weight--medium body--large">
+                                                요금제를 선택하세요
+                                            </p>
+                                            <div class="control-form">
+                                                <span>연간결제</span>
+                                                <label class="is-small toggle">
+                                                    <input type="checkbox" class="toggle__checkbox">
+                                                    <span class="toggle__slider"></span>
+                                                </label>
+                                                <span>월간결제</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="table" id="price-list">
-                                        <div class="table__tbody">
-                                            <div class="table__tr" id="price-select-area">
-                                                <div class="table__td width-100"></div>
-                                                <div data-membership="Basic" class="table__td width-100">
-                                                    <span >베이직</span>
+                                        <div class="table" id="price-list">
+                                            <div class="table__tbody">
+                                                <div class="table__tr" id="price-select-area">
+                                                    <div class="table__td width-100"></div>
+                                                    <div data-membership="Basic" class="table__td width-100">
+                                                        <span >베이직</span>
+                                                    </div>
+                                                    <div data-membership="Business" class="table__td width-100">
+                                                        <span>비즈니스</span>
+                                                    </div>
+                                                    <div data-membership="Premium" class="table__td width-100">
+                                                        <span class="">프리미엄</span>
+                                                    </div>
                                                 </div>
-                                                <div data-membership="Business" class="table__td width-100">
-                                                    <span>비즈니스</span>
+                                                <div class="table__tr" >
+                                                    <div class="table__td width-100 is-remark">요금</div>
+                                                    <div class="table__td width-100"
+                                                    data-membership="Basic">8,800원</div>
+                                                    <div class="table__td width-100" data-membership="Business">33,000원</div>
+                                                    <div class="table__td width-100" data-membership="Premium">66,000원</div>
                                                 </div>
-                                                <div data-membership="Premium" class="table__td width-100">
-                                                    <span class="">프리미엄</span>
+                                                <div class="table__tr">
+                                                    <div class="table__td width-100 is-remark">서명요청</div>
+                                                    <div class="table__td width-100"
+                                                    data-membership="Basic">10건</div>
+                                                    <div class="table__td width-100"
+                                                    data-membership="Business">무제한</div>
+                                                    <div class="table__td width-100"
+                                                    data-membership="Premium">무제한</div>
                                                 </div>
-                                            </div>
-                                            <div class="table__tr" >
-                                                <div class="table__td width-100 is-remark">요금</div>
-                                                <div class="table__td width-100"
-                                                data-membership="Basic">8,800원</div>
-                                                <div class="table__td width-100" data-membership="Business">33,000원</div>
-                                                <div class="table__td width-100" data-membership="Premium">66,000원</div>
-                                            </div>
-                                            <div class="table__tr">
-                                                <div class="table__td width-100 is-remark">서명요청</div>
-                                                <div class="table__td width-100"
-                                                data-membership="Basic">10건</div>
-                                                <div class="table__td width-100"
-                                                data-membership="Business">무제한</div>
-                                                <div class="table__td width-100"
-                                                data-membership="Premium">무제한</div>
-                                            </div>
-                                            <div class="table__tr">
-                                                <div class="table__td width-100 is-remark">대량/링크/공문</div>
-                                                <div class="table__td width-100"
-                                                data-membership="Basic">미제공</div>
-                                                <div class="table__td width-100"
-                                                data-membership="Business">미제공</div>
-                                                <div class="table__td width-100"
-                                                data-membership="Premium">200건</div>
+                                                <div class="table__tr">
+                                                    <div class="table__td width-100 is-remark">대량/링크/공문</div>
+                                                    <div class="table__td width-100"
+                                                    data-membership="Basic">미제공</div>
+                                                    <div class="table__td width-100"
+                                                    data-membership="Business">미제공</div>
+                                                    <div class="table__td width-100"
+                                                    data-membership="Premium">200건</div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- /card -->
-
                                 <div class="card">
                                     <div class="card__inner">
-                                        <!-- 요금제 -->
                                         <div class="card__header">
                                             <p class="font-weight--medium body--large">
                                                 기업맞춤형
@@ -147,7 +149,6 @@
                                         </p>
                                     </div>
                                 </div>
-                                <!-- /card -->
                             </div>
                             <!-- /card-wrap -->
                             <div class="card is-row-full" id="event">
