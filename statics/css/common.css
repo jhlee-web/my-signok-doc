@@ -1448,17 +1448,19 @@ html[data-theme='light'] .button--text .icon{
     flex-direction: column;
     gap: 1em;
 
-    transform: scaleY(0);
-    height: 0;
-    transform-origin: top;
-    transition: transform .4s ease-in-out ;
+    /* transform: scaleY(0); */
+    max-height: 0;
+    overflow-y: hidden;
+    /* transform-origin: top; */
+    transition: max-height .4s ease-in-out ;
 }
 
 .accordion.is-active .accordion__body{
-    transform: scaleY(1);
-    height: auto;
-    transform-origin: top;
-    transition: transform .4s ease-in-out ;
+    /* transform: scaleY(1); */
+    /* height: auto;
+    transform-origin: top;*/
+    transition: max-height .4s ease-in-out ; 
+    max-height: 100vh;
 }
 
 .accordion .accordion__header .icon{
