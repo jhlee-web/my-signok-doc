@@ -58,16 +58,16 @@
                                             </p>
                                             <button type="button" class="button button--text">수정하기</button>
                                         </div>
-                                        <div class="flex--row">
+                                        <div class="flex--row is-change">
                                             <p class="is-remark width-10">기업소개</p>
                                             <input type="text" class="input width-90"
                                             placeholder="기업 전용 URL 접속 시 로그인 페이지에 표시됩니다.
                                             ">
                                         </div>
-                                        <div class="flex--row">
-                                            <p class="is-remark width-10">로고 변경</p>  
+                                        <div class="flex--row is-change">
+                                            <p class="is-remark width-10">로고변경</p>  
                                             <div class="is-image file-box">
-                                                <div class="flex--row">
+                                                <div class="flex--row is-change">
                                                     <div id="thumbnail-logo"class="file-box__thumbnail">
                                                         <img src="/statics/img/logo.png" alt="기본 로고">
                                                     </div>
@@ -77,7 +77,7 @@
                                                     </p>
                                                 </div>
                                                 
-                                                <div class="basic-button-wrap gap--sm">
+                                                <div class="flex--row gap--sm">
                                                     <button type="button" class="button button--outline is-small">
                                                         <img src="/statics/icon/angle-down.svg" alt="파비콘 이미지 찾기" class="icon">
                                                         원래대로
@@ -91,10 +91,10 @@
                                             </div>
                                         </div>
                                         
-                                        <div class="flex--row">
-                                            <p class="is-remark width-10">파비콘 변경</p>
+                                        <div class="flex--row is-change">
+                                            <p class="is-remark width-10">파비콘변경</p>
                                             <div class="is-image file-box">
-                                                <div class="flex--row">
+                                                <div class="flex--row is-change">
                                                     <div id="thumbnail-favicon"class="file-box__thumbnail">
                                                         <img src="/statics/img/logo.png" alt="기본 파비콘">
                                                     </div>
@@ -103,7 +103,7 @@
                                                         jpg, gif, png 형식 파일을 올려주세요. 
                                                     </p>
                                                 </div>
-                                                <div class="basic-button-wrap gap--sm">
+                                                <div class="flex--row gap--sm">
                                                     <button type="button" class="button button--outline is-small">
                                                         <img src="/statics/icon/angle-down.svg" alt="파비콘 이미지 찾기" class="icon">
                                                         원래대로
@@ -124,17 +124,17 @@
                                 </div>
                                 <!-- /card -->
                                 <div class="tab-wrap">
-                                    <ul class="tab">
-                                        <li class="tab__item--badge is-active ">
+                                    <ul class="tab" id="brand-tab">
+                                        <li class="tab__item--badge is-active " data-tab="mail">
                                             <a href="javascript:void(0)">이메일</a>
                                         </li>
-                                        <li class="tab__item--badge ">
+                                        <li class="tab__item--badge " data-tab="kakao">
                                             <a href="javascript:void(0)">카카오 알림톡</a>
                                         </li>
                                     </ul>
-                                </div>2
+                                </div>
                                 <!-- /tab-wrap -->
-                                <div class="card">
+                                <div class="card tab-container" data-tab="mail">
                                     <div class="card__inner">
                                         <!-- /tab-wrap -->
                                         <div class="card__header">
@@ -177,7 +177,7 @@
                                         </button>
                                     </div>
                                 </div>
-                                <div class="card">
+                                <div class="card is-hide tab-container" data-tab="kakao">
                                     <div class="card__inner">
                                         <!-- /tab-wrap -->
                                         <div class="card__header">
@@ -185,7 +185,7 @@
                                             <button type="button" class="button button--text">수정하기</button>
                                         </div>
                                         <div class="flex--row flex-align--start width-100">
-                                            <div class="width-50">
+                                            <div class="card__body width-50">
                                                 <p class="is-remark">카카오 알림톡 연동 방법</p>
                                                 <ul class="basic-list">
                                                     <li class="list__item">
@@ -241,6 +241,15 @@
                     };
                 }
             });
+
+            $('#brand-tab li').on('click',function(){
+                let target = $(this).data('tab') 
+
+                $('#brand-tab li').removeClass('is-active')
+                $(this).addClass('is-active')
+                $('.tab-container').addClass('is-hide')
+                $('.tab-container[data-tab='+target+']').removeClass('is-hide')
+            })
         </script>
     </body>
     

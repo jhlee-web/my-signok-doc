@@ -181,6 +181,9 @@
         grid-template-columns: repeat(1,1fr);
         row-gap: 1rem;
     }  
+    .table__paging .pagination .button{
+        padding: 0;
+    }
     /* .table__paging .pagination:not(.flex-justify--center){
         width: 100%;
         display: inline-flex;
@@ -285,7 +288,7 @@
         flex-direction: row;
         align-items: center;
         width: 100%;
-        padding: 1rem 0.5rem;
+        padding: 1rem 0;
     }
 
     /* .table__tr .checkbox{
@@ -872,6 +875,7 @@
 @media all and (max-width:768px){
     #mobile-aside-container{
         position: absolute;
+        display: none;
         top: 0;
         right: 0;
         max-width: 80vw;

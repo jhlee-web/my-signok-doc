@@ -373,6 +373,7 @@ html[data-theme='light'] .is-secondary{
 @media all and (max-width:768px){
     .flex--row.is-change{
         flex-direction: column;
+        align-items: flex-start;
         width: 100%;
     }
     .flex--column.is-change{
