@@ -49,6 +49,7 @@
                 <div class="container">
                     <div class="main-content">
                         <section id="section-upload">
+                            <h6 class="h6 section__title">계약서 업로드</h6>
                             <div class="card">
                                 <div class="card__inner">
                                     <div class="file-area">
@@ -71,8 +72,9 @@
                             </div>
                         </section>
                         <section id="section-contract">
+                            <h6 class="h6 section__title">계약정보입력</h6>
                             <div class="card">
-                                <div class="card__inner">
+                                <div class="card__inner has-border">
                                     <div class="input-area">
                                         <label for="" class="is-remark">
                                             계약서 이름 
@@ -82,14 +84,70 @@
                                             <input type="text" placeholder="" class="input">
                                         </div>
                                     </div>
-                                    <div class="date-time-picker width-100"></div>
-                                    <input type="hidden" id="" readonly >
+                                    <div class="flex--column gap--sm">
+                                        <p class="is-remark">계약일자</p>
+                                        <div id="contract-date"class=" width-100"></div>
+                                        <input type="hidden" id="" readonly >
+                                    </div>
+                                    
+                                    <div class="flex--column gap--sm">
+                                        <p class="is-remark">계약기간</p>
+                                        <div id="date-time-picker-set">
+                                            <div id="contract-start" class=" width-100"></div>
+                                            <input type="hidden" id="" readonly >
+                                            <span>~</span>
+                                            <div id="contract-end" class=" width-100"></div>
+                                            <input type="hidden" id="" readonly >
+                                        </div>
+                                        <div class="control-form flex-justify--end">
+                                            <label for ="test">종료일 설정안함</label>
+                                            <input type="checkbox" class="checkbox" id="test">
     
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="card__inner has-border">
+                                    <div class="input-area">
+                                        <label for="" class="is-remark">
+                                            담당자 이름 
+                                            <span class="is-primary">*</span>
+                                        </label>
+                                        <div class="input-box flex--row is-change">
+                                            <input type="text" placeholder="" class="input">
+                                        </div>
+                                    </div>
+
+                                    <div class="input-area">
+                                        <label for="" class="is-remark">
+                                            담당자 연락처
+                                            <span class="is-primary">*</span>
+                                        </label>
+                                        <div class="input-box has-select">
+                                            <div class="select-box">
+                                                <div class="select-box__select">
+                                                    <p>이메일</p>
+                                                    <img src="/statics/icon/angle-top.svg" class="icon select-box__icon">
+                                                </div>
+                                                <ul class="select-box__option">
+                                                    <li>이메일</li>
+                                                    <li>휴대전화</li>
+                                                </ul>
+                                            </div>
+                                            <input type="text" placeholder="test@naver.com" class="input">
+                                        </div>
+                                    </div>
+                                    <div class="flex--column gap--sm">
+                                        <p class="is-remark">메모</p>
+                                        <textarea class="textarea" placeholder="서명 대상자에게 남길 말을 입력해주세요." rows="4"maxlength="200"></textarea>
+                                    </div>
                                 </div>
                             </div>
                         </section>
                         
                         <section id="section-signature">
+                            <h6 class="h6 section__title">서명자 정보입력</h6>
+
                             <div class="card-wrap">
                                 <div class="card" data-id="0">
                                     <div class="card__inner">
@@ -138,114 +196,36 @@
                                         </div>
                                     </div>
                                 </div>
-                            
-                                <div id="add-signature" 
-                                class="card flex-align--center">
-                                    <button type="button" 
-                                    class="button is-large button--text">
-                                        <img src="/statics/icon/plus-circle-line.svg" 
-                                        class="icon">
-                                        서명자 추가하기
-                                    </button>
+                                <!-- /card -->
+                                
+                                <div id="add-signature"
+                                class="card ">
+                                    <div class="card__inner flex-align--center">
+                                        <button type="button"  class="button is-large button--text">
+                                            <img src="/statics/icon/plus-circle-line.svg" class="icon">
+                                            서명자 추가하기
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-
                         </section>
+
                         <section id="section-submit">
+                            <h6 class="h6 section__title">저장및등록</h6>
                             <div class="card-wrap">
                                 <div class="card">
-                                    <div class="card__inner">
-                                        <div class="input-area">
-                                            <label for="" class="is-remark">
-                                                계약서 이름 
-                                                <span class="is-primary">*</span>
-                                            </label>
-                                            <div class="input-box flex--row is-change">
-                                                <input type="text" placeholder="" class="input"
-                                                value="indertds" disabled>
-                                                <button type="button" 
-                                                id=""
-                                                class="button button--secondary">수정하기</button>
-                                            </div>
-                                        </div>
-                                        <div class="flex--row flex-justify--between">
-                                            <p class="">계약서가 <span class="is-accent">기본폴더</span>에 저장됩니다.</p>
-                                            <button type="button" class="button button--outline">
+                                    <div class="card__inner has-border">
+                                        <p class="is-remark">저장폴더</p>
+                                        <div class="card__header">
+                                            <div class="icon-with-text">
                                                 <img src="/statics/icon/folder-line.svg" alt="" class="icon">
+                                                폴더변경
+                                            </div>
+                                            <button class="button button--text">
                                                 폴더변경
                                             </button>
                                         </div>
-                                        <div class="flex--column gap--sm">
-                                            <p class="is-remark">서명 기간 <span class="is-primary">*</span></p>
-                                            <div class="control-form">
-                                                <p>서명 발송일로부터</p>
-                                                <input type="number" class="input is-small is-narrow" maxlength="365"
-                                                value="14">
-                                                <p>일 동안 서명을 받습니다.</p>
-                                            </div>
-                                            <p class="is-remark text-align--right">서명 만료일: <span>2022-12-31</span></p>
-                                        </div>
                                     </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card__inner">
-                                        <div class="card__header">
-                                            <p class="is-remark">중복서명여부</p>
-                                            <label class="is-small toggle">
-                                                <input type="checkbox" class="toggle__checkbox" checked>
-                                                <span class="toggle__slider"></span>
-                                            </label>
-                                        </div>
-                                        <p class="is-remark">
-                                            한 서명자는 최대 30번까지 중복 서명할 수 있습니다.
-                                        </p>
-                                        <div class="state-box is-info">
-                                            <img src="/statics/icon/info-circle-line.svg"
-                                            class="icon is-secondary">
-                                            <p class="">링크 생성 이후 수정할 수 없습니다.
-                                            </p>
-                                        </div>
-                                        <div class="group-button is-small ">
-                                            <button type="button"
-                                            class="icon-button group-button__base is-start" id="input-minus">
-                                                <img class="icon" src="/statics/icon/minus-line.svg" alt="빼기">
-                                            </button>
-                                            <input type="number" value="10" readonly
-                                            class="input group-button__base is-middle width-100">
-                                            <button type="button"
-                                            class="icon-button group-button__base is-end" id="input-plus">
-                                                <img class="icon" src="/statics/icon/plus-line.svg" alt="더하기">
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card__inner">
-                                        <div class="accordion is-active">
-                                            <div class="accordion__header">
-                                                <p>기타 설정</p>
-                                                <button type="button" class="icon-button">
-                                                    <img src="/statics/icon/angle-top.svg" class="icon">
-                                                </button>
-                                            </div>
-                                            <div class="accordion__body">
-                                                <div class="flex--column">
-                                                    <p class="is-remark">남길말 (선택)</p>
-                                                    <textarea class="textarea" placeholder="서명 대상자에게 남길 말을 입력해주세요." rows="4"maxlength="200"></textarea>
-                                                </div>
-                                                <div class="flex--column">
-                                                    <div class="control-form flex-justify--between">
-                                                        <label for="">서명완료 메일을 매회 수신합니다</label>
-                                                        <input type="checkbox" class="checkbox">
-                                                    </div>
-                                                    <p class="is-remark">서명자가 서명을 할 때마다 서명 완료 메일을 받을 수 있습니다.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card__inner">
+                                    <div class="card__inner has-border">
                                         <ul class="checkbox-wrap">
                                             <li class="checkbox__item">
                                                 <label for="checkbox-all"
@@ -257,7 +237,7 @@
                                             <li class="checkbox__item">
                                                 <label for="" class="flex--row flex-align--center">
                                                     <span class="font-weight--medium">필수</span>
-                                                    개인정보 수집에 동의합니다
+                                                    개인정보 수집 동의
                                                     <img class="icon" src="/statics/icon/angle-right.svg">
                                                 </label>
                                                 <input type="checkbox" class="checkbox" required>
@@ -266,7 +246,7 @@
                                             <li class="checkbox__item">
                                                 <label for="" class="flex--row flex-align--center">
                                                     <span class="font-weight--medium">필수</span>
-                                                    계약 건수 1회가 차감됩니다
+                                                    계약 건수 차감 동의
                                                     <img class="icon" src="/statics/icon/angle-right.svg">
                                                 </label>
                                                 <input type="checkbox" class="checkbox" required>
@@ -296,37 +276,50 @@
             <!-- </div> -->
             </main>
             
-            <script src="/statics/lib/moment/min/moment-with-locales.min.js"></script>
-            <script src="/statics/lib/Datetime-Picker/js/datetimepicker.js"></script>
-            <script>
-                $(function(){
-                    let width = $('#date-time-picker').width()
-                    let rem = 14 + ($(document).width() * 0.001)
-    
-    
-                    // right fix하는 방법 찾아보기
-                    /*
-                        viewport width 구해서
-                        left 변수로 저장해서 계산식 적용하기
-
-                        flex test 필요
-                    */
-                    $('.date-time-picker').dateTimePicker({
-                        dateFormat:"YYYY-MM-DD HH:mm",
-                        locale:"ko",
-                        showTime:false,
-                        selectData:'now',
-                        positionShift:{
-                            top:0,
-                            left:0,
-                        },
-                        title:"예약시간을 설정해주세요",
-                        buttonTitle:"확인",
-                    })
-                })
-            </script>
+        <script src="/statics/lib/moment/min/moment-with-locales.min.js"></script>
+        <script src="/statics/lib/Datetime-Picker/js/datetimepicker.js"></script>
         <script src="/statics/lib/fancy-file-uploader/jquery.fancy-fileupload.js"></script>
+        <script src="/statics/js/common.js"></script>
         <script>
+            $('.date-time-picker').on('click',function(){
+                $(this).dateTimePicker()
+            })
+            $(function(){
+                let width = $('#date-time-picker').width()
+                let rem = 14 + ($(document).width() * 0.001)
+
+
+                // right fix하는 방법 찾아보기
+                /*
+                    viewport width 구해서
+                    left 변수로 저장해서 계산식 적용하기
+
+                    flex test 필요
+                */
+                $('#contract-date').dateTimePicker({
+                    locale:"ko",
+                    // showTime:false,
+                    selectData:'now',
+                    title:"계약기간을 설정해주세요",
+                    buttonTitle:"확인",
+                })
+                $('#contract-start').dateTimePicker({
+                    locale:"ko",
+                    showTime:false,
+                    selectData:'now',
+                    title:"계약시작일을 설정해주세요",
+                    buttonTitle:"확인",
+                })
+                $('#contract-end').dateTimePicker({
+                    locale:"ko",
+                    showTime:false,
+                    selectData:'now',
+                    title:"계약종료일을 설정해주세요",
+                    buttonTitle:"확인",
+                })
+
+            })
+
            let dataTheme = localStorage.getItem('data-theme');
             if(dataTheme == undefined || null || 'null') dataTheme = 'light'
             $('html').attr('data-theme',dataTheme)
@@ -370,11 +363,21 @@
                 });
             }
             loadFancyUpload()
-    
+            $('.header-step__item').on('click', function() {
+                $('.header-step__item').removeClass('is-active')
+                $(this).addClass('is-active')
+                
+                let headerHeight = $('.template-header').height() + 32
+                console.log(headerHeight)
+                let target = $(this).find('a').attr('href')
+                let targetTop = $(target).offset().top
 
+                $('html, body').animate({
+                    scrollTop: targetTop - headerHeight
+                }, 450);
+            }) 
             
         </script>
-        <script src="/statics/js/common.js"></script>
     </body>
     
 </html>

@@ -1235,3 +1235,19 @@
     flex-direction: column;
     gap: 1em;
 }
+
+
+#date-time-picker-set{
+    display: inline-flex;
+    border: 1px solid var(--theme-color-400);
+    border-radius: .5em;
+}
+#date-time-picker-set .dtp_main{
+    border: unset;
+}
+
+.section__title{
+    color: var(--text-color-400);
+    font-weight: 500;
+    margin-bottom: 1em;
+}

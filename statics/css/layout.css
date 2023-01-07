@@ -85,9 +85,9 @@
 .nav__list{
     padding: 0 1em;
 }
-/* .nav__logo{
-    display: none;
-} */
+.nav[data-fold="true"] .nav__list{
+    padding: 0;
+}
 
 .nav__logo a{
     display: grid;

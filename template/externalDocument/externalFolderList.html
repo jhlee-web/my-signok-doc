@@ -5,7 +5,7 @@
         <script>
             loadHTML("/statics/include/head.html");
         </script>
-        <title>외부계약서 | 문서목록</title>
+        <title>외부계약서 | 폴더목록</title>
     </head>
 
     <body>
@@ -23,13 +23,6 @@
                 <div class="container flex--row flex-align--start">
                     <!-- 메인 컨텐츠 -->
                     <div class="main-content">
-                        <div class="snb">
-                            <a href="/template/externalDocument/externalFolderList.html"
-                            class="is-remark">전체</a>
-                            <img src="/statics/icon/angle-right.svg" class="icon is-small">
-                            <a href="/template/externalDocument/externalDocumentList.html"
-                            class="is-remark">외부 폴더명</a>
-                        </div>
                         <!-- 상단 2 -->
                         <div class="table-top">
                             <div class="flex--row is-change">
@@ -163,7 +156,7 @@
                             
                             <!-- documnet-list 페이지에서만 보입니다.
                             테스트용 버튼  -->
-                            <a href="/template/externalDocument/externalDocumentDetail.html"
+                            <a href="/template/linkContract/linkDetail.html"
                             class="button button--outline is-medium is-break">외부계약서 자세히보기</a>
                             
                         </div>
@@ -504,6 +497,8 @@
             $(document).on('click','.table__tr',makeAsideContent)
 
             function makeAsideContent(e){
+                location.href='/template/externalDocument/externalDocumentList.html'
+                return false;
 
                 // thead 영역일 경우 aisde 생성 안함
                 if($(this).parent('.table__thead').length > 0){

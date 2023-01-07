@@ -70,7 +70,7 @@ $(document).on('keyup','.input',checkInputLength)
     
 }
 
-$(document).on('click','.input-box .icon',handlingInputType)
+$(document).on('click','.input-box > .icon',handlingInputType)
 
 checkDeviceWidth()
 

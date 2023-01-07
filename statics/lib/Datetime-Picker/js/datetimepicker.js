@@ -40,9 +40,9 @@
                 $s.text(lastSelected.format(arrF[0]));
                 elem.empty();
                 elem.append($s);
-                // $s = $('<img>');
-                // $s.attr('src','/statics/icon/calendar-line.svg')
-                // $s.addClass('icon');
+                $s = $('<img>');
+                $s.attr('src','/statics/icon/calendar-line.svg')
+                $s.addClass('icon');
                 elem.append($s);
                 if (settings.showTime) {
                     $s = $('<span>');

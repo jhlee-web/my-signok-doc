@@ -3,9 +3,10 @@
         <p id="doc-header__title" class="body--large font-weight--medium"></p>
         <div class="doc-header__right">
             <div class="doc-header__button-wrap">
+                <input type="text" class="input is-hide" placeholder="검색어를 입력해주세요" id="global-search-input">
                 <button type="button"
                     class="icon-button is-medium"
-                    id="tutorial">
+                    id="global-search-button">
                     <img class="icon is-large" src="/statics/icon/search-line.svg" alt="검색">
                 </button>
                 <button type="button"
@@ -92,6 +93,22 @@
     $('.doc-header__user').on('click',function(){
         $(this).parents('.doc-header__user-wrap').toggleClass('is-active')
     })
-    
+
+    // 서치버튼클릭이벤트
+    $('#global-search-button').on('click',function(){
+        $('#global-search-input').removeClass('is-hide')
+        $(this).addClass('is-hide')
+    })
+
+    // 글로벌서치 이벤트
+    $('#global-search-input').on('blur',function(){
+        $(this).addClass('is-hide')
+        $('#global-search-button').removeClass('is-hide')
+    })
+        .on('keyup',function(e){
+            if(e.keyCode===13){
+                location.href='/template/search/searchList.html'
+            }
+        })
 
 </script>

@@ -559,6 +559,7 @@ label{
 .input-box{
     position: relative;
 }
+
 .input-box__label{
     display: inline-block;
     margin-bottom: .25rem;
@@ -595,7 +596,7 @@ textarea::placeholder{
 .input.is-large{
     height: 3rem;
 }
-.input-box .icon{
+.input-box > .icon{
     position: absolute;
     right: 1em;
     top: 50%;
@@ -604,7 +605,7 @@ textarea::placeholder{
 
     cursor: pointer;
 }
-.input-box .icon:not(img[src*='eye']){
+.input-box:not(.has-select) .icon:not(img[src*='eye']){
     display: none;
 }
 
@@ -625,6 +626,19 @@ textarea::placeholder{
 .input-area.is-error .input-area__helper{
     display: block;
     visibility: visible;
+}
+
+.input-box.has-select{
+    display: inline-flex;
+    border: 1px solid var(--theme-color-400);
+    border-radius: .5em;
+}
+.input-box.has-select .input,
+.input-box.has-select .select-box{
+    border: unset;
+}
+.input-box.has-select .select-box{
+    min-width: min-content;
 }
 
 
@@ -1160,9 +1174,15 @@ html[data-theme='light'] .button--text .icon{
 }
 .list__item{
     display: inline-flex;
+    align-items: center;
     gap: .5em;
 }
-
+.badge{
+    padding: .25em .5em;
+    border-radius: 99em;
+    background: var(--theme-color-100);
+    color: var(--secondary-color-500);
+}
 
 /* width set */
 .width-100{
@@ -1515,4 +1535,8 @@ html[data-theme='light'] .button--text .icon{
 .snb{
     display: inline-flex;
     gap: 1em;
+}
+
+.snb a:hover {
+    color:var(--secondary-color-500)
 }
