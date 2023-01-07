@@ -175,9 +175,8 @@
             </div>
         <!-- </div> -->
         <script>
-            let dataTheme = localStorage.getItem('data-theme');
-            if(dataTheme == undefined || null || 'null') dataTheme = 'light'
-            $('html').attr('data-theme',dataTheme)
+            $('html').attr('data-theme','light')
+
 
             $('#add-signature').on('click',function(){
                 $(this).before(`
