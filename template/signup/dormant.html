@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <script src="/statics/js/loadHTML.js"></script>
+        <script>
+            loadHTML("/statics/include/head.html");
+        </script>
+        <title>휴면계정</title>
+    </head>
+
+    <body>
+        <main class="main main--background" id="login-template">
+            <!-- // 상단헤더 -->
+            <div class="container flex--column gap--large">
+                <div class="title-box flex-align--center">
+                    <h1 class="">
+                        <a href="/template/signup/login.html">
+                            <img src="/statics/img/logo.png" alt="로고">
+                        </a>
+                    </h1>
+                </div>
+
+                <div class="flex--column flex-align--center">
+                    <p class="body--large is-break" id="user-mail">휴면계정 활성화</p>
+                    <p class="is-remark">
+                        180일 이상 이용 내역이 없어 휴면계정으로 전환되었습니다.<br>
+                        계정 활성화를 위한 이메일 인증이 필요합니다.
+                    </p>
+                </div>
+                   
+                <!-- 이메일 -->
+                <!-- 받을 필요 없으면 삭제 -->
+                <div class="input-area">
+                    <label for="login-mail">이메일</label>
+                    <div class="input-box">
+                        <input type="text"
+                        class="input"
+                        id="login-mail"
+                        placeholder="이메일주소를 입력해주세요." required>
+                        <img class="icon" src="/statics/icon/remove-solid.svg"></img>
+                    </div>
+                    <p class="input-area__helper">메일 주소를 바르게 입력해주세요</p>
+                </div>
+                <!-- /이메일 -->
+
+                <div class="flex--column">
+                    <a type="button"
+                    class="button button--secondary is-medium"
+                    id="mail-shortcut"
+                    href="/template/signup/dormantSuccess.html">
+                        이메일 인증하기
+                    </a>
+                    <a href="/template/signup/login.html"
+                        class="button button--text is-medium">서비스로 돌아가기
+                    </a>
+                </div>
+                
+                <div class="login__image-box">
+                    <img src="https://source.unsplash.com/random" alt="이벤트배너">
+                </div>
+                
+            </div>
+           <!-- // container -->
+        </main>
+       
+        
+        <script>
+            $('html').attr('data-theme','light')
+
+            
+            
+
+        </script>
+    </body>
+    
+</html>
