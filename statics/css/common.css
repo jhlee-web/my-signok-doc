@@ -116,16 +116,16 @@ html[data-theme='dark']{
     --filter-text-600:invert(89%) sepia(0%) saturate(722%) hue-rotate(147deg) brightness(95%) contrast(88%);
     --filter-text-800:invert(100%) sepia(0%) saturate(1156%) hue-rotate(288deg) brightness(112%) contrast(90%);
 
-    --theme-color-900:#1E1E1E;
-    --theme-color-800:#252526;
-    --theme-color-700:#2C2C2E;
-    --theme-color-600:#333336;
-    --theme-color-500:#393A3E;
-    --theme-color-400:#404045;
-    --theme-color-300:#47484E;
-    --theme-color-200:#4E4F56;
-    --theme-color-100:#54555D;
-    --theme-color-50:#5C5D66;
+    --theme-color-50:#1E1E1E;
+    --theme-color-100:#252526;
+    --theme-color-200:#2C2C2E;
+    --theme-color-300:#333336;
+    --theme-color-400:#393A3E;
+    --theme-color-500:#404045;
+    --theme-color-600:#47484E;
+    --theme-color-700:#4E4F56;
+    --theme-color-800:#54555D;
+    --theme-color-900:#5C5D66;
 
     --box-shadow--3: 0 0.75rem 1.5rem 0 rgba(17,17,17,0.1);
     --box-shadow--5: 0 2rem 3rem 0 rgba(17,17,17,0.1);

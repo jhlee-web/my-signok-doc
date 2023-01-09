@@ -806,7 +806,7 @@
 
 @media all and (max-width:768px){
     .card{
-        padding: 1rem;
+        padding: 0;
     }
 
     .card__header.is-change{
