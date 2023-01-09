@@ -49,13 +49,60 @@
     transition: .35s;
     padding: 0;
 }
-.nav[data-fold="true"] *:not(.icon){
+.nav[data-fold="true"] .nav__item,
+.nav[data-fold="true"] .nav__top{
     width: 100%;
     justify-content: center;
 }
+
+/* like 다우오피스 */
+/* .nav[data-fold="true"] .is-unfold{
+    display: none
+}
+.nav[data-fold="true"]:hover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 15rem;
+    transition: width .5s;
+}
+.nav[data-fold="true"]:hover .nav__top{
+    justify-content: flex-start!important;
+}
+.nav[data-fold="true"]:hover .nav__item .is-unfold{
+    display: inline-block;
+    text-align: left;
+}
+.nav[data-fold="true"]:hover .nav__item{
+    display: inline-flex;
+    padding: 0 1em;
+    justify-content: flex-start;
+} */
+
+
+/* like 네이버웍스 */
 .nav[data-fold="true"] .is-unfold{
     display: none
 }
+
+.nav[data-fold="true"] .nav__item:hover .is-unfold{
+    position: absolute;
+    left: 100%;
+    margin-left: 1em;
+    background: var(--dim-deep);
+    padding: .5em 1em;
+    color: var(--background-color);
+    display: inline-block;
+    word-break: keep-all;
+    white-space: nowrap;
+    text-align: left;
+    border-radius: .5em;
+
+}
+.nav[data-fold="true"]:hover .nav__item{
+    position: relative;
+}
+
 
 .nav[data-fold="false"]{
     width: 15rem;
