@@ -110,6 +110,7 @@
     display: inline-flex;
     align-items: center;
     vertical-align: middle;
+    flex: 0 0 auto;
 }
 
 .table__td.flex--column{
@@ -241,17 +242,27 @@
 }
 
 .table-top__box{
-    display: flex;
-    flex-direction: row;
+    display: inline-flex;
     align-items: center;
-    min-height: 2rem;
+    min-height: 4rem;
 
     justify-content: space-between;
+    width: 100%;
 }
 
-.table-top__tab .tab__item{
-    margin-right: 1.75rem;
+.table-top__left{
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
 }
+
+#selected-top-box{
+    padding: 0 1rem;
+}
+#selected-top-box .button{
+    padding: 0;
+}
+
 @media all and (max-width:1279px){
     .table-top{
         flex-direction: column;
@@ -262,7 +273,11 @@
 @media all and (max-width:768px){
     
     .table-top__box{
-        flex-direction: column-reverse;
+        flex-direction: column;
+    }
+    .table-top__left{
+        flex-direction: column;
+        gap: 0;
     }
     
     /* [class*="table__"]:not(.table__td){
@@ -316,7 +331,7 @@
         width: 100%;
         /* justify-content: flex-end; */
     }
-    .table-top__tab {
+    .table-top__left {
         width: 100%;
     }
 
@@ -613,10 +628,12 @@
     .aside-content{
         position: absolute;
         right: 0;;
-        top: 10rem;
+        top: calc(var(--header-height ) * 2);
         max-width: max(80vw, calc(100vw - 2rem));
         height: 100%;
         background: var(--background-color);
+
+        display: none;
     }
 }
 
@@ -1213,6 +1230,11 @@
     justify-content: center;
 } */
 
+.circle-wrap{
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+}
 
 .circle__item{
     border: 1px solid var(--theme-color-400);
@@ -1231,6 +1253,20 @@
     gap: .5em;
 }
 
+
+@media all and (max-width:768px){
+    .is-empty{
+        height: unset;
+        margin: 2rem 0;
+        gap: 1rem;
+    }
+    .circle-wrap{
+        flex-direction: column;
+    }
+    .circle-wrap .icon{
+        transform: rotate(90deg);
+    }
+}
 
 
 /* file-upload lib */

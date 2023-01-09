@@ -25,37 +25,37 @@
                     <div class="main-content">
                         <!-- 상단 -->
                         <div class="table-top">
-                            <div class="flex--row is-change">
-                                <div id="" class="select-box is-small">
-                                    <div class="select-box__select">
-                                        <p>전체</p>
-                                        <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
-                                    </div>
-                                    <ul class="select-box__option">
-                                        <li selected>전체</li>
-                                        <li>완료</li>
-                                        <li>진행중</li>
-                                        <li>만료</li>
-                                    </ul>
-                                </div>
-                                <div class="round-input">
-                                    <div class="select-box">
+                            <div class="table-top__box" id="default-top-box">
+                                <div class="flex--row is-change">
+                                    <div id="" class="select-box is-small">
                                         <div class="select-box__select">
-                                            <p>서식명</p>
+                                            <p>전체</p>
                                             <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
                                         </div>
                                         <ul class="select-box__option">
-                                            <li>서식명</li>
-                                            <li>작성일</li>
-                                            <li>수정일</li>
+                                            <li selected>전체</li>
+                                            <li>완료</li>
+                                            <li>진행중</li>
+                                            <li>만료</li>
                                         </ul>
                                     </div>
-                                    <input type="text" maxlength="50"
-                                    placeholder="검색어를 입력해주세요"
-                                    class="round-input__input input">
+                                    <div class="round-input">
+                                        <div class="select-box">
+                                            <div class="select-box__select">
+                                                <p>서식명</p>
+                                                <img class="select-box__icon icon" src="/statics/icon/angle-line.svg" alt="화살표">
+                                            </div>
+                                            <ul class="select-box__option">
+                                                <li>서식명</li>
+                                                <li>작성일</li>
+                                                <li>수정일</li>
+                                            </ul>
+                                        </div>
+                                        <input type="text" maxlength="50"
+                                        placeholder="검색어를 입력해주세요"
+                                        class="round-input__input input">
+                                    </div>
                                 </div>
-                            </div>
-                            <div id="default-top-box" class="table-top__box">
                                 <button class="button button--secondary is-pc">
                                     <img src="/statics/icon/plus-line.svg"
                                     alt="서식 작성하기" class="icon">
@@ -63,7 +63,7 @@
                                 </button>
                             </div>
                             <div id="selected-top-box" class="table-top__box is-hide">
-                                <div class="table-top__tab tab">
+                                <div class="table-top__left tab">
                                     <p class="font-weight--medium">
                                         선택한 문서
                                         <span id="selected-count" class="">(1)</span>
@@ -109,7 +109,7 @@
                                 </button>
                             </div>
                             
-                            <div class="flex--row">
+                            <div class="circle-wrap">
                                 <div class="circle__item">
                                     <p class="font-weight--medium">서식 가져오기</p>
                                     <p class="is-remark">Lorem ipsum dolor

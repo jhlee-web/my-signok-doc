@@ -1279,11 +1279,12 @@ html[data-theme='light'] .button--text .icon{
     display: flex;
     align-items: center;
     gap: .5rem;
+    flex: 0 0 auto;
 }
 .header-step__item{
     color: var(--text-color-500);
 }
-.header-step__item span{
+.header-step__item .header-step__number{
     background: var(--text-color-500);
     color: var(--text-color-800);
 
@@ -1296,7 +1297,7 @@ html[data-theme='light'] .button--text .icon{
     line-height: 2rem;
     border-radius: 999%;
 }
-.header-step__item.is-active span{
+.header-step__item.is-active .header-step__number{
     background: var(--background-color);
     color: var(--text-color-800);
     border: unset;

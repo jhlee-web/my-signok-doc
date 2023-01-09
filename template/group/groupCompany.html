@@ -40,65 +40,70 @@
                         </div>
                         <div class="full-grid right-double">
                             <div class="card">
-                                <div class="card__header">
-                                    <p class="is-remark">조직도</p>
-                                    <button type="button" class="button button--text is-medium"
-                                    id="add-group">
-                                        <img src="/statics/icon/plus-line.svg" class="icon" alt="부서추가">
-                                        부서추가
-                                    </button>
+                                <div class="card__inner">
+                                    <div class="card__header">
+                                        <p class="is-remark">조직도</p>
+                                        <button type="button" class="button button--text is-medium"
+                                        id="add-group">
+                                            <img src="/statics/icon/plus-line.svg" class="icon" alt="부서추가">
+                                            부서추가
+                                        </button>
+                                    </div>
+                                    <div class="round-input">
+                                        <input type="text"
+                                        class="round-input__input input"
+                                        id="group-search-input"
+                                        placeholder="부서를 검색해주세요."
+                                        maxlength="64">
+                                    </div>
+        
+                                    <div id="jstree"></div>
                                 </div>
-                                <div class="round-input">
-                                    <input type="text"
-                                    class="round-input__input input"
-                                    id="group-search-input"
-                                    placeholder="부서를 검색해주세요."
-                                    maxlength="64">
-                                </div>
-    
-                                <div id="jstree"></div>
-                                
                             </div>
                                 
                             <div class="card" id="mobile-aside-container">
-                                <div class="card__header">
-                                    <p class="is-remark">부서미지정</p>
-                                    <p class="is-remark">생성일:<span>2022-10-14</span></p>
+                                <div class="card__inner">
+                                    <div class="card__header">
+                                        <p class="is-remark">부서미지정</p>
+                                        <p class="is-remark">생성일: <span>2022-10-14</span></p>
+                                    </div>
+    
+                                    <div class="is-empty">
+                                        <div class="flex--column flex-align--center
+                                        ">
+                                            <img class="icon is-large"
+                                            src="/statics/icon/exclamation-triangle-line.svg"
+                                            alt="아직 소속된 멤버가 없습니다">
+                                            <p>아직 소속된 멤버가 없습니다</p>
+                                            <button type="button" class="button button--secondary is-medium"
+                                            id="invite-member" >멤버 초대하기</button>
+                                        </div>
+                                    </div>
+    
+                                    <div class="table">
+                                        <div class="table__colgroup">
+                                            <div class="table__col" style="width:auto"></div>
+                                            <div class="table__col" style="width:auto"></div>
+                                            <div class="table__col" style="width:15%"></div>
+                                            <div class="table__col" style="width:15%"></div>
+                                        </div>
+                                        <div class="table__thead">
+                                            <ul class="table__tr">
+                                                <li class="table__td">이름</li>
+                                                <li class="table__td">이메일</li>
+                                                <li class="table__td">역할</li>
+                                                <li class="table__td">부서</li>
+                                            </ul>
+                                        </div>
+                                        <div class="table__tbody">
+                                        </div>
+                                    </div>
+                                    <!-- /table -->
                                 </div>
-
-                                <div class="is-empty">
-                                    <div class="flex--column flex-align--center
-                                    ">
-                                        <img class="icon is-large"
-                                        src="/statics/icon/exclamation-triangle-line.svg"
-                                        alt="아직 소속된 멤버가 없습니다">
-                                        <p>아직 소속된 멤버가 없습니다</p>
-                                        <button type="button" class="button button--secondary is-medium"
-                                        id="invite-member" >멤버 초대하기</button>
-                                    </div>
-                                </div>
-
-                                <div class="table">
-                                    <div class="table__colgroup">
-                                        <div class="table__col" style="width:auto"></div>
-                                        <div class="table__col" style="width:auto"></div>
-                                        <div class="table__col" style="width:15%"></div>
-                                        <div class="table__col" style="width:15%"></div>
-                                    </div>
-                                    <div class="table__thead">
-                                        <ul class="table__tr">
-                                            <li class="table__td">이름</li>
-                                            <li class="table__td">이메일</li>
-                                            <li class="table__td">역할</li>
-                                            <li class="table__td">부서</li>
-                                        </ul>
-                                    </div>
-                                    <div class="table__tbody">
-                                    </div>
-                                </div>
-                                <!-- /table -->
                             </div>
+                            <!-- /card -->
                         </div>
+                        <!-- /grid -->
                     </div>
                     <!-- /main-content -->
                 </div>

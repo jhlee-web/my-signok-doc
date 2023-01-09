@@ -103,7 +103,7 @@
     // 글로벌서치 이벤트
     $('#global-search-input').on('blur',function(){
         $(this).addClass('is-hide')
-        $('#global-search-button').removeClass('is-hide')
+        $('#global-search-button').removeClass('is-hide').focus()
     })
         .on('keyup',function(e){
             if(e.keyCode===13){

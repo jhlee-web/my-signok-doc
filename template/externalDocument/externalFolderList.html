@@ -25,58 +25,59 @@
                     <div class="main-content">
                         <!-- 상단 2 -->
                         <div class="table-top">
-                            <div class="flex--row is-change">
-                                <div id="" class="select-box is-small">
-                                    <div class="select-box__select">
-                                        <p>전체</p>
-                                        <img class="select-box__icon icon"
-                                        src="/statics/icon/angle-line.svg" alt="화살표">
-                                    </div>
-                                    <ul class="select-box__option">
-                                        <li selected>전체</li>
-                                        <li>완료</li>
-                                        <li>진행중</li>
-                                        <li>만료</li>
-                                    </ul>
-                                </div>
-                                <div class="round-input">
-                                    <div class="select-box">
+                            <div class="table-top__box" id="default-top-box">
+                                <div class="flex--row is-change">
+                                    <div id="" class="select-box is-small">
                                         <div class="select-box__select">
                                             <p>전체</p>
-                                            <img class="select-box__icon icon" 
+                                            <img class="select-box__icon icon"
                                             src="/statics/icon/angle-line.svg" alt="화살표">
                                         </div>
                                         <ul class="select-box__option">
-                                            <li selected>문서명</li>
-                                            <li>옵션2</li>
-                                            <li>옵션3</li>
+                                            <li selected>전체</li>
+                                            <li>완료</li>
+                                            <li>진행중</li>
+                                            <li>만료</li>
                                         </ul>
                                     </div>
-                                    <input type="text" maxlength="50"
-                                    placeholder="검색어를 입력해주세요"
-                                    class="round-input__input input">
+                                    <div class="round-input">
+                                        <div class="select-box">
+                                            <div class="select-box__select">
+                                                <p>전체</p>
+                                                <img class="select-box__icon icon" 
+                                                src="/statics/icon/angle-line.svg" alt="화살표">
+                                            </div>
+                                            <ul class="select-box__option">
+                                                <li selected>문서명</li>
+                                                <li>옵션2</li>
+                                                <li>옵션3</li>
+                                            </ul>
+                                        </div>
+                                        <input type="text" maxlength="50"
+                                        placeholder="검색어를 입력해주세요"
+                                        class="round-input__input input">
+                                    </div>
                                 </div>
+                                <button class="button button--secondary is-pc"
+                                onclick="location.href='/template/externalDocument/externalDocumentUpload.html'">
+                                    <img src="/statics/icon/plus-line.svg"
+                                    alt="외부계약서 추가하기" class="icon">
+                                    외부계약서 추가하기
+                                </button>
                             </div>
-                            
-                            <button class="button button--secondary is-pc"
-                            onclick="location.href='/template/externalDocument/externalDocumentUpload.html'">
-                                <img src="/statics/icon/plus-line.svg"
-                                alt="외부계약서 추가하기" class="icon">
-                                외부계약서 추가하기
-                            </button>
 
                             <div id="selected-top-box" class="table-top__box is-hide">
-                                <div class="table-top__tab tab">
+                                <div class="table-top__left tab">
                                     <p class="font-weight--medium">
                                         선택한 문서
                                         <span id="selected-count" class="">(1)</span>
                                     </p>
-                                    <button type="button" class="button button--text"
+                                    <!-- <button type="button" class="button button--text"
                                     id="document-move">
                                         <img src="/statics/icon/folder-line.svg"
                                         alt="폴더 이동하기" class="icon">
                                         폴더 이동하기
-                                    </button>
+                                    </button> -->
                                     <button type="button" class="button button--text"
                                     id="document-delete">
                                         <img src="/statics/icon/trash-line.svg"
@@ -497,8 +498,13 @@
             $(document).on('click','.table__tr',makeAsideContent)
 
             function makeAsideContent(e){
-                location.href='/template/externalDocument/externalDocumentList.html'
+                console.log(e.currentTarget)
+                e.target.classList.contains('checkbox')?
+                true : location.href='/template/externalDocument/externalDocumentList.html'
+
                 return false;
+
+                
 
                 // thead 영역일 경우 aisde 생성 안함
                 if($(this).parent('.table__thead').length > 0){
