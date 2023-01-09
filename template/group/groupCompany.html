@@ -81,18 +81,12 @@
                                     </div>
     
                                     <div class="table">
-                                        <div class="table__colgroup">
-                                            <div class="table__col" style="width:auto"></div>
-                                            <div class="table__col" style="width:auto"></div>
-                                            <div class="table__col" style="width:15%"></div>
-                                            <div class="table__col" style="width:15%"></div>
-                                        </div>
                                         <div class="table__thead">
                                             <ul class="table__tr">
-                                                <li class="table__td">이름</li>
-                                                <li class="table__td">이메일</li>
-                                                <li class="table__td">역할</li>
-                                                <li class="table__td">부서</li>
+                                                <li class="table__td width-40">이름</li>
+                                                <li class="table__td width-40">이메일</li>
+                                                <li class="table__td width-10">역할</li>
+                                                <li class="table__td width-10">부서</li>
                                             </ul>
                                         </div>
                                         <div class="table__tbody">
@@ -179,7 +173,6 @@
                     .done(function(res) {
                         randomNum = Math.floor(Math.random() * 10)
                         $('.table__tbody .table__tr').remove();
-                        randomNum=0
                         
                         if(randomNum > 0){
                             $('.is-empty').hide();
@@ -203,16 +196,16 @@
                         for (let i = 0; i<arr[0].length; i++){
                             html = '';
                             html += `<div class="table__tr">
-                                <div class="table__td">
+                                <div class="table__td width-40">
                                     ${arr[0][i].name}
                                 </div>
-                                <div class="table__td is-remark">
+                                <div class="table__td is-remark width-40">
                                     ${arr[0][i].email}
                                 </div>
-                                <div class="table__td is-remark">
+                                <div class="table__td is-remark width-10">
                                     ${arr[0][i].favoriteFruit}
                                 </div>
-                                <div class="table__td is-remark">
+                                <div class="table__td is-remark width-10">
                                     ${arr[0][i].company}
                                 </div>
                             </div>`
