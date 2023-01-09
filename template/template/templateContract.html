@@ -21,17 +21,32 @@
                     <ul class="flex--row header-step">
                         <li class="header-step__item">
                             <a href="/template/template/templateSignature.html">
-                                <span>1</span>서명자 정보 입력
+                                <span class="header-step__number">
+                                    1
+                                </span>
+                                <span class="header-step__title">
+                                    서명자 정보 입력
+                                </span>
                             </a>
                         </li>
                         <li class="header-step__item">
                             <a href="javascript:void(0)">
-                                <span>2</span>서명 영역 지정
+                                <span class="header-step__number">
+                                    2
+                                </span>
+                                <span class="header-step__title">
+                                    서명 영역 지정
+                                </span>
                             </a>
                         </li>
                         <li class="header-step__item is-active">
                             <a href="javascript:void(0)">
-                                <span>3</span>템플릿 설정
+                                <span class="header-step__number">
+                                    3
+                                </span>
+                                <span class="header-step__title">
+                                    템플릿 설정
+                                </span>
                             </a>
                         </li>
                     </ul>
@@ -69,12 +84,10 @@
                                 </div>
                             </div>
                             <div class="card__inner">
-                                <p class="is-remark">서명 기간 </p>
-                                <div class="control-form">
-                                    <p>서명 발송일로부터</p>
-                                    <input type="number" class="input is-narrow" maxlength="365"
+                                <div class="card__header">
+                                    <p class="is-remark">계약 기간 (필수)</p>
+                                    <input type="number" class="input is-small is-narrow" maxlength="365"
                                     value="14">
-                                    <p>일 동안 서명을 받습니다.</p>
                                 </div>
                                 <p class="is-remark text-align--right">서명 만료일: <span>2022-12-31</span></p>
                             </div>
@@ -180,7 +193,7 @@
                                                     <label for="">바로발송</label>
                                                 </div>
                                             </div>
-                                            <div class="flex--row">
+                                            <div class="flex--row is-change">
                                                 <div class="control-form">
                                                     <input type="radio" class="radio" name="submit-type">
                                                     <label for="">예약발송</label>
@@ -420,7 +433,7 @@
                         context = data[i].phone.replaceAll('+1','')
                     }
 
-                    $('.dynamic-badge-set').append(`<li><span>${context}<img src="/statics/icon/close-line.svg" class="icon"></span></li>`)
+                    $('.dynamic-badge-set').append(`<li><span class="is-break">${context}<img src="/statics/icon/close-line.svg" class="icon"></span></li>`)
 
                 }
             }

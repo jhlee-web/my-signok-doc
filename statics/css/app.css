@@ -313,7 +313,8 @@
         padding: .5rem;
         border-bottom: 0;
     }
-    .table__td.is-left{
+    
+    .table__td.is-left:not(.width-100){
         width: 80%;
         display: flex;
         flex-direction: column;
