@@ -43,14 +43,14 @@
     padding: 0 .5em;
 }
 
-.nav[data-fold="true"]{
+html[data-fold="true"] .nav{
     width: 3rem;
     transform-origin: right;
     transition: .35s;
     padding: 0;
 }
-.nav[data-fold="true"] .nav__item,
-.nav[data-fold="true"] .nav__top{
+html[data-fold="true"] .nav__item,
+html[data-fold="true"] .nav__top{
     width: 100%;
     justify-content: center;
 }
@@ -81,11 +81,11 @@
 
 
 /* like 네이버웍스 */
-.nav[data-fold="true"] .is-unfold{
+html[data-fold="true"] .is-unfold{
     display: none
 }
 
-.nav[data-fold="true"] .nav__item:hover .is-unfold{
+html[data-fold="true"] .nav__item:hover .is-unfold{
     position: absolute;
     left: 100%;
     margin-left: 1em;
@@ -99,18 +99,18 @@
     border-radius: .5em;
 
 }
-.nav[data-fold="true"]:hover .nav__item{
+html[data-fold="true"]:hover .nav__item{
     position: relative;
 }
 
 
-.nav[data-fold="false"]{
+html[data-fold="false"] .nav{
     width: 15rem;
     transform-origin: right;
     transition: .35s;
 }
-.nav[data-fold="false"] .button--primary,
-.nav[data-fold="false"] .nav__name{
+html[data-fold="false"] .nav .button--primary,
+html[data-fold="false"] .nav__name{
     display: block
 }
 
@@ -139,7 +139,7 @@
 }
 
 
-.nav[data-fold="true"] .nav__list{
+.html[data-fold="true"] .nav__list{
     padding: 0;
 }
 
@@ -150,7 +150,7 @@
 
 
 @media all and (max-width:768px){
-    .nav, .nav[data-fold="true"]{
+    .nav, html[data-fold="true"] .nav{
         min-height: unset;
         height: auto;
         top: 0;
@@ -158,11 +158,11 @@
         padding: 0 1rem;
     }
 
-    .nav[data-fold="true"]{
+    .html[data-fold="true"] .nav{
         width: 100%;
         
     }
-    .nav[data-fold="false"]{
+    .html[data-fold="false"] .nav{
         width: 100%;
         height: auto;
         padding: 0 1rem;
@@ -181,7 +181,7 @@
         /* height: 5rem; */
     }
 
-    .nav[data-fold="true"] *:not(.icon) {
+    html[data-fold="true"] .nav *:not(.icon) {
         justify-content: flex-start;
     }
 
@@ -194,11 +194,9 @@
     }
 
 
-    .nav[data-fold="true"] .nav__list{
+    html[data-fold="true"] .nav__list{
         display: none;
     }
-
-
 
     .nav__middle{
         flex-direction: column;
@@ -212,7 +210,7 @@
 }
 
 @media all and (min-width:769px) and (max-width:1279px){
-    .nav, .nav[data-fold="true"]{
+    .nav, html[data-fold="true"] .nav{
         min-height: unset;
         height: auto;
         top: 0;
@@ -230,7 +228,7 @@
         /* height: 5rem; */
     }
 
-    .nav[data-fold="true"] *:not(.icon) {
+    html[data-fold="true"] .nav *:not(.icon) {
         justify-content: flex-start;
     }
 
@@ -243,15 +241,15 @@
     }
 
     
-    .nav[data-fold="true"]{
+    html[data-fold="true"]{
         width: 100%;
        
     }
-    .nav[data-fold="true"] .nav__list{
+    html[data-fold="true"] .nav__list{
         display: none;
     }
 
-    .nav[data-fold="false"]{
+    html[data-fold="false"]{
         width: 100%;
         height: auto;
         padding: 0 2rem;
