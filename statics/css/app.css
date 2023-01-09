@@ -432,7 +432,7 @@
     transform: translate(-50%, -50%);
 
     border-radius: 1rem;
-    overflow: hidden;
+    /* overflow: hidden; */
 
     border: 1px solid var(--theme-color-400);
     box-shadow: var(--box-shadow--5);
@@ -480,6 +480,10 @@
     padding: 2rem;
     /* max-height:27.5rem; */
     overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow: visible;
 }
 /* 
 .modal__content .tab-wrap{
@@ -534,6 +538,9 @@
 .modal__footer{
     display: inline-flex;
     height: 3.5rem;
+    border-bottom-right-radius: .5em;
+    border-bottom-left-radius: .5em;
+    overflow: hidden;
 }
 .modal__footer button{
     width: 100%;
@@ -1126,6 +1133,8 @@
 
     color: var(--text-color-100);
     position: absolute;
+
+    z-index: 1;
 }
 .tooltip__modal::before{
     content: '';

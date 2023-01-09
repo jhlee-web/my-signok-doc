@@ -1350,7 +1350,7 @@ html[data-theme='light'] .button--text .icon{
     align-items: center;
     padding: 0 2rem;
 
-    border-top: 1px solid var(--theme-color-400);
+    /* border-top: 1px solid var(--theme-color-400); */
 }
 .modal__header{
     height: var(--header-height);
