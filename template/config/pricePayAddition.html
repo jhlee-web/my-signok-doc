@@ -57,16 +57,24 @@
                                     <p class="is-remark">
                                         주문상품정보
                                     </p>
-                                    <div class="card__header is-change">
-                                        <div class="flex--row gap--sm">
-                                            <img src="/statics/icon/document-line.svg"
-                                            alt="" class="icon">
-                                            <p>대량/링크/공문</p>
+                                    <div class="card__body">
+                                        <div class="card__header is-change">
+                                            <div class="icon-with-text">
+                                                <img src="/statics/icon/document-line.svg"
+                                                alt="" class="icon">
+                                                <p>대량/링크/공문</p>
+                                            </div>
+                                            <input type="number" class="input is-narrow" value="30"> 
                                         </div>
-                                        <input type="number" class="input is-narrow" value="30"> 
+                                        <p class="is-remark">상품은 10개 단위로 구매할 수 있습니다.</p>
                                     </div>
+
+                                    
                                 </div>
                                 <div class="card__inner">
+                                    <p class="is-remark">
+                                        쿠폰사용
+                                    </p>
                                     <ul class="basic-list">
                                         <li class="list__item">
                                             <div class="control-form">
@@ -130,23 +138,17 @@
                                 <div class="card__inner">
                                     <p class="is-remark">결제방법</p>
                                     <div class="flex--column gap--sm">
-                                        <div class="control-form width-20">
+                                        <div class="control-form">
                                             <input type="radio"class="radio" name="paymentType" checked id="payment-card">
                                             <label for="">카드결제</label>
                                         </div>
-                                        <div class="flex--row">
-                                            <div class="control-form width-20">
-                                                <input type="radio"class="radio" name="paymentType" id="payment-a">
-                                                <label for="payment-a">실시간계좌이체</label>
-                                            </div>
-                                            <input type="number"class="input" placeholder="01-123-45678">
+                                        <div class="control-form">
+                                            <input type="radio"class="radio" name="paymentType" id="payment-a">
+                                            <label for="payment-a">실시간계좌이체</label>
                                         </div>
-                                        <div class="flex--row">
-                                            <div class="control-form width-20">
-                                                <input type="radio"class="radio" name="paymentType" id="payment-b">
-                                                <label for="payment-b">가상계좌이체</label>
-                                            </div>
-                                            <input type="number"class="input" placeholder="01-123-45678">
+                                        <div class="control-form">
+                                            <input type="radio"class="radio" name="paymentType" id="payment-b">
+                                            <label for="payment-b">가상계좌이체</label>
                                         </div>
                                     </div>
                                 </div>

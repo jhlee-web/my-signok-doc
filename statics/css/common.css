@@ -695,7 +695,7 @@ textarea::placeholder{
 
     display: grid;
     place-items: center;
-    border: 1px solid var(--theme-color-400);
+    border: 1px solid var(--theme-color-600);
 }
 .radio::before{
     content: '';
@@ -1144,6 +1144,9 @@ html[data-theme='light'] .button--text .icon{
         width: 100%;
         overflow-x: scroll;
         flex-wrap: nowrap;
+    }
+    .tab::-webkit-scrollbar{
+        display: none;
     }
 }
 

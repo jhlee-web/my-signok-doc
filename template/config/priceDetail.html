@@ -69,43 +69,64 @@
                                             </div>
                                         </div>
                                         <div class="table" id="price-list">
+                                            <div class="table__thead">
+                                                <div class="table__tr">
+                                                    <div class="table__td width-40">
+                                                        요금제
+                                                    </div>
+                                                    <div class="table__td width-20">
+                                                        금액
+                                                    </div>
+                                                    <div class="table__td width-20">
+                                                        서명건수
+                                                    </div>
+                                                    <div class="table__td width-20">
+                                                        대량/링크/공문
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="table__tbody">
-                                                <div class="table__tr" id="price-select-area">
-                                                    <div class="table__td width-100"></div>
-                                                    <div data-membership="Basic" class="table__td width-100">
-                                                        <span >베이직</span>
+                                                <div class="table__tr">
+                                                    <div class="table__td width-40">
+                                                        베이직
                                                     </div>
-                                                    <div data-membership="Business" class="table__td width-100">
-                                                        <span>비즈니스</span>
+                                                    <div class="table__td width-20">
+                                                        8,800원
                                                     </div>
-                                                    <div data-membership="Premium" class="table__td width-100">
-                                                        <span class="">프리미엄</span>
+                                                    <div class="table__td width-20">
+                                                        10건
+                                                    </div>
+                                                    <div class="table__td width-20">
+                                                        미제공
                                                     </div>
                                                 </div>
                                                 <div class="table__tr" >
-                                                    <div class="table__td width-100 is-remark">요금</div>
-                                                    <div class="table__td width-100"
-                                                    data-membership="Basic">8,800원</div>
-                                                    <div class="table__td width-100" data-membership="Business">33,000원</div>
-                                                    <div class="table__td width-100" data-membership="Premium">66,000원</div>
+                                                    <div class="table__td width-40">
+                                                        비즈니스
+                                                    </div>
+                                                    <div class="table__td width-20">
+                                                        33,000원
+                                                    </div>
+                                                    <div class="table__td width-20">
+                                                        무제한
+                                                    </div>
+                                                    <div class="table__td width-20">
+                                                        미제공
+                                                    </div>
                                                 </div>
                                                 <div class="table__tr">
-                                                    <div class="table__td width-100 is-remark">서명요청</div>
-                                                    <div class="table__td width-100"
-                                                    data-membership="Basic">10건</div>
-                                                    <div class="table__td width-100"
-                                                    data-membership="Business">무제한</div>
-                                                    <div class="table__td width-100"
-                                                    data-membership="Premium">무제한</div>
-                                                </div>
-                                                <div class="table__tr">
-                                                    <div class="table__td width-100 is-remark">대량/링크/공문</div>
-                                                    <div class="table__td width-100"
-                                                    data-membership="Basic">미제공</div>
-                                                    <div class="table__td width-100"
-                                                    data-membership="Business">미제공</div>
-                                                    <div class="table__td width-100"
-                                                    data-membership="Premium">200건</div>
+                                                    <div class="table__td width-40">
+                                                        프리미엄
+                                                    </div>
+                                                    <div class="table__td width-20">
+                                                        66,000원
+                                                    </div>
+                                                    <div class="table__td width-20">
+                                                        무제한
+                                                    </div>
+                                                    <div class="table__td width-20">
+                                                        200건
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -165,21 +186,9 @@
        
         <script src="/statics/js/common.js"></script>
         <script>
-
-            // 클릭이벤트넣어야함
-            $('#price-select-area .table__td').on('click',function(e){
-                $('.table__td').removeClass('is-active is-primary')
-
-                let value = $(this).attr('data-membership')
-                $('.table__td[data-membership="'+value+'"]').addClass('is-active is-primary')
-
-                location.href='/template/config/pricePayMembership.html?membersip='+value
+            $('.table__td').on('click',function(){
+                location.href='/template/config/pricePayMembership.html'
             })
-
-
-            let parsedTestData = JSON.parse(localStorage.getItem('testData')).user_product
-            $('.table__td[data-membership="'+parsedTestData+'"]').addClass('is-active is-primary')
-            
         </script>
 
     </body>

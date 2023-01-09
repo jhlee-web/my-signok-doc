@@ -29,7 +29,6 @@
 
 /* nav */
 .nav{
-    background-color: var(--text-color-800);
     min-height: 100vh;
 
     display: flex;
@@ -39,6 +38,13 @@
     z-index: 1;
     width: 0;
 }
+html[data-theme="light"] .nav{
+    background-color: var(--text-color-800);
+}
+html[data-theme="dark"] .nav{
+    background-color: var(--text-color-100);
+}
+
 .nav[data-fold="true"]{
     width: 3rem;
     transform-origin: right;
@@ -64,7 +70,6 @@
 
 .nav__top{
     height: var(--header-height);
-    border-bottom:1px solid var(--text-color-600);
     padding: 0 1em;
 
     display: inline-flex;
@@ -72,6 +77,15 @@
 
     justify-content: space-between;
     height: var(--header-height);
+}
+
+html[data-theme="light"] .nav__top{
+    border-bottom:1px solid var(--text-color-600);
+
+}
+html[data-theme="dark"] .nav__top{
+    border-bottom:1px solid var(--text-color-400);
+    
 }
 
 .nav__middle{
@@ -221,22 +235,45 @@
     padding: 0 1rem;
 }
 .nav__category{
-    color: var(--text-color-400);
     font-size: var(--text-small);
 }
+html[data-theme="light"] .nav__category{
+    color: var(--text-color-400);
+}
+html[data-theme="dark"] .nav__category{
+    color: var(--text-color-600);
+}
+
 .nav__item{
     width: 100%;
     gap: 1rem;
     cursor: pointer;
 
+}
+
+html[data-theme="light"] .nav__item{
     color: var(--text-color-400);
 }
-.nav__item.has-border{
+html[data-theme="dark"] .nav__item{
+    color: var(--text-color-600);
+}
+
+html[data-theme="light"] .nav__item.has-border{
     border-bottom: 1px solid var(--text-color-600);
 }
+html[data-theme="dark"] .nav__item.has-border{
+    border-bottom: 1px solid var(--text-color-400);
+}
+
 .nav__item:hover{
-    background-color: var(--text-color-600);
     transition: .3s;
+}
+
+html[data-theme="light"] .nav__item:hover{
+    background-color: var(--text-color-700);
+}
+html[data-theme="dark"] .nav__item:hover{
+    background-color: var(--text-color-200);
 }
 
 .nav__item__icon{
@@ -249,12 +286,23 @@
     filter: var(--filter-background)
 }
 
-.nav__middle .is-remark{
+html[data-theme="light"] .nav__middle .is-remark{
     color: var(--text-color-400);
+
 }
-.nav__middle span{
-    color: var(--background-color);
+html[data-theme="dark"] .nav__middle .is-remark{
+    color: var(--text-color-600);
+
 }
+html[data-theme="light"] .nav__middle span{
+    color: var(--text-color-100);
+
+}
+html[data-theme="dark"] .nav__middle span{
+    color: var(--text-color-900);
+
+}
+
 
 
 /* main */
