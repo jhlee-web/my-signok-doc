@@ -137,7 +137,7 @@
                                 <div class="card tab-container" data-tab="mail">
                                     <div class="card__inner">
                                         <!-- /tab-wrap -->
-                                        <div class="card__header">
+                                        <div class="card__header is-change">
                                             <p class="is-remark">
                                                 계약을 통해 발송되는 이메일 양식을 기업의 이미지에 맞게 변경할 수 있습니다.
                                             </p>
@@ -145,29 +145,81 @@
                                         </div>
                                         <div class="flex--row flex-align--start width-100">
                                             <ul class="basic-list width-50">
-                                                <li class="list__item">
-                                                    <p class="is-remark">로고 이미지</p>
+                                                <li class="list__item is-change">
+                                                    <p class="is-remark width-20">발신자명</p>
+                                                    <input type="text"  class="input width-80">
                                                 </li>
-                                                <li class="list__item">
-                                                    <p class="is-remark">로고 링크</p>
+                                                <li class="list__item is-change">
+                                                    <p class="is-remark width-20">로고 이미지</p>
+                                                    <div class="is-image file-box">
+                                                        <div class="flex--row is-change">
+                                                            <div id="thumbnail-logo"class="file-box__thumbnail">
+                                                                <img src="/statics/img/logo.png" alt="기본 로고">
+                                                            </div>
+                                                            <p class="is-remark">
+                                                                200px * 40px
+                                                                <br>
+                                                                JPG, GIF, PNG 형식 파일
+                                                            </p>
+                                                        </div>
+                                                        
+                                                        <div class="flex--row gap--sm">
+                                                            <button type="button" class="button button--outline is-small">
+                                                                <img src="/statics/icon/angle-down.svg" alt="파비콘 이미지 찾기" class="icon">
+                                                                원래대로
+                                                            </button>
+                                                            <label for="file-logo" class="file-box__label button button--secondary is-small">
+                                                                <img src="/statics/icon/angle-down.svg" alt="파비콘 이미지 찾기" class="icon">
+                                                                파일찾기
+                                                            </label>
+                                                            <input type="file" id="file-logo" class="file-box__file">
+                                                        </div>
+                                                    </div>
+
                                                 </li>
-                                                <li class="list__item">
-                                                    <p class="is-remark">하이퍼링크</p>
+                                                <li class="list__item is-change">
+                                                    <p class="is-remark width-20">하이퍼링크</p>
+                                                    <input type="text"  class="input width-80">
+
                                                 </li>
-                                                <li class="list__item">
-                                                    <p class="is-remark">메일 배경색</p>
+                                                <li class="list__item is-change">
+                                                    <p class="is-remark width-20">메일 배경색</p>
+                                                    <div class="input control-form width-80">
+                                                        <input type="color"  class=""id="mail-background-color"
+                                                        value="#EE3649">
+                                                        <label for="mail-background-color"
+                                                        class="width-100">#EE3649</label>
+                                                    </div>
                                                 </li>
-                                                <li class="list__item">
-                                                    <p class="is-remark">본문 배경색</p>
+                                                <li class="list__item is-change">
+                                                    <p class="is-remark width-20">본문 배경색</p>
+                                                    <div class="input control-form width-80">
+                                                        <input type="color"  class=""id="mail-body-color"
+                                                        value="#EE3649">
+                                                        <label for="mail-body-color"
+                                                        class="width-100">#EE3649</label>
+                                                    </div>
                                                 </li>
-                                                <li class="list__item">
-                                                    <p class="is-remark">버튼 색상</p>
+                                                <li class="list__item is-change">
+                                                    <p class="is-remark width-20">버튼 색상</p>
+                                                    <div class="input control-form width-80">
+                                                        <input type="color"  class=""id="mail-button-color"
+                                                        value="#EE3649">
+                                                        <label for="mail-button-color"
+                                                        class="width-100">#EE3649</label>
+                                                    </div>
                                                 </li>
-                                                <li class="list__item">
-                                                    <p class="is-remark">버튼 글자 색상</p>
+                                                <li class="list__item is-change">
+                                                    <p class="is-remark width-20">버튼 글자 색상</p>
+                                                    <div class="input control-form width-80">
+                                                        <input type="color"  class=""id="mail-button-text-color"
+                                                        value="#EE3649">
+                                                        <label for="mail-button-text-color"
+                                                        class="width-100">#EE3649</label>
+                                                    </div>
                                                 </li>
                                             </ul>
-                                            <div class="width-50">
+                                            <div class="width-50 is-pc">
                                                 <img class="width-100 "src="http://source.unsplash.com/random">
                                             </div>
                                         </div>
@@ -180,7 +232,7 @@
                                 <div class="card is-hide tab-container" data-tab="kakao">
                                     <div class="card__inner">
                                         <!-- /tab-wrap -->
-                                        <div class="card__header">
+                                        <div class="card__header is-change">
                                             <p class="is-remark">계약을 통해 발송되는 카카오 알림톡 양식을 기업의 이미지에 맞게 변경할 수 있습니다.</p>
                                             <button type="button" class="button button--text">수정하기</button>
                                         </div>
@@ -249,6 +301,12 @@
                 $(this).addClass('is-active')
                 $('.tab-container').addClass('is-hide')
                 $('.tab-container[data-tab='+target+']').removeClass('is-hide')
+            })
+
+            // 컬러피커 선택 후 label text 바뀌는 이벤트
+            $('input[type="color"]').on('change',function(){
+                console.log($(this).val())
+                $(this).siblings('label').text($(this).val())
             })
         </script>
     </body>
