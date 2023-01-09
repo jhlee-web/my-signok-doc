@@ -653,12 +653,12 @@ textarea::placeholder{
 
     display: grid;
     place-items: center;
-    border: 1px solid var(--theme-color-400);
+    border: 1px solid var(--theme-color-600);
 }
 .radio:hover,.checkbox:hover{
     transition: .3s;
     /* background: var(--theme-color-50); */
-    border: 1px solid var(--text-color-600);
+    border: 1px solid var(--text-color-900);
 }
 .checkbox::before{
     content: '';
