@@ -160,21 +160,24 @@
                     for (let i = 0; i<arr[0].length; i++){
                         html = '';
                         html += `<div class="table__tr width-100">
-                            <div class="table__td width-20">
+                            <div class="table__td is-left width-100">
+                                <div class="table__td width-20">
                                 ${arr[0][i].name}
+                                </div>
+                                <div class="table__td is-remark width-40">
+                                    ${arr[0][i].email}
+                                </div>
+                                <div class="table__td is-remark width-15">
+                                    ${arr[0][i].favoriteFruit}
+                                </div>
+                                <div class="table__td is-remark width-15">
+                                    ${arr[0][i].company}
+                                </div>
+                                <div class="table__td is-remark width-10">
+                                    ${arr[0][i].company}
+                                </div>
                             </div>
-                            <div class="table__td is-remark width-40">
-                                ${arr[0][i].email}
-                            </div>
-                            <div class="table__td is-remark width-15">
-                                ${arr[0][i].favoriteFruit}
-                            </div>
-                            <div class="table__td is-remark width-15">
-                                ${arr[0][i].company}
-                            </div>
-                            <div class="table__td is-remark width-10">
-                                ${arr[0][i].company}
-                            </div>
+                            
                         </div>`
                         $('.table__tbody').append(html)
                     }

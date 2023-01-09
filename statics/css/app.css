@@ -314,11 +314,13 @@
         border-bottom: 0;
     }
     
-    .table__td.is-left:not(.width-100){
-        width: 80%;
+    .table__td.is-left{
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+    }
+    .table__td.is-left:not(.width-100){
+        width: 80%;
         border-right: 1px solid var(--theme-color-400);
     }
     .table__td.is-left .table__td{

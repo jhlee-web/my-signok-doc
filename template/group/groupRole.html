@@ -71,12 +71,15 @@
                                         <div class="table__td width-20">역할명</div>
                                         <div class="table__td width-70">역할설명</div>
                                         <div class="table__td width-10">
-                                            <img src="/statics/icon/user-line.svg" class="icon">
-                                            <span>21</span>
+                                            <p class="icon-with-text">
+                                                <img src="/statics/icon/user-line.svg" class="icon">
+                                                <span>21</span>
+                                            </p>
                                         </div>
                                     </div>
                                     <div class="table__td is-right width-10 flex-justify--center">
-                                        <button type="button" class="button button--outline">
+                                        <button type="button" class="button button--outline"
+                                        onclick="makeModal()">
                                             수정
                                         </button>
                                     </div>
@@ -85,10 +88,16 @@
                                     <div class="table__td is-left width-90">
                                         <div class="table__td width-20">역할명</div>
                                         <div class="table__td width-70">역할설명</div>
-                                        <div class="table__td width-10">멤버수</div>
+                                        <div class="table__td width-10">
+                                            <p class="icon-with-text">
+                                                <img src="/statics/icon/user-line.svg" class="icon">
+                                                <span>21</span>
+                                            </p>
+                                        </div>
                                     </div>
                                     <div class="table__td is-right width-10 flex-justify--center">
-                                        <button type="button" class="button button--outline">
+                                        <button type="button" class="button button--outline"
+                                        onclick="makeModal()">
                                             수정
                                         </button>
                                     </div>
@@ -202,6 +211,39 @@
                                             <input type="checkbox" id="" class="checkbox">
                                             <label for="">템플릿으로 서명 요청</label>
                                             <ul class="tooltip__modal is-left">
+                                                <li>[권한범위: 소속그룹+하위그룹]</li>
+                                                <li>- 계약서 폴더 이동</li>
+                                                <li>- 문서, 감사 추적 인증서 다운로드</li>
+                                                <li>- 문서 목록 엑셀 다운로드</li>
+                                                <li>- 문서 입력값 추출</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex--column gap--sm">
+                            <p class="is-remark">문서</p>
+                            <div class="flex--row">
+                                <div class="width-50">
+                                    <div class="tooltip">
+                                        <div class="control-form">
+                                            <input type="checkbox" id="" class="checkbox">
+                                            <label for="">문서 추가/수정</label>
+                                            <ul class="tooltip__modal is-left">
+                                                <li>[권한범위: 소속그룹+하위그룹]</li>
+                                                <li>- 계약서 휴지통으로 이동</li>
+                                                <li>- 삭제한 계약서 지정 위치로 복구</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="width-50">
+                                    <div class="tooltip">
+                                        <div class="control-form">
+                                            <input type="checkbox" id="" class="checkbox">
+                                            <label for="">문서 삭제/복구</label>
+                                            <ul class="tooltip__modal is-left">
                                                 <li>- 서명 알림 메일 재전송</li>
                                                 <li>- 서명 유효기간 변경</li>
                                                 <li>- 서명 요청 취소</li>
@@ -211,19 +253,17 @@
                                 </div>
                             </div>
                         </div>
-                        
                         <div class="flex--column gap--sm">
-                            <p class="is-remark">서명 요청</p>
+                            <p class="is-remark">폴더</p>
                             <div class="flex--row">
                                 <div class="width-50">
                                     <div class="tooltip">
                                         <div class="control-form">
                                             <input type="checkbox" id="" class="checkbox">
-                                            <label for="">일반 서명 요청</label>
+                                            <label for="">모든 폴더 접근</label>
                                             <ul class="tooltip__modal is-left">
-                                                <li>- 서명 알림 메일 재전송</li>
-                                                <li>- 서명 유효기간 변경</li>
-                                                <li>- 서명 요청 취소</li>
+                                                <li>[권한범위: 소속팀+하위팀]</li>
+                                                <li>- 폴더 내 모든 문서 접근</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -232,11 +272,56 @@
                                     <div class="tooltip">
                                         <div class="control-form">
                                             <input type="checkbox" id="" class="checkbox">
-                                            <label for="">템플릿으로 서명 요청</label>
+                                            <label for="">부서내 폴더 추가/수정</label>
                                             <ul class="tooltip__modal is-left">
-                                                <li>- 서명 알림 메일 재전송</li>
-                                                <li>- 서명 유효기간 변경</li>
-                                                <li>- 서명 요청 취소</li>
+                                                <li>[권한범위: 소속팀]</li>
+                                                <li>- 부서 내 폴더 추가</li>
+                                                <li>- 폴더 이름 변경</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="width-100">
+                                <div class="tooltip">
+                                    <div class="control-form">
+                                        <input type="checkbox" id="" class="checkbox">
+                                        <label for="">부서 내 폴더 삭제</label>
+                                        <ul class="tooltip__modal is-left">
+                                            <li>[권한범위: 소속팀]</li>
+                                            <li>- 폴더 삭제</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="flex--column gap--sm">
+                            <p class="is-remark">템플릿</p>
+                            <div class="flex--row">
+                                <div class="width-50">
+                                    <div class="tooltip">
+                                        <div class="control-form">
+                                            <input type="checkbox" id="" class="checkbox">
+                                            <label for="">템플릿 추가/수정</label>
+                                            <ul class="tooltip__modal is-left">
+                                                <li>[권한범위: 소속그룹]</li>
+                                                <li>- 템플릿 추가</li>
+                                                <li>[권한범위: 소속그룹+하위그룹]</li>
+                                                <li>- 템플릿 수정/공유</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="width-50">
+                                    <div class="tooltip">
+                                        <div class="control-form">
+                                            <input type="checkbox" id="" class="checkbox">
+                                            <label for="">템플릿 삭제</label>
+                                            <ul class="tooltip__modal is-left">
+                                                <li>[권한범위: 소속그룹+하위그룹]</li>
+                                                <li>- 템플릿 삭제</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -245,160 +330,17 @@
                         </div>
 
                         <div class="flex--column gap--sm">
-                            <p class="is-remark">서명 요청</p>
-                            <div class="flex--row">
-                                <div class="width-50">
-                                    <div class="tooltip">
-                                        <div class="control-form">
-                                            <input type="checkbox" id="" class="checkbox">
-                                            <label for="">일반 서명 요청</label>
-                                            <ul class="tooltip__modal is-left">
-                                                <li>- 서명 알림 메일 재전송</li>
-                                                <li>- 서명 유효기간 변경</li>
-                                                <li>- 서명 요청 취소</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="width-50">
-                                    <div class="tooltip">
-                                        <div class="control-form">
-                                            <input type="checkbox" id="" class="checkbox">
-                                            <label for="">템플릿으로 서명 요청</label>
-                                            <ul class="tooltip__modal is-left">
-                                                <li>- 서명 알림 메일 재전송</li>
-                                                <li>- 서명 유효기간 변경</li>
-                                                <li>- 서명 요청 취소</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flex--column gap--sm">
-                            <p class="is-remark">서명 요청</p>
-                            <div class="flex--row">
-                                <div class="width-50">
-                                    <div class="tooltip">
-                                        <div class="control-form">
-                                            <input type="checkbox" id="" class="checkbox">
-                                            <label for="">일반 서명 요청</label>
-                                            <ul class="tooltip__modal is-left">
-                                                <li>- 서명 알림 메일 재전송</li>
-                                                <li>- 서명 유효기간 변경</li>
-                                                <li>- 서명 요청 취소</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="width-50">
-                                    <div class="tooltip">
-                                        <div class="control-form">
-                                            <input type="checkbox" id="" class="checkbox">
-                                            <label for="">템플릿으로 서명 요청</label>
-                                            <ul class="tooltip__modal is-left">
-                                                <li>- 서명 알림 메일 재전송</li>
-                                                <li>- 서명 유효기간 변경</li>
-                                                <li>- 서명 요청 취소</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flex--column gap--sm">
-                            <p class="is-remark">서명 요청</p>
-                            <div class="flex--row">
-                                <div class="width-50">
-                                    <div class="tooltip">
-                                        <div class="control-form">
-                                            <input type="checkbox" id="" class="checkbox">
-                                            <label for="">일반 서명 요청</label>
-                                            <ul class="tooltip__modal is-left">
-                                                <li>- 서명 알림 메일 재전송</li>
-                                                <li>- 서명 유효기간 변경</li>
-                                                <li>- 서명 요청 취소</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="width-50">
-                                    <div class="tooltip">
-                                        <div class="control-form">
-                                            <input type="checkbox" id="" class="checkbox">
-                                            <label for="">템플릿으로 서명 요청</label>
-                                            <ul class="tooltip__modal is-left">
-                                                <li>- 서명 알림 메일 재전송</li>
-                                                <li>- 서명 유효기간 변경</li>
-                                                <li>- 서명 요청 취소</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flex--column gap--sm">
-                            <p class="is-remark">서명 요청</p>
-                            <div class="flex--row">
-                                <div class="width-50">
-                                    <div class="tooltip">
-                                        <div class="control-form">
-                                            <input type="checkbox" id="" class="checkbox">
-                                            <label for="">일반 서명 요청</label>
-                                            <ul class="tooltip__modal is-left">
-                                                <li>- 서명 알림 메일 재전송</li>
-                                                <li>- 서명 유효기간 변경</li>
-                                                <li>- 서명 요청 취소</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="width-50">
-                                    <div class="tooltip">
-                                        <div class="control-form">
-                                            <input type="checkbox" id="" class="checkbox">
-                                            <label for="">템플릿으로 서명 요청</label>
-                                            <ul class="tooltip__modal is-left">
-                                                <li>- 서명 알림 메일 재전송</li>
-                                                <li>- 서명 유효기간 변경</li>
-                                                <li>- 서명 요청 취소</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flex--column gap--sm">
-                            <p class="is-remark">서명 요청</p>
-                            <div class="flex--row">
-                                <div class="width-50">
-                                    <div class="tooltip">
-                                        <div class="control-form">
-                                            <input type="checkbox" id="" class="checkbox">
-                                            <label for="">일반 서명 요청</label>
-                                            <ul class="tooltip__modal is-left">
-                                                <li>- 서명 알림 메일 재전송</li>
-                                                <li>- 서명 유효기간 변경</li>
-                                                <li>- 서명 요청 취소</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="width-50">
-                                    <div class="tooltip">
-                                        <div class="control-form">
-                                            <input type="checkbox" id="" class="checkbox">
-                                            <label for="">템플릿으로 서명 요청</label>
-                                            <ul class="tooltip__modal is-left">
-                                                <li>- 서명 알림 메일 재전송</li>
-                                                <li>- 서명 유효기간 변경</li>
-                                                <li>- 서명 요청 취소</li>
-                                            </ul>
-                                        </div>
+                            <p class="is-remark">휴지통</p>
+                            <div class="width-100">
+                                <div class="tooltip">
+                                    <div class="control-form">
+                                        <input type="checkbox" id="" class="checkbox">
+                                        <label for="">휴지통 이동/복구</label>
+                                        <ul class="tooltip__modal is-left">
+                                            <li>[권한범위: 소속그룹+하위그룹]</li>
+                                            <li>- 계약서, 템플릿, 서식 휴지통으로 이동</li>
+                                            <li>- 계약서, 템플릿, 서식 지정 위치로 복구</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -411,11 +353,66 @@
                                     <div class="tooltip">
                                         <div class="control-form">
                                             <input type="checkbox" id="" class="checkbox">
-                                            <label for="">일반 서명 요청</label>
+                                            <label for="">그룹 추가/수정</label>
+                                            <ul class="tooltip__modal is-left">
+                                                <li>[권한범위: 소속그룹+하위그룹]</li>
+                                                <li>- 하위그룹 추가</li>
+                                                <li>- 그룹 이름 변경</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="width-50">
+                                    <div class="tooltip">
+                                        <div class="control-form">
+                                            <input type="checkbox" id="" class="checkbox">
+                                            <label for="">그룹삭제</label>
+                                            <ul class="tooltip__modal is-left">
+                                                <li>[권한범위: 소속그룹+하위그룹]</li>
+                                                <li>- 그룹 삭제</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex--row">
+                                <div class="width-50">
+                                    <div class="tooltip">
+                                        <div class="control-form">
+                                            <input type="checkbox" id="" class="checkbox">
+                                            <label for="">그룹원 추가/수정</label>
+                                            <ul class="tooltip__modal is-left">
+                                                <li>[권한범위: 소속그룹+하위그룹]</li>
+                                                <li>- 그룹원 초대/취소</li>
+                                                <li>- 그룹원 추가/삭제</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="width-50">
+                                    <div class="tooltip">
+                                        <div class="control-form">
+                                            <input type="checkbox" id="" class="checkbox">
+                                            <label for="">그룹원 삭제</label>
+                                            <ul class="tooltip__modal is-left">
+                                                <li>[권한범위: 조직전체]</li>
+                                                <li>- 조직 그룹원 삭제</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex--row">
+                                <div class="width-50">
+                                    <div class="tooltip">
+                                        <div class="control-form">
+                                            <input type="checkbox" id="" class="checkbox">
+                                            <label for="">역할 추가/수정</label>
                                             <ul class="tooltip__modal is-left">
                                                 <li>[권한범위:조직전체]</li>
-                                                <li>- 서명 유효기간 변경</li>
-                                                <li>- 서명 요청 취소</li>
+                                                <li>- 역할 추가</li>
+                                                <li>- 역할 이름/설명, 권한 설정</li>
+                                                <li>- 최고관리자 역할 수정 불가능</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -435,8 +432,6 @@
                                 </div>
                             </div>
                         </div>
-                        
-                        
                     </div>
                     <div class="modal__footer">
                         <button type="button" class="button--primary button--large"
