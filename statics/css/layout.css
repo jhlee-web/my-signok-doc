@@ -38,7 +38,7 @@
     z-index: 1;
     width: 0;
 
-    background-color: var(--theme-color-200);
+    background-color: var(--theme-color-100);
 
     padding: 0 .5em;
 }
@@ -46,7 +46,7 @@
 html[data-fold="true"] .nav{
     width: 3rem;
     transform-origin: right;
-    transition: .35s;
+    /* transition: .35s; */
     padding: 0;
 }
 html[data-fold="true"] .nav__item,
@@ -107,7 +107,7 @@ html[data-fold="true"]:hover .nav__item{
 html[data-fold="false"] .nav{
     width: 15rem;
     transform-origin: right;
-    transition: .35s;
+    /* transition: .35s; */
 }
 html[data-fold="false"] .nav .button--primary,
 html[data-fold="false"] .nav__name{

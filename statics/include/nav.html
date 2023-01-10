@@ -147,11 +147,15 @@
 
         if(navState=='false'){
             $('html').attr('data-fold',true)
+            
         }
         else{
             $('html').attr('data-fold',false)
         }
 
+        $('.nav').css({
+            'transition':'.3s'
+        })
         localStorage.setItem('data-fold',currentNavState)
     }
 
