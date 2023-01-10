@@ -91,7 +91,20 @@
         return newTestObj
     })
     $('.doc-header__user').on('click',function(){
-        $(this).parents('.doc-header__user-wrap').toggleClass('is-active')
+        let parentElement = $(this).parents('.doc-header__user-wrap')
+        let animateTime = 600
+        let modal = parentElement.find('.list-modal');
+        console.log(modal.height())
+
+        if(modal.height() === 0){
+            autoHeightAnimate(modal, animateTime);
+            parentElement.addClass('is-active')
+        } else {
+            console.log('here')
+            modal.stop().animate({ height: '0' }, animateTime);
+            parentElement.removeClass('is-active')
+
+        }
     })
 
     // 서치버튼클릭이벤트

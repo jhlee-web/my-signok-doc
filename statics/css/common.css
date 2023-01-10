@@ -568,13 +568,15 @@ label{
 }
 .input,.textarea{
     width: 100%;
-    padding: 0 1rem ;
     border-radius: 0.5rem;
     border: 1px solid var(--theme-color-400);
     color: var(--text-color-800);
 
     font-size: 1rem;
     background: transparent;
+}
+.textarea{
+    padding: 1rem;
 }
 ::placeholder,
 textarea::placeholder{
@@ -586,6 +588,7 @@ textarea::placeholder{
     resize: none;
 }
 .input{
+    padding: 0 1rem ;
     height: 2.5rem;
     line-height: 2.5rem;
 }
@@ -1477,16 +1480,17 @@ html[data-theme='light'] .button--text .icon{
     flex-direction: column;
     gap: 1em;
 
-    max-height: 0;
+    /* max-height: 0;
     overflow-y: hidden;
-    transition: max-height .65s ease-in-out ;
+    transition: max-height 1s ease-in-out ; */
+    overflow-y: hidden;
 
 }
 
 .accordion.is-active .accordion__body{
-    max-height: 200vh;
     overflow-y: unset;
-    transition: max-height .5s ease-in-out ; 
+    /* max-height: 200vh;
+    transition: max-height 1s ease-in-out ;  */
 }
 
 .accordion .accordion__header .icon{

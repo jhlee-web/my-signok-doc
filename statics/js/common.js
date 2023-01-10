@@ -110,7 +110,32 @@ $(document).on('click','.select-box__option li',function(){
     $(this).parents('.select-box').find('p').text(value)
 })
 
-// select div 수정 + 이벤트 추가
-$(document).on('click','.accordion__header',function(){
-    $(this).parents('.accordion').toggleClass('is-active')
+// accordion event
+$(document).on('click','.accordion__header .icon',function(){
+    let accordion = $(this).parents('.accordion');
+    let accordionHeader = $(this).parents('.accordion__header')
+    let accordionBody = accordionHeader.siblings('.accordion__body');
+    accordionBody.height() > 1000 ? animateTime = 650 : animateTime = 500;
+
+    if(accordionBody.height() === 0){
+        autoHeightAnimate(accordionBody, animateTime);
+        accordion.addClass('is-active')
+    } else {
+        accordionBody.stop().animate({ height: '0' }, animateTime);
+        accordion.removeClass('is-active')
+
+    }
 })
+
+/* Function to animate height: auto */
+function autoHeightAnimate(element, time){
+    // Get Default Height
+    let elementHeight = element.height();
+    // Get Auto Height
+    let autoHeight = element.css('height', 'auto').height(); 
+
+    element.height(elementHeight); // Reset to Default Height
+    element.stop().animate({ height: autoHeight }, time);
+}
+
+
