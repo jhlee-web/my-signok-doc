@@ -51,13 +51,13 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    color: var(--text-color-800);
+    color: var(--text-color-900);
 }
 
 .table__thead{
     display: inline-flex;
     align-items: center;
-    color: var(--text-color-400);
+    color: var(--text-color-500);
     font-size: var(--text-small);
 
     border-bottom: 1px solid var(--theme-color-400);
@@ -203,7 +203,7 @@
 .list-modal{
     border-radius: .5rem;
     background: var(--background-color);
-    color: var(--text-color-800);
+    color: var(--text-color-900);
 
     position: absolute;
     right: 0;
@@ -382,7 +382,7 @@
 }
 
 .state.ban{
-    filter: var(--filter-text-400);
+    filter: var(--filter-text-500);
 }
 
 /* search-form */
@@ -407,7 +407,7 @@
     background-color: var(--theme-color-100);
 }
 .search-form__button .icon{
-    filter: var(--filter-text-400);
+    filter: var(--filter-text-500);
 }
 
 
@@ -458,14 +458,14 @@
     border-bottom: 1px solid var(--theme-color-400);
 }
 .modal__close-button{
-    filter: var(--filter-text-400);
+    filter: var(--filter-text-500);
     width: 2rem;
     height: 2rem;
 
     cursor: pointer;
 }
 .modal__close-button:hover{
-    filter: var(--filter-text-800);
+    filter: var(--filter-text-900);
     transition: .3s;
 }
 
@@ -508,7 +508,7 @@
     position: absolute;
     left: 1rem;
     top: 50%; transform: translateY(-50%);
-    filter: var(--filter-text-400);
+    filter: var(--filter-text-500);
 }
 
 .modal__list{
@@ -520,7 +520,7 @@
     padding: .5rem 1.25rem;
 }
 .modal__list .list__item .icon{
-    filter: var(--filter-text-400);
+    filter: var(--filter-text-500);
 }
 .modal__list .list__item[data-id="*"]{
     font-weight: bold;
@@ -531,7 +531,7 @@
     background:var(--theme-color-100);
 }
 .modal__list li.is-active .icon{
-    filter: var(--filter-text-800);
+    filter: var(--filter-text-900);
 }
 
 .modal__list li:hover{
@@ -718,8 +718,11 @@
 .icon-with-text.is-secondary{
     color: var(--secondary-color-500);
 }
-.icon-with-text.is-secondary .icon{
+html[data-theme="light"].icon-with-text.is-secondary .icon{
     filter: var(--filter-secondary);
+}
+html[data-theme="dark"] .icon-with-text.is-secondary .icon{
+    filter: var(--filter-text-500);
 }
 
 [id^="sns-"]{
@@ -894,7 +897,7 @@
 .jstree-default .jstree-search {
     width: 100%;
     background: var(--theme-color-100);
-    color: var(--text-color-800);
+    color: var(--text-color-900);
     font-style: normal;
     font-weight: 500;
 }
@@ -972,11 +975,6 @@
     }
 }
 
-#price-list .table__td{
-    justify-content: center;
-    padding: 1em ;
-}
-
 
 /* price-list hover 효과 변경 필요해서 없앰 */
 #price-list .table__tr:hover {
@@ -994,7 +992,9 @@
     padding: 1em;
 }
 #price-list .table__td{
-    color: var(--text-color-400);
+    justify-content: center;
+    padding: 1em ;
+    color: var(--text-color-700);
 }
 #price-list .table__td.is-active span{
     background:var(--primary-color-500);
@@ -1299,7 +1299,7 @@
 }
 
 .section__title{
-    color: var(--text-color-400);
+    color: var(--text-color-500);
     font-weight: 500;
     margin-bottom: 1em;
 }

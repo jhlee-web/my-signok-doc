@@ -32,20 +32,20 @@ html[data-theme='light']{
     --background-color:#fff;
     --filter-background: invert(99%) sepia(5%) saturate(3%) hue-rotate(357deg) brightness(105%) contrast(100%);
 
-    --text-color-100:#F2F2F2;
-    --text-color-200:#CCCCCC;
-    --text-color-300:#B3B3B3;
-    --text-color-400:#A6A6A6;
-    --text-color-500:#808080;
-    --text-color-600:#5A5A5A;
-    --text-color-700:#4D4D4D;
-    --text-color-800:#333333;
-    --text-color-900:#282828;
+    --text-color-100:#dddddd;
+    --text-color-200:#c6c6c6;
+    --text-color-300:#afafaf;
+    --text-color-400:#999999;
+    --text-color-500:#838383;
+    --text-color-600:#6e6e6e;
+    --text-color-700:#595959;
+    --text-color-800:#464646;
+    --text-color-900:#333333;
 
 /*     
-    --text-color-400:#808080;
-    --text-color-600:#5A5A5A;
-    --text-color-800:#333333; */
+    --text-color-500:#808080;
+    --text-color-700:#5A5A5A;
+    --text-color-900:#333333; */
 
     --primary-color-10:#FDEBED;
     --primary-color-50:#FBD0D4;
@@ -58,9 +58,9 @@ html[data-theme='light']{
     --focus-color-50:#DCE3EF;
     --focus-color-400:#33BEFF;
    
-    --filter-text-400:invert(63%) sepia(8%) saturate(13%) hue-rotate(323deg) brightness(97%) contrast(81%);
-    --filter-text-600:invert(36%) sepia(0%) saturate(561%) hue-rotate(167deg) brightness(96%) contrast(93%);
-    --filter-text-800:invert(18%) sepia(7%) saturate(18%) hue-rotate(336deg) brightness(88%) contrast(88%);
+    --filter-text-500:invert(53%) sepia(0%) saturate(627%) hue-rotate(207deg) brightness(97%) contrast(86%);
+    --filter-text-700:invert(34%) sepia(0%) saturate(1%) hue-rotate(147deg) brightness(94%) contrast(84%);
+    --filter-text-900:invert(17%) sepia(1%) saturate(0%) hue-rotate(55deg) brightness(94%) contrast(88%);
 
     --theme-color-50:#fcfcfd;
     --theme-color-100:#f5f6f7;
@@ -86,20 +86,15 @@ html[data-theme='dark']{
     --background-color:#111;
     --filter-background: invert(0%) sepia(3%) saturate(7424%) hue-rotate(53deg) brightness(103%) contrast(87%);
 
-    --text-color-100:#282828;
-    --text-color-200:#333333;
-    --text-color-300:#4D4D4D;
-    --text-color-400:#5A5A5A;
-    --text-color-500:#808080;
-    --text-color-600:#A6A6A6;
-    --text-color-700:#B3B3B3;
-    --text-color-800:#CCCCCC;
-    --text-color-900:#F2F2F2;
-
-    /*     
-    --text-color-400:#A6A6A6;
-    --text-color-600:#CCCCCC;
-    --text-color-800:#F2F2F2; */
+    --text-color-900:#dddddd;
+    --text-color-800:#c6c6c6;
+    --text-color-700:#afafaf;
+    --text-color-600:#999999;
+    --text-color-500:#838383;
+    --text-color-400:#6e6e6e;
+    --text-color-300:#595959;
+    --text-color-200:#464646;
+    --text-color-100:#333333;
 
     --primary-color-10:rgba(238, 54, 73, 0.05);
     --primary-color-50:rgba(238, 54, 73, 0.1);
@@ -112,9 +107,9 @@ html[data-theme='dark']{
     --focus-color-50:rgba(53, 165, 238, 0.1);
     --focus-color-400:rgba(53, 165, 238, 0.82);
 
-    --filter-text-400:invert(81%) sepia(4%) saturate(6%) hue-rotate(320deg) brightness(86%) contrast(73%);
-    --filter-text-600:invert(89%) sepia(0%) saturate(722%) hue-rotate(147deg) brightness(95%) contrast(88%);
-    --filter-text-800:invert(100%) sepia(0%) saturate(1156%) hue-rotate(288deg) brightness(112%) contrast(90%);
+    --filter-text-500:invert(53%) sepia(0%) saturate(627%) hue-rotate(207deg) brightness(97%) contrast(86%);
+    --filter-text-700:invert(75%) sepia(1%) saturate(1%) hue-rotate(314deg) brightness(95%) contrast(89%);
+    --filter-text-900:invert(98%) sepia(1%) saturate(2779%) hue-rotate(205deg) brightness(117%) contrast(73%);
 
     --theme-color-50:#1E1E1E;
     --theme-color-100:#252526;
@@ -154,7 +149,7 @@ html,body{
     font-size: max(14px, calc(14px + 0.1vw));
     line-height: 150%;
 
-    color: var(--text-color-800);
+    color: var(--text-color-900);
     background-color: var(--background-color);
 
     word-break: keep-all;
@@ -210,7 +205,7 @@ html[data-theme='light'] .is-secondary{
 }
     /* in dark */
     html[data-theme='dark'] .is-secondary{
-        color: var(--text-color-600);
+        color: var(--text-color-700);
     }
 .is-primary{
     color: var(--primary-color-500) !important;
@@ -219,7 +214,7 @@ html[data-theme='light'] .is-secondary{
     word-break: break-all;
 }
 .is-remark{
-    color: var(--text-color-600);
+    color: var(--text-color-700);
     font-size: var(--text-small);
 }
 
@@ -248,10 +243,10 @@ html[data-theme='light'] .is-secondary{
 
 /* font-color */
 .font-color--third{
-    color: var(--text-color-400);
+    color: var(--text-color-500);
 }
 .font-color--second{
-    color: var(--text-color-600);
+    color: var(--text-color-700);
 }
 
 
@@ -328,7 +323,7 @@ html[data-theme='light'] .is-secondary{
 .icon{
     width: 1.5rem;
     /* height: 1.25rem; */
-    filter:var(--filter-text-600)
+    filter:var(--filter-text-700)
 }
 
 #download-excel .icon{
@@ -549,8 +544,14 @@ html[data-theme='light'] .is-secondary{
 
 
 /* input */
+
+input:disabled, textarea:disabled{
+    background: var(--theme-color-100);
+    border: 1px solid var(--theme-color-400);
+    color: var(--text-color-500);
+}
 label{
-    /* color: var(--text-color-600); */
+    /* color: var(--text-color-700); */
     font-size: var(--text-small);
 }
 .input-area{
@@ -570,7 +571,7 @@ label{
     width: 100%;
     border-radius: 0.5rem;
     border: 1px solid var(--theme-color-400);
-    color: var(--text-color-800);
+    color: var(--text-color-900);
 
     font-size: 1rem;
     background: transparent;
@@ -581,7 +582,7 @@ label{
 ::placeholder,
 textarea::placeholder{
     font-size: var(--text-small);
-    color: var(--text-color-600);
+    color: var(--text-color-700);
 }
 .textarea{
     height: 100%;
@@ -607,7 +608,7 @@ textarea::placeholder{
     right: 1em;
     top: 50%;
     transform: translateY(-50%);
-    filter: var(--filter-text-400);
+    filter: var(--filter-text-500);
 
     cursor: pointer;
 }
@@ -619,7 +620,7 @@ textarea::placeholder{
     display: none;
 
     font-size: var(--text-small);
-    color:var(--text-color-600)
+    color:var(--text-color-700)
 }
 
 
@@ -744,7 +745,7 @@ textarea::placeholder{
     font-weight: 500;
 
     cursor: pointer;
-    color: var(--text-color-800);
+    color: var(--text-color-900);
 
     display: inline-flex;
     align-items: center;
@@ -776,7 +777,7 @@ textarea::placeholder{
 .button:disabled{
     background: var(--theme-color-400);
     border: 1px solid var(--theme-color-400);
-    color: var(--text-color-400);
+    color: var(--text-color-500);
 }
 
 
@@ -790,6 +791,17 @@ textarea::placeholder{
 html[data-theme='light'] .button--text .icon{
     filter: var(--filter-secondary);
 }
+
+    /* in dark */
+    html[data-theme='dark'] .button--text{
+        color: var(--text-color-700);
+    }
+    html[data-theme='dark'] .button--text:hover{
+        color: var(--text-color-900);
+    }
+    html[data-theme='dark'] .button--text .icon{
+        color: var(--filter-text-500);
+    }
 
 .button--primary{
     background: var(--primary-color-500);
@@ -813,27 +825,18 @@ html[data-theme='light'] .button--text .icon{
 }
 
 .button--outline{
-    color: var(--text-color-600);
+    color: var(--text-color-700);
     border: 1px solid var(--theme-color-400);
 }
 .button--outline:hover{
-    color: var(--text-color-800);
+    color: var(--text-color-900);
     background: var(--theme-color-50);
 }
 .button--outline .icon{
-    filter: var(--filter-text-400);
+    filter: var(--filter-text-500);
 }
 
-    /* in dark */
-    html[data-theme='dark'] .button--text{
-        color: var(--text-color-600);
-    }
-    html[data-theme='dark'] .button--text:hover{
-        color: var(--text-color-800);
-    }
-    html[data-theme='dark'] .button--text .icon{
-        color: var(--filter-text-400);
-    }
+
 
 /* button size set */
 .button.is-xl{
@@ -965,7 +968,7 @@ html[data-theme='light'] .button--text .icon{
 
 }
 .group-button__base .icon{
-    filter: var(--filter-text-400);
+    filter: var(--filter-text-500);
 }
 
 .group-button__base.is-start{
@@ -1090,7 +1093,7 @@ html[data-theme='light'] .button--text .icon{
 }
 
 .tab__item{
-    color: var(--text-color-600);
+    color: var(--text-color-700);
     font-size: var(--text-small);
     cursor: pointer;
 }
@@ -1105,16 +1108,16 @@ html[data-theme='light'] .button--text .icon{
     line-height: 2rem;
 }
 .tab__item:hover{
-    color: var(--text-color-800);
+    color: var(--text-color-900);
 }
 .tab__item.is-active{
     font-weight: 500;
-    color: var(--text-color-800);
+    color: var(--text-color-900);
     border-bottom: 1px solid var(--primary-color-500);
 }
 
 .tab__item--badge{
-    color: var(--text-color-600);
+    color: var(--text-color-700);
     cursor: pointer;
 
     border-radius: 99rem;
@@ -1298,7 +1301,7 @@ html[data-theme='light'] .button--text .icon{
 }
 .header-step__item .header-step__number{
     background: var(--text-color-500);
-    color: var(--text-color-800);
+    color: var(--text-color-900);
 
     display: inline-flex;
     align-items: center;
@@ -1311,7 +1314,7 @@ html[data-theme='light'] .button--text .icon{
 }
 .header-step__item.is-active .header-step__number{
     background: var(--background-color);
-    color: var(--text-color-800);
+    color: var(--text-color-900);
     border: unset;
 }
 .header-step__item.is-active a{
@@ -1340,7 +1343,7 @@ html[data-theme='light'] .button--text .icon{
 }
 .modal-content{
     background: var(--background-color);
-    color: var(--text-color-800);
+    color: var(--text-color-900);
 
     display: flex;
     flex-direction: column;

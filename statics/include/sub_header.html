@@ -68,8 +68,10 @@
 
     let newTestObj={};
 
-    // 사용자모달 테스트
     $(function(){
+        // 상단헤더 모달 지우기 default
+        $('.doc-header__user-wrap').removeClass('is-active');
+
         let randomNum = Math.floor(Math.random() * 3)
         let randomDate = Math.floor(Math.random() * 365)
 
@@ -90,17 +92,17 @@
 
         return newTestObj
     })
+
+    // 모달 생성 이벤트
     $('.doc-header__user').on('click',function(){
         let parentElement = $(this).parents('.doc-header__user-wrap')
-        let animateTime = 600
+        let animateTime = 450
         let modal = parentElement.find('.list-modal');
-        console.log(modal.height())
 
         if(modal.height() === 0){
             autoHeightAnimate(modal, animateTime);
             parentElement.addClass('is-active')
         } else {
-            console.log('here')
             modal.stop().animate({ height: '0' }, animateTime);
             parentElement.removeClass('is-active')
 0

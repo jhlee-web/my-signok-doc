@@ -276,7 +276,7 @@ html[data-fold="false"] .nav__name{
 
 }
 .nav__category{
-    /* color: var(--text-color-400); */
+    /* color: var(--text-color-500); */
     font-size: var(--text-small);
 }
 
@@ -286,7 +286,7 @@ html[data-fold="false"] .nav__name{
     gap: 1rem;
     cursor: pointer;
 
-    color: var(--text-color-600);
+    color: var(--text-color-700);
 }
 
 
@@ -303,7 +303,7 @@ html[data-fold="false"] .nav__name{
 }
 
 .nav__item__icon{
-    filter: var(--filter-text-400)
+    filter: var(--filter-text-500)
 }
 .nav__item.is-active{
     color: var(--primary-color-500);
@@ -313,11 +313,11 @@ html[data-fold="false"] .nav__name{
 }
 
 .nav__middle{
-    color: var(--text-color-400);
+    color: var(--text-color-500);
 }
 
 .nav__middle span{
-    color: var(--text-color-800);
+    color: var(--text-color-900);
 }
 
 
@@ -332,7 +332,7 @@ html[data-fold="false"] .nav__name{
 .main--background{
     padding-left: 0;
     min-height: 100vh;
-    background-color: var(--text-color-700);
+    background-color: var(--text-color-800);
 }
 .main--background > .container{
     /* background-color: var(--text-color-300); */
@@ -378,7 +378,7 @@ html[data-fold="false"] .nav__name{
     filter: var(--filter-background);
 }
 #add-signature:hover {
-    background: var(--text-color-400);
+    background: var(--text-color-500);
     transition: .4s;
 }
 
@@ -465,11 +465,11 @@ html[data-fold="false"] .nav__name{
     
     margin-top: 1em;
 
-    /* max-height: 0;
-    transition: max-height .65s ease-in-out ; */
+    /*transition: max-height .65s ease-in-out ; */
+    height: 0;
     overflow-y: hidden;
-
     border: none;
+
 }
 .doc-header__user-wrap.is-active .list-modal{
     /* max-height: 50rem;
@@ -731,7 +731,7 @@ html[data-fold="false"] .nav__name{
 /* template-header (header-step 가지고 있는 영역)  */
 .template-header, 
 .template-footer{
-    background: var(--text-color-800);
+    background: var(--text-color-900);
     position: fixed;
     left: 0;
     right: 0;
@@ -744,7 +744,7 @@ html[data-fold="false"] .nav__name{
 }
 .template-header .button--text .icon,
 .template-footer .button--text .icon{
-    filter: var(--filter-text-400)!important;
+    filter: var(--filter-text-500)!important;
 }
 .template-header{
     top: 0;

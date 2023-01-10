@@ -64,7 +64,7 @@ select {
   -moz-appearance: none;
   appearance: none;
   
-  color: var(--text-color-600);
+  color: var(--text-color-700);
 }
 
 input[type="checkbox"],
