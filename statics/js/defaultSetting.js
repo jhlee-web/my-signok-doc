@@ -1,11 +1,14 @@
+// Theme Setting
+let loadedTheme = localStorage.getItem('data-theme')
+
+// nav set
+let navState = localStorage.getItem('data-fold')
+
 $(function(){
     setNavAttr(navState)
     setTheme(loadedTheme)
 })
 
-
-// nav set
-let navState = localStorage.getItem('data-fold')
 
 // nav fold set
 function setNavAttr(){
@@ -30,30 +33,14 @@ function setNavAttr(){
     
 }
 
-
-
-// Theme Setting
-let loadedTheme = localStorage.getItem('data-theme')
-let currentTheme={
-    'data-theme':'light',
-    'toggle':0
-}
-
 function setTheme(setTheme){
-    switch(setTheme){
-        case undefined || null || 'null' || 'light':
-            currentTheme['data-theme'] = 'light';
-            currentTheme['toggle'] = 0
-            break;
-
-        case 'dark':
-            currentTheme['data-theme'] = 'dark';
-            currentTheme['toggle'] = 1
-            break;
-    }
+    setTheme == 'dark' ?
+    $('#toggle-theme').prop('checked',true)
+    :$('#toggle-theme').prop('checked',false)
 
     localStorage.setItem('data-theme',setTheme);
-    $('html').attr('data-theme',currentTheme['data-theme'])
+    $('html').attr('data-theme',setTheme)
+
 }
 
 

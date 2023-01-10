@@ -257,10 +257,10 @@
             $('.button').on('click',manageCard)
 
             $(function(){
-
-                currentTheme['toggle'] === 0 ?
-                $('#toggle-theme').prop('checked',false)
-                :  $('#toggle-theme').prop('checked',true)
+                loadedTheme = localStorage.getItem('data-theme')
+                loadedTheme == 'dark' ?
+                    $('#toggle-theme').prop('checked',true)
+                    :$('#toggle-theme').prop('checked',false)
 
                 $('#set-user_mail').text(newTestObj['user_mail'])
                 $('#set-user_product').text(newTestObj['user_product']+'('+newTestObj['user_regular_payment']+')')
@@ -277,16 +277,12 @@
             }
 
             function setTheme(setTheme){
-                if (setTheme == 'dark'){
-                    currentTheme['data-theme'] = 'dark';
-                        currentTheme['toggle'] = 1
-                }
-                else{
-                    currentTheme['data-theme'] = 'light';
-                        currentTheme['toggle'] = 0
-                }
+               setTheme == 'dark' ?
+                    $('#toggle-theme').prop('checked',true)
+                    :$('#toggle-theme').prop('checked',false)
+
                 localStorage.setItem('data-theme',setTheme);
-                $('html').attr('data-theme',currentTheme['data-theme'])
+                $('html').attr('data-theme',setTheme)
             }
 
             $('#toggle-theme').on('click',toggleTheme)
@@ -298,9 +294,6 @@
                 $(this).val(str.replace(/[^0-9]/g, '')
                         .replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, "$1-$2-$3").replace(/(\-{1,2})$/g, ""));
             })
-
-            
-
 
         </script>
         <script src="/statics/js/common.js"></script>
