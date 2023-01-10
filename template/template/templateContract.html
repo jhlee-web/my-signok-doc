@@ -6,7 +6,7 @@
             loadHTML("/statics/include/head.html");
         </script>
         <link rel="stylesheet" href="/statics/lib/Datetime-Picker/css/datetimepicker.css">
-        <title>공문발송 | 계약서 설정 및 발송</title>
+        <title>템플릿 | 계약서 설정 및 발송</title>
     </head>
 
     <body>
@@ -257,8 +257,8 @@
 
         <script src="/statics/lib/moment/min/moment-with-locales.min.js"></script>
         <script src="/statics/lib/Datetime-Picker/js/datetimepicker.js"></script>
+        <script src="/statics/js/common.js"></script>
         <script>
-            $('html').attr('data-theme','light')
 
             
             $('#date-time-picker').dateTimePicker({
@@ -280,6 +280,8 @@
            
             $(function(){
                 loadData()
+            $('html').attr('data-theme','light')
+
             })
             // 데이터 로드
             function loadData(breakpoint){
@@ -439,6 +441,5 @@
             }
             
         </script>
-        <script src="/statics/js/common.js"></script>
     </body>
 </html>
