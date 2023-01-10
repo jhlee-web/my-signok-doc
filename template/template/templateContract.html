@@ -259,7 +259,11 @@
         <script src="/statics/lib/Datetime-Picker/js/datetimepicker.js"></script>
         <script src="/statics/js/common.js"></script>
         <script>
-
+           
+           $(function(){
+                loadData()
+                $('html').attr('data-theme','light')
+            })
             
             $('#date-time-picker').dateTimePicker({
                 dateFormat:"YYYY-MM-DD HH:mm",
@@ -277,12 +281,6 @@
             if(dataTheme == undefined || null || 'null') dataTheme = 'light'
             $('html').attr('data-theme',dataTheme)
 
-           
-            $(function(){
-                loadData()
-            $('html').attr('data-theme','light')
-
-            })
             // 데이터 로드
             function loadData(breakpoint){
                 $.ajax({
