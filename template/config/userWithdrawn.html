@@ -84,61 +84,73 @@
                                     </div>
 
                                     <div class="card__inner">
-                                        <div>
-                                            <label for="password" class="">비밀번호</label>
+                                        <div class="input-area">
                                             <p class="is-remark">
-                                                안전한 탈퇴를 위해 현재 비밀번호를 입력해주세요.
+                                                비밀번호
                                             </p>
+                                            <label for="password" class="input-box__label is-remark">
+                                                안전한 탈퇴를 위해 현재 비밀번호를 입력해주세요.
+                                            </label>
+                                            <div class="input-box">
+                                                <input type="password"
+                                                class="input"
+                                                id="password"
+                                                placeholder="비밀번호를 입력해주세요.">
+                                                <img class="icon" id="pwd-toggle" src="/statics/icon/eye-show-line.svg"></img>
+                                            </div>
+                                            <p class="input-area__helper"></p>
                                         </div>
-                                        <div class="input-box">
-                                            <input type="password"
-                                            class="input"
-                                            id="password"
-                                            placeholder="비밀번호를 입력해주세요.">
-                                            <img class="icon" id="pwd-toggle" src="/statics/icon/eye-show-line.svg"></img>
-                                        </div>
-                                        <p class="input-area__helper"></p>
                                     </div>
                                     
                                     
                                     <div class="card__inner">
-                                        <div>
-                                            <label for="text" class="">탈퇴 동의</label>
+                                        <div class="input-area">
                                             <p class="is-remark">
-                                                "탈퇴 안내사항을 확인하고 동의합니다."를 입력해주세요.
+                                                탈퇴 동의
                                             </p>
+                                            <label for="text" class="input-box__label is-remark">
+                                                "탈퇴 안내사항을 확인하고 동의합니다."를 입력해주세요.
+                                            </label>
+                                            <div class="input-box">
+                                                <input type="text"
+                                                class="input"
+                                                id="text"
+                                                placeholder="탈퇴 안내사항을 확인하고 동의합니다.
+                                                " required>
+                                                <img class="icon" src="/statics/icon/remove-solid.svg"></img>
+                                            </div>
+                                            <p class="input-area__helper"></p>
+
                                         </div>
-                                        <div class="input-box">
-                                            <input type="text"
-                                            class="input"
-                                            id="text"
-                                            placeholder="탈퇴 안내사항을 확인하고 동의합니다.
-                                            " required>
-                                            <img class="icon" src="/statics/icon/remove-solid.svg"></img>
-                                        </div>
-                                        <p class="input-area__helper"></p>
+                                        
                                     </div>
 
                                     <div class="card__inner">
-                                        <div>
-                                            <label for="text" class="">무엇이 불편하셨나요?</label>
+                                        <div class="input-area">
                                             <p class="is-remark">
-                                                탈퇴사유를 입력해주세요. signOK 서비스 개선에 더욱 힘쓰겠습니다.
+                                                무엇이 불편하셨나요?
                                             </p>
+                                            <label for="text" class="input-box__label is-remark">
+                                                탈퇴사유를 입력해주세요. signOK 서비스 개선에 더욱 힘쓰겠습니다.
+                                            </label>
+                                            <div class="input-box">
+                                                <textarea
+                                                id="textarea" class="textarea"
+                                                placeholder="탈퇴사유를 입력해주세요." maxlength="200" rows="4"></textarea>
+                                            </div>
                                         </div>
-                                        <textarea
-                                        id="textarea" class="textarea"
-                                        placeholder="탈퇴사유를 입력해주세요." maxlength="200" rows="4"></textarea>
                                     </div>
-                                    <!-- /card-content -->
-                                    <div class="flex--row flex-justify--between">
-                                        <a class="button button--text"
-                                        href="/template/config/myInfo.html">뒤로가기</a>
-                                        <button type="button" class="button button--primary">동의하고 탈퇴하기</button>
-                                    </div>
-                                    
                                 </div>
                                 <!-- /card -->
+                                <div class="card">
+                                    <div class="card__inner">
+                                        <div class="card__header is-change--reverse">
+                                            <a class="button button--text"
+                                            href="/template/config/myInfo.html">뒤로가기</a>
+                                            <button type="button" class="button button--primary">동의하고 탈퇴하기</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <!-- /card-wrap -->
                             <div class="card is-row-full" id="event">

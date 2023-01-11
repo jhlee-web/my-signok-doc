@@ -129,7 +129,7 @@
             </main>
         </div>
        
-        
+        <script src="/statics/js/common.js"></script>
         <script>
             $(function(){
                 loadData(10)
@@ -198,7 +198,6 @@
             // 테이블 만들기
             function makeTable(data,breakpoint){
 
-                console.log(data)
                 // 이미 테이블이 생성된 경우 테이블 삭제 후 재생성
                 if($('.table__tbody .table__tr').length > 0) {
                     $('.table__tbody .table__tr').remove()
@@ -243,10 +242,11 @@
                 }
             }
 
+            $(document).on('click','.table__tr',function(){
+                location.href="/template/config/myPayHisDetail.html"
+            })
 
-            
         </script>
-        <script src="/statics/js/common.js"></script>
     </body>
     
 </html>

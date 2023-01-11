@@ -122,6 +122,9 @@ html[data-fold="false"] .nav__name{
 @media all and (max-width:768px){
     .nav{
         gap: 1rem;
+        position: absolute;
+        top: 0;
+        left: 0;
     }
 
     html[data-fold="true"] .nav{
@@ -129,9 +132,7 @@ html[data-fold="false"] .nav__name{
         padding: 0 1rem;
 
         min-height: unset;
-        position: absolute;
-        top: 0;
-        left: 0;
+        
         height: var(--header-height)
     }
 
@@ -187,6 +188,10 @@ html[data-fold="false"] .nav__name{
     .nav{
         min-height: var(--header-height);
         padding: 0 2rem;
+
+        position: absolute;
+        top: 0;
+        left: 0;
     }
     
     html[data-fold="true"] .nav{
@@ -448,8 +453,9 @@ html[data-fold="false"] .nav__name{
 }
 
 .list-modal li{
-    padding: .5rem 0;
+    padding: .5em 1em;
     font-size: var(--text-small);
+    text-align: left;
 }
 
 .is-ellipsis{
@@ -469,6 +475,10 @@ html[data-fold="false"] .nav__name{
     }
     .doc-header__right{
         gap: 0;
+    }
+
+    .list-modal li{
+        padding: 0 .5em;
     }
 }
 

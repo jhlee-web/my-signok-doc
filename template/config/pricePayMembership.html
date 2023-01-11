@@ -59,7 +59,7 @@
                                         <p>Premium (월간결제) </p>
                                         <p>39,000원</p>
                                     </div>
-                                    <div class="flex--row">
+                                    <div class="flex--row is-change">
                                         <div class="icon-with-text is-secondary">
                                             <img src="/statics/icon/check-circle-line.svg" alt="" class="icon">
                                             <p>서명무제한</p>
@@ -79,7 +79,7 @@
                                     </div>
                                 </div>
                                 <div class="card__inner has-border">
-                                    <div class="card__header is-change">
+                                    <div class="card__header">
                                         <div class="icon-with-text">
                                             <img src="/statics/icon/document-line.svg"
                                             alt="" class="icon">
@@ -92,38 +92,19 @@
                                 
                                <div class="card__inner ">
                                     <p class="is-remark">쿠폰적용</p>
-                                    <ul class="basic-list">
-                                        <li class="list__item">
-                                            <div class="control-form">
-                                                <input type="radio" class="radio" name="coupon" checked id="coupon-none">
-                                                <label for="coupon-none">사용안함</label>
-                                            </div>
-                                        </li>
-                                        <li class="list__item">
-                                            <div class="control-form">
-                                                <input type="radio" class="radio" name="coupon" id="coupon-a">
-                                                <label for="coupon-a">coupon A</label>
-                                            </div>
-                                        </li>
-                                        <li class="list__item">
-                                            <div class="control-form">
-                                                <input type="radio" class="radio" name="coupon" id="coupon-b">
-                                                <label for="coupon-b">coupon B</label>
-                                            </div>
-                                        </li>
-                                        <li class="list__item">
-                                            <div class="control-form">
-                                                <input type="radio" class="radio" name="coupon" id="coupon-c">
-                                                <label for="coupon-c">coupon C</label>
-                                            </div>
-                                        </li>
-                                        <li class="list__item">
-                                            <div class="control-form">
-                                                <input type="radio" class="radio" name="coupon" id="coupon-d">
-                                                <label for="coupon-d">coupon D</label>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                    <div class="select-box">
+                                        <div class="select-box__select">
+                                            <p>사용안함</p>
+                                            <img src="/statics/icon/angle-down.svg" class="icon select-box__icon">
+                                        </div>
+                                        <ul class="select-box__option">
+                                            <li>coupon A <span class="is-remark">(2022-12-31)</span></li>
+                                            <li>coupon B <span class="is-remark">(2022-12-31)</span></li>
+                                            <li>coupon C <span class="is-remark">(2022-12-31)</span></li>
+                                            <li>coupon D <span class="is-remark">(2022-12-31)</span></li>
+
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                             <!-- /card -->
@@ -177,7 +158,7 @@
                             <!-- /card -->
                             <div class="card is-column-full">
                                 <div class="card__inner">
-                                    <div class="card__header">
+                                    <div class="card__header is-change--reverse">
                                         <a href="javascript:void(0)" class="button button--text">이전</a>
                                         <button type="button" class="button button--primary"
                                         onclick="makeModal()">결제하기</button>

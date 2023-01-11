@@ -349,7 +349,7 @@ html[data-theme='light'] .is-secondary{
 
 
 /* flex */
-[class*='flex-']{
+[class*='flex-']:not(.button){
     display: flex;
     gap: 1rem;
 
@@ -895,6 +895,12 @@ html[data-theme='light'] .button--text .icon{
     place-items: center;
 
     padding: 0;
+
+    width: 2.5rem;
+    height: 2.5rem;
+}
+.icon-button .icon{
+    width: 1.25rem;
 }
 
 .icon-button.is-xl{
@@ -912,13 +918,7 @@ html[data-theme='light'] .button--text .icon{
     width: 1.5rem;
 }
 
-.icon-button.is-medium{
-    width: 2.5rem;
-    height: 2.5rem;
-}
-.icon-button.is-medium .icon{
-    width: 1.25rem;
-}
+
 
 .icon-button.is-small{
     width: 2rem;

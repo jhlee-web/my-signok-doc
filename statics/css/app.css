@@ -171,6 +171,7 @@
     justify-content: space-between;
     align-items: center;
     justify-content: center;
+    gap: .5em;
 }
 .table__paging .select-box{
     /* position: absolute; */
@@ -794,6 +795,11 @@ html[data-theme="dark"] .icon-with-text.is-secondary .icon{
     flex-direction: column;
     gap: 1em;
 }
+.card__body--row{
+    display: inline-flex;
+    gap: 1rem;
+}
+
 .has-border{
     border-bottom: 1px solid var(--theme-color-400);
 }
@@ -811,6 +817,9 @@ html[data-theme="dark"] .icon-with-text.is-secondary .icon{
     .card{
         padding: 0;
     }
+    .card-wrap{
+        overflow-x: auto;
+    }
 
     .card__header.is-change{
         flex-direction: column;
@@ -820,6 +829,9 @@ html[data-theme="dark"] .icon-with-text.is-secondary .icon{
         gap: 1rem;
 
     }
+    .card__header.is-change--reverse{
+        flex-direction: column-reverse;
+    }
 
     .card__desc{
         margin-bottom: 1rem;
@@ -828,6 +840,14 @@ html[data-theme="dark"] .icon-with-text.is-secondary .icon{
     .card__header .card__desc{
         width: 100%;
         justify-content: space-between;
+    }
+
+    .card__body--row.is-change{
+        display: flex;
+        flex-direction: column;
+    }
+    .card__body--row.is-change .width-50{
+        width: 100%;
     }
 }
 
