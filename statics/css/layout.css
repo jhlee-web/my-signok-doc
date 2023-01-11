@@ -209,6 +209,15 @@ html[data-fold="false"] .nav__name{
         padding: 0;
     }
 
+    html[data-fold="true"]{
+        width: 100%;
+    }
+    
+    html[data-fold="true"] .nav__list{
+        display: none;
+    }
+
+
     html[data-fold="false"] .nav{
         width: 100%;
     }
@@ -221,13 +230,6 @@ html[data-fold="false"] .nav__name{
     }
 
     
-    html[data-fold="true"]{
-        width: 100%;
-       
-    }
-    html[data-fold="true"] .nav__list{
-        display: none;
-    }
 
     .nav__middle{
         flex-direction: row-reverse;
