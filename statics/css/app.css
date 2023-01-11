@@ -460,8 +460,7 @@
 }
 .modal__close-button{
     filter: var(--filter-text-500);
-    width: 2rem;
-    height: 2rem;
+    width: 2rem!important;
 
     cursor: pointer;
 }

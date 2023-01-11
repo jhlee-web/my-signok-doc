@@ -180,6 +180,338 @@
                     target.remove()
                 }
             }
+
+            $('.select-box').on('click',function(){
+                makeRoleModal()
+            })            
+            function makeGroupModal(){
+                html = '';
+                html += `
+                <div class="modal">
+                    <div class="modal__header">
+                        <p class="modal__title">
+                            조직 선택
+                        </p>
+                        <button type="button" class="icon-button">
+                            <img src="/statics/icon/close-line.svg" alt="닫기" class="icon modal__close-button">
+                        </button>
+                    </div>
+                    <div class="modal__content">
+                        <div class="flex--column gap--none">
+                            <div class="accordion is-active">
+                                <div class="accordion__header">
+                                    <div class="control-form">
+                                        <input type="radio"
+                                        id="group1" class="radio">
+                                        <label for="group1">group1</label>
+                                    </div>
+                                    <img src="/statics/icon/angle-down.svg"
+                                    class="icon">
+                                </div>
+                                <div class="accordion__body">
+                                    <div class="control-form">
+                                        <input type="radio"
+                                        id="test1" class="radio">
+                                        <label for="test1">test1</label>
+                                    </div>
+                                    <div class="control-form">
+                                        <input type="radio"
+                                        id="test2" class="radio">
+                                        <label for="test2">test2</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion is-active">
+                                <div class="accordion__header">
+                                    <div class="control-form">
+                                        <input type="radio"
+                                        id="group1" class="radio">
+                                        <label for="group1">group1</label>
+                                    </div>
+                                    <img src="/statics/icon/angle-down.svg"
+                                    class="icon">
+                                </div>
+                                <div class="accordion__body">
+                                    <div class="control-form">
+                                        <input type="radio"
+                                        id="test1" class="radio">
+                                        <label for="test1">test1</label>
+                                    </div>
+                                    <div class="control-form">
+                                        <input type="radio"
+                                        id="test2" class="radio">
+                                        <label for="test2">test2</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion is-active">
+                                <div class="accordion__header">
+                                    <div class="control-form">
+                                        <input type="radio"
+                                        id="group1" class="radio">
+                                        <label for="group1">group1</label>
+                                    </div>
+                                    <img src="/statics/icon/angle-down.svg"
+                                    class="icon">
+                                </div>
+                                <div class="accordion__body">
+                                    <div class="control-form">
+                                        <input type="radio"
+                                        id="test1" class="radio">
+                                        <label for="test1">test1</label>
+                                    </div>
+                                    <div class="control-form">
+                                        <input type="radio"
+                                        id="test2" class="radio">
+                                        <label for="test2">test2</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="modal__footer">
+                        <button type="button" class="button--primary button--large"
+                        id="create-new-folder">선택완료</button>
+                    </div>
+                </div>
+                `
+                $('.main').append(html)
+            }
+
+            function makeRoleModal(){
+                html = '';
+                html += `
+                <div class="modal">
+                    <div class="modal__header">
+                        <p class="modal__title">
+                            역할 선택하기
+                        </p>
+                        <button type="button" class="icon-button">
+                            <img src="/statics/icon/close-line.svg" alt="닫기" class="icon modal__close-button">
+                        </button>
+                    </div>
+                    <div class="modal__content">
+                        <div class="flex--column gap--sm">
+                            <label for="">계급</label>
+                            <div class="select-box">
+                                <div class="select-box__select">
+                                    <p>최고관리자</p>
+                                    <img src="/statics/icon/angle-top.svg"
+                                    class="icon select-box__icon">
+                                </div>
+                                <ul class="select-box__option">
+                                    <li>최고관리자</li>
+                                    <li>중간관리자</li>    
+                                    <li>일반</li>    
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="flex--column gap--sm">
+                            <p>역할명</p>
+                            <p class="is-remark">역할설명</p>
+                        </div>
+                        <div class="flex--column gap--sm">
+                            <p class="is-remark">서명 요청</p>
+                            <div class="flex--row">
+                                <div class="width-50">
+                                    <div class="tooltip">
+                                        <p>일반 서명 요청</p>
+                                        <ul class="tooltip__modal is-left">
+                                            <li>- 서명 알림 메일 재전송</li>
+                                            <li>- 서명 유효기간 변경</li>
+                                            <li>- 서명 요청 취소</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="width-50">
+                                    <div class="tooltip">
+                                        <p>템플릿으로 서명 요청</p>
+                                        <ul class="tooltip__modal is-left">
+                                            <li>[권한범위: 소속그룹+하위그룹]</li>
+                                            <li>- 계약서 폴더 이동</li>
+                                            <li>- 문서, 감사 추적 인증서 다운로드</li>
+                                            <li>- 문서 목록 엑셀 다운로드</li>
+                                            <li>- 문서 입력값 추출</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex--column gap--sm">
+                            <p class="is-remark">문서</p>
+                            <div class="flex--row">
+                                <div class="width-50">
+                                    <div class="tooltip">
+                                        <p>문서 추가/수정</p>
+                                        <ul class="tooltip__modal is-left">
+                                            <li>[권한범위: 소속그룹+하위그룹]</li>
+                                            <li>- 계약서 휴지통으로 이동</li>
+                                            <li>- 삭제한 계약서 지정 위치로 복구</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="width-50">
+                                    <div class="tooltip">
+                                        <p>문서 삭제/복구</p>
+                                        <ul class="tooltip__modal is-left">
+                                            <li>- 서명 알림 메일 재전송</li>
+                                            <li>- 서명 유효기간 변경</li>
+                                            <li>- 서명 요청 취소</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex--column gap--sm">
+                            <p class="is-remark">폴더</p>
+                            <div class="flex--row">
+                                <div class="width-50">
+                                    <div class="tooltip">
+                                        <p>모든 폴더 접근</p>
+                                        <ul class="tooltip__modal is-left">
+                                            <li>[권한범위: 소속팀+하위팀]</li>
+                                            <li>- 폴더 내 모든 문서 접근</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="width-50">
+                                    <div class="tooltip">
+                                        <p>부서내 폴더 추가/수정</p>
+                                        <ul class="tooltip__modal is-left">
+                                            <li>[권한범위: 소속팀]</li>
+                                            <li>- 부서 내 폴더 추가</li>
+                                            <li>- 폴더 이름 변경</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="width-100">
+                                <div class="tooltip">
+                                    <p>부서 내 폴더 삭제</p>
+                                    <ul class="tooltip__modal is-left">
+                                        <li>[권한범위: 소속팀]</li>
+                                        <li>- 폴더 삭제</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex--column gap--sm">
+                            <p class="is-remark">템플릿</p>
+                            <div class="flex--row">
+                                <div class="width-50">
+                                    <div class="tooltip">
+                                        <p>템플릿 추가/수정</p>
+                                        <ul class="tooltip__modal is-left">
+                                            <li>[권한범위: 소속그룹]</li>
+                                            <li>- 템플릿 추가</li>
+                                            <li>[권한범위: 소속그룹+하위그룹]</li>
+                                            <li>- 템플릿 수정/공유</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="width-50">
+                                    <div class="tooltip">
+                                        <p>템플릿 삭제</p>
+                                        <ul class="tooltip__modal is-left">
+                                            <li>[권한범위: 소속그룹+하위그룹]</li>
+                                            <li>- 템플릿 삭제</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex--column gap--sm">
+                            <p class="is-remark">휴지통</p>
+                            <div class="width-100">
+                                <div class="tooltip">
+                                    <p>휴지통 이동/복구</p>
+                                    <ul class="tooltip__modal is-left">
+                                        <li>[권한범위: 소속그룹+하위그룹]</li>
+                                        <li>- 계약서, 템플릿, 서식 휴지통으로 이동</li>
+                                        <li>- 계약서, 템플릿, 서식 지정 위치로 복구</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex--column gap--sm">
+                            <p class="is-remark">조직관리</p>
+                            <div class="flex--row">
+                                <div class="width-50">
+                                    <div class="tooltip">
+                                        <p>그룹 추가/수정</p>
+                                        <ul class="tooltip__modal is-left">
+                                            <li>[권한범위: 소속그룹+하위그룹]</li>
+                                            <li>- 하위그룹 추가</li>
+                                            <li>- 그룹 이름 변경</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="width-50">
+                                    <div class="tooltip">
+                                        <p>그룹삭제</p>
+                                        <ul class="tooltip__modal is-left">
+                                            <li>[권한범위: 소속그룹+하위그룹]</li>
+                                            <li>- 그룹 삭제</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex--row">
+                                <div class="width-50">
+                                    <div class="tooltip">
+                                        <p>그룹원 추가/수정</p>
+                                        <ul class="tooltip__modal is-left">
+                                            <li>[권한범위: 소속그룹+하위그룹]</li>
+                                            <li>- 그룹원 초대/취소</li>
+                                            <li>- 그룹원 추가/삭제</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="width-50">
+                                    <div class="tooltip">
+                                        <p>그룹원 삭제</p>
+                                        <ul class="tooltip__modal is-left">
+                                            <li>[권한범위: 조직전체]</li>
+                                            <li>- 조직 그룹원 삭제</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex--row">
+                                <div class="width-50">
+                                    <div class="tooltip">
+                                        <p>역할 추가/수정</p>
+                                        <ul class="tooltip__modal is-left">
+                                            <li>[권한범위:조직전체]</li>
+                                            <li>- 역할 추가</li>
+                                            <li>- 역할 이름/설명, 권한 설정</li>
+                                            <li>- 최고관리자 역할 수정 불가능</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="width-50">
+                                    <div class="tooltip">
+                                        <p>역할삭제</p>
+                                        <ul class="tooltip__modal is-left">
+                                            <li>[권한범위:조직전체]</li>
+                                            <li>- 역할 삭제</li>
+                                            <li>- 최고관리자 삭제 불가능</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal__footer">
+                        <button type="button" class="button--primary button--large"
+                        id="">역할 선택하기</button>
+                    </div
+                `
+                $('.main').append(html)
+            }
         </script>
     </body>
     
