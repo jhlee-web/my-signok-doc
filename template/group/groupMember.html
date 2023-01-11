@@ -5,7 +5,7 @@
         <script>
             loadHTML("/statics/include/head.html");
         </script>
-        <title>조직관리</title>
+        <title>조직관리 | 멤버관리</title>
     </head>
 
     <body>
@@ -65,10 +65,10 @@
                                     maxlength="64">
                                 </div>
                             </div>
-                            <button type="button" class="button button--secondary is-medium">
+                            <a href="/template/group/groupInviteMember.html" class="button button--secondary is-medium">
                                 <img src="/statics/icon/plus-line.svg" class="icon" alt="부서추가">
                                 멤버 초대하기
-                            </button>
+                            </a>
                         </div>
                         
                         <div class="is-empty">
@@ -78,8 +78,9 @@
                                 src="/statics/icon/exclamation-triangle-line.svg"
                                 alt="아직 소속된 멤버가 없습니다">
                                 <p>아직 소속된 멤버가 없습니다</p>
-                                <button type="button" class="button button--secondary is-medium"
-                                id="invite-member" >멤버 초대하기</button>
+                                <a href="/template/group/groupInviteMember.html"
+                                class="button button--secondary is-medium"
+                                id="invite-member" >멤버 초대하기</a>
                             </div>
                         </div>
 

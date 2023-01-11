@@ -1552,9 +1552,11 @@ html[data-theme='light'] .button--text .icon{
 /* snb */
 .snb{
     display: inline-flex;
-    gap: 1em;
+    gap: .5em;
+    align-items: center;
 }
 
 .snb a:hover {
-    color:var(--secondary-color-500)
+    text-decoration: underline;
+    text-underline-position:under
 }
