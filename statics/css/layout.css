@@ -98,10 +98,7 @@ html[data-fold="false"] .nav__name{
     height: var(--header-height);
 
     border-bottom:1px solid var(--theme-color-500);
-
 }
-
-
 
 .nav__middle{
     display: flex;
@@ -123,14 +120,19 @@ html[data-fold="false"] .nav__name{
 
 
 @media all and (max-width:768px){
+    .nav{
+        gap: 1rem;
+    }
 
-    .nav, html[data-fold="true"] .nav{
-        min-height: unset;
-        height: auto;
-        top: 0;
-        gap: 0;
-        padding: 0 1rem;
+    html[data-fold="true"] .nav{
         width: 100%;
+        padding: 0 1rem;
+
+        min-height: unset;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: var(--header-height)
     }
 
     html[data-fold="false"] .nav{
@@ -145,20 +147,17 @@ html[data-fold="false"] .nav__name{
     .nav__top{
         flex-direction: row-reverse;
         padding: 0;
+        height: var(--header-height);
     }
-    html[data-fold="true"] .nav__item, html[data-fold="true"] .nav__top{
+    html[data-fold="true"] .nav__item,
+    html[data-fold="true"] .nav__top{
         display: inline-flex;
         flex-direction: row-reverse;
         align-items: center;
         justify-content: space-between;
 
         padding: 0;
-        /* height: 5rem; */
     }
-
-    /* html[data-fold="true"] .nav *:not(.icon) {
-        justify-content: flex-start;
-    } */
 
     #nav-fold-button{
         width: auto;
@@ -168,20 +167,20 @@ html[data-fold="false"] .nav__name{
         display: block!important;
     }
 
-
     html[data-fold="true"] .nav__list{
         display: none;
     }
 
     .nav__middle{
         flex-direction: column;
-        padding: 1em 0;
+        height: 3rem;
+        line-height: 3rem;
     }
 
-    .nav__list{
-        padding: 1em 0;
-
+    .nav__middle #common-contract-button{
+        display: none;
     }
+
 }
 
 @media all and (min-width:769px) and (max-width:1279px){
@@ -212,7 +211,7 @@ html[data-fold="false"] .nav__name{
     html[data-fold="true"]{
         width: 100%;
     }
-    
+
     html[data-fold="true"] .nav__list{
         display: none;
     }
@@ -228,8 +227,6 @@ html[data-fold="false"] .nav__name{
     .nav__logo{
         display: block!important;
     }
-
-    
 
     .nav__middle{
         flex-direction: row-reverse;
