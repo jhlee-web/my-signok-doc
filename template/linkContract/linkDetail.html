@@ -54,7 +54,7 @@
                                     class="round-input__input input">
                                 </div>
                             </div>
-                            <div class="flex--column gap--sm">
+                            <div class="flex--column gap--sm ">
                                 <li class="control-form">
                                     <span>링크활성화</span>
                                     <label class="is-small toggle">
@@ -78,23 +78,65 @@
                             </div>
                         </div>
 
-                        <div class="table is-scroll--hor">
+                        <div class="table">
                             <div class="table__thead">
                                 <div class="table__tr width-100">
-                                    <div class="table__td  width-2"></div>
-                                    <div class="table__td  width-10">상태</div>
-                                    <div class="table__td  width-20">서명자 이름 (필수)</div>
-                                    <div class="table__td  width-40">이메일 또는 휴대전화번호</div>
-                                    <div class="table__td  width-10">휴대전화 본인인증</div>
+                                    <div class="table__td is-left width-100">
+                                        <div class="table__td "></div>
+                                        <div class="table__td  width-10">상태</div>
+                                        <div class="table__td  width-20">서명자 이름 (필수)</div>
+                                        <div class="table__td  width-40">이메일 또는 휴대전화번호</div>
+                                        <div class="table__td  width-10">휴대전화 본인인증</div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="table__tbody">
+                            <div class="table__tbody"></div>
+                        </div>
+                        <div class="table__paging">
+                            <a href="/template/linkContract/linkContractList.html" class="button button--text flex-justify--start">
+                                <img src="/statics/icon/angle-left.svg"
+                                class="icon is-small">
+                                뒤로가기
+                            </a>
+                            <ul class="pagination">
+                                <li class="">
+                                    <button type="button" class="button icon-button">
+                                        <img src="/statics/icon/angle-left.svg" 
+                                        class="icon"
+                                        alt="이전페이지">
+                                    </button>
+                                </li>
+                                <ul id="pagination-index-wrap" class="pagination__index-wrap">
+                                    <li class="is-active pagination__item">1</li>
+                                    <li class="pagination__item">2</li>
+
+                                </ul>
+                                <li class="">
+                                    <button type="button" class="button icon-button">
+                                        <img src="/statics/icon/angle-right.svg" 
+                                        class="icon"
+                                        alt="다음페이지">
+                                    </button>
+                                </li>
+                            </ul>
+                            <div id="count-load-table" class="select-box is-medium is-top">
+                                <div class="select-box__select">
+                                    <p>10개씩보기</p>
+                                    <img class="select-box__icon icon" src="/statics/icon/angle-down.svg" alt="화살표">
+                                    
+                                </div>
+                                <ul class="select-box__option">
+                                    <li selected>10개씩 보기</li>
+                                    <li>30개씩 보기</li>
+                                    <li>50개씩 보기</li>
+                                </ul>
+                                
                             </div>
                         </div>
                         <!-- /table -->
                     </div>
                     <!-- /main-content -->
-                    <div class="template-footer is-detail">
+                    <!-- <div class="template-footer is-detail">
                         <div class="container">
                             <button type="button"
                                 class="button is-large button--text flex-justify--start">
@@ -106,7 +148,7 @@
                             </a>
                             <div></div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <!-- /container -->
             </main>
@@ -146,23 +188,26 @@
 
 
                     // 테스트용
-                    for (let i = 0; i<arr[0].length; i++){
+                    for (let i = 1; i<=10; i++){
                         html = '';
-                        html += `<div class="table__tr">
-                            <div class="table__td width-2 is-remark">
+                        html += `
+                        <div class="table__tr">
+                            <div class="table__td is-left width-100">
+                                <div class="table__td width-2 is-remark">
                                 ${i}
-                            </div>
-                            <div class="table__td width-10">
-                                <p>수신완료</p>
-                            </div>
-                            <div class="table__td  width-20">
-                                ${arr[0][i].name}
-                            </div>
-                            <div class="table__td  width-40">
-                                ${arr[0][i].email}
-                            </div>
-                            <div class="table__td  width-10">
-                                ON
+                                </div>
+                                <div class="table__td width-10">
+                                    <p>수신완료</p>
+                                </div>
+                                <div class="table__td  width-20">
+                                    ${arr[0][i].name}
+                                </div>
+                                <div class="table__td  width-40">
+                                    ${arr[0][i].email}
+                                </div>
+                                <div class="table__td  width-10">
+                                    ON
+                                </div>
                             </div>
                         </div>`
                         $('.table__tbody').append(html)
