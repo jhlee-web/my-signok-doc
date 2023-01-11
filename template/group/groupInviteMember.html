@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko" data-fold="true">
+    <head>
+        <script src="/statics/js/loadHTML.js"></script>
+        <script>
+            loadHTML("/statics/include/head.html");
+        </script>
+        <title>조직관리 | 멤버초대</title>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <script>
+                loadHTML("/statics/include/nav.html");
+            </script>
+            
+            <main class="main ">
+                <!-- 상단 헤더 -->
+                <script>
+                    loadHTML("/statics/include/sub_header.html");
+                </script>
+                <!-- // 상단헤더 -->
+                <!-- 메인 컨텐츠 -->
+                <div class="container">
+                    <div class="main-content">
+                        <!-- <div class="tab-wrap">
+                            <ul class="tab">
+                                <li class="tab__item--badge ">
+                                    <a href="/template/group/groupCompany.html">회사 조직도</a>
+                                </li>
+                                <li class="tab__item--badge is-active">
+                                    <a href="javascript:void(0)">멤버 관리</a>
+                                </li>
+                                <li class="tab__item--badge ">
+                                    <a href="/template/group/groupRole.html">역할 관리</a>
+                                </li>
+    
+                            </ul>
+                        </div> -->
+                        <div class="snb">
+                            <a href="/template/group/groupMember.html"
+                            class="is-remark">
+                                멤버관리
+                            </a>
+                            <img src="/statics/icon/angle-right.svg" class="icon is-small">
+                            <p class="font-weight--medium body--small">멤버 초대하기</p>
+                        </div>
+                        <div class="table">
+                            <div class="table__thead">
+                                <ul class="table__tr width-100">
+                                    <div class="table__td is-left width-90">
+                                        <li class="table__td width-30">이름</li>
+                                        <li class="table__td width-40">이메일</li>
+                                        <li class="table__td width-15">부서</li>
+                                        <li class="table__td width-15">역할</li>
+                                    </div>
+                                </ul>
+                            </div>
+                            <div class="table__tbody">
+                                <div class="table__tr">
+                                    <div class="table__td is-left width-90">
+                                        <div class="table__td width-30">
+                                            <input type="text"
+                                            class="input"
+                                            placeholder="초대 대상자 성명을 입력해주세요.">
+                                        </div>
+                                        <div class="table__td width-40">
+                                            <input type="email"
+                                            class="input"
+                                            placeholder="초대 대상자 이메일을 입력해주세요.">
+                                        </div>
+                                        <div class="table__td width-15">
+                                            <div class="select-box">
+                                                <button type="button" class="select-box__select">
+                                                    부서 선택
+                                                    <img src="/statics/icon/angle-down.svg" class="icon">
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="table__td width-15">
+                                            <div class="select-box">
+                                                <button type="button" class="select-box__select">
+                                                    역할 선택
+                                                    <img src="/statics/icon/angle-down.svg" class="icon">
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="table__td is-right width-10 flex-justify--center">
+                                        <button type="button" class="button icon-button is-primary"
+                                        onclick="deleteTable(this)">
+                                            <img src="/statics/icon/trash-line.svg" class="icon">
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- /table__tr -->
+                                <div class="table__tr">
+                                    <div class="width-100 flex-justify--center">
+                                        <button type="button"
+                                        class="button button--text"
+                                        id="add-table">
+                                            <img src="/statics/icon/plus-line.svg"
+                                            class="icon">
+                                            추가하기
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- /add table -->
+                            </div>
+                        </div>
+                        <!-- /table -->
+                        <div class="flex-justify--end">
+                            <button type="button"
+                            class="button button--primary"
+                            id="invite-member">
+                                초대하기
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /main-content -->
+                </div>
+                <!-- /container -->
+            </main>
+        </div>
+       
+        <script src="/statics/js/common.js"></script>
+        <script>
+            $('#add-table').on('click',function(){
+                if($('.table__tr').length > 21) {
+                    alert('개수초과');
+                    return false;
+                }
+                $(this).parents('.table__tr').before(`
+                <div class="table__tr">
+                    <div class="table__td is-left width-90">
+                        <div class="table__td width-30">
+                            <input type="text"
+                            class="input"
+                            placeholder="초대 대상자 성명을 입력해주세요.">
+                        </div>
+                        <div class="table__td width-40">
+                            <input type="email"
+                            class="input"
+                            placeholder="초대 대상자 이메일을 입력해주세요.">
+                        </div>
+                        <div class="table__td width-15">
+                            <div class="select-box">
+                                <button type="button" class="select-box__select">
+                                    부서 선택
+                                    <img src="/statics/icon/angle-down.svg" class="icon">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="table__td width-15">
+                            <div class="select-box">
+                                <button type="button" class="select-box__select">
+                                    역할 선택
+                                    <img src="/statics/icon/angle-down.svg" class="icon">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table__td is-right width-10 flex-justify--center">
+                        <button type="button" class="button icon-button is-primary"
+                        onclick="deleteTable(this)">
+                            <img src="/statics/icon/trash-line.svg" class="icon">
+                        </button>
+                    </div>
+                </div>
+                `)
+            })
+            
+            function deleteTable(e){
+                let target = e.parentElement.parentElement
+                if($('.table__tbody .table__tr').length <= 2){
+                    alert('tr 무조건 한개 이상')
+                    return false;
+                }
+                if(confirm('사용자 초대 취소')){
+                    target.remove()
+                }
+            }
+        </script>
+    </body>
+    
+</html>
