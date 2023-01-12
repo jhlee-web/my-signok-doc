@@ -1134,7 +1134,7 @@ html[data-theme="dark"] .icon-with-text.is-secondary .icon{
 
 .tooltip{
     position: relative;
-    cursor: pointer;
+    cursor: default;
     width: fit-content;
 }
 .tooltip__absolute{
@@ -1164,7 +1164,7 @@ html[data-theme="dark"] .icon-with-text.is-secondary .icon{
     height: 0;
 }
 
-.tooltip:hover .tooltip__modal{
+.tooltip:not(.is-disabled):hover .tooltip__modal{
     visibility: visible;
     transition: .4s;
 }

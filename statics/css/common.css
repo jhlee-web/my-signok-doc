@@ -217,6 +217,13 @@ html[data-theme='light'] .is-secondary{
     color: var(--text-color-700);
     font-size: var(--text-small);
 }
+.is-disabled{
+    color: var(--text-color-500);
+    cursor:not-allowed;
+}
+hr{
+    color: var(--theme-color-400);
+}
 
 
 /* font-size */
